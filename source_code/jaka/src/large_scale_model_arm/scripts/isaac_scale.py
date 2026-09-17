@@ -83,6 +83,26 @@ class ImageProcessorNode:
         with self.frame_lock:
             self.latest_cv_image = cv_image
 
+    @staticmethod
+    def build_user_prompt(user_command):
+        """把用户指令拼进固定输出契约，保证下游 isaac_yolov8.cpp 可解析。"""
+        cmd = (user_command or "").strip() or "识别图中所有可抓取物资"
+        return (
+            "### 背景 ###\n"
+            "你需要识别图中目标物资在相机像素系下的位置，并给出抓取所需的深度与倾斜角。\n"
+            f"### 任务 ###\n{cmd}\n"
+            "### 输出契约（必须严格遵守） ###\n"
+            "只输出一行或多行元组，每个目标一行，格式：\n"
+            "(u, v, depth_m, angle_deg)\n"
+            "说明：u,v 为像素坐标整数；depth_m 为米制深度，带单位 m；angle_deg 为0~180度倾斜角。\n"
+            "若需要分拣侧，单独另起一行写：左侧 或 右侧。\n"
+            "不要输出 JSON、markdown、解释文字或额外符号。\n"
+            "### 示例 ###\n"
+            "(312, 245, 0.82m, 12.5)\n"
+            "(401, 260, 0.95m, 87.0)\n"
+            "左侧\n"
+        )
+
     def process_latest_frame(self):
         if not self.new_bbox_request:
             return
@@ -102,7 +122,8 @@ class ImageProcessorNode:
 
         with self.prompt_lock:
             current_bbox_prompt = self.bbox_prompt
-        msgs = [{'role': 'user', 'content': [pil_image, current_bbox_prompt]}]
+        prompt = self.build_user_prompt(current_bbox_prompt)
+        msgs = [{'role': 'user', 'content': [pil_image, prompt]}]
         try:
             model_res = self.model.chat(
                 image=None,
@@ -112,7 +133,7 @@ class ImageProcessorNode:
             rospy.loginfo("模型处理结果:\n%s", model_res)
 
             model_output_msg = String()
-            model_output_msg.data = str(model_res) 
+            model_output_msg.data = str(model_res)
             self.model_output_pub.publish(model_output_msg)
             rospy.loginfo("模型结果已发布到话题 'model_output'.")
 
@@ -141,7 +162,7 @@ class ImageProcessorNode:
 def main():
     rospy.init_node('ros_image_processor', anonymous=True)
 
-    default_bbox_prompt = "请处理图像并返回结果"
+    default_bbox_prompt = "识别图中所有可抓取物资，按契约输出 (u, v, depth_m, angle_deg)"
 
     ipn = ImageProcessorNode(default_bbox_prompt)
 

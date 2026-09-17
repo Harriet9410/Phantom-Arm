@@ -1,0 +1,38 @@
+# Catkin build artifacts
+build/
+devel/
+logs/
+.catkin_tools/
+*.user
+*.o
+*.so
+*.a
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Models / weights / large outputs (keep out of git)
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.safetensors
+outputs/
+runs/
+wandb/
+tensorboard/
+
+# Logs
+*.log
+nohup.out

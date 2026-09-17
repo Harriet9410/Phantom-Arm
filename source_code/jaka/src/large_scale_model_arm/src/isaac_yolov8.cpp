@@ -95,15 +95,18 @@ void ModelToArmNode::modelCallback(const std_msgs::String::ConstPtr &msg)
   ROS_INFO("收到 /model_output: %s", s.c_str());
 
   std_msgs::String side_msg;
-  if (s.find(u8"左侧") != std::string::npos)
+  if (s.find(u8"左侧") != std::string::npos || s.find("left") != std::string::npos)
     side_msg.data = "left";
-  else if (s.find(u8"右侧") != std::string::npos)
+  else if (s.find(u8"右侧") != std::string::npos || s.find("right") != std::string::npos)
     side_msg.data = "right";
   else
     side_msg.data = "unknown";
   side_pub_.publish(side_msg);
 
-  static const std::regex re(R"(\(\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d\.]+)m\s*,\s*([\d\.]+)\s*\))");
+  // 兼容契约输出：(u, v, depth_m, angle) / [] / 全角括号，depth 带不带 m
+  static const std::regex re(
+      R"([\(\[\（]\s*([-+]?\d+(?:\.\d+)?)\s*[,，]\s*([-+]?\d+(?:\.\d+)?)\s*[,，]\s*([-+]?\d+(?:\.\d+)?)\s*m?\s*[,，]\s*([-+]?\d+(?:\.\d+)?)\s*[\)\]\）])",
+      std::regex::ECMAScript);
   std::sregex_iterator it(s.begin(), s.end(), re), end;
   detections_.clear();
   for (; it != end; ++it)
@@ -111,7 +114,18 @@ void ModelToArmNode::modelCallback(const std_msgs::String::ConstPtr &msg)
     double u = std::stod((*it)[1].str());
     double v = std::stod((*it)[2].str());
     double Z = std::stod((*it)[3].str());
-    double angle_rad = std::stod((*it)[4].str()) * M_PI / 180.0;
+    double angle_deg = std::stod((*it)[4].str());
+    if (Z <= 0.05 || Z > 5.0)
+    {
+      ROS_WARN("跳过非法深度 Z=%.3f (u=%.1f,v=%.1f)", Z, u, v);
+      continue;
+    }
+    if (angle_deg < -90.0 || angle_deg > 270.0)
+    {
+      ROS_WARN("倾斜角异常 angle=%.2f，按 0 处理", angle_deg);
+      angle_deg = 0.0;
+    }
+    double angle_rad = angle_deg * M_PI / 180.0;
 
     double Xc = (u - cx_) * Z / fx_;
     double Yc = (v - cy_) * Z / fy_;
@@ -122,12 +136,12 @@ void ModelToArmNode::modelCallback(const std_msgs::String::ConstPtr &msg)
 
     detections_.push_back({-p_base.x(), p_base.y(), p_base.z(),
                            q.x(), q.y(), q.z(), q.w()});
-    ROS_INFO("检测到瓶子 %zu: pos(%.3f,%.3f,%.3f)", detections_.size(),
-             p_base.x(), p_base.y(), p_base.z());
+    ROS_INFO("检测到目标 %zu: (u=%.1f,v=%.1f,Z=%.3f) pos(%.3f,%.3f,%.3f)",
+             detections_.size(), u, v, Z, p_base.x(), p_base.y(), p_base.z());
   }
   if (detections_.empty())
   {
-    ROS_WARN("无法提取任何检测结果");
+    ROS_WARN("无法提取任何检测结果（期望格式: (u, v, depth_m, angle_deg)）");
     return;
   }
   current_idx_ = 0;

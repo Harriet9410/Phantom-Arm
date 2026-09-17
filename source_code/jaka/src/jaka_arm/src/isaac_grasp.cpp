@@ -24,6 +24,7 @@
 #include <cmath>
 #include <mutex>
 #include <thread>
+#include <algorithm>
 
 class PickAndPlaceNode
 {
@@ -39,10 +40,11 @@ private:
     void publishPose(const geometry_msgs::PoseStamped &ps, const std::string &tag);
     void controlGripperIncremental(bool closed, const std::string &tag);
     void openGripperDirectly(const std::string &tag);
-    void waitForPosition(const geometry_msgs::PoseStamped &target);
-    void waitForGripper();
-    void doPickPlace(geometry_msgs::PoseStamped target);
+    bool waitForPosition(const geometry_msgs::PoseStamped &target, double timeout_s = -1.0);
+    bool waitForGripper(double timeout_s = -1.0);
+    bool doPickPlace(geometry_msgs::PoseStamped target, int attempt);
     double calcDistance(const geometry_msgs::PoseStamped &a, const geometry_msgs::PoseStamped &b);
+    void returnToInit(const std::string &tag);
 
     ros::NodeHandle nh_;
     ros::Publisher ee_pose_pub_, gripper_pub_, result_pub_;
@@ -52,7 +54,13 @@ private:
     bool gripper_closed_, busy_, got_end_pose_, pick_success_;
     std::string frame_id_, conveyor_side_;
     double approach_height_, left_place_x_, right_place_x_;
+    double approach_dx_, approach_dy_;
+    double descend_dx_, descend_dy_;
+    double place_lower_dz_, place_raise_dz_;
+    double settle_s_after_descend_, settle_s_after_open_;
     double pos_tolerance_, ori_tolerance_, max_step_distance_;
+    double pos_wait_timeout_, gripper_wait_timeout_, retry_delay_s_;
+    int max_retries_;
     float gripper_value_, gripper_step_;
     std::mutex mutex_, pose_mutex_;
 };
@@ -66,6 +74,14 @@ PickAndPlaceNode::PickAndPlaceNode(ros::NodeHandle &nh)
     ros::NodeHandle pnh("~");
     pnh.param<std::string>("frame_id", frame_id_, "base_link");
     pnh.param("approach_height", approach_height_, 0.1);
+    pnh.param("approach_dx", approach_dx_, 0.03);
+    pnh.param("approach_dy", approach_dy_, 0.0075);
+    pnh.param("descend_dx", descend_dx_, 0.01);
+    pnh.param("descend_dy", descend_dy_, 0.0075);
+    pnh.param("place_lower_dz", place_lower_dz_, 0.2);
+    pnh.param("place_raise_dz", place_raise_dz_, 0.2);
+    pnh.param("settle_s_after_descend", settle_s_after_descend_, 2.0);
+    pnh.param("settle_s_after_open", settle_s_after_open_, 1.5);
     pnh.param("pos_tolerance", pos_tolerance_, 0.06);
     pnh.param("ori_tolerance", ori_tolerance_, 0.2);
     pnh.param("max_step_distance", max_step_distance_, 0.5);
@@ -76,6 +92,10 @@ PickAndPlaceNode::PickAndPlaceNode(ros::NodeHandle &nh)
     pnh.param("place_pose_qy", place_pose_.pose.orientation.y, 1.2);
     pnh.param("place_pose_qz", place_pose_.pose.orientation.z, 1.2);
     pnh.param("place_pose_qw", place_pose_.pose.orientation.w, 0.0);
+    pnh.param("max_retries", max_retries_, 2);
+    pnh.param("pos_wait_timeout", pos_wait_timeout_, 20.0);
+    pnh.param("gripper_wait_timeout", gripper_wait_timeout_, 8.0);
+    pnh.param("retry_delay", retry_delay_s_, 1.5);
     place_pose_.header.frame_id = frame_id_;
     right_place_x_ = -left_place_x_;
 
@@ -150,7 +170,34 @@ void PickAndPlaceNode::arrayCallback(const std_msgs::Float64MultiArray::ConstPtr
     target.pose.orientation.z = msg->data[5];
     target.pose.orientation.w = msg->data[6];
 
-    std::thread(&PickAndPlaceNode::doPickPlace, this, target).detach();
+    std::thread([this, target]() {
+        bool ok = false;
+        const int total_attempts = std::max(1, max_retries_ + 1);
+        for (int i = 0; i < total_attempts && ros::ok(); ++i)
+        {
+            if (i > 0)
+            {
+                ROS_INFO("等待 %.1fs 后重试...", retry_delay_s_);
+                ros::Duration(retry_delay_s_).sleep();
+            }
+            ok = doPickPlace(target, i);
+            if (ok)
+                break;
+            ROS_WARN("第 %d/%d 次失败，进入重试判断", i + 1, total_attempts);
+        }
+
+        std_msgs::Bool res_msg;
+        res_msg.data = ok;
+        result_pub_.publish(res_msg);
+        ROS_INFO("最终 /pick_place_result = %s（尝试次数上限 %d）",
+                 ok ? "true" : "false", total_attempts);
+
+        {
+            std::lock_guard<std::mutex> lock(mutex_);
+            busy_ = false;
+        }
+        ROS_INFO("抓放任务完成");
+    }).detach();
 }
 
 void PickAndPlaceNode::publishPose(const geometry_msgs::PoseStamped &ps, const std::string &tag)
@@ -189,11 +236,28 @@ double PickAndPlaceNode::calcDistance(const geometry_msgs::PoseStamped &a,
     return std::sqrt(dx * dx + dy * dy + dz * dz);
 }
 
-void PickAndPlaceNode::waitForPosition(const geometry_msgs::PoseStamped &target)
+void PickAndPlaceNode::returnToInit(const std::string &tag)
 {
+    init_pose_.header.stamp = ros::Time::now();
+    publishPose(init_pose_, tag);
+    waitForPosition(init_pose_);
+    openGripperDirectly("重试/失败后张开夹爪");
+}
+
+bool PickAndPlaceNode::waitForPosition(const geometry_msgs::PoseStamped &target,
+                                       double timeout_s)
+{
+    if (timeout_s < 0.0)
+        timeout_s = pos_wait_timeout_;
+    const ros::Time t0 = ros::Time::now();
     ros::Rate rate(20);
     while (ros::ok())
     {
+        if ((ros::Time::now() - t0).toSec() > timeout_s)
+        {
+            ROS_WARN("waitForPosition 超时 (%.1fs)", timeout_s);
+            return false;
+        }
         geometry_msgs::PoseStamped cmd;
         {
             std::lock_guard<std::mutex> lock(pose_mutex_);
@@ -217,7 +281,7 @@ void PickAndPlaceNode::waitForPosition(const geometry_msgs::PoseStamped &target)
             if (dist <= pos_tolerance_ && angle <= ori_tolerance_)
             {
                 ROS_INFO("目标到达 (误差: %.3fm, %.2f°)", dist, angle * 180.0 / M_PI);
-                break;
+                return true;
             }
 
             cmd = target;
@@ -235,40 +299,63 @@ void PickAndPlaceNode::waitForPosition(const geometry_msgs::PoseStamped &target)
         ros::spinOnce();
         rate.sleep();
     }
+    return false;
 }
 
-void PickAndPlaceNode::waitForGripper()
+bool PickAndPlaceNode::waitForGripper(double timeout_s)
 {
+    if (timeout_s < 0.0)
+        timeout_s = gripper_wait_timeout_;
+    const ros::Time t0 = ros::Time::now();
     ros::Rate rate(10);
     while (ros::ok())
     {
+        if ((ros::Time::now() - t0).toSec() > timeout_s)
+        {
+            ROS_WARN("waitForGripper 超时 (%.1fs)，当前 gripper_closed=%d",
+                     timeout_s, gripper_closed_ ? 1 : 0);
+            return false;
+        }
         if (gripper_closed_)
         {
             ROS_INFO("夹爪确认闭合");
-            break;
+            return true;
         }
         controlGripperIncremental(true, "夹爪闭合");
         ros::spinOnce();
         rate.sleep();
     }
+    return false;
 }
 
-void PickAndPlaceNode::doPickPlace(geometry_msgs::PoseStamped target)
+bool PickAndPlaceNode::doPickPlace(geometry_msgs::PoseStamped target, int attempt)
 {
+    ROS_INFO("抓放尝试 #%d", attempt + 1);
+
     geometry_msgs::PoseStamped approach = target;
-    approach.pose.position.x += 0.03;
-    approach.pose.position.y += 0.0075;
+    approach.pose.position.x += approach_dx_;
+    approach.pose.position.y += approach_dy_;
     approach.pose.position.z += approach_height_;
     approach.header = target.header;
     publishPose(approach, "抬升至目标上方");
-    waitForPosition(approach);
+    if (!waitForPosition(approach))
+    {
+        ROS_WARN("失败原因: APPROACH_TIMEOUT");
+        returnToInit("失败: 回初始位姿");
+        return false;
+    }
 
     target.header.stamp = ros::Time::now();
-    target.pose.position.x += 0.01;
-    target.pose.position.y += 0.0075;
+    target.pose.position.x += descend_dx_;
+    target.pose.position.y += descend_dy_;
     publishPose(target, "下移至抓取点");
-    waitForPosition(target);
-    ros::Duration(5.0).sleep();
+    if (!waitForPosition(target))
+    {
+        ROS_WARN("失败原因: DESCEND_TIMEOUT");
+        returnToInit("失败: 回初始位姿");
+        return false;
+    }
+    ros::Duration(settle_s_after_descend_).sleep();
 
     {
         std::lock_guard<std::mutex> lock(pose_mutex_);
@@ -282,15 +369,22 @@ void PickAndPlaceNode::doPickPlace(geometry_msgs::PoseStamped target)
                            target.pose.orientation.z,
                            target.pose.orientation.w);
         double angle = qc.angleShortestPath(qt);
-        if (dist <= pos_tolerance_ && angle <= ori_tolerance_)
+        if (dist > pos_tolerance_ || angle > ori_tolerance_)
         {
-            controlGripperIncremental(true, "夹爪闭合");
-            waitForGripper();
+            ROS_WARN("失败原因: NOT_IN_TOLERANCE (%.3fm, %.2f°) — 跳过闭合与放置",
+                     dist, angle * 180.0 / M_PI);
+            returnToInit("失败: 回初始位姿");
+            return false;
         }
-        else
-        {
-            ROS_WARN("未到位 (%.3fm, %.2f°)，跳过闭合", dist, angle * 180.0 / M_PI);
-        }
+    }
+
+    controlGripperIncremental(true, "夹爪闭合");
+    if (!waitForGripper())
+    {
+        ROS_WARN("失败原因: GRIPPER_TIMEOUT");
+        openGripperDirectly("超时张开");
+        returnToInit("失败: 回初始位姿");
+        return false;
     }
 
     init_pose_.header.stamp = ros::Time::now();
@@ -304,26 +398,28 @@ void PickAndPlaceNode::doPickPlace(geometry_msgs::PoseStamped target)
 
     geometry_msgs::PoseStamped set_pose = place_pose_;
     set_pose.header.stamp = ros::Time::now();
-    set_pose.pose.position.z -= 0.2;
+    set_pose.pose.position.z -= place_lower_dz_;
     publishPose(set_pose, "移动至放置位姿2");
     waitForPosition(set_pose);
-    ros::Duration(3.0).sleep();
+    ros::Duration(2.0).sleep();
 
     openGripperDirectly("夹爪打开");
-    ros::Duration(2.0).sleep();
+    ros::Duration(settle_s_after_open_).sleep();
 
     geometry_msgs::PoseStamped get_pose = set_pose;
     get_pose.header.stamp = ros::Time::now();
-    get_pose.pose.position.z += 0.2;
+    get_pose.pose.position.z += place_raise_dz_;
     publishPose(get_pose, "移动至放置位姿3");
     waitForPosition(get_pose);
-    ros::Duration(3.0).sleep();
 
     init_pose_.header.stamp = ros::Time::now();
     publishPose(init_pose_, "回到初始位姿");
-    waitForPosition(init_pose_);
+    if (!waitForPosition(init_pose_))
+    {
+        ROS_WARN("失败原因: RETURN_INIT_TIMEOUT（放置可能已完成）");
+        return false;
+    }
 
-    std_msgs::Bool res_msg;
     {
         std::lock_guard<std::mutex> lock(pose_mutex_);
         double dist = calcDistance(current_pose_, init_pose_);
@@ -338,15 +434,8 @@ void PickAndPlaceNode::doPickPlace(geometry_msgs::PoseStamped target)
         double angle = qc.angleShortestPath(qt);
         pick_success_ = (dist <= pos_tolerance_ && angle <= ori_tolerance_);
     }
-    res_msg.data = pick_success_;
-    result_pub_.publish(res_msg);
     ROS_INFO("本次抓放流程 %s", pick_success_ ? "成功" : "失败");
-
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-        busy_ = false;
-    }
-    ROS_INFO("抓放任务完成");
+    return pick_success_;
 }
 
 int main(int argc, char **argv)

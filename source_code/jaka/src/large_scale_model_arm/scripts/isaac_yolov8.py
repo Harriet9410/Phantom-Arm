@@ -96,15 +96,16 @@ class YoloPublisher(object):
                 cy_pix = (y1 + y2) / 2.0
                 cx_i, cy_i = int(cx_pix), int(cy_pix)
 
-                depth = float("nan")
-                if 0 <= cy_i < self.depth_image.shape[0] and 0 <= cx_i < self.depth_image.shape[1]:
-                    depth = float(self.depth_image[cy_i, cx_i])
+                depth = self.sample_depth_robust(
+                    self.depth_image, cx_pix, cy_pix, window=5
+                )
 
                 roi = self.rgb_image[y1:y2, x1:x2]
                 bottle_angle = self.compute_2d_tilt(roi) if roi.size else None
                 angle_str = f"{bottle_angle:.2f}" if bottle_angle is not None else "N/A"
 
-                label = f"({cx_i},{cy_i},{depth:.2f}m,{angle_str})"
+                depth_str = f"{depth:.2f}m" if depth is not None else "nan"
+                label = f"({cx_i},{cy_i},{depth_str},{angle_str})"
                 cv2.rectangle(self.rgb_image, (x1, y1), (x2, y2), (0, 255, 0), 2)
                 cv2.putText(
                     self.rgb_image,
@@ -116,7 +117,7 @@ class YoloPublisher(object):
                     2,
                 )
 
-                if not np.isnan(depth):
+                if depth is not None:
                     cam_x, cam_y, cam_z = self.convert_pixel_to_camera_coordinates(
                         cx_pix, cy_pix, depth
                     )
@@ -125,6 +126,11 @@ class YoloPublisher(object):
                     msg.pose.position.y = cam_y
                     msg.pose.position.z = cam_z
                     self.publisher_.publish(msg)
+                else:
+                    rospy.logwarn_throttle(
+                        2.0,
+                        f"目标 {name} 深度无效，跳过发布 (u={cx_i},v={cy_i})",
+                    )
 
         try:
             self.annotated_pub.publish(
@@ -137,6 +143,34 @@ class YoloPublisher(object):
         cv2.resizeWindow("YOLO Detection", 1280, 720)
         cv2.imshow("YOLO Detection", self.rgb_image)
         cv2.waitKey(1)
+
+    # 深度合理区间（米），与 isaac_yolov8.cpp 过滤保持一致
+    DEPTH_MIN = 0.05
+    DEPTH_MAX = 5.0
+    DEPTH_MIN_VALID = 3  # 窗口内至少几个有效点才采纳
+
+    @staticmethod
+    def sample_depth_robust(depth_image, u, v, window=5, min_valid=3):
+        """在 (u,v) 邻域取有效深度中位数，过滤 NaN/Inf/0/越界值。
+
+        返回 float 或 None（样本不足/全无效）。
+        """
+        if depth_image is None:
+            return None
+        h, w = depth_image.shape[:2]
+        cx_i, cy_i = int(round(u)), int(round(v))
+        if not (0 <= cx_i < w and 0 <= cy_i < h):
+            return None
+
+        half = max(1, int(window) // 2)
+        x0, x1 = max(0, cx_i - half), min(w, cx_i + half + 1)
+        y0, y1 = max(0, cy_i - half), min(h, cy_i + half + 1)
+        patch = np.asarray(depth_image[y0:y1, x0:x1], dtype=np.float64).ravel()
+        patch = patch[np.isfinite(patch)]
+        patch = patch[(patch > YoloPublisher.DEPTH_MIN) & (patch < YoloPublisher.DEPTH_MAX)]
+        if patch.size < min_valid:
+            return None
+        return float(np.median(patch))
 
     @staticmethod
     def compute_2d_tilt(roi):

@@ -31,6 +31,19 @@ from omni.isaac.core.utils.types import ArticulationAction
 from omni.isaac.motion_generation import RmpFlow, ArticulationMotionPolicy
 from omni.isaac.motion_generation import ArticulationKinematicsSolver
 
+from trrt_config import DEFAULT_TRTT, DEFAULT_DURATION_S, get_trrt_params
+
+# 当前生效的 TRRT* 参数（云端扫参：改 preset 或直接改 DEFAULT_TRTT）
+TRRT_PARAMS = dict(DEFAULT_TRTT)
+
+
+def set_trrt_preset(name: str) -> dict:
+    """云端扫参入口：set_trrt_preset('fast'|'stable'|'baseline')。"""
+    global TRRT_PARAMS
+    TRRT_PARAMS = get_trrt_params(name)
+    carb.log_warn(f"TRRT* preset={name} params={TRRT_PARAMS}")
+    return dict(TRRT_PARAMS)
+
 
 class _Node:
     __slots__ = ("config", "parent", "cost")
@@ -401,8 +414,10 @@ class JakaRmpFlowController:
         self,
         target_pos: np.ndarray,
         target_rot_wxyz: np.ndarray,
-        duration: float = 5.0,
+        duration: float = None,
     ):
+        if duration is None:
+            duration = float(TRRT_PARAMS.get("duration", DEFAULT_DURATION_S))
         if self._tracking_in_progress:
             carb.log_warn("正在执行轨迹，请等待完成后再规划新目标。")
             return
@@ -444,16 +459,22 @@ class JakaRmpFlowController:
             upper = props["upper"][: self.num_arm_dof]
             arm_limits = list(zip(lower, upper))
 
+        p = TRRT_PARAMS
         raw_path = trrt_star_optimized(
             start=start_config,
             goal=goal_config,
             validator=lambda q: True,
             joint_limits=arm_limits,
-            step_size=0.01,
-            radius=0.5,
+            max_iter=int(p.get("max_iter", 5000)),
+            step_size=float(p.get("step_size", 0.01)),
+            radius=float(p.get("radius", 0.5)),
+            init_temp=float(p.get("init_temp", 1.0)),
+            k0=float(p.get("k0", 0.1)),
+            alpha=float(p.get("alpha", 0.95)),
+            beta=float(p.get("beta", 1.1)),
         )
         if raw_path is None:
-            carb.log_error("TRRT* 未能找到有效路径。")
+            carb.log_error("TRRT* 未能找到有效路径。参数: %s", p)
             return
 
         N = len(raw_path)

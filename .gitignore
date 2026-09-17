@@ -1,12 +1,18 @@
-# Catkin build artifacts
-build/
-devel/
-logs/
+# 本机不推送
+local/
+.playwright-cli/
+.vscode/
+.idea/
+
+# 编译产物
+**/build/
+**/devel/
+**/logs/
 .catkin_tools/
-*.user
 *.o
 *.so
 *.a
+*.user
 
 # Python
 __pycache__/
@@ -15,14 +21,7 @@ __pycache__/
 venv/
 *.egg-info/
 
-# Editors / OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Models / weights / large outputs (keep out of git)
+# 权重与大输出
 *.pt
 *.pth
 *.onnx
@@ -33,6 +32,11 @@ runs/
 wandb/
 tensorboard/
 
-# Logs
+# 日志与临时
 *.log
 nohup.out
+console-*.log
+page-*.yml
+.DS_Store
+Thumbs.db
+desktop.ini
