@@ -90,7 +90,10 @@ class MissionLedger:
         return self.tasks[index]
 
     def _dependencies(self,index):
-        return all(task['status'] in ('verified','executed_pending_verification') for task in self.tasks[:index])
+        # A task that failed without touching its target is resolved, not pending:
+        # nothing is held and nothing is owed, so it must not block later tasks.
+        return all(task['status'] in ('verified','executed_pending_verification')
+                   or task.get('released_after_failure') for task in self.tasks[:index])
 
     def is_remaining(self,index):return _remaining_instruction(self._task(index)['instruction'])
 
@@ -99,6 +102,23 @@ class MissionLedger:
 
     def _pending_released(self):
         return {key for task in self.tasks for key in task['pending_placements'] if key not in task['placements']}
+
+    def release_failed_task(self,index,reason,now=None):
+        """Return a failed task's untouched targets to the shared pool.
+
+        Nothing was grasped, so the objects are still on the table.  Reserving
+        them would make a later "remaining" instruction unsatisfiable: its
+        remaining set can never be complete while reserved targets stay
+        reserved, and the driver would stop the whole episode there.
+        """
+        task=self._task(index)
+        if task['status'] in ('verified','executed_pending_verification'):return False
+        if task['grasps'] or task['placements'] or task['pending_placements']:return False
+        if not task['targets']:return False
+        at=_number(now,'release time') if now is not None else time.monotonic()
+        task['released_after_failure']={'reason':str(reason)[:500],'monotonic':at,
+                                        'released_stable_ids':sorted(task['targets'])}
+        return True
 
     def task_context(self,scene,index,now=None,wall_now=None):
         task=self._task(index);now=time.monotonic() if now is None else _number(now,'now')
@@ -133,6 +153,7 @@ class MissionLedger:
         self._visible_by_id=visible;self._visible_frame=frame
         delivered=self._delivered();pending_released=self._pending_released()
         reserved={key for i,other in enumerate(self.tasks) if i!=index and other['status']!='verified'
+                  and not other.get('released_after_failure')
                   for key in other['targets'] if key not in delivered and key not in pending_released}
         remaining_stable=sorted(key for key in by_stable if key not in delivered and key not in reserved and key not in pending_released)
         missing=sorted(key for key in self.known if key not in by_stable and key not in delivered and key not in pending_released)
@@ -539,6 +560,7 @@ class MissionLedger:
                 'targets':copy.deepcopy(task['targets']),'request_ids':list(task['requests']),
                 'grasp_evidence':copy.deepcopy(task['grasps']),'placement_evidence':copy.deepcopy(task['placements']),
                 'pending_placement_evidence':copy.deepcopy(task['pending_placements']),
+                'released_after_failure':copy.deepcopy(task.get('released_after_failure')),
                 'nine_evidence':copy.deepcopy(task['nine_evidence'])})
         return {'round_id':self.round_id,'task_source':self.task_source,'started_monotonic':self.started_monotonic,
             'started_wall':self.started_wall,'deadline_monotonic':self.deadline,'remaining_seconds':remaining,

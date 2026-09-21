@@ -276,7 +276,23 @@ class EpisodeDriver:
                 task.update(result=event,elapsed_seconds=self.clock.monotonic()-began)
                 self.task_interval_ended=self.clock.monotonic()
                 self.minimum_scene_wall=self.clock.time();return
-            if status in ('task_failed','rejected','request_rejected','plan_rejected','execution_disabled'):
+            if status=='task_failed':
+                task.update(result=event,elapsed_seconds=self.clock.monotonic()-began)
+                self.task_interval_ended=self.clock.monotonic()
+                self.minimum_scene_wall=self.clock.time()
+                proof=event.get('stop') if isinstance(event.get('stop'),dict) else None
+                if not (event.get('stopped_verified') is True and proof and proof.get('state')=='stopped'):
+                    raise EpisodeFailure('task stopped after task_failed without a measured stop: '+str(event.get('reason','')))
+                released=self.ledger.release_failed_task(index,event.get('reason',''),self.clock.monotonic())
+                self.record({'status':'task_failed_continuing' if released else 'task_failed_unresolved',
+                             'time':self.clock.time(),'task_index':index,'task_id':context['task_id'],
+                             'reason':event.get('reason'),'stop_id':proof.get('id'),
+                             'targets_released':released})
+                if not released:
+                    raise EpisodeFailure('task stopped after task_failed with unfinished release evidence: '+str(event.get('reason','')))
+                return {'task_index':index,'task_id':context['task_id'],'status':'task_failed',
+                        'reason':event.get('reason',''),'stop_id':proof.get('id')}
+            if status in ('rejected','request_rejected','plan_rejected','execution_disabled'):
                 task.update(result=event,elapsed_seconds=self.clock.monotonic()-began)
                 raise EpisodeFailure('task stopped after '+status+': '+str(event.get('reason','')))
         raise TimeoutError('fixed episode deadline exhausted while waiting for task result')
@@ -349,15 +365,31 @@ class EpisodeDriver:
             # inside the driver consumes T0+600; readiness never resets T0.
             initial=self.transport.preflight(min(self.preflight_timeout,self.ledger.remaining(self.clock.monotonic())))
             self.summary['initial_scene']=initial;self.checkpoint();self._prepare_observation()
-            for index in range(len(self.instructions)):self._run_task(index)
+            failed_tasks=[]
+            for index in range(len(self.instructions)):
+                outcome=self._run_task(index)
+                if outcome is None:continue
+                failed_tasks.append(outcome)
+                if index+1<len(self.instructions):
+                    # The controller states that an explicit reset is required after a
+                    # failed task; re-preparing the observation is that reset, and it
+                    # fails closed if the controller refuses to run it again.
+                    self._prepare_observation()
+            self.summary['failed_tasks']=failed_tasks
             if any(t['status']=='executed_pending_verification' for t in self.ledger.tasks):
                 self._read_only_closeout({'state':'not_requested'})
             evidence=self.ledger.summary(self.clock.monotonic())
             if not evidence['mandatory_nine_evidence_complete']:
                 raise EpisodeFailure('complete task or mandatory Nine evidence is missing')
             complete=evidence['all_tasks_verified']
-            self.summary.update(status='succeeded' if complete else 'completed_with_unverified_placements',
-                safe_stop={'state':'not_requested','reason':'normal verified completion' if complete else 'all commanded releases completed; some placement evidence remains unverified'})
+            unresolved=any(t['status']=='incomplete' for t in self.ledger.tasks)
+            if complete:status='succeeded'
+            elif unresolved:status='completed_with_failed_tasks'
+            else:status='completed_with_unverified_placements'
+            self.summary.update(status=status,
+                safe_stop={'state':'not_requested','reason':('normal verified completion' if complete else
+                    'some commanded tasks failed; the remaining instructions were still attempted' if unresolved else
+                    'all commanded releases completed; some placement evidence remains unverified')})
         except Exception as error:
             if self.task_interval_started is not None:self.task_interval_ended=self.clock.monotonic()
             deadline_expired=(self.ledger is not None and self.clock.monotonic()>=self.ledger.deadline)

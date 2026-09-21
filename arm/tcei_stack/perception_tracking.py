@@ -330,10 +330,15 @@ class CandidateTracker:
         for key,t in active.items():
             if key in seen:continue
             prior=t['candidate']
-            if prior.get('bbox'):
+            # Only a track that reached this tracker's own confirmation bar counts
+            # as an object that went missing. A single-frame blip creates a track
+            # too, and reporting it as unobserved permanently voids
+            # coverage_complete and the "remaining" set: on 2026-09-21 a 5-object
+            # scene produced 11 identities and phantom obj-0011 blocked task 5.
+            if prior.get('bbox') and t['seen_count']>=2:
                 region={'bbox':prior['bbox'],'pixel':prior.get('pixel'),
                     'normalized_xy':prior.get('normalized_xy'),'reason':'unobserved_unverified_object',
-                    'stable_id':key,'last_observed_at':t['last_seen']}
+                    'stable_id':key,'last_observed_at':t['last_seen'],'seen_count':t['seen_count']}
                 # The class was measured while the object was visible and cannot
                 # change while it is missing. Without it a vanished Torch reads as
                 # a possible Smoke grenade and blocks every region-constrained task.
