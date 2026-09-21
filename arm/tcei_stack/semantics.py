@@ -189,6 +189,11 @@ def _unknown_may_affect(region, category, relation, selected, context):
     possible = region.get('possible_classes')
     if isinstance(possible, list) and possible and category not in possible:
         return False
+    measured = region.get('class')
+    if isinstance(measured, str) and measured and measured != category:
+        # A region whose class was measured while it was visible cannot hold the
+        # requested category, so it cannot change which objects qualify.
+        return False
     if (region.get('reason') == 'unobserved_unverified_object'
             or region.get('bbox_is_current') is False
             or region.get('position_evidence') in ('historical', 'last_seen')):

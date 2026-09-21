@@ -331,9 +331,16 @@ class CandidateTracker:
             if key in seen:continue
             prior=t['candidate']
             if prior.get('bbox'):
-                unknown.append({'bbox':prior['bbox'],'pixel':prior.get('pixel'),
+                region={'bbox':prior['bbox'],'pixel':prior.get('pixel'),
                     'normalized_xy':prior.get('normalized_xy'),'reason':'unobserved_unverified_object',
-                    'stable_id':key,'last_observed_at':t['last_seen']})
+                    'stable_id':key,'last_observed_at':t['last_seen']}
+                # The class was measured while the object was visible and cannot
+                # change while it is missing. Without it a vanished Torch reads as
+                # a possible Smoke grenade and blocks every region-constrained task.
+                kind=prior.get('class')
+                if isinstance(kind,str) and kind:
+                    region['class']=kind;region['possible_classes']=[kind]
+                unknown.append(region)
         self.latest_candidates=[dict(c) for c in rows];self.latest_unknown=[dict(r) for r in unknown]
         self.latest_observed_at=observed_at
         stamps={c.get('image_stamp') for c in rows if c.get('image_stamp') is not None}
