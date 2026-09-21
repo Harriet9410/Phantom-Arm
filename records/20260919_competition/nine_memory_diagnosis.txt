@@ -1,0 +1,418 @@
+{
+  "checked_at": 1789778369.3604834,
+  "gpu_before": "3959897, [Not Found], 518 MiB\n852316, [Not Found], 3136 MiB\n852449, [Not Found], 19638 MiB\n852384, [Not Found], 542 MiB",
+  "nine_stop": {
+    "returncode": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action03_01/pids/nine.json\n",
+    "stderr": ""
+  },
+  "gpu_after": "3959897, [Not Found], 518 MiB\n852316, [Not Found], 3184 MiB\n852384, [Not Found], 542 MiB",
+  "config": {
+    "architectures": [
+      "FM9GV"
+    ],
+    "auto_map": {
+      "AutoConfig": "configuration_fm9g.FM9GVConfig",
+      "AutoModel": "modeling_fm9gv.FM9GV",
+      "AutoModelForCausalLM": "modeling_fm9gv.FM9GV"
+    },
+    "slice_config": {
+      "max_slice_nums": 9,
+      "patch_size": 14,
+      "model_type": "fm9gv"
+    },
+    "query_num": 64,
+    "image_size": 448,
+    "patch_size": 14,
+    "hidden_size": 2560,
+    "num_hidden_layers": 62,
+    "torch_dtype": "bfloat16"
+  },
+  "vision_config": {
+    "hidden_size": 1152,
+    "image_size": 980,
+    "intermediate_size": 4304,
+    "model_type": "siglip",
+    "num_attention_heads": 16,
+    "num_hidden_layers": 27,
+    "patch_size": 14
+  },
+  "python_files": [
+    "modeling_fm9g.py",
+    "modeling_navit_siglip.py",
+    "modeling_fm9gv.py",
+    "resampler.py",
+    "image_processing_fm9gv.py",
+    "processing_fm9gv.py",
+    "tokenization_fm9g.py",
+    "tokenization_fm9gv_fast.py",
+    "configuration_fm9g.py"
+  ],
+  "source_matches": [
+    {
+      "file": "modeling_fm9g.py",
+      "line": 791,
+      "text": "    ) -> Tuple[torch.Tensor, Optional[torch.Tensor], Optional[Tuple[torch.Tensor]]]:\n        if output_attentions:\n            # TODO: Improve this warning with e.g. `model.config.attn_implementation = \"manual\"` once this is implemented.\n            logger.warning_once(\n                \"FM9GModel is using FM9GSdpaAttention, but `torch.nn.functional.scaled_dot_product_attention` does not support `output_attentions=True`. Falling back to the manual attention implementation, \"\n                'but specifying the manual implementation will be required from Transformers version v5.0.0 onwards. This warning can be removed using the argument `attn_implementation=\"eager\"` when loading the model.'"
+    },
+    {
+      "file": "modeling_fm9g.py",
+      "line": 794,
+      "text": "            logger.warning_once(\n                \"FM9GModel is using FM9GSdpaAttention, but `torch.nn.functional.scaled_dot_product_attention` does not support `output_attentions=True`. Falling back to the manual attention implementation, \"\n                'but specifying the manual implementation will be required from Transformers version v5.0.0 onwards. This warning can be removed using the argument `attn_implementation=\"eager\"` when loading the model.'\n            )\n            return super().forward(\n                hidden_states=hidden_states,"
+    },
+    {
+      "file": "modeling_fm9g.py",
+      "line": 896,
+      "text": "        super().__init__()\n        self.hidden_size = config.hidden_size\n        self.self_attn = FM9G_ATTENTION_CLASSES[config._attn_implementation](config=config, layer_idx=layer_idx)\n\n        self.mlp = FM9GMLP(config)\n        self.input_layernorm = FM9GRMSNorm(config.hidden_size, eps=config.rms_norm_eps)"
+    },
+    {
+      "file": "modeling_fm9g.py",
+      "line": 1101,
+      "text": "            [FM9GDecoderLayer(config, layer_idx) for layer_idx in range(config.num_hidden_layers)]\n        )\n        self._use_sdpa = config._attn_implementation == \"sdpa\"\n        self._use_flash_attention_2 = config._attn_implementation == \"flash_attention_2\"\n\n        self.norm = FM9GRMSNorm(config.hidden_size, eps=config.rms_norm_eps)"
+    },
+    {
+      "file": "modeling_fm9g.py",
+      "line": 1102,
+      "text": "        )\n        self._use_sdpa = config._attn_implementation == \"sdpa\"\n        self._use_flash_attention_2 = config._attn_implementation == \"flash_attention_2\"\n\n        self.norm = FM9GRMSNorm(config.hidden_size, eps=config.rms_norm_eps)\n"
+    },
+    {
+      "file": "modeling_fm9g.py",
+      "line": 1439,
+      "text": "    \n    @torch.inference_mode()\n    def chat(self, tokenizer, query: str, history: List[Dict] = None, role: str = \"user\",\n             max_length: int = 4096, num_beams=1, do_sample=True, top_p=0.8, temperature=0.3, logits_processor=None,\n             **kwargs):\n        if history is None:"
+    },
+    {
+      "file": "modeling_navit_siglip.py",
+      "line": 275,
+      "text": "    Base class for vision model's outputs that also contains image embeddings of the pooling of the last hidden states.\n    Args:\n        image_embeds (`torch.FloatTensor` of shape `(batch_size, output_dim)` *optional* returned when model is initialized with `with_projection=True`):\n            The image embeddings obtained by applying the projection layer to the pooler_output.\n        last_hidden_state (`torch.FloatTensor` of shape `(batch_size, sequence_length, hidden_size)`):\n            Sequence of hidden-states at the output of the last layer of the model."
+    },
+    {
+      "file": "modeling_navit_siglip.py",
+      "line": 290,
+      "text": "    \"\"\"\n\n    image_embeds: Optional[torch.FloatTensor] = None\n    last_hidden_state: torch.FloatTensor = None\n    hidden_states: Optional[Tuple[torch.FloatTensor]] = None\n    attentions: Optional[Tuple[torch.FloatTensor]] = None"
+    },
+    {
+      "file": "modeling_navit_siglip.py",
+      "line": 641,
+      "text": "        super().__init__()\n        self.embed_dim = config.hidden_size\n        self._use_flash_attention_2 = config._attn_implementation == \"flash_attention_2\"\n        self.self_attn = (\n            SiglipAttention(config)\n            if not self._use_flash_attention_2"
+    },
+    {
+      "file": "modeling_navit_siglip.py",
+      "line": 863,
+      "text": "        self.encoder = SiglipEncoder(config)\n        self.post_layernorm = nn.LayerNorm(embed_dim, eps=config.layer_norm_eps)\n        self._use_flash_attention_2 = config._attn_implementation == \"flash_attention_2\"\n\n        # Initialize weights and apply final processing\n        self.post_init()"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 37,
+      "text": "    def init_vision_module(self):\n        # same as HuggingFaceM4/siglip-so400m-14-980-flash-attn2-navit add tgt_sizes\n        if self.config._attn_implementation == 'flash_attention_2':\n            self.config.vision_config._attn_implementation = 'flash_attention_2'\n        else:\n            # not suport sdpa"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 38,
+      "text": "        # same as HuggingFaceM4/siglip-so400m-14-980-flash-attn2-navit add tgt_sizes\n        if self.config._attn_implementation == 'flash_attention_2':\n            self.config.vision_config._attn_implementation = 'flash_attention_2'\n        else:\n            # not suport sdpa\n            self.config.vision_config._attn_implementation = 'eager'"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 41,
+      "text": "        else:\n            # not suport sdpa\n            self.config.vision_config._attn_implementation = 'eager'\n        model = SiglipVisionTransformer(self.config.vision_config)\n        if self.config.drop_vision_last_layer:\n            model.encoder.layers = model.encoder.layers[:-1]"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 78,
+      "text": "        return self.llm\n\n    def get_vllm_embedding(self, data):\n        if 'vision_hidden_states' not in data:\n            dtype = self.llm.model.embed_tokens.weight.dtype\n            device = self.llm.model.embed_tokens.weight.device"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 79,
+      "text": "\n    def get_vllm_embedding(self, data):\n        if 'vision_hidden_states' not in data:\n            dtype = self.llm.model.embed_tokens.weight.dtype\n            device = self.llm.model.embed_tokens.weight.device\n            tgt_sizes = data['tgt_sizes']"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 84,
+      "text": "            tgt_sizes = data['tgt_sizes']\n            pixel_values_list = data['pixel_values']\n            vision_hidden_states = []\n            all_pixel_values = []\n            img_cnt = []\n            for pixel_values in pixel_values_list:"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 107,
+      "text": "                    patch_attn_mask[i, 0, :tgt_sizes[i][0] * tgt_sizes[i][1]] = True\n\n                vision_batch_size = self.config.vision_batch_size\n                all_pixel_values = all_pixel_values.type(dtype)\n                if B > vision_batch_size:\n                    hs = []"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 109,
+      "text": "                vision_batch_size = self.config.vision_batch_size\n                all_pixel_values = all_pixel_values.type(dtype)\n                if B > vision_batch_size:\n                    hs = []\n                    for i in range(0, B, vision_batch_size):\n                        start_idx = i"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 111,
+      "text": "                if B > vision_batch_size:\n                    hs = []\n                    for i in range(0, B, vision_batch_size):\n                        start_idx = i\n                        end_idx = i + vision_batch_size\n                        tmp_hs = self.vpm(all_pixel_values[start_idx:end_idx], patch_attention_mask=patch_attn_mask[start_idx:end_idx], tgt_sizes=tgt_sizes[start_idx:end_idx]).last_hidden_state"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 113,
+      "text": "                    for i in range(0, B, vision_batch_size):\n                        start_idx = i\n                        end_idx = i + vision_batch_size\n                        tmp_hs = self.vpm(all_pixel_values[start_idx:end_idx], patch_attention_mask=patch_attn_mask[start_idx:end_idx], tgt_sizes=tgt_sizes[start_idx:end_idx]).last_hidden_state\n                        hs.append(tmp_hs)\n                    vision_embedding = torch.cat(hs, dim=0)"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 125,
+      "text": "                    img_cnt = len(pixel_values)\n                    if img_cnt > 0:\n                        vision_hidden_states.append(vision_embedding[start: start + img_cnt])\n                        start += img_cnt\n                    else:\n                        vision_hidden_states.append([])"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 128,
+      "text": "                        start += img_cnt\n                    else:\n                        vision_hidden_states.append([])\n            else: # no image\n                if self.training:\n                    dummy_image = torch.zeros("
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 140,
+      "text": "                    dummy_feature = []\n                for _ in range(len(pixel_values_list)):\n                    vision_hidden_states.append(dummy_feature)\n\n        else:\n            vision_hidden_states = data['vision_hidden_states']"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 143,
+      "text": "\n        else:\n            vision_hidden_states = data['vision_hidden_states']\n\n        if hasattr(self.llm.config, 'scale_emb'):\n            vllm_embedding = self.llm.model.embed_tokens(data['input_ids']) * self.llm.config.scale_emb"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 150,
+      "text": "            vllm_embedding = self.llm.model.embed_tokens(data['input_ids'])\n\n        vision_hidden_states = [i.type(vllm_embedding.dtype) if isinstance(\n            i, torch.Tensor) else i for i in vision_hidden_states]\n\n        bs = len(data['input_ids'])"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 151,
+      "text": "\n        vision_hidden_states = [i.type(vllm_embedding.dtype) if isinstance(\n            i, torch.Tensor) else i for i in vision_hidden_states]\n\n        bs = len(data['input_ids'])\n        for i in range(bs):"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 155,
+      "text": "        bs = len(data['input_ids'])\n        for i in range(bs):\n            cur_vs_hs = vision_hidden_states[i]\n            if len(cur_vs_hs) > 0:\n                cur_vllm_emb = vllm_embedding[i]\n                cur_image_bound = data['image_bound'][i]"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 169,
+      "text": "                    cur_vllm_emb += cur_vs_hs[0].mean() * 0\n\n        return vllm_embedding, vision_hidden_states\n\n    def forward(self, data, **kwargs):\n        vllm_embedding, vision_hidden_states = self.get_vllm_embedding(data)"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 172,
+      "text": "\n    def forward(self, data, **kwargs):\n        vllm_embedding, vision_hidden_states = self.get_vllm_embedding(data)\n        position_ids = data[\"position_ids\"]\n        if position_ids.dtype != torch.int64:\n            position_ids = position_ids.long()"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 233,
+      "text": "        attention_mask=None,\n        tokenizer=None,\n        vision_hidden_states=None,\n        return_vision_hidden_states=False,\n        stream=False,\n        decode_text=False,"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 234,
+      "text": "        tokenizer=None,\n        vision_hidden_states=None,\n        return_vision_hidden_states=False,\n        stream=False,\n        decode_text=False,\n        **kwargs"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 247,
+      "text": "        }\n\n        if vision_hidden_states is None:\n            model_inputs[\"pixel_values\"] = pixel_values\n            model_inputs['tgt_sizes'] = tgt_sizes\n        else:"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 251,
+      "text": "            model_inputs['tgt_sizes'] = tgt_sizes\n        else:\n            model_inputs[\"vision_hidden_states\"] = vision_hidden_states\n\n        with torch.inference_mode():\n            ("
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 256,
+      "text": "            (\n                model_inputs[\"inputs_embeds\"],\n                vision_hidden_states,\n            ) = self.get_vllm_embedding(model_inputs)\n\n            if stream:"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 264,
+      "text": "                result = self._decode(model_inputs[\"inputs_embeds\"], tokenizer, attention_mask, decode_text=decode_text, **kwargs)\n\n        if return_vision_hidden_states:\n            return result, vision_hidden_states\n        \n        return result"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 265,
+      "text": "\n        if return_vision_hidden_states:\n            return result, vision_hidden_states\n        \n        return result\n"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 269,
+      "text": "        return result\n\n    def chat(\n        self,\n        image,\n        msgs,"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 275,
+      "text": "        tokenizer,\n        processor=None,\n        vision_hidden_states=None,\n        max_new_tokens=2048,\n        min_new_tokens=0,\n        sampling=True,"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 282,
+      "text": "        system_prompt='',\n        stream=False,\n        max_slice_nums=None,\n        use_image_id=None,\n        **kwargs\n    ):"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 308,
+      "text": "        assert self.config.patch_size == processor.image_processor.patch_size, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"\n        assert self.config.use_image_id == processor.image_processor.use_image_id, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"\n        assert self.config.slice_config.max_slice_nums == processor.image_processor.max_slice_nums, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"\n        assert self.config.slice_mode == processor.image_processor.slice_mode, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"\n\n        prompts_lists = []"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 352,
+      "text": "            prompts_lists, \n            input_images_lists, \n            max_slice_nums=max_slice_nums,\n            use_image_id=use_image_id,\n            return_tensors=\"pt\", \n            max_length=max_inp_length"
+    },
+    {
+      "file": "modeling_fm9gv.py",
+      "line": 385,
+      "text": "                tokenizer=tokenizer,\n                max_new_tokens=max_new_tokens,\n                vision_hidden_states=vision_hidden_states,\n                stream=stream,\n                decode_text=True,\n                **generation_config"
+    },
+    {
+      "file": "resampler.py",
+      "line": 49,
+      "text": "\ndef slice_image_feature_fm9g(\n    image_feature, num_windows=144, max_slice_nums=1000, num_ratio=1):\n    # image_feature: b,c,h,w\n    # num_queries of resampler. n\n    # "
+    },
+    {
+      "file": "resampler.py",
+      "line": 59,
+      "text": "    log_ratio = math.log(feature_width / feature_height)\n    ratio = feature_height * feature_width / num_windows\n    multiple = min(math.ceil(ratio), max_slice_nums)\n\n    candidate_split_grids_nums = []\n    for i in [multiple - 1, multiple, multiple + 1]:"
+    },
+    {
+      "file": "resampler.py",
+      "line": 63,
+      "text": "    candidate_split_grids_nums = []\n    for i in [multiple - 1, multiple, multiple + 1]:\n        if i == 1 or i > max_slice_nums:\n            continue\n        candidate_split_grids_nums.append(i)\n"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 109,
+      "text": "    def __init__(\n            self, \n            max_slice_nums=9,\n            scale_resolution=448,\n            patch_size=14,\n            **kwargs):"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 114,
+      "text": "            **kwargs):\n        super().__init__(**kwargs)\n        self.max_slice_nums = max_slice_nums\n        self.scale_resolution = scale_resolution\n        self.patch_size = patch_size\n        self.use_image_id = kwargs.pop(\"use_image_id\", False)"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 186,
+      "text": "\n    def slice_image(\n        self, image, max_slice_nums=9, scale_resolution=448, patch_size=14, never_split=False\n    ):\n        original_size = image.size\n        source_image = None"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 190,
+      "text": "        original_size = image.size\n        source_image = None\n        best_grid = self.get_sliced_grid(original_size, max_slice_nums, never_split)\n        patches = []\n\n        if best_grid is None:"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 235,
+      "text": "        return f\"{self.im_id_start}{idx}{self.im_id_end}\"\n    \n    def get_sliced_images(self, image, max_slice_nums=None):\n        slice_images = []\n\n        if not self.slice_mode:"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 241,
+      "text": "            return [image]\n\n        max_slice_nums = self.max_slice_nums if max_slice_nums is None else int(max_slice_nums)\n        assert max_slice_nums > 0 \n        source_image, patches, sliced_grid = self.slice_image(\n            image,"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 242,
+      "text": "\n        max_slice_nums = self.max_slice_nums if max_slice_nums is None else int(max_slice_nums)\n        assert max_slice_nums > 0 \n        source_image, patches, sliced_grid = self.slice_image(\n            image,\n            max_slice_nums,  # default: 9"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 245,
+      "text": "        source_image, patches, sliced_grid = self.slice_image(\n            image,\n            max_slice_nums,  # default: 9\n            self.scale_resolution,  # default: 448\n            self.patch_size  # default: 14\n        )"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 257,
+      "text": "        return slice_images\n\n    def get_sliced_grid(self, image_size, max_slice_nums, nerver_split=False):\n        original_width, original_height = image_size\n        log_ratio = math.log(original_width / original_height)\n        ratio = original_width * original_height / (self.scale_resolution * self.scale_resolution)"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 261,
+      "text": "        log_ratio = math.log(original_width / original_height)\n        ratio = original_width * original_height / (self.scale_resolution * self.scale_resolution)\n        multiple = min(math.ceil(ratio), max_slice_nums)\n        if multiple <= 1 or nerver_split:\n            return None\n        candidate_split_grids_nums = []"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 266,
+      "text": "        candidate_split_grids_nums = []\n        for i in [multiple - 1, multiple, multiple + 1]:\n            if i == 1 or i > max_slice_nums:\n                continue\n            candidate_split_grids_nums.append(i)\n        "
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 288,
+      "text": "        return best_grid\n    \n    def get_slice_image_placeholder(self, image_size, image_idx=0, max_slice_nums=None, use_image_id=None):\n        max_slice_nums = self.max_slice_nums if max_slice_nums is None else int(max_slice_nums)\n        assert max_slice_nums > 0        \n        grid = self.get_sliced_grid(image_size=image_size, max_slice_nums=max_slice_nums)"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 289,
+      "text": "    \n    def get_slice_image_placeholder(self, image_size, image_idx=0, max_slice_nums=None, use_image_id=None):\n        max_slice_nums = self.max_slice_nums if max_slice_nums is None else int(max_slice_nums)\n        assert max_slice_nums > 0        \n        grid = self.get_sliced_grid(image_size=image_size, max_slice_nums=max_slice_nums)\n"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 290,
+      "text": "    def get_slice_image_placeholder(self, image_size, image_idx=0, max_slice_nums=None, use_image_id=None):\n        max_slice_nums = self.max_slice_nums if max_slice_nums is None else int(max_slice_nums)\n        assert max_slice_nums > 0        \n        grid = self.get_sliced_grid(image_size=image_size, max_slice_nums=max_slice_nums)\n\n        image_placeholder = ("
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 291,
+      "text": "        max_slice_nums = self.max_slice_nums if max_slice_nums is None else int(max_slice_nums)\n        assert max_slice_nums > 0        \n        grid = self.get_sliced_grid(image_size=image_size, max_slice_nums=max_slice_nums)\n\n        image_placeholder = (\n            self.im_start_token "
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 360,
+      "text": "            images: Union[Image.Image, List[Image.Image], List[List[Image.Image]]],\n            do_pad: Optional[bool] = True, # TODO: add pad for FM9G-Llama3-V-2_5\n            max_slice_nums: int = None,\n            return_tensors: Optional[Union[str, TensorType]] = None,\n            **kwargs\n        ) -> FM9GVBatchFeature:"
+    },
+    {
+      "file": "image_processing_fm9gv.py",
+      "line": 394,
+      "text": "            tgt_sizes = []\n            for image in _images:\n                image_patches = self.get_sliced_images(image, max_slice_nums)\n                image_patches = [to_numpy_array(image).astype(np.float32) / 255 for image in image_patches]\n                image_patches = [\n                    self.normalize(image=image, mean=self.mean, std=self.std, input_data_format=input_data_format)"
+    },
+    {
+      "file": "processing_fm9gv.py",
+      "line": 59,
+      "text": "        max_length: Optional[int] = None,\n        do_pad: Optional[bool] = True,\n        max_slice_nums: int = None,\n        use_image_id: bool = None,\n        return_tensors: Optional[Union[str, TensorType]] = TensorType.PYTORCH,\n        **kwargs"
+    },
+    {
+      "file": "processing_fm9gv.py",
+      "line": 66,
+      "text": "\n        if images is not None:\n            image_inputs = self.image_processor(images, do_pad=do_pad, max_slice_nums=max_slice_nums, return_tensors=return_tensors)\n        return self._convert_images_texts_to_inputs(image_inputs, text, max_slice_nums=max_slice_nums, use_image_id=use_image_id, max_length=max_length, **kwargs)\n    \n    # Copied from transformers.models.clip.processing_clip.CLIPProcessor.batch_decode with CLIP->Llama"
+    },
+    {
+      "file": "processing_fm9gv.py",
+      "line": 67,
+      "text": "        if images is not None:\n            image_inputs = self.image_processor(images, do_pad=do_pad, max_slice_nums=max_slice_nums, return_tensors=return_tensors)\n        return self._convert_images_texts_to_inputs(image_inputs, text, max_slice_nums=max_slice_nums, use_image_id=use_image_id, max_length=max_length, **kwargs)\n    \n    # Copied from transformers.models.clip.processing_clip.CLIPProcessor.batch_decode with CLIP->Llama\n    def batch_decode(self, *args, **kwargs):"
+    },
+    {
+      "file": "processing_fm9gv.py",
+      "line": 132,
+      "text": "            truncation=None, \n            max_length=None,\n            max_slice_nums=None,\n            use_image_id=None, \n            return_tensors=None,\n            **kwargs"
+    },
+    {
+      "file": "processing_fm9gv.py",
+      "line": 158,
+      "text": "                        image_sizes[index][i], \n                        i,\n                        max_slice_nums,\n                        use_image_id\n                    )\n            final_text += text_chunks[-1]"
+    },
+    {
+      "file": "configuration_fm9g.py",
+      "line": 180,
+      "text": "        try:\n            import flash_attn\n            self._attn_implementation = \"flash_attention_2\"\n        except:\n            pass\n"
+    },
+    {
+      "file": "configuration_fm9g.py",
+      "line": 212,
+      "text": "        self,\n        patch_size=14,\n        max_slice_nums=9,\n        scale_resolution=448,\n        **kwargs,\n    ):"
+    },
+    {
+      "file": "configuration_fm9g.py",
+      "line": 218,
+      "text": "        super().__init__(**kwargs)\n        self.patch_size = patch_size\n        self.max_slice_nums = max_slice_nums\n        self.scale_resolution = scale_resolution\n\n    @classmethod"
+    },
+    {
+      "file": "configuration_fm9g.py",
+      "line": 264,
+      "text": "        vision_config=None,\n        use_image_id=True,\n        vision_batch_size=16,\n        **kwargs,\n    ):\n        self.use_cache = use_cache"
+    },
+    {
+      "file": "configuration_fm9g.py",
+      "line": 273,
+      "text": "        self.batch_vision_input = batch_vision_input\n        self.use_image_id = use_image_id\n        self.vision_batch_size = vision_batch_size\n\n        if slice_config is None:\n            self.slice_config = FM9GVSliceConfig(max_slice_nums=1)"
+    },
+    {
+      "file": "configuration_fm9g.py",
+      "line": 276,
+      "text": "\n        if slice_config is None:\n            self.slice_config = FM9GVSliceConfig(max_slice_nums=1)\n        else:\n            self.slice_config = FM9GVSliceConfig(**slice_config)\n        self.slice_mode = True"
+    }
+  ]
+}

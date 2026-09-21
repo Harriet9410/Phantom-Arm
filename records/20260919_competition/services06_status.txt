@@ -1,0 +1,6 @@
+{
+  "launcher_log": "Traceback (most recent call last):\n  File \"/root/tcei_competition_20260919/start_services06.py\", line 12, in <module>\n    path=oldsim/(name+'.py');new=rel/'tcei_stack'/(name+'.py');assert path.read_bytes()==new.read_bytes();seen.append(name);tree=ast.parse(path.read_text())\nAssertionError\n",
+  "components_created": false,
+  "pids": {},
+  "nine_events": []
+}

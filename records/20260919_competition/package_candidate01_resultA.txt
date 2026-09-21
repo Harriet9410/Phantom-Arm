@@ -1,0 +1,64 @@
+{
+  "deployment_checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "scripts/verify_package.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"package\": \"2026TCEI机器臂部署@260920v2\",\n  \"files\": 99,\n  \"ok\": true,\n  \"mismatches\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "init",
+        "--display",
+        ":20",
+        "--data-root",
+        "/root/gpufree-data/tcei_package_validation01"
+      ],
+      "returncode": 0,
+      "stdout": "初始化完成。下一步：bash robot.sh doctor\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "doctor"
+      ],
+      "returncode": 0,
+      "stdout": "通过：/usr/bin/python3\n通过：/usr/bin/python3\n通过：/opt/conda/envs/yolov8/bin/python\n通过：/opt/conda/envs/inference/bin/python\n通过：xdpyinfo\n检查记录：/root/tcei_package_validation01/tcei_260920v2/state/doctor_1789845177428259952.json\n",
+      "stderr": ""
+    }
+  ],
+  "configuration": {
+    "package": "/root/tcei_package_validation01/tcei_260920v2",
+    "runtime": "dev_v7_t1_21",
+    "display": ":20",
+    "runs": "/root/gpufree-data/tcei_package_validation01",
+    "instance_id": "gpufree-container-1cfa699d5d46",
+    "free_bytes": 37026197504
+  },
+  "native_lossless_archive": {
+    "frames": 128,
+    "exact_bitwise_match": true,
+    "old_bytes": 133593469,
+    "new_bytes": 18769370,
+    "seconds": 56.63939593732357
+  },
+  "disk": {
+    "/root/tcei_package_validation01/tcei_260920v2": {
+      "total": 31526391808,
+      "used": 18341081088,
+      "free": 13168533504
+    },
+    "/root/gpufree-data/tcei_competition_20260919/pending21_A01/rgbd": {
+      "total": 52521566208,
+      "used": 15478591488,
+      "free": 37026197504
+    }
+  }
+}

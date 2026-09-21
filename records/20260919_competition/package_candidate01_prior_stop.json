@@ -1,0 +1,44 @@
+{
+  "state": "stopped",
+  "proof": {
+    "id": "9c17d7f2bcf24e68b50c00f36b582b5d",
+    "state": "stopped",
+    "reason": "external cancellation: closed pending21 fixture; begin normal package entry validation",
+    "seconds": 0.3155036009848118,
+    "fault_reason": null,
+    "max_joint_speed": 1.4305114000023916e-05,
+    "reported_max_joint_speed": 9.739304914546665e-06,
+    "velocity_source": "consecutive_physics_step_position_difference",
+    "solver_type": "TGS",
+    "physics_dt": 0.016666666666666666,
+    "sample_dt": 0.01666666753590107,
+    "joint_distance": 2.384185791015625e-07,
+    "tcp_distance": 1.3272744770811145e-07,
+    "stable_window_tcp_drift": 1.3272744770811145e-07,
+    "simulation_time": 1201.5833960007876,
+    "time": 1789845448.59069,
+    "measurement_protocol": "tcei.stop_measurement.v2",
+    "configuration_error": null
+  },
+  "mapping": {
+    "protocol": "tcei.cancel.v1",
+    "cancel_id": "3475cf9e35fd4a6baadf546e5c0a251a",
+    "request_round_id": "package_dea119448bfc49778c63d008fa327bd7",
+    "request_id": "package_cancel",
+    "state": "accepted",
+    "stop_id": "9c17d7f2bcf24e68b50c00f36b582b5d",
+    "mapping_revision": 0,
+    "affected_round_id": "round_2d8b4db5a88a421f96fb6b50e304b2d0",
+    "affected_request_id": "episode_60a7d76100594fc58f41beb64db90a96",
+    "monotonic": 16777596.70685966,
+    "time": 1789845448.2765071
+  },
+  "seconds": 0.33128054812550545,
+  "request": {
+    "protocol": "tcei.cancel.v1",
+    "cancel_id": "3475cf9e35fd4a6baadf546e5c0a251a",
+    "round_id": "package_dea119448bfc49778c63d008fa327bd7",
+    "request_id": "package_cancel",
+    "reason": "closed pending21 fixture; begin normal package entry validation"
+  }
+}

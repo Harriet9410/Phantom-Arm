@@ -1,0 +1,153 @@
+{
+  "reported_at": 1789853755.90626,
+  "batch": "official30_v23_01",
+  "status": "running",
+  "planned_rounds": 30,
+  "completed_rounds": 1,
+  "active_case": "official_random_02",
+  "runtime": "dev_v7_t1_23",
+  "runtime_manifest_sha256": "d30e305c4265573b1703bfeaf8fada90f6f14abd94330367a42ccd526b666a4b",
+  "campaign_sha256_at_read": "260fd1fd55a4864731ccf877fc95c5e65e20ec02962c0eb6ecb9efb6e58516b6",
+  "free_bytes": 29439877120,
+  "instructions": [
+    "抓取左上方的烟雾弹，放到左侧传送带",
+    "抓取右下方的弹夹，放到右侧传送带",
+    "抓取最左方的军用手电筒，放到左侧传送带",
+    "抓取手雷，放到右侧传送带",
+    "抓取剩余的物品，放到左侧传送带"
+  ],
+  "results": [
+    {
+      "case_id": "official_random_01",
+      "seed": 2026092001,
+      "status": "stopped",
+      "verified_objects": 1,
+      "independent_placements": 1,
+      "physical_completed": false,
+      "elapsed_seconds": 101.05882398411632,
+      "reason": "task stopped after rejected: unknown foreground may change the requested selection",
+      "commands": [
+        {
+          "phase": "start",
+          "returncode": 0,
+          "finished_at": 1789853574.3794107
+        },
+        {
+          "phase": "run",
+          "returncode": 1,
+          "finished_at": 1789853683.4773664
+        },
+        {
+          "phase": "stop",
+          "returncode": 0,
+          "finished_at": 1789853691.246513
+        }
+      ],
+      "code_changed_during_episode": [],
+      "counts": {
+        "attempt": 2,
+        "descend": 2,
+        "grasp_verified": 1,
+        "empty_grasp": 1,
+        "holding_feedback_lost": 0,
+        "drop_detected": 0,
+        "drop_recovery_completed": 1,
+        "model_answer": 2,
+        "repair_started": 0,
+        "grasp_orientation_rejected": 2,
+        "grasp_tilt_fallback_started": 0,
+        "placement_pending_verification": 0
+      },
+      "evidence_complete": true
+    }
+  ],
+  "active_event_counts": {
+    "judge_started": 1,
+    "ready": 3,
+    "observation_received": 1,
+    "observation_accepted": 1,
+    "round_started": 1,
+    "observation_started": 1,
+    "observation_preparation_started": 1,
+    "clear_basket_for_observation": 1,
+    "arrived": 6,
+    "observation_completed": 1,
+    "infer_started": 1,
+    "model_answer": 1,
+    "plan_published": 1,
+    "request_finished": 1,
+    "plan_accepted": 1,
+    "task_started": 1,
+    "grasp_evidence_preflight": 1,
+    "grasp_candidate_set": 1,
+    "attempt": 1,
+    "grasp_preview": 1,
+    "approach": 1,
+    "grasp_orientation_selected": 1,
+    "approach_clearance_verified": 1,
+    "occlusion_check": 1,
+    "controlled_self_occlusion": 1,
+    "descend": 1,
+    "grasp_preload_started": 1,
+    "grasp_preload": 1,
+    "grasp_contact_confirmed": 1,
+    "trial_lift_started": 1,
+    "trial_lift": 1,
+    "trial_lift_contact_evidence": 42,
+    "trial_lift_evidence": 26,
+    "grasp_verified": 1,
+    "lift_01_of_03": 1,
+    "lift_02_of_03": 1,
+    "lift_03_of_03": 1
+  },
+  "active_recent": [
+    {
+      "status": "lift_01_of_03",
+      "reason": null,
+      "time": 1789853752.0044167,
+      "tilt_deg": null
+    },
+    {
+      "status": "arrived",
+      "reason": null,
+      "time": 1789853753.7404296,
+      "tilt_deg": null
+    },
+    {
+      "status": "lift_02_of_03",
+      "reason": null,
+      "time": 1789853753.771869,
+      "tilt_deg": null
+    },
+    {
+      "status": "arrived",
+      "reason": null,
+      "time": 1789853755.4705815,
+      "tilt_deg": null
+    },
+    {
+      "status": "lift_03_of_03",
+      "reason": null,
+      "time": 1789853755.473981,
+      "tilt_deg": null
+    }
+  ],
+  "scene_initialized.json": {
+    "valid": true,
+    "case_id": "official_random_02",
+    "seed": 2026092002,
+    "settle_frames": 235,
+    "ready_for_read_only": null,
+    "error": null,
+    "errors": null
+  },
+  "read_only_ready.json": {
+    "valid": null,
+    "case_id": null,
+    "seed": null,
+    "settle_frames": null,
+    "ready_for_read_only": true,
+    "error": null,
+    "errors": []
+  }
+}

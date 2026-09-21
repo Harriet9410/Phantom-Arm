@@ -1,0 +1,18 @@
+{
+  "windows": [
+    "0x02e00049  0 0      956  203  1400 1120               N/A TCEI 联合核对：YOLO · 九格 · Isaac"
+  ],
+  "old_pid": "374772",
+  "old_alive": true,
+  "old_command": [
+    "/usr/bin/python3",
+    "-u",
+    "/root/tcei_competition_20260919/desktop_review_v3.py",
+    "--config",
+    "/root/tcei_competition_20260919/review_ui_02/config.json",
+    "--output",
+    "/root/tcei_competition_20260919/review_ui_03",
+    ""
+  ],
+  "new_ui_sha256": "ca4ae738c6bd37b5e8fdaacd435261e1d6f2e8d5dfe26335f587100806e51085"
+}

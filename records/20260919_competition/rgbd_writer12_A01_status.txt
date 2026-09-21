@@ -1,0 +1,86 @@
+{
+  "checked_at": 1789821351.324103,
+  "job": {
+    "pid": 382580,
+    "pgid": 382580,
+    "start_ticks": 1675328988,
+    "command": [
+      "/usr/bin/python3",
+      "/root/tcei_competition_20260919/record_trial_rgbd12.py",
+      "_output:=/root/tcei_competition_20260919/rgbd_writer12_A01/recording",
+      "_duration:=7",
+      "_capture_window_seconds:=6"
+    ],
+    "cwd": "/root/tcei_competition_20260919",
+    "log": "/root/tcei_competition_20260919/rgbd_writer12_A01/log.txt",
+    "started_at": 1789821141.4537976
+  },
+  "closed": {
+    "closed_at": 1789821148.9947932,
+    "receiving_ended_at": 1789821148.988451,
+    "maximum_duration_seconds": 7.0,
+    "stop_reason": "bounded_duration_or_ros_shutdown",
+    "recorded_pairs": 53,
+    "pending_pairs": 0,
+    "dropped_pairs": 0,
+    "write_errors": [],
+    "complete": true,
+    "capture_window_seconds": 6.0,
+    "depth_encoding": "float32_deflate_level1"
+  },
+  "log": "[INFO] [1789821141.932214]: read-only paired RGB-D recorder ready: /root/tcei_competition_20260919/rgbd_writer12_A01/recording\n",
+  "frames": 53,
+  "first_last": [
+    {
+      "captured_at": 1789821142.0095549,
+      "stamp": 1786.483426506,
+      "sync_delta": 0.0,
+      "camera": {
+        "K": [
+          1343.83203125,
+          0.0,
+          640.0,
+          0.0,
+          1343.83203125,
+          360.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "width": 1280,
+        "height": 720
+      },
+      "stem": "reference"
+    },
+    {
+      "captured_at": 1789821147.910502,
+      "stamp": 1791.450093431,
+      "sync_delta": 0.01666666800000005,
+      "camera": {
+        "K": [
+          1343.83203125,
+          0.0,
+          640.0,
+          0.0,
+          1343.83203125,
+          360.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "width": 1280,
+        "height": 720
+      },
+      "stem": "pair_0053"
+    }
+  ],
+  "last_depth": {
+    "shape": [
+      720,
+      1280
+    ],
+    "dtype": "float32",
+    "finite_pixels": 921600
+  },
+  "all_pairs_exist": true
+}

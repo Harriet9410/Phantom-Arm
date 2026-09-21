@@ -1,0 +1,28 @@
+[
+  {
+    "id": "case8_variant_0",
+    "valid": false,
+    "reason": "no guarded executable path: lift",
+    "seconds": 0.02062540128827095
+  },
+  {
+    "id": "case8_variant_180",
+    "valid": true,
+    "place": [
+      0.68,
+      0.15,
+      2.67
+    ],
+    "checked_points": 905,
+    "checked_stages": [
+      "approach_ik",
+      "descend",
+      "lift",
+      "transfer",
+      "place_above",
+      "place_descend"
+    ],
+    "limitation": "Kinematic, joint-bound, attitude and existing link/table guards; not full mesh collision certification.",
+    "seconds": 0.1018059253692627
+  }
+]

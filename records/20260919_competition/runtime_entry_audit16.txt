@@ -1,0 +1,152 @@
+{
+  "checked_at": 1789828858.4104578,
+  "full16_job.json": {
+    "pid": 438111,
+    "started_at": 1789828738.3022754,
+    "source_sha256": "422aa5b6b962d57e11ffc730b99618e817a3bed6a7ba78dc1ad249e5d65db727"
+  },
+  "full16_launcher_result.json": {
+    "returncode": 0,
+    "finished_at": 1789828768.5922105,
+    "run": "official16_stack01"
+  },
+  "full16_stop_prior.json": [
+    {
+      "name": "nine",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official15_stack01/pids/nine.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "controller",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official15_stack01/pids/controller.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "perception",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official15_stack01/pids/perception.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "sim",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official15_stack01/pids/sim.json\n",
+      "stderr": ""
+    }
+  ],
+  "processes": {
+    "nine": {
+      "live": true,
+      "record": {
+        "pid": 438419,
+        "pgid": 438419,
+        "start_ticks": 1676089670,
+        "command": [
+          "/opt/conda/envs/inference/bin/python",
+          "-u",
+          "/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack/nine_node.py",
+          "_execute:=false",
+          "_model_path:=/root/inference/FM9G4B-V",
+          "_log_dir:=/root/gpufree-data/tcei_competition_20260919/official16_stack01/events"
+        ],
+        "cwd": "/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack",
+        "log": "/root/gpufree-data/tcei_competition_20260919/official16_stack01/logs/nine.log",
+        "started_at": 1789828748.2741513
+      }
+    },
+    "sim": {
+      "live": true,
+      "record": {
+        "pid": 438279,
+        "pgid": 438279,
+        "start_ticks": 1676089639,
+        "command": [
+          "/root/isaacsim/python.sh",
+          "/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack/sim_with_feedback.py"
+        ],
+        "cwd": "/root/EAICON",
+        "log": "/root/gpufree-data/tcei_competition_20260919/official16_stack01/logs/sim.log",
+        "started_at": 1789828747.9631937
+      }
+    },
+    "perception": {
+      "live": true,
+      "record": {
+        "pid": 438352,
+        "pgid": 438352,
+        "start_ticks": 1676089651,
+        "command": [
+          "/opt/conda/envs/yolov8/bin/python",
+          "-u",
+          "/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack/perception.py",
+          "_show_gui:=false",
+          "_weights:=/root/jaka/best.pt"
+        ],
+        "cwd": "/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack",
+        "log": "/root/gpufree-data/tcei_competition_20260919/official16_stack01/logs/perception.log",
+        "started_at": 1789828748.088226
+      }
+    },
+    "controller": {
+      "live": true,
+      "record": {
+        "pid": 438287,
+        "pgid": 438287,
+        "start_ticks": 1676089643,
+        "command": [
+          "/usr/bin/python3",
+          "-u",
+          "/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack/controller.py",
+          "_execute:=false",
+          "_prepare_observation:=false",
+          "_require_planner_feedback:=true",
+          "_log_dir:=/root/gpufree-data/tcei_competition_20260919/official16_stack01/events",
+          "_robot_projection_calibration:=/root/tcei_competition_20260919/releases/dev_v7_t1_16/calibration/robot_projection.static_checked_v1.json"
+        ],
+        "cwd": "/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack",
+        "log": "/root/gpufree-data/tcei_competition_20260919/official16_stack01/logs/controller.log",
+        "started_at": 1789828748.0077302
+      }
+    }
+  },
+  "official_sources": {
+    "EAICON/run_jaka_sim.sh": {
+      "exists": true,
+      "sha256": "991b3c1f5eae3e166bde1bf8620267c06c8da80cc48df6843108e6094a6020ad",
+      "content": "#!/bin/sh\n\n$ISAACSIM_PYTHON_EXE Source/JAKA/jaka_sim.py"
+    },
+    "EAICON/Source/JAKA/jaka_sim.py": {
+      "exists": true,
+      "sha256": "3920585e40abe39ce57d08a90ef921a3f651fd93a19b62796c840075ce1a6c94"
+    },
+    "EAICON/Source/JAKA/jaka_env.py": {
+      "exists": true,
+      "sha256": "95aed5f5b9bb919ef480fd504c411f57b76f9510582ea40f1f49611203bc5e9a"
+    },
+    "jaka/src/large_scale_model_arm/scripts/isaac_yolov8.py": {
+      "exists": true,
+      "sha256": "9f021921be7bd13f8903a3ad48840b9ac857bc1fcd780f427cbc869ec7f132f9"
+    },
+    "jaka/src/large_scale_model_arm/scripts/isaac_scale.py": {
+      "exists": true,
+      "sha256": "829a7d89a59785cd59b4ee0717b9e4b72b59a5447bc581570df7fb091a93c788"
+    },
+    "jaka/src/jaka_arm/src/isaac_grasp.cpp": {
+      "exists": true,
+      "sha256": "07e5484f9dfa8eb90f05e9b00e2792d808e25c97f94beec33b3061821624919b"
+    },
+    "jaka/src/large_scale_model_arm/launch/isaac_jaka.launch": {
+      "exists": true,
+      "sha256": "578c3d384d5193b7bf881b415340e3d0768943c02242b015e5de5e586392f105",
+      "content": "<launch>\n  <!-- <node pkg=\"large_scale_model_arm\" type=\"isaac_yolov8.py\" name=\"isaac_yolov8\" output=\"screen\" /> -->\n  <!-- <node pkg=\"large_scale_model_arm\" type=\"isaac_scale.py\" name=\"isaac_scale\" output=\"screen\" /> -->\n  <node pkg=\"large_scale_model_arm\" type=\"isaac_yolov8\" name=\"isaac_yolov8\" output=\"screen\" />\n  <node pkg=\"jaka_arm\" type=\"isaac_grasp\" name=\"isaac_grasp\" output=\"screen\" />\n\n</launch>\n"
+    }
+  },
+  "log_tail": [
+    "{\"pid\": 438419, \"pgid\": 438419, \"start_ticks\": 1676089670, \"command\": [\"/opt/conda/envs/inference/bin/python\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_16/tcei_stack/nine_node.py\", \"_execute:=false\", \"_model_path:=/root/inference/FM9G4B-V\", \"_log_dir:=/root/gpufree-data/tcei_competi",
+    "{\"ready_for_read_only\": true, \"errors\": [], \"time\": 1789828767.924603, \"mode\": \"read_only_no_action\", \"observations\": {\"controller\": {\"time\": 1789828749.50706, \"monotonic\": 16760897.937413394, \"request_id\": null, \"round_id\": null, \"task_id\": null, \"status\": \"ready\", \"code_sha256\": \"585cb8ffb30be0779",
+    "{\"run_dir\": \"/root/gpufree-data/tcei_competition_20260919/official16_stack01\", \"mode\": \"no_action_warmup\", \"execution_enabled\": false}",
+    "FULL16_WARMUP_COMPLETE"
+  ]
+}

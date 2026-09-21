@@ -1,0 +1,52 @@
+{
+  "checked_at": 1789782515.9636295,
+  "launcher_pid": 155130,
+  "launcher_state": "absent",
+  "warmup_complete": true,
+  "ready_for_read_only": true,
+  "errors": [],
+  "candidate_count": 5,
+  "grasp_capability": false,
+  "inference_configuration": {
+    "vision_batch_size": 1,
+    "vision_batch_size_source": "model.config.vision_batch_size",
+    "num_beams": 1,
+    "num_beams_source": "explicit_chat_kwarg",
+    "max_slice_nums": 9,
+    "max_slice_nums_source": "model.config.slice_config.max_slice_nums",
+    "max_slice_nums_override": null,
+    "full_image_preserved": true,
+    "sampling": false,
+    "max_new_tokens": 400,
+    "model_dtype": "torch.bfloat16",
+    "configuration_scope": "validated_once_at_node_start"
+  },
+  "children": {
+    "nine": {
+      "pid": 155327,
+      "alive": true
+    },
+    "sim": {
+      "pid": 155187,
+      "alive": true
+    },
+    "perception": {
+      "pid": 155261,
+      "alive": true
+    },
+    "controller": {
+      "pid": 155209,
+      "alive": true
+    }
+  },
+  "launcher_tail": [
+    "  \"conflicts\": []",
+    "}",
+    "{\"pid\": 155187, \"pgid\": 155187, \"start_ticks\": 1671452615, \"command\": [\"/root/isaacsim/python.sh\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_04/tcei_stack/sim_with_feedback.py\"], \"cwd\": \"/root/EAICON\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/no_action04_01/logs/sim.log\", \"started_at\": 1789782377.7288742}",
+    "{\"pid\": 155209, \"pgid\": 155209, \"start_ticks\": 1671452620, \"command\": [\"/usr/bin/python3\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_04/tcei_stack/controller.py\", \"_execute:=false\", \"_prepare_observation:=false\", \"_require_planner_feedback:=true\", \"_log_dir:=/root/gpufree-data/tcei_competition_20260919/no_action04_01/events\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_04/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/no_action04_01/logs/control",
+    "{\"pid\": 155261, \"pgid\": 155261, \"start_ticks\": 1671452632, \"command\": [\"/opt/conda/envs/yolov8/bin/python\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_04/tcei_stack/perception.py\", \"_show_gui:=false\", \"_weights:=/root/jaka/best.pt\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_04/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/no_action04_01/logs/perception.log\", \"started_at\": 1789782377.9708846}",
+    "{\"pid\": 155327, \"pgid\": 155327, \"start_ticks\": 1671452644, \"command\": [\"/opt/conda/envs/inference/bin/python\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_04/tcei_stack/nine_node.py\", \"_execute:=false\", \"_model_path:=/root/inference/FM9G4B-V\", \"_log_dir:=/root/gpufree-data/tcei_competition_20260919/no_action04_01/events\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_04/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/no_action04_01/logs/nine.log\", \"s",
+    "{\"ready_for_read_only\": true, \"errors\": [], \"time\": 1789782396.500738, \"mode\": \"read_only_no_action\", \"observations\": {\"controller\": {\"time\": 1789782379.0345411, \"monotonic\": 16714527.464894569, \"request_id\": null, \"round_id\": null, \"task_id\": null, \"status\": \"ready\", \"code_sha256\": \"0b71f67b6deaf8d599a658186b40836f9c23b74e6e14b309c9bc6811361d2dba\", \"execute\": false, \"lift_evidence_capable\": false, \"lift_evidence_capability_reason\": \"robot_projection_calibration_not_configured\"}, \"nine\": {\"time\"",
+    "{\"run_dir\": \"/root/gpufree-data/tcei_competition_20260919/no_action04_01\", \"mode\": \"no_action_warmup\", \"execution_enabled\": false}"
+  ]
+}

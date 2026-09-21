@@ -1,0 +1,234 @@
+{
+  "pid": 140301,
+  "state": "absent",
+  "result": {
+    "status": "model_answer",
+    "vision_batch_size": 1,
+    "num_beams": 1,
+    "generation_do_sample": false,
+    "max_slice_nums": 9,
+    "vision_attention": "eager",
+    "language_attention": "sdpa",
+    "image_size": [
+      1280,
+      720
+    ],
+    "answer": "```json\n{\"schema_version\": 2, \"class\": \"Smokegrenade\", \"side\": \"left\", \"count\": \"1\", \"ids\": [\"1\"], \"intent\": \"category\", \"spatial\": \"upper-left\", \"reference\": \"camera_image\", \"quantity\": \"exact\", \"status\": \"ready\", \"reason\": \"\"}\n```",
+    "elapsed_seconds": 5.435941595584154,
+    "error": null,
+    "traceback": null,
+    "memory_events": [
+      {
+        "phase": "loaded",
+        "wall_time": 1789779719.6158192,
+        "allocated": 9722566144,
+        "reserved": 9747562496,
+        "peak_allocated": 9722566144,
+        "free_device": 10466295808
+      },
+      {
+        "phase": "vision_before",
+        "wall_time": 1789779720.0275016,
+        "allocated": 9749041152,
+        "reserved": 9787408384,
+        "peak_allocated": 9766032384,
+        "free_device": 10361438208,
+        "input_shape": [
+          1,
+          3,
+          14,
+          14448
+        ]
+      },
+      {
+        "phase": "vision_after",
+        "wall_time": 1789779720.3683782,
+        "allocated": 9760782336,
+        "reserved": 10020192256,
+        "peak_allocated": 9945163776,
+        "free_device": 10101391360,
+        "output_shape": [
+          1,
+          1032,
+          1152
+        ]
+      },
+      {
+        "phase": "vision_before",
+        "wall_time": 1789779720.3691921,
+        "allocated": 9760782336,
+        "reserved": 10020192256,
+        "peak_allocated": 9945163776,
+        "free_device": 10101391360,
+        "input_shape": [
+          1,
+          3,
+          14,
+          14448
+        ]
+      },
+      {
+        "phase": "vision_after",
+        "wall_time": 1789779720.3941252,
+        "allocated": 9763160064,
+        "reserved": 10020192256,
+        "peak_allocated": 9949671936,
+        "free_device": 10101391360,
+        "output_shape": [
+          1,
+          1032,
+          1152
+        ]
+      },
+      {
+        "phase": "vision_before",
+        "wall_time": 1789779720.3948684,
+        "allocated": 9763160064,
+        "reserved": 10020192256,
+        "peak_allocated": 9949671936,
+        "free_device": 10101391360,
+        "input_shape": [
+          1,
+          3,
+          14,
+          14448
+        ]
+      },
+      {
+        "phase": "vision_after",
+        "wall_time": 1789779720.4262981,
+        "allocated": 9765537792,
+        "reserved": 10020192256,
+        "peak_allocated": 9952544256,
+        "free_device": 10101391360,
+        "output_shape": [
+          1,
+          1032,
+          1152
+        ]
+      },
+      {
+        "phase": "vision_before",
+        "wall_time": 1789779720.4271348,
+        "allocated": 9765537792,
+        "reserved": 10020192256,
+        "peak_allocated": 9952544256,
+        "free_device": 10101391360,
+        "input_shape": [
+          1,
+          3,
+          14,
+          14448
+        ]
+      },
+      {
+        "phase": "vision_after",
+        "wall_time": 1789779720.457269,
+        "allocated": 9767915520,
+        "reserved": 10020192256,
+        "peak_allocated": 9954674688,
+        "free_device": 10101391360,
+        "output_shape": [
+          1,
+          1032,
+          1152
+        ]
+      },
+      {
+        "phase": "vision_before",
+        "wall_time": 1789779720.4579377,
+        "allocated": 9767915520,
+        "reserved": 10020192256,
+        "peak_allocated": 9954674688,
+        "free_device": 10101391360,
+        "input_shape": [
+          1,
+          3,
+          14,
+          14448
+        ]
+      },
+      {
+        "phase": "vision_after",
+        "wall_time": 1789779720.4885037,
+        "allocated": 9770293248,
+        "reserved": 10089398272,
+        "peak_allocated": 9958344192,
+        "free_device": 10032185344,
+        "output_shape": [
+          1,
+          1032,
+          1152
+        ]
+      },
+      {
+        "phase": "vision_before",
+        "wall_time": 1789779720.4891915,
+        "allocated": 9770293248,
+        "reserved": 10089398272,
+        "peak_allocated": 9958344192,
+        "free_device": 10032185344,
+        "input_shape": [
+          1,
+          3,
+          14,
+          14448
+        ]
+      },
+      {
+        "phase": "vision_after",
+        "wall_time": 1789779720.5141022,
+        "allocated": 9772670976,
+        "reserved": 10089398272,
+        "peak_allocated": 9960721920,
+        "free_device": 10032185344,
+        "output_shape": [
+          1,
+          1032,
+          1152
+        ]
+      },
+      {
+        "phase": "vision_before",
+        "wall_time": 1789779720.5147312,
+        "allocated": 9772670976,
+        "reserved": 10089398272,
+        "peak_allocated": 9960721920,
+        "free_device": 10032185344,
+        "input_shape": [
+          1,
+          3,
+          14,
+          14448
+        ]
+      },
+      {
+        "phase": "vision_after",
+        "wall_time": 1789779720.5488715,
+        "allocated": 9775296000,
+        "reserved": 10089398272,
+        "peak_allocated": 9962852352,
+        "free_device": 10032185344,
+        "output_shape": [
+          1,
+          1032,
+          1152
+        ]
+      },
+      {
+        "phase": "completed",
+        "wall_time": 1789779725.053673,
+        "allocated": 9731085824,
+        "reserved": 15443427328,
+        "peak_allocated": 13961560064,
+        "free_device": 4676059136
+      }
+    ]
+  },
+  "log_tail": [
+    "MEMORY {\"phase\": \"vision_after\", \"wall_time\": 1789779720.5488715, \"allocated\": 9775296000, \"reserved\": 10089398272, \"peak_allocated\": 9962852352, \"free_device\": 10032185344, \"output_shape\": [1, 1032, 1152]}",
+    "The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.",
+    "MEMORY {\"phase\": \"completed\", \"wall_time\": 1789779725.053673, \"allocated\": 9731085824, \"reserved\": 15443427328, \"peak_allocated\": 13961560064, \"free_device\": 4676059136}",
+    "PROBE_COMPLETE model_answer"
+  ]
+}

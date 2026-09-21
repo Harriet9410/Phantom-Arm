@@ -1,0 +1,2771 @@
+{
+  "checked_at": 1789829094.3394513,
+  "supervisor_job.json": {
+    "pid": 441339,
+    "started_at": 1789828987.4663334,
+    "source_sha256": "50106065fa7b4f9c94727649bbdcf2c5d469fa7a52247028f7236cd8e8f5a29d"
+  },
+  "supervisor_finished.json": null,
+  "supervisor_aborted.json": null,
+  "episode/summary.json": null,
+  "counts": {
+    "judge_started": 1,
+    "ready": 3,
+    "observation_received": 1,
+    "observation_accepted": 1,
+    "round_started": 1,
+    "observation_started": 1,
+    "observation_preparation_started": 1,
+    "clear_basket_for_observation": 1,
+    "arrived": 30,
+    "observation_completed": 1,
+    "infer_started": 2,
+    "model_answer": 2,
+    "plan_published": 2,
+    "plan_accepted": 2,
+    "request_finished": 2,
+    "task_started": 2,
+    "grasp_evidence_preflight": 4,
+    "grasp_candidate_set": 4,
+    "attempt": 4,
+    "grasp_preview": 4,
+    "approach": 4,
+    "grasp_orientation_selected": 4,
+    "approach_clearance_verified": 4,
+    "occlusion_check": 4,
+    "controlled_self_occlusion": 4,
+    "descend": 4,
+    "grasp_contact_confirmed": 4,
+    "trial_lift_started": 4,
+    "trial_lift": 4,
+    "trial_lift_contact_evidence": 130,
+    "trial_lift_evidence": 92,
+    "holding_feedback_lost": 3,
+    "grasp_attempt_outcome": 4,
+    "stop_ack": 19,
+    "drop_recovery_started": 3,
+    "controlled_stop_requested": 3,
+    "controlled_stop_verified": 3,
+    "controlled_stop_reset": 3,
+    "drop_recovery_vertical_escape": 3,
+    "drop_recovery_observation": 3,
+    "drop_recovery_reacquired": 2,
+    "grasp_verified": 1,
+    "lift_01_of_03": 1,
+    "lift_02_of_03": 1,
+    "lift_03_of_03": 1,
+    "transfer_clearance_01_of_03": 1,
+    "transfer_clearance_02_of_03": 1,
+    "transfer_clearance_03_of_03": 1,
+    "place_above_01_of_06": 1,
+    "place_above_02_of_06": 1,
+    "place_above_03_of_06": 1,
+    "place_above_04_of_06": 1,
+    "place_above_05_of_06": 1,
+    "place_above_06_of_06": 1,
+    "place_descend": 1,
+    "release_started": 1,
+    "released": 1,
+    "place_retreat": 1,
+    "return_home": 1,
+    "placement_verified": 1,
+    "drop_recovery_completed": 1,
+    "task_succeeded": 1,
+    "grasp_candidate_skipped": 1
+  },
+  "key_events": [
+    {
+      "time": 1789829005.7004805,
+      "monotonic": 16761154.130833415,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "occlusion_check",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "short_age": true,
+      "tool_above": true,
+      "confidence": 0.9167182445526123,
+      "occluder_depth": 1.6663312911987305,
+      "unchanged_references": 3,
+      "hidden_references": 1,
+      "depth_references": 0,
+      "total_references": 4,
+      "frame_id": 2251,
+      "image_stamp": 209.966677617,
+      "depth_stamp": 209.966677617,
+      "reason": "accepted",
+      "scene_age_seconds": 0.5509397983551025,
+      "cached_depth_stamps": [
+        208.100010853,
+        210.466677643
+      ],
+      "wait_seconds": 0.799716878682375,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761154.131519131
+    },
+    {
+      "time": 1789829011.0697062,
+      "monotonic": 16761159.500059629,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "grasp_contact_confirmed",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "command": 0.017250000000000012,
+      "contact_efforts": [
+        7.737278938293457,
+        8.23118782043457
+      ],
+      "stable_sim_seconds": 0.46666669100000036,
+      "fresh_contact_samples": 29,
+      "joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "measured_joint_positions": [
+        -0.17937998473644257,
+        0.3892960846424103,
+        -0.7353359460830688,
+        -1.9167487621307373,
+        1.570555329322815,
+        0.1344759166240692,
+        0.017248300835490227,
+        0.017116831615567207
+      ],
+      "native_contact": {
+        "state": "holding",
+        "contact_lost": false,
+        "retained_support": true,
+        "stable_contact": false,
+        "efforts": [
+          7.737278938293457,
+          8.23118782043457
+        ],
+        "sensor_stamps": [
+          213.93334449082613,
+          213.93334449082613
+        ],
+        "high_samples": 1,
+        "high_seconds": 0.0,
+        "low_samples": 0,
+        "low_seconds": 0.0,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "position_lead_limit": 0.002,
+      "position_lead_limit_calibrated": false,
+      "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761159.502009708
+    },
+    {
+      "time": 1789829012.8407497,
+      "monotonic": 16761161.271102874,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "holding_feedback_lost",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "phase": "trial_lift",
+      "proof": {
+        "state": "contact_lost",
+        "contact_lost": true,
+        "retained_support": false,
+        "stable_contact": false,
+        "efforts": [
+          0.0004211515188217163,
+          -0.0008391567971557379
+        ],
+        "sensor_stamps": [
+          214.8833445403725,
+          214.8833445403725
+        ],
+        "high_samples": 0,
+        "high_seconds": 0.0,
+        "low_samples": 37,
+        "low_seconds": 0.6000000312924385,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "stable_id": "eeab4146-obj-0006",
+      "side": "left",
+      "category": "Smokegrenade",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761161.271520734
+    },
+    {
+      "time": 1789829012.8443136,
+      "monotonic": 16761161.274666926,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "drop_recovery_started",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "recovery": 1,
+      "category": "Smokegrenade",
+      "reason": "sustained contact support lost during trial_lift",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761161.31609964
+    },
+    {
+      "time": 1789829021.123444,
+      "monotonic": 16761169.553797228,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "drop_recovery_reacquired",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "recovery": 1,
+      "candidate": {
+        "class": "Smokegrenade",
+        "raw_class": "Smokegrenade",
+        "confidence": 0.9339821338653564,
+        "bbox": [
+          487,
+          173,
+          511,
+          230
+        ],
+        "recognition_rotation_deg": 0.0,
+        "pixel": [
+          498.5,
+          202.125
+        ],
+        "depth": 2.093924045562744,
+        "depth_spread": 0.0018985271453857422,
+        "world_position": [
+          0.22048161195527263,
+          -0.14599671015857713,
+          2.406075954437256
+        ],
+        "support_z": 2.3721234798431396,
+        "angle_deg": -3.8249365809306397,
+        "body_axis_deg": 86.17506341906936,
+        "axis_ratio": 8.767639370467368,
+        "grasp_point_method": "depth_body_center_and_axis",
+        "area": 1158,
+        "depth_reference": [
+          [
+            494,
+            176,
+            2.10437
+          ],
+          [
+            498,
+            179,
+            2.10496
+          ],
+          [
+            497,
+            182,
+            2.09227
+          ],
+          [
+            492,
+            185,
+            2.09477
+          ],
+          [
+            502,
+            186,
+            2.09462
+          ],
+          [
+            494,
+            188,
+            2.09352
+          ],
+          [
+            501,
+            189,
+            2.09392
+          ],
+          [
+            493,
+            191,
+            2.09406
+          ],
+          [
+            500,
+            192,
+            2.09336
+          ],
+          [
+            492,
+            194,
+            2.09492
+          ],
+          [
+            499,
+            195,
+            2.09302
+          ],
+          [
+            506,
+            196,
+            2.09874
+          ],
+          [
+            498,
+            198,
+            2.09278
+          ],
+          [
+            505,
+            199,
+            2.09719
+          ],
+          [
+            497,
+            201,
+            2.09277
+          ],
+          [
+            504,
+            202,
+            2.09584
+          ],
+          [
+            496,
+            204,
+            2.09287
+          ],
+          [
+            503,
+            205,
+            2.0949
+          ],
+          [
+            495,
+            207,
+            2.0932
+          ],
+          [
+            502,
+            208,
+            2.09405
+          ],
+          [
+            494,
+            210,
+            2.09365
+          ],
+          [
+            501,
+            211,
+            2.09348
+          ],
+          [
+            492,
+            213,
+            2.09524
+          ],
+          [
+            500,
+            214,
+            2.09299
+          ],
+          [
+            491,
+            216,
+            2.09664
+          ],
+          [
+            499,
+            217,
+            2.09276
+          ],
+          [
+            506,
+            218,
+            2.09766
+          ],
+          [
+            496,
+            220,
+            2.09284
+          ],
+          [
+            503,
+            221,
+            2.09443
+          ],
+          [
+            495,
+            223,
+            2.0933
+          ],
+          [
+            502,
+            224,
+            2.09372
+          ],
+          [
+            507,
+            226,
+            2.09885
+          ]
+        ],
+        "surface_reference": [
+          [
+            492,
+            175,
+            2.104067
+          ],
+          [
+            490,
+            179,
+            2.103397
+          ],
+          [
+            492,
+            180,
+            2.104015
+          ],
+          [
+            490,
+            182,
+            2.103683
+          ],
+          [
+            491,
+            183,
+            2.094869
+          ],
+          [
+            492,
+            184,
+            2.094755
+          ],
+          [
+            490,
+            186,
+            2.097034
+          ],
+          [
+            492,
+            187,
+            2.094805
+          ],
+          [
+            494,
+            174,
+            2.104389
+          ],
+          [
+            493,
+            176,
+            2.104213
+          ],
+          [
+            493,
+            178,
+            2.104192
+          ],
+          [
+            493,
+            180,
+            2.10417
+          ],
+          [
+            498,
+            181,
+            2.104941
+          ],
+          [
+            498,
+            183,
+            2.092796
+          ],
+          [
+            498,
+            185,
+            2.092933
+          ],
+          [
+            498,
+            187,
+            2.09291
+          ],
+          [
+            499,
+            174,
+            2.105168
+          ],
+          [
+            499,
+            177,
+            2.105137
+          ],
+          [
+            500,
+            180,
+            2.10636
+          ],
+          [
+            500,
+            183,
+            2.093381
+          ],
+          [
+            502,
+            184,
+            2.094677
+          ],
+          [
+            502,
+            185,
+            2.094647
+          ],
+          [
+            503,
+            186,
+            2.095464
+          ],
+          [
+            504,
+            187,
+            2.096425
+          ],
+          [
+            505,
+            184,
+            2.097803
+          ],
+          [
+            507,
+            184,
+            2.101353
+          ],
+          [
+            505,
+            185,
+            2.097761
+          ],
+          [
+            507,
+            185,
+            2.101273
+          ],
+          [
+            505,
+            186,
+            2.09772
+          ],
+          [
+            507,
+            186,
+            2.101193
+          ],
+          [
+            505,
+            187,
+            2.09768
+          ],
+          [
+            508,
+            187,
+            2.103759
+          ],
+          [
+            489,
+            188,
+            2.098926
+          ],
+          [
+            492,
+            189,
+            2.094839
+          ],
+          [
+            492,
+            191,
+            2.094872
+          ],
+          [
+            492,
+            193,
+            2.094906
+          ],
+          [
+            492,
+            195,
+            2.09494
+          ],
+          [
+            492,
+            197,
+            2.094974
+          ],
+          [
+            492,
+            199,
+            2.095007
+          ],
+          [
+            492,
+            201,
+            2.095041
+          ],
+          [
+            493,
+            188,
+            2.094005
+          ],
+          [
+            498,
+            189,
+            2.092887
+          ],
+          [
+            498,
+            191,
+            2.092864
+          ],
+          [
+            498,
+            193,
+            2.092841
+          ],
+          [
+            498,
+            195,
+            2.092818
+          ],
+          [
+            498,
+            197,
+            2.092794
+          ],
+          [
+            498,
+            199,
+            2.092771
+          ],
+          [
+            498,
+            201,
+            2.092748
+          ],
+          [
+            499,
+            188,
+            2.093096
+          ],
+          [
+            504,
+            189,
+            2.096343
+          ],
+          [
+            504,
+            191,
+            2.09626
+          ],
+          [
+            504,
+            193,
+            2.096178
+          ],
+          [
+            504,
+            195,
+            2.096097
+          ],
+          [
+            504,
+            197,
+            2.096014
+          ],
+          [
+            504,
+            199,
+            2.095932
+          ],
+          [
+            504,
+            201,
+            2.095866
+          ],
+          [
+            505,
+            188,
+            2.097638
+          ],
+          [
+            508,
+            189,
+            2.103599
+          ],
+          [
+            508,
+            191,
+            2.103439
+          ],
+          [
+            508,
+            193,
+            2.103279
+          ],
+          [
+            508,
+            195,
+            2.103119
+          ],
+          [
+            508,
+            197,
+            2.102959
+          ],
+          [
+            508,
+            199,
+            2.102799
+          ],
+          [
+            508,
+            201,
+            2.102638
+          ],
+          [
+            489,
+            202,
+            2.099642
+          ],
+          [
+            492,
+            203,
+            2.095075
+          ],
+          [
+            492,
+            205,
+            2.095108
+          ],
+          [
+            492,
+            207,
+            2.095142
+          ],
+          [
+            492,
+            209,
+            2.095176
+          ],
+          [
+            492,
+            211,
+            2.095209
+          ],
+          [
+            492,
+            213,
+            2.095243
+          ],
+          [
+            492,
+            215,
+            2.095297
+          ],
+          [
+            493,
+            202,
+            2.094241
+          ],
+          [
+            498,
+            203,
+            2.092726
+          ],
+          [
+            498,
+            205,
+            2.092703
+          ],
+          [
+            498,
+            207,
+            2.09268
+          ],
+          [
+            498,
+            209,
+            2.092657
+          ],
+          [
+            498,
+            211,
+            2.092633
+          ],
+          [
+            498,
+            213,
+            2.092625
+          ],
+          [
+            498,
+            215,
+            2.092619
+          ],
+          [
+            499,
+            202,
+            2.092935
+          ],
+          [
+            504,
+            203,
+            2.095807
+          ],
+          [
+            504,
+            205,
+            2.095748
+          ],
+          [
+            504,
+            207,
+            2.095689
+          ],
+          [
+            504,
+            209,
+            2.095629
+          ],
+          [
+            504,
+            211,
+            2.09557
+          ],
+          [
+            504,
+            213,
+            2.09551
+          ],
+          [
+            504,
+            215,
+            2.095451
+          ],
+          [
+            505,
+            202,
+            2.097063
+          ],
+          [
+            508,
+            203,
+            2.102479
+          ],
+          [
+            508,
+            205,
+            2.102319
+          ],
+          [
+            508,
+            207,
+            2.102159
+          ],
+          [
+            508,
+            209,
+            2.101999
+          ],
+          [
+            508,
+            211,
+            2.101839
+          ],
+          [
+            508,
+            213,
+            2.101679
+          ],
+          [
+            508,
+            215,
+            2.101519
+          ],
+          [
+            489,
+            216,
+            2.100666
+          ],
+          [
+            491,
+            217,
+            2.096671
+          ],
+          [
+            489,
+            219,
+            2.10093
+          ],
+          [
+            491,
+            220,
+            2.096763
+          ],
+          [
+            491,
+            222,
+            2.096825
+          ],
+          [
+            491,
+            224,
+            2.096886
+          ],
+          [
+            491,
+            226,
+            2.096947
+          ],
+          [
+            492,
+            228,
+            2.096318
+          ],
+          [
+            493,
+            216,
+            2.094476
+          ],
+          [
+            497,
+            217,
+            2.09272
+          ],
+          [
+            495,
+            219,
+            2.093273
+          ],
+          [
+            493,
+            221,
+            2.09456
+          ],
+          [
+            498,
+            222,
+            2.092598
+          ],
+          [
+            496,
+            224,
+            2.092869
+          ],
+          [
+            494,
+            226,
+            2.093827
+          ],
+          [
+            493,
+            228,
+            2.110641
+          ],
+          [
+            499,
+            216,
+            2.092774
+          ],
+          [
+            503,
+            217,
+            2.094545
+          ],
+          [
+            501,
+            219,
+            2.093318
+          ],
+          [
+            499,
+            221,
+            2.092716
+          ],
+          [
+            503,
+            222,
+            2.094397
+          ],
+          [
+            501,
+            224,
+            2.093218
+          ],
+          [
+            499,
+            226,
+            2.092659
+          ],
+          [
+            504,
+            227,
+            2.094397
+          ],
+          [
+            505,
+            216,
+            2.096488
+          ],
+          [
+            505,
+            218,
+            2.096406
+          ],
+          [
+            508,
+            219,
+            2.101199
+          ],
+          [
+            507,
+            221,
+            2.099131
+          ],
+          [
+            505,
+            223,
+            2.096201
+          ],
+          [
+            509,
+            224,
+            2.103446
+          ],
+          [
+            507,
+            226,
+            2.09885
+          ],
+          [
+            508,
+            228,
+            2.117027
+          ]
+        ],
+        "surface_reference_meta": {
+          "grid": [
+            4,
+            4
+          ],
+          "max_per_cell": 8,
+          "intrinsics": [
+            1343.83203125,
+            0.0,
+            640.0,
+            0.0,
+            1343.83203125,
+            360.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "coordinate_system": "optical_pixels_and_depth_m",
+          "source": "current_rgbd_body_surface",
+          "image_size": [
+            1280,
+            720
+          ],
+          "edge_exclusion_pixels": 1.5
+        },
+        "normalized_xy": [
+          0.14561804500342335,
+          0.2662507909566703
+        ],
+        "height_m": 0.03514516353607178,
+        "grasp_ready": true,
+        "grasp_uncertainty": [],
+        "position": [
+          0.186861852860426,
+          -0.14788874008408523,
+          2.45297150363651
+        ],
+        "id": "1",
+        "image_stamp": 221.300011542,
+        "source_frame_id": 2358,
+        "position_uncertainty": {
+          "pixel_radius": 5.0,
+          "depth_m": 0.0018985271453857422
+        },
+        "identity_candidates": [],
+        "stable_id": "eeab4146-obj-0006",
+        "identity_status": "confirmed",
+        "_drop_recovery": true
+      },
+      "identity_method": "existing_confirmed_tracker_binding",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761169.554883933
+    },
+    {
+      "time": 1789829027.6836603,
+      "monotonic": 16761176.114013296,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "occlusion_check",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "short_age": true,
+      "tool_above": true,
+      "confidence": 0.9334163665771484,
+      "occluder_depth": 1.665539264678955,
+      "unchanged_references": 3,
+      "hidden_references": 1,
+      "depth_references": 0,
+      "total_references": 4,
+      "frame_id": 2396,
+      "image_stamp": 226.333345138,
+      "depth_stamp": 226.31667847,
+      "reason": "accepted",
+      "scene_age_seconds": 0.5472519397735596,
+      "cached_depth_stamps": [
+        224.416678371,
+        226.816678496
+      ],
+      "wait_seconds": 1.033046519383788,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761176.119309688
+    },
+    {
+      "time": 1789829033.1219416,
+      "monotonic": 16761181.552294813,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "grasp_contact_confirmed",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "command": 0.017500000000000012,
+      "contact_efforts": [
+        18.129518508911133,
+        18.076797485351562
+      ],
+      "stable_sim_seconds": 0.46666669100000036,
+      "fresh_contact_samples": 29,
+      "joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "measured_joint_positions": [
+        -0.17562256753444672,
+        0.3906438946723938,
+        -0.7383884787559509,
+        -1.918677806854248,
+        1.570823073387146,
+        0.10932406038045883,
+        0.017496339976787567,
+        0.017212005332112312
+      ],
+      "native_contact": {
+        "state": "holding",
+        "contact_lost": false,
+        "retained_support": true,
+        "stable_contact": false,
+        "efforts": [
+          18.129518508911133,
+          18.076797485351562
+        ],
+        "sensor_stamps": [
+          230.35001201368868,
+          230.35001201368868
+        ],
+        "high_samples": 1,
+        "high_seconds": 0.0,
+        "low_samples": 0,
+        "low_seconds": 0.0,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "position_lead_limit": 0.002,
+      "position_lead_limit_calibrated": false,
+      "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761181.553422892
+    },
+    {
+      "time": 1789829061.2782307,
+      "monotonic": 16761209.708584037,
+      "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-01",
+      "status": "drop_recovery_completed",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "recoveries": 1,
+      "category": "Smokegrenade",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761209.708902135
+    },
+    {
+      "time": 1789829067.679522,
+      "monotonic": 16761216.109875107,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "occlusion_check",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "short_age": true,
+      "tool_above": true,
+      "confidence": 0.983421266078949,
+      "occluder_depth": 1.6094887256622314,
+      "unchanged_references": 3,
+      "hidden_references": 0,
+      "depth_references": 0,
+      "total_references": 3,
+      "frame_id": 2703,
+      "image_stamp": 257.050013406,
+      "depth_stamp": 257.066680074,
+      "reason": "accepted",
+      "scene_age_seconds": 0.1435108184814453,
+      "cached_depth_stamps": [
+        254.783346621,
+        257.166680079
+      ],
+      "wait_seconds": 0.21538269147276878,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761216.110534845
+    },
+    {
+      "time": 1789829070.6437151,
+      "monotonic": 16761219.074068142,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "grasp_contact_confirmed",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "command": 0.004250000000000002,
+      "contact_efforts": [
+        8.84511947631836,
+        8.28647518157959
+      ],
+      "stable_sim_seconds": 0.46666669100000036,
+      "fresh_contact_samples": 29,
+      "joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "measured_joint_positions": [
+        0.3460293710231781,
+        0.9195758104324341,
+        -1.8869929313659668,
+        -2.5380897521972656,
+        1.5707292556762695,
+        -0.3574011027812958,
+        0.004248239099979401,
+        0.004116005264222622
+      ],
+      "native_contact": {
+        "state": "holding",
+        "contact_lost": false,
+        "retained_support": true,
+        "stable_contact": false,
+        "efforts": [
+          8.84511947631836,
+          8.28647518157959
+        ],
+        "sensor_stamps": [
+          259.40001352876425,
+          259.40001352876425
+        ],
+        "high_samples": 1,
+        "high_seconds": 0.0,
+        "low_samples": 0,
+        "low_seconds": 0.0,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "position_lead_limit": 0.002,
+      "position_lead_limit_calibrated": false,
+      "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761219.074945206
+    },
+    {
+      "time": 1789829072.6520033,
+      "monotonic": 16761221.082356604,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "holding_feedback_lost",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "phase": "trial_lift",
+      "proof": {
+        "state": "contact_lost",
+        "contact_lost": true,
+        "retained_support": false,
+        "stable_contact": false,
+        "efforts": [
+          3.942252806155011e-05,
+          3.0117484129732475e-05
+        ],
+        "sensor_stamps": [
+          260.71668026410043,
+          260.71668026410043
+        ],
+        "high_samples": 0,
+        "high_seconds": 0.0,
+        "low_samples": 37,
+        "low_seconds": 0.8833333794027567,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "stable_id": "eeab4146-obj-0009",
+      "side": "right",
+      "category": "Magazine",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761221.08305474
+    },
+    {
+      "time": 1789829072.6554441,
+      "monotonic": 16761221.085797204,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "drop_recovery_started",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "recovery": 1,
+      "category": "Magazine",
+      "reason": "sustained contact support lost during trial_lift",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761221.086259592
+    },
+    {
+      "time": 1789829079.0518,
+      "monotonic": 16761227.482153023,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "drop_recovery_reacquired",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "recovery": 1,
+      "candidate": {
+        "class": "Magazine",
+        "raw_class": "Magazine",
+        "confidence": 0.9874163269996643,
+        "bbox": [
+          704,
+          327,
+          747,
+          381
+        ],
+        "recognition_rotation_deg": 0.0,
+        "pixel": [
+          724.5182311326126,
+          353.9879733592463
+        ],
+        "depth": 2.1035969257354736,
+        "depth_spread": 0.0018761157989501953,
+        "world_position": [
+          -0.1323024656688575,
+          0.09058894231955063,
+          2.3964030742645264
+        ],
+        "support_z": 2.3721234798431396,
+        "angle_deg": -1.9413968092293885,
+        "body_axis_deg": 88.05860319077061,
+        "axis_ratio": 1.8615430592777358,
+        "grasp_point_method": "depth_body_center_and_axis",
+        "area": 2244,
+        "depth_reference": [
+          [
+            711,
+            333,
+            2.10386
+          ],
+          [
+            711,
+            335,
+            2.1039
+          ],
+          [
+            722,
+            336,
+            2.10445
+          ],
+          [
+            732,
+            337,
+            2.10381
+          ],
+          [
+            712,
+            339,
+            2.10318
+          ],
+          [
+            722,
+            340,
+            2.10452
+          ],
+          [
+            732,
+            341,
+            2.10382
+          ],
+          [
+            713,
+            343,
+            2.1028
+          ],
+          [
+            723,
+            344,
+            2.10381
+          ],
+          [
+            733,
+            345,
+            2.1047
+          ],
+          [
+            713,
+            347,
+            2.10281
+          ],
+          [
+            723,
+            348,
+            2.10388
+          ],
+          [
+            733,
+            349,
+            2.10462
+          ],
+          [
+            714,
+            351,
+            2.10287
+          ],
+          [
+            724,
+            352,
+            2.10341
+          ],
+          [
+            734,
+            353,
+            2.1056
+          ],
+          [
+            714,
+            355,
+            2.10287
+          ],
+          [
+            724,
+            356,
+            2.10341
+          ],
+          [
+            734,
+            357,
+            2.10553
+          ],
+          [
+            715,
+            359,
+            2.10293
+          ],
+          [
+            725,
+            360,
+            2.10347
+          ],
+          [
+            734,
+            361,
+            2.10545
+          ],
+          [
+            712,
+            363,
+            2.10361
+          ],
+          [
+            721,
+            364,
+            2.10393
+          ],
+          [
+            730,
+            365,
+            2.10375
+          ],
+          [
+            740,
+            366,
+            2.10429
+          ],
+          [
+            718,
+            368,
+            2.10311
+          ],
+          [
+            727,
+            369,
+            2.1036
+          ],
+          [
+            736,
+            370,
+            2.10677
+          ],
+          [
+            714,
+            372,
+            2.1029
+          ],
+          [
+            723,
+            373,
+            2.10433
+          ],
+          [
+            733,
+            374,
+            2.10415
+          ]
+        ],
+        "surface_reference": [
+          [
+            706,
+            328,
+            2.104017
+          ],
+          [
+            714,
+            329,
+            2.102828
+          ],
+          [
+            713,
+            331,
+            2.102777
+          ],
+          [
+            712,
+            333,
+            2.103077
+          ],
+          [
+            711,
+            335,
+            2.103897
+          ],
+          [
+            709,
+            337,
+            2.102747
+          ],
+          [
+            706,
+            339,
+            2.103789
+          ],
+          [
+            714,
+            340,
+            2.102847
+          ],
+          [
+            715,
+            328,
+            2.10381
+          ],
+          [
+            715,
+            330,
+            2.102883
+          ],
+          [
+            724,
+            331,
+            2.103368
+          ],
+          [
+            722,
+            333,
+            2.104397
+          ],
+          [
+            720,
+            335,
+            2.103428
+          ],
+          [
+            718,
+            337,
+            2.103056
+          ],
+          [
+            716,
+            339,
+            2.102952
+          ],
+          [
+            725,
+            340,
+            2.103438
+          ],
+          [
+            726,
+            329,
+            2.103472
+          ],
+          [
+            733,
+            330,
+            2.10385
+          ],
+          [
+            730,
+            332,
+            2.103693
+          ],
+          [
+            727,
+            334,
+            2.103535
+          ],
+          [
+            734,
+            335,
+            2.105914
+          ],
+          [
+            731,
+            337,
+            2.103755
+          ],
+          [
+            728,
+            339,
+            2.103597
+          ],
+          [
+            736,
+            340,
+            2.106204
+          ],
+          [
+            737,
+            329,
+            2.104063
+          ],
+          [
+            739,
+            331,
+            2.104174
+          ],
+          [
+            744,
+            332,
+            2.104445
+          ],
+          [
+            741,
+            334,
+            2.104288
+          ],
+          [
+            737,
+            336,
+            2.105312
+          ],
+          [
+            742,
+            337,
+            2.104347
+          ],
+          [
+            739,
+            339,
+            2.104189
+          ],
+          [
+            744,
+            340,
+            2.10446
+          ],
+          [
+            705,
+            341,
+            2.108868
+          ],
+          [
+            713,
+            342,
+            2.102796
+          ],
+          [
+            711,
+            344,
+            2.10406
+          ],
+          [
+            710,
+            346,
+            2.10358
+          ],
+          [
+            708,
+            348,
+            2.102539
+          ],
+          [
+            707,
+            350,
+            2.102489
+          ],
+          [
+            705,
+            352,
+            2.108888
+          ],
+          [
+            714,
+            353,
+            2.10287
+          ],
+          [
+            715,
+            341,
+            2.102902
+          ],
+          [
+            724,
+            342,
+            2.103387
+          ],
+          [
+            722,
+            344,
+            2.104592
+          ],
+          [
+            720,
+            346,
+            2.103241
+          ],
+          [
+            719,
+            348,
+            2.103129
+          ],
+          [
+            717,
+            350,
+            2.103026
+          ],
+          [
+            715,
+            352,
+            2.102922
+          ],
+          [
+            725,
+            353,
+            2.103461
+          ],
+          [
+            726,
+            341,
+            2.103493
+          ],
+          [
+            735,
+            342,
+            2.106838
+          ],
+          [
+            733,
+            344,
+            2.104713
+          ],
+          [
+            731,
+            346,
+            2.103771
+          ],
+          [
+            730,
+            348,
+            2.10372
+          ],
+          [
+            728,
+            350,
+            2.103617
+          ],
+          [
+            726,
+            352,
+            2.103513
+          ],
+          [
+            736,
+            353,
+            2.106446
+          ],
+          [
+            737,
+            341,
+            2.105401
+          ],
+          [
+            743,
+            342,
+            2.104409
+          ],
+          [
+            742,
+            344,
+            2.104359
+          ],
+          [
+            741,
+            346,
+            2.104309
+          ],
+          [
+            739,
+            348,
+            2.104205
+          ],
+          [
+            738,
+            350,
+            2.104741
+          ],
+          [
+            737,
+            352,
+            2.105597
+          ],
+          [
+            744,
+            353,
+            2.104483
+          ],
+          [
+            705,
+            354,
+            2.108892
+          ],
+          [
+            714,
+            355,
+            2.102874
+          ],
+          [
+            714,
+            357,
+            2.102877
+          ],
+          [
+            714,
+            359,
+            2.10288
+          ],
+          [
+            714,
+            361,
+            2.102884
+          ],
+          [
+            714,
+            363,
+            2.102887
+          ],
+          [
+            714,
+            365,
+            2.102891
+          ],
+          [
+            714,
+            367,
+            2.102895
+          ],
+          [
+            715,
+            354,
+            2.102925
+          ],
+          [
+            725,
+            355,
+            2.103465
+          ],
+          [
+            725,
+            357,
+            2.103468
+          ],
+          [
+            725,
+            359,
+            2.103472
+          ],
+          [
+            725,
+            361,
+            2.103475
+          ],
+          [
+            725,
+            363,
+            2.103478
+          ],
+          [
+            725,
+            365,
+            2.103482
+          ],
+          [
+            725,
+            367,
+            2.103485
+          ],
+          [
+            726,
+            354,
+            2.103516
+          ],
+          [
+            736,
+            355,
+            2.106484
+          ],
+          [
+            736,
+            357,
+            2.106522
+          ],
+          [
+            736,
+            359,
+            2.10656
+          ],
+          [
+            736,
+            361,
+            2.106598
+          ],
+          [
+            736,
+            363,
+            2.106636
+          ],
+          [
+            736,
+            365,
+            2.106674
+          ],
+          [
+            736,
+            367,
+            2.106712
+          ],
+          [
+            737,
+            354,
+            2.105632
+          ],
+          [
+            738,
+            356,
+            2.104848
+          ],
+          [
+            739,
+            358,
+            2.104223
+          ],
+          [
+            740,
+            360,
+            2.10428
+          ],
+          [
+            739,
+            362,
+            2.104229
+          ],
+          [
+            738,
+            364,
+            2.10499
+          ],
+          [
+            737,
+            366,
+            2.105859
+          ],
+          [
+            745,
+            367,
+            2.104832
+          ],
+          [
+            705,
+            368,
+            2.108916
+          ],
+          [
+            711,
+            369,
+            2.104186
+          ],
+          [
+            708,
+            371,
+            2.102579
+          ],
+          [
+            714,
+            372,
+            2.102903
+          ],
+          [
+            711,
+            374,
+            2.104104
+          ],
+          [
+            707,
+            376,
+            2.102535
+          ],
+          [
+            714,
+            377,
+            2.102912
+          ],
+          [
+            714,
+            379,
+            2.102916
+          ],
+          [
+            715,
+            368,
+            2.10295
+          ],
+          [
+            722,
+            369,
+            2.104841
+          ],
+          [
+            719,
+            371,
+            2.10317
+          ],
+          [
+            716,
+            373,
+            2.103012
+          ],
+          [
+            723,
+            374,
+            2.104347
+          ],
+          [
+            720,
+            376,
+            2.103233
+          ],
+          [
+            717,
+            378,
+            2.103075
+          ],
+          [
+            725,
+            379,
+            2.103507
+          ],
+          [
+            726,
+            368,
+            2.103541
+          ],
+          [
+            733,
+            369,
+            2.104243
+          ],
+          [
+            729,
+            371,
+            2.103708
+          ],
+          [
+            736,
+            372,
+            2.106807
+          ],
+          [
+            733,
+            374,
+            2.104149
+          ],
+          [
+            729,
+            376,
+            2.103717
+          ],
+          [
+            736,
+            377,
+            2.106902
+          ],
+          [
+            733,
+            379,
+            2.104055
+          ],
+          [
+            737,
+            368,
+            2.105897
+          ],
+          [
+            742,
+            369,
+            2.104403
+          ],
+          [
+            739,
+            371,
+            2.104295
+          ],
+          [
+            744,
+            372,
+            2.104517
+          ],
+          [
+            741,
+            374,
+            2.104358
+          ],
+          [
+            737,
+            376,
+            2.106049
+          ],
+          [
+            743,
+            377,
+            2.104471
+          ],
+          [
+            745,
+            379,
+            2.104583
+          ]
+        ],
+        "surface_reference_meta": {
+          "grid": [
+            4,
+            4
+          ],
+          "max_per_cell": 8,
+          "intrinsics": [
+            1343.83203125,
+            0.0,
+            640.0,
+            0.0,
+            1343.83203125,
+            360.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "coordinate_system": "optical_pixels_and_depth_m",
+          "source": "current_rgbd_body_surface",
+          "image_size": [
+            1280,
+            720
+          ],
+          "edge_exclusion_pixels": 1.5
+        },
+        "normalized_xy": [
+          0.6945240980954827,
+          0.8042064985824496
+        ],
+        "height_m": 0.02525733709335327,
+        "grasp_ready": true,
+        "grasp_uncertainty": [],
+        "position": [
+          -0.15455476575799254,
+          0.1049666120554679,
+          2.4576411415748303
+        ],
+        "id": "3",
+        "image_stamp": 265.833347198,
+        "source_frame_id": 2781,
+        "position_uncertainty": {
+          "pixel_radius": 5.0,
+          "depth_m": 0.0018761157989501953
+        },
+        "identity_candidates": [],
+        "stable_id": "eeab4146-obj-0009",
+        "identity_status": "confirmed",
+        "_drop_recovery": true
+      },
+      "identity_method": "existing_confirmed_tracker_binding",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761227.483611612
+    },
+    {
+      "time": 1789829084.5969486,
+      "monotonic": 16761233.027301688,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "occlusion_check",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "short_age": true,
+      "tool_above": true,
+      "confidence": 0.987476646900177,
+      "occluder_depth": 1.6093910932540894,
+      "unchanged_references": 3,
+      "hidden_references": 0,
+      "depth_references": 0,
+      "total_references": 3,
+      "frame_id": 2815,
+      "image_stamp": 269.883347409,
+      "depth_stamp": 269.866680741,
+      "reason": "accepted",
+      "scene_age_seconds": 0.5251078605651855,
+      "cached_depth_stamps": [
+        267.933347307,
+        270.266680762
+      ],
+      "wait_seconds": 0.5905984900891781,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761233.028103601
+    },
+    {
+      "time": 1789829087.8261018,
+      "monotonic": 16761236.256454837,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "grasp_contact_confirmed",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "command": 0.004250000000000002,
+      "contact_efforts": [
+        1.6697338819503784,
+        2.012951135635376
+      ],
+      "stable_sim_seconds": 0.46666669100000036,
+      "fresh_contact_samples": 29,
+      "joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "measured_joint_positions": [
+        0.3460944592952728,
+        0.9187881946563721,
+        -1.885023832321167,
+        -2.5365705490112305,
+        1.5713496208190918,
+        2.7618367671966553,
+        0.004249628633260727,
+        0.0042214649729430676
+      ],
+      "native_contact": {
+        "state": "holding",
+        "contact_lost": false,
+        "retained_support": true,
+        "stable_contact": false,
+        "efforts": [
+          1.6697338819503784,
+          2.012951135635376
+        ],
+        "sensor_stamps": [
+          272.4833475444466,
+          272.4833475444466
+        ],
+        "high_samples": 1,
+        "high_seconds": 0.0,
+        "low_samples": 0,
+        "low_seconds": 0.0,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "position_lead_limit": 0.002,
+      "position_lead_limit_calibrated": false,
+      "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761236.25833702
+    },
+    {
+      "time": 1789829089.255001,
+      "monotonic": 16761237.685354028,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "holding_feedback_lost",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "phase": "trial_lift",
+      "proof": {
+        "state": "contact_lost",
+        "contact_lost": true,
+        "retained_support": false,
+        "stable_contact": false,
+        "efforts": [
+          1.5914894902380183e-05,
+          3.299859963590279e-05
+        ],
+        "sensor_stamps": [
+          273.40001425892115,
+          273.40001425892115
+        ],
+        "high_samples": 0,
+        "high_seconds": 0.0,
+        "low_samples": 37,
+        "low_seconds": 0.6000000312924385,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "stable_id": "eeab4146-obj-0009",
+      "side": "right",
+      "category": "Magazine",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761237.685989104
+    },
+    {
+      "time": 1789829089.262419,
+      "monotonic": 16761237.692772234,
+      "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+      "round_id": "round_65d89de3f4fd40a5930f99d72a31f50a",
+      "task_id": "round_65d89de3f4fd40a5930f99d72a31f50a-task-02",
+      "status": "drop_recovery_started",
+      "code_sha256": "585cb8ffb30be077926d1bf0d5befd4703e937b33c40806b34375cffe0068a97",
+      "recovery": 2,
+      "category": "Magazine",
+      "reason": "sustained contact support lost during trial_lift",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16761237.693147471
+    }
+  ],
+  "native_audit": [
+    {
+      "operation": "open",
+      "time": 1789829011.5703063,
+      "simulation_time": 214.20001117140055,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.017249999567866325
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": 0.07841691374778748,
+            "stamp": 214.20001117140055
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": 0.09239615499973297,
+            "stamp": 214.20001117140055
+          }
+        ],
+        "simulation_time": 214.20001117140055,
+        "published_wall": 1789829011.5575938,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        0.21161504084454358,
+        -0.14605750912057136,
+        2.4578523905081133
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829011.6802921,
+      "simulation_time": 214.25001117400825,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.017249999567866325
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": -0.0009011051151901484,
+            "stamp": 214.25001117400825
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": -0.00043135276064276695,
+            "stamp": 214.25001117400825
+          }
+        ],
+        "simulation_time": 214.25001117400825,
+        "published_wall": 1789829011.6798782,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        0.21162492388038406,
+        -0.1461116039808028,
+        2.460640336948304
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829054.4165723,
+      "simulation_time": 246.75001286901534,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": -4.688762664794922,
+            "stamp": 246.75001286901534
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": -4.68928337097168,
+            "stamp": 246.75001286901534
+          }
+        ],
+        "simulation_time": 246.75001286901534,
+        "published_wall": 1789829054.415682,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        0.6500001253716257,
+        0.20000003220364887,
+        2.470001079698995
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829071.33457,
+      "simulation_time": 259.78334688209,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.0042500002309679985
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": 0.00010559300426393747,
+            "stamp": 259.78334688209
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": 0.000295029953122139,
+            "stamp": 259.78334688209
+          }
+        ],
+        "simulation_time": 259.78334688209,
+        "published_wall": 1789829071.3341618,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        -0.14431228786372935,
+        0.09068087323876395,
+        2.4655530285300706
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829071.4171393,
+      "simulation_time": 259.8333468846977,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.0042500002309679985
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": -2.6794650693773292e-05,
+            "stamp": 259.8333468846977
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": 5.094516382087022e-05,
+            "stamp": 259.8333468846977
+          }
+        ],
+        "simulation_time": 259.8333468846977,
+        "published_wall": 1789829071.4166937,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        -0.14432967102983751,
+        0.09063237607652674,
+        2.4694783470195407
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829085.7335408,
+      "simulation_time": 271.1333474740386,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": -0.0005518085672520101,
+            "stamp": 271.1333474740386
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": -0.0004137704963795841,
+            "stamp": 271.1333474740386
+          }
+        ],
+        "simulation_time": 271.1333474740386,
+        "published_wall": 1789829085.7331052,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        -0.12116958295505573,
+        0.08861031239956141,
+        2.4695511284766885
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829088.0875218,
+      "simulation_time": 272.6500142198056,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.0042500002309679985
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": 0.06902532279491425,
+            "stamp": 272.6500142198056
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": 0.0693109780550003,
+            "stamp": 272.6500142198056
+          }
+        ],
+        "simulation_time": 272.6500142198056,
+        "published_wall": 1789829088.0871122,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        -0.12031890906616627,
+        0.09096754834636778,
+        2.454380013582092
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829088.1824784,
+      "simulation_time": 272.7000142224133,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.0042500002309679985
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": -0.011796250008046627,
+            "stamp": 272.7000142224133
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": -0.0169533658772707,
+            "stamp": 272.7000142224133
+          }
+        ],
+        "simulation_time": 272.7000142224133,
+        "published_wall": 1789829088.1819928,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        -0.12033428352122245,
+        0.09092334521256484,
+        2.455552806278562
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    },
+    {
+      "operation": "open",
+      "time": 1789829088.268123,
+      "simulation_time": 272.750014225021,
+      "before": {
+        "captured": true,
+        "attachment_present": false,
+        "drive_command": 0.0042500002309679985
+      },
+      "after": {
+        "captured": false,
+        "attachment_present": false,
+        "drive_command": 0.0
+      },
+      "contact": {
+        "protocol": "tcei.finger_effort.v1",
+        "samples": [
+          {
+            "finger": "left",
+            "valid": true,
+            "value": -0.0006504419143311679,
+            "stamp": 272.750014225021
+          },
+          {
+            "finger": "right",
+            "valid": true,
+            "value": 0.006309598684310913,
+            "stamp": 272.750014225021
+          }
+        ],
+        "simulation_time": 272.750014225021,
+        "published_wall": 1789829088.2677448,
+        "source": "native_EffortSensor_use_latest_data"
+      },
+      "tcp_actual": [
+        -0.12035764236842471,
+        0.0908590600259398,
+        2.457415149365223
+      ],
+      "scope": "native implementation audit only; not effective grasp evidence"
+    }
+  ]
+}

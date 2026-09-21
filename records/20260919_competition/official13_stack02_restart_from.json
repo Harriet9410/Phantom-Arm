@@ -1,0 +1,15 @@
+{
+  "checked_at": 1789825365.3916025,
+  "prior_result": {
+    "returncode": 1,
+    "finished_at": 1789825046.9209473,
+    "run": "official13_stack01"
+  },
+  "owned_live_before": {
+    "sim": false,
+    "controller": true,
+    "perception": true,
+    "nine": true
+  },
+  "scope": "failed warmup, no episode began; user explicitly requested restart"
+}

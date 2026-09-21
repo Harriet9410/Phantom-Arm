@@ -1,0 +1,222 @@
+{
+  "feedback": {
+    "/Jaka/get_gripper_efforts": [
+      {
+        "layout": {
+          "dim": [],
+          "data_offset": 0
+        },
+        "data": [
+          5.72568824281916e-05,
+          -5.0392674893373623e-05
+        ]
+      },
+      {
+        "layout": {
+          "dim": [],
+          "data_offset": 0
+        },
+        "data": [
+          -7.396566070383415e-05,
+          -0.00012730240996461362
+        ]
+      },
+      {
+        "layout": {
+          "dim": [],
+          "data_offset": 0
+        },
+        "data": [
+          5.724795119022019e-05,
+          -5.036759466747753e-05
+        ]
+      }
+    ],
+    "/Jaka/gripper_is_captured": [
+      {
+        "data": false
+      },
+      {
+        "data": false
+      },
+      {
+        "data": false
+      }
+    ],
+    "/Jaka/get_jointstate": [
+      {
+        "header": {
+          "seq": 130675,
+          "stamp": {
+            "secs": 1789784809,
+            "nsecs": 681369781
+          },
+          "frame_id": ""
+        },
+        "name": [
+          "Joint01",
+          "Joint02",
+          "Joint03",
+          "Joint04",
+          "Joint05",
+          "Joint06",
+          "finger1_joint",
+          "finger2_joint"
+        ],
+        "position": [
+          1.4568701800499184e-10,
+          1.3000000715255737,
+          -1.4999998807907104,
+          4.499999523162842,
+          1.5999997854232788,
+          1.5637496852960453e-09,
+          2.2913031472171497e-08,
+          5.847768935751674e-10
+        ],
+        "velocity": [
+          -6.526213837787509e-06,
+          3.252986061852425e-05,
+          5.755933671025559e-05,
+          -3.4364427392574726e-07,
+          7.305626240849961e-06,
+          8.02367765118106e-07,
+          1.1963500128331361e-06,
+          2.306946100816276e-08
+        ],
+        "effort": []
+      },
+      {
+        "header": {
+          "seq": 130676,
+          "stamp": {
+            "secs": 1789784809,
+            "nsecs": 699030637
+          },
+          "frame_id": ""
+        },
+        "name": [
+          "Joint01",
+          "Joint02",
+          "Joint03",
+          "Joint04",
+          "Joint05",
+          "Joint06",
+          "finger1_joint",
+          "finger2_joint"
+        ],
+        "position": [
+          1.1460055127088253e-10,
+          1.3000000715255737,
+          -1.4999998807907104,
+          4.499999523162842,
+          1.6000001430511475,
+          5.51264089931891e-10,
+          0.0,
+          1.6999180729726504e-08
+        ],
+        "velocity": [
+          -6.571717221959261e-06,
+          3.253402974223718e-05,
+          5.752643119194545e-05,
+          -3.1110113241084036e-07,
+          -9.084420526050963e-06,
+          -5.969834546704078e-07,
+          -1.3240746739029419e-05,
+          -1.3240749467513524e-05
+        ],
+        "effort": []
+      },
+      {
+        "header": {
+          "seq": 130677,
+          "stamp": {
+            "secs": 1789784809,
+            "nsecs": 715386629
+          },
+          "frame_id": ""
+        },
+        "name": [
+          "Joint01",
+          "Joint02",
+          "Joint03",
+          "Joint04",
+          "Joint05",
+          "Joint06",
+          "finger1_joint",
+          "finger2_joint"
+        ],
+        "position": [
+          1.4769918621482248e-10,
+          1.3000000715255737,
+          -1.4999998807907104,
+          4.499999523162842,
+          1.5999997854232788,
+          1.5801432384776604e-09,
+          2.295966972098995e-08,
+          5.865293806195382e-10
+        ],
+        "velocity": [
+          -6.5190620262001175e-06,
+          3.255459159845486e-05,
+          5.7507422752678394e-05,
+          -5.900165547245706e-07,
+          7.299363915080903e-06,
+          8.021400503821496e-07,
+          1.200347696794779e-06,
+          2.3563003992421727e-08
+        ],
+        "effort": []
+      }
+    ]
+  },
+  "source": {
+    "jaka_sim.py": [
+      {
+        "line": 124,
+        "text": "\nclass SimEnvironment:\n    def __init__(self, kit: SimulationApp):\n        self.kit = kit\n        self.current_path = os.getcwd()\n        self.ee_pose_pub = None\n        self.jointstate_pub = None\n        self.gripper_efforts_pub = None\n        self.gripper_is_captured_pub = None\n\n        from omni.isaac.core.utils.stage import is_stage_loading\n\n        scene_path = os.path.join(self.current_path, \"Content/JAKA/scene.usd\")\n        omni.usd.get_context().open_stage(scene_path)\n        self.kit.update()\n\n        print(\"正在加载场景...\")\n        while is_stage_loading():\n            self.kit.update()"
+      },
+      {
+        "line": 125,
+        "text": "class SimEnvironment:\n    def __init__(self, kit: SimulationApp):\n        self.kit = kit\n        self.current_path = os.getcwd()\n        self.ee_pose_pub = None\n        self.jointstate_pub = None\n        self.gripper_efforts_pub = None\n        self.gripper_is_captured_pub = None\n\n        from omni.isaac.core.utils.stage import is_stage_loading\n\n        scene_path = os.path.join(self.current_path, \"Content/JAKA/scene.usd\")\n        omni.usd.get_context().open_stage(scene_path)\n        self.kit.update()\n\n        print(\"正在加载场景...\")\n        while is_stage_loading():\n            self.kit.update()\n        print(\"场景加载完成。\")"
+      },
+      {
+        "line": 153,
+        "text": "        )\n        self.ee_pose_pub = rospy.Publisher(\n            \"Jaka/get_end_effector_pose\", PoseStamped, queue_size=10\n        )\n        self.jointstate_pub = rospy.Publisher(\n            \"Jaka/get_jointstate\", JointState, queue_size=10\n        )\n        self.gripper_efforts_pub = rospy.Publisher(\n            \"Jaka/get_gripper_efforts\", Float32MultiArray, queue_size=10\n        )\n        self.gripper_is_captured_pub = rospy.Publisher(\n            \"Jaka/gripper_is_captured\", Bool, queue_size=1, latch=True\n        )\n\n        self.world = World(stage_units_in_meters=1.0)\n\n        og.Controller.edit(\n            {\"graph_path\": \"/ActionGraph\", \"evaluator_name\": \"execution\"},\n            {"
+      },
+      {
+        "line": 154,
+        "text": "        self.ee_pose_pub = rospy.Publisher(\n            \"Jaka/get_end_effector_pose\", PoseStamped, queue_size=10\n        )\n        self.jointstate_pub = rospy.Publisher(\n            \"Jaka/get_jointstate\", JointState, queue_size=10\n        )\n        self.gripper_efforts_pub = rospy.Publisher(\n            \"Jaka/get_gripper_efforts\", Float32MultiArray, queue_size=10\n        )\n        self.gripper_is_captured_pub = rospy.Publisher(\n            \"Jaka/gripper_is_captured\", Bool, queue_size=1, latch=True\n        )\n\n        self.world = World(stage_units_in_meters=1.0)\n\n        og.Controller.edit(\n            {\"graph_path\": \"/ActionGraph\", \"evaluator_name\": \"execution\"},\n            {\n                og.Controller.Keys.CREATE_NODES: ["
+      },
+      {
+        "line": 156,
+        "text": "        )\n        self.jointstate_pub = rospy.Publisher(\n            \"Jaka/get_jointstate\", JointState, queue_size=10\n        )\n        self.gripper_efforts_pub = rospy.Publisher(\n            \"Jaka/get_gripper_efforts\", Float32MultiArray, queue_size=10\n        )\n        self.gripper_is_captured_pub = rospy.Publisher(\n            \"Jaka/gripper_is_captured\", Bool, queue_size=1, latch=True\n        )\n\n        self.world = World(stage_units_in_meters=1.0)\n\n        og.Controller.edit(\n            {\"graph_path\": \"/ActionGraph\", \"evaluator_name\": \"execution\"},\n            {\n                og.Controller.Keys.CREATE_NODES: [\n                    (\"OnPlaybackTick\", \"omni.graph.action.OnPlaybackTick\"),\n                    (\"ReadSimTime\", \"isaacsim.core.nodes.IsaacReadSimulationTime\"),"
+      },
+      {
+        "line": 157,
+        "text": "        self.jointstate_pub = rospy.Publisher(\n            \"Jaka/get_jointstate\", JointState, queue_size=10\n        )\n        self.gripper_efforts_pub = rospy.Publisher(\n            \"Jaka/get_gripper_efforts\", Float32MultiArray, queue_size=10\n        )\n        self.gripper_is_captured_pub = rospy.Publisher(\n            \"Jaka/gripper_is_captured\", Bool, queue_size=1, latch=True\n        )\n\n        self.world = World(stage_units_in_meters=1.0)\n\n        og.Controller.edit(\n            {\"graph_path\": \"/ActionGraph\", \"evaluator_name\": \"execution\"},\n            {\n                og.Controller.Keys.CREATE_NODES: [\n                    (\"OnPlaybackTick\", \"omni.graph.action.OnPlaybackTick\"),\n                    (\"ReadSimTime\", \"isaacsim.core.nodes.IsaacReadSimulationTime\"),\n                    (\"PublishTF\", \"isaacsim.ros1.bridge.ROS1PublishTransformTree\"),"
+      },
+      {
+        "line": 276,
+        "text": "        with g_data_lock:\n            local_gripper_val = g_gripper_value\n\n        self.robotArmController.forward_and_track(local_gripper_val)\n\n        bool_msg = Bool()\n        bool_msg.data = self.robotArmController.gripper_is_close\n        self.gripper_is_captured_pub.publish(bool_msg)\n\n        self.publish_ros_data()\n        self.world.step(render=True)\n\n    def publish_ros_data(self):\n        pos, rot_wxyz = self.robotArmController.get_end_effector_pose()\n\n        pose_msg = PoseStamped()\n        pose_msg.header.stamp = rospy.Time.now()\n        pose_msg.header.frame_id = \"base_link\"\n        pose_msg.pose.position.x = float(pos[0])"
+      },
+      {
+        "line": 314,
+        "text": "            vel_arr = self.robotArmController._articulation.get_joint_velocities()\n            js_msg.position = pos_arr.tolist() if pos_arr is not None else []\n            js_msg.velocity = vel_arr.tolist() if vel_arr is not None else []\n            js_msg.effort = []\n\n        self.jointstate_pub.publish(js_msg)\n\n        left_eff, right_eff = self.robotArmController.get_gripper_efforts()\n        effort_msg = Float32MultiArray()\n        effort_msg.data = [float(left_eff), float(right_eff)]\n        self.gripper_efforts_pub.publish(effort_msg)\n\n    def close(self):\n        self.world.stop()\n        rospy.signal_shutdown(\"Isaac Sim is shutting down\")\n        self.kit.close()\n\n\ndef main():"
+      },
+      {
+        "line": 317,
+        "text": "            js_msg.effort = []\n\n        self.jointstate_pub.publish(js_msg)\n\n        left_eff, right_eff = self.robotArmController.get_gripper_efforts()\n        effort_msg = Float32MultiArray()\n        effort_msg.data = [float(left_eff), float(right_eff)]\n        self.gripper_efforts_pub.publish(effort_msg)\n\n    def close(self):\n        self.world.stop()\n        rospy.signal_shutdown(\"Isaac Sim is shutting down\")\n        self.kit.close()\n\n\ndef main():\n    env = SimEnvironment(kit=kit)\n    try:\n        env.play()"
+      }
+    ],
+    "jaka_env.py": [
+      {
+        "line": 330,
+        "text": "            self.apply_gripper_only(grip_cmd)\n\n        tup = PhysicsSchemaTools.encodeSdfPath(Sdf.Path(self.gripper_center_collision))\n        get_physx_scene_query_interface().overlap_mesh(\n            tup[0], tup[1], self.on_gripper_center_hit, False\n        )\n\n        left_eff, right_eff = self.get_gripper_efforts()\n        effort_threshold = 0.2\n\n        if left_eff >= effort_threshold or right_eff >= effort_threshold:\n            if self.overlap_prim_path and not self.gripper_is_close:\n                self.close_gripper()\n            self.gripper_is_close = True\n        else:\n            if self.gripper_is_close:\n                self.open_gripper()\n            self.gripper_is_close = False\n"
+      },
+      {
+        "line": 515,
+        "text": "\n    def on_gripper_center_hit(self, hit):\n        prefix = \"/World/RobotArm/JAKA_C5_With_DH_PGI/\"\n        if prefix not in hit.rigid_body:\n            self.overlap_prim_path = hit.rigid_body\n        return True\n\n    def get_gripper_efforts(self):\n        left = self.left_sensor.get_sensor_reading(use_latest_data=True)\n        right = self.right_sensor.get_sensor_reading(use_latest_data=True)\n        return (\n            left.value if left.is_valid else 0.0,\n            right.value if right.is_valid else 0.0,\n        )\n\n    def open_gripper(self):\n        self.apply_gripper_only(self._gripper_open)\n\n        if not self.gripper_is_close:"
+      }
+    ]
+  }
+}

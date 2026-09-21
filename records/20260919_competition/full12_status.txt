@@ -1,0 +1,182 @@
+{
+  "checked_at": 1789822145.6505165,
+  "job": {
+    "pid": 388017,
+    "started_at": 1789822082.4854064,
+    "source_sha256": "dbb3b0ab2857f6a219ecb0311372d2c263a25a727d895a9f437db264a3471608"
+  },
+  "installation": {
+    "installed_at": 1789821960.2644498,
+    "manifest_sha256": "ac817c37cf861ea1597e77d6f4bf42b9199cb96d4f7783ef9926e8a345d41d73",
+    "runtime_files": 34,
+    "runtime_started": false
+  },
+  "launcher": {
+    "returncode": 0,
+    "finished_at": 1789822112.681763,
+    "run": "no_action12_01"
+  },
+  "log_tail": [
+    "{\"pid\": 388191, \"pgid\": 388191, \"start_ticks\": 1675424073, \"command\": [\"/usr/bin/python3\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack/controller.py\", \"_execute:=false\", \"_prepare_observation:=false\", \"_require_planner_feedback:=true\", \"_log_dir:=/root/gpufree-data/tcei_competition_20260919/no_action12_01/events\", \"_robot_projection_calibration:=/root/tcei_competition_20260919/releases/dev_v7_t1_12/calibration/robot_projection.static_checked_v1.json\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/no_action12_01/logs/controller.log\", \"started_at\": 1789822092.3056762}",
+    "{\"pid\": 388256, \"pgid\": 388256, \"start_ticks\": 1675424082, \"command\": [\"/opt/conda/envs/yolov8/bin/python\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack/perception.py\", \"_show_gui:=false\", \"_weights:=/root/jaka/best.pt\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/no_action12_01/logs/perception.log\", \"started_at\": 1789822092.3911247}",
+    "{\"pid\": 388323, \"pgid\": 388323, \"start_ticks\": 1675424094, \"command\": [\"/opt/conda/envs/inference/bin/python\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack/nine_node.py\", \"_execute:=false\", \"_model_path:=/root/inference/FM9G4B-V\", \"_log_dir:=/root/gpufree-data/tcei_competition_20260919/no_action12_01/events\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/no_action12_01/logs/nine.log\", \"started_at\": 1789822092.5132222}",
+    "{\"ready_for_read_only\": true, \"errors\": [], \"time\": 1789822112.020187, \"mode\": \"read_only_no_action\", \"observations\": {\"controller\": {\"time\": 1789822093.8205636, \"monotonic\": 16754242.250917016, \"request_id\": null, \"round_id\": null, \"task_id\": null, \"status\": \"ready\", \"code_sha256\": \"7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a\", \"execute\": false, \"lift_evidence_capable\": true, \"lift_evidence_capability_reason\": null}, \"nine\": {\"time\": 1789822101.0215812, \"status\": \"ready\", \"inference_configuration\": {\"vision_batch_size\": 1, \"vision_batch_size_source\": \"model.config.vision_batch_size\", \"num_beams\": 1, \"num_beams_source\": \"explicit_chat_kwarg\", \"max_slice_nums\": 9, \"max_slice_nums_source\": \"model.config.slice_config.max_slice_nums\", \"max_slice_nums_override\": null, \"full_image_preserved\": true, \"sampling\": false, \"max_new_tokens\": 400, \"model_dtype\": \"torch.bfloat16\", \"configuration_scope\": \"validated_once_at_node_start\"}, \"model_protocol\": \"nine.selection.compact.v1\"}, \"joints\": {\"time\": 1789822112.0110936, \"tracking\": false, \"simulation_time\": 2.0000001043081284, \"all_joint_names\": [\"Joint01\", \"Joint02\", \"Joint03\", \"Joint04\", \"Joint05\", \"Joint06\", \"finger1_join",
+    "{\"run_dir\": \"/root/gpufree-data/tcei_competition_20260919/no_action12_01\", \"mode\": \"no_action_warmup\", \"execution_enabled\": false}",
+    "FULL11_WARMUP_COMPLETE"
+  ],
+  "pids": {
+    "nine": {
+      "pid": 388323,
+      "pgid": 388323,
+      "start_ticks": 1675424094,
+      "command": [
+        "/opt/conda/envs/inference/bin/python",
+        "-u",
+        "/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack/nine_node.py",
+        "_execute:=false",
+        "_model_path:=/root/inference/FM9G4B-V",
+        "_log_dir:=/root/gpufree-data/tcei_competition_20260919/no_action12_01/events"
+      ],
+      "cwd": "/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack",
+      "log": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/logs/nine.log",
+      "started_at": 1789822092.5132222
+    },
+    "sim": {
+      "pid": 388184,
+      "pgid": 388184,
+      "start_ticks": 1675424069,
+      "command": [
+        "/root/isaacsim/python.sh",
+        "/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack/sim_with_feedback.py"
+      ],
+      "cwd": "/root/EAICON",
+      "log": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/logs/sim.log",
+      "started_at": 1789822092 .2618573
+    },
+    "perception": {
+      "pid": 388256,
+      "pgid": 388256,
+      "start_ticks": 1675424082,
+      "command": [
+        "/opt/conda/envs/yolov8/bin/python",
+        "-u",
+        "/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack/perception.py",
+        "_show_gui:=false",
+        "_weights:=/root/jaka/best.pt"
+      ],
+      "cwd": "/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack",
+      "log": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/logs/perception.log",
+      "started_at": 1789822092.3911247
+    },
+    "controller": {
+      "pid": 388191,
+      "pgid": 388191,
+      "start_ticks": 1675424073,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack/controller.py",
+        "_execute:=false",
+        "_prepare_observation:=false",
+        "_require_planner_feedback:=true",
+        "_log_dir:=/root/gpufree-data/tcei_competition_20260919/no_action12_01/events",
+        "_robot_projection_calibration:=/root/tcei_competition_20260919/releases/dev_v7_t1_12/calibration/robot_projection.static_checked_v1.json"
+      ],
+      "cwd": "/root/tcei_competition_20260919/releases/dev_v7_t1_12/tcei_stack",
+      "log": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/logs/controller.log",
+      "started_at": 1789822092.3056762
+    }
+  },
+  "flags": {
+    "/tcei_controller/execute": false,
+    "/tcei_nine/execute": false
+  },
+  "effort_publisher": [
+    "/isaacsim_jaka_388189_1789822108476"
+  ],
+  "native_publisher": [
+    "/isaacsim_jaka_388189_1789822108476"
+  ],
+  "effort_samples": [
+    {
+      "protocol": "tcei.finger_effort.v1",
+      "samples": [
+        {
+          "finger": "left",
+          "valid": true,
+          "value": 5.729454642278142e-05,
+          "stamp": 31.533334977924824
+        },
+        {
+          "finger": "right",
+          "valid": true,
+          "value": -5.0373797421343625e-05,
+          "stamp": 31.533334977924824
+        }
+      ],
+      "simulation_time": 31.533334977924824,
+      "published_wall": 1789822145.8045964,
+      "source": "native_EffortSensor_use_latest_data"
+    },
+    {
+      "protocol": "tcei.finger_effort.v1",
+      "samples": [
+        {
+          "finger": "left",
+          "valid": true,
+          "value": -7.444043149007484e-05,
+          "stamp": 31.550001645460725
+        },
+        {
+          "finger": "right",
+          "valid": true,
+          "value": -0.00012753538612741977,
+          "stamp": 31.550001645460725
+        }
+      ],
+      "simulation_time": 31.550001645460725,
+      "published_wall": 1789822145.8241534,
+      "source": "native_EffortSensor_use_latest_data"
+    },
+    {
+      "protocol": "tcei.finger_effort.v1",
+      "samples": [
+        {
+          "finger": "left",
+          "valid": true,
+          "value": 5.7316108723171055e-05,
+          "stamp": 31.566668312996626
+        },
+        {
+          "finger": "right",
+          "valid": true,
+          "value": -5.0442482461221516e-05,
+          "stamp": 31.566668312996626
+        }
+      ],
+      "simulation_time": 31.566668312996626,
+      "published_wall": 1789822145.8441992,
+      "source": "native_EffortSensor_use_latest_data"
+    },
+    {
+      "protocol": "tcei.finger_effort.v1",
+      "samples": [
+        {
+          "finger": "left",
+          "valid": true,
+          "value": -7.397780427709222e-05,
+          "stamp": 31.583334980532527
+        },
+        {
+          "finger": "right",
+          "valid": true,
+          "value": -0.0001272128283744678,
+          "stamp": 31.583334980532527
+        }
+      ],
+      "simulation_time": 31.583334980532527,
+      "published_wall": 1789822145.8649752,
+      "source": "native_EffortSensor_use_latest_data"
+    }
+  ]
+}

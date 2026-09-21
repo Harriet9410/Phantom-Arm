@@ -1,0 +1,15 @@
+{
+  "pid": 620011,
+  "started_at": 1789852634.3723369,
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/root/tcei_competition_20260919/check_initialization.py",
+    "--package",
+    "/root/tcei_tilt23/tcei_260920v2",
+    "--case",
+    "/root/tcei_tilt23/tcei_260920v2/cases_b01/random_20.json",
+    "--name",
+    "init20_check01"
+  ]
+}

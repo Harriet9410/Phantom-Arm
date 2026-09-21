@@ -1,0 +1,6 @@
+{
+  "pid": 165086,
+  "alive": false,
+  "result_exists": false,
+  "log": "/opt/conda/envs/inference/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:513: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead\n  warnings.warn(\nTraceback (most recent call last):\n  File \"/root/tcei_competition_20260919/probe_tokenization04.py\", line 12, in <module>\n    image=Image.open(run/e['image']).convert('RGB'); result={'id':e['request_id'],'attempts':[]}; seq=[]\n  File \"/opt/conda/envs/inference/lib/python3.10/site-packages/PIL/Image.py\", line 3243, in open\n    fp = builtins.open(filename, \"rb\")\nFileNotFoundError: [Errno 2] No such file or directory: '/root/gpufree-data/tcei_competition_20260919/no_action04_01/a38377a1-fc65-4d87-b679-382d10383dd8.png'\n"
+}

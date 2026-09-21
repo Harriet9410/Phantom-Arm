@@ -1,0 +1,42 @@
+{
+  "checked_at": 1789813600.4338899,
+  "files": {
+    "supervisor_job.json": null,
+    "pids/episode.json": null,
+    "episode/summary.json": null,
+    "supervisor_finished.json": null,
+    "supervisor_aborted.json": null,
+    "scalars/closed.json": {
+      "closed_at": 1789812998.7946894,
+      "recorded_rows": 180762,
+      "topics_seen": [
+        "/Jaka/get_end_effector_pose",
+        "/Jaka/get_gripper_efforts",
+        "/Jaka/get_jointstate",
+        "/Jaka/gripper_is_captured",
+        "/clock",
+        "/tcei/joint_diagnostics",
+        "/tcei/nine_status",
+        "/tcei/planner_status",
+        "/tcei/task_status"
+      ],
+      "maximum_duration_seconds": 600.0
+    },
+    "rgbd/closed.json": {
+      "closed_at": 1789812999.3589218,
+      "maximum_duration_seconds": 600.0,
+      "recorded_pairs": 1,
+      "pending_pairs": 0
+    },
+    "visual_target_review.json": null
+  },
+  "script_exists": false,
+  "execute": {
+    "/tcei_controller/execute": false,
+    "/tcei_nine/execute": false
+  },
+  "recorders_live": {
+    "rgbd": false,
+    "scalars": false
+  }
+}

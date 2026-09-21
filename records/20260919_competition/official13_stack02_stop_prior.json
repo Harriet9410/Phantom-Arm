@@ -1,0 +1,26 @@
+[
+  {
+    "name": "nine",
+    "code": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official13_stack01/pids/nine.json\n",
+    "stderr": ""
+  },
+  {
+    "name": "controller",
+    "code": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official13_stack01/pids/controller.json\n",
+    "stderr": ""
+  },
+  {
+    "name": "perception",
+    "code": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official13_stack01/pids/perception.json\n",
+    "stderr": ""
+  },
+  {
+    "name": "sim",
+    "code": 0,
+    "stdout": "Already stopped or PID identity changed; no signal sent: /root/gpufree-data/tcei_competition_20260919/official13_stack01/pids/sim.json\n",
+    "stderr": ""
+  }
+]

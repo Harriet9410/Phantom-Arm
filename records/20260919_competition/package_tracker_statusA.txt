@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "progress": {
+    "frames": 550,
+    "total": 565,
+    "changes": 8
+  },
+  "log": [
+    "TRACKER_REPLAY_DONE 565"
+  ]
+}

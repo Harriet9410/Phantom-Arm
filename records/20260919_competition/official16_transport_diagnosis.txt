@@ -1,0 +1,124 @@
+{
+  "checked_at": 1789829841.1529653,
+  "transport_status": {
+    "state": "preexisting_object_provenance_ambiguous",
+    "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+  },
+  "flags": {
+    "/tcei_controller/execute": false,
+    "/tcei_nine/execute": false
+  },
+  "remaining_candidates": [
+    {
+      "class": "Torch",
+      "pixel": [
+        569.5,
+        232.5
+      ]
+    },
+    {
+      "class": "Smokegrenade",
+      "pixel": [
+        624.0307692307692,
+        309.4923076923077
+      ]
+    },
+    {
+      "class": "Grenade",
+      "pixel": [
+        779.5808695744108,
+        201.36700305851235
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "task": 1,
+      "side": "left",
+      "class": "Smokegrenade",
+      "offset": 0.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_0555.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task01_release_plus_0500ms.jpg",
+      "stamp": 247.333346233,
+      "captured_at": 1789829055.264123,
+      "sha256": "5899baba60ea2a97170f76c188a13c5b44666575451e8c8c55df4d8e68e16f72"
+    },
+    {
+      "task": 1,
+      "side": "left",
+      "class": "Smokegrenade",
+      "offset": 1.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_0564.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task01_release_plus_1500ms.jpg",
+      "stamp": 248.16667961,
+      "captured_at": 1789829056.2726362,
+      "sha256": "4277c0347ef2456acfb59870f59e7a043dc0b1919f275d81131e6047cd0a133c"
+    },
+    {
+      "task": 1,
+      "side": "left",
+      "class": "Smokegrenade",
+      "offset": 3.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_0577.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task01_release_plus_3000ms.jpg",
+      "stamp": 249.350013005,
+      "captured_at": 1789829057.7421167,
+      "sha256": "a3fecb0ef53c5789e1b2323024f705ec94ba6c000b43299b31d3213c3554b00a"
+    },
+    {
+      "task": 1,
+      "side": "left",
+      "class": "Smokegrenade",
+      "offset": 5.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_0595.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task01_release_plus_5000ms.jpg",
+      "stamp": 251.100013096,
+      "captured_at": 1789829059.7643344,
+      "sha256": "c8cfdc201eb17852734fb283ffd5e398cb1ad7c750cc3279c21ec14bd94a43bf"
+    },
+    {
+      "task": 2,
+      "side": "right",
+      "class": "Magazine",
+      "offset": 0.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_1442.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task02_release_plus_0500ms.jpg",
+      "stamp": 326.533350363,
+      "captured_at": 1789829157.027154,
+      "sha256": "b02187f4109b7cf75b4b67c8d2392f32cef7596d2e448fc1adda4902ee5d0940"
+    },
+    {
+      "task": 2,
+      "side": "right",
+      "class": "Magazine",
+      "offset": 1.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_1451.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task02_release_plus_1500ms.jpg",
+      "stamp": 327.350017073,
+      "captured_at": 1789829157.996496,
+      "sha256": "93383d952dbc0a262de3ce14f0f5fea0a5775597e85e5c53b527006b87f12aa9"
+    },
+    {
+      "task": 2,
+      "side": "right",
+      "class": "Magazine",
+      "offset": 3.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_1464.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task02_release_plus_3000ms.jpg",
+      "stamp": 328.566683803,
+      "captured_at": 1789829159.5080843,
+      "sha256": "9378bb8c0580f10d2003c513b870281bd12768dde0494aaae58dfd8737491550"
+    },
+    {
+      "task": 2,
+      "side": "right",
+      "class": "Magazine",
+      "offset": 5.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official16_round01/rgbd/pair_1481.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official16_round01/delivery_review16_01/task02_release_plus_5000ms.jpg",
+      "stamp": 330.116683884,
+      "captured_at": 1789829161.4220946,
+      "sha256": "2c0fcdd62d42008333de87322eb70e5f50320c3401ca73900520b1dca5c469a8"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "registered_at": 1789778016.850909,
+  "source_capture": "t1_capture03_before01/numbered_scene.png",
+  "source_metadata": "t1_capture03_before01/scene.json",
+  "source_frame_id": 1596,
+  "method": "human inspection of full numbered scene and geometric relations before any model answer; known occlusion kept unresolved",
+  "assumptions": [
+    "camera image quadrant convention from plan; referee convention remains unconfirmed",
+    "no scene or arm motion between independent capture and inference; recheck actual saved model inputs"
+  ],
+  "competition_round": false,
+  "actions_enabled": false,
+  "cases": [
+    {
+      "id": "A1",
+      "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "141e549d-obj-0001"
+      ],
+      "side": "left",
+      "visible_frame_ids": [
+        "1"
+      ]
+    },
+    {
+      "id": "A2",
+      "instruction": "抓取右下方的弹夹，放到右侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "141e549d-obj-0004"
+      ],
+      "side": "right",
+      "visible_frame_ids": [
+        "4"
+      ]
+    },
+    {
+      "id": "A3",
+      "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+      "expected": "reject_for_observation",
+      "reason": "unknown bbox x533..629 could conceal a Torch left of visible Torch x569.5"
+    },
+    {
+      "id": "A4",
+      "instruction": "抓取手雷，放到右侧传送带",
+      "expected": "reject_for_observation",
+      "reason": "unresolved robot-occluded region cannot prove there is only one Grenade"
+    },
+    {
+      "id": "A5",
+      "instruction": "把一个军用手电筒放到左侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "141e549d-obj-0002"
+      ],
+      "side": "left",
+      "visible_frame_ids": [
+        "2"
+      ]
+    },
+    {
+      "id": "A6",
+      "instruction": "抓取最左方的烟雾弹，放到右侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "141e549d-obj-0001"
+      ],
+      "side": "right",
+      "visible_frame_ids": [
+        "1"
+      ]
+    },
+    {
+      "id": "A7",
+      "instruction": "抓取剩余的物品，放到左侧传送带",
+      "expected": "reject_missing_task_context",
+      "reason": "no predecessor tasks were physically executed; dry-run requests do not advance remaining set"
+    }
+  ]
+}

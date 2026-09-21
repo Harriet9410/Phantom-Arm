@@ -1,0 +1,50 @@
+{
+  "checked_at": 1789811066.921787,
+  "robot": {
+    "source": "native_joint_state_while_stopped",
+    "all_joint_names": [
+      "Joint01",
+      "Joint02",
+      "Joint03",
+      "Joint04",
+      "Joint05",
+      "Joint06",
+      "finger1_joint",
+      "finger2_joint"
+    ],
+    "all_joint_positions": [
+      8.607428753748536e-05,
+      2.0628108978271484,
+      -2.184605598449707,
+      4.579109191894531,
+      1.6001654863357544,
+      0.0002580159343779087,
+      2.2600287863383528e-08,
+      8.006719731667999e-10
+    ],
+    "all_joint_velocities": [
+      8.96312656095688e-07,
+      -1.1542603033376508e-06,
+      -4.5473079808289185e-06,
+      6.775700001071527e-08,
+      -3.604156972869532e-07,
+      6.7019691414316185e-06,
+      -2.8683743948931806e-06,
+      -2.8683743948931806e-06
+    ],
+    "stamp": 1789811066.8906379
+  },
+  "captured": false,
+  "stop": {
+    "id": "8ef34ac878a14dfc9cdde44875438218",
+    "state": "stopped",
+    "reason": "external cancellation",
+    "seconds": 20397.939358999953,
+    "fault_reason": null,
+    "max_joint_speed": 6.7019691414316185e-06,
+    "joint_distance": 3.5762786865234375e-07,
+    "tcp_distance": 7.234997112172348e-08,
+    "simulation_time": 19936.86770645529,
+    "time": 1789811066.8899474
+  }
+}

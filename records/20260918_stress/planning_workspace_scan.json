@@ -1,0 +1,408 @@
+[
+  {
+    "round": 2,
+    "old_failure": "held path changes tool attitude by 178.87 degrees",
+    "continuation_points": 0,
+    "start_fk": [
+      0.21045022463135887,
+      -0.1378987576137084,
+      2.564586874575274
+    ],
+    "recorded_tcp": [
+      0.21045022463135887,
+      -0.1378987576137084,
+      2.564586874575274
+    ],
+    "start_angle_degrees": 0.031007375453322772,
+    "start_clearance": true,
+    "base_pose": [
+      [
+        -0.04139232635498047,
+        0.6784559488296509,
+        2.496964454650879
+      ],
+      [
+        0.70710688829422,
+        2.9103830456733704e-11,
+        4.5787373892380856e-11,
+        -0.70710688829422
+      ]
+    ],
+    "joint_lower": [
+      -6.28318452835083,
+      -1.4835296869277954,
+      -3.054326057434082,
+      -4.625122547149658,
+      -6.28318452835083,
+      -6.28318452835083
+    ],
+    "joint_upper": [
+      6.28318452835083,
+      4.625122547149658,
+      3.054326057434082,
+      4.625122547149658,
+      6.28318452835083,
+      6.28318452835083
+    ],
+    "raw_ik": [
+      {
+        "point": "first10percent",
+        "ptol": 0.0008,
+        "rtol": 0.006,
+        "ok": true,
+        "joints": [
+          -0.17964959365532526,
+          0.5243606965452831,
+          -0.6922240418837381,
+          4.5443665850701835,
+          1.571352628488716,
+          0.0689946272253934
+        ],
+        "max_jump": 0.00946687346129682,
+        "clearance": true,
+        "position_error": 5.817017174486312e-07,
+        "angle_error_deg": 0.060956121716945796
+      },
+      {
+        "point": "first10percent",
+        "ptol": 0.002,
+        "rtol": 0.02,
+        "ok": true,
+        "joints": [
+          -0.17964959365532526,
+          0.5243606965452831,
+          -0.6922240418837381,
+          4.5443665850701835,
+          1.571352628488716,
+          0.0689946272253934
+        ],
+        "max_jump": 0.00946687346129682,
+        "clearance": true,
+        "position_error": 5.817017174486312e-07,
+        "angle_error_deg": 0.060956121716945796
+      },
+      {
+        "point": "goal",
+        "ptol": 0.0008,
+        "rtol": 0.006,
+        "ok": true,
+        "joints": [
+          2.694914916263574,
+          3.1748384864205845,
+          -0.6266110087383255,
+          4.120326830399873,
+          -1.5705806576455803,
+          0.3360958467400467
+        ],
+        "max_jump": 3.141335662528393,
+        "clearance": true,
+        "position_error": 6.062857044664638e-07,
+        "angle_error_deg": 0.08858993313791398
+      },
+      {
+        "point": "goal",
+        "ptol": 0.002,
+        "rtol": 0.02,
+        "ok": true,
+        "joints": [
+          2.694914916263574,
+          3.1748384864205845,
+          -0.6266110087383255,
+          4.120326830399873,
+          -1.5705806576455803,
+          0.3360958467400467
+        ],
+        "max_jump": 3.141335662528393,
+        "clearance": true,
+        "position_error": 6.062857044664638e-07,
+        "angle_error_deg": 0.08858993313791398
+      }
+    ],
+    "height_scan": [
+      {
+        "variant": 0,
+        "height": 2.547020611305237,
+        "lift_delta": 0.10000000000000009,
+        "ik_valid": true,
+        "down_points": 64,
+        "up_points": 61
+      },
+      {
+        "variant": 0,
+        "height": 2.567020611305237,
+        "lift_delta": 0.1200000000000001,
+        "ik_valid": true,
+        "down_points": 73,
+        "up_points": 73
+      },
+      {
+        "variant": 0,
+        "height": 2.579508,
+        "lift_delta": 0.1324873886947633,
+        "ik_valid": true,
+        "down_points": 82,
+        "up_points": 82
+      },
+      {
+        "variant": 0,
+        "height": 2.587020611305237,
+        "lift_delta": 0.14000000000000012,
+        "ik_valid": true,
+        "down_points": 88,
+        "up_points": 85
+      },
+      {
+        "variant": 0,
+        "height": 2.607020611305237,
+        "lift_delta": 0.16000000000000014,
+        "ik_valid": true,
+        "down_points": 0,
+        "up_points": 0
+      },
+      {
+        "variant": 180,
+        "height": 2.547020611305237,
+        "lift_delta": 0.10000000000000009,
+        "ik_valid": true,
+        "down_points": 64,
+        "up_points": 61
+      },
+      {
+        "variant": 180,
+        "height": 2.567020611305237,
+        "lift_delta": 0.1200000000000001,
+        "ik_valid": true,
+        "down_points": 76,
+        "up_points": 73
+      },
+      {
+        "variant": 180,
+        "height": 2.579508,
+        "lift_delta": 0.1324873886947633,
+        "ik_valid": true,
+        "down_points": 82,
+        "up_points": 82
+      },
+      {
+        "variant": 180,
+        "height": 2.587020611305237,
+        "lift_delta": 0.14000000000000012,
+        "ik_valid": true,
+        "down_points": 85,
+        "up_points": 85
+      },
+      {
+        "variant": 180,
+        "height": 2.607020611305237,
+        "lift_delta": 0.16000000000000014,
+        "ik_valid": true,
+        "down_points": 67,
+        "up_points": 65
+      }
+    ],
+    "seconds": 0.3924640789628029
+  },
+  {
+    "round": 4,
+    "old_failure": null,
+    "continuation_points": 0,
+    "start_fk": [
+      0.06629435958240079,
+      0.4000000197879955,
+      2.7503800825940776
+    ],
+    "recorded_tcp": [
+      0.06629435958240079,
+      0.4000000197879955,
+      2.7503800825940776
+    ],
+    "start_angle_degrees": 82.7642273415032,
+    "start_clearance": true,
+    "base_pose": [
+      [
+        -0.04139232635498047,
+        0.6784559488296509,
+        2.496964454650879
+      ],
+      [
+        0.70710688829422,
+        2.9103830456733704e-11,
+        4.5787373892380856e-11,
+        -0.70710688829422
+      ]
+    ],
+    "joint_lower": [
+      -6.28318452835083,
+      -1.4835296869277954,
+      -3.054326057434082,
+      -4.625122547149658,
+      -6.28318452835083,
+      -6.28318452835083
+    ],
+    "joint_upper": [
+      6.28318452835083,
+      4.625122547149658,
+      3.054326057434082,
+      4.625122547149658,
+      6.28318452835083,
+      6.28318452835083
+    ],
+    "raw_ik": [
+      {
+        "point": "first10percent",
+        "ptol": 0.0008,
+        "rtol": 0.006,
+        "ok": true,
+        "joints": [
+          0.024151241902875802,
+          1.8592304660924632,
+          -2.1077426519659856,
+          4.463477936774376,
+          1.5710990961223086,
+          1.4184842622896028
+        ],
+        "max_jump": 1.418504775977162,
+        "clearance": true,
+        "position_error": 4.4010380546333773e-07,
+        "angle_error_deg": 0.05014891274232033
+      },
+      {
+        "point": "first10percent",
+        "ptol": 0.002,
+        "rtol": 0.02,
+        "ok": true,
+        "joints": [
+          0.024151241902875802,
+          1.8592304660924632,
+          -2.1077426519659856,
+          4.463477936774376,
+          1.5710990961223086,
+          1.4184842622896028
+        ],
+        "max_jump": 1.418504775977162,
+        "clearance": true,
+        "position_error": 4.4010380546333773e-07,
+        "angle_error_deg": 0.05014891274232033
+      },
+      {
+        "point": "goal",
+        "ptol": 0.0008,
+        "rtol": 0.006,
+        "ok": false
+      },
+      {
+        "point": "goal",
+        "ptol": 0.002,
+        "rtol": 0.02,
+        "ok": false
+      }
+    ],
+    "height_scan": [
+      {
+        "variant": 0,
+        "height": 2.5540125103187563,
+        "lift_delta": 0.10000000000000009,
+        "ik_valid": true,
+        "down_points": 61,
+        "up_points": 61
+      },
+      {
+        "variant": 0,
+        "height": 2.5740125103187563,
+        "lift_delta": 0.1200000000000001,
+        "ik_valid": true,
+        "down_points": 76,
+        "up_points": 73
+      },
+      {
+        "variant": 0,
+        "height": 2.579508,
+        "lift_delta": 0.1254954896812439,
+        "ik_valid": true,
+        "down_points": 79,
+        "up_points": 79
+      },
+      {
+        "variant": 0,
+        "height": 2.5940125103187563,
+        "lift_delta": 0.14000000000000012,
+        "ik_valid": true,
+        "down_points": 88,
+        "up_points": 0
+      },
+      {
+        "variant": 0,
+        "height": 2.6140125103187564,
+        "lift_delta": 0.16000000000000014,
+        "ik_valid": false
+      },
+      {
+        "variant": 180,
+        "height": 2.5540125103187563,
+        "lift_delta": 0.10000000000000009,
+        "ik_valid": true,
+        "down_points": 64,
+        "up_points": 61
+      },
+      {
+        "variant": 180,
+        "height": 2.5740125103187563,
+        "lift_delta": 0.1200000000000001,
+        "ik_valid": true,
+        "down_points": 73,
+        "up_points": 73
+      },
+      {
+        "variant": 180,
+        "height": 2.579508,
+        "lift_delta": 0.1254954896812439,
+        "ik_valid": true,
+        "down_points": 79,
+        "up_points": 79
+      },
+      {
+        "variant": 180,
+        "height": 2.5940125103187563,
+        "lift_delta": 0.14000000000000012,
+        "ik_valid": true,
+        "down_points": 88,
+        "up_points": 0
+      },
+      {
+        "variant": 180,
+        "height": 2.6140125103187564,
+        "lift_delta": 0.16000000000000014,
+        "ik_valid": false
+      }
+    ],
+    "wrist_variants": [
+      {
+        "variant": 0,
+        "approach_position": [
+          0.027970187912784585,
+          -0.20737919847682315,
+          2.6140125103187564
+        ],
+        "ik_valid": false,
+        "joints": null,
+        "grid_raw_success": 0,
+        "grid_valid_count": 0,
+        "grid_valid_examples": []
+      },
+      {
+        "variant": 180,
+        "approach_position": [
+          0.03102062366548533,
+          -0.23118455169240568,
+          2.6140125103187564
+        ],
+        "ik_valid": false,
+        "joints": null,
+        "grid_raw_success": 0,
+        "grid_valid_count": 0,
+        "grid_valid_examples": []
+      }
+    ],
+    "seconds": 1.5360146220773458
+  }
+]

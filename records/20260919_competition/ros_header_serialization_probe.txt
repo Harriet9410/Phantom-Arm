@@ -1,0 +1,28 @@
+{
+  "ros_master_started": false,
+  "robot_commands_sent": false,
+  "network_publishers_registered": false,
+  "no_subscriber": {
+    "returned": false,
+    "publisher_seq_before": 0,
+    "publisher_seq_after": 0,
+    "message_seq_after": 987
+  },
+  "status": "verified",
+  "before": {
+    "seq": 123,
+    "stamp": 12.25,
+    "frame_id": "camera_top_link",
+    "data_sha256": "7192385c3c0605de55bb9476ce1d90748190ecb32a8eed7f5207b30cf6a1fe89"
+  },
+  "after": {
+    "seq": 7,
+    "stamp": 12.25,
+    "frame_id": "camera_top_link",
+    "data_sha256": "7192385c3c0605de55bb9476ce1d90748190ecb32a8eed7f5207b30cf6a1fe89"
+  },
+  "header_seq_rewritten": true,
+  "payload_unchanged": true,
+  "rospy_msg_path": "/opt/ros/noetic/lib/python3/dist-packages/rospy/msg.py",
+  "rospy_msg_sha256": "fe4fec18afb214d4836de5500df4bfac432758bc339b93c79c7b30e10f01f7db"
+}

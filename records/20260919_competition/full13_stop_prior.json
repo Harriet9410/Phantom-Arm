@@ -1,0 +1,30 @@
+[
+  {
+    "name": "nine",
+    "record": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/nine.json",
+    "code": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/nine.json\n",
+    "stderr": ""
+  },
+  {
+    "name": "controller",
+    "record": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/controller.json",
+    "code": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/controller.json\n",
+    "stderr": ""
+  },
+  {
+    "name": "perception",
+    "record": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/perception.json",
+    "code": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/perception.json\n",
+    "stderr": ""
+  },
+  {
+    "name": "sim",
+    "record": "/root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/sim.json",
+    "code": 0,
+    "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action12_01/pids/sim.json\n",
+    "stderr": ""
+  }
+]

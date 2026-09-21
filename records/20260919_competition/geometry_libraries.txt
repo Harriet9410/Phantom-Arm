@@ -1,0 +1,1 @@
+{"local_native_tools": {"scipy": false, "trimesh": false, "fcl": false}}

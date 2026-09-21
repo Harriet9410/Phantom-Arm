@@ -1,0 +1,41 @@
+{
+  "prepared_at": 1789837687.0783389,
+  "stack": "/root/gpufree-data/tcei_competition_20260919/H01_source_contact18_stack01",
+  "run": "/root/gpufree-data/tcei_competition_20260919/H01_source_contact18_A01",
+  "recorders": {
+    "rgbd": {
+      "pid": 498272,
+      "pgid": 498272,
+      "start_ticks": 1676983494,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "/root/tcei_competition_20260919/record_trial_rgbd12.py",
+        "_output:=/root/gpufree-data/tcei_competition_20260919/H01_source_contact18_A01/rgbd",
+        "_duration:=600"
+      ],
+      "cwd": "/root/tcei_competition_20260919",
+      "log": "/root/gpufree-data/tcei_competition_20260919/H01_source_contact18_A01/logs/rgbd.log",
+      "started_at": 1789837686.5203207
+    },
+    "scalars": {
+      "pid": 498274,
+      "pgid": 498274,
+      "start_ticks": 1676983499,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "/root/tcei_competition_20260919/record_scalar_evidence12.py",
+        "--output",
+        "/root/gpufree-data/tcei_competition_20260919/H01_source_contact18_A01/scalars",
+        "--duration",
+        "600"
+      ],
+      "cwd": "/root/tcei_competition_20260919",
+      "log": "/root/gpufree-data/tcei_competition_20260919/H01_source_contact18_A01/logs/scalars.log",
+      "started_at": 1789837686.5676212
+    }
+  },
+  "robot_episode_started": false,
+  "fault_injection": "one declared cancellation at source after preload and before trial lift"
+}

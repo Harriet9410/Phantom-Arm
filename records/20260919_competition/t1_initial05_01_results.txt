@@ -1,0 +1,147 @@
+{
+  "checked_at": 1789784571.5713382,
+  "launcher_log": "T1_05_STARTED 169128\n",
+  "summary": null,
+  "events": {
+    "infer_started": 4,
+    "model_answer": 6,
+    "repair_started": 3,
+    "dry_run_validated": 0,
+    "rejected": 3,
+    "request_rejected": 0,
+    "request_finished": 3
+  },
+  "answers": [
+    {
+      "time": 1789784544.1225333,
+      "status": "model_answer",
+      "request_id": "t1_932f405cc1754bcd99053ade3f8da88c",
+      "answer": "```json\n{\n  \"schema_version\": 2,\n  \"class\": \"Smokegrenade\",\n  \"side\": \"left\",\n  \"count\": 1,\n  \"ids\": [\"1\"],\n  \"intent\": \"category\",\n  \"spatial\": \"upper_left\",\n  \"reference\": \"camera_image\",\n  \"quantity\": \"exact\",\n  \"status\": \"ready\",\n  \"reason\": \"\"\n}\n```",
+      "attempt": 1,
+      "elapsed": 8.435511738061905
+    },
+    {
+      "time": 1789784548.9078968,
+      "status": "model_answer",
+      "request_id": "t1_932f405cc1754bcd99053ade3f8da88c",
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Smokegrenade\",\"side\":\"left\",\"count\":1,\"ids\":[\"1\"],\"intent\":\"category\",\"spatial\":\"upper_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\",\"grasp_ready\":true}\n```",
+      "attempt": 2,
+      "elapsed": 13.22088049724698
+    },
+    {
+      "time": 1789784553.2940757,
+      "status": "model_answer",
+      "request_id": "t1_f2d1d9a5cf5247cfbf032196b6ac00e2",
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Magazine\",\"side\":\"right\",\"count\":1,\"ids\":[\"4\"],\"intent\":\"category\",\"spatial\":\"lower_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\"}\n```",
+      "attempt": 1,
+      "elapsed": 4.377960532903671
+    },
+    {
+      "time": 1789784557.5745249,
+      "status": "model_answer",
+      "request_id": "t1_f2d1d9a5cf5247cfbf032196b6ac00e2",
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Magazine\",\"side\":\"right\",\"count\":1,\"ids\":[\"4\"],\"intent\":\"category\",\"spatial\":\"lower_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\"}\n```",
+      "attempt": 2,
+      "elapsed": 8.65841131284833
+    },
+    {
+      "time": 1789784564.4761536,
+      "status": "model_answer",
+      "request_id": "t1_f29ee09f867c4c2da048f8d1cab8af65",
+      "answer": "```json\n{\n  \"schema_version\": 2,\n  \"class\": \"Torch\",\n  \"side\": \"left\",\n  \"count\": 1,\n  \"ids\": [\"ID 5\"],\n  \"intent\": \"category\",\n  \"spatial\": \"lower_right\",\n  \"reference\": \"camera_image\",\n  \"quantity\": \"exact\",\n  \"status\": \"ready\",\n  \"reason\": \"\"\n}\n```",
+      "attempt": 1,
+      "elapsed": 6.893419532105327
+    },
+    {
+      "time": 1789784568.3802717,
+      "status": "model_answer",
+      "request_id": "t1_f29ee09f867c4c2da048f8d1cab8af65",
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Torch\",\"side\":\"left\",\"count\":1,\"ids\":[\"2\"],\"intent\":\"category\",\"spatial\":\"lower_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\"}\n```",
+      "attempt": 2,
+      "elapsed": 10.79753520898521
+    }
+  ],
+  "errors": [
+    {
+      "time": 1789784544.1268318,
+      "status": "validation_failed",
+      "request_id": "t1_932f405cc1754bcd99053ade3f8da88c",
+      "attempt": 1,
+      "answer": "```json\n{\n  \"schema_version\": 2,\n  \"class\": \"Smokegrenade\",\n  \"side\": \"left\",\n  \"count\": 1,\n  \"ids\": [\"1\"],\n  \"intent\": \"category\",\n  \"spatial\": \"upper_left\",\n  \"reference\": \"camera_image\",\n  \"quantity\": \"exact\",\n  \"status\": \"ready\",\n  \"reason\": \"\"\n}\n```",
+      "reason": "model quantity contradicts explicit instruction"
+    },
+    {
+      "time": 1789784548.911434,
+      "status": "validation_failed",
+      "request_id": "t1_932f405cc1754bcd99053ade3f8da88c",
+      "attempt": 2,
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Smokegrenade\",\"side\":\"left\",\"count\":1,\"ids\":[\"1\"],\"intent\":\"category\",\"spatial\":\"upper_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\",\"grasp_ready\":true}\n```",
+      "reason": "schema: expected version 2 fields class,count,ids,intent,quantity,reason,reference,schema_version,side,spatial,status"
+    },
+    {
+      "time": 1789784548.9132094,
+      "status": "rejected",
+      "request_id": "t1_932f405cc1754bcd99053ade3f8da88c",
+      "reason": "schema: expected version 2 fields class,count,ids,intent,quantity,reason,reference,schema_version,side,spatial,status",
+      "elapsed": 13.22619224153459,
+      "requires_reobservation": false,
+      "failure_kind": "semantic_validation",
+      "error_type": "ValueError",
+      "failure_stage": "plan_validation"
+    },
+    {
+      "time": 1789784553.3035972,
+      "status": "validation_failed",
+      "request_id": "t1_f2d1d9a5cf5247cfbf032196b6ac00e2",
+      "attempt": 1,
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Magazine\",\"side\":\"right\",\"count\":1,\"ids\":[\"4\"],\"intent\":\"category\",\"spatial\":\"lower_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\"}\n```",
+      "reason": "model spatial contradicts explicit instruction"
+    },
+    {
+      "time": 1789784557.5784638,
+      "status": "validation_failed",
+      "request_id": "t1_f2d1d9a5cf5247cfbf032196b6ac00e2",
+      "attempt": 2,
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Magazine\",\"side\":\"right\",\"count\":1,\"ids\":[\"4\"],\"intent\":\"category\",\"spatial\":\"lower_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\"}\n```",
+      "reason": "model spatial contradicts explicit instruction"
+    },
+    {
+      "time": 1789784557.5798762,
+      "status": "rejected",
+      "request_id": "t1_f2d1d9a5cf5247cfbf032196b6ac00e2",
+      "reason": "model spatial contradicts explicit instruction",
+      "elapsed": 8.663766328245401,
+      "requires_reobservation": false,
+      "failure_kind": "semantic_validation",
+      "error_type": "ValueError",
+      "failure_stage": "plan_validation"
+    },
+    {
+      "time": 1789784564.4786382,
+      "status": "validation_failed",
+      "request_id": "t1_f29ee09f867c4c2da048f8d1cab8af65",
+      "attempt": 1,
+      "answer": "```json\n{\n  \"schema_version\": 2,\n  \"class\": \"Torch\",\n  \"side\": \"left\",\n  \"count\": 1,\n  \"ids\": [\"ID 5\"],\n  \"intent\": \"category\",\n  \"spatial\": \"lower_right\",\n  \"reference\": \"camera_image\",\n  \"quantity\": \"exact\",\n  \"status\": \"ready\",\n  \"reason\": \"\"\n}\n```",
+      "reason": "model spatial contradicts explicit instruction"
+    },
+    {
+      "time": 1789784568.3839362,
+      "status": "validation_failed",
+      "request_id": "t1_f29ee09f867c4c2da048f8d1cab8af65",
+      "attempt": 2,
+      "answer": "```json\n{\"schema_version\":2,\"class\":\"Torch\",\"side\":\"left\",\"count\":1,\"ids\":[\"2\"],\"intent\":\"category\",\"spatial\":\"lower_left\",\"reference\":\"camera_image\",\"quantity\":\"exact\",\"status\":\"ready\",\"reason\":\"\"}\n```",
+      "reason": "model spatial contradicts explicit instruction"
+    },
+    {
+      "time": 1789784568.3850815,
+      "status": "rejected",
+      "request_id": "t1_f29ee09f867c4c2da048f8d1cab8af65",
+      "reason": "model spatial contradicts explicit instruction",
+      "elapsed": 10.802347419783473,
+      "requires_reobservation": false,
+      "failure_kind": "semantic_validation",
+      "error_type": "ValueError",
+      "failure_stage": "plan_validation"
+    }
+  ]
+}

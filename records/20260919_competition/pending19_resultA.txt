@@ -1,0 +1,433 @@
+{
+  "counts": {
+    "judge_started": 1,
+    "ready": 3,
+    "observation_received": 1,
+    "observation_accepted": 1,
+    "round_started": 1,
+    "observation_started": 1,
+    "observation_preparation_started": 1,
+    "clear_basket_for_observation": 1,
+    "arrived": 19,
+    "observation_completed": 1,
+    "infer_started": 2,
+    "model_answer": 2,
+    "plan_published": 1,
+    "request_finished": 2,
+    "plan_accepted": 1,
+    "task_started": 1,
+    "grasp_evidence_preflight": 1,
+    "grasp_candidate_set": 1,
+    "attempt": 1,
+    "grasp_preview": 1,
+    "approach": 1,
+    "grasp_orientation_selected": 1,
+    "approach_clearance_verified": 1,
+    "occlusion_check": 1,
+    "controlled_self_occlusion": 1,
+    "descend": 1,
+    "grasp_preload_started": 1,
+    "grasp_preload": 1,
+    "grasp_contact_confirmed": 1,
+    "trial_lift_started": 1,
+    "trial_lift": 1,
+    "trial_lift_contact_evidence": 47,
+    "trial_lift_evidence": 29,
+    "grasp_verified": 1,
+    "lift_01_of_03": 1,
+    "lift_02_of_03": 1,
+    "lift_03_of_03": 1,
+    "transfer_clearance_01_of_03": 1,
+    "transfer_clearance_02_of_03": 1,
+    "transfer_clearance_03_of_03": 1,
+    "place_above_01_of_06": 1,
+    "place_above_02_of_06": 1,
+    "place_above_03_of_06": 1,
+    "place_above_04_of_06": 1,
+    "place_above_05_of_06": 1,
+    "place_above_06_of_06": 1,
+    "place_descend": 1,
+    "release_started": 1,
+    "released": 1,
+    "place_retreat": 1,
+    "return_home": 1,
+    "placement_pending_verification": 1,
+    "grasp_attempt_outcome": 1,
+    "task_pending_verification": 1,
+    "placement_verification_error": 1,
+    "validation_failed": 1,
+    "rejected": 1,
+    "cancel_requested": 1,
+    "controlled_stop_requested": 1,
+    "stop_ack": 31,
+    "cancel_ack": 1
+  },
+  "key_events": [
+    {
+      "time": 1789840807.742643,
+      "monotonic": 16772956.172996655,
+      "request_id": "episode_1a86f301fe3c4ed9a2eea8b3952198f5",
+      "round_id": "round_ca27f184406d443cb3b1321f98ce9b55",
+      "task_id": "round_ca27f184406d443cb3b1321f98ce9b55-task-01",
+      "status": "grasp_preload",
+      "code_sha256": "0f759c7d8d40ea44ac229ae039d120de42d44eac761f2e80571055220d025b29",
+      "command": 0.017750000000000012,
+      "requested_target": 0.01950000000000001,
+      "applied_distance_m": 0.0002500000000000002,
+      "limit_reason": "effort_stop",
+      "limited_by_measured_position_lead": false,
+      "contact_efforts": [
+        30.235708236694336,
+        30.233936309814453
+      ],
+      "effort_stop": 30.0,
+      "finger_positions": [
+        0.017743956297636032,
+        0.017271438613533974
+      ],
+      "position_lead_limit": 0.002,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16772956.173740445
+    },
+    {
+      "time": 1789840808.3498902,
+      "monotonic": 16772956.780243307,
+      "request_id": "episode_1a86f301fe3c4ed9a2eea8b3952198f5",
+      "round_id": "round_ca27f184406d443cb3b1321f98ce9b55",
+      "task_id": "round_ca27f184406d443cb3b1321f98ce9b55-task-01",
+      "status": "grasp_contact_confirmed",
+      "code_sha256": "0f759c7d8d40ea44ac229ae039d120de42d44eac761f2e80571055220d025b29",
+      "command": 0.017750000000000012,
+      "contact_efforts": [
+        30.23639678955078,
+        30.233522415161133
+      ],
+      "stable_sim_seconds": 0.4500000230000296,
+      "fresh_contact_samples": 28,
+      "joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "measured_joint_positions": [
+        -0.17937996983528137,
+        0.38929614424705505,
+        -0.7353361248970032,
+        -1.9167449474334717,
+        1.570487141609192,
+        0.13436484336853027,
+        0.017743965610861778,
+        0.017271457239985466
+      ],
+      "native_contact": {
+        "state": "holding",
+        "contact_lost": false,
+        "retained_support": true,
+        "stable_contact": false,
+        "efforts": [
+          30.23639678955078,
+          30.233522415161133
+        ],
+        "sensor_stamps": [
+          387.41668687202036,
+          387.41668687202036
+        ],
+        "high_samples": 1,
+        "high_seconds": 0.0,
+        "low_samples": 0,
+        "low_seconds": 0.0,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "position_lead_limit": 0.002,
+      "position_lead_limit_calibrated": false,
+      "preload_distance_m": 0.0002500000000000002,
+      "preload_limited": true,
+      "preload_limit_reason": "effort_stop",
+      "preload_effort_stop": 30.0,
+      "preload_effort_stop_calibrated": false,
+      "limitation": "Contact plus preload only; actual trial-lift confirmation is still required.",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16772956.780980727
+    },
+    {
+      "time": 1789840843.8223553,
+      "monotonic": 16772992.252708007,
+      "request_id": "episode_1a86f301fe3c4ed9a2eea8b3952198f5",
+      "round_id": "round_ca27f184406d443cb3b1321f98ce9b55",
+      "task_id": "round_ca27f184406d443cb3b1321f98ce9b55-task-01",
+      "status": "placement_pending_verification",
+      "code_sha256": "0f759c7d8d40ea44ac229ae039d120de42d44eac761f2e80571055220d025b29",
+      "release_id": "e9c2c7e709094f3581be9f99d8f746bc",
+      "proof": {
+        "release_completed": true,
+        "empty_gripper": true,
+        "at_observation_pose": true,
+        "finger_positions": {
+          "finger1_joint": 1.182561337742527e-08,
+          "finger2_joint": 4.215881810321065e-10
+        },
+        "checked_at": 1789840843.821686
+      },
+      "reason": "release completed; no coherent belt proof yet",
+      "continue_next_task": true,
+      "stable_id": "49c92db4-obj-0006",
+      "side": "left",
+      "category": "Smokegrenade",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16772992.25510526
+    },
+    {
+      "time": 1789840843.829915,
+      "monotonic": 16772992.26026816,
+      "request_id": "episode_1a86f301fe3c4ed9a2eea8b3952198f5",
+      "round_id": "round_ca27f184406d443cb3b1321f98ce9b55",
+      "task_id": "round_ca27f184406d443cb3b1321f98ce9b55-task-01",
+      "status": "task_pending_verification",
+      "code_sha256": "0f759c7d8d40ea44ac229ae039d120de42d44eac761f2e80571055220d025b29",
+      "placed_verified": 0,
+      "pending_stable_ids": [
+        "49c92db4-obj-0006"
+      ],
+      "motion_complete": true,
+      "elapsed": 52.83392060920596,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16772992.260742651
+    }
+  ],
+  "tail": [
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    }
+  ],
+  "supervisor_job.json": {
+    "pid": 519899,
+    "started_at": 1789840783.4109824,
+    "source_sha256": "036c2ef60203cbffb5ba88a1990fbd9b4de2553faa16b88e5f719c0983d68125"
+  },
+  "supervisor_finished.json": {
+    "started_at": 1789840783.9396248,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "/root/tcei_competition_20260919/releases/dev_v7_t1_19/tcei_stack/run_episode.py",
+      "--official-example",
+      "--task-source",
+      "engineering_pending_placement",
+      "--budget",
+      "600",
+      "--output",
+      "/root/gpufree-data/tcei_competition_20260919/pending19_A01/episode"
+    ],
+    "budget_seconds": 600,
+    "watchdog_seconds": 660,
+    "script_sha256": "036c2ef60203cbffb5ba88a1990fbd9b4de2553faa16b88e5f719c0983d68125",
+    "returncode": 1,
+    "episode_status": "stopped",
+    "execution_disabled": true,
+    "recorder_cleanup": [
+      {
+        "name": "rgbd",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/pending19_A01/pids/rgbd.json\n",
+        "stderr": ""
+      },
+      {
+        "name": "scalars",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/pending19_A01/pids/scalars.json\n",
+        "stderr": ""
+      }
+    ],
+    "evidence_closeout": {
+      "rgbd": {
+        "closed_at": 1789840852.2683537,
+        "receiving_ended_at": 1789840852.2588794,
+        "maximum_duration_seconds": 1200.0,
+        "stop_reason": "requested_stop",
+        "recorded_pairs": 570,
+        "pending_pairs": 0,
+        "dropped_pairs": 0,
+        "write_errors": [],
+        "complete": true,
+        "capture_window_seconds": 0.0,
+        "depth_encoding": "float32_deflate_level1"
+      },
+      "scalars": {
+        "closed_at": 1789840853.6147783,
+        "recorded_rows": 163306,
+        "topics_seen": [
+          "/Jaka/get_end_effector_pose",
+          "/Jaka/get_gripper_efforts",
+          "/Jaka/get_jointstate",
+          "/Jaka/gripper_is_captured",
+          "/Jaka/set_end_effector_pose",
+          "/Jaka/set_gripper_value",
+          "/clock",
+          "/tcei/cancel_ack",
+          "/tcei/cancel_request",
+          "/tcei/execute_preview",
+          "/tcei/grasp_preview_request",
+          "/tcei/grasp_preview_response",
+          "/tcei/gripper_contact",
+          "/tcei/joint_diagnostics",
+          "/tcei/nine_status",
+          "/tcei/plan",
+          "/tcei/planner_status",
+          "/tcei/prepare_observation",
+          "/tcei/request",
+          "/tcei/stop_ack",
+          "/tcei/stop_request",
+          "/tcei/task_status"
+        ],
+        "maximum_duration_seconds": 1200.0
+      }
+    },
+    "evidence_complete": true,
+    "finished_at": 1789840854.4233515
+  },
+  "summary": {
+    "status": "stopped",
+    "elapsed_seconds": 65.18084905482829,
+    "verified_objects": 0,
+    "reason": "task stopped after rejected: unknown foreground may change the requested selection",
+    "safe_stop": {
+      "state": "stopped",
+      "proof": {
+        "id": "c5a4b4f6046b4636a0b526621c0e4c89",
+        "state": "stopped",
+        "reason": "external cancellation: task stopped after rejected: unknown foreground may change the requested selection",
+        "seconds": 0.3464633673429489,
+        "fault_reason": null,
+        "max_joint_speed": 2.8610228000047833e-05,
+        "reported_max_joint_speed": 1.8138933228328824e-05,
+        "velocity_source": "consecutive_physics_step_position_difference",
+        "solver_type": "TGS",
+        "physics_dt": 0.016666666666666666,
+        "sample_dt": 0.01666666753590107,
+        "joint_distance": 4.76837158203125e-07,
+        "tcp_distance": 2.6361907820369085e-07,
+        "stable_window_tcp_drift": 2.6361907820369085e-07,
+        "simulation_time": 415.783355018124,
+        "time": 1789840846.4682019,
+        "measurement_protocol": "tcei.stop_measurement.v2",
+        "configuration_error": null
+      },
+      "seconds": 0.3522269483655691,
+      "cancel_epoch": 1,
+      "cancel_mapping": {
+        "protocol": "tcei.cancel.v1",
+        "cancel_id": "bea2a60824644d5fae9b72f0628f69c0",
+        "request_round_id": "round_ca27f184406d443cb3b1321f98ce9b55",
+        "request_id": "episode_a4eca0600c1541f3a0e4726b90daad8e",
+        "state": "accepted",
+        "stop_id": "c5a4b4f6046b4636a0b526621c0e4c89",
+        "mapping_revision": 0,
+        "affected_round_id": "round_ca27f184406d443cb3b1321f98ce9b55",
+        "affected_request_id": "episode_1a86f301fe3c4ed9a2eea8b3952198f5",
+        "monotonic": 16772994.55302088,
+        "time": 1789840846.1226685
+      },
+      "received_monotonic": 16772994.900477773
+    },
+    "code_changed_during_episode": []
+  },
+  "ledger_tasks": [
+    {
+      "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+      "status": "executed_pending_verification",
+      "verified_grasps": 1,
+      "verified_placements": 0,
+      "estimated_points": null
+    },
+    {
+      "instruction": "抓取右下方的弹夹，放到右侧传送带",
+      "status": "incomplete",
+      "verified_grasps": 0,
+      "verified_placements": 0,
+      "estimated_points": null
+    },
+    {
+      "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+      "status": "pending",
+      "verified_grasps": 0,
+      "verified_placements": 0,
+      "estimated_points": null
+    },
+    {
+      "instruction": "抓取手雷，放到右侧传送带",
+      "status": "pending",
+      "verified_grasps": 0,
+      "verified_placements": 0,
+      "estimated_points": null
+    },
+    {
+      "instruction": "抓取剩余的物品，放到左侧传送带",
+      "status": "pending",
+      "verified_grasps": 0,
+      "verified_placements": 0,
+      "estimated_points": null
+    }
+  ],
+  "fault_counts": {
+    "fixture_started": 1,
+    "gap_armed": 1,
+    "observations_withheld": 6
+  },
+  "fault_armed": [
+    {
+      "time": 1789840831.0302145,
+      "monotonic": 16772979.460567877,
+      "status": "gap_armed",
+      "release_id": "e9c2c7e709094f3581be9f99d8f746bc",
+      "request_id": "episode_1a86f301fe3c4ed9a2eea8b3952198f5",
+      "task_id": "round_ca27f184406d443cb3b1321f98ce9b55-task-01",
+      "side": "left",
+      "category": "Smokegrenade"
+    }
+  ]
+}

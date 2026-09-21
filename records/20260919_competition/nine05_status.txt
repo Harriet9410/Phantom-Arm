@@ -1,0 +1,44 @@
+{
+  "checked_at": 1789784490.176237,
+  "launcher_log": "{\"pid\": 168435, \"pgid\": 168435, \"start_ticks\": 1671661056, \"command\": [\"/opt/conda/envs/inference/bin/python\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_05/tcei_stack/nine_node.py\", \"_execute:=false\", \"_model_path:=/root/inference/FM9G4B-V\", \"_log_dir:=/root/gpufree-data/tcei_competition_20260919/semantic05_01/events\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_05/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/semantic05_01/logs/nine.log\", \"started_at\": 1789784462.1405385}\nNINE05_STARTED\n",
+  "pid": {
+    "pid": 168435,
+    "pgid": 168435,
+    "start_ticks": 1671661056,
+    "command": [
+      "/opt/conda/envs/inference/bin/python",
+      "-u",
+      "/root/tcei_competition_20260919/releases/dev_v7_t1_05/tcei_stack/nine_node.py",
+      "_execute:=false",
+      "_model_path:=/root/inference/FM9G4B-V",
+      "_log_dir:=/root/gpufree-data/tcei_competition_20260919/semantic05_01/events"
+    ],
+    "cwd": "/root/tcei_competition_20260919/releases/dev_v7_t1_05/tcei_stack",
+    "log": "/root/gpufree-data/tcei_competition_20260919/semantic05_01/logs/nine.log",
+    "started_at": 1789784462.1405385
+  },
+  "last_events": [
+    {
+      "time": 1789784470.6458352,
+      "status": "ready",
+      "inference_configuration": {
+        "vision_batch_size": 1,
+        "vision_batch_size_source": "model.config.vision_batch_size",
+        "num_beams": 1,
+        "num_beams_source": "explicit_chat_kwarg",
+        "max_slice_nums": 9,
+        "max_slice_nums_source": "model.config.slice_config.max_slice_nums",
+        "max_slice_nums_override": null,
+        "full_image_preserved": true,
+        "sampling": false,
+        "max_new_tokens": 400,
+        "model_dtype": "torch.bfloat16",
+        "configuration_scope": "validated_once_at_node_start"
+      }
+    }
+  ],
+  "execute": {
+    "/tcei_nine/execute": false,
+    "/tcei_controller/execute": false
+  }
+}

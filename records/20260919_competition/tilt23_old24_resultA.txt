@@ -1,0 +1,551 @@
+{
+  "probe_setup_results.json": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "scripts/verify_package.py"
+      ],
+      "returncode": 0,
+      "time": 1789851343.8073914
+    },
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "init",
+        "--display",
+        ":20",
+        "--data-root",
+        "/root/gpufree-data/tcei_tilt23"
+      ],
+      "returncode": 0,
+      "time": 1789851343.872324
+    },
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "doctor"
+      ],
+      "returncode": 0,
+      "time": 1789851348.4930298
+    },
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "start",
+        "tilt23_old24_probe_stack01",
+        "--case",
+        "cases_b01/random_24.json"
+      ],
+      "returncode": 0,
+      "time": 1789851379.6282024
+    },
+    {
+      "phase": "preview_only",
+      "returncode": 0,
+      "time": 1789851383.3991816
+    },
+    {
+      "phase": "stop",
+      "returncode": 0,
+      "time": 1789851390.7310207
+    }
+  ],
+  "summary.json": {
+    "scope": "actual current camera candidate, native full-route preview only, no task or motion execution",
+    "motion_commands": [],
+    "started_at": 1789851380.6467013,
+    "joint_change": [
+      6.1519678240529174e-12,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      4.468525549583546e-11,
+      0.0,
+      5.6562754480182775e-11
+    ],
+    "execution_flags_false": true,
+    "status": "native_preview_only_completed",
+    "finished_at": 1789851383.3425367,
+    "trials": [
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.613606,
+        "rim_clearance": 0.05806800000000001,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07166490703821182
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.593606,
+        "rim_clearance": 0.03806799999999999,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07321858033537865
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.579508,
+        "rim_clearance": 0.02397000000000027,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07200156897306442
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.569508,
+        "rim_clearance": 0.013970000000000038,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07150623202323914
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.613606,
+        "rim_clearance": 0.05806800000000001,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07017605006694794
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.593606,
+        "rim_clearance": 0.03806799999999999,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.0723317377269268
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.579508,
+        "rim_clearance": 0.02397000000000027,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07158126682043076
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.569508,
+        "rim_clearance": 0.013970000000000038,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07258611544966698
+      },
+      {
+        "tilt": 10.0,
+        "yaw": 0,
+        "height": 2.612736,
+        "rim_clearance": 0.053403865988567834,
+        "support_clearance": 0.006517927967077952,
+        "valid": true,
+        "reason": null,
+        "failure_kind": null,
+        "branch_results": [
+          {
+            "joint_goal": [
+              -0.16827147991490693,
+              0.34393645424390146,
+              -0.24296003033657892,
+              -1.579743488726753,
+              1.705792286512719,
+              -0.88164076152899
+            ],
+            "valid": true
+          }
+        ],
+        "checked_stages": [
+          "approach_path",
+          "descend",
+          "lift",
+          "transfer",
+          "place_above",
+          "place_descend"
+        ],
+        "seconds": 0.38624686375260353
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.612736,
+        "rim_clearance": 0.05284819182003364,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06637595221400261
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.592736,
+        "rim_clearance": 0.03284819182003362,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06660404428839684
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.579508,
+        "rim_clearance": 0.019620191820033828,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06832332536578178
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.570888,
+        "rim_clearance": 0.011000191820033756,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06924333423376083
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 180,
+        "height": 2.612736,
+        "rim_clearance": 0.05284819182003364,
+        "support_clearance": 0.00596225379854376,
+        "valid": true,
+        "reason": null,
+        "failure_kind": null,
+        "branch_results": [
+          {
+            "joint_goal": [
+              2.7169963732876696,
+              3.0304999666896584,
+              -0.25210208919883276,
+              4.490191143270019,
+              -1.4674715008396588,
+              2.5145463007676088
+            ],
+            "valid": false,
+            "reason": "no guarded executable path",
+            "phase": "lift"
+          },
+          {
+            "joint_goal": [
+              -0.16820166458409644,
+              0.1197534383240338,
+              0.2429909135526676,
+              -1.3178924144143818,
+              1.7060956229833697,
+              2.2601586114040666
+            ],
+            "valid": true
+          }
+        ],
+        "checked_stages": [
+          "approach_path",
+          "descend",
+          "lift",
+          "transfer",
+          "place_above",
+          "place_descend"
+        ],
+        "seconds": 0.39796219766139984
+      }
+    ]
+  },
+  "progress.json": {
+    "scope": "actual current camera candidate, native full-route preview only, no task or motion execution",
+    "motion_commands": [],
+    "started_at": 1789851380.6467013,
+    "trials": [
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.613606,
+        "rim_clearance": 0.05806800000000001,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07166490703821182
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.593606,
+        "rim_clearance": 0.03806799999999999,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07321858033537865
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.579508,
+        "rim_clearance": 0.02397000000000027,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07200156897306442
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 0,
+        "height": 2.569508,
+        "rim_clearance": 0.013970000000000038,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07150623202323914
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.613606,
+        "rim_clearance": 0.05806800000000001,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07017605006694794
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.593606,
+        "rim_clearance": 0.03806799999999999,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.0723317377269268
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.579508,
+        "rim_clearance": 0.02397000000000027,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07158126682043076
+      },
+      {
+        "tilt": 0.0,
+        "yaw": 180,
+        "height": 2.569508,
+        "rim_clearance": 0.013970000000000038,
+        "support_clearance": 0.01118212196350088,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.07258611544966698
+      },
+      {
+        "tilt": 10.0,
+        "yaw": 0,
+        "height": 2.612736,
+        "rim_clearance": 0.053403865988567834,
+        "support_clearance": 0.006517927967077952,
+        "valid": true,
+        "reason": null,
+        "failure_kind": null,
+        "branch_results": [
+          {
+            "joint_goal": [
+              -0.16827147991490693,
+              0.34393645424390146,
+              -0.24296003033657892,
+              -1.579743488726753,
+              1.705792286512719,
+              -0.88164076152899
+            ],
+            "valid": true
+          }
+        ],
+        "checked_stages": [
+          "approach_path",
+          "descend",
+          "lift",
+          "transfer",
+          "place_above",
+          "place_descend"
+        ],
+        "seconds": 0.38624686375260353
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.612736,
+        "rim_clearance": 0.05284819182003364,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06637595221400261
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.592736,
+        "rim_clearance": 0.03284819182003362,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06660404428839684
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.579508,
+        "rim_clearance": 0.019620191820033828,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06832332536578178
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 0,
+        "height": 2.570888,
+        "rim_clearance": 0.011000191820033756,
+        "support_clearance": 0.00596225379854376,
+        "valid": false,
+        "reason": "bounded approach branches exhausted",
+        "failure_kind": "path_rejected",
+        "branch_results": [],
+        "checked_stages": null,
+        "seconds": 0.06924333423376083
+      },
+      {
+        "tilt": -10.0,
+        "yaw": 180,
+        "height": 2.612736,
+        "rim_clearance": 0.05284819182003364,
+        "support_clearance": 0.00596225379854376,
+        "valid": true,
+        "reason": null,
+        "failure_kind": null,
+        "branch_results": [
+          {
+            "joint_goal": [
+              2.7169963732876696,
+              3.0304999666896584,
+              -0.25210208919883276,
+              4.490191143270019,
+              -1.4674715008396588,
+              2.5145463007676088
+            ],
+            "valid": false,
+            "reason": "no guarded executable path",
+            "phase": "lift"
+          },
+          {
+            "joint_goal": [
+              -0.16820166458409644,
+              0.1197534383240338,
+              0.2429909135526676,
+              -1.3178924144143818,
+              1.7060956229833697,
+              2.2601586114040666
+            ],
+            "valid": true
+          }
+        ],
+        "checked_stages": [
+          "approach_path",
+          "descend",
+          "lift",
+          "transfer",
+          "place_above",
+          "place_descend"
+        ],
+        "seconds": 0.39796219766139984
+      }
+    ]
+  },
+  "job_log": "TILT23_PROBE_FINISHED\n",
+  "probe_log": "{\"status\": \"native_preview_only_completed\", \"trials\": 14, \"valid\": [[10.0, 0, 2.612736], [-10.0, 180, 2.612736]]}\n"
+}

@@ -1,0 +1,331 @@
+{
+  "frozen_at": 1789730305.2080708,
+  "version": "V5b",
+  "runtime_manifest_sha256": "230867eb329664cb369d48645514102384fb84165c328b44478d19f7590d108d",
+  "first_case": 8,
+  "last_case": 30,
+  "remaining_cases": 23,
+  "previous_version_results_preserved": true,
+  "validation_runs": [
+    [
+      "drop_recovery_v5b_probe",
+      1
+    ],
+    [
+      "preview_alignment_v5b_06",
+      5
+    ]
+  ],
+  "recovery_validation": {
+    "valid": true,
+    "real_gripper_release": true,
+    "verified_objects": 1,
+    "elapsed_seconds": 92.31229783222079,
+    "recovery_events": [
+      {
+        "time": 1789729846.7982888,
+        "request_id": "episode_b2ece85c249f4c109a281a978a1e5aa6",
+        "status": "drop_detected",
+        "code_sha256": "03563ed0b0fe29d0142431627b271604d39007ae659ffa66a1283b7cfbbcdbf8",
+        "phase": "lift_02_of_05",
+        "position": [
+          -0.0281013646583249,
+          0.004803367213731424,
+          2.497128305000542
+        ],
+        "quaternion": [
+          -8.370875317464913e-05,
+          -0.44075370814695775,
+          0.8976280656410032,
+          -0.0001323674504788753
+        ]
+      },
+      {
+        "time": 1789729846.8006334,
+        "request_id": "episode_b2ece85c249f4c109a281a978a1e5aa6",
+        "status": "drop_recovery_started",
+        "code_sha256": "03563ed0b0fe29d0142431627b271604d39007ae659ffa66a1283b7cfbbcdbf8",
+        "recovery": 1,
+        "category": "Torch",
+        "reason": "object lost during lift_02_of_05"
+      },
+      {
+        "time": 1789729848.0226185,
+        "request_id": "episode_b2ece85c249f4c109a281a978a1e5aa6",
+        "status": "drop_recovery_observation",
+        "code_sha256": "03563ed0b0fe29d0142431627b271604d39007ae659ffa66a1283b7cfbbcdbf8",
+        "target": [
+          0.0662943895,
+          0.4,
+          2.7503792615
+        ],
+        "quaternion": [
+          0.014626589099666852,
+          -9.24756999978937e-05,
+          0.999873675877226,
+          -0.0062198574998583315
+        ]
+      },
+      {
+        "time": 1789729859.387069,
+        "request_id": "episode_b2ece85c249f4c109a281a978a1e5aa6",
+        "status": "drop_recovery_reacquired",
+        "code_sha256": "03563ed0b0fe29d0142431627b271604d39007ae659ffa66a1283b7cfbbcdbf8",
+        "recovery": 1,
+        "candidate": {
+          "class": "Torch",
+          "confidence": 0.7758328914642334,
+          "bbox": [
+            631,
+            284,
+            687,
+            326
+          ],
+          "recognition_rotation_deg": 45.0,
+          "pixel": [
+            658.15,
+            305.0
+          ],
+          "depth": 2.1119656562805176,
+          "depth_spread": 0.003627300262451172,
+          "world_position": [
+            -0.028524529680867692,
+            0.013562031270097794,
+            2.3880343437194824
+          ],
+          "support_z": 2.3721234798431396,
+          "angle_deg": -55.573792374756806,
+          "body_axis_deg": -145.5737923747568,
+          "axis_ratio": 64.05561766541179,
+          "grasp_point_method": "depth_body_center_and_axis",
+          "area": 615,
+          "depth_reference": [
+            [
+              637,
+              286,
+              2.10645
+            ],
+            [
+              638,
+              288,
+              2.10588
+            ],
+            [
+              642,
+              289,
+              2.10712
+            ],
+            [
+              643,
+              290,
+              2.10705
+            ],
+            [
+              643,
+              291,
+              2.10655
+            ],
+            [
+              640,
+              292,
+              2.10551
+            ],
+            [
+              637,
+              293,
+              2.10594
+            ],
+            [
+              633,
+              294,
+              2.10891
+            ],
+            [
+              646,
+              294,
+              2.10635
+            ],
+            [
+              643,
+              295,
+              2.10582
+            ],
+            [
+              640,
+              296,
+              2.10676
+            ],
+            [
+              637,
+              297,
+              2.10962
+            ],
+            [
+              649,
+              297,
+              2.10894
+            ],
+            [
+              647,
+              298,
+              2.10873
+            ],
+            [
+              646,
+              299,
+              2.10938
+            ],
+            [
+              649,
+              300,
+              2.10905
+            ],
+            [
+              653,
+              301,
+              2.1119
+            ],
+            [
+              657,
+              302,
+              2.11212
+            ],
+            [
+              655,
+              304,
+              2.11168
+            ],
+            [
+              660,
+              305,
+              2.11191
+            ],
+            [
+              658,
+              307,
+              2.1125
+            ],
+            [
+              663,
+              308,
+              2.11217
+            ],
+            [
+              668,
+              309,
+              2.11339
+            ],
+            [
+              666,
+              311,
+              2.11248
+            ],
+            [
+              672,
+              312,
+              2.11363
+            ],
+            [
+              670,
+              314,
+              2.11291
+            ],
+            [
+              676,
+              315,
+              2.11462
+            ],
+            [
+              677,
+              317,
+              2.11272
+            ],
+            [
+              681,
+              318,
+              2.1135
+            ],
+            [
+              677,
+              320,
+              2.11326
+            ],
+            [
+              681,
+              321,
+              2.11292
+            ],
+            [
+              683,
+              323,
+              2.11318
+            ]
+          ],
+          "position": [
+            -0.054328205617487114,
+            0.023568771142342744,
+            2.4677440572750435
+          ],
+          "id": "4",
+          "_drop_recovery": true
+        }
+      },
+      {
+        "time": 1789729914.6449273,
+        "request_id": "episode_b2ece85c249f4c109a281a978a1e5aa6",
+        "status": "drop_recovery_completed",
+        "code_sha256": "03563ed0b0fe29d0142431627b271604d39007ae659ffa66a1283b7cfbbcdbf8",
+        "recoveries": 1,
+        "category": "Torch"
+      }
+    ]
+  },
+  "runtime_files": {
+    "arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
+    "cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
+    "contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
+    "controller.py": "03563ed0b0fe29d0142431627b271604d39007ae659ffa66a1283b7cfbbcdbf8",
+    "conveyor_observer.py": "9e8a99609ea7f3ce42bf595f45831f86fb598b3c7563824e5474eeb3cb6b5310",
+    "core.py": "99482b0e44e1242b480d8df21549a43f2fff98f54de63b8287d844e0a3c80d0a",
+    "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+    "evidence_recorder.py": "5c9da7ea923c5b9e2e84a99a8acb53364ebad32b243ce8e2605def1114947fad",
+    "export_experiment_register.py": "2e7994079f588c673ae2d62271e8ad010ec58af29a2d91d71b3ac493a0da9ac8",
+    "frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+    "frame_pairing.py": "3748219b777016b2aba0e0eb9c1231539e086578f430f7c35306214c76831b8e",
+    "grasp_geometry.py": "785ec81b543fd44b92a23710daf9f3c3db3f28c3ae2a895ede619f0be3c41f1f",
+    "hold_verification.py": "2da265d7049f0d9232253766d6afc03edc65fee245dbbdaaf1dbc000f7efe66b",
+    "joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
+    "kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
+    "nine_node.py": "6481babbc22424895f7c1b4bea98e1fb7e0ac62a6b81cbb6742fd89180b56cf8",
+    "observation_view.py": "0aae8ebdb0f84123662c5a79ca4d17c91f433b6f3d711b55c269ba5f83b5c657",
+    "perception.py": "8e04947acd0e1f72fc980cd384b28d8b7e69179c1e7ad6f86fb6be74dc497ea6",
+    "planning_prompt.py": "e595c0827bce2aa6786e02648f425bcad51f9aca4f4226be03529fe36c5097b1",
+    "recognition_suite.py": "d2e3acaba0cd2d8e7d13971df4247c4f29a1a1d02fb7fd584746555a6059db1c",
+    "record_transport_rgbd.py": "023d654f4a5ddeb4067e54ff6274887ebcbf77c587fb0e1c7b0c2938011a802f",
+    "restore_view.py": "0baf34a5cae01329d7c735d567fbe0ea116f124f81c8f5f057700b4caff49aa6",
+    "resume_delivery.py": "b45e17c17da5d89515e09d96dfeaf2b22af7d0a9997e13735b3f4ce653754dd0",
+    "rotation_perception.py": "aa9b8e35641be22cb304520f464202b2aaffd2497748145116f8fb3cac23fd61",
+    "run_episode.py": "3025b9f9f8d0d38f477aa0e2fee1c7e298cd9264a161a75b659abb83bbce4e66",
+    "semantic_repair.py": "b68d51a632923300a306dd112ad33b49955b8a484c11285c7095c7fe18d02137",
+    "sim_with_feedback.py": "80245e0a360c9839ba0bedb5451f8aab28b679938caa028a642d919ff8dd6c0a",
+    "test_arrival_window.py": "6efc910c76d73554d65ba7ef90f44d2597b4d098c52597350e874e6d175b0145",
+    "test_cartesian_path.py": "c37f1e3a5ce4ec7bd462b77d651759d7730966b7fde6908fc9f747a4d37d34e8",
+    "test_contact_loss.py": "8d71c6e0622ccca46cf9cc79b71a6c5253f0d959c3f5565e7fc4d922ca64cc02",
+    "test_conveyor_observer.py": "57355e95c31c2740c9e545b542be59580184ab76d974452f7a118c26e88df216",
+    "test_core.py": "2e6b651740d863ebeb31f25497d7666743580f441bdb6a944c6e4ac1d8bc2f16",
+    "test_drop_recovery.py": "44b39e78dad00a50bdb3e083bf716611ef8e89f4225d611c15b5ef6fa907fff0",
+    "test_frame_matching.py": "fff67971bf03c0a950eb882ec07d6884d2b8b04e14bb7f859b9892490452add6",
+    "test_frame_pairing.py": "030925b2d1336bac6854c8e428c5ad78b15e35f65ca713a3a4df8bd0eadb72da",
+    "test_grasp_geometry.py": "eb9d293bf79ee2087d7a87e620c0434022aeea1f5b14d891b9f393b340b45d73",
+    "test_grasp_symmetry.py": "10f4d0ccca2d4759462a3202d68a1574150c2b96305e9aca3a1765e856a170ce",
+    "test_joint_path.py": "d58ace26f32f912bbf027c5a9ce5963b9c7148c2e9466a8697117e5603bc93d8",
+    "test_kinematic_guard.py": "d752f9bac2244b01564c28678928e0579893f36e6c10823911cb130bcdf83756",
+    "test_observation_view.py": "3ff1e601976ca548350a185f9a59d8a024229fe4203d58811f35dac029128481",
+    "test_occlusion.py": "8e0f597d8879d851158dafe8e4eaaa7a9cdde38cfeb933bb68d02410107384c6",
+    "test_rotation_perception.py": "71cdf56e34b82a5a51ba0105e47b3801cdd45c6bef439ecd4f6b4f9f53a5c273",
+    "test_semantic_repair.py": "c731444be0f986a90d07aff9acf82c4956adbf7ae6c50fc6e541f40dcd1a018e",
+    "test_settled_placement.py": "a3af591c3c09c668c78d2fb6ede45baf3023050e2b704e0f1881c56fca129f3d",
+    "test_trajectory_timing.py": "ac68866a96bc8d3c8182e145c74521f7e8b2dbc5ef9ee17247905287804e4af2",
+    "trajectory_timing.py": "3c0eabbd5b8d90c275f394c2c3a1edc020837cf1939b552e657617af4043d331"
+  }
+}

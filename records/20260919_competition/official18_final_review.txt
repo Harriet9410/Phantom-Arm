@@ -1,0 +1,850 @@
+{
+  "summary": {
+    "status": "succeeded",
+    "elapsed_seconds": 233.9914160799235,
+    "verified_objects": 5,
+    "reason": null,
+    "safe_stop": {
+      "state": "not_requested",
+      "reason": "normal verified completion"
+    },
+    "code_changed_during_episode": [],
+    "last_delivery_elapsed_seconds": 230.56133083999157
+  },
+  "counts": {
+    "judge_started": 1,
+    "ready": 3,
+    "observation_received": 1,
+    "observation_accepted": 1,
+    "round_started": 1,
+    "observation_started": 1,
+    "observation_preparation_started": 1,
+    "clear_basket_for_observation": 1,
+    "arrived": 94,
+    "observation_completed": 1,
+    "infer_started": 5,
+    "model_answer": 5,
+    "plan_published": 5,
+    "plan_accepted": 5,
+    "request_finished": 5,
+    "task_started": 5,
+    "grasp_evidence_preflight": 5,
+    "grasp_candidate_set": 5,
+    "attempt": 5,
+    "grasp_preview": 5,
+    "approach": 5,
+    "grasp_orientation_selected": 5,
+    "approach_clearance_verified": 5,
+    "occlusion_check": 5,
+    "controlled_self_occlusion": 5,
+    "descend": 5,
+    "grasp_preload_started": 5,
+    "grasp_preload": 5,
+    "grasp_contact_confirmed": 5,
+    "trial_lift_started": 5,
+    "trial_lift": 5,
+    "trial_lift_contact_evidence": 193,
+    "trial_lift_evidence": 136,
+    "grasp_verified": 5,
+    "lift_01_of_03": 3,
+    "lift_02_of_03": 3,
+    "lift_03_of_03": 3,
+    "transfer_clearance_01_of_03": 2,
+    "transfer_clearance_02_of_03": 2,
+    "transfer_clearance_03_of_03": 2,
+    "place_above_01_of_06": 3,
+    "place_above_02_of_06": 3,
+    "place_above_03_of_06": 3,
+    "place_above_04_of_06": 3,
+    "place_above_05_of_06": 3,
+    "place_above_06_of_06": 3,
+    "place_descend": 5,
+    "release_started": 5,
+    "released": 5,
+    "place_retreat": 5,
+    "return_home": 5,
+    "placement_verified": 5,
+    "grasp_attempt_outcome": 5,
+    "task_succeeded": 5,
+    "place_above_01_of_07": 2,
+    "place_above_02_of_07": 2,
+    "place_above_03_of_07": 2,
+    "place_above_04_of_07": 2,
+    "place_above_05_of_07": 2,
+    "place_above_06_of_07": 2,
+    "place_above_07_of_07": 2,
+    "lift_01_of_04": 2,
+    "lift_02_of_04": 2,
+    "lift_03_of_04": 2,
+    "lift_04_of_04": 2,
+    "transfer_clearance_01_of_02": 2,
+    "transfer_clearance_02_of_02": 2,
+    "transfer_clearance_01_of_04": 1,
+    "transfer_clearance_02_of_04": 1,
+    "transfer_clearance_03_of_04": 1,
+    "transfer_clearance_04_of_04": 1
+  },
+  "events": [
+    {
+      "time": 1789835066.1349182,
+      "status": "model_answer",
+      "request_id": "episode_9f8a8b8bf9af4f5e9d7857b627f4a94a",
+      "elapsed": 3.086272783577442,
+      "answer": "{\"class\":\"Smokegrenade\",\"side\":\"left\",\"count\":1,\"ids\":[\"1\"]}"
+    },
+    {
+      "time": 1789835083.868237,
+      "status": "grasp_preload",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "request_id": "episode_9f8a8b8bf9af4f5e9d7857b627f4a94a",
+      "command": 0.018000000000000013,
+      "requested_target": 0.01950000000000001,
+      "applied_distance_m": 0.0005000000000000004,
+      "limit_reason": "effort_stop",
+      "contact_efforts": [
+        41.11865234375,
+        41.109886169433594
+      ],
+      "finger_positions": [
+        0.01799173839390278,
+        0.017350228503346443
+      ]
+    },
+    {
+      "time": 1789835084.4781694,
+      "status": "grasp_contact_confirmed",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "request_id": "episode_9f8a8b8bf9af4f5e9d7857b627f4a94a",
+      "command": 0.018000000000000013,
+      "contact_efforts": [
+        41.1225700378418,
+        41.114952087402344
+      ],
+      "preload_distance_m": 0.0005000000000000004,
+      "preload_limited": true,
+      "stable_sim_seconds": 0.46666669100000036,
+      "fresh_contact_samples": 29
+    },
+    {
+      "time": 1789835086.493476,
+      "status": "grasp_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "request_id": "episode_9f8a8b8bf9af4f5e9d7857b627f4a94a",
+      "category": "Smokegrenade",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0006",
+      "visual_confirmation": false,
+      "candidate": {
+        "class": "Smokegrenade",
+        "stable_id": "310b6c69-obj-0006",
+        "pixel": [
+          496.5,
+          202.5
+        ],
+        "angle_deg": -2.5921516475773387
+      }
+    },
+    {
+      "time": 1789835107.8462665,
+      "status": "released",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "request_id": "episode_9f8a8b8bf9af4f5e9d7857b627f4a94a",
+      "category": "Smokegrenade",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0006",
+      "release_id": "c13a18a8c323405ebc80070520b52b21"
+    },
+    {
+      "time": 1789835114.410172,
+      "status": "placement_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "request_id": "episode_9f8a8b8bf9af4f5e9d7857b627f4a94a",
+      "category": "Smokegrenade",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0006",
+      "release_id": "c13a18a8c323405ebc80070520b52b21",
+      "candidate": {
+        "class": "Smokegrenade",
+        "stable_id": "310b6c69-obj-0006",
+        "pixel": [
+          496.5,
+          202.5
+        ],
+        "angle_deg": -2.5921516475773387
+      },
+      "transport": {
+        "travel_m": 0.25993067026138306,
+        "speed_m_s": 0.16769719785671536,
+        "transport_seen": true,
+        "side": "left",
+        "class": "Smokegrenade",
+        "release_id": "c13a18a8c323405ebc80070520b52b21",
+        "samples": 5
+      }
+    },
+    {
+      "time": 1789835114.4192429,
+      "status": "task_succeeded",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "request_id": "episode_9f8a8b8bf9af4f5e9d7857b627f4a94a",
+      "placed_verified": 1,
+      "pending_stable_ids": [],
+      "elapsed": 48.27494369447231
+    },
+    {
+      "time": 1789835116.633694,
+      "status": "model_answer",
+      "request_id": "episode_9b1cbc200cfa4121b03d6a2df8fc5e02",
+      "elapsed": 1.997230300679803,
+      "answer": "{\"class\":\"Magazine\",\"side\":\"right\",\"count\":1,\"ids\":[\"3\"]}"
+    },
+    {
+      "time": 1789835125.494538,
+      "status": "grasp_preload",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "request_id": "episode_9b1cbc200cfa4121b03d6a2df8fc5e02",
+      "command": 0.0047500000000000025,
+      "requested_target": 0.006250000000000002,
+      "applied_distance_m": 0.0005000000000000004,
+      "limit_reason": "effort_stop",
+      "contact_efforts": [
+        43.15657043457031,
+        39.916080474853516
+      ],
+      "finger_positions": [
+        0.004741574637591839,
+        0.004106920212507248
+      ]
+    },
+    {
+      "time": 1789835126.099036,
+      "status": "grasp_contact_confirmed",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "request_id": "episode_9b1cbc200cfa4121b03d6a2df8fc5e02",
+      "command": 0.0047500000000000025,
+      "contact_efforts": [
+        43.15534591674805,
+        39.91872787475586
+      ],
+      "preload_distance_m": 0.0005000000000000004,
+      "preload_limited": true,
+      "stable_sim_seconds": 0.46666669100000036,
+      "fresh_contact_samples": 29
+    },
+    {
+      "time": 1789835127.8165104,
+      "status": "grasp_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "request_id": "episode_9b1cbc200cfa4121b03d6a2df8fc5e02",
+      "category": "Magazine",
+      "side": "right",
+      "stable_id": "310b6c69-obj-0009",
+      "visual_confirmation": false,
+      "candidate": {
+        "class": "Magazine",
+        "stable_id": "310b6c69-obj-0009",
+        "pixel": [
+          724.4438015628858,
+          354.3544289775095
+        ],
+        "angle_deg": -0.694094606774712
+      }
+    },
+    {
+      "time": 1789835149.3934534,
+      "status": "released",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "request_id": "episode_9b1cbc200cfa4121b03d6a2df8fc5e02",
+      "category": "Magazine",
+      "side": "right",
+      "stable_id": "310b6c69-obj-0009",
+      "release_id": "70f27a953e8e4345bd73fde34809313f"
+    },
+    {
+      "time": 1789835156.9881516,
+      "status": "placement_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "request_id": "episode_9b1cbc200cfa4121b03d6a2df8fc5e02",
+      "category": "Magazine",
+      "side": "right",
+      "stable_id": "310b6c69-obj-0009",
+      "release_id": "70f27a953e8e4345bd73fde34809313f",
+      "candidate": {
+        "class": "Magazine",
+        "stable_id": "310b6c69-obj-0009",
+        "pixel": [
+          724.4438015628858,
+          354.3544289775095
+        ],
+        "angle_deg": -0.694094606774712
+      },
+      "transport": {
+        "travel_m": 0.19739261269569397,
+        "speed_m_s": 0.1444336115069006,
+        "transport_seen": true,
+        "side": "right",
+        "class": "Magazine",
+        "release_id": "70f27a953e8e4345bd73fde34809313f",
+        "samples": 12
+      }
+    },
+    {
+      "time": 1789835156.9968626,
+      "status": "task_succeeded",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "request_id": "episode_9b1cbc200cfa4121b03d6a2df8fc5e02",
+      "placed_verified": 1,
+      "pending_stable_ids": [],
+      "elapsed": 40.35523855872452
+    },
+    {
+      "time": 1789835159.3303463,
+      "status": "model_answer",
+      "request_id": "episode_41cb235ab4c140a38362e385dc386483",
+      "elapsed": 2.117141479626298,
+      "answer": "{\"class\":\"Torch\",\"side\":\"left\",\"count\":1,\"ids\":[\"1\"]}"
+    },
+    {
+      "time": 1789835173.4292462,
+      "status": "grasp_preload",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "request_id": "episode_41cb235ab4c140a38362e385dc386483",
+      "command": 0.02750000000000002,
+      "requested_target": 0.02875000000000002,
+      "applied_distance_m": 0.0007500000000000007,
+      "limit_reason": "effort_stop",
+      "contact_efforts": [
+        32.311031341552734,
+        32.35499572753906
+      ],
+      "finger_positions": [
+        0.027493443340063095,
+        0.02706504613161087
+      ]
+    },
+    {
+      "time": 1789835174.0020232,
+      "status": "grasp_contact_confirmed",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "request_id": "episode_41cb235ab4c140a38362e385dc386483",
+      "command": 0.02750000000000002,
+      "contact_efforts": [
+        32.31235122680664,
+        32.356178283691406
+      ],
+      "preload_distance_m": 0.0007500000000000007,
+      "preload_limited": true,
+      "stable_sim_seconds": 0.4500000230000012,
+      "fresh_contact_samples": 28
+    },
+    {
+      "time": 1789835175.136838,
+      "status": "grasp_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "request_id": "episode_41cb235ab4c140a38362e385dc386483",
+      "category": "Torch",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0007",
+      "candidate": {
+        "class": "Torch",
+        "stable_id": "310b6c69-obj-0007",
+        "pixel": [
+          569.5,
+          232.5
+        ],
+        "angle_deg": 89.95561404808026
+      }
+    },
+    {
+      "time": 1789835196.0988464,
+      "status": "released",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "request_id": "episode_41cb235ab4c140a38362e385dc386483",
+      "category": "Torch",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0007",
+      "release_id": "3669e10f0c9c41dcb314c5e48e804ab0"
+    },
+    {
+      "time": 1789835203.7985275,
+      "status": "placement_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "request_id": "episode_41cb235ab4c140a38362e385dc386483",
+      "category": "Torch",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0007",
+      "release_id": "3669e10f0c9c41dcb314c5e48e804ab0",
+      "candidate": {
+        "class": "Torch",
+        "stable_id": "310b6c69-obj-0007",
+        "pixel": [
+          569.5,
+          232.5
+        ],
+        "angle_deg": 89.95561404808026
+      },
+      "transport": {
+        "travel_m": 0.08545249700546265,
+        "speed_m_s": 0.1602234235736469,
+        "transport_seen": true,
+        "side": "left",
+        "class": "Torch",
+        "release_id": "3669e10f0c9c41dcb314c5e48e804ab0",
+        "samples": 3
+      }
+    },
+    {
+      "time": 1789835203.8051386,
+      "status": "task_succeeded",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "request_id": "episode_41cb235ab4c140a38362e385dc386483",
+      "placed_verified": 1,
+      "pending_stable_ids": [],
+      "elapsed": 44.464990463107824
+    },
+    {
+      "time": 1789835206.104742,
+      "status": "model_answer",
+      "request_id": "episode_dbcb27b8ef194237b93a2190e435a8be",
+      "elapsed": 1.9776626732200384,
+      "answer": "{\"class\":\"Grenade\",\"side\":\"right\",\"count\":1,\"ids\":[\"2\"]}"
+    },
+    {
+      "time": 1789835219.6086247,
+      "status": "grasp_preload",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "request_id": "episode_dbcb27b8ef194237b93a2190e435a8be",
+      "command": 0.019500000000000014,
+      "requested_target": 0.02075000000000001,
+      "applied_distance_m": 0.0007500000000000007,
+      "limit_reason": "effort_stop",
+      "contact_efforts": [
+        33.05290985107422,
+        33.046077728271484
+      ],
+      "finger_positions": [
+        0.019493360072374344,
+        0.018996097147464752
+      ]
+    },
+    {
+      "time": 1789835220.1884637,
+      "status": "grasp_contact_confirmed",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "request_id": "episode_dbcb27b8ef194237b93a2190e435a8be",
+      "command": 0.019500000000000014,
+      "contact_efforts": [
+        33.052642822265625,
+        33.0457763671875
+      ],
+      "preload_distance_m": 0.0007500000000000007,
+      "preload_limited": true,
+      "stable_sim_seconds": 0.45000002299997277,
+      "fresh_contact_samples": 28
+    },
+    {
+      "time": 1789835221.9484665,
+      "status": "grasp_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "request_id": "episode_dbcb27b8ef194237b93a2190e435a8be",
+      "category": "Grenade",
+      "side": "right",
+      "stable_id": "310b6c69-obj-0010",
+      "visual_confirmation": false,
+      "candidate": {
+        "class": "Grenade",
+        "stable_id": "310b6c69-obj-0010",
+        "pixel": [
+          779.5808695744108,
+          201.36700305851235
+        ],
+        "angle_deg": -7.112976326723711
+      }
+    },
+    {
+      "time": 1789835245.916531,
+      "status": "released",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "request_id": "episode_dbcb27b8ef194237b93a2190e435a8be",
+      "category": "Grenade",
+      "side": "right",
+      "stable_id": "310b6c69-obj-0010",
+      "release_id": "d5214033f99d4cb3a7c77698b6c07547"
+    },
+    {
+      "time": 1789835253.4506292,
+      "status": "placement_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "request_id": "episode_dbcb27b8ef194237b93a2190e435a8be",
+      "category": "Grenade",
+      "side": "right",
+      "stable_id": "310b6c69-obj-0010",
+      "release_id": "d5214033f99d4cb3a7c77698b6c07547",
+      "candidate": {
+        "class": "Grenade",
+        "stable_id": "310b6c69-obj-0010",
+        "pixel": [
+          779.5808695744108,
+          201.36700305851235
+        ],
+        "angle_deg": -7.112976326723711
+      },
+      "transport": {
+        "travel_m": 0.19790643453598022,
+        "speed_m_s": 0.1583251393958776,
+        "transport_seen": true,
+        "side": "right",
+        "class": "Grenade",
+        "release_id": "d5214033f99d4cb3a7c77698b6c07547",
+        "samples": 12
+      }
+    },
+    {
+      "time": 1789835253.4619727,
+      "status": "task_succeeded",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "request_id": "episode_dbcb27b8ef194237b93a2190e435a8be",
+      "placed_verified": 1,
+      "pending_stable_ids": [],
+      "elapsed": 47.349563458934426
+    },
+    {
+      "time": 1789835255.6059046,
+      "status": "model_answer",
+      "request_id": "episode_8690ee7b6392473ea9b5e6368976539f",
+      "elapsed": 1.9311962593346834,
+      "answer": "{\"class\":\"Remaining\",\"side\":\"left\",\"count\":1,\"ids\":[\"1\"]}"
+    },
+    {
+      "time": 1789835265.4428923,
+      "status": "grasp_preload",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "request_id": "episode_8690ee7b6392473ea9b5e6368976539f",
+      "command": 0.018000000000000013,
+      "requested_target": 0.01925000000000001,
+      "applied_distance_m": 0.0007500000000000007,
+      "limit_reason": "effort_stop",
+      "contact_efforts": [
+        40.57362747192383,
+        40.528141021728516
+      ],
+      "finger_positions": [
+        0.01799219474196434,
+        0.017468756064772606
+      ]
+    },
+    {
+      "time": 1789835266.046386,
+      "status": "grasp_contact_confirmed",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "request_id": "episode_8690ee7b6392473ea9b5e6368976539f",
+      "command": 0.018000000000000013,
+      "contact_efforts": [
+        36.690059661865234,
+        36.68978500366211
+      ],
+      "preload_distance_m": 0.0007500000000000007,
+      "preload_limited": true,
+      "stable_sim_seconds": 0.46666669100000036,
+      "fresh_contact_samples": 29
+    },
+    {
+      "time": 1789835267.647964,
+      "status": "grasp_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "request_id": "episode_8690ee7b6392473ea9b5e6368976539f",
+      "category": "Smokegrenade",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0008",
+      "visual_confirmation": false,
+      "candidate": {
+        "class": "Smokegrenade",
+        "stable_id": "310b6c69-obj-0008",
+        "pixel": [
+          624.0307692307692,
+          309.4923076923077
+        ],
+        "angle_deg": 87.21719793919755
+      }
+    },
+    {
+      "time": 1789835286.7852879,
+      "status": "released",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "request_id": "episode_8690ee7b6392473ea9b5e6368976539f",
+      "category": "Smokegrenade",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0008",
+      "release_id": "d14af700937840b881ae341016451755"
+    },
+    {
+      "time": 1789835293.380341,
+      "status": "placement_verified",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "request_id": "episode_8690ee7b6392473ea9b5e6368976539f",
+      "category": "Smokegrenade",
+      "side": "left",
+      "stable_id": "310b6c69-obj-0008",
+      "release_id": "d14af700937840b881ae341016451755",
+      "candidate": {
+        "class": "Smokegrenade",
+        "stable_id": "310b6c69-obj-0008",
+        "pixel": [
+          624.0307692307692,
+          309.4923076923077
+        ],
+        "angle_deg": 87.21719793919755
+      },
+      "transport": {
+        "travel_m": 0.12471318244934082,
+        "speed_m_s": 0.1385701954850475,
+        "transport_seen": true,
+        "side": "left",
+        "class": "Smokegrenade",
+        "release_id": "d14af700937840b881ae341016451755",
+        "samples": 3
+      }
+    },
+    {
+      "time": 1789835293.3839376,
+      "status": "task_succeeded",
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "request_id": "episode_8690ee7b6392473ea9b5e6368976539f",
+      "placed_verified": 1,
+      "pending_stable_ids": [],
+      "elapsed": 37.771697944030166
+    }
+  ],
+  "tasks": [
+    {
+      "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+      "status": "verified",
+      "verified_grasps": 1,
+      "verified_placements": 1,
+      "estimated_points": 15,
+      "score_status": "local_full_task_estimate",
+      "physical_drop_count": 0,
+      "holding_feedback_loss_count": 0,
+      "rejected_events": 0
+    },
+    {
+      "instruction": "抓取右下方的弹夹，放到右侧传送带",
+      "status": "verified",
+      "verified_grasps": 1,
+      "verified_placements": 1,
+      "estimated_points": 15,
+      "score_status": "local_full_task_estimate",
+      "physical_drop_count": 0,
+      "holding_feedback_loss_count": 0,
+      "rejected_events": 0
+    },
+    {
+      "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+      "status": "verified",
+      "verified_grasps": 1,
+      "verified_placements": 1,
+      "estimated_points": 15,
+      "score_status": "local_full_task_estimate",
+      "physical_drop_count": 0,
+      "holding_feedback_loss_count": 0,
+      "rejected_events": 0
+    },
+    {
+      "instruction": "抓取手雷，放到右侧传送带",
+      "status": "verified",
+      "verified_grasps": 1,
+      "verified_placements": 1,
+      "estimated_points": 20,
+      "score_status": "local_full_task_estimate",
+      "physical_drop_count": 0,
+      "holding_feedback_loss_count": 0,
+      "rejected_events": 0
+    },
+    {
+      "instruction": "抓取剩余的物品，放到左侧传送带",
+      "status": "verified",
+      "verified_grasps": 1,
+      "verified_placements": 1,
+      "estimated_points": 15,
+      "score_status": "local_full_task_estimate",
+      "physical_drop_count": 0,
+      "holding_feedback_loss_count": 0,
+      "rejected_events": 0
+    }
+  ],
+  "closed": {
+    "started_at": 1789835059.0469785,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "/root/tcei_competition_20260919/releases/dev_v7_t1_18/tcei_stack/run_episode.py",
+      "--official-example",
+      "--task-source",
+      "official_example",
+      "--budget",
+      "600",
+      "--output",
+      "/root/gpufree-data/tcei_competition_20260919/official18_round01/episode"
+    ],
+    "budget_seconds": 600,
+    "watchdog_seconds": 660,
+    "script_sha256": "4a56ad658effd55ac14461a13341a070d9b811ef676e5cb8e3e51549027e06e9",
+    "returncode": 0,
+    "episode_status": "succeeded",
+    "execution_disabled": true,
+    "recorder_cleanup": [
+      {
+        "name": "rgbd",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official18_round01/pids/rgbd.json\n",
+        "stderr": ""
+      },
+      {
+        "name": "scalars",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official18_round01/pids/scalars.json\n",
+        "stderr": ""
+      }
+    ],
+    "evidence_closeout": {
+      "rgbd": {
+        "closed_at": 1789835296.167789,
+        "receiving_ended_at": 1789835296.1630938,
+        "maximum_duration_seconds": 900.0,
+        "stop_reason": "requested_stop",
+        "recorded_pairs": 1987,
+        "pending_pairs": 0,
+        "dropped_pairs": 0,
+        "write_errors": [],
+        "complete": true,
+        "capture_window_seconds": 0.0,
+        "depth_encoding": "float32_deflate_level1"
+      },
+      "scalars": {
+        "closed_at": 1789835297.5686066,
+        "recorded_rows": 93835,
+        "topics_seen": [
+          "/Jaka/get_end_effector_pose",
+          "/Jaka/get_gripper_efforts",
+          "/Jaka/get_jointstate",
+          "/Jaka/gripper_is_captured",
+          "/Jaka/set_end_effector_pose",
+          "/Jaka/set_gripper_value",
+          "/clock",
+          "/tcei/execute_preview",
+          "/tcei/grasp_preview_request",
+          "/tcei/grasp_preview_response",
+          "/tcei/gripper_contact",
+          "/tcei/joint_diagnostics",
+          "/tcei/nine_status",
+          "/tcei/plan",
+          "/tcei/planner_status",
+          "/tcei/prepare_observation",
+          "/tcei/request",
+          "/tcei/task_status"
+        ],
+        "maximum_duration_seconds": 900.0
+      }
+    },
+    "evidence_complete": true,
+    "finished_at": 1789835298.377234
+  },
+  "frames": [
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "release_id": "c13a18a8c323405ebc80070520b52b21",
+      "delay": 1.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_0396.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task01_c13a18a8_1500ms.jpg",
+      "captured_at": 1789835109.3399746,
+      "sha256": "b0fb08ddd58b8ffc62b15bbce7b4e03e671890820a68f7d7c1269e30abb96398"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-01",
+      "release_id": "c13a18a8c323405ebc80070520b52b21",
+      "delay": 3.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_0409.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task01_c13a18a8_3000ms.jpg",
+      "captured_at": 1789835110.842674,
+      "sha256": "607fbf08d213a4edaed18b6675cd19bcb6c08e8000312aeb88d241b756f0e7ab"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "release_id": "70f27a953e8e4345bd73fde34809313f",
+      "delay": 1.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_0750.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task02_70f27a95_1500ms.jpg",
+      "captured_at": 1789835150.8854668,
+      "sha256": "a3efb27b6c51e8305dbf121de042a5ffc10f2204ca178fb70a2a501423e777fb"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-02",
+      "release_id": "70f27a953e8e4345bd73fde34809313f",
+      "delay": 3.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_0763.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task02_70f27a95_3000ms.jpg",
+      "captured_at": 1789835152.4177527,
+      "sha256": "c9d4cc9ac79e3682066ded1b8acdcbf323dcb6c14fada7fef34ef74b24bfe0d8"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "release_id": "3669e10f0c9c41dcb314c5e48e804ab0",
+      "delay": 1.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_1138.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task03_3669e10f_1500ms.jpg",
+      "captured_at": 1789835197.6511126,
+      "sha256": "9204e2c8adc212dd653a31ade461b473f760201053bc07cb69da0deba6062604"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-03",
+      "release_id": "3669e10f0c9c41dcb314c5e48e804ab0",
+      "delay": 3.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_1151.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task03_3669e10f_3000ms.jpg",
+      "captured_at": 1789835199.1515505,
+      "sha256": "83f0816e38f3523c02066950231ddb6c911b22cc0eaa69775df68442c1c61166"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "release_id": "d5214033f99d4cb3a7c77698b6c07547",
+      "delay": 1.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_1562.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task04_d5214033_1500ms.jpg",
+      "captured_at": 1789835247.3598,
+      "sha256": "20315db7e72f26eed95f8e5d7e74d67605926bfb28df294cc9d3fa10d3de6e5a"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-04",
+      "release_id": "d5214033f99d4cb3a7c77698b6c07547",
+      "delay": 3.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_1575.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task04_d5214033_3000ms.jpg",
+      "captured_at": 1789835248.892284,
+      "sha256": "594fd6edcb0b9561b04e02744b7494c66d2babbb92aa03fe3e42a3c06eb04241"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "release_id": "d14af700937840b881ae341016451755",
+      "delay": 1.5,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_1920.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task05_d14af700_1500ms.jpg",
+      "captured_at": 1789835288.3074622,
+      "sha256": "d6559bf0c87afe04996b4828a8d8a578ec823dc198155d4eeb7f37336b40ca92"
+    },
+    {
+      "task_id": "round_af739c5290214b83b231962699116da9-task-05",
+      "release_id": "d14af700937840b881ae341016451755",
+      "delay": 3.0,
+      "source": "/root/gpufree-data/tcei_competition_20260919/official18_round01/rgbd/pair_1932.jpg",
+      "display": "/root/gpufree-data/tcei_competition_20260919/official18_round01/delivery_review18/task05_d14af700_3000ms.jpg",
+      "captured_at": 1789835289.779946,
+      "sha256": "fc10d50b36160646c1955761211ea45ee87ea61a4a33008016e266d3cf26e22a"
+    }
+  ],
+  "raw_hashes": {
+    "episode/summary.json": "74460db49a67962bccfb9263b6c615a67843908ce716d5b2cf78e50f0d350c48",
+    "episode/events.jsonl": "12150196af6473f579db0fa2b2a39f586c4f4abcb3bd4cab695ac7f94a08e8f9",
+    "supervisor_finished.json": "fa8991f7586337b7f8d830ccc43f18ed7a06cdb881131a879cb21d6b9f229211"
+  },
+  "scope": "Native evidence summary. Raw images still require independent visual review. Not a30-round campaign result."
+}

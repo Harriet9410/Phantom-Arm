@@ -1,0 +1,1 @@
+{"returncode": 0, "stdout": "Warning: running in conda env, please deactivate before executing this script\nIf conda is desired please source setup_conda_env.sh in your python 3.10 conda env and run python normally\n{\"scipy\": true, \"trimesh\": false, \"fcl\": false, \"numpy\": true, \"pxr\": false}\n", "stderr": ""}

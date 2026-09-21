@@ -1,0 +1,65 @@
+{
+  "checked_at": 1789825135.0611873,
+  "launcher": {
+    "returncode": 1,
+    "finished_at": 1789825046.9209473,
+    "run": "official13_stack01"
+  },
+  "launcher_process_state": "absent",
+  "owned_live": {
+    "sim": false,
+    "controller": true,
+    "perception": true,
+    "nine": true
+  },
+  "logs": {
+    "sim": [
+      "2026-09-19 13:34:39 [13,803ms] [Warning] [omni.isaac.core.utils.extensions] omni.isaac.core.utils.extensions has been deprecated in favor of isaacsim.core.utils.extensions. Please update your code accordingly.",
+      "[13.908s] [ext: isaacsim.ros1.bridge-2.2.6] startup",
+      "2026-09-19 13:34:39 [14,045ms] [Warning] [omni.isaac.core.articulations.articulation] omni.isaac.core.articulations.articulation.Articulation has been deprecated in favor of isaacsim.core.prims.SingleArticulation Please update your code accordingly.",
+      "2026-09-19 13:34:39 [14,045ms] [Warning] [omni.isaac.core.articulations.articulation_gripper] omni.isaac.core.articulations.articulation_gripper has been deprecated in favor of isaacsim.core.api.articulations.articulation_gripper. Please update your code accordingly.",
+      "2026-09-19 13:34:39 [14,045ms] [Warning] [omni.isaac.core.articulations.articulation_subset] omni.isaac.core.articulations.articulation_subset has been deprecated in favor of isaacsim.core.api.articulations.articulation_subset. Please update your code accordingly.",
+      "2026-09-19 13:34:39 [14,045ms] [Warning] [omni.isaac.core.articulations.articulation_view] omni.isaac.core.articulations.articulation_view.ArticulationView has been deprecated in favor of isaacsim.core.prims.Articulation. Please update your code accordingly.",
+      "2026-09-19 13:34:39 [14,045ms] [Warning] [omni.isaac.core.utils.types] omni.isaac.core.utils.types has been deprecated in favor of isaacsim.core.utils.types. Please update your code accordingly.",
+      "2026-09-19 13:34:39 [14,046ms] [Warning] [omni.isaac.core.utils.stage] omni.isaac.core.utils.stage has been deprecated in favor of isaacsim.core.utils.stage. Please update your code accordingly.",
+      "2026-09-19 13:34:39 [14,362ms] [Warning] [omni.graph.core.plugin] Could not find node type interface for 'isaacsim.asset.gen.conveyor.IsaacConveyor'",
+      "2026-09-19 13:34:39 [14,362ms] [Warning] [omni.graph.core.plugin] Could not find node type interface for 'isaacsim.asset.gen.conveyor.IsaacConveyor'",
+      "2026-09-19 13:34:41 [16,180ms] [Warning] [omni.timeline.plugin] Deprecated: direct use of ITimeline callbacks is deprecated. Use ITimeline::getTimeline (Python: omni.timeline.get_timeline_interface) instead.",
+      "\u001b[93m[Lula] Joint 'finger2_joint' is specified as a mimic joint, but its control chain ['finger2_joint' -> 'finger1_joint'] terminates with a joint ['finger1_joint'] that is not a c-space coordinate. Mimic attributes will be ignored.",
+      "\u001b[0m2026-09-19 13:34:42 [17,281ms] [Warning] [omni.timeline.plugin] Deprecated: direct use of ITimeline callbacks is deprecated. Use ITimeline::getTimeline (Python: omni.timeline.get_timeline_interface) instead.",
+      "2026-09-19 13:34:43 [17,590ms] [Error] [isaacsim.core.nodes.impl.base_writer_node] Could not process writer attach request (<omni.replicator.core.scripts.writers.NodeWriter object at 0x7fdbf424ad40>, None), OmniGraphError: Could not find OmniGraph node from node description '/World/Conveyors/Conveyor_left/ConveyorBeltGraph/ConveyorNode' - Node path '/World/Conveyors/Conveyor_left/ConveyorBeltGraph/ConveyorNode' was not an OmniGraph node",
+      "2026-09-19 13:34:43 [17,679ms] [Error] [isaacsim.core.nodes.impl.base_writer_node] Could not process writer attach request (<omni.replicator.core.scripts.writers.NodeWriter object at 0x7fdbf424afe0>, None), OmniGraphError: Could not find OmniGraph node from node description '/World/Conveyors/Conveyor_left/ConveyorBeltGraph/ConveyorNode' - Node path '/World/Conveyors/Conveyor_left/ConveyorBeltGraph/ConveyorNode' was not an OmniGraph node",
+      "2026-09-19 13:34:43 [17,696ms] [Error] [isaacsim.core.nodes.impl.base_writer_node] Could not process writer attach request (<omni.replicator.core.scripts.writers.NodeWriter object at 0x7fdbf424b280>, None), OmniGraphError: Could not find OmniGraph node from node description '/World/Conveyors/Conveyor_left/ConveyorBeltGraph/ConveyorNode' - Node path '/World/Conveyors/Conveyor_left/ConveyorBeltGraph/ConveyorNode' was not an OmniGraph node",
+      "2026-09-19 13:34:44 [18,850ms] [Warning] [carb] Plugin interface for a client: omni.hydratexture.plugin was already released.",
+      "[19.062s] Simulation App Shutting Down"
+    ],
+    "controller": [
+      "[INFO] [1789824866.492619]: {\"time\": 1789824866.4923563, \"monotonic\": 16757014.922709731, \"request_id\": null, \"round_id\": null, \"task_id\": null, \"status\": \"lift_evidence_capability\", \"code_sha256\": \"7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a\", \"available\": true, \"calibration_id\": \"native_static_camera_robot_geometry_20260919_v1\", \"urdf_sha256\": \"74281502b20d850d2754a7a7bd981e22f207424fa9e8a204eba8bf2ab689261f\"}",
+      "[INFO] [1789824866.494673]: {\"time\": 1789824866.4945302, \"monotonic\": 16757014.924883613, \"request_id\": null, \"round_id\": null, \"task_id\": null, \"status\": \"ready\", \"code_sha256\": \"7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a\", \"execute\": false, \"lift_evidence_capable\": true, \"lift_evidence_capability_reason\": null}"
+    ],
+    "perception": [
+      "[INFO] [1789824868.164850]: TCEI perception ready; classes={0: 'Magazine', 1: 'Torch', 2: 'Grenade', 3: 'Smokegrenade'}"
+    ],
+    "nine": [
+      "self.grid_size:  8",
+      "self.num_queries:  64",
+      "self.embed_dim:  2560",
+      "self.num_heads:  16",
+      "self.adaptive:  True",
+      "self.max_size:  (70, 70)",
+      "self.kv_dim:  1152",
+      "[INFO] [1789824873.907294]: {\"time\": 1789824873.9068727, \"status\": \"ready\", \"inference_configuration\": {\"vision_batch_size\": 1, \"vision_batch_size_source\": \"model.config.vision_batch_size\", \"num_beams\": 1, \"num_beams_source\": \"explicit_chat_kwarg\", \"max_slice_nums\": 9, \"max_slice_nums_source\": \"model.config.slice_config.max_slice_nums\", \"max_slice_nums_override\": null, \"full_image_preserved\": true, \"sampling\": false, \"max_new_tokens\": 400, \"model_dtype\": \"torch.bfloat16\", \"configuration_scope\": \"validated_once_at_node_start\"}, \"model_protocol\": \"nine.selection.compact.v1\"}"
+    ]
+  },
+  "launcher_log_tail": [
+    "{\"pid\": 407735, \"pgid\": 407735, \"start_ticks\": 1675701364, \"command\": [\"/opt/conda/envs/inference/bin/python\", \"-u\", \"/root/tcei_competition_20260919/releases/dev_v7_t1_13/tcei_stack/nine_node.py\", \"_execute:=false\", \"_model_path:=/root/inference/FM9G4B-V\", \"_log_dir:=/root/gpufree-data/tcei_competition_20260919/official13_stack01/events\"], \"cwd\": \"/root/tcei_competition_20260919/releases/dev_v7_t1_13/tcei_stack\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/official13_stack01/logs/nine.log\", \"started_at\": 1789824865.2201045}",
+    "{\"ready_for_read_only\": false, \"errors\": [\"missing:scene\", \"missing:joints\", \"missing:pose\", \"missing:capture\", \"stale:info\", \"stale:depth\"], \"time\": 1789825046.2703378, \"mode\": \"read_only_no_action\", \"observations\": {\"controller\": {\"time\": 1789824866.4945302, \"monotonic\": 16757014.924883613, \"request_id\": null, \"round_id\": null, \"task_id\": null, \"status\": \"ready\", \"code_sha256\": \"7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a\", \"execute\": false, \"lift_evidence_capable\": true, \"lift_evidence_capability_reason\": null}, \"nine\": {\"time\": 1789824873.9068727, \"status\": \"ready\", \"inference_configuration\": {\"vision_batch_size\": 1, \"vision_batch_size_source\": \"model.config.vision_batch_size\", \"num_beams\": 1, \"num_beams_source\": \"explicit_chat_kwarg\", \"max_slice_nums\": 9, \"max_slice_nums_source\": \"model.config.slice_config.max_slice_nums\", \"max_slice_nums_override\": null, \"full_image_preserved\": true, \"sampling\": false, \"max_new_tokens\": 400, \"model_dtype\": \"torch.bfloat16\", \"configuration_scope\": \"validated_once_at_node_start\"}, \"model_protocol\": \"nine.selection.compact.v1\"}, \"info\": {\"K\": [1343.83203125, 0.0, 640.0, 0.0, 1343.83203125, 360.0, 0.0, 0.0, 1.0], \"width\": 1280, \"height\": 720}, \"depth\": {\"stamp\": 0.20000001, \"width\": 1280, \"height\": 720}}, \"candidate_count\": 0, \"grasp_capability\": true, \"count_is_not_a_gate\": true}",
+    "CalledProcessError: Command '['/usr/bin/python3', '/root/tcei_competition_20260919/releases/dev_v7_t1_13/harness/probe_no_action.py', '--timeout', '180', '--output', '/root/gpufree-data/tcei_competition_20260919/official13_stack01/read_only_ready.json']' returned non-zero exit status 1.",
+    "No automatic task was started. Preserve logs/PID records; do not reuse this run name.",
+    "Traceback (most recent call last):",
+    "  File \"/root/tcei_competition_20260919/start_official13_01.py\", line 38, in <module>",
+    "    assert result.returncode==0;print('OFFICIAL13_STACK01_WARMUP_COMPLETE',flush=True)",
+    "AssertionError"
+  ],
+  "gpu": "3959897, [Not Found], 518 MiB\n399547, [Not Found], 9682 MiB\n"
+}

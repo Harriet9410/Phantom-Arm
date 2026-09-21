@@ -1,0 +1,80 @@
+{
+  "registered_at": 1789784535.3013625,
+  "version": "dev_v7_t1_05",
+  "source_capture": "/root/tcei_competition_20260919/t1_capture05_before01",
+  "source_metadata": "t1_capture04_before01/scene.json",
+  "source_frame_id": 1934,
+  "method": "same predeclared physical targets and rejection reasons as first03 attempt; fresh04 full scene visually checked before model calls, stable IDs independently rebound from the numbered image",
+  "supersedes_no_results": true,
+  "competition_round": false,
+  "actions_enabled": false,
+  "cases": [
+    {
+      "id": "A1",
+      "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "9dbd3eb2-obj-0001"
+      ],
+      "side": "left",
+      "visible_frame_ids": [
+        "1"
+      ]
+    },
+    {
+      "id": "A2",
+      "instruction": "抓取右下方的弹夹，放到右侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "9dbd3eb2-obj-0004"
+      ],
+      "side": "right",
+      "visible_frame_ids": [
+        "4"
+      ]
+    },
+    {
+      "id": "A3",
+      "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+      "expected": "reject_for_observation",
+      "reason": "unknown bbox x533..629 could conceal a Torch left of visible Torch x569.5"
+    },
+    {
+      "id": "A4",
+      "instruction": "抓取手雷，放到右侧传送带",
+      "expected": "reject_for_observation",
+      "reason": "unresolved robot-occluded region cannot prove there is only one Grenade"
+    },
+    {
+      "id": "A5",
+      "instruction": "把一个军用手电筒放到左侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "9dbd3eb2-obj-0002"
+      ],
+      "side": "left",
+      "visible_frame_ids": [
+        "2"
+      ]
+    },
+    {
+      "id": "A6",
+      "instruction": "抓取最左方的烟雾弹，放到右侧传送带",
+      "expected": "select",
+      "stable_ids": [
+        "9dbd3eb2-obj-0001"
+      ],
+      "side": "right",
+      "visible_frame_ids": [
+        "1"
+      ]
+    },
+    {
+      "id": "A7",
+      "instruction": "抓取剩余的物品，放到左侧传送带",
+      "expected": "reject_missing_task_context",
+      "reason": "no predecessor tasks were physically executed; dry-run requests do not advance remaining set"
+    }
+  ],
+  "pre_inference_inheritance": "Original independently annotated targets preserved; stable membership, class, pixels, spatial context, scene coverage and unknown-region geometry checked unchanged before this run."
+}

@@ -1,0 +1,50 @@
+{
+  "checked_at": 1789811965.0800009,
+  "robot": {
+    "source": "native_joint_state_while_stopped",
+    "all_joint_names": [
+      "Joint01",
+      "Joint02",
+      "Joint03",
+      "Joint04",
+      "Joint05",
+      "Joint06",
+      "finger1_joint",
+      "finger2_joint"
+    ],
+    "all_joint_positions": [
+      2.0025447966531829e-10,
+      1.3000001907348633,
+      -1.499999761581421,
+      4.499999046325684,
+      1.600000023841858,
+      2.6973503430838264e-09,
+      1.4133112458125652e-08,
+      5.860030793947146e-10
+    ],
+    "all_joint_velocities": [
+      -6.468193987529958e-06,
+      3.260340599808842e-05,
+      5.75033736822661e-05,
+      -3.902697756075213e-07,
+      6.601859240618069e-06,
+      3.794325948547339e-06,
+      -1.0156725238630315e-06,
+      -1.015672751236707e-06
+    ],
+    "stamp": 1789811965.046693
+  },
+  "captured": false,
+  "stop": {
+    "id": "60b838694d744c5cadf8ac3f30634cbb",
+    "state": "stopped",
+    "reason": "external cancellation: protocol check for an unreceived request",
+    "seconds": 149.9635953605175,
+    "fault_reason": null,
+    "max_joint_speed": 5.7565099268686026e-05,
+    "joint_distance": 4.76837158203125e-07,
+    "tcp_distance": 2.207806055055434e-07,
+    "simulation_time": 818.2833760101348,
+    "time": 1789811964.9930062
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "time": 1789721745.584809,
+  "processes": [
+    {
+      "pid": 152493,
+      "args": [
+        "/usr/bin/python3",
+        "-u",
+        "/root/tcei_stress_20260918/harness_v5/harness/campaign.py",
+        "--root",
+        "/root/tcei_stress_20260918",
+        "--name",
+        "formal30_v3",
+        "--cases",
+        "/root/tcei_stress_20260918/holdout_cases",
+        "--code",
+        "/root/tcei_stress_20260918/frozen_v3/tcei_stack",
+        "--harness",
+        "/root/tcei_stress_20260918/harness_v5/harness",
+        "--count",
+        "30"
+      ]
+    }
+  ],
+  "reason": "User requested fixing the two planner failures before remaining trials."
+}

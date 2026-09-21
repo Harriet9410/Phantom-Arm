@@ -1,0 +1,411 @@
+{
+  "checked_at": 1789811866.6754842,
+  "summary": {
+    "status": "passed_native_protocol_only",
+    "scope": "disabled_execution_admission_and_explicit_cancel_only",
+    "reset_sent": false,
+    "source_sha256": "65acfd67709ff97c3526978b136b98e700d560b22a1da1659faf96640a8b9898",
+    "connections": {
+      "checked_monotonic": 16743963.436451174,
+      "missing": [],
+      "bus_rows": [
+        [
+          14,
+          "/tcei_nine",
+          "o",
+          "TCPROS",
+          "/tcei/request",
+          true,
+          "TCPROS connection on port 44317 to [100.64.50.229:58212 on socket 9]"
+        ],
+        [
+          15,
+          "/tcei_controller",
+          "o",
+          "TCPROS",
+          "/tcei/prepare_observation",
+          true,
+          "TCPROS connection on port 44317 to [100.64.50.229:58228 on socket 42]"
+        ],
+        [
+          16,
+          "/tcei_controller",
+          "o",
+          "TCPROS",
+          "/tcei/cancel_request",
+          true,
+          "TCPROS connection on port 44317 to [100.64.50.229:58236 on socket 41]"
+        ],
+        [
+          1,
+          "http://gpufree-container:37899/",
+          "i",
+          "TCPROS",
+          "/tcei/nine_status",
+          true,
+          "TCPROS connection on port 45510 to [gpufree-container:45325 on socket None]"
+        ],
+        [
+          2,
+          "http://gpufree-container:43615/",
+          "i",
+          "TCPROS",
+          "/tcei/task_status",
+          true,
+          "TCPROS connection on port 32972 to [gpufree-container:41339 on socket None]"
+        ],
+        [
+          3,
+          "http://gpufree-container:41807/",
+          "i",
+          "TCPROS",
+          "/tcei/stop_ack",
+          true,
+          "TCPROS connection on port 56242 to [gpufree-container:43439 on socket None]"
+        ],
+        [
+          5,
+          "http://gpufree-container:43615/",
+          "i",
+          "TCPROS",
+          "/tcei/cancel_ack",
+          true,
+          "TCPROS connection on port 32980 to [gpufree-container:41339 on socket None]"
+        ],
+        [
+          6,
+          "http://gpufree-container:44753/",
+          "i",
+          "TCPROS",
+          "/tcei/candidates",
+          true,
+          "TCPROS connection on port 44488 to [gpufree-container:46437 on socket None]"
+        ],
+        [
+          4,
+          "http://gpufree-container:41807/",
+          "i",
+          "TCPROS",
+          "/Jaka/gripper_is_captured",
+          true,
+          "TCPROS connection on port 56256 to [gpufree-container:43439 on socket None]"
+        ],
+        [
+          7,
+          "http://gpufree-container:41807/",
+          "i",
+          "TCPROS",
+          "/Jaka/get_jointstate",
+          true,
+          "TCPROS connection on port 56264 to [gpufree-container:43439 on socket None]"
+        ],
+        [
+          8,
+          "http://gpufree-container:41807/",
+          "i",
+          "TCPROS",
+          "/Jaka/get_end_effector_pose",
+          true,
+          "TCPROS connection on port 56280 to [gpufree-container:43439 on socket None]"
+        ],
+        [
+          9,
+          "http://gpufree-container:41807/",
+          "i",
+          "TCPROS",
+          "/Jaka/get_gripper_efforts",
+          true,
+          "TCPROS connection on port 56284 to [gpufree-container:43439 on socket None]"
+        ],
+        [
+          13,
+          "http://gpufree-container:42209/",
+          "i",
+          "TCPROS",
+          "/clock",
+          true,
+          "TCPROS connection on port 56550 to [gpufree-container:56887 on socket None]"
+        ],
+        [
+          10,
+          "http://gpufree-container:43615/",
+          "i",
+          "TCPROS",
+          "/Jaka/set_end_effector_pose",
+          true,
+          "TCPROS connection on port 32988 to [gpufree-container:41339 on socket None]"
+        ],
+        [
+          11,
+          "http://gpufree-container:43615/",
+          "i",
+          "TCPROS",
+          "/Jaka/set_gripper_value",
+          true,
+          "TCPROS connection on port 33004 to [gpufree-container:41339 on socket None]"
+        ],
+        [
+          12,
+          "http://gpufree-container:43615/",
+          "i",
+          "TCPROS",
+          "/tcei/execute_preview",
+          true,
+          "TCPROS connection on port 33008 to [gpufree-container:41339 on socket None]"
+        ]
+      ],
+      "resolved_node_uris": {
+        "/tcei_controller": "http://gpufree-container:43615/",
+        "/tcei_nine": "http://gpufree-container:37899/",
+        "/tcei_perception": "http://gpufree-container:44753/"
+      }
+    },
+    "observations": [
+      {
+        "request": {
+          "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_1",
+          "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+          "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+          "deadline_monotonic": 16743993.43770071,
+          "started_at_monotonic": 16743963.43770071,
+          "started_at_wall": 1789811815.00735
+        },
+        "events": [
+          {
+            "topic": "/tcei/task_status",
+            "message": {
+              "time": 1789811815.0119488,
+              "monotonic": 16743963.442302415,
+              "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_1",
+              "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+              "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+              "status": "observation_received",
+              "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+              "observation_protocol": "tcei.observation.v1"
+            },
+            "received_monotonic": 16743963.442881629
+          },
+          {
+            "topic": "/tcei/task_status",
+            "message": {
+              "time": 1789811815.014047,
+              "monotonic": 16743963.444399947,
+              "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_1",
+              "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+              "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+              "status": "observation_accepted",
+              "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+              "command_epoch": 0,
+              "observation_protocol": "tcei.observation.v1"
+            },
+            "received_monotonic": 16743963.444701413
+          },
+          {
+            "topic": "/tcei/task_status",
+            "message": {
+              "time": 1789811815.0157416,
+              "monotonic": 16743963.446095053,
+              "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_1",
+              "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+              "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+              "status": "execution_disabled",
+              "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+              "plan": {
+                "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_1",
+                "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+                "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+                "deadline_monotonic": 16743993.43770071,
+                "started_at_monotonic": 16743963.43770071,
+                "started_at_wall": 1789811815.00735,
+                "kind": "prepare_observation",
+                "_command_epoch": 0
+              }
+            },
+            "received_monotonic": 16743963.446409073
+          }
+        ],
+        "acceptance_seconds": 0.007000703364610672
+      },
+      {
+        "request": {
+          "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_2",
+          "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+          "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+          "deadline_monotonic": 16743993.447624566,
+          "started_at_monotonic": 16743963.447624566,
+          "started_at_wall": 1789811815.017274
+        },
+        "events": [
+          {
+            "topic": "/tcei/task_status",
+            "message": {
+              "time": 1789811815.0198984,
+              "monotonic": 16743963.450251743,
+              "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_2",
+              "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+              "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+              "status": "observation_received",
+              "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+              "observation_protocol": "tcei.observation.v1"
+            },
+            "received_monotonic": 16743963.450534785
+          },
+          {
+            "topic": "/tcei/task_status",
+            "message": {
+              "time": 1789811815.0214703,
+              "monotonic": 16743963.451823208,
+              "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_2",
+              "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+              "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+              "status": "observation_accepted",
+              "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+              "command_epoch": 0,
+              "observation_protocol": "tcei.observation.v1"
+            },
+            "received_monotonic": 16743963.452075396
+          },
+          {
+            "topic": "/tcei/task_status",
+            "message": {
+              "time": 1789811815.0229058,
+              "monotonic": 16743963.453259084,
+              "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_2",
+              "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+              "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+              "status": "execution_disabled",
+              "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+              "plan": {
+                "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_2",
+                "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+                "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+                "deadline_monotonic": 16743993.447624566,
+                "started_at_monotonic": 16743963.447624566,
+                "started_at_wall": 1789811815.017274,
+                "kind": "prepare_observation",
+                "_command_epoch": 0
+              }
+            },
+            "received_monotonic": 16743963.45351558
+          }
+        ],
+        "acceptance_seconds": 0.004450829699635506
+      }
+    ],
+    "safe_stop": {
+      "state": "stopped",
+      "proof": {
+        "id": "60b838694d744c5cadf8ac3f30634cbb",
+        "state": "stopped",
+        "reason": "external cancellation: protocol check for an unreceived request",
+        "seconds": 0.3543168865144253,
+        "fault_reason": null,
+        "max_joint_speed": 5.7572495279600844e-05,
+        "joint_distance": 4.76837158203125e-07,
+        "tcp_distance": 2.278905831053494e-07,
+        "simulation_time": 672.9833684321493,
+        "time": 1789811815.3837416
+      },
+      "seconds": 0.3623803947120905,
+      "cancel_epoch": 1,
+      "cancel_mapping": {
+        "protocol": "tcei.cancel.v1",
+        "cancel_id": "01c9c1689f0c41239909da870cc2256d",
+        "request_round_id": "round_2b8ae59cda3c457bae26ece9d0c82fc7",
+        "request_id": "round_2b8ae59cda3c457bae26ece9d0c82fc7-never-submitted",
+        "state": "accepted",
+        "stop_id": "60b838694d744c5cadf8ac3f30634cbb",
+        "mapping_revision": 0,
+        "affected_round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+        "affected_request_id": "protocol08_11fde57234b640d890c4e526a3ebc249_2",
+        "monotonic": 16743963.460329534,
+        "time": 1789811815.0299768
+      },
+      "received_monotonic": 16743963.815414757
+    },
+    "independent_stationary": {
+      "clock_span": 0.26666668100006063,
+      "clock_start": 673.016701767,
+      "clock_end": 673.283368448,
+      "native_counts": {
+        "/Jaka/get_jointstate": 18,
+        "/Jaka/get_end_effector_pose": 18,
+        "/Jaka/gripper_is_captured": 18,
+        "/Jaka/get_gripper_efforts": 18,
+        "/clock": 18
+      },
+      "max_arm_speed": 5.759883060818538e-05,
+      "joint_drift": [
+        8.183453914512029e-11,
+        0.0,
+        0.0,
+        0.0,
+        2.384185791015625e-07,
+        5.005760472798215e-09,
+        1.2304944618790614e-08,
+        1.6322060369944325e-10
+      ],
+      "tcp_drift": 4.823522336959598e-08,
+      "rotation_drift_rad": 2.40274004587488e-07,
+      "anchor": {
+        "q": [
+          2.0831736335935602e-10,
+          1.3000001907348633,
+          -1.499999761581421,
+          4.499999046325684,
+          1.600000023841858,
+          -1.4287626637354833e-09,
+          2.301055879172509e-08,
+          6.449590861379306e-10
+        ],
+        "p": [
+          0.0662852333676265,
+          0.08628229555096245,
+          2.7573813151030224
+        ],
+        "rotation": [
+          0.01460287429142411,
+          -9.23097338315291e-05,
+          0.9998741915949466,
+          -0.006192618484445262
+        ]
+      },
+      "clock_pairing": "overlapping_receipt_interval_only_not_atomic_sensor_pairing"
+    },
+    "late_request_events": [
+      {
+        "topic": "/tcei/task_status",
+        "message": {
+          "time": 1789811815.7005146,
+          "monotonic": 16743964.130868368,
+          "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249-late",
+          "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+          "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+          "status": "observation_received",
+          "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+          "observation_protocol": "tcei.observation.v1"
+        },
+        "received_monotonic": 16743964.131346218
+      },
+      {
+        "topic": "/tcei/task_status",
+        "message": {
+          "time": 1789811815.7022524,
+          "monotonic": 16743964.13260534,
+          "request_id": "protocol08_11fde57234b640d890c4e526a3ebc249-late",
+          "round_id": "protocol08_11fde57234b640d890c4e526a3ebc249",
+          "task_id": "protocol08_11fde57234b640d890c4e526a3ebc249-observation",
+          "status": "observation_request_rejected",
+          "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+          "observation_protocol": "tcei.observation.v1",
+          "reason": "busy, cancelled, stopped or recovery required"
+        },
+        "received_monotonic": 16743964.132882088
+      }
+    ],
+    "finished_at": 1789811816.311086,
+    "pose_gripper_command_count": 0,
+    "native_rows": 227
+  },
+  "log": "{\"status\": \"passed_native_protocol_only\", \"error\": null, \"pose_gripper_command_count\": 0, \"native_rows\": 227}\n"
+}

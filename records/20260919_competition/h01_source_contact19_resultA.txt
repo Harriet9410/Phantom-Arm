@@ -1,0 +1,559 @@
+{
+  "probe_job.json": {
+    "pid": 509520,
+    "started_at": 1789839276.4843662,
+    "script_sha256": "8a020dfdd34d70089275979409194c4b03dc13fe21c37fdd062e4f44b60370ee"
+  },
+  "probe/summary.json": {
+    "case": "H01_source_contact19_A01",
+    "status": "passed_loaded_source_contact_stop",
+    "mode": "declared_fault_injection",
+    "injection": "one cancellation after loaded preload and before any trial lift",
+    "normal_round": false,
+    "velocity_basis": "TGS consecutive physical frame displacement; original velocities preserved",
+    "reset_sent": false,
+    "gripper_or_pose_commands_sent_by_probe": 0,
+    "cancel_sent": true,
+    "limits": {
+      "arm_speed": 0.03,
+      "arm_drift": 0.0015,
+      "tcp_drift": 0.0015,
+      "stable_sim_seconds": 0.25,
+      "stop_confirmation_wall_seconds": 7.0,
+      "braking_tcp_distance_m": 0.02
+    },
+    "source_sha256": "8a020dfdd34d70089275979409194c4b03dc13fe21c37fdd062e4f44b60370ee",
+    "native_publisher": "/isaacsim_jaka_506090_1789838983927",
+    "started_at": 1789839276.8775322,
+    "phase": {
+      "time": 1789839301.0758193,
+      "monotonic": 16771449.506172547,
+      "request_id": "episode_394332b3af334068b1f1ab5152e899e9",
+      "round_id": "round_b702cfb70897493ca6ce49566140e745",
+      "task_id": "round_b702cfb70897493ca6ce49566140e745-task-01",
+      "status": "grasp_preload",
+      "code_sha256": "0f759c7d8d40ea44ac229ae039d120de42d44eac761f2e80571055220d025b29",
+      "command": 0.017750000000000012,
+      "requested_target": 0.01950000000000001,
+      "applied_distance_m": 0.0002500000000000002,
+      "limit_reason": "effort_stop",
+      "limited_by_measured_position_lead": false,
+      "contact_efforts": [
+        30.610172271728516,
+        30.609329223632812
+      ],
+      "effort_stop": 30.0,
+      "finger_positions": [
+        0.017743872478604317,
+        0.01726546138525009
+      ],
+      "position_lead_limit": 0.002
+    },
+    "source_contact_origin": [
+      0.21158095730777954,
+      -0.14594858534335042,
+      2.4533121715386104
+    ],
+    "source_contact_before_cancel": {
+      "topic": "/tcei/joint_diagnostics",
+      "mono": 16771449.507005677,
+      "wall": 1789839301.0766537,
+      "value": {
+        "time": 1789839301.0759032,
+        "tracking": false,
+        "simulation_time": 287.06668163836,
+        "all_joint_names": [
+          "Joint01",
+          "Joint02",
+          "Joint03",
+          "Joint04",
+          "Joint05",
+          "Joint06",
+          "finger1_joint",
+          "finger2_joint"
+        ],
+        "all_joint_positions": [
+          -0.17937998473644257,
+          0.3892960846424103,
+          -0.7353360652923584,
+          -1.9167450666427612,
+          1.5704859495162964,
+          0.13436296582221985,
+          0.017743851989507675,
+          0.017265554517507553
+        ],
+        "all_joint_velocities": [
+          -1.4755190932191908e-05,
+          0.0008747080573812127,
+          0.0009960622992366552,
+          0.002590829273685813,
+          -0.0031812842935323715,
+          -0.052422910928726196,
+          -0.001833818620070815,
+          -0.0018338185036554933
+        ],
+        "joint_target": [
+          -0.17938000181540378,
+          0.38929503305434693,
+          -0.7353369954389437,
+          -1.9167499883255976,
+          1.5705815312637288,
+          0.13451856316378064
+        ],
+        "joint_actual": [
+          -0.17937998473644257,
+          0.3892960846424103,
+          -0.7353360652923584,
+          -1.9167450666427612,
+          1.5704859495162964,
+          0.13436296582221985
+        ],
+        "joint_error": [
+          -1.707896121749819e-08,
+          -1.0515880633499286e-06,
+          -9.301465853095436e-07,
+          -4.921682836389607e-06,
+          9.5581747432405e-05,
+          0.00015559734156078697
+        ],
+        "tcp_actual": [
+          0.21158095380617103,
+          -0.14594856562923697,
+          2.4533121442083443
+        ],
+        "tcp_rotation_matrix": [
+          [
+            -0.9989866887218807,
+            -0.04500549050832282,
+            -0.0003187171140233496
+          ],
+          [
+            -0.04500550507219807,
+            0.9989867381592109,
+            3.8668043125940295e-05
+          ],
+          [
+            0.00031665389588582323,
+            5.29728850535123e-05,
+            -0.9999999484620915
+          ]
+        ],
+        "tcp_quaternion_wire": [
+          -0.00015888300710422123,
+          -0.02250845164043966,
+          0.9997466398222078,
+          2.2916038056339383e-05
+        ],
+        "tcp_goal_fk": [
+          0.21159997377910084,
+          -0.1459437605553996,
+          2.4533102262655744
+        ],
+        "goal": {
+          "position": [
+            0.2116000038852223,
+            -0.14594387556790708,
+            2.45331039144516
+          ],
+          "quaternion_wire": [
+            0.0,
+            -0.022618861352942075,
+            0.9997441608287074,
+            0.0
+          ]
+        }
+      }
+    },
+    "native_at_cancel": {
+      "topic": "/Jaka/get_end_effector_pose",
+      "mono": 16771449.486819228,
+      "wall": 1789839301.0564673,
+      "value": {
+        "header": {
+          "seq": 17212,
+          "stamp": {
+            "secs": 1789839301,
+            "nsecs": 54586410
+          },
+          "frame_id": "base_link"
+        },
+        "pose": {
+          "position": {
+            "x": 0.21158095730777954,
+            "y": -0.14594858534335042,
+            "z": 2.4533121715386104
+          },
+          "orientation": {
+            "x": -0.0001588783506639366,
+            "y": -0.02250847398187164,
+            "z": 0.9997466393206232,
+            "w": 2.2886605223236833e-05
+          }
+        }
+      }
+    },
+    "cancel_at": 16771449.518700164,
+    "cancel_request": {
+      "protocol": "tcei.cancel.v1",
+      "cancel_id": "9505fe7f4f084384b12bea5cfa9a3aeb",
+      "round_id": "round_b702cfb70897493ca6ce49566140e745",
+      "request_id": "episode_394332b3af334068b1f1ab5152e899e9",
+      "reason": "H01 declared loaded source-contact stop test"
+    },
+    "cancel_mapping": {
+      "topic": "/tcei/cancel_ack",
+      "mono": 16771449.522896413,
+      "wall": 1789839301.092544,
+      "value": {
+        "protocol": "tcei.cancel.v1",
+        "cancel_id": "9505fe7f4f084384b12bea5cfa9a3aeb",
+        "request_round_id": "round_b702cfb70897493ca6ce49566140e745",
+        "request_id": "episode_394332b3af334068b1f1ab5152e899e9",
+        "state": "accepted",
+        "stop_id": "97924d2d72e64be5b2bc319ec1106e15",
+        "mapping_revision": 0,
+        "affected_round_id": "round_b702cfb70897493ca6ce49566140e745",
+        "affected_request_id": "episode_394332b3af334068b1f1ab5152e899e9",
+        "monotonic": 16771449.522370504,
+        "time": 1789839301.092018
+      }
+    },
+    "last_stop_ack": {
+      "topic": "/tcei/stop_ack",
+      "mono": 16771450.288805205,
+      "wall": 1789839301.858453,
+      "value": {
+        "id": "97924d2d72e64be5b2bc319ec1106e15",
+        "state": "stopped",
+        "reason": "external cancellation: H01 declared loaded source-contact stop test",
+        "seconds": 0.7646500486880541,
+        "fault_reason": null,
+        "max_joint_speed": 1.4305114000023916e-05,
+        "reported_max_joint_speed": 0.05251998081803322,
+        "velocity_source": "consecutive_physics_step_position_difference",
+        "solver_type": "TGS",
+        "physics_dt": 0.016666666666666666,
+        "sample_dt": 0.01666666753590107,
+        "joint_distance": 0.00015607476234436035,
+        "tcp_distance": 1.9760636260854225e-05,
+        "stable_window_tcp_drift": 1.9760636260854225e-05,
+        "simulation_time": 287.68334833718836,
+        "time": 1789839301.855394,
+        "measurement_protocol": "tcei.stop_measurement.v2",
+        "configuration_error": null
+      }
+    },
+    "independent_loaded_stop": {
+      "method": "independently_recomputed_full_physics_step_velocity",
+      "simulation_span": 0.25000001303851604,
+      "physics_dt": 0.016666666666666666,
+      "solver_type": "TGS",
+      "physics_frames": 16,
+      "max_full_step_arm_speed": 3.576278500005979e-05,
+      "max_reported_arm_speed": 0.0525691919028759,
+      "joint_drift": [
+        1.4901161193847656e-08,
+        2.9802322387695312e-08,
+        0.0,
+        1.1920928955078125e-07,
+        4.76837158203125e-07,
+        5.960464477539063e-08,
+        7.264316082000732e-08,
+        3.91155481338501e-08
+      ],
+      "tcp_drift": 1.172231580634261e-07,
+      "captured_continuously": true,
+      "bilateral_effort_continuously": true,
+      "native_topic_cross_check": true,
+      "raw_velocities_modified": false
+    },
+    "first_stopped_ack": {
+      "topic": "/tcei/stop_ack",
+      "mono": 16771449.947606768,
+      "wall": 1789839301.517255,
+      "value": {
+        "id": "97924d2d72e64be5b2bc319ec1106e15",
+        "state": "stopped",
+        "reason": "external cancellation: H01 declared loaded source-contact stop test",
+        "seconds": 0.42457104846835136,
+        "fault_reason": null,
+        "max_joint_speed": 2.1457671000035874e-05,
+        "reported_max_joint_speed": 0.05252261087298393,
+        "velocity_source": "consecutive_physics_step_position_difference",
+        "solver_type": "TGS",
+        "physics_dt": 0.016666666666666666,
+        "sample_dt": 0.01666666753590107,
+        "joint_distance": 0.00015607476234436035,
+        "tcp_distance": 1.983001360663649e-05,
+        "stable_window_tcp_drift": 1.983001360663649e-05,
+        "simulation_time": 287.41668165661395,
+        "time": 1789839301.5153172,
+        "measurement_protocol": "tcei.stop_measurement.v2",
+        "configuration_error": null
+      }
+    },
+    "stop_confirmation_seconds": 0.4289066046476364,
+    "supervisor_returncode": 1,
+    "closed": {
+      "started_at": 1789839277.3506808,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "/root/tcei_competition_20260919/releases/dev_v7_t1_19/tcei_stack/run_episode.py",
+        "--official-example",
+        "--task-source",
+        "engineering_loaded_stop",
+        "--budget",
+        "180",
+        "--output",
+        "/root/gpufree-data/tcei_competition_20260919/H01_source_contact19_A01/episode"
+      ],
+      "budget_seconds": 180,
+      "watchdog_seconds": 230,
+      "script_sha256": "8684af99fe315bcc1ebd7d0bba3feeb9b2a1b94adca206a5bf8ad5331754179d",
+      "returncode": 1,
+      "episode_status": "stopped",
+      "execution_disabled": true,
+      "recorder_cleanup": [
+        {
+          "name": "rgbd",
+          "code": 0,
+          "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/H01_source_contact19_A01/pids/rgbd.json\n",
+          "stderr": ""
+        },
+        {
+          "name": "scalars",
+          "code": 0,
+          "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/H01_source_contact19_A01/pids/scalars.json\n",
+          "stderr": ""
+        }
+      ],
+      "evidence_closeout": {
+        "rgbd": {
+          "closed_at": 1789839307.3434918,
+          "receiving_ended_at": 1789839307.3365455,
+          "maximum_duration_seconds": 900.0,
+          "stop_reason": "requested_stop",
+          "recorded_pairs": 231,
+          "pending_pairs": 0,
+          "dropped_pairs": 0,
+          "write_errors": [],
+          "complete": true,
+          "capture_window_seconds": 0.0,
+          "depth_encoding": "float32_deflate_level1"
+        },
+        "scalars": {
+          "closed_at": 1789839308.7691953,
+          "recorded_rows": 65244,
+          "topics_seen": [
+            "/Jaka/get_end_effector_pose",
+            "/Jaka/get_gripper_efforts",
+            "/Jaka/get_jointstate",
+            "/Jaka/gripper_is_captured",
+            "/Jaka/set_end_effector_pose",
+            "/Jaka/set_gripper_value",
+            "/clock",
+            "/tcei/cancel_ack",
+            "/tcei/cancel_request",
+            "/tcei/execute_preview",
+            "/tcei/grasp_preview_request",
+            "/tcei/grasp_preview_response",
+            "/tcei/gripper_contact",
+            "/tcei/joint_diagnostics",
+            "/tcei/nine_status",
+            "/tcei/plan",
+            "/tcei/planner_status",
+            "/tcei/prepare_observation",
+            "/tcei/request",
+            "/tcei/stop_ack",
+            "/tcei/stop_request",
+            "/tcei/task_status"
+          ],
+          "maximum_duration_seconds": 900.0
+        }
+      },
+      "evidence_complete": true,
+      "finished_at": 1789839309.5788286
+    },
+    "max_tcp_travel_after_cancel": 1.9828873730495517e-05,
+    "late_action_commands": [],
+    "finished_at": 1789839309.6625519,
+    "callback_errors": [],
+    "rows": 8857
+  },
+  "supervisor_finished.json": {
+    "started_at": 1789839277.3506808,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "/root/tcei_competition_20260919/releases/dev_v7_t1_19/tcei_stack/run_episode.py",
+      "--official-example",
+      "--task-source",
+      "engineering_loaded_stop",
+      "--budget",
+      "180",
+      "--output",
+      "/root/gpufree-data/tcei_competition_20260919/H01_source_contact19_A01/episode"
+    ],
+    "budget_seconds": 180,
+    "watchdog_seconds": 230,
+    "script_sha256": "8684af99fe315bcc1ebd7d0bba3feeb9b2a1b94adca206a5bf8ad5331754179d",
+    "returncode": 1,
+    "episode_status": "stopped",
+    "execution_disabled": true,
+    "recorder_cleanup": [
+      {
+        "name": "rgbd",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/H01_source_contact19_A01/pids/rgbd.json\n",
+        "stderr": ""
+      },
+      {
+        "name": "scalars",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/H01_source_contact19_A01/pids/scalars.json\n",
+        "stderr": ""
+      }
+    ],
+    "evidence_closeout": {
+      "rgbd": {
+        "closed_at": 1789839307.3434918,
+        "receiving_ended_at": 1789839307.3365455,
+        "maximum_duration_seconds": 900.0,
+        "stop_reason": "requested_stop",
+        "recorded_pairs": 231,
+        "pending_pairs": 0,
+        "dropped_pairs": 0,
+        "write_errors": [],
+        "complete": true,
+        "capture_window_seconds": 0.0,
+        "depth_encoding": "float32_deflate_level1"
+      },
+      "scalars": {
+        "closed_at": 1789839308.7691953,
+        "recorded_rows": 65244,
+        "topics_seen": [
+          "/Jaka/get_end_effector_pose",
+          "/Jaka/get_gripper_efforts",
+          "/Jaka/get_jointstate",
+          "/Jaka/gripper_is_captured",
+          "/Jaka/set_end_effector_pose",
+          "/Jaka/set_gripper_value",
+          "/clock",
+          "/tcei/cancel_ack",
+          "/tcei/cancel_request",
+          "/tcei/execute_preview",
+          "/tcei/grasp_preview_request",
+          "/tcei/grasp_preview_response",
+          "/tcei/gripper_contact",
+          "/tcei/joint_diagnostics",
+          "/tcei/nine_status",
+          "/tcei/plan",
+          "/tcei/planner_status",
+          "/tcei/prepare_observation",
+          "/tcei/request",
+          "/tcei/stop_ack",
+          "/tcei/stop_request",
+          "/tcei/task_status"
+        ],
+        "maximum_duration_seconds": 900.0
+      }
+    },
+    "evidence_complete": true,
+    "finished_at": 1789839309.5788286
+  },
+  "supervisor_aborted.json": null,
+  "probe_process_state": "absent",
+  "counts": {
+    "judge_started": 1,
+    "ready": 3,
+    "observation_received": 1,
+    "observation_accepted": 1,
+    "round_started": 1,
+    "observation_started": 1,
+    "observation_preparation_started": 1,
+    "clear_basket_for_observation": 1,
+    "arrived": 3,
+    "observation_completed": 1,
+    "infer_started": 1,
+    "model_answer": 1,
+    "plan_published": 1,
+    "plan_accepted": 1,
+    "request_finished": 1,
+    "task_started": 1,
+    "grasp_evidence_preflight": 1,
+    "grasp_candidate_set": 1,
+    "attempt": 1,
+    "grasp_preview": 1,
+    "approach": 1,
+    "grasp_orientation_selected": 1,
+    "approach_clearance_verified": 1,
+    "occlusion_check": 1,
+    "controlled_self_occlusion": 1,
+    "descend": 1,
+    "grasp_preload_started": 1,
+    "grasp_preload": 1,
+    "controlled_stop_requested": 3,
+    "stop_ack": 36,
+    "cancel_ack": 2,
+    "grasp_attempt_outcome": 1,
+    "controlled_stop_verified": 1,
+    "task_failed": 1,
+    "cancel_requested": 1
+  },
+  "event_tail": [
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    },
+    {
+      "status": "stop_ack",
+      "reason": null,
+      "time": null
+    }
+  ],
+  "probe_log": [
+    "H01_LOADED18_RESULT passed_loaded_source_contact_stop None"
+  ]
+}

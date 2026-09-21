@@ -1,0 +1,446 @@
+{
+  "checked_at": 1789820286.5841823,
+  "contact_windows": [
+    {
+      "start": 1789819393.7833278,
+      "contact": {
+        "time": 1789819393.7833278,
+        "monotonic": 16751542.213680752,
+        "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+        "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+        "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+        "status": "grasp_contact_confirmed",
+        "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+        "command": 0.02675000000000002,
+        "contact_efforts": [
+          6.217830657958984,
+          6.272817134857178
+        ],
+        "stable_sim_seconds": 0.45000002400001904,
+        "fresh_contact_samples": 28,
+        "joint_names": [
+          "Joint01",
+          "Joint02",
+          "Joint03",
+          "Joint04",
+          "Joint05",
+          "Joint06",
+          "finger1_joint",
+          "finger2_joint"
+        ],
+        "measured_joint_positions": [
+          -0.04915926977992058,
+          0.5687599778175354,
+          -1.1417471170425415,
+          4.139613151550293,
+          1.57061767578125,
+          1.6185312271118164,
+          0.026748646050691605,
+          0.02666155993938446
+        ],
+        "position_lead_limit": 0.002,
+        "position_lead_limit_calibrated": false,
+        "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+        "source_topic": "/tcei/task_status",
+        "received_monotonic": 16751542.214774732
+      },
+      "end": 1789819395.4557676,
+      "effort_samples": 66,
+      "effort_stats": [
+        {
+          "min": 3.8424932956695557,
+          "median": 4.294688940048218,
+          "max": 6.341422080993652,
+          "below_005": 0
+        },
+        {
+          "min": 3.8438963890075684,
+          "median": 4.289757013320923,
+          "max": 6.340873718261719,
+          "below_005": 0
+        }
+      ],
+      "capture_counts": {
+        "True": 66
+      },
+      "finger_ranges": [
+        {
+          "min": 0.02674853801727295,
+          "max": 0.026749301701784134
+        },
+        {
+          "min": 0.026660557836294174,
+          "max": 0.026698091998696327
+        }
+      ],
+      "first_last_efforts": [
+        {
+          "t": 1789819393.8438253,
+          "value": [
+            6.218780517578125,
+            6.2735514640808105
+          ]
+        },
+        {
+          "t": 1789819395.4460268,
+          "value": [
+            3.855754852294922,
+            3.8569328784942627
+          ]
+        }
+      ]
+    },
+    {
+      "start": 1789819446.9516757,
+      "contact": {
+        "time": 1789819446.9516757,
+        "monotonic": 16751595.382028684,
+        "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+        "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+        "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+        "status": "grasp_contact_confirmed",
+        "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+        "command": 0.02700000000000002,
+        "contact_efforts": [
+          8.628013610839844,
+          8.653865814208984
+        ],
+        "stable_sim_seconds": 0.46666669100000036,
+        "fresh_contact_samples": 29,
+        "joint_names": [
+          "Joint01",
+          "Joint02",
+          "Joint03",
+          "Joint04",
+          "Joint05",
+          "Joint06",
+          "finger1_joint",
+          "finger2_joint"
+        ],
+        "measured_joint_positions": [
+          -0.04873788729310036,
+          0.5724396705627441,
+          -1.1494810581207275,
+          4.135502815246582,
+          1.5706536769866943,
+          -1.5538450479507446,
+          0.02699831873178482,
+          0.02688479982316494
+        ],
+        "position_lead_limit": 0.002,
+        "position_lead_limit_calibrated": false,
+        "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+        "source_topic": "/tcei/task_status",
+        "received_monotonic": 16751595.383160075
+      },
+      "end": 1789819448.5496085,
+      "effort_samples": 67,
+      "effort_stats": [
+        {
+          "min": 8.019673347473145,
+          "median": 8.03855037689209,
+          "max": 8.639802932739258,
+          "below_005": 0
+        },
+        {
+          "min": 8.02047061920166,
+          "median": 8.044662475585938,
+          "max": 8.653412818908691,
+          "below_005": 0
+        }
+      ],
+      "capture_counts": {
+        "True": 67
+      },
+      "finger_ranges": [
+        {
+          "min": 0.026998218148946762,
+          "max": 0.026998551562428474
+        },
+        {
+          "min": 0.0268847718834877,
+          "max": 0.026893965899944305
+        }
+      ],
+      "first_last_efforts": [
+        {
+          "t": 1789819447.0132551,
+          "value": [
+            8.627509117126465,
+            8.653412818908691
+          ]
+        },
+        {
+          "t": 1789819448.536387,
+          "value": [
+            8.037367820739746,
+            8.03637409210205
+          ]
+        }
+      ]
+    },
+    {
+      "start": 1789819494.6768577,
+      "contact": {
+        "time": 1789819494.6768577,
+        "monotonic": 16751643.107210768,
+        "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+        "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+        "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+        "status": "grasp_contact_confirmed",
+        "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+        "command": 0.02675000000000002,
+        "contact_efforts": [
+          4.9261064529418945,
+          4.945417404174805
+        ],
+        "stable_sim_seconds": 0.46666669100000036,
+        "fresh_contact_samples": 29,
+        "joint_names": [
+          "Joint01",
+          "Joint02",
+          "Joint03",
+          "Joint04",
+          "Joint05",
+          "Joint06",
+          "finger1_joint",
+          "finger2_joint"
+        ],
+        "measured_joint_positions": [
+          -0.04849295690655708,
+          0.5711750388145447,
+          -1.14658522605896,
+          4.137967586517334,
+          1.5719577074050903,
+          1.5591580867767334,
+          0.026748990640044212,
+          0.026680035516619682
+        ],
+        "position_lead_limit": 0.002,
+        "position_lead_limit_calibrated": false,
+        "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+        "source_topic": "/tcei/task_status",
+        "received_monotonic": 16751643.108259805
+      },
+      "end": 1789819496.2358987,
+      "effort_samples": 68,
+      "effort_stats": [
+        {
+          "min": 3.003798484802246,
+          "median": 3.5029338598251343,
+          "max": 5.002169609069824,
+          "below_005": 0
+        },
+        {
+          "min": 3.0048584938049316,
+          "median": 3.4975650310516357,
+          "max": 5.0015740394592285,
+          "below_005": 0
+        }
+      ],
+      "capture_counts": {
+        "True": 68
+      },
+      "finger_ranges": [
+        {
+          "min": 0.02674892172217369,
+          "max": 0.026749469339847565
+        },
+        {
+          "min": 0.02667992003262043,
+          "max": 0.02670949511229992
+        }
+      ],
+      "first_last_efforts": [
+        {
+          "t": 1789819494.7342687,
+          "value": [
+            4.922850608825684,
+            4.942028999328613
+          ]
+        },
+        {
+          "t": 1789819496.235759,
+          "value": [
+            3.006465435028076,
+            3.0075714588165283
+          ]
+        }
+      ]
+    }
+  ],
+  "native_sensor_source": [
+    {
+      "line": 244,
+      "text": "            self._articulation, self._kin_solver, end_effector_name"
+    },
+    {
+      "line": 245,
+      "text": "        )"
+    },
+    {
+      "line": 246,
+      "text": ""
+    },
+    {
+      "line": 247,
+      "text": "        from isaacsim.sensors.physics.scripts.effort_sensor import EffortSensor"
+    },
+    {
+      "line": 248,
+      "text": ""
+    },
+    {
+      "line": 249,
+      "text": "        self.left_sensor = EffortSensor("
+    },
+    {
+      "line": 250,
+      "text": "            prim_path=gripper_joint_names[0],"
+    },
+    {
+      "line": 251,
+      "text": "            sensor_period=1 / 30,"
+    },
+    {
+      "line": 252,
+      "text": "            use_latest_data=True,"
+    },
+    {
+      "line": 253,
+      "text": "            enabled=True,"
+    },
+    {
+      "line": 254,
+      "text": "        )"
+    },
+    {
+      "line": 255,
+      "text": "        self.right_sensor = EffortSensor("
+    },
+    {
+      "line": 256,
+      "text": "            prim_path=gripper_joint_names[1],"
+    },
+    {
+      "line": 257,
+      "text": "            sensor_period=1 / 30,"
+    },
+    {
+      "line": 258,
+      "text": "            use_latest_data=True,"
+    },
+    {
+      "line": 259,
+      "text": "            enabled=True,"
+    },
+    {
+      "line": 260,
+      "text": "        )"
+    },
+    {
+      "line": 261,
+      "text": ""
+    },
+    {
+      "line": 262,
+      "text": "        self.gripper_center_collision = gripper_collisions_names[0]"
+    },
+    {
+      "line": 327,
+      "text": "            tup[0], tup[1], self.on_gripper_center_hit, False"
+    },
+    {
+      "line": 328,
+      "text": "        )"
+    },
+    {
+      "line": 329,
+      "text": ""
+    },
+    {
+      "line": 330,
+      "text": "        left_eff, right_eff = self.get_gripper_efforts()"
+    },
+    {
+      "line": 331,
+      "text": "        effort_threshold = 0.2"
+    },
+    {
+      "line": 332,
+      "text": ""
+    },
+    {
+      "line": 333,
+      "text": "        if left_eff >= effort_threshold or right_eff >= effort_threshold:"
+    },
+    {
+      "line": 334,
+      "text": "            if self.overlap_prim_path and not self.gripper_is_close:"
+    },
+    {
+      "line": 335,
+      "text": "                self.close_gripper()"
+    },
+    {
+      "line": 336,
+      "text": "            self.gripper_is_close = True"
+    },
+    {
+      "line": 337,
+      "text": "        else:"
+    },
+    {
+      "line": 512,
+      "text": "            self.overlap_prim_path = hit.rigid_body"
+    },
+    {
+      "line": 513,
+      "text": "        return True"
+    },
+    {
+      "line": 514,
+      "text": ""
+    },
+    {
+      "line": 515,
+      "text": "    def get_gripper_efforts(self):"
+    },
+    {
+      "line": 516,
+      "text": "        left = self.left_sensor.get_sensor_reading(use_latest_data=True)"
+    },
+    {
+      "line": 517,
+      "text": "        right = self.right_sensor.get_sensor_reading(use_latest_data=True)"
+    },
+    {
+      "line": 518,
+      "text": "        return ("
+    },
+    {
+      "line": 519,
+      "text": "            left.value if left.is_valid else 0.0,"
+    },
+    {
+      "line": 520,
+      "text": "            right.value if right.is_valid else 0.0,"
+    },
+    {
+      "line": 521,
+      "text": "        )"
+    },
+    {
+      "line": 522,
+      "text": ""
+    },
+    {
+      "line": 523,
+      "text": "    def open_gripper(self):"
+    },
+    {
+      "line": 524,
+      "text": "        self.apply_gripper_only(self._gripper_open)"
+    }
+  ]
+}

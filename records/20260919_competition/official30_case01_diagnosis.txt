@@ -1,0 +1,351 @@
+{
+  "instruction": "抓取右下方的弹夹，放到右侧传送带",
+  "image": "/root/gpufree-data/tcei_random30_v23/official30_v23_01_official_random_01_stack/events/ea1c2896-1073-4faa-9ecb-ba197e4e7bb3.png",
+  "context": {
+    "frame_id": 318,
+    "stamp": 66.850003486,
+    "image_size": [
+      1280,
+      720
+    ],
+    "spatial_context": {
+      "reference": "camera_image",
+      "definition": "basket_quadrants_v1",
+      "basket_roi": [
+        438.54013479672255,
+        126.96335341689854,
+        850.3013639896282,
+        409.2597789525255
+      ],
+      "pixel_to_reference": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "transform_declared": true,
+      "uncertainty_px": 5.0,
+      "assumption": "Image left/up in calibrated basket footprint; referee reference convention unconfirmed."
+    },
+    "unknown_regions": [
+      {
+        "reason": "unobserved_unverified_object",
+        "bbox": [
+          516,
+          333,
+          538,
+          349
+        ],
+        "pixel": [
+          525.3564366960155,
+          341.0608885723818
+        ],
+        "stable_id": "3c472a5d-obj-0010",
+        "candidate_id": null,
+        "identity_candidates": null,
+        "normalized_xy": [
+          0.210841370542491,
+          0.7584139074706893
+        ],
+        "class_hypotheses": null,
+        "max_height_m": null
+      }
+    ],
+    "coverage_complete": false,
+    "scene_complete": false,
+    "model_capabilities": {
+      "declared_classes": [
+        "Grenade",
+        "Magazine",
+        "Smokegrenade",
+        "Torch"
+      ],
+      "raw_names": [
+        "Magazine",
+        "Torch",
+        "Grenade",
+        "Smokegrenade"
+      ],
+      "missing_official_classes": [
+        "CompressedFood"
+      ],
+      "source": "loaded_weights.names",
+      "accuracy_verified": false
+    }
+  },
+  "hints": [
+    {
+      "id": "1",
+      "class": "Torch",
+      "pixel": [
+        546.3529411764706,
+        345.5882352941176
+      ],
+      "bbox": [
+        516,
+        333,
+        579,
+        357
+      ],
+      "normalized_xy": [
+        0.26183331196837606,
+        0.7744514705150871
+      ],
+      "confidence": 0.9435989856719971,
+      "depth": 2.1120800971984863,
+      "grasp_ready": true,
+      "identity_status": "confirmed"
+    },
+    {
+      "id": "2",
+      "class": "Smokegrenade",
+      "pixel": [
+        663.1111111111111,
+        347.4761904761905
+      ],
+      "bbox": [
+        645,
+        320,
+        684,
+        375
+      ],
+      "normalized_xy": [
+        0.5453912617139083,
+        0.7811393170880314
+      ],
+      "confidence": 0.862808108329773,
+      "depth": 2.0938851833343506,
+      "grasp_ready": true,
+      "identity_status": "confirmed"
+    },
+    {
+      "id": "3",
+      "class": "Grenade",
+      "pixel": [
+        716.0858361548234,
+        294.63529509313423
+      ],
+      "bbox": [
+        705,
+        260,
+        728,
+        311
+      ],
+      "normalized_xy": [
+        0.6740452516671348,
+        0.5939570129451561
+      ],
+      "confidence": 0.958792507648468,
+      "depth": 2.093339204788208,
+      "grasp_ready": true,
+      "identity_status": "confirmed"
+    },
+    {
+      "id": "4",
+      "class": "Magazine",
+      "pixel": [
+        815.5684725850792,
+        320.91937048245745
+      ],
+      "bbox": [
+        787,
+        289,
+        846,
+        354
+      ],
+      "normalized_xy": [
+        0.9156479800863502,
+        0.6870650830861508
+      ],
+      "confidence": 0.9796463847160339,
+      "depth": 2.103842258453369,
+      "grasp_ready": true,
+      "identity_status": "confirmed"
+    }
+  ],
+  "task_context": {
+    "task_id": "round_c7d620aa52ba4f22acdc5eb3cc277331-task-02",
+    "task_index": 1,
+    "round_id": "round_c7d620aa52ba4f22acdc5eb3cc277331",
+    "dependencies_satisfied": true,
+    "allow_reorder": false,
+    "remaining_ids": [
+      "2",
+      "3",
+      "4",
+      "1"
+    ],
+    "remaining_stable_ids": [
+      "3c472a5d-obj-0006",
+      "3c472a5d-obj-0007",
+      "3c472a5d-obj-0008",
+      "3c472a5d-obj-0009"
+    ],
+    "reserved_ids": [],
+    "reserved_stable_ids": [],
+    "stable_ids": [
+      "3c472a5d-obj-0006",
+      "3c472a5d-obj-0007",
+      "3c472a5d-obj-0008",
+      "3c472a5d-obj-0009"
+    ],
+    "released_pending_stable_ids": [],
+    "candidate_stable_ids": {
+      "1": "3c472a5d-obj-0009",
+      "2": "3c472a5d-obj-0006",
+      "3": "3c472a5d-obj-0007",
+      "4": "3c472a5d-obj-0008"
+    },
+    "remaining_complete": false,
+    "remaining_incomplete_reasons": [
+      "coverage_incomplete",
+      "unknown_regions"
+    ],
+    "missing_stable_ids": [],
+    "scene_frame_id": 318,
+    "scene_fresh": true,
+    "deadline_monotonic": 16786325.721684813,
+    "remaining_seconds": 504.6991865634918,
+    "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded",
+    "request_scene_binding": {
+      "frame_id": 318,
+      "candidate_stable_ids": {
+        "1": "3c472a5d-obj-0009",
+        "2": "3c472a5d-obj-0006",
+        "3": "3c472a5d-obj-0007",
+        "4": "3c472a5d-obj-0008"
+      },
+      "stable_ids": [
+        "3c472a5d-obj-0006",
+        "3c472a5d-obj-0007",
+        "3c472a5d-obj-0008",
+        "3c472a5d-obj-0009"
+      ],
+      "remaining_ids": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "reserved_ids": []
+    },
+    "frame_id": 318
+  },
+  "model_answers": [
+    "{\"class\":\"Smokegrenade\",\"side\":\"left\",\"count\":1,\"ids\":[\"2\"]}",
+    "{\"class\":\"Magazine\",\"side\":\"right\",\"count\":1,\"ids\":[\"4\"]}"
+  ],
+  "first_context": {
+    "task_id": "round_c7d620aa52ba4f22acdc5eb3cc277331-task-01",
+    "task_index": 0,
+    "round_id": "round_c7d620aa52ba4f22acdc5eb3cc277331",
+    "dependencies_satisfied": true,
+    "allow_reorder": false,
+    "remaining_ids": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "1"
+    ],
+    "remaining_stable_ids": [
+      "3c472a5d-obj-0005",
+      "3c472a5d-obj-0006",
+      "3c472a5d-obj-0007",
+      "3c472a5d-obj-0008",
+      "3c472a5d-obj-0009"
+    ],
+    "reserved_ids": [],
+    "reserved_stable_ids": [],
+    "stable_ids": [
+      "3c472a5d-obj-0005",
+      "3c472a5d-obj-0006",
+      "3c472a5d-obj-0007",
+      "3c472a5d-obj-0008",
+      "3c472a5d-obj-0009"
+    ],
+    "released_pending_stable_ids": [],
+    "candidate_stable_ids": {
+      "1": "3c472a5d-obj-0009",
+      "2": "3c472a5d-obj-0005",
+      "3": "3c472a5d-obj-0006",
+      "4": "3c472a5d-obj-0007",
+      "5": "3c472a5d-obj-0008"
+    },
+    "remaining_complete": true,
+    "remaining_incomplete_reasons": [],
+    "missing_stable_ids": [],
+    "scene_frame_id": 20,
+    "scene_fresh": true,
+    "deadline_monotonic": 16786325.721684813,
+    "remaining_seconds": 594.7848895266652,
+    "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded",
+    "request_scene_binding": {
+      "frame_id": 20,
+      "candidate_stable_ids": {
+        "1": "3c472a5d-obj-0009",
+        "2": "3c472a5d-obj-0005",
+        "3": "3c472a5d-obj-0006",
+        "4": "3c472a5d-obj-0007",
+        "5": "3c472a5d-obj-0008"
+      },
+      "stable_ids": [
+        "3c472a5d-obj-0005",
+        "3c472a5d-obj-0006",
+        "3c472a5d-obj-0007",
+        "3c472a5d-obj-0008",
+        "3c472a5d-obj-0009"
+      ],
+      "remaining_ids": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "1"
+      ],
+      "reserved_ids": []
+    },
+    "frame_id": 20
+  },
+  "observation_and_returns_joints": [
+    {
+      "received_wall": 1789853581.9872649,
+      "position": [
+        6.36164186289534e-05,
+        2.0628037452697754,
+        -2.184603691101074,
+        4.579102516174316,
+        1.6001352071762085,
+        0.00029169724439270794,
+        1.4609843113078114e-08,
+        4.896720806613075e-10
+      ],
+      "time_delta": 0.008812427520751953
+    },
+    {
+      "received_wall": 1789853672.1483266,
+      "position": [
+        6.361522537190467e-05,
+        2.0628037452697754,
+        -2.184603452682495,
+        -1.7040828466415405,
+        1.600135326385498,
+        0.0002916961966548115,
+        4.4086814199317814e-09,
+        1.391222970159589e-10
+      ],
+      "time_delta": 0.006916999816894531
+    }
+  ]
+}

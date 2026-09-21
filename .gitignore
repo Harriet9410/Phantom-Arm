@@ -1,38 +1,65 @@
-# Catkin build artifacts
-build/
-devel/
-logs/
-.catkin_tools/
-*.user
-*.o
-*.so
-*.a
+# ─────────────────────────────────────────────────────────────
+# RoboticArm .gitignore
+# 原则：arm/ 全进仓库；local/ 只进轻量内容，官方资产与编译产物排除
+# ─────────────────────────────────────────────────────────────
 
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-*.egg-info/
+# ── 官方场景资产（约 225M，官方镜像自带，不重复入库）───────────
+local/official/EAICON/Content/
 
-# Editors / OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-desktop.ini
+# ── 早期源码副本（约 14M，几乎全是编译产物，可本地重新生成）─────
+local/source_code/
 
-# Models / weights / large outputs (keep out of git)
+# ── 仿真器与第三方库（镜像自带）─────────────────────────────
+isaacsim/
+ultralytics/
+inference/FM9G4B-V/
+
+# ── 模型权重 ──────────────────────────────────────────────
 *.pt
 *.pth
 *.onnx
 *.ckpt
 *.safetensors
+*.bin
+
+# ── 运行产物（每轮任务生成，不入库）──────────────────────────
+arm/state/
+logs/
+**/rgbd/
+**/episode/
+*.npz
+*.jsonl
 outputs/
 runs/
 wandb/
 tensorboard/
 
-# Logs
+# ── 编译 / 缓存 ───────────────────────────────────────────
+build/
+devel/
+.catkin_tools/
+__pycache__/
+*.py[cod]
+*.user
+*.o
+*.so
+*.a
+.venv/
+venv/
+*.egg-info/
+
+# ── 日志 ─────────────────────────────────────────────────
 *.log
 nohup.out
+
+# ── 编辑器 / 系统 ─────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+.playwright-cli/
+
+# ── 临时文件 ──────────────────────────────────────────────
+*.tmp
+*.tar.gz

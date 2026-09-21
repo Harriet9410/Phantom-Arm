@@ -1,0 +1,30 @@
+{
+  "pid": 569049,
+  "started_at": 1789847952.7220716,
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/root/tcei_260920v2/test_tools/run_registered_batch.py",
+    "--package",
+    "/root/tcei_260920v2",
+    "--case-root",
+    "/root/tcei_260920v2",
+    "--register",
+    "/root/tcei_260920v2/B01_REGISTER.json",
+    "--case-ids",
+    "random_02",
+    "random_04",
+    "random_06",
+    "random_08",
+    "random_09",
+    "random_24",
+    "random_26",
+    "random_28",
+    "--batch",
+    "old_failed_v2_01",
+    "--instructions",
+    "/root/tcei_260920v2/instructions/original_mechanical_regression.json",
+    "--task-source",
+    "custom_original_mechanical_regression"
+  ]
+}

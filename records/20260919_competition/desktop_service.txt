@@ -1,0 +1,4 @@
+{
+  "desktop_conf": "[program:desktop]\ncommand=bash -c \"/etc/.mode/mode.sh && exec /etc/gpufree\"\nstdout_logfile=/tmp/.desktop.log\nstdout_logfile_maxbytes=5MB\nstdout_logfile_backups=0\nredirect_stderr=true\nstopasgroup=true\nstopsignal=INT\nautostart=true\nautorestart=false\npriority=10",
+  "/tmp/.desktop.log": "Waiting for X Socket\nX Server is ready\nWaiting for X Socket\nX Server is ready\nWaiting for localhost:8081 to be ready...\nPort is ready.\ninterrupt\nbash: /etc/.mode/mode.sh: 权限不够\nbash: /etc/.mode/mode.sh: 权限不够\nbash: /etc/.mode/mode.sh: 权限不够\nbash: /etc/.mode/mode.sh: 权限不够\nbash: /etc/.mode/mode.sh: 权限不够\nbash: /etc/.mode/mode.sh: 权限不够"
+}

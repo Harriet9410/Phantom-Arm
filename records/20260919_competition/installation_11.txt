@@ -1,0 +1,15 @@
+{
+  "installed_at": 1789818874.8736925,
+  "manifest_sha256": "3cd0519716c0ea6307c2b7b7eb18d0f1310c37c0efe50e3c89501ebf8539eaf7",
+  "runtime_files": 33,
+  "runtime_started": false,
+  "old_release_files": [
+    "B01_REGISTER.json",
+    "cases_b01",
+    "PATCH_INSTALL_VERIFIED.json",
+    "tcei_stack",
+    "calibration",
+    "harness"
+  ],
+  "start10_source": "from pathlib import Path\nimport json,subprocess,os,time,rospy\nfrom std_msgs.msg import String,Bool\nfrom sensor_msgs.msg import JointState\nr=Path('/root/tcei_competition_20260919');runs=Path('/root/gpufree-data/tcei_competition_20260919');rel=r/'releases/dev_v7_t1_10'\nassert (rel/'PATCH_INSTALL_VERIFIED.json').exists();rospy.init_node('tcei_prepare_full10',anonymous=True)\nassert all(rospy.get_param(k) is False for k in ('/tcei_controller/execute','/tcei_nine/execute'))\njoint=rospy.wait_for_message('/Jaka/get_jointstate',JointState,timeout=5);diag={'source':'native_joint_state_while_stopped','all_joint_names':list(joint.name),'all_joint_positions':list(joint.position),'all_joint_velocities':list(joint.velocity),'stamp':joint.header.stamp.to_sec()};cap=rospy.wait_for_message('/Jaka/gripper_is_captured',Bool,timeout=5).data\nack=json.loads(rospy.wait_for_message('/tcei/stop_ack',String,timeout=5).data)\nassert ack['state']=='stopped' and ack['id']=='551e10c94ab94273b8503b19633fbec6'\nassert len(joint.name)==8 and len(set(joint.name))==8 and cap is False and max(abs(v) for v in diag['all_joint_velocities'][:6])<.03 and max(abs(q) for q in diag['all_joint_positions'][-2:])<.001\n(r/'full10_pre_shutdown.json').open('x').write(json.dumps({'checked_at':time.time(),'robot':diag,'captured':cap,'stop':ack},indent=2))\nguard=['/usr/bin/python3',str(rel/'harness/process_guard.py')];stops=[]\nfor name in ('nine','controller','perception','sim'):\n rec=runs/'no_action09_01'/'pids'/(name+'.json');p=subprocess.run(guard+['stop',str(rec),'--timeout','20'],capture_output=True,text=True)\n stops.append({'name':name,'record':str(rec),'code':p.returncode,'stdout':p.stdout,'stderr':p.stderr});(r/'full10_stop_prior.json').write_text(json.dumps(stops,indent=2));assert p.returncode==0\n assert subprocess.run(guard+['check',str(rec)]).returncode!=0\nrospy.set_param('/tcei_controller/observation_ready',False);rospy.signal_shutdown('owned old services stopped')\nenv=os.environ.copy();env.update(DISPLAY=':20',TCEI_V7_CODE=str(rel/'tcei_stack'),TCEI_ROBOT_CALIBRATION=str(rel/'calibration/robot_projection.static_checked_v1.json'))\nresult=subprocess.run(['bash',str(rel/'harness/start_stack.sh'),'no_action10_01'],env=env)\n(r/'full10_launcher_result.json').write_text(json.dumps({'returncode':result.returncode,'finished_at':time.time(),'run':'no_action10_01'}))\nassert result.returncode==0;print('FULL10_WARMUP_COMPLETE',flush=True)\n"
+}

@@ -1,0 +1,124 @@
+{
+  "version": "dev_v7_t1_06",
+  "registered_at": 1789787164.6414306,
+  "registered_before_inference": true,
+  "source_capture": "/root/tcei_competition_20260919/t1_capture06_clear02",
+  "source_image_binding": {
+    "protocol": "tcei.numbered_scene.bgr8.v1",
+    "encoding": "bgr8",
+    "width": 1280,
+    "height": 720,
+    "sensor_stamp_ns": 4156250216765,
+    "camera_frame_id": "camera_top_link",
+    "canonical_pixel_sha256": "b77cde3e6dc6f46d874dda13b921ef6d8193346e4c008bee29a9f996623eb759"
+  },
+  "annotation_method": "Root independently viewed full numbered PNG before these model calls; IDs 1 upper-left smoke,2 torch,3 lower-left smoke,4 lower-right magazine,5 upper-right grenade.",
+  "context_change": "Arm now outside basket; complete view means C3/C4 are positive unlike earlier initial-view negatives. This is not a matched-context claim of improvement.",
+  "competition_round": false,
+  "actions_enabled": false,
+  "cases": [
+    {
+      "case_id": "C1",
+      "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Smokegrenade",
+        "side": "left",
+        "count": 1,
+        "ids": [
+          "1"
+        ]
+      },
+      "stable_ids": [
+        "9f21237d-obj-0001"
+      ]
+    },
+    {
+      "case_id": "C2",
+      "instruction": "抓取右下方的弹夹，放到右侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Magazine",
+        "side": "right",
+        "count": 1,
+        "ids": [
+          "4"
+        ]
+      },
+      "stable_ids": [
+        "9f21237d-obj-0004"
+      ]
+    },
+    {
+      "case_id": "C3",
+      "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Torch",
+        "side": "left",
+        "count": 1,
+        "ids": [
+          "2"
+        ]
+      },
+      "stable_ids": [
+        "9f21237d-obj-0002"
+      ]
+    },
+    {
+      "case_id": "C4",
+      "instruction": "抓取手雷，放到右侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Grenade",
+        "side": "right",
+        "count": 1,
+        "ids": [
+          "5"
+        ]
+      },
+      "stable_ids": [
+        "9f21237d-obj-0005"
+      ]
+    },
+    {
+      "case_id": "C5",
+      "instruction": "把一个军用手电筒放到左侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Torch",
+        "side": "left",
+        "count": 1,
+        "ids": [
+          "2"
+        ]
+      },
+      "stable_ids": [
+        "9f21237d-obj-0002"
+      ]
+    },
+    {
+      "case_id": "C6",
+      "instruction": "抓取最左方的烟雾弹，放到右侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Smokegrenade",
+        "side": "right",
+        "count": 1,
+        "ids": [
+          "1"
+        ]
+      },
+      "stable_ids": [
+        "9f21237d-obj-0001"
+      ]
+    },
+    {
+      "case_id": "C7",
+      "instruction": "抓取剩余的物品，放到左侧传送带",
+      "expected": "reject_missing_task_ledger",
+      "required_reason": "Predecessor completion and confirmed remaining set have not been supplied; dry-run requests do not advance a task ledger.",
+      "generic_schema_or_runtime_rejection_is_not_pass": true
+    }
+  ]
+}

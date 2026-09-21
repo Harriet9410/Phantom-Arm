@@ -1,0 +1,307 @@
+{
+  "case_index": 12,
+  "case_id": "random_12",
+  "seed": 2026091912,
+  "planner_seed": 2026101912,
+  "master_seed": 2026091900,
+  "instance": "a8xrp2yw-h322ghh8",
+  "basket": {
+    "path": "/World/Sence/Box",
+    "rigid": false,
+    "position": [
+      -0.008052187040448256,
+      -0.03258046986419668,
+      2.3716235160827637
+    ],
+    "quaternion_wxyz": [
+      -0.7071067811865471,
+      3.14018491736755e-16,
+      -1.0467283057891834e-16,
+      0.7071067811865479
+    ],
+    "bbox_min": [
+      -0.36844848282635245,
+      -0.30460572721321116,
+      2.3716235066601303
+    ],
+    "bbox_max": [
+      0.35437609069049386,
+      0.21357500074546845,
+      2.4852380603551865
+    ],
+    "xform_ops": [
+      "xformOp:translate",
+      "xformOp:orient",
+      "xformOp:scale",
+      "xformOp:rotateX:unitsResolve",
+      "xformOp:scale:unitsResolve"
+    ]
+  },
+  "inner_xy": [
+    -0.3334484828263524,
+    0.3193760906904939,
+    -0.2696057272132112,
+    0.17857500074546845
+  ],
+  "wall_margin_m": 0.035,
+  "minimum_footprint_gap_m": 0.02,
+  "randomization": "uniform XY with rejection for footprints; uniform world-Z yaw delta [-180,180); original roll/pitch retained",
+  "budget_seconds": 600,
+  "objects": [
+    {
+      "path": "/World/Flashlight",
+      "rigid": true,
+      "position": [
+        0.0777490623558259,
+        -0.1000993400812152,
+        2.4221200942993164
+      ],
+      "quaternion_wxyz": [
+        0.49999999144286456,
+        0.49999999144286444,
+        0.5000000085571354,
+        -0.5000000085571353
+      ],
+      "bbox_min": [
+        0.06137196264628224,
+        -0.11122604594093775,
+        2.4109933922755573
+      ],
+      "bbox_max": [
+        0.16027752940550993,
+        -0.08897264754307628,
+        2.4332468143034163
+      ],
+      "xform_ops": [
+        "xformOp:translate",
+        "xformOp:orient",
+        "xformOp:scale",
+        "xformOp:rotateX:unitsResolve"
+      ],
+      "category": "Torch",
+      "object_id": "Flashlight",
+      "reference_xy": [
+        -0.06621906128081995,
+        -0.19141224288213554
+      ],
+      "footprint_radius_m": 0.05068906409724387,
+      "yaw_delta_degrees": 106.04971797648723,
+      "requested_position": [
+        -0.05707458779124926,
+        -0.2231987094180865,
+        2.424120094299316
+      ],
+      "requested_quaternion_wxyz": [
+        0.7001825050139693,
+        -0.0987140537308089,
+        0.7001825016351316,
+        0.09871402976458284
+      ],
+      "sampling_attempts": 1
+    },
+    {
+      "path": "/World/Magazines",
+      "rigid": true,
+      "position": [
+        -0.13300019728296572,
+        0.11954743491983683,
+        2.388163910926052
+      ],
+      "quaternion_wxyz": [
+        -1.7114270828118907e-08,
+        0.9999999999999999,
+        0.0,
+        0.0
+      ],
+      "bbox_min": [
+        -0.16571651673543505,
+        0.04929964027665706,
+        2.37492725153932
+      ],
+      "bbox_max": [
+        -0.10028387187003182,
+        0.13455061610031832,
+        2.3998142563426166
+      ],
+      "xform_ops": [
+        "xformOp:translate",
+        "xformOp:orient",
+        "xformOp:scale",
+        "xformOp:rotateX:unitsResolve"
+      ],
+      "category": "Magazine",
+      "object_id": "Magazines",
+      "reference_xy": [
+        -0.04266826259403189,
+        0.10284555037057552
+      ],
+      "footprint_radius_m": 0.053733508849154024,
+      "yaw_delta_degrees": 99.263979936048,
+      "requested_position": [
+        -0.06993029432110255,
+        0.09839881502057576,
+        2.3901639109260517
+      ],
+      "requested_quaternion_wxyz": [
+        -1.1084820972474659e-08,
+        0.6476946101765664,
+        0.7619000537788572,
+        -1.3039363864329724e-08
+      ],
+      "sampling_attempts": 1
+    },
+    {
+      "path": "/World/hand_grenade",
+      "rigid": true,
+      "position": [
+        -0.2080247215139114,
+        -0.14423023693236486,
+        2.397120000000022
+      ],
+      "quaternion_wxyz": [
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "bbox_min": [
+        -0.226287596185813,
+        -0.2002134643645139,
+        2.3749005667121805
+      ],
+      "bbox_max": [
+        -0.18976184684200986,
+        -0.11929677773091257,
+        2.415376775924807
+      ],
+      "xform_ops": [
+        "xformOp:translate",
+        "xformOp:orient",
+        "xformOp:scale",
+        "xformOp:rotateX:unitsResolve"
+      ],
+      "category": "Grenade",
+      "object_id": "hand_grenade",
+      "reference_xy": [
+        0.03117219349688649,
+        -0.0395914585010885
+      ],
+      "footprint_radius_m": 0.04438930203575736,
+      "yaw_delta_degrees": -141.4966526001896,
+      "requested_position": [
+        0.04083737090976146,
+        -0.051740794794592246,
+        2.3991200000000217
+      ],
+      "requested_quaternion_wxyz": [
+        0.2331459916811691,
+        0.23314599168116906,
+        -0.6675649380869281,
+        -0.6675649380869282
+      ],
+      "sampling_attempts": 1
+    },
+    {
+      "path": "/World/smoke_bomb",
+      "rigid": true,
+      "position": [
+        0.22663752734661102,
+        -0.17753958465641062,
+        2.4063613431070006
+      ],
+      "quaternion_wxyz": [
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "bbox_min": [
+        0.20866206745748508,
+        -0.1933304246908022,
+        2.3864897808318197
+      ],
+      "bbox_max": [
+        0.2488176334907091,
+        -0.10648601931190335,
+        2.4243368041882194
+      ],
+      "xform_ops": [
+        "xformOp:translate",
+        "xformOp:orient",
+        "xformOp:scale",
+        "xformOp:rotateX:unitsResolve"
+      ],
+      "category": "Smokegrenade",
+      "object_id": "smoke_bomb",
+      "reference_xy": [
+        0.24414569472009862,
+        0.010323762075888837
+      ],
+      "footprint_radius_m": 0.04783936723312488,
+      "yaw_delta_degrees": -171.29319876977272,
+      "requested_position": [
+        0.2420410057570992,
+        0.037954944625260764,
+        2.4083613431070003
+      ],
+      "requested_quaternion_wxyz": [
+        0.05367512319231862,
+        0.05367512319231861,
+        -0.7050666501475512,
+        -0.7050666501475513
+      ],
+      "sampling_attempts": 1
+    },
+    {
+      "path": "/World/smoke_bomb_01",
+      "rigid": true,
+      "position": [
+        0.05546933845858508,
+        0.023601219666168186,
+        2.406361343107033
+      ],
+      "quaternion_wxyz": [
+        0.49999999144286456,
+        0.49999999144286444,
+        0.5000000085571353,
+        0.5000000085571354
+      ],
+      "bbox_min": [
+        -0.015584227645114808,
+        0.0056257573449823035,
+        2.3864897808318517
+      ],
+      "bbox_max": [
+        0.07126017910825042,
+        0.04578132635076364,
+        2.424336804188252
+      ],
+      "xform_ops": [
+        "xformOp:translate",
+        "xformOp:orient",
+        "xformOp:scale",
+        "xformOp:rotateX:unitsResolve"
+      ],
+      "category": "Smokegrenade",
+      "object_id": "smoke_bomb_01",
+      "reference_xy": [
+        -0.11432360552397133,
+        -0.07994404045353459
+      ],
+      "footprint_radius_m": 0.04783936848068235,
+      "yaw_delta_degrees": -108.83010467615595,
+      "requested_position": [
+        -0.12523179376785168,
+        -0.10541801528950705,
+        2.4083613431070328
+      ],
+      "requested_quaternion_wxyz": [
+        0.6975815030902758,
+        0.6975815030902756,
+        -0.11567215112684526,
+        -0.11567215112684526
+      ],
+      "sampling_attempts": 1
+    }
+  ]
+}

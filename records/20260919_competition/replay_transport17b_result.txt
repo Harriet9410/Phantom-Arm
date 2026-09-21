@@ -1,0 +1,1171 @@
+{
+  "finished_at": 1789832573.4997778,
+  "frames": 1633,
+  "counts": {
+    "not_armed": 1,
+    "round_reset": 11,
+    "observed_empty_support_regions": 535,
+    "release_pending": 6,
+    "released_awaiting_tool_clearance": 7,
+    "released_awaiting_stable_motion_or_tool_clearance": 20,
+    "tracking_current_release": 50,
+    "release_track_continuity_lost": 1003
+  },
+  "trace": [
+    {
+      "kind": "tracker_state",
+      "frame": "reference",
+      "wall": 1789828910.4812253,
+      "stamp": 127.033339959,
+      "diagnostic": {
+        "state": "not_armed"
+      },
+      "event_context": null
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_0002",
+      "wall": 1789828991.4703186,
+      "stamp": 199.066677049,
+      "diagnostic": {
+        "state": "round_reset"
+      },
+      "event_context": null
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_0013",
+      "wall": 1789828992.657657,
+      "stamp": 200.066677101,
+      "diagnostic": {
+        "state": "observed_empty_support_regions",
+        "checks": [
+          {
+            "side": "left",
+            "support_depth": 2.1414999999999846,
+            "covered_pixels": 147949,
+            "support_fraction": 0.44605235587939085,
+            "support_grid_cells": 32,
+            "support_grid_total": 32
+          },
+          {
+            "side": "right",
+            "support_depth": 2.1414999999999846,
+            "covered_pixels": 149575,
+            "support_fraction": 0.44610396122346646,
+            "support_grid_cells": 32,
+            "support_grid_total": 32
+          }
+        ],
+        "scope": "visible_plane_interiors_only_not_whole_belt_or_hidden_regions",
+        "reference_frames": 12
+      },
+      "event_context": null
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_0548",
+      "wall": 1789829054.5016186,
+      "stamp": 246.783346204,
+      "diagnostic": {
+        "state": "release_pending",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      },
+      "event_context": {
+        "status": "release_started",
+        "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+        "time": 1789829054.3903668,
+        "category": "Smokegrenade",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_0551",
+      "wall": 1789829054.8302772,
+      "stamp": 247.01667955,
+      "diagnostic": {
+        "state": "released_awaiting_tool_clearance",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      },
+      "event_context": {
+        "status": "released",
+        "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+        "time": 1789829054.7442317,
+        "category": "Smokegrenade",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_0558",
+      "wall": 1789829055.6092956,
+      "stamp": 247.616679581,
+      "diagnostic": {
+        "state": "released_awaiting_stable_motion_or_tool_clearance",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      },
+      "event_context": {
+        "status": "released",
+        "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+        "time": 1789829054.7442317,
+        "category": "Smokegrenade",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_0561",
+      "wall": 1789829055.9466698,
+      "stamp": 247.900012929,
+      "diagnostic": {
+        "state": "tracking_current_release",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+        "initial_association": "stable_height_forward_belt_motion"
+      },
+      "event_context": {
+        "status": "released",
+        "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+        "time": 1789829054.7442317,
+        "category": "Smokegrenade",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_0587",
+      "wall": 1789829058.8980405,
+      "stamp": 250.350013057,
+      "diagnostic": {
+        "state": "release_track_continuity_lost",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      },
+      "event_context": {
+        "status": "released",
+        "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+        "time": 1789829054.7442317,
+        "category": "Smokegrenade",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_1435",
+      "wall": 1789829156.2165632,
+      "stamp": 325.883350329,
+      "diagnostic": {
+        "state": "release_pending",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+      },
+      "event_context": {
+        "status": "release_started",
+        "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+        "time": 1789829156.1162167,
+        "category": "Magazine",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_1438",
+      "wall": 1789829156.5588388,
+      "stamp": 326.15001701,
+      "diagnostic": {
+        "state": "released_awaiting_stable_motion_or_tool_clearance",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+      },
+      "event_context": {
+        "status": "released",
+        "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+        "time": 1789829156.4760506,
+        "category": "Magazine",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_1455",
+      "wall": 1789829158.4392974,
+      "stamp": 327.716683758,
+      "diagnostic": {
+        "state": "tracking_current_release",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+        "initial_association": "stable_height_forward_belt_motion"
+      },
+      "event_context": {
+        "status": "released",
+        "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+        "time": 1789829156.4760506,
+        "category": "Magazine",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+      }
+    },
+    {
+      "kind": "tracker_state",
+      "frame": "pair_1479",
+      "wall": 1789829161.1894586,
+      "stamp": 329.950017208,
+      "diagnostic": {
+        "state": "release_track_continuity_lost",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+      },
+      "event_context": {
+        "status": "released",
+        "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+        "time": 1789829156.4760506,
+        "category": "Magazine",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "class": "Smokegrenade",
+      "side": "left",
+      "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+      "verified": true,
+      "observations": 21,
+      "proof": {
+        "class": "Smokegrenade",
+        "side": "left",
+        "samples": [
+          {
+            "stamp": 247.900012929,
+            "observed_at": 1789829055.9466698,
+            "world_position": [
+              0.6599757671356201,
+              0.3789382874965668,
+              2.3906147480010986
+            ],
+            "pixel": [
+              219.21153846153845,
+              537.2207357859531
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 247.983346267,
+            "observed_at": 1789829056.0549655,
+            "world_position": [
+              0.6599287986755371,
+              0.38937658071517944,
+              2.389126777648926
+            ],
+            "pixel": [
+              219.67420814479638,
+              544.0874811463046
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.083346272,
+            "observed_at": 1789829056.1570103,
+            "world_position": [
+              0.6599360704421997,
+              0.4069706201553345,
+              2.389146327972412
+            ],
+            "pixel": [
+              219.63993948562785,
+              555.2080181543116
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.16667961,
+            "observed_at": 1789829056.2726362,
+            "world_position": [
+              0.6599349975585938,
+              0.42152929306030273,
+              2.3892929553985596
+            ],
+            "pixel": [
+              219.6305492851768,
+              564.6982693754703
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.250012947,
+            "observed_at": 1789829056.3721907,
+            "world_position": [
+              0.6599485278129578,
+              0.43661731481552124,
+              2.38934063911438
+            ],
+            "pixel": [
+              219.57456472369418,
+              574.1271763815291
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.350012952,
+            "observed_at": 1789829056.5065238,
+            "world_position": [
+              0.6599414348602295,
+              0.4540388882160187,
+              2.3893516063690186
+            ],
+            "pixel": [
+              219.61550151975683,
+              585.1231003039513
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.450012958,
+            "observed_at": 1789829056.6198096,
+            "world_position": [
+              0.6599463820457458,
+              0.47153210639953613,
+              2.3893938064575195
+            ],
+            "pixel": [
+              219.6153846153846,
+              596.4012066365008
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.550012963,
+            "observed_at": 1789829056.7322412,
+            "world_position": [
+              0.6599507331848145,
+              0.4889625310897827,
+              2.389404535293579
+            ],
+            "pixel": [
+              219.61700526711815,
+              607.4996237772762
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.650012968,
+            "observed_at": 1789829056.8519769,
+            "world_position": [
+              0.6599466800689697,
+              0.506454586982727,
+              2.3893353939056396
+            ],
+            "pixel": [
+              219.6203007518797,
+              618.6383458646617
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.750012973,
+            "observed_at": 1789829056.9667842,
+            "world_position": [
+              0.6599414944648743,
+              0.523916482925415,
+              2.389230251312256
+            ],
+            "pixel": [
+              219.64635063957863,
+              629.7291196388262
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.850012979,
+            "observed_at": 1789829057.0764205,
+            "world_position": [
+              0.659976601600647,
+              0.5420465469360352,
+              2.389242172241211
+            ],
+            "pixel": [
+              219.59056886227546,
+              641.0898203592815
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 248.950012984,
+            "observed_at": 1789829057.1896355,
+            "world_position": [
+              0.6599857807159424,
+              0.5594701766967773,
+              2.3893086910247803
+            ],
+            "pixel": [
+              219.57507507507506,
+              652.3686186186186
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.050012989,
+            "observed_at": 1789829057.303853,
+            "world_position": [
+              0.6600158214569092,
+              0.576728105545044,
+              2.389221429824829
+            ],
+            "pixel": [
+              219.56629213483146,
+              663.4134831460674
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.150012994,
+            "observed_at": 1789829057.4165928,
+            "world_position": [
+              0.6600755453109741,
+              0.594672441482544,
+              2.389159917831421
+            ],
+            "pixel": [
+              219.46984363365598,
+              674.6128071481758
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.183346329,
+            "observed_at": 1789829057.5242186,
+            "world_position": [
+              0.6600549221038818,
+              0.6005795001983643,
+              2.3891959190368652
+            ],
+            "pixel": [
+              219.54328358208954,
+              678.2440298507463
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.283346334,
+            "observed_at": 1789829057.6381814,
+            "world_position": [
+              0.6601173877716064,
+              0.6176342964172363,
+              2.3891849517822266
+            ],
+            "pixel": [
+              219.45373134328358,
+              689.3925373134329
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.350013005,
+            "observed_at": 1789829057.7421167,
+            "world_position": [
+              0.6613898277282715,
+              0.6276332139968872,
+              2.3885626792907715
+            ],
+            "pixel": [
+              219.15275459098498,
+              695.4958263772955
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.466679677,
+            "observed_at": 1789829057.8575602,
+            "world_position": [
+              0.6630434989929199,
+              0.6377834677696228,
+              2.3874917030334473
+            ],
+            "pixel": [
+              218.30810810810812,
+              701.6086486486487
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.566679683,
+            "observed_at": 1789829057.973247,
+            "world_position": [
+              0.663841724395752,
+              0.6462850570678711,
+              2.384756088256836
+            ],
+            "pixel": [
+              217.840625,
+              706.9890625
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.65001302,
+            "observed_at": 1789829058.0841455,
+            "world_position": [
+              0.6652896404266357,
+              0.6541818976402283,
+              2.3822994232177734
+            ],
+            "pixel": [
+              217.65051020408163,
+              711.3392857142857
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 249.750013025,
+            "observed_at": 1789829058.1941113,
+            "world_position": [
+              0.6684145927429199,
+              0.6607803106307983,
+              2.3813233375549316
+            ],
+            "pixel": [
+              215.9245283018868,
+              715.433962264151
+            ],
+            "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+            "stable_id": "eeab4146-obj-0006",
+            "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+            "released_at": 1789829054.7434568,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          }
+        ],
+        "travel_m": 0.28184202313423157,
+        "request_id": "episode_b3559388b8d54106903d882917a4fb92",
+        "stable_id": "eeab4146-obj-0006",
+        "release_id": "0c51b2a55e71450d93f6bc1056c7a875",
+        "released_at": 1789829054.7434568,
+        "speed_m_s": 0.15234703162644353,
+        "transport_seen": true,
+        "left_observation_area": true,
+        "evidence_track": {
+          "method": "depth_foreground",
+          "segment": 0
+        }
+      }
+    },
+    {
+      "class": "Magazine",
+      "side": "right",
+      "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+      "verified": true,
+      "observations": 18,
+      "proof": {
+        "class": "Magazine",
+        "side": "right",
+        "samples": [
+          {
+            "stamp": 327.716683758,
+            "observed_at": 1789829158.4392974,
+            "world_position": [
+              -0.6728421449661255,
+              0.44666627049446106,
+              2.3819971084594727
+            ],
+            "pixel": [
+              1064.9748376623377,
+              577.0689935064935
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 327.816683764,
+            "observed_at": 1789829158.5553405,
+            "world_position": [
+              -0.6680632829666138,
+              0.45610272884368896,
+              2.3822035789489746
+            ],
+            "pixel": [
+              1062.4614485981308,
+              584.2225467289719
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 327.916683769,
+            "observed_at": 1789829158.6727633,
+            "world_position": [
+              -0.6632882356643677,
+              0.46711787581443787,
+              2.3824260234832764
+            ],
+            "pixel": [
+              1060.4378957622991,
+              592.3005358012664
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.016683774,
+            "observed_at": 1789829158.789565,
+            "world_position": [
+              -0.6602191925048828,
+              0.47985830903053284,
+              2.382427453994751
+            ],
+            "pixel": [
+              1059.0800174901617,
+              600.9921294271973
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.116683779,
+            "observed_at": 1789829158.9052277,
+            "world_position": [
+              -0.658756673336029,
+              0.495473712682724,
+              2.3822970390319824
+            ],
+            "pixel": [
+              1058.2522031053295,
+              610.8657154846832
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.216683784,
+            "observed_at": 1789829159.0198953,
+            "world_position": [
+              -0.658784031867981,
+              0.5129913091659546,
+              2.382361888885498
+            ],
+            "pixel": [
+              1058.284003421728,
+              622.1911890504705
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.31668379,
+            "observed_at": 1789829159.1368701,
+            "world_position": [
+              -0.6585702896118164,
+              0.5296077728271484,
+              2.3822593688964844
+            ],
+            "pixel": [
+              1058.0300125052106,
+              632.420175072947
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.366683792,
+            "observed_at": 1789829159.287535,
+            "world_position": [
+              -0.6585671901702881,
+              0.5380356907844543,
+              2.382297992706299
+            ],
+            "pixel": [
+              1057.9557595993322,
+              637.8852253756261
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.466683798,
+            "observed_at": 1789829159.3905637,
+            "world_position": [
+              -0.6585508584976196,
+              0.5527695417404175,
+              2.3823094367980957
+            ],
+            "pixel": [
+              1057.9763513513512,
+              647.3285472972973
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.566683803,
+            "observed_at": 1789829159.5080843,
+            "world_position": [
+              -0.6584550738334656,
+              0.569683849811554,
+              2.38230037689209
+            ],
+            "pixel": [
+              1057.7734736842106,
+              658.1107368421052
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.666683808,
+            "observed_at": 1789829159.6234875,
+            "world_position": [
+              -0.6585067510604858,
+              0.5867099761962891,
+              2.3822522163391113
+            ],
+            "pixel": [
+              1057.6922757475083,
+              668.6349667774086
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.750017146,
+            "observed_at": 1789829159.7412894,
+            "world_position": [
+              -0.6585589647293091,
+              0.6054670810699463,
+              2.382354259490967
+            ],
+            "pixel": [
+              1057.9104991394147,
+              680.4561101549053
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.833350483,
+            "observed_at": 1789829159.8604803,
+            "world_position": [
+              -0.6584017276763916,
+              0.6213356852531433,
+              2.382266044616699
+            ],
+            "pixel": [
+              1057.4714828897338,
+              690.5665399239543
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 328.950017156,
+            "observed_at": 1789829159.973226,
+            "world_position": [
+              -0.6573002934455872,
+              0.6311644911766052,
+              2.3820886611938477
+            ],
+            "pixel": [
+              1056.9131075110456,
+              696.9739813451154
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 329.016683826,
+            "observed_at": 1789829160.0837135,
+            "world_position": [
+              -0.6569768190383911,
+              0.6403775811195374,
+              2.382147789001465
+            ],
+            "pixel": [
+              1056.0039138943248,
+              702.5075016307893
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 329.100017164,
+            "observed_at": 1789829160.1850119,
+            "world_position": [
+              -0.6538878083229065,
+              0.645311176776886,
+              2.382018566131592
+            ],
+            "pixel": [
+              1054.368633791431,
+              705.8367016976556
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 329.200017169,
+            "observed_at": 1789829160.3037221,
+            "world_position": [
+              -0.6538565158843994,
+              0.6533262729644775,
+              2.381852388381958
+            ],
+            "pixel": [
+              1053.0760456273765,
+              710.468948035488
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          },
+          {
+            "stamp": 329.300017174,
+            "observed_at": 1789829160.417273,
+            "world_position": [
+              -0.6637243628501892,
+              0.6610754728317261,
+              2.3813424110412598
+            ],
+            "pixel": [
+              1058.9305555555557,
+              715.0138888888889
+            ],
+            "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+            "stable_id": "eeab4146-obj-0009",
+            "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+            "released_at": 1789829156.4755309,
+            "confidence": null,
+            "method": "depth_foreground",
+            "image_size": [
+              1280,
+              720
+            ]
+          }
+        ],
+        "travel_m": 0.21440920233726501,
+        "request_id": "episode_e6fc5a6deff94ceab62fd5fe7ae58dc9",
+        "stable_id": "eeab4146-obj-0009",
+        "release_id": "8a9b9c8f88aa4820a65f9e0f5841c531",
+        "released_at": 1789829156.4755309,
+        "speed_m_s": 0.1354163312481133,
+        "transport_seen": true,
+        "left_observation_area": false,
+        "evidence_track": {
+          "method": "depth_foreground",
+          "segment": 0
+        }
+      }
+    }
+  ],
+  "scope": "chronological replay of archived pairs/events; original callback scheduling may differ"
+}

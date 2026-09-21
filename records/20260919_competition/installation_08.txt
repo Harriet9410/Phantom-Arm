@@ -1,0 +1,17 @@
+{
+  "installed_at": 1789810697.604593,
+  "version": "dev_v7_t1_08",
+  "runtime_python_files": 32,
+  "manifest_sha256": "476598fca1e9c55d9c8793ed46d81aae7c6ab09251448b66665c52de6794ce62",
+  "patch_sha256": "3f1a6b1c27c67696b6580cff093f44fd56636a85ef5e47c1e9c721d5f94b5abc",
+  "changed": [
+    "tcei_stack/controller.py",
+    "tcei_stack/episode_driver.py",
+    "tcei_stack/ros_endpoints.py",
+    "tcei_stack/run_episode.py",
+    "harness/record_scalar_evidence.py",
+    "harness/record_trial_rgbd.py",
+    "harness/probe_idle_stop.py"
+  ],
+  "native08_started": false
+}

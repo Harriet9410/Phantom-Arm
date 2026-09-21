@@ -1,0 +1,10 @@
+{
+  "version": "dev_v7_t1_07",
+  "verified_at": 1789788844.9603236,
+  "runtime_files": 31,
+  "t0_passed": 537,
+  "manifest_sha256": "08e4bd8743e1dfdf7bf5e5e5a377d8b26cc2ef33f9f4135883789253731c1187",
+  "calibration_sha256": "1d60dc0a02ea91ade31d64533db8c8d7d1219c35cfaabbea4d8434c544ae8294",
+  "processes_started": 0,
+  "prior_install_check": "Source hashes passed; final calibration SHA assertion failed because a screenshot transcription was wrong. Exact SHA was read from Jupyter JSON and verified before copying."
+}

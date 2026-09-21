@@ -1,0 +1,38 @@
+{
+  "zip_sha256": "cd9a0e8b7d0c20ceccc347cd843db2ca3b004d70ada47ef5c0eaca2eb17853bd",
+  "package": "/root/tcei_260920v2",
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "scripts/verify_package.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"package\": \"2026TCEI机器臂部署@260920v2\",\n  \"files\": 140,\n  \"ok\": true,\n  \"mismatches\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "init",
+        "--display",
+        ":20"
+      ],
+      "returncode": 0,
+      "stdout": "初始化完成。下一步：bash robot.sh doctor\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "doctor"
+      ],
+      "returncode": 0,
+      "stdout": "通过：/usr/bin/python3\n通过：/usr/bin/python3\n通过：/opt/conda/envs/yolov8/bin/python\n通过：/opt/conda/envs/inference/bin/python\n通过：xdpyinfo\n检查记录：/root/tcei_260920v2/state/doctor_1789847952710158544.json\n",
+      "stderr": ""
+    }
+  ],
+  "time": 1789847952.7200272
+}

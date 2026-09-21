@@ -1,0 +1,23 @@
+{
+  "/etc/.mode/mode.sh": {
+    "mode": "0o644",
+    "owner": 0,
+    "size": 138,
+    "sha256": "8cba3a21ad028d87004dd009d7f0d3ced856c71b27bddaa52e980698ba4d17a6",
+    "file": "/etc/.mode/mode.sh: Bourne-Again shell script, ASCII text executable\n",
+    "source": "#!/bin/bash\n\nsource /etc/os-release\ncd /etc/.mode\nrm -f /usr/bin/xfsettingsd && cp -a ${UBUNTU_CODENAME}/xfsettingsd /usr/bin/xfsettingsd"
+  },
+  "/etc/gpufree": {
+    "mode": "0o755",
+    "owner": 0,
+    "size": 4880151,
+    "sha256": "6cac5ae1e5dec1219f02124d71e7693c921dfe008e1ed21d555fd8291634900b",
+    "file": "/etc/gpufree: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, BuildID[sha1]=a4f8dcb4c253a9817bd206183c8682e0cabcbd75, with debug_info, not stripped\n"
+  },
+  "mode_directory": [
+    "focal",
+    "noble",
+    "mode.sh",
+    "jammy"
+  ]
+}

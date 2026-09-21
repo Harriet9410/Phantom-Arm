@@ -1,0 +1,626 @@
+{
+  "checked_at": 1789826467.1534328,
+  "supervisor_job.json": {
+    "pid": 418574,
+    "started_at": 1789826007.1029503,
+    "source_sha256": "ef243102cfee13d0a2dd15a323ce07d2a81f21337408285ddbae5f06076d7552"
+  },
+  "supervisor_finished.json": {
+    "started_at": 1789826007.6230483,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "/root/tcei_competition_20260919/releases/dev_v7_t1_13/tcei_stack/run_episode.py",
+      "--official-example",
+      "--task-source",
+      "official_example",
+      "--budget",
+      "600",
+      "--output",
+      "/root/gpufree-data/tcei_competition_20260919/official13_round01/episode"
+    ],
+    "budget_seconds": 600,
+    "watchdog_seconds": 660,
+    "script_sha256": "ef243102cfee13d0a2dd15a323ce07d2a81f21337408285ddbae5f06076d7552",
+    "returncode": 1,
+    "episode_status": "stopped",
+    "execution_disabled": true,
+    "recorder_cleanup": [
+      {
+        "name": "rgbd",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official13_round01/pids/rgbd.json\n",
+        "stderr": ""
+      },
+      {
+        "name": "scalars",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official13_round01/pids/scalars.json\n",
+        "stderr": ""
+      }
+    ],
+    "evidence_closeout": {
+      "rgbd": {
+        "closed_at": 1789826040.0624661,
+        "receiving_ended_at": 1789826040.0557017,
+        "maximum_duration_seconds": 900.0,
+        "stop_reason": "requested_stop",
+        "recorded_pairs": 247,
+        "pending_pairs": 0,
+        "dropped_pairs": 0,
+        "write_errors": [],
+        "complete": true,
+        "capture_window_seconds": 0.0,
+        "depth_encoding": "float32_deflate_level1"
+      },
+      "scalars": {
+        "closed_at": 1789826041.4433699,
+        "recorded_rows": 94131,
+        "topics_seen": [
+          "/Jaka/get_end_effector_pose",
+          "/Jaka/get_gripper_efforts",
+          "/Jaka/get_jointstate",
+          "/Jaka/gripper_is_captured",
+          "/Jaka/set_end_effector_pose",
+          "/Jaka/set_gripper_value",
+          "/clock",
+          "/tcei/cancel_ack",
+          "/tcei/cancel_request",
+          "/tcei/execute_preview",
+          "/tcei/grasp_preview_request",
+          "/tcei/grasp_preview_response",
+          "/tcei/gripper_contact",
+          "/tcei/joint_diagnostics",
+          "/tcei/nine_status",
+          "/tcei/plan",
+          "/tcei/planner_status",
+          "/tcei/prepare_observation",
+          "/tcei/request",
+          "/tcei/stop_ack",
+          "/tcei/stop_request",
+          "/tcei/task_status"
+        ],
+        "maximum_duration_seconds": 900.0
+      }
+    },
+    "evidence_complete": true,
+    "finished_at": 1789826042.2518868
+  },
+  "supervisor_aborted.json": null,
+  "episode/summary.json": {
+    "status": "stopped",
+    "verified_objects": 0,
+    "elapsed_seconds": 29.298850037157536,
+    "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+    "task_source": "official_example",
+    "budget_seconds": 600.0,
+    "tasks": [
+      {
+        "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+        "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-01",
+        "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+        "sent_at": 1789826011.5111537,
+        "scene_frame_id": 4959,
+        "empty_remaining_requested": false,
+        "result": {
+          "time": 1789826034.2950842,
+          "monotonic": 16758182.725437228,
+          "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+          "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+          "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-01",
+          "status": "task_failed",
+          "code_sha256": "7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a",
+          "reason": "cancelled: no further targets will be issued",
+          "placed_verified": 0,
+          "elapsed": 19.570169219747186,
+          "stopped_verified": true,
+          "stop": {
+            "id": "5cd14ab950064eb69c4b1bb7a5a657ad",
+            "state": "stopped",
+            "reason": "external cancellation: task evidence rejected: event is not for a bound target",
+            "seconds": 0.36156250536441803,
+            "fault_reason": null,
+            "max_joint_speed": 0.0013374041300266981,
+            "joint_distance": 9.5367431640625e-07,
+            "tcp_distance": 1.298568394055246e-06,
+            "simulation_time": 528.8000275790691,
+            "time": 1789826034.2803512
+          },
+          "limitation": "Explicit reset or a new controlled run is required; stop success is based on measured feedback."
+        },
+        "elapsed_seconds": 22.784550666809082
+      }
+    ],
+    "started_at": 1789826007.9838388,
+    "started_monotonic": 16758156.414190823,
+    "deadline_monotonic": 16758756.414190823,
+    "start_source": "driver_start_after_execution_authorization",
+    "observation": {
+      "request_id": "observation_aa5a5bbc6a1c44cca65a2bc4982bf70e",
+      "sent_at": 1789826008.049419,
+      "accepted_at": 1789826008.0556395,
+      "worker_started_at": 1789826008.06742,
+      "result": {
+        "time": 1789826011.2895148,
+        "monotonic": 16758159.719867812,
+        "request_id": "observation_aa5a5bbc6a1c44cca65a2bc4982bf70e",
+        "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+        "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-observation",
+        "status": "observation_completed",
+        "code_sha256": "7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a",
+        "elapsed": 3.234690712764859,
+        "observation_protocol": "tcei.observation.v1"
+      }
+    },
+    "reason": "task evidence rejected: event is not for a bound target",
+    "safe_stop": {
+      "state": "stopped",
+      "proof": {
+        "id": "5cd14ab950064eb69c4b1bb7a5a657ad",
+        "state": "stopped",
+        "reason": "external cancellation: task evidence rejected: event is not for a bound target",
+        "seconds": 0.36156250536441803,
+        "fault_reason": null,
+        "max_joint_speed": 0.0013374041300266981,
+        "joint_distance": 9.5367431640625e-07,
+        "tcp_distance": 1.298568394055246e-06,
+        "simulation_time": 528.8000275790691,
+        "time": 1789826034.2803512
+      },
+      "seconds": 0.3689528536051512,
+      "cancel_epoch": 1,
+      "cancel_mapping": {
+        "protocol": "tcei.cancel.v1",
+        "cancel_id": "143e2a2c2b2d4942b9a87064f5df7b34",
+        "request_round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+        "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+        "state": "accepted",
+        "stop_id": "5cd14ab950064eb69c4b1bb7a5a657ad",
+        "mapping_revision": 0,
+        "affected_round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+        "affected_request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+        "monotonic": 16758182.349220537,
+        "time": 1789826033.918868
+      },
+      "received_monotonic": 16758182.71208286
+    },
+    "read_only_closeout": {
+      "seconds": 3.000146696344018,
+      "new_verified_objects": 0,
+      "actions_allowed": false
+    },
+    "unresolved_evidence": [],
+    "late_evidence_errors": [],
+    "task_interval_elapsed_seconds": 22.4021253362298,
+    "task_interval_scope": "first Nine request to last task result or episode failure; observation preparation and final stop wait excluded",
+    "ledger": {
+      "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+      "task_source": "official_example",
+      "started_monotonic": 16758156.414190823,
+      "started_wall": 1789826007.9838388,
+      "deadline_monotonic": 16758756.414190823,
+      "remaining_seconds": 570.7011499628425,
+      "tasks": [
+        {
+          "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-01",
+          "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+          "status": "incomplete",
+          "target_stable_ids": [
+            "56c35a27-obj-0006"
+          ],
+          "verified_grasps": 0,
+          "verified_placements": 0,
+          "nine_semantic_evidence": true,
+          "estimated_points": 0,
+          "score_status": "no_verified_scoring_evidence",
+          "drop_count": 0,
+          "controller_status": "task_failed",
+          "completion_basis": null,
+          "physical_drop_count": 0,
+          "holding_feedback_loss_count": 0,
+          "unverified_drop_report_count": 0,
+          "rejected_events": 1,
+          "targets": {
+            "56c35a27-obj-0006": {
+              "stable_id": "56c35a27-obj-0006",
+              "side": "left",
+              "class": "Smokegrenade",
+              "initial_frame_id": "1"
+            }
+          },
+          "request_ids": [
+            "episode_b2d13dfe99d84badb0d147dbe7b46944"
+          ],
+          "grasp_evidence": {},
+          "placement_evidence": {},
+          "nine_evidence": {
+            "episode_b2d13dfe99d84badb0d147dbe7b46944": {
+              "infer_started": {
+                "event_digest": "26e7772ef1afef8b6cf22874d22b9c585fa1c0ab9e6bba97d66b6b058070fc0a",
+                "monotonic": 16758160.244523048
+              },
+              "model_answer": {
+                "event_digest": "996f95f530d857c96154dcba940339bbbb8cc5165263de4922ba4e66569ca8bb",
+                "monotonic": 16758163.145123005
+              },
+              "plan_published": {
+                "event_digest": "9b0b3289017061db8b9452f3450907025115925bf16dc847a3276952cb644f96",
+                "monotonic": 16758163.153773308,
+                "decision_monotonic": 16758163.153449774
+              }
+            }
+          }
+        },
+        {
+          "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-02",
+          "instruction": "抓取右下方的弹夹，放到右侧传送带",
+          "status": "pending",
+          "target_stable_ids": [],
+          "verified_grasps": 0,
+          "verified_placements": 0,
+          "nine_semantic_evidence": false,
+          "estimated_points": 0,
+          "score_status": "no_verified_scoring_evidence",
+          "drop_count": 0,
+          "controller_status": null,
+          "completion_basis": null,
+          "physical_drop_count": 0,
+          "holding_feedback_loss_count": 0,
+          "unverified_drop_report_count": 0,
+          "rejected_events": 0,
+          "targets": {},
+          "request_ids": [],
+          "grasp_evidence": {},
+          "placement_evidence": {},
+          "nine_evidence": {}
+        },
+        {
+          "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-03",
+          "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+          "status": "pending",
+          "target_stable_ids": [],
+          "verified_grasps": 0,
+          "verified_placements": 0,
+          "nine_semantic_evidence": false,
+          "estimated_points": 0,
+          "score_status": "no_verified_scoring_evidence",
+          "drop_count": 0,
+          "controller_status": null,
+          "completion_basis": null,
+          "physical_drop_count": 0,
+          "holding_feedback_loss_count": 0,
+          "unverified_drop_report_count": 0,
+          "rejected_events": 0,
+          "targets": {},
+          "request_ids": [],
+          "grasp_evidence": {},
+          "placement_evidence": {},
+          "nine_evidence": {}
+        },
+        {
+          "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-04",
+          "instruction": "抓取手雷，放到右侧传送带",
+          "status": "pending",
+          "target_stable_ids": [],
+          "verified_grasps": 0,
+          "verified_placements": 0,
+          "nine_semantic_evidence": false,
+          "estimated_points": 0,
+          "score_status": "no_verified_scoring_evidence",
+          "drop_count": 0,
+          "controller_status": null,
+          "completion_basis": null,
+          "physical_drop_count": 0,
+          "holding_feedback_loss_count": 0,
+          "unverified_drop_report_count": 0,
+          "rejected_events": 0,
+          "targets": {},
+          "request_ids": [],
+          "grasp_evidence": {},
+          "placement_evidence": {},
+          "nine_evidence": {}
+        },
+        {
+          "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-05",
+          "instruction": "抓取剩余的物品，放到左侧传送带",
+          "status": "pending",
+          "target_stable_ids": [],
+          "verified_grasps": 0,
+          "verified_placements": 0,
+          "nine_semantic_evidence": false,
+          "estimated_points": 0,
+          "score_status": "no_verified_scoring_evidence",
+          "drop_count": 0,
+          "controller_status": null,
+          "completion_basis": null,
+          "physical_drop_count": 0,
+          "holding_feedback_loss_count": 0,
+          "unverified_drop_report_count": 0,
+          "rejected_events": 0,
+          "targets": {},
+          "request_ids": [],
+          "grasp_evidence": {},
+          "placement_evidence": {},
+          "nine_evidence": {}
+        }
+      ],
+      "verified_objects": 0,
+      "all_tasks_verified": false,
+      "mandatory_nine_evidence_complete": false,
+      "official_score_eligible": true,
+      "estimated_base_points": 0,
+      "pending_referee_tasks": [],
+      "multimodal_bonus": {
+        "points": null,
+        "status": "not_specialty_validated"
+      },
+      "milestones": {
+        "judge_started_monotonic": 16758156.414190823,
+        "judge_started_wall": 1789826007.9838388,
+        "stopped_monotonic": 16758182.712565163
+      },
+      "scoring_scope": "local evidence estimate; not referee score"
+    },
+    "last_delivery_elapsed_seconds": null,
+    "time_scope": "one start includes observation, Nine, motion, recovery and verification; stop may extend after deadline",
+    "code_changed_during_episode": []
+  },
+  "rgbd/closed.json": {
+    "closed_at": 1789826040.0624661,
+    "receiving_ended_at": 1789826040.0557017,
+    "maximum_duration_seconds": 900.0,
+    "stop_reason": "requested_stop",
+    "recorded_pairs": 247,
+    "pending_pairs": 0,
+    "dropped_pairs": 0,
+    "write_errors": [],
+    "complete": true,
+    "capture_window_seconds": 0.0,
+    "depth_encoding": "float32_deflate_level1"
+  },
+  "scalars/closed.json": {
+    "closed_at": 1789826041.4433699,
+    "recorded_rows": 94131,
+    "topics_seen": [
+      "/Jaka/get_end_effector_pose",
+      "/Jaka/get_gripper_efforts",
+      "/Jaka/get_jointstate",
+      "/Jaka/gripper_is_captured",
+      "/Jaka/set_end_effector_pose",
+      "/Jaka/set_gripper_value",
+      "/clock",
+      "/tcei/cancel_ack",
+      "/tcei/cancel_request",
+      "/tcei/execute_preview",
+      "/tcei/grasp_preview_request",
+      "/tcei/grasp_preview_response",
+      "/tcei/gripper_contact",
+      "/tcei/joint_diagnostics",
+      "/tcei/nine_status",
+      "/tcei/plan",
+      "/tcei/planner_status",
+      "/tcei/prepare_observation",
+      "/tcei/request",
+      "/tcei/stop_ack",
+      "/tcei/stop_request",
+      "/tcei/task_status"
+    ],
+    "maximum_duration_seconds": 900.0
+  },
+  "counts": {
+    "judge_started": 1,
+    "ready": 3,
+    "observation_received": 1,
+    "observation_accepted": 1,
+    "round_started": 1,
+    "observation_started": 1,
+    "observation_preparation_started": 1,
+    "clear_basket_for_observation": 1,
+    "arrived": 3,
+    "observation_completed": 1,
+    "infer_started": 1,
+    "model_answer": 1,
+    "plan_published": 1,
+    "plan_accepted": 1,
+    "request_finished": 1,
+    "task_started": 1,
+    "grasp_evidence_preflight": 1,
+    "grasp_candidate_set": 1,
+    "attempt": 1,
+    "grasp_preview": 1,
+    "approach": 1,
+    "grasp_orientation_selected": 1,
+    "approach_clearance_verified": 1,
+    "occlusion_check": 1,
+    "controlled_self_occlusion": 1,
+    "descend": 1,
+    "grasp_contact_confirmed": 1,
+    "trial_lift_started": 1,
+    "trial_lift": 1,
+    "trial_lift_evidence": 25,
+    "holding_feedback_lost": 1,
+    "cancel_requested": 1,
+    "grasp_attempt_outcome": 1,
+    "drop_recovery_started": 1,
+    "controlled_stop_requested": 3,
+    "cancel_ack": 1,
+    "stop_ack": 32,
+    "controlled_stop_verified": 2,
+    "task_failed": 1
+  },
+  "key_events": [
+    {
+      "time": 1789826031.8291225,
+      "monotonic": 16758180.259475516,
+      "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+      "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+      "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-01",
+      "status": "grasp_contact_confirmed",
+      "code_sha256": "7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a",
+      "command": 0.017250000000000012,
+      "contact_efforts": [
+        7.807456016540527,
+        8.222131729125977
+      ],
+      "stable_sim_seconds": 0.45000002400001904,
+      "fresh_contact_samples": 27,
+      "joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "measured_joint_positions": [
+        -0.17937996983528137,
+        0.38929614424705505,
+        -0.7353360652923584,
+        -1.9167487621307373,
+        1.5705550909042358,
+        0.13447606563568115,
+        0.01724833808839321,
+        0.017117178067564964
+      ],
+      "native_contact": {
+        "state": "holding",
+        "contact_lost": false,
+        "retained_support": true,
+        "stable_contact": false,
+        "efforts": [
+          7.807456016540527,
+          8.222131729125977
+        ],
+        "sensor_stamps": [
+          527.5500275138766,
+          527.5500275138766
+        ],
+        "high_samples": 1,
+        "high_seconds": 0.0,
+        "low_samples": 0,
+        "low_seconds": 0.0,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "position_lead_limit": 0.002,
+      "position_lead_limit_calibrated": false,
+      "limitation": "Joint effort/capture candidate only; actual object-following verification is still required.",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16758180.260407628
+    },
+    {
+      "time": 1789826033.912161,
+      "monotonic": 16758182.342514366,
+      "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+      "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+      "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-01",
+      "status": "holding_feedback_lost",
+      "code_sha256": "7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a",
+      "phase": "trial_lift",
+      "proof": {
+        "state": "contact_lost",
+        "contact_lost": true,
+        "retained_support": false,
+        "stable_contact": false,
+        "efforts": [
+          0.0003578060423023999,
+          -0.0008943257853388786
+        ],
+        "sensor_stamps": [
+          528.5166942309588,
+          528.5166942309588
+        ],
+        "high_samples": 0,
+        "high_seconds": 0.0,
+        "low_samples": 37,
+        "low_seconds": 0.6166666988283396,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16758182.34320839
+    },
+    {
+      "status": "cancel_requested",
+      "request": {
+        "protocol": "tcei.cancel.v1",
+        "cancel_id": "143e2a2c2b2d4942b9a87064f5df7b34",
+        "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+        "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+        "reason": "task evidence rejected: event is not for a bound target"
+      },
+      "monotonic": 16758182.343645511,
+      "time": 1789826033.9132948
+    },
+    {
+      "time": 1789826033.915221,
+      "monotonic": 16758182.34557399,
+      "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+      "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+      "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-01",
+      "status": "drop_recovery_started",
+      "code_sha256": "7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a",
+      "recovery": 1,
+      "category": "Smokegrenade",
+      "reason": "object lost during trial_lift",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16758182.346053028
+    },
+    {
+      "status": "cancel_ack",
+      "response": {
+        "protocol": "tcei.cancel.v1",
+        "cancel_id": "143e2a2c2b2d4942b9a87064f5df7b34",
+        "request_round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+        "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+        "state": "accepted",
+        "stop_id": "5cd14ab950064eb69c4b1bb7a5a657ad",
+        "mapping_revision": 0,
+        "affected_round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+        "affected_request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+        "monotonic": 16758182.349220537,
+        "time": 1789826033.918868
+      },
+      "source_topic": "/tcei/cancel_ack",
+      "received_monotonic": 16758182.349499436
+    },
+    {
+      "time": 1789826034.2950842,
+      "monotonic": 16758182.725437228,
+      "request_id": "episode_b2d13dfe99d84badb0d147dbe7b46944",
+      "round_id": "round_9bd3778275844edf984d846b2d6eb8cd",
+      "task_id": "round_9bd3778275844edf984d846b2d6eb8cd-task-01",
+      "status": "task_failed",
+      "code_sha256": "7a79a3144d4c058641a6ced7cbc0fe829cc301f9a5acbfccdb6e586dd84bfd9a",
+      "reason": "cancelled: no further targets will be issued",
+      "placed_verified": 0,
+      "elapsed": 19.570169219747186,
+      "stopped_verified": true,
+      "stop": {
+        "id": "5cd14ab950064eb69c4b1bb7a5a657ad",
+        "state": "stopped",
+        "reason": "external cancellation: task evidence rejected: event is not for a bound target",
+        "seconds": 0.36156250536441803,
+        "fault_reason": null,
+        "max_joint_speed": 0.0013374041300266981,
+        "joint_distance": 9.5367431640625e-07,
+        "tcp_distance": 1.298568394055246e-06,
+        "simulation_time": 528.8000275790691,
+        "time": 1789826034.2803512
+      },
+      "limitation": "Explicit reset or a new controlled run is required; stop success is based on measured feedback.",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16758182.72585708
+    }
+  ],
+  "flags": {
+    "/tcei_controller/execute": false,
+    "/tcei_nine/execute": false
+  }
+}

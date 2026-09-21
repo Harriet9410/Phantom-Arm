@@ -1,0 +1,197 @@
+{
+  "finish": {
+    "started_at": 1789828034.5481946,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "/root/tcei_competition_20260919/releases/dev_v7_t1_15/tcei_stack/run_episode.py",
+      "--official-example",
+      "--task-source",
+      "official_example",
+      "--budget",
+      "600",
+      "--output",
+      "/root/gpufree-data/tcei_competition_20260919/official15_round01/episode"
+    ],
+    "budget_seconds": 600,
+    "watchdog_seconds": 660,
+    "script_sha256": "29ef011aaf86505e65c6bf5384bd8f278ff076c4008b09a45e9224b32ac90ceb",
+    "returncode": 1,
+    "episode_status": "stopped",
+    "execution_disabled": true,
+    "recorder_cleanup": [
+      {
+        "name": "rgbd",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official15_round01/pids/rgbd.json\n",
+        "stderr": ""
+      },
+      {
+        "name": "scalars",
+        "code": 0,
+        "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/official15_round01/pids/scalars.json\n",
+        "stderr": ""
+      }
+    ],
+    "evidence_closeout": {
+      "rgbd": {
+        "closed_at": 1789828066 .3387613,
+        "receiving_ended_at": 1789828066.330941,
+        "maximum_duration_seconds": 900.0,
+        "stop_reason": "requested_stop",
+        "recorded_pairs": 247,
+        "pending_pairs": 0,
+        "dropped_pairs": 0,
+        "write_errors": [],
+        "complete": true,
+        "capture_window_seconds": 0.0,
+        "depth_encoding": "float32_deflate_level1"
+      },
+      "scalars": {
+        "closed_at": 1789828067.7096608,
+        "recorded_rows": 29929,
+        "topics_seen": [
+          "/Jaka/get_end_effector_pose",
+          "/Jaka/get_gripper_efforts",
+          "/Jaka/get_jointstate",
+          "/Jaka/gripper_is_captured",
+          "/Jaka/set_end_effector_pose",
+          "/Jaka/set_gripper_value",
+          "/clock",
+          "/tcei/cancel_ack",
+          "/tcei/cancel_request",
+          "/tcei/execute_preview",
+          "/tcei/grasp_preview_request",
+          "/tcei/grasp_preview_response",
+          "/tcei/gripper_contact",
+          "/tcei/joint_diagnostics",
+          "/tcei/nine_status",
+          "/tcei/plan",
+          "/tcei/planner_status",
+          "/tcei/prepare_observation",
+          "/tcei/request",
+          "/tcei/stop_ack",
+          "/tcei/stop_request",
+          "/tcei/task_status"
+        ],
+        "maximum_duration_seconds": 900.0
+      }
+    },
+    "evidence_complete": true,
+    "finished_at": 1789828068.5188754
+  },
+  "inconclusive": [
+    {
+      "time": 1789828060.0644124,
+      "monotonic": 16760208.494765433,
+      "request_id": "episode_b91ea25707f742a49e4940ca32b40aef",
+      "round_id": "round_b128ef8907f84c75b63814a446c99a68",
+      "task_id": "round_b128ef8907f84c75b63814a446c99a68-task-01",
+      "status": "grasp_verification_inconclusive",
+      "code_sha256": "248dda17c01d8041f758489dde97af54ab3789c5341ee7718eafdd19e5e671cf",
+      "reason": "predicted_object_surface_occluded",
+      "contact": {
+        "state": "holding",
+        "contact_lost": false,
+        "retained_support": true,
+        "stable_contact": true,
+        "efforts": [
+          12.273868560791016,
+          12.274477005004883
+        ],
+        "sensor_stamps": [
+          164.65000858716667,
+          164.65000858716667
+        ],
+        "high_samples": 69,
+        "high_seconds": 1.1333333924412727,
+        "low_samples": 0,
+        "low_seconds": 0.0,
+        "on_threshold": 0.2,
+        "off_threshold": 0.05,
+        "fault": null,
+        "scope": "contact support only; not object identity or lift verification"
+      },
+      "grip_preserved": true,
+      "automatic_open_or_regrasp": false,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16760208.532195797
+    }
+  ],
+  "lift_last": [
+    {
+      "time": 1789828060.0605104,
+      "monotonic": 16760208.490864344,
+      "request_id": "episode_b91ea25707f742a49e4940ca32b40aef",
+      "round_id": "round_b128ef8907f84c75b63814a446c99a68",
+      "task_id": "round_b128ef8907f84c75b63814a446c99a68-task-01",
+      "status": "trial_lift_evidence",
+      "code_sha256": "248dda17c01d8041f758489dde97af54ab3789c5341ee7718eafdd19e5e671cf",
+      "proof": {
+        "status": "occluded",
+        "stamp": 164.600008585,
+        "positive": false,
+        "source_vacancy_is_proof": false,
+        "reason": "predicted_object_surface_occluded",
+        "camera_translation": [
+          7.75640186589932e-06,
+          -1.9534689496003557e-06,
+          -0.04000131031905996
+        ],
+        "orientation_delta_rad": 0.001984963681251736,
+        "reference_points": 128,
+        "robot_mask_available": true,
+        "source_visible_points": 0,
+        "source_unchanged_points": 0,
+        "source_vacated_points": 0,
+        "matched_points": 0,
+        "unmasked_valid_points": 0,
+        "occluded_points": 128,
+        "matched_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_unchanged_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_vacated_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "matched_fraction": 0.0,
+        "matched_reference_indices": [],
+        "matched_unique_pixels": 0,
+        "matched_pixel_span": [
+          0,
+          0
+        ],
+        "partial_match_candidate": false
+      },
+      "window": {
+        "verified": false,
+        "reason": "predicted_object_surface_occluded",
+        "frames": 0,
+        "rejected": false
+      },
+      "contact": null,
+      "contact_surface_window": {
+        "verified": false,
+        "reason": "no_qualified_partial_surface",
+        "frames": 0
+      },
+      "robot_projection": {
+        "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+        "covered_pixels": 76979,
+        "joint_stamp": 164.60000858455896,
+        "image_stamp": 164.600008585
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16760208.491384348
+    }
+  ],
+  "logs": []
+}

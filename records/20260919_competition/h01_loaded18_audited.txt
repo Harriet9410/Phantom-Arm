@@ -1,0 +1,55 @@
+{
+  "status": "passed_recorded_loaded_dynamic_stop_subcase",
+  "physical_rerun": false,
+  "original_probe_status": "failed",
+  "original_probe_error": "AssertionError('a deliberate cancellation cannot be a normal completed round')",
+  "original_summary_preserved": true,
+  "driver_status": "stopped",
+  "stop_id": "bc5d5aa3656640acad7735a0d5d28493",
+  "cancellation_echo_count": 1,
+  "stop_confirmation_seconds": 0.3294391967356205,
+  "max_tcp_travel_after_cancel_m": 0.000624960362507616,
+  "late_action_command_count": 0,
+  "independent_post_stop": {
+    "native_counts": {
+      "/Jaka/get_jointstate": 398,
+      "/Jaka/get_end_effector_pose": 397,
+      "/Jaka/gripper_is_captured": 397,
+      "/Jaka/get_gripper_efforts": 398,
+      "/clock": 398
+    },
+    "simulation_span": 6.583333677000013,
+    "max_arm_speed": 0.015079150907695293,
+    "joint_drift": [
+      4.470348358154297e-08,
+      8.940696716308594e-08,
+      1.7881393432617188e-07,
+      1.1920928955078125e-07,
+      3.5762786865234375e-07,
+      1.1920928955078125e-07,
+      4.470348358154297e-08,
+      2.9802322387695312e-08
+    ],
+    "tcp_drift": 1.307610013733383e-07,
+    "rotation_drift": 4.4703483581543064e-07,
+    "captured_continuously": true,
+    "bilateral_effort_continuously": true,
+    "nonempty_measured_aperture": true,
+    "anchor_tcp": [
+      0.21154814182799303,
+      -0.1460477829641691,
+      2.496373023050648
+    ],
+    "time_pairing": "overlapping receipt interval; not atomic across ROS topics"
+  },
+  "execution_disabled": true,
+  "evidence_complete": true,
+  "raw_sha256": {
+    "probe/summary.json": "b870dde1299e4b3e0ce1b7565846c598d0f64f7e2fd1ee1db2ed7a04e7bc4a67",
+    "probe/events.jsonl": "4c496328ca3f1e479a5caad0d7c076c2c658e876f757e092015b55f43053d67e",
+    "episode/summary.json": "8b9972642fd80c55514e3ebeb98879e76be51aee7dc38725c6078205c0134f1a",
+    "supervisor_finished.json": "6dbe66873da66d9de758600a1cf35d25f8e51c34e2ea829eec31fe702f943db4"
+  },
+  "audit_sha256": "4c6213b7cca92a0e6068dc299cbea60114c67e798937daacd726d50ae8474702",
+  "scope": "One measured upward loaded-stop subcase. Does not settle17 contact-at-source stop failure, test reset, or certify complete H01/H06."
+}

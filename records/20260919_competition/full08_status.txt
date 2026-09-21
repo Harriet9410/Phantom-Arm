@@ -1,0 +1,16 @@
+{
+  "checked_at": 1789810861.0065594,
+  "full08_launcher_result.json": null,
+  "full08_stop_prior.json": null,
+  "pids": {},
+  "read_only_ready.json": null,
+  "warmup_complete.txt": null,
+  "launcher_tail": [
+    "Traceback (most recent call last):",
+    "  File \"/root/tcei_competition_20260919/start_full08.py\", line 7, in <module>",
+    "    diag=json.loads(rospy.wait_for_message('/tcei/joint_diagnostics',String,timeout=5).data);cap=rospy.wait_for_message('/Jaka/gripper_is_captured',Bool,timeout=5).data",
+    "  File \"/opt/ros/noetic/lib/python3/dist-packages/rospy/client.py\", line 420, in wait_for_message",
+    "    raise rospy.exceptions.ROSException(\"timeout exceeded while waiting for message on topic %s\"%resolve_name)",
+    "rospy.exceptions.ROSException: timeout exceeded while waiting for message on topic /tcei/joint_diagnostics"
+  ]
+}

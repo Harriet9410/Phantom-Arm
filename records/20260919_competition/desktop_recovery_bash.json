@@ -1,0 +1,11 @@
+{
+  "started_at": 1789755129.3587992,
+  "initialization_returncode": 0,
+  "initialization_output": "",
+  "script_sha256": "8cba3a21ad028d87004dd009d7f0d3ced856c71b27bddaa52e980698ba4d17a6",
+  "script_mode": "0o644",
+  "method": "Run existing read-only script through declared Bash interpreter, then original desktop executable",
+  "xfsettings_restored_exec_bits": "0o111",
+  "pid": 416,
+  "script_content_unchanged": true
+}

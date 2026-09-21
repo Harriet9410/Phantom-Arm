@@ -1,0 +1,32 @@
+[
+  {
+    "command": [
+      "bash",
+      "robot.sh",
+      "start",
+      "package_smoke_stack01"
+    ],
+    "returncode": 0,
+    "finished_at": 1789845477.0280457
+  },
+  {
+    "command": [
+      "bash",
+      "robot.sh",
+      "run",
+      "package_smoke_round01",
+      "--official-example"
+    ],
+    "returncode": 1,
+    "finished_at": 1789845696.461744
+  },
+  {
+    "command": [
+      "bash",
+      "robot.sh",
+      "stop"
+    ],
+    "returncode": 0,
+    "finished_at": 1789845704.7994115
+  }
+]

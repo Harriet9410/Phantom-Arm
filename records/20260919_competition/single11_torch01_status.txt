@@ -1,0 +1,7696 @@
+{
+  "checked_at": 1789819411.9134214,
+  "supervisor_job.json": {
+    "pid": 372192,
+    "started_at": 1789819345.6040092,
+    "source_sha256": "e3f888253b330193f54f59d946e58eda657a13a6a1ed7fb6a5d3e44fdbcf68ac"
+  },
+  "supervisor_finished.json": null,
+  "supervisor_aborted.json": null,
+  "episode/summary.json": null,
+  "pids/episode.json": {
+    "pid": 372218,
+    "pgid": 372218,
+    "start_ticks": 1675149452,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "/root/tcei_competition_20260919/releases/dev_v7_t1_11/tcei_stack/run_episode.py",
+      "--instruction",
+      "抓取最左方的军用手电筒，放到左侧传送带",
+      "--task-source",
+      "engineering_single",
+      "--budget",
+      "180",
+      "--output",
+      "/root/gpufree-data/tcei_competition_20260919/single11_torch01/episode"
+    ],
+    "cwd": "/root/tcei_competition_20260919",
+    "started_at": 1789819346.101798
+  },
+  "events": [
+    {
+      "time": 1789819395.0947828,
+      "monotonic": 16751543.525136145,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "trial_lift_evidence",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "proof": {
+        "status": "occluded",
+        "stamp": 297.766682196,
+        "positive": false,
+        "source_vacancy_is_proof": false,
+        "reason": "predicted_object_surface_occluded",
+        "camera_translation": [
+          -1.329334636368524e-06,
+          -4.038698376163108e-05,
+          -0.03857429417487479
+        ],
+        "reference_points": 96,
+        "robot_mask_available": true,
+        "source_visible_points": 15,
+        "source_unchanged_points": 0,
+        "source_vacated_points": 2,
+        "matched_points": 12,
+        "unmasked_valid_points": 12,
+        "occluded_points": 84,
+        "matched_spread": {
+          "cells": 4,
+          "x_fraction": 0.08333333333333333,
+          "y_fraction": 1.0
+        },
+        "source_unchanged_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_vacated_spread": {
+          "cells": 1,
+          "x_fraction": 0.06666666666666667,
+          "y_fraction": 0.0
+        },
+        "matched_fraction": 1.0
+      },
+      "window": {
+        "verified": false,
+        "reason": "predicted_object_surface_occluded",
+        "frames": 0,
+        "rejected": false
+      },
+      "robot_projection": {
+        "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+        "covered_pixels": 71717,
+        "joint_stamp": 297.7500155288726,
+        "image_stamp": 297.766682196
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.525685005
+    },
+    {
+      "time": 1789819395.163574,
+      "monotonic": 16751543.593927333,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "trial_lift_evidence",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "proof": {
+        "status": "occluded",
+        "stamp": 297.816682199,
+        "positive": false,
+        "source_vacancy_is_proof": false,
+        "reason": "predicted_object_surface_occluded",
+        "camera_translation": [
+          2.429984610752287e-07,
+          -7.405105982627447e-06,
+          -0.03972218107186576
+        ],
+        "reference_points": 96,
+        "robot_mask_available": true,
+        "source_visible_points": 15,
+        "source_unchanged_points": 0,
+        "source_vacated_points": 2,
+        "matched_points": 12,
+        "unmasked_valid_points": 12,
+        "occluded_points": 84,
+        "matched_spread": {
+          "cells": 4,
+          "x_fraction": 0.08333333333333333,
+          "y_fraction": 1.0
+        },
+        "source_unchanged_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_vacated_spread": {
+          "cells": 1,
+          "x_fraction": 0.06666666666666667,
+          "y_fraction": 0.0
+        },
+        "matched_fraction": 1.0
+      },
+      "window": {
+        "verified": false,
+        "reason": "predicted_object_surface_occluded",
+        "frames": 0,
+        "rejected": false
+      },
+      "robot_projection": {
+        "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+        "covered_pixels": 71709,
+        "joint_stamp": 297.8166821990162,
+        "image_stamp": 297.816682199
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.594879797
+    },
+    {
+      "time": 1789819395.2345157,
+      "monotonic": 16751543.66486902,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "trial_lift_evidence",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "proof": {
+        "status": "occluded",
+        "stamp": 297.866682202,
+        "positive": false,
+        "source_vacancy_is_proof": false,
+        "reason": "predicted_object_surface_occluded",
+        "camera_translation": [
+          6.551126989218225e-07,
+          6.571447715986168e-07,
+          -0.0399969920070653
+        ],
+        "reference_points": 96,
+        "robot_mask_available": true,
+        "source_visible_points": 15,
+        "source_unchanged_points": 0,
+        "source_vacated_points": 2,
+        "matched_points": 12,
+        "unmasked_valid_points": 12,
+        "occluded_points": 84,
+        "matched_spread": {
+          "cells": 4,
+          "x_fraction": 0.08333333333333333,
+          "y_fraction": 1.0
+        },
+        "source_unchanged_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_vacated_spread": {
+          "cells": 1,
+          "x_fraction": 0.06666666666666667,
+          "y_fraction": 0.0
+        },
+        "matched_fraction": 1.0
+      },
+      "window": {
+        "verified": false,
+        "reason": "predicted_object_surface_occluded",
+        "frames": 0,
+        "rejected": false
+      },
+      "robot_projection": {
+        "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+        "covered_pixels": 71721,
+        "joint_stamp": 297.8833488691598,
+        "image_stamp": 297.866682202
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.665447352
+    },
+    {
+      "time": 1789819395.3087537,
+      "monotonic": 16751543.739107164,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "trial_lift_evidence",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "proof": {
+        "status": "occluded",
+        "stamp": 297.916682204,
+        "positive": false,
+        "source_vacancy_is_proof": false,
+        "reason": "predicted_object_surface_occluded",
+        "camera_translation": [
+          7.006502251161172e-07,
+          9.466512940203843e-07,
+          -0.03999961416737374
+        ],
+        "reference_points": 96,
+        "robot_mask_available": true,
+        "source_visible_points": 15,
+        "source_unchanged_points": 0,
+        "source_vacated_points": 2,
+        "matched_points": 12,
+        "unmasked_valid_points": 12,
+        "occluded_points": 84,
+        "matched_spread": {
+          "cells": 4,
+          "x_fraction": 0.08333333333333333,
+          "y_fraction": 1.0
+        },
+        "source_unchanged_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_vacated_spread": {
+          "cells": 1,
+          "x_fraction": 0.06666666666666667,
+          "y_fraction": 0.0
+        },
+        "matched_fraction": 1.0
+      },
+      "window": {
+        "verified": false,
+        "reason": "predicted_object_surface_occluded",
+        "frames": 0,
+        "rejected": false
+      },
+      "robot_projection": {
+        "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+        "covered_pixels": 71721,
+        "joint_stamp": 297.9166822042316,
+        "image_stamp": 297.916682204
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.73985548
+    },
+    {
+      "time": 1789819395.3816798,
+      "monotonic": 16751543.812033053,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "trial_lift_evidence",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "proof": {
+        "status": "occluded",
+        "stamp": 297.966682207,
+        "positive": false,
+        "source_vacancy_is_proof": false,
+        "reason": "predicted_object_surface_occluded",
+        "camera_translation": [
+          6.733306314177233e-07,
+          9.108278292702111e-07,
+          -0.03999961867157742
+        ],
+        "reference_points": 96,
+        "robot_mask_available": true,
+        "source_visible_points": 15,
+        "source_unchanged_points": 0,
+        "source_vacated_points": 2,
+        "matched_points": 12,
+        "unmasked_valid_points": 12,
+        "occluded_points": 84,
+        "matched_spread": {
+          "cells": 4,
+          "x_fraction": 0.08333333333333333,
+          "y_fraction": 1.0
+        },
+        "source_unchanged_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_vacated_spread": {
+          "cells": 1,
+          "x_fraction": 0.06666666666666667,
+          "y_fraction": 0.0
+        },
+        "matched_fraction": 1.0
+      },
+      "window": {
+        "verified": false,
+        "reason": "predicted_object_surface_occluded",
+        "frames": 0,
+        "rejected": false
+      },
+      "robot_projection": {
+        "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+        "covered_pixels": 71721,
+        "joint_stamp": 297.9833488743752,
+        "image_stamp": 297.966682207
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.812606588
+    },
+    {
+      "time": 1789819395.4488058,
+      "monotonic": 16751543.87915926,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "trial_lift_evidence",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "proof": {
+        "status": "occluded",
+        "stamp": 298.016682209,
+        "positive": false,
+        "source_vacancy_is_proof": false,
+        "reason": "predicted_object_surface_occluded",
+        "camera_translation": [
+          7.002387035215384e-07,
+          9.090806621925297e-07,
+          -0.039999618592429176
+        ],
+        "reference_points": 96,
+        "robot_mask_available": true,
+        "source_visible_points": 15,
+        "source_unchanged_points": 0,
+        "source_vacated_points": 2,
+        "matched_points": 12,
+        "unmasked_valid_points": 12,
+        "occluded_points": 84,
+        "matched_spread": {
+          "cells": 4,
+          "x_fraction": 0.08333333333333333,
+          "y_fraction": 1.0
+        },
+        "source_unchanged_spread": {
+          "cells": 0,
+          "x_fraction": 0.0,
+          "y_fraction": 0.0
+        },
+        "source_vacated_spread": {
+          "cells": 1,
+          "x_fraction": 0.06666666666666667,
+          "y_fraction": 0.0
+        },
+        "matched_fraction": 1.0
+      },
+      "window": {
+        "verified": false,
+        "reason": "predicted_object_surface_occluded",
+        "frames": 0,
+        "rejected": false
+      },
+      "robot_projection": {
+        "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+        "covered_pixels": 71721,
+        "joint_stamp": 298.016682209447,
+        "image_stamp": 298.016682209
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.87976737
+    },
+    {
+      "time": 1789819395.4506674,
+      "monotonic": 16751543.881020129,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "arrived",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "phase": "trial_lift",
+      "position_error": 1.1963336270394239e-06,
+      "orientation_error": 0.0011941837570086334,
+      "stable_seconds": 0.21440610848367214,
+      "fresh_samples": 4,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.881396366
+    },
+    {
+      "time": 1789819395.4557676,
+      "monotonic": 16751543.886120776,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "grasp_attempt_outcome",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "record": {
+        "stable_id": "11bb6618-obj-0007",
+        "class": "Torch",
+        "object_world": [
+          0.11080764115440082,
+          -0.100396797832427,
+          2.387845993041992
+        ],
+        "object_angle_deg": 89.89993485455383,
+        "grasp_world": [
+          0.11080764115440082,
+          -0.100396797832427,
+          2.387845993041992
+        ],
+        "wrist_angle_deg": 89.89993485455383,
+        "depth_layer": 0,
+        "wrist_variant": 0,
+        "attempt_id": "grasp-attempt-1",
+        "started_at": 16751503.120171972,
+        "finished_at": 16751543.88598589,
+        "outcome": "no_effective_lift",
+        "details": {
+          "reason": "effective grasp not established during first lift: predicted_object_surface_occluded"
+        }
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.886735367
+    },
+    {
+      "time": 1789819395.4569685,
+      "monotonic": 16751543.88732151,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "drop_recovery_started",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "recovery": 1,
+      "category": "Torch",
+      "reason": "effective grasp not established during first lift: predicted_object_surface_occluded",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.887647443
+    },
+    {
+      "time": 1789819395.458155,
+      "monotonic": 16751543.888507865,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "controlled_stop_requested",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "stop_id": "4cade79b8e334e7080b7e7d5812a7980",
+      "reason": "grasp recovery: 1",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751543.888919506
+    },
+    {
+      "status": "stop_ack",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "requested",
+        "latched_state": "requested",
+        "time": 1789819395.4585142
+      },
+      "source_topic": "/tcei/stop_ack",
+      "received_monotonic": 16751543.889412208
+    },
+    {
+      "status": "stop_ack",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "holding",
+        "reason": "grasp recovery: 1",
+        "seconds": 0.006368536502122879,
+        "fault_reason": null,
+        "max_joint_speed": 0.00034264856367371976,
+        "joint_distance": 0.0,
+        "tcp_distance": 0.0,
+        "simulation_time": 298.08334887959063,
+        "time": 1789819395.4649725
+      },
+      "source_topic": "/tcei/stop_ack",
+      "received_monotonic": 16751543.896866683
+    },
+    {
+      "status": "stop_ack",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "holding",
+        "reason": "grasp recovery: 1",
+        "seconds": 0.12108528427779675,
+        "fault_reason": null,
+        "max_joint_speed": 0.00037945903022773564,
+        "joint_distance": 2.09808349609375e-05,
+        "tcp_distance": 1.1027983987898076e-06,
+        "simulation_time": 298.16668221727014,
+        "time": 1789819395.5796678
+      },
+      "source_topic": "/tcei/stop_ack",
+      "received_monotonic": 16751544.025425196
+    },
+    {
+      "status": "stop_ack",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "holding",
+        "reason": "grasp recovery: 1",
+        "seconds": 0.23300569877028465,
+        "fault_reason": null,
+        "max_joint_speed": 0.0003575482405722141,
+        "joint_distance": 2.09808349609375e-05,
+        "tcp_distance": 1.0991718995267023e-06,
+        "simulation_time": 298.25001555494964,
+        "time": 1789819395.691581
+      },
+      "source_topic": "/tcei/stop_ack",
+      "received_monotonic": 16751544.123538105
+    },
+    {
+      "status": "stop_ack",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "holding",
+        "reason": "grasp recovery: 1",
+        "seconds": 0.3717499356716871,
+        "fault_reason": null,
+        "max_joint_speed": 0.00043667200952768326,
+        "joint_distance": 2.09808349609375e-05,
+        "tcp_distance": 1.0141660313246778e-06,
+        "simulation_time": 298.30001555755734,
+        "time": 1789819395.8303332
+      },
+      "source_topic": "/tcei/stop_ack",
+      "received_monotonic": 16751544.262459695
+    },
+    {
+      "status": "stop_ack",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "stopped",
+        "reason": "grasp recovery: 1",
+        "seconds": 0.4828139040619135,
+        "fault_reason": null,
+        "max_joint_speed": 0.0003600780328270048,
+        "joint_distance": 2.086162567138672e-05,
+        "tcp_distance": 1.09891492133337e-06,
+        "simulation_time": 298.38334889523685,
+        "time": 1789819395.9413977
+      },
+      "source_topic": "/tcei/stop_ack",
+      "received_monotonic": 16751544.373457348
+    },
+    {
+      "time": 1789819395.9431105,
+      "monotonic": 16751544.373463556,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "controlled_stop_verified",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "stopped",
+        "reason": "grasp recovery: 1",
+        "seconds": 0.4828139040619135,
+        "fault_reason": null,
+        "max_joint_speed": 0.0003600780328270048,
+        "joint_distance": 2.086162567138672e-05,
+        "tcp_distance": 1.09891492133337e-06,
+        "simulation_time": 298.38334889523685,
+        "time": 1789819395.9413977
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751544.374218473
+    },
+    {
+      "status": "stop_ack",
+      "stop": {
+        "id": "4cade79b8e334e7080b7e7d5812a7980",
+        "state": "reset",
+        "reason": "grasp recovery: 1"
+      },
+      "source_topic": "/tcei/stop_ack",
+      "received_monotonic": 16751544.395203007
+    },
+    {
+      "time": 1789819395.9755626,
+      "monotonic": 16751544.405915832,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "controlled_stop_reset",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "stop_id": "4cade79b8e334e7080b7e7d5812a7980",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751544.40637458
+    },
+    {
+      "time": 1789819396.329254,
+      "monotonic": 16751544.759606715,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "drop_recovery_vertical_escape",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "target": [
+        0.11078550384748462,
+        -0.08839475160611843,
+        2.5805588768732233
+      ],
+      "quaternion": [
+        0.000172025890383237,
+        0.7061128413553088,
+        0.7080992734865256,
+        0.00021111153535517137
+      ],
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751544.760016847
+    },
+    {
+      "time": 1789819397.8021247,
+      "monotonic": 16751546.232478004,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "arrived",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "phase": "drop_recovery_vertical_escape",
+      "position_error": 5.912552897509273e-07,
+      "orientation_error": 0.0014908607791506122,
+      "stable_seconds": 0.20404608733952045,
+      "fresh_samples": 5,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751546.233213594
+    },
+    {
+      "time": 1789819397.8049934,
+      "monotonic": 16751546.235346207,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "drop_recovery_observation",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "target": [
+        0.0662943895,
+        0.4,
+        2.7503792615
+      ],
+      "quaternion": [
+        0.014626589099666852,
+        -9.24756999978937e-05,
+        0.999873675877226,
+        -0.0062198574998583315
+      ],
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751546.235724324
+    },
+    {
+      "time": 1789819402.4930165,
+      "monotonic": 16751550.923369635,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "arrived",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "phase": "drop_recovery_observation",
+      "position_error": 1.2885770833664034e-06,
+      "orientation_error": 0.001033438131164203,
+      "stable_seconds": 0.20613516867160797,
+      "fresh_samples": 5,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751550.92473723
+    },
+    {
+      "time": 1789819403.291747,
+      "monotonic": 16751551.722100088,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "drop_recovery_reacquired",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "recovery": 1,
+      "candidate": {
+        "class": "Torch",
+        "raw_class": "Torch",
+        "confidence": 0.9592484831809998,
+        "bbox": [
+          538,
+          226,
+          601,
+          240
+        ],
+        "recognition_rotation_deg": 0.0,
+        "pixel": [
+          569.75,
+          233.5
+        ],
+        "depth": 2.111929416656494,
+        "depth_spread": 0.008606195449829102,
+        "world_position": [
+          0.1104029656013743,
+          -0.09880391670567756,
+          2.388070583343506
+        ],
+        "support_z": 2.3721234798431396,
+        "angle_deg": 88.18723203716246,
+        "body_axis_deg": 178.18723203716246,
+        "axis_ratio": 68.82777691741508,
+        "grasp_point_method": "depth_body_center_and_axis",
+        "area": 626,
+        "depth_reference": [
+          [
+            585,
+            228,
+            2.10802
+          ],
+          [
+            596,
+            228,
+            2.10667
+          ],
+          [
+            592,
+            229,
+            2.10604
+          ],
+          [
+            583,
+            230,
+            2.10929
+          ],
+          [
+            594,
+            230,
+            2.10535
+          ],
+          [
+            583,
+            231,
+            2.10876
+          ],
+          [
+            594,
+            231,
+            2.10503
+          ],
+          [
+            546,
+            232,
+            2.11323
+          ],
+          [
+            561,
+            232,
+            2.11272
+          ],
+          [
+            572,
+            232,
+            2.11162
+          ],
+          [
+            583,
+            232,
+            2.10845
+          ],
+          [
+            594,
+            232,
+            2.10482
+          ],
+          [
+            546,
+            233,
+            2.11291
+          ],
+          [
+            557,
+            233,
+            2.1128
+          ],
+          [
+            568,
+            233,
+            2.11179
+          ],
+          [
+            579,
+            233,
+            2.10889
+          ],
+          [
+            591,
+            233,
+            2.10537
+          ],
+          [
+            543,
+            234,
+            2.11318
+          ],
+          [
+            554,
+            234,
+            2.11323
+          ],
+          [
+            565,
+            234,
+            2.11234
+          ],
+          [
+            576,
+            234,
+            2.11214
+          ],
+          [
+            587,
+            234,
+            2.106
+          ],
+          [
+            598,
+            234,
+            2.10512
+          ],
+          [
+            550,
+            235,
+            2.11465
+          ],
+          [
+            561,
+            235,
+            2.11319
+          ],
+          [
+            572,
+            235,
+            2.11252
+          ],
+          [
+            585,
+            235,
+            2.10657
+          ],
+          [
+            596,
+            235,
+            2.1059
+          ],
+          [
+            548,
+            236,
+            2.11519
+          ],
+          [
+            589,
+            236,
+            2.10732
+          ],
+          [
+            586,
+            237,
+            2.10849
+          ],
+          [
+            598,
+            237,
+            2.10783
+          ]
+        ],
+        "surface_reference": [
+          [
+            585,
+            228,
+            2.10802
+          ],
+          [
+            580,
+            229,
+            2.110785
+          ],
+          [
+            581,
+            229,
+            2.110662
+          ],
+          [
+            582,
+            229,
+            2.110539
+          ],
+          [
+            583,
+            229,
+            2.110417
+          ],
+          [
+            584,
+            229,
+            2.10919
+          ],
+          [
+            585,
+            229,
+            2.106896
+          ],
+          [
+            586,
+            227,
+            2.109424
+          ],
+          [
+            591,
+            227,
+            2.10857
+          ],
+          [
+            597,
+            227,
+            2.107672
+          ],
+          [
+            589,
+            228,
+            2.107529
+          ],
+          [
+            595,
+            228,
+            2.106794
+          ],
+          [
+            587,
+            229,
+            2.106651
+          ],
+          [
+            593,
+            229,
+            2.105917
+          ],
+          [
+            599,
+            229,
+            2.105183
+          ],
+          [
+            539,
+            231,
+            2.114947
+          ],
+          [
+            542,
+            231,
+            2.114578
+          ],
+          [
+            545,
+            231,
+            2.114209
+          ],
+          [
+            539,
+            232,
+            2.113925
+          ],
+          [
+            543,
+            232,
+            2.113528
+          ],
+          [
+            546,
+            232,
+            2.113229
+          ],
+          [
+            549,
+            232,
+            2.114694
+          ],
+          [
+            553,
+            232,
+            2.113513
+          ],
+          [
+            554,
+            231,
+            2.114313
+          ],
+          [
+            558,
+            231,
+            2.113822
+          ],
+          [
+            562,
+            231,
+            2.11333
+          ],
+          [
+            567,
+            231,
+            2.112715
+          ],
+          [
+            555,
+            232,
+            2.113314
+          ],
+          [
+            560,
+            232,
+            2.112817
+          ],
+          [
+            564,
+            232,
+            2.112419
+          ],
+          [
+            569,
+            232,
+            2.111923
+          ],
+          [
+            578,
+            230,
+            2.111706
+          ],
+          [
+            583,
+            230,
+            2.109292
+          ],
+          [
+            573,
+            231,
+            2.111978
+          ],
+          [
+            578,
+            231,
+            2.109259
+          ],
+          [
+            584,
+            231,
+            2.107773
+          ],
+          [
+            573,
+            232,
+            2.111526
+          ],
+          [
+            579,
+            232,
+            2.108843
+          ],
+          [
+            585,
+            232,
+            2.105604
+          ],
+          [
+            586,
+            230,
+            2.106138
+          ],
+          [
+            591,
+            230,
+            2.105644
+          ],
+          [
+            597,
+            230,
+            2.105051
+          ],
+          [
+            589,
+            231,
+            2.105525
+          ],
+          [
+            595,
+            231,
+            2.104932
+          ],
+          [
+            587,
+            232,
+            2.105406
+          ],
+          [
+            593,
+            232,
+            2.104901
+          ],
+          [
+            599,
+            232,
+            2.104418
+          ],
+          [
+            539,
+            233,
+            2.113607
+          ],
+          [
+            547,
+            233,
+            2.112811
+          ],
+          [
+            540,
+            234,
+            2.113429
+          ],
+          [
+            549,
+            234,
+            2.114335
+          ],
+          [
+            542,
+            235,
+            2.113577
+          ],
+          [
+            551,
+            235,
+            2.114593
+          ],
+          [
+            544,
+            236,
+            2.114168
+          ],
+          [
+            553,
+            236,
+            2.114681
+          ],
+          [
+            554,
+            233,
+            2.113095
+          ],
+          [
+            563,
+            233,
+            2.112201
+          ],
+          [
+            556,
+            234,
+            2.113072
+          ],
+          [
+            565,
+            234,
+            2.112342
+          ],
+          [
+            558,
+            235,
+            2.113378
+          ],
+          [
+            567,
+            235,
+            2.112825
+          ],
+          [
+            560,
+            236,
+            2.11425
+          ],
+          [
+            569,
+            236,
+            2.113829
+          ],
+          [
+            570,
+            233,
+            2.111626
+          ],
+          [
+            578,
+            233,
+            2.110368
+          ],
+          [
+            570,
+            234,
+            2.111936
+          ],
+          [
+            579,
+            234,
+            2.109197
+          ],
+          [
+            571,
+            235,
+            2.11258
+          ],
+          [
+            580,
+            235,
+            2.109756
+          ],
+          [
+            572,
+            236,
+            2.113739
+          ],
+          [
+            585,
+            236,
+            2.107562
+          ],
+          [
+            586,
+            233,
+            2.105776
+          ],
+          [
+            593,
+            233,
+            2.105211
+          ],
+          [
+            587,
+            234,
+            2.106004
+          ],
+          [
+            595,
+            234,
+            2.105358
+          ],
+          [
+            589,
+            235,
+            2.106326
+          ],
+          [
+            597,
+            235,
+            2.105837
+          ],
+          [
+            591,
+            236,
+            2.107195
+          ],
+          [
+            599,
+            236,
+            2.106706
+          ],
+          [
+            539,
+            237,
+            2.115472
+          ],
+          [
+            540,
+            237,
+            2.115411
+          ],
+          [
+            541,
+            237,
+            2.115349
+          ],
+          [
+            542,
+            237,
+            2.115287
+          ],
+          [
+            543,
+            237,
+            2.115226
+          ],
+          [
+            544,
+            237,
+            2.115176
+          ],
+          [
+            545,
+            237,
+            2.115145
+          ],
+          [
+            547,
+            237,
+            2.115085
+          ],
+          [
+            580,
+            237,
+            2.112399
+          ],
+          [
+            581,
+            237,
+            2.112369
+          ],
+          [
+            582,
+            237,
+            2.112339
+          ],
+          [
+            583,
+            237,
+            2.112308
+          ],
+          [
+            584,
+            237,
+            2.110923
+          ],
+          [
+            585,
+            237,
+            2.108555
+          ],
+          [
+            586,
+            237,
+            2.108493
+          ],
+          [
+            589,
+            237,
+            2.10831
+          ],
+          [
+            593,
+            237,
+            2.108065
+          ],
+          [
+            597,
+            237,
+            2.107863
+          ],
+          [
+            587,
+            238,
+            2.110239
+          ],
+          [
+            591,
+            238,
+            2.110118
+          ],
+          [
+            595,
+            238,
+            2.109997
+          ],
+          [
+            599,
+            238,
+            2.109876
+          ]
+        ],
+        "surface_reference_meta": {
+          "grid": [
+            4,
+            4
+          ],
+          "max_per_cell": 8,
+          "intrinsics": [
+            1343.83203125,
+            0.0,
+            640.0,
+            0.0,
+            1343.83203125,
+            360.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "coordinate_system": "optical_pixels_and_depth_m",
+          "source": "current_rgbd_body_surface",
+          "image_size": [
+            1280,
+            720
+          ],
+          "edge_exclusion_pixels": 1.5
+        },
+        "normalized_xy": [
+          0.318655220309261,
+          0.377392828764869
+        ],
+        "height_m": 0.02266240119934082,
+        "grasp_ready": true,
+        "grasp_uncertainty": [],
+        "position": [
+          0.07928679161431014,
+          -0.0950359192144378,
+          2.470374007840362
+        ],
+        "id": "2",
+        "image_stamp": 303.950015852,
+        "source_frame_id": 2927,
+        "position_uncertainty": {
+          "pixel_radius": 5.0,
+          "depth_m": 0.008606195449829102
+        },
+        "identity_candidates": [],
+        "stable_id": "11bb6618-obj-0007",
+        "identity_status": "confirmed",
+        "_drop_recovery": true
+      },
+      "identity_method": "existing_confirmed_tracker_binding",
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751551.72461078
+    },
+    {
+      "time": 1789819403.3086257,
+      "monotonic": 16751551.738979405,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "grasp_evidence_preflight",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "calibration_id": "native_static_camera_robot_geometry_20260919_v1",
+      "covered_pixels": 17320,
+      "image_stamp": 304.066682525,
+      "joint_stamp": 304.0666825249791,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751551.739536958
+    },
+    {
+      "time": 1789819403.6273372,
+      "monotonic": 16751552.05769034,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "grasp_candidate_set",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "candidate": {
+        "class": "Torch",
+        "raw_class": "Torch",
+        "confidence": 0.9578956961631775,
+        "bbox": [
+          538,
+          226,
+          601,
+          240
+        ],
+        "recognition_rotation_deg": 0.0,
+        "pixel": [
+          569.75,
+          233.5
+        ],
+        "depth": 2.111929416656494,
+        "depth_spread": 0.008606195449829102,
+        "world_position": [
+          0.1104029656013743,
+          -0.09880391670567756,
+          2.388070583343506
+        ],
+        "support_z": 2.3721234798431396,
+        "angle_deg": 88.18723203716246,
+        "body_axis_deg": 178.18723203716246,
+        "axis_ratio": 68.82777691741508,
+        "grasp_point_method": "depth_body_center_and_axis",
+        "area": 626,
+        "depth_reference": [
+          [
+            585,
+            228,
+            2.10802
+          ],
+          [
+            596,
+            228,
+            2.10667
+          ],
+          [
+            592,
+            229,
+            2.10604
+          ],
+          [
+            583,
+            230,
+            2.10929
+          ],
+          [
+            594,
+            230,
+            2.10535
+          ],
+          [
+            583,
+            231,
+            2.10876
+          ],
+          [
+            594,
+            231,
+            2.10503
+          ],
+          [
+            546,
+            232,
+            2.11323
+          ],
+          [
+            561,
+            232,
+            2.11272
+          ],
+          [
+            572,
+            232,
+            2.11162
+          ],
+          [
+            583,
+            232,
+            2.10845
+          ],
+          [
+            594,
+            232,
+            2.10482
+          ],
+          [
+            546,
+            233,
+            2.11291
+          ],
+          [
+            557,
+            233,
+            2.1128
+          ],
+          [
+            568,
+            233,
+            2.11179
+          ],
+          [
+            579,
+            233,
+            2.10889
+          ],
+          [
+            591,
+            233,
+            2.10537
+          ],
+          [
+            543,
+            234,
+            2.11318
+          ],
+          [
+            554,
+            234,
+            2.11323
+          ],
+          [
+            565,
+            234,
+            2.11234
+          ],
+          [
+            576,
+            234,
+            2.11214
+          ],
+          [
+            587,
+            234,
+            2.106
+          ],
+          [
+            598,
+            234,
+            2.10512
+          ],
+          [
+            550,
+            235,
+            2.11465
+          ],
+          [
+            561,
+            235,
+            2.11319
+          ],
+          [
+            572,
+            235,
+            2.11252
+          ],
+          [
+            585,
+            235,
+            2.10657
+          ],
+          [
+            596,
+            235,
+            2.1059
+          ],
+          [
+            548,
+            236,
+            2.11519
+          ],
+          [
+            589,
+            236,
+            2.10732
+          ],
+          [
+            586,
+            237,
+            2.10849
+          ],
+          [
+            598,
+            237,
+            2.10783
+          ]
+        ],
+        "surface_reference": [
+          [
+            585,
+            228,
+            2.10802
+          ],
+          [
+            580,
+            229,
+            2.110785
+          ],
+          [
+            581,
+            229,
+            2.110662
+          ],
+          [
+            582,
+            229,
+            2.110539
+          ],
+          [
+            583,
+            229,
+            2.110417
+          ],
+          [
+            584,
+            229,
+            2.10919
+          ],
+          [
+            585,
+            229,
+            2.106896
+          ],
+          [
+            586,
+            227,
+            2.109424
+          ],
+          [
+            591,
+            227,
+            2.10857
+          ],
+          [
+            597,
+            227,
+            2.107672
+          ],
+          [
+            589,
+            228,
+            2.107529
+          ],
+          [
+            595,
+            228,
+            2.106794
+          ],
+          [
+            587,
+            229,
+            2.106651
+          ],
+          [
+            593,
+            229,
+            2.105917
+          ],
+          [
+            599,
+            229,
+            2.105183
+          ],
+          [
+            539,
+            231,
+            2.114947
+          ],
+          [
+            542,
+            231,
+            2.114578
+          ],
+          [
+            545,
+            231,
+            2.114209
+          ],
+          [
+            539,
+            232,
+            2.113925
+          ],
+          [
+            543,
+            232,
+            2.113528
+          ],
+          [
+            546,
+            232,
+            2.113229
+          ],
+          [
+            549,
+            232,
+            2.114694
+          ],
+          [
+            553,
+            232,
+            2.113513
+          ],
+          [
+            554,
+            231,
+            2.114313
+          ],
+          [
+            558,
+            231,
+            2.113822
+          ],
+          [
+            562,
+            231,
+            2.11333
+          ],
+          [
+            567,
+            231,
+            2.112715
+          ],
+          [
+            555,
+            232,
+            2.113314
+          ],
+          [
+            560,
+            232,
+            2.112817
+          ],
+          [
+            564,
+            232,
+            2.112419
+          ],
+          [
+            569,
+            232,
+            2.111923
+          ],
+          [
+            578,
+            230,
+            2.111706
+          ],
+          [
+            583,
+            230,
+            2.109292
+          ],
+          [
+            573,
+            231,
+            2.111978
+          ],
+          [
+            578,
+            231,
+            2.109259
+          ],
+          [
+            584,
+            231,
+            2.107773
+          ],
+          [
+            573,
+            232,
+            2.111526
+          ],
+          [
+            579,
+            232,
+            2.108843
+          ],
+          [
+            585,
+            232,
+            2.105604
+          ],
+          [
+            586,
+            230,
+            2.106138
+          ],
+          [
+            591,
+            230,
+            2.105644
+          ],
+          [
+            597,
+            230,
+            2.105051
+          ],
+          [
+            589,
+            231,
+            2.105525
+          ],
+          [
+            595,
+            231,
+            2.104932
+          ],
+          [
+            587,
+            232,
+            2.105406
+          ],
+          [
+            593,
+            232,
+            2.104901
+          ],
+          [
+            599,
+            232,
+            2.104418
+          ],
+          [
+            539,
+            233,
+            2.113607
+          ],
+          [
+            547,
+            233,
+            2.112811
+          ],
+          [
+            540,
+            234,
+            2.113429
+          ],
+          [
+            549,
+            234,
+            2.114335
+          ],
+          [
+            542,
+            235,
+            2.113577
+          ],
+          [
+            551,
+            235,
+            2.114593
+          ],
+          [
+            544,
+            236,
+            2.114168
+          ],
+          [
+            553,
+            236,
+            2.114681
+          ],
+          [
+            554,
+            233,
+            2.113095
+          ],
+          [
+            563,
+            233,
+            2.112201
+          ],
+          [
+            556,
+            234,
+            2.113072
+          ],
+          [
+            565,
+            234,
+            2.112342
+          ],
+          [
+            558,
+            235,
+            2.113378
+          ],
+          [
+            567,
+            235,
+            2.112825
+          ],
+          [
+            560,
+            236,
+            2.11425
+          ],
+          [
+            569,
+            236,
+            2.113829
+          ],
+          [
+            570,
+            233,
+            2.111626
+          ],
+          [
+            578,
+            233,
+            2.110368
+          ],
+          [
+            570,
+            234,
+            2.111936
+          ],
+          [
+            579,
+            234,
+            2.109197
+          ],
+          [
+            571,
+            235,
+            2.11258
+          ],
+          [
+            580,
+            235,
+            2.109756
+          ],
+          [
+            572,
+            236,
+            2.113739
+          ],
+          [
+            585,
+            236,
+            2.107562
+          ],
+          [
+            586,
+            233,
+            2.105776
+          ],
+          [
+            593,
+            233,
+            2.105211
+          ],
+          [
+            587,
+            234,
+            2.106004
+          ],
+          [
+            595,
+            234,
+            2.105358
+          ],
+          [
+            589,
+            235,
+            2.106326
+          ],
+          [
+            597,
+            235,
+            2.105837
+          ],
+          [
+            591,
+            236,
+            2.107195
+          ],
+          [
+            599,
+            236,
+            2.106706
+          ],
+          [
+            539,
+            237,
+            2.115472
+          ],
+          [
+            540,
+            237,
+            2.115411
+          ],
+          [
+            541,
+            237,
+            2.115349
+          ],
+          [
+            542,
+            237,
+            2.115287
+          ],
+          [
+            543,
+            237,
+            2.115226
+          ],
+          [
+            544,
+            237,
+            2.115176
+          ],
+          [
+            545,
+            237,
+            2.115145
+          ],
+          [
+            547,
+            237,
+            2.115085
+          ],
+          [
+            580,
+            237,
+            2.112399
+          ],
+          [
+            581,
+            237,
+            2.112369
+          ],
+          [
+            582,
+            237,
+            2.112339
+          ],
+          [
+            583,
+            237,
+            2.112308
+          ],
+          [
+            584,
+            237,
+            2.110923
+          ],
+          [
+            585,
+            237,
+            2.108555
+          ],
+          [
+            586,
+            237,
+            2.108493
+          ],
+          [
+            589,
+            237,
+            2.10831
+          ],
+          [
+            593,
+            237,
+            2.108065
+          ],
+          [
+            597,
+            237,
+            2.107863
+          ],
+          [
+            587,
+            238,
+            2.110239
+          ],
+          [
+            591,
+            238,
+            2.110118
+          ],
+          [
+            595,
+            238,
+            2.109997
+          ],
+          [
+            599,
+            238,
+            2.109876
+          ]
+        ],
+        "surface_reference_meta": {
+          "grid": [
+            4,
+            4
+          ],
+          "max_per_cell": 8,
+          "intrinsics": [
+            1343.83203125,
+            0.0,
+            640.0,
+            0.0,
+            1343.83203125,
+            360.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "coordinate_system": "optical_pixels_and_depth_m",
+          "source": "current_rgbd_body_surface",
+          "image_size": [
+            1280,
+            720
+          ],
+          "edge_exclusion_pixels": 1.5
+        },
+        "normalized_xy": [
+          0.318655220309261,
+          0.377392828764869
+        ],
+        "height_m": 0.02266240119934082,
+        "grasp_ready": true,
+        "grasp_uncertainty": [],
+        "position": [
+          0.07928679161431014,
+          -0.0950359192144378,
+          2.470374007840362
+        ],
+        "id": "2",
+        "image_stamp": 304.250015868,
+        "source_frame_id": 2930,
+        "position_uncertainty": {
+          "pixel_radius": 5.0,
+          "depth_m": 0.008606195449829102
+        },
+        "identity_candidates": [],
+        "stable_id": "11bb6618-obj-0007",
+        "identity_status": "confirmed",
+        "_drop_recovery": true
+      },
+      "generated": {
+        "object_candidate": {
+          "class": "Torch",
+          "raw_class": "Torch",
+          "confidence": 0.9578956961631775,
+          "bbox": [
+            538,
+            226,
+            601,
+            240
+          ],
+          "recognition_rotation_deg": 0.0,
+          "pixel": [
+            569.75,
+            233.5
+          ],
+          "depth": 2.111929416656494,
+          "depth_spread": 0.008606195449829102,
+          "world_position": [
+            0.1104029656013743,
+            -0.09880391670567756,
+            2.388070583343506
+          ],
+          "support_z": 2.3721234798431396,
+          "angle_deg": 88.18723203716246,
+          "body_axis_deg": 178.18723203716246,
+          "axis_ratio": 68.82777691741508,
+          "grasp_point_method": "depth_body_center_and_axis",
+          "area": 626,
+          "depth_reference": [
+            [
+              585,
+              228,
+              2.10802
+            ],
+            [
+              596,
+              228,
+              2.10667
+            ],
+            [
+              592,
+              229,
+              2.10604
+            ],
+            [
+              583,
+              230,
+              2.10929
+            ],
+            [
+              594,
+              230,
+              2.10535
+            ],
+            [
+              583,
+              231,
+              2.10876
+            ],
+            [
+              594,
+              231,
+              2.10503
+            ],
+            [
+              546,
+              232,
+              2.11323
+            ],
+            [
+              561,
+              232,
+              2.11272
+            ],
+            [
+              572,
+              232,
+              2.11162
+            ],
+            [
+              583,
+              232,
+              2.10845
+            ],
+            [
+              594,
+              232,
+              2.10482
+            ],
+            [
+              546,
+              233,
+              2.11291
+            ],
+            [
+              557,
+              233,
+              2.1128
+            ],
+            [
+              568,
+              233,
+              2.11179
+            ],
+            [
+              579,
+              233,
+              2.10889
+            ],
+            [
+              591,
+              233,
+              2.10537
+            ],
+            [
+              543,
+              234,
+              2.11318
+            ],
+            [
+              554,
+              234,
+              2.11323
+            ],
+            [
+              565,
+              234,
+              2.11234
+            ],
+            [
+              576,
+              234,
+              2.11214
+            ],
+            [
+              587,
+              234,
+              2.106
+            ],
+            [
+              598,
+              234,
+              2.10512
+            ],
+            [
+              550,
+              235,
+              2.11465
+            ],
+            [
+              561,
+              235,
+              2.11319
+            ],
+            [
+              572,
+              235,
+              2.11252
+            ],
+            [
+              585,
+              235,
+              2.10657
+            ],
+            [
+              596,
+              235,
+              2.1059
+            ],
+            [
+              548,
+              236,
+              2.11519
+            ],
+            [
+              589,
+              236,
+              2.10732
+            ],
+            [
+              586,
+              237,
+              2.10849
+            ],
+            [
+              598,
+              237,
+              2.10783
+            ]
+          ],
+          "surface_reference": [
+            [
+              585,
+              228,
+              2.10802
+            ],
+            [
+              580,
+              229,
+              2.110785
+            ],
+            [
+              581,
+              229,
+              2.110662
+            ],
+            [
+              582,
+              229,
+              2.110539
+            ],
+            [
+              583,
+              229,
+              2.110417
+            ],
+            [
+              584,
+              229,
+              2.10919
+            ],
+            [
+              585,
+              229,
+              2.106896
+            ],
+            [
+              586,
+              227,
+              2.109424
+            ],
+            [
+              591,
+              227,
+              2.10857
+            ],
+            [
+              597,
+              227,
+              2.107672
+            ],
+            [
+              589,
+              228,
+              2.107529
+            ],
+            [
+              595,
+              228,
+              2.106794
+            ],
+            [
+              587,
+              229,
+              2.106651
+            ],
+            [
+              593,
+              229,
+              2.105917
+            ],
+            [
+              599,
+              229,
+              2.105183
+            ],
+            [
+              539,
+              231,
+              2.114947
+            ],
+            [
+              542,
+              231,
+              2.114578
+            ],
+            [
+              545,
+              231,
+              2.114209
+            ],
+            [
+              539,
+              232,
+              2.113925
+            ],
+            [
+              543,
+              232,
+              2.113528
+            ],
+            [
+              546,
+              232,
+              2.113229
+            ],
+            [
+              549,
+              232,
+              2.114694
+            ],
+            [
+              553,
+              232,
+              2.113513
+            ],
+            [
+              554,
+              231,
+              2.114313
+            ],
+            [
+              558,
+              231,
+              2.113822
+            ],
+            [
+              562,
+              231,
+              2.11333
+            ],
+            [
+              567,
+              231,
+              2.112715
+            ],
+            [
+              555,
+              232,
+              2.113314
+            ],
+            [
+              560,
+              232,
+              2.112817
+            ],
+            [
+              564,
+              232,
+              2.112419
+            ],
+            [
+              569,
+              232,
+              2.111923
+            ],
+            [
+              578,
+              230,
+              2.111706
+            ],
+            [
+              583,
+              230,
+              2.109292
+            ],
+            [
+              573,
+              231,
+              2.111978
+            ],
+            [
+              578,
+              231,
+              2.109259
+            ],
+            [
+              584,
+              231,
+              2.107773
+            ],
+            [
+              573,
+              232,
+              2.111526
+            ],
+            [
+              579,
+              232,
+              2.108843
+            ],
+            [
+              585,
+              232,
+              2.105604
+            ],
+            [
+              586,
+              230,
+              2.106138
+            ],
+            [
+              591,
+              230,
+              2.105644
+            ],
+            [
+              597,
+              230,
+              2.105051
+            ],
+            [
+              589,
+              231,
+              2.105525
+            ],
+            [
+              595,
+              231,
+              2.104932
+            ],
+            [
+              587,
+              232,
+              2.105406
+            ],
+            [
+              593,
+              232,
+              2.104901
+            ],
+            [
+              599,
+              232,
+              2.104418
+            ],
+            [
+              539,
+              233,
+              2.113607
+            ],
+            [
+              547,
+              233,
+              2.112811
+            ],
+            [
+              540,
+              234,
+              2.113429
+            ],
+            [
+              549,
+              234,
+              2.114335
+            ],
+            [
+              542,
+              235,
+              2.113577
+            ],
+            [
+              551,
+              235,
+              2.114593
+            ],
+            [
+              544,
+              236,
+              2.114168
+            ],
+            [
+              553,
+              236,
+              2.114681
+            ],
+            [
+              554,
+              233,
+              2.113095
+            ],
+            [
+              563,
+              233,
+              2.112201
+            ],
+            [
+              556,
+              234,
+              2.113072
+            ],
+            [
+              565,
+              234,
+              2.112342
+            ],
+            [
+              558,
+              235,
+              2.113378
+            ],
+            [
+              567,
+              235,
+              2.112825
+            ],
+            [
+              560,
+              236,
+              2.11425
+            ],
+            [
+              569,
+              236,
+              2.113829
+            ],
+            [
+              570,
+              233,
+              2.111626
+            ],
+            [
+              578,
+              233,
+              2.110368
+            ],
+            [
+              570,
+              234,
+              2.111936
+            ],
+            [
+              579,
+              234,
+              2.109197
+            ],
+            [
+              571,
+              235,
+              2.11258
+            ],
+            [
+              580,
+              235,
+              2.109756
+            ],
+            [
+              572,
+              236,
+              2.113739
+            ],
+            [
+              585,
+              236,
+              2.107562
+            ],
+            [
+              586,
+              233,
+              2.105776
+            ],
+            [
+              593,
+              233,
+              2.105211
+            ],
+            [
+              587,
+              234,
+              2.106004
+            ],
+            [
+              595,
+              234,
+              2.105358
+            ],
+            [
+              589,
+              235,
+              2.106326
+            ],
+            [
+              597,
+              235,
+              2.105837
+            ],
+            [
+              591,
+              236,
+              2.107195
+            ],
+            [
+              599,
+              236,
+              2.106706
+            ],
+            [
+              539,
+              237,
+              2.115472
+            ],
+            [
+              540,
+              237,
+              2.115411
+            ],
+            [
+              541,
+              237,
+              2.115349
+            ],
+            [
+              542,
+              237,
+              2.115287
+            ],
+            [
+              543,
+              237,
+              2.115226
+            ],
+            [
+              544,
+              237,
+              2.115176
+            ],
+            [
+              545,
+              237,
+              2.115145
+            ],
+            [
+              547,
+              237,
+              2.115085
+            ],
+            [
+              580,
+              237,
+              2.112399
+            ],
+            [
+              581,
+              237,
+              2.112369
+            ],
+            [
+              582,
+              237,
+              2.112339
+            ],
+            [
+              583,
+              237,
+              2.112308
+            ],
+            [
+              584,
+              237,
+              2.110923
+            ],
+            [
+              585,
+              237,
+              2.108555
+            ],
+            [
+              586,
+              237,
+              2.108493
+            ],
+            [
+              589,
+              237,
+              2.10831
+            ],
+            [
+              593,
+              237,
+              2.108065
+            ],
+            [
+              597,
+              237,
+              2.107863
+            ],
+            [
+              587,
+              238,
+              2.110239
+            ],
+            [
+              591,
+              238,
+              2.110118
+            ],
+            [
+              595,
+              238,
+              2.109997
+            ],
+            [
+              599,
+              238,
+              2.109876
+            ]
+          ],
+          "surface_reference_meta": {
+            "grid": [
+              4,
+              4
+            ],
+            "max_per_cell": 8,
+            "intrinsics": [
+              1343.83203125,
+              0.0,
+              640.0,
+              0.0,
+              1343.83203125,
+              360.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "coordinate_system": "optical_pixels_and_depth_m",
+            "source": "current_rgbd_body_surface",
+            "image_size": [
+              1280,
+              720
+            ],
+            "edge_exclusion_pixels": 1.5
+          },
+          "normalized_xy": [
+            0.318655220309261,
+            0.377392828764869
+          ],
+          "height_m": 0.02266240119934082,
+          "grasp_ready": true,
+          "grasp_uncertainty": [],
+          "position": [
+            0.07928679161431014,
+            -0.0950359192144378,
+            2.470374007840362
+          ],
+          "id": "2",
+          "image_stamp": 304.250015868,
+          "source_frame_id": 2930,
+          "position_uncertainty": {
+            "pixel_radius": 5.0,
+            "depth_m": 0.008606195449829102
+          },
+          "identity_candidates": [],
+          "stable_id": "11bb6618-obj-0007",
+          "identity_status": "confirmed",
+          "_drop_recovery": true
+        },
+        "candidates": [
+          {
+            "candidate_id": "centre",
+            "pose_candidate": {
+              "class": "Torch",
+              "raw_class": "Torch",
+              "confidence": 0.9578956961631775,
+              "bbox": [
+                538,
+                226,
+                601,
+                240
+              ],
+              "recognition_rotation_deg": 0.0,
+              "pixel": [
+                569.75,
+                233.5
+              ],
+              "depth": 2.111929416656494,
+              "depth_spread": 0.008606195449829102,
+              "world_position": [
+                0.1104029656013743,
+                -0.09880391670567756,
+                2.388070583343506
+              ],
+              "support_z": 2.3721234798431396,
+              "angle_deg": 88.18723203716246,
+              "body_axis_deg": 178.18723203716246,
+              "axis_ratio": 68.82777691741508,
+              "grasp_point_method": "depth_body_center_and_axis",
+              "area": 626,
+              "depth_reference": [
+                [
+                  585,
+                  228,
+                  2.10802
+                ],
+                [
+                  596,
+                  228,
+                  2.10667
+                ],
+                [
+                  592,
+                  229,
+                  2.10604
+                ],
+                [
+                  583,
+                  230,
+                  2.10929
+                ],
+                [
+                  594,
+                  230,
+                  2.10535
+                ],
+                [
+                  583,
+                  231,
+                  2.10876
+                ],
+                [
+                  594,
+                  231,
+                  2.10503
+                ],
+                [
+                  546,
+                  232,
+                  2.11323
+                ],
+                [
+                  561,
+                  232,
+                  2.11272
+                ],
+                [
+                  572,
+                  232,
+                  2.11162
+                ],
+                [
+                  583,
+                  232,
+                  2.10845
+                ],
+                [
+                  594,
+                  232,
+                  2.10482
+                ],
+                [
+                  546,
+                  233,
+                  2.11291
+                ],
+                [
+                  557,
+                  233,
+                  2.1128
+                ],
+                [
+                  568,
+                  233,
+                  2.11179
+                ],
+                [
+                  579,
+                  233,
+                  2.10889
+                ],
+                [
+                  591,
+                  233,
+                  2.10537
+                ],
+                [
+                  543,
+                  234,
+                  2.11318
+                ],
+                [
+                  554,
+                  234,
+                  2.11323
+                ],
+                [
+                  565,
+                  234,
+                  2.11234
+                ],
+                [
+                  576,
+                  234,
+                  2.11214
+                ],
+                [
+                  587,
+                  234,
+                  2.106
+                ],
+                [
+                  598,
+                  234,
+                  2.10512
+                ],
+                [
+                  550,
+                  235,
+                  2.11465
+                ],
+                [
+                  561,
+                  235,
+                  2.11319
+                ],
+                [
+                  572,
+                  235,
+                  2.11252
+                ],
+                [
+                  585,
+                  235,
+                  2.10657
+                ],
+                [
+                  596,
+                  235,
+                  2.1059
+                ],
+                [
+                  548,
+                  236,
+                  2.11519
+                ],
+                [
+                  589,
+                  236,
+                  2.10732
+                ],
+                [
+                  586,
+                  237,
+                  2.10849
+                ],
+                [
+                  598,
+                  237,
+                  2.10783
+                ]
+              ],
+              "surface_reference": [
+                [
+                  585,
+                  228,
+                  2.10802
+                ],
+                [
+                  580,
+                  229,
+                  2.110785
+                ],
+                [
+                  581,
+                  229,
+                  2.110662
+                ],
+                [
+                  582,
+                  229,
+                  2.110539
+                ],
+                [
+                  583,
+                  229,
+                  2.110417
+                ],
+                [
+                  584,
+                  229,
+                  2.10919
+                ],
+                [
+                  585,
+                  229,
+                  2.106896
+                ],
+                [
+                  586,
+                  227,
+                  2.109424
+                ],
+                [
+                  591,
+                  227,
+                  2.10857
+                ],
+                [
+                  597,
+                  227,
+                  2.107672
+                ],
+                [
+                  589,
+                  228,
+                  2.107529
+                ],
+                [
+                  595,
+                  228,
+                  2.106794
+                ],
+                [
+                  587,
+                  229,
+                  2.106651
+                ],
+                [
+                  593,
+                  229,
+                  2.105917
+                ],
+                [
+                  599,
+                  229,
+                  2.105183
+                ],
+                [
+                  539,
+                  231,
+                  2.114947
+                ],
+                [
+                  542,
+                  231,
+                  2.114578
+                ],
+                [
+                  545,
+                  231,
+                  2.114209
+                ],
+                [
+                  539,
+                  232,
+                  2.113925
+                ],
+                [
+                  543,
+                  232,
+                  2.113528
+                ],
+                [
+                  546,
+                  232,
+                  2.113229
+                ],
+                [
+                  549,
+                  232,
+                  2.114694
+                ],
+                [
+                  553,
+                  232,
+                  2.113513
+                ],
+                [
+                  554,
+                  231,
+                  2.114313
+                ],
+                [
+                  558,
+                  231,
+                  2.113822
+                ],
+                [
+                  562,
+                  231,
+                  2.11333
+                ],
+                [
+                  567,
+                  231,
+                  2.112715
+                ],
+                [
+                  555,
+                  232,
+                  2.113314
+                ],
+                [
+                  560,
+                  232,
+                  2.112817
+                ],
+                [
+                  564,
+                  232,
+                  2.112419
+                ],
+                [
+                  569,
+                  232,
+                  2.111923
+                ],
+                [
+                  578,
+                  230,
+                  2.111706
+                ],
+                [
+                  583,
+                  230,
+                  2.109292
+                ],
+                [
+                  573,
+                  231,
+                  2.111978
+                ],
+                [
+                  578,
+                  231,
+                  2.109259
+                ],
+                [
+                  584,
+                  231,
+                  2.107773
+                ],
+                [
+                  573,
+                  232,
+                  2.111526
+                ],
+                [
+                  579,
+                  232,
+                  2.108843
+                ],
+                [
+                  585,
+                  232,
+                  2.105604
+                ],
+                [
+                  586,
+                  230,
+                  2.106138
+                ],
+                [
+                  591,
+                  230,
+                  2.105644
+                ],
+                [
+                  597,
+                  230,
+                  2.105051
+                ],
+                [
+                  589,
+                  231,
+                  2.105525
+                ],
+                [
+                  595,
+                  231,
+                  2.104932
+                ],
+                [
+                  587,
+                  232,
+                  2.105406
+                ],
+                [
+                  593,
+                  232,
+                  2.104901
+                ],
+                [
+                  599,
+                  232,
+                  2.104418
+                ],
+                [
+                  539,
+                  233,
+                  2.113607
+                ],
+                [
+                  547,
+                  233,
+                  2.112811
+                ],
+                [
+                  540,
+                  234,
+                  2.113429
+                ],
+                [
+                  549,
+                  234,
+                  2.114335
+                ],
+                [
+                  542,
+                  235,
+                  2.113577
+                ],
+                [
+                  551,
+                  235,
+                  2.114593
+                ],
+                [
+                  544,
+                  236,
+                  2.114168
+                ],
+                [
+                  553,
+                  236,
+                  2.114681
+                ],
+                [
+                  554,
+                  233,
+                  2.113095
+                ],
+                [
+                  563,
+                  233,
+                  2.112201
+                ],
+                [
+                  556,
+                  234,
+                  2.113072
+                ],
+                [
+                  565,
+                  234,
+                  2.112342
+                ],
+                [
+                  558,
+                  235,
+                  2.113378
+                ],
+                [
+                  567,
+                  235,
+                  2.112825
+                ],
+                [
+                  560,
+                  236,
+                  2.11425
+                ],
+                [
+                  569,
+                  236,
+                  2.113829
+                ],
+                [
+                  570,
+                  233,
+                  2.111626
+                ],
+                [
+                  578,
+                  233,
+                  2.110368
+                ],
+                [
+                  570,
+                  234,
+                  2.111936
+                ],
+                [
+                  579,
+                  234,
+                  2.109197
+                ],
+                [
+                  571,
+                  235,
+                  2.11258
+                ],
+                [
+                  580,
+                  235,
+                  2.109756
+                ],
+                [
+                  572,
+                  236,
+                  2.113739
+                ],
+                [
+                  585,
+                  236,
+                  2.107562
+                ],
+                [
+                  586,
+                  233,
+                  2.105776
+                ],
+                [
+                  593,
+                  233,
+                  2.105211
+                ],
+                [
+                  587,
+                  234,
+                  2.106004
+                ],
+                [
+                  595,
+                  234,
+                  2.105358
+                ],
+                [
+                  589,
+                  235,
+                  2.106326
+                ],
+                [
+                  597,
+                  235,
+                  2.105837
+                ],
+                [
+                  591,
+                  236,
+                  2.107195
+                ],
+                [
+                  599,
+                  236,
+                  2.106706
+                ],
+                [
+                  539,
+                  237,
+                  2.115472
+                ],
+                [
+                  540,
+                  237,
+                  2.115411
+                ],
+                [
+                  541,
+                  237,
+                  2.115349
+                ],
+                [
+                  542,
+                  237,
+                  2.115287
+                ],
+                [
+                  543,
+                  237,
+                  2.115226
+                ],
+                [
+                  544,
+                  237,
+                  2.115176
+                ],
+                [
+                  545,
+                  237,
+                  2.115145
+                ],
+                [
+                  547,
+                  237,
+                  2.115085
+                ],
+                [
+                  580,
+                  237,
+                  2.112399
+                ],
+                [
+                  581,
+                  237,
+                  2.112369
+                ],
+                [
+                  582,
+                  237,
+                  2.112339
+                ],
+                [
+                  583,
+                  237,
+                  2.112308
+                ],
+                [
+                  584,
+                  237,
+                  2.110923
+                ],
+                [
+                  585,
+                  237,
+                  2.108555
+                ],
+                [
+                  586,
+                  237,
+                  2.108493
+                ],
+                [
+                  589,
+                  237,
+                  2.10831
+                ],
+                [
+                  593,
+                  237,
+                  2.108065
+                ],
+                [
+                  597,
+                  237,
+                  2.107863
+                ],
+                [
+                  587,
+                  238,
+                  2.110239
+                ],
+                [
+                  591,
+                  238,
+                  2.110118
+                ],
+                [
+                  595,
+                  238,
+                  2.109997
+                ],
+                [
+                  599,
+                  238,
+                  2.109876
+                ]
+              ],
+              "surface_reference_meta": {
+                "grid": [
+                  4,
+                  4
+                ],
+                "max_per_cell": 8,
+                "intrinsics": [
+                  1343.83203125,
+                  0.0,
+                  640.0,
+                  0.0,
+                  1343.83203125,
+                  360.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "coordinate_system": "optical_pixels_and_depth_m",
+                "source": "current_rgbd_body_surface",
+                "image_size": [
+                  1280,
+                  720
+                ],
+                "edge_exclusion_pixels": 1.5
+              },
+              "normalized_xy": [
+                0.318655220309261,
+                0.377392828764869
+              ],
+              "height_m": 0.02266240119934082,
+              "grasp_ready": true,
+              "grasp_uncertainty": [],
+              "position": [
+                0.07928679161431014,
+                -0.0950359192144378,
+                2.470374007840362
+              ],
+              "id": "2",
+              "image_stamp": 304.250015868,
+              "source_frame_id": 2930,
+              "position_uncertainty": {
+                "pixel_radius": 5.0,
+                "depth_m": 0.008606195449829102
+              },
+              "identity_candidates": [],
+              "stable_id": "11bb6618-obj-0007",
+              "identity_status": "confirmed",
+              "_drop_recovery": true
+            },
+            "nominal_offset_m": 0.0,
+            "actual_offset_m": 0.0,
+            "source": "original_measured_centre",
+            "geometry_verified": true,
+            "reason": "centre_inside_measured_core_full_path_still_required",
+            "axis_source": "measured_body_axis"
+          },
+          {
+            "candidate_id": "surface_+5mm",
+            "pose_candidate": {
+              "class": "Torch",
+              "raw_class": "Torch",
+              "confidence": 0.9578956961631775,
+              "bbox": [
+                538,
+                226,
+                601,
+                240
+              ],
+              "recognition_rotation_deg": 0.0,
+              "pixel": [
+                565.0,
+                234.0
+              ],
+              "depth": 2.112342,
+              "depth_spread": 0.008606195449829102,
+              "world_position": [
+                0.11789096130759459,
+                -0.09805681499675889,
+                2.387658
+              ],
+              "support_z": 2.3721234798431396,
+              "angle_deg": 88.18723203716246,
+              "body_axis_deg": 178.18723203716246,
+              "axis_ratio": 68.82777691741508,
+              "grasp_point_method": "measured_core_surface_alternative",
+              "area": 626,
+              "depth_reference": [
+                [
+                  585,
+                  228,
+                  2.10802
+                ],
+                [
+                  596,
+                  228,
+                  2.10667
+                ],
+                [
+                  592,
+                  229,
+                  2.10604
+                ],
+                [
+                  583,
+                  230,
+                  2.10929
+                ],
+                [
+                  594,
+                  230,
+                  2.10535
+                ],
+                [
+                  583,
+                  231,
+                  2.10876
+                ],
+                [
+                  594,
+                  231,
+                  2.10503
+                ],
+                [
+                  546,
+                  232,
+                  2.11323
+                ],
+                [
+                  561,
+                  232,
+                  2.11272
+                ],
+                [
+                  572,
+                  232,
+                  2.11162
+                ],
+                [
+                  583,
+                  232,
+                  2.10845
+                ],
+                [
+                  594,
+                  232,
+                  2.10482
+                ],
+                [
+                  546,
+                  233,
+                  2.11291
+                ],
+                [
+                  557,
+                  233,
+                  2.1128
+                ],
+                [
+                  568,
+                  233,
+                  2.11179
+                ],
+                [
+                  579,
+                  233,
+                  2.10889
+                ],
+                [
+                  591,
+                  233,
+                  2.10537
+                ],
+                [
+                  543,
+                  234,
+                  2.11318
+                ],
+                [
+                  554,
+                  234,
+                  2.11323
+                ],
+                [
+                  565,
+                  234,
+                  2.11234
+                ],
+                [
+                  576,
+                  234,
+                  2.11214
+                ],
+                [
+                  587,
+                  234,
+                  2.106
+                ],
+                [
+                  598,
+                  234,
+                  2.10512
+                ],
+                [
+                  550,
+                  235,
+                  2.11465
+                ],
+                [
+                  561,
+                  235,
+                  2.11319
+                ],
+                [
+                  572,
+                  235,
+                  2.11252
+                ],
+                [
+                  585,
+                  235,
+                  2.10657
+                ],
+                [
+                  596,
+                  235,
+                  2.1059
+                ],
+                [
+                  548,
+                  236,
+                  2.11519
+                ],
+                [
+                  589,
+                  236,
+                  2.10732
+                ],
+                [
+                  586,
+                  237,
+                  2.10849
+                ],
+                [
+                  598,
+                  237,
+                  2.10783
+                ]
+              ],
+              "surface_reference": [
+                [
+                  585,
+                  228,
+                  2.10802
+                ],
+                [
+                  580,
+                  229,
+                  2.110785
+                ],
+                [
+                  581,
+                  229,
+                  2.110662
+                ],
+                [
+                  582,
+                  229,
+                  2.110539
+                ],
+                [
+                  583,
+                  229,
+                  2.110417
+                ],
+                [
+                  584,
+                  229,
+                  2.10919
+                ],
+                [
+                  585,
+                  229,
+                  2.106896
+                ],
+                [
+                  586,
+                  227,
+                  2.109424
+                ],
+                [
+                  591,
+                  227,
+                  2.10857
+                ],
+                [
+                  597,
+                  227,
+                  2.107672
+                ],
+                [
+                  589,
+                  228,
+                  2.107529
+                ],
+                [
+                  595,
+                  228,
+                  2.106794
+                ],
+                [
+                  587,
+                  229,
+                  2.106651
+                ],
+                [
+                  593,
+                  229,
+                  2.105917
+                ],
+                [
+                  599,
+                  229,
+                  2.105183
+                ],
+                [
+                  539,
+                  231,
+                  2.114947
+                ],
+                [
+                  542,
+                  231,
+                  2.114578
+                ],
+                [
+                  545,
+                  231,
+                  2.114209
+                ],
+                [
+                  539,
+                  232,
+                  2.113925
+                ],
+                [
+                  543,
+                  232,
+                  2.113528
+                ],
+                [
+                  546,
+                  232,
+                  2.113229
+                ],
+                [
+                  549,
+                  232,
+                  2.114694
+                ],
+                [
+                  553,
+                  232,
+                  2.113513
+                ],
+                [
+                  554,
+                  231,
+                  2.114313
+                ],
+                [
+                  558,
+                  231,
+                  2.113822
+                ],
+                [
+                  562,
+                  231,
+                  2.11333
+                ],
+                [
+                  567,
+                  231,
+                  2.112715
+                ],
+                [
+                  555,
+                  232,
+                  2.113314
+                ],
+                [
+                  560,
+                  232,
+                  2.112817
+                ],
+                [
+                  564,
+                  232,
+                  2.112419
+                ],
+                [
+                  569,
+                  232,
+                  2.111923
+                ],
+                [
+                  578,
+                  230,
+                  2.111706
+                ],
+                [
+                  583,
+                  230,
+                  2.109292
+                ],
+                [
+                  573,
+                  231,
+                  2.111978
+                ],
+                [
+                  578,
+                  231,
+                  2.109259
+                ],
+                [
+                  584,
+                  231,
+                  2.107773
+                ],
+                [
+                  573,
+                  232,
+                  2.111526
+                ],
+                [
+                  579,
+                  232,
+                  2.108843
+                ],
+                [
+                  585,
+                  232,
+                  2.105604
+                ],
+                [
+                  586,
+                  230,
+                  2.106138
+                ],
+                [
+                  591,
+                  230,
+                  2.105644
+                ],
+                [
+                  597,
+                  230,
+                  2.105051
+                ],
+                [
+                  589,
+                  231,
+                  2.105525
+                ],
+                [
+                  595,
+                  231,
+                  2.104932
+                ],
+                [
+                  587,
+                  232,
+                  2.105406
+                ],
+                [
+                  593,
+                  232,
+                  2.104901
+                ],
+                [
+                  599,
+                  232,
+                  2.104418
+                ],
+                [
+                  539,
+                  233,
+                  2.113607
+                ],
+                [
+                  547,
+                  233,
+                  2.112811
+                ],
+                [
+                  540,
+                  234,
+                  2.113429
+                ],
+                [
+                  549,
+                  234,
+                  2.114335
+                ],
+                [
+                  542,
+                  235,
+                  2.113577
+                ],
+                [
+                  551,
+                  235,
+                  2.114593
+                ],
+                [
+                  544,
+                  236,
+                  2.114168
+                ],
+                [
+                  553,
+                  236,
+                  2.114681
+                ],
+                [
+                  554,
+                  233,
+                  2.113095
+                ],
+                [
+                  563,
+                  233,
+                  2.112201
+                ],
+                [
+                  556,
+                  234,
+                  2.113072
+                ],
+                [
+                  565,
+                  234,
+                  2.112342
+                ],
+                [
+                  558,
+                  235,
+                  2.113378
+                ],
+                [
+                  567,
+                  235,
+                  2.112825
+                ],
+                [
+                  560,
+                  236,
+                  2.11425
+                ],
+                [
+                  569,
+                  236,
+                  2.113829
+                ],
+                [
+                  570,
+                  233,
+                  2.111626
+                ],
+                [
+                  578,
+                  233,
+                  2.110368
+                ],
+                [
+                  570,
+                  234,
+                  2.111936
+                ],
+                [
+                  579,
+                  234,
+                  2.109197
+                ],
+                [
+                  571,
+                  235,
+                  2.11258
+                ],
+                [
+                  580,
+                  235,
+                  2.109756
+                ],
+                [
+                  572,
+                  236,
+                  2.113739
+                ],
+                [
+                  585,
+                  236,
+                  2.107562
+                ],
+                [
+                  586,
+                  233,
+                  2.105776
+                ],
+                [
+                  593,
+                  233,
+                  2.105211
+                ],
+                [
+                  587,
+                  234,
+                  2.106004
+                ],
+                [
+                  595,
+                  234,
+                  2.105358
+                ],
+                [
+                  589,
+                  235,
+                  2.106326
+                ],
+                [
+                  597,
+                  235,
+                  2.105837
+                ],
+                [
+                  591,
+                  236,
+                  2.107195
+                ],
+                [
+                  599,
+                  236,
+                  2.106706
+                ],
+                [
+                  539,
+                  237,
+                  2.115472
+                ],
+                [
+                  540,
+                  237,
+                  2.115411
+                ],
+                [
+                  541,
+                  237,
+                  2.115349
+                ],
+                [
+                  542,
+                  237,
+                  2.115287
+                ],
+                [
+                  543,
+                  237,
+                  2.115226
+                ],
+                [
+                  544,
+                  237,
+                  2.115176
+                ],
+                [
+                  545,
+                  237,
+                  2.115145
+                ],
+                [
+                  547,
+                  237,
+                  2.115085
+                ],
+                [
+                  580,
+                  237,
+                  2.112399
+                ],
+                [
+                  581,
+                  237,
+                  2.112369
+                ],
+                [
+                  582,
+                  237,
+                  2.112339
+                ],
+                [
+                  583,
+                  237,
+                  2.112308
+                ],
+                [
+                  584,
+                  237,
+                  2.110923
+                ],
+                [
+                  585,
+                  237,
+                  2.108555
+                ],
+                [
+                  586,
+                  237,
+                  2.108493
+                ],
+                [
+                  589,
+                  237,
+                  2.10831
+                ],
+                [
+                  593,
+                  237,
+                  2.108065
+                ],
+                [
+                  597,
+                  237,
+                  2.107863
+                ],
+                [
+                  587,
+                  238,
+                  2.110239
+                ],
+                [
+                  591,
+                  238,
+                  2.110118
+                ],
+                [
+                  595,
+                  238,
+                  2.109997
+                ],
+                [
+                  599,
+                  238,
+                  2.109876
+                ]
+              ],
+              "surface_reference_meta": {
+                "grid": [
+                  4,
+                  4
+                ],
+                "max_per_cell": 8,
+                "intrinsics": [
+                  1343.83203125,
+                  0.0,
+                  640.0,
+                  0.0,
+                  1343.83203125,
+                  360.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "coordinate_system": "optical_pixels_and_depth_m",
+                "source": "current_rgbd_body_surface",
+                "image_size": [
+                  1280,
+                  720
+                ],
+                "edge_exclusion_pixels": 1.5
+              },
+              "normalized_xy": [
+                0.318655220309261,
+                0.377392828764869
+              ],
+              "height_m": 0.02266240119934082,
+              "grasp_ready": true,
+              "grasp_uncertainty": [],
+              "position": [
+                0.07928679161431014,
+                -0.0950359192144378,
+                2.470374007840362
+              ],
+              "id": "2",
+              "image_stamp": 304.250015868,
+              "source_frame_id": 2930,
+              "position_uncertainty": {
+                "pixel_radius": 5.0,
+                "depth_m": 0.008606195449829102
+              },
+              "identity_candidates": [],
+              "stable_id": "11bb6618-obj-0007",
+              "identity_status": "confirmed",
+              "_drop_recovery": true,
+              "pose_only_candidate": true,
+              "source_object_pixel": [
+                569.75,
+                233.5
+              ]
+            },
+            "nominal_offset_m": 0.005,
+            "actual_offset_m": 0.007536475679996658,
+            "actual_along_m": 0.007486090417083761,
+            "actual_cross_m": -0.0005492499356407,
+            "source": "surface_reference_measured_point",
+            "offset_direction": "body_axis",
+            "geometry_verified": true,
+            "axis_source": "measured_body_axis",
+            "reason": "measured_core_point_full_path_still_required"
+          }
+        ],
+        "rejected": [
+          {
+            "nominal_offset_m": -0.005,
+            "offset_direction": "body_axis",
+            "reason": "no_measured_point_near_requested_core_offset"
+          },
+          {
+            "nominal_offset_m": 0.01,
+            "offset_direction": "body_axis",
+            "reason": "duplicate_or_near_centre_point,thin_or_one_dimensional_surface_support"
+          },
+          {
+            "nominal_offset_m": -0.01,
+            "offset_direction": "body_axis",
+            "reason": "thin_or_one_dimensional_surface_support"
+          }
+        ],
+        "fallback_reason": null,
+        "thresholds": {
+          "offsets_m": [
+            0.0,
+            0.005,
+            -0.005,
+            0.01,
+            -0.01
+          ],
+          "max_candidates": 5,
+          "core_margin_m": 0.0015,
+          "nearest_along_tolerance_m": 0.003,
+          "cross_axis_tolerance_m": 0.002,
+          "max_depth_difference_m": 0.008,
+          "local_depth_spread_m": 0.004,
+          "local_support_radius_m": 0.006,
+          "local_support_min_points": 3,
+          "local_support_min_span_m": 0.004,
+          "min_core_area_m2": 1.2e-05,
+          "minimum_axis_ratio": 1.2,
+          "round_max_axis_ratio": 1.2,
+          "round_max_core_radial_ratio": 1.7,
+          "round_offset_m": 0.005,
+          "distinct_point_m": 0.002
+        },
+        "threshold_status": "development_initial_values",
+        "shape_evidence": {
+          "mode": "measured_long_axis",
+          "axis_ratio": 68.82777691741508
+        }
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751552.059325896
+    },
+    {
+      "time": 1789819403.6400723,
+      "monotonic": 16751552.070425453,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "grasp_candidate_skipped",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "candidate_id": "centre",
+      "yaw_variant": 0,
+      "depth_layer": 0,
+      "decision": {
+        "allowed": false,
+        "reason": "unchanged_failed_grasp",
+        "previous_attempt_id": "grasp-attempt-1",
+        "previous_outcome": "no_effective_lift"
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751552.070743833
+    },
+    {
+      "time": 1789819403.651763,
+      "monotonic": 16751552.082115889,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "attempt",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "attempt_id": "grasp-attempt-2",
+      "candidate": {
+        "class": "Torch",
+        "raw_class": "Torch",
+        "confidence": 0.9578956961631775,
+        "bbox": [
+          538,
+          226,
+          601,
+          240
+        ],
+        "recognition_rotation_deg": 0.0,
+        "pixel": [
+          569.75,
+          233.5
+        ],
+        "depth": 2.111929416656494,
+        "depth_spread": 0.008606195449829102,
+        "world_position": [
+          0.1104029656013743,
+          -0.09880391670567756,
+          2.388070583343506
+        ],
+        "support_z": 2.3721234798431396,
+        "angle_deg": 88.18723203716246,
+        "body_axis_deg": 178.18723203716246,
+        "axis_ratio": 68.82777691741508,
+        "grasp_point_method": "depth_body_center_and_axis",
+        "area": 626,
+        "depth_reference": [
+          [
+            585,
+            228,
+            2.10802
+          ],
+          [
+            596,
+            228,
+            2.10667
+          ],
+          [
+            592,
+            229,
+            2.10604
+          ],
+          [
+            583,
+            230,
+            2.10929
+          ],
+          [
+            594,
+            230,
+            2.10535
+          ],
+          [
+            583,
+            231,
+            2.10876
+          ],
+          [
+            594,
+            231,
+            2.10503
+          ],
+          [
+            546,
+            232,
+            2.11323
+          ],
+          [
+            561,
+            232,
+            2.11272
+          ],
+          [
+            572,
+            232,
+            2.11162
+          ],
+          [
+            583,
+            232,
+            2.10845
+          ],
+          [
+            594,
+            232,
+            2.10482
+          ],
+          [
+            546,
+            233,
+            2.11291
+          ],
+          [
+            557,
+            233,
+            2.1128
+          ],
+          [
+            568,
+            233,
+            2.11179
+          ],
+          [
+            579,
+            233,
+            2.10889
+          ],
+          [
+            591,
+            233,
+            2.10537
+          ],
+          [
+            543,
+            234,
+            2.11318
+          ],
+          [
+            554,
+            234,
+            2.11323
+          ],
+          [
+            565,
+            234,
+            2.11234
+          ],
+          [
+            576,
+            234,
+            2.11214
+          ],
+          [
+            587,
+            234,
+            2.106
+          ],
+          [
+            598,
+            234,
+            2.10512
+          ],
+          [
+            550,
+            235,
+            2.11465
+          ],
+          [
+            561,
+            235,
+            2.11319
+          ],
+          [
+            572,
+            235,
+            2.11252
+          ],
+          [
+            585,
+            235,
+            2.10657
+          ],
+          [
+            596,
+            235,
+            2.1059
+          ],
+          [
+            548,
+            236,
+            2.11519
+          ],
+          [
+            589,
+            236,
+            2.10732
+          ],
+          [
+            586,
+            237,
+            2.10849
+          ],
+          [
+            598,
+            237,
+            2.10783
+          ]
+        ],
+        "surface_reference": [
+          [
+            585,
+            228,
+            2.10802
+          ],
+          [
+            580,
+            229,
+            2.110785
+          ],
+          [
+            581,
+            229,
+            2.110662
+          ],
+          [
+            582,
+            229,
+            2.110539
+          ],
+          [
+            583,
+            229,
+            2.110417
+          ],
+          [
+            584,
+            229,
+            2.10919
+          ],
+          [
+            585,
+            229,
+            2.106896
+          ],
+          [
+            586,
+            227,
+            2.109424
+          ],
+          [
+            591,
+            227,
+            2.10857
+          ],
+          [
+            597,
+            227,
+            2.107672
+          ],
+          [
+            589,
+            228,
+            2.107529
+          ],
+          [
+            595,
+            228,
+            2.106794
+          ],
+          [
+            587,
+            229,
+            2.106651
+          ],
+          [
+            593,
+            229,
+            2.105917
+          ],
+          [
+            599,
+            229,
+            2.105183
+          ],
+          [
+            539,
+            231,
+            2.114947
+          ],
+          [
+            542,
+            231,
+            2.114578
+          ],
+          [
+            545,
+            231,
+            2.114209
+          ],
+          [
+            539,
+            232,
+            2.113925
+          ],
+          [
+            543,
+            232,
+            2.113528
+          ],
+          [
+            546,
+            232,
+            2.113229
+          ],
+          [
+            549,
+            232,
+            2.114694
+          ],
+          [
+            553,
+            232,
+            2.113513
+          ],
+          [
+            554,
+            231,
+            2.114313
+          ],
+          [
+            558,
+            231,
+            2.113822
+          ],
+          [
+            562,
+            231,
+            2.11333
+          ],
+          [
+            567,
+            231,
+            2.112715
+          ],
+          [
+            555,
+            232,
+            2.113314
+          ],
+          [
+            560,
+            232,
+            2.112817
+          ],
+          [
+            564,
+            232,
+            2.112419
+          ],
+          [
+            569,
+            232,
+            2.111923
+          ],
+          [
+            578,
+            230,
+            2.111706
+          ],
+          [
+            583,
+            230,
+            2.109292
+          ],
+          [
+            573,
+            231,
+            2.111978
+          ],
+          [
+            578,
+            231,
+            2.109259
+          ],
+          [
+            584,
+            231,
+            2.107773
+          ],
+          [
+            573,
+            232,
+            2.111526
+          ],
+          [
+            579,
+            232,
+            2.108843
+          ],
+          [
+            585,
+            232,
+            2.105604
+          ],
+          [
+            586,
+            230,
+            2.106138
+          ],
+          [
+            591,
+            230,
+            2.105644
+          ],
+          [
+            597,
+            230,
+            2.105051
+          ],
+          [
+            589,
+            231,
+            2.105525
+          ],
+          [
+            595,
+            231,
+            2.104932
+          ],
+          [
+            587,
+            232,
+            2.105406
+          ],
+          [
+            593,
+            232,
+            2.104901
+          ],
+          [
+            599,
+            232,
+            2.104418
+          ],
+          [
+            539,
+            233,
+            2.113607
+          ],
+          [
+            547,
+            233,
+            2.112811
+          ],
+          [
+            540,
+            234,
+            2.113429
+          ],
+          [
+            549,
+            234,
+            2.114335
+          ],
+          [
+            542,
+            235,
+            2.113577
+          ],
+          [
+            551,
+            235,
+            2.114593
+          ],
+          [
+            544,
+            236,
+            2.114168
+          ],
+          [
+            553,
+            236,
+            2.114681
+          ],
+          [
+            554,
+            233,
+            2.113095
+          ],
+          [
+            563,
+            233,
+            2.112201
+          ],
+          [
+            556,
+            234,
+            2.113072
+          ],
+          [
+            565,
+            234,
+            2.112342
+          ],
+          [
+            558,
+            235,
+            2.113378
+          ],
+          [
+            567,
+            235,
+            2.112825
+          ],
+          [
+            560,
+            236,
+            2.11425
+          ],
+          [
+            569,
+            236,
+            2.113829
+          ],
+          [
+            570,
+            233,
+            2.111626
+          ],
+          [
+            578,
+            233,
+            2.110368
+          ],
+          [
+            570,
+            234,
+            2.111936
+          ],
+          [
+            579,
+            234,
+            2.109197
+          ],
+          [
+            571,
+            235,
+            2.11258
+          ],
+          [
+            580,
+            235,
+            2.109756
+          ],
+          [
+            572,
+            236,
+            2.113739
+          ],
+          [
+            585,
+            236,
+            2.107562
+          ],
+          [
+            586,
+            233,
+            2.105776
+          ],
+          [
+            593,
+            233,
+            2.105211
+          ],
+          [
+            587,
+            234,
+            2.106004
+          ],
+          [
+            595,
+            234,
+            2.105358
+          ],
+          [
+            589,
+            235,
+            2.106326
+          ],
+          [
+            597,
+            235,
+            2.105837
+          ],
+          [
+            591,
+            236,
+            2.107195
+          ],
+          [
+            599,
+            236,
+            2.106706
+          ],
+          [
+            539,
+            237,
+            2.115472
+          ],
+          [
+            540,
+            237,
+            2.115411
+          ],
+          [
+            541,
+            237,
+            2.115349
+          ],
+          [
+            542,
+            237,
+            2.115287
+          ],
+          [
+            543,
+            237,
+            2.115226
+          ],
+          [
+            544,
+            237,
+            2.115176
+          ],
+          [
+            545,
+            237,
+            2.115145
+          ],
+          [
+            547,
+            237,
+            2.115085
+          ],
+          [
+            580,
+            237,
+            2.112399
+          ],
+          [
+            581,
+            237,
+            2.112369
+          ],
+          [
+            582,
+            237,
+            2.112339
+          ],
+          [
+            583,
+            237,
+            2.112308
+          ],
+          [
+            584,
+            237,
+            2.110923
+          ],
+          [
+            585,
+            237,
+            2.108555
+          ],
+          [
+            586,
+            237,
+            2.108493
+          ],
+          [
+            589,
+            237,
+            2.10831
+          ],
+          [
+            593,
+            237,
+            2.108065
+          ],
+          [
+            597,
+            237,
+            2.107863
+          ],
+          [
+            587,
+            238,
+            2.110239
+          ],
+          [
+            591,
+            238,
+            2.110118
+          ],
+          [
+            595,
+            238,
+            2.109997
+          ],
+          [
+            599,
+            238,
+            2.109876
+          ]
+        ],
+        "surface_reference_meta": {
+          "grid": [
+            4,
+            4
+          ],
+          "max_per_cell": 8,
+          "intrinsics": [
+            1343.83203125,
+            0.0,
+            640.0,
+            0.0,
+            1343.83203125,
+            360.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "coordinate_system": "optical_pixels_and_depth_m",
+          "source": "current_rgbd_body_surface",
+          "image_size": [
+            1280,
+            720
+          ],
+          "edge_exclusion_pixels": 1.5
+        },
+        "normalized_xy": [
+          0.318655220309261,
+          0.377392828764869
+        ],
+        "height_m": 0.02266240119934082,
+        "grasp_ready": true,
+        "grasp_uncertainty": [],
+        "position": [
+          0.07928679161431014,
+          -0.0950359192144378,
+          2.470374007840362
+        ],
+        "id": "2",
+        "image_stamp": 304.250015868,
+        "source_frame_id": 2930,
+        "position_uncertainty": {
+          "pixel_radius": 5.0,
+          "depth_m": 0.008606195449829102
+        },
+        "identity_candidates": [],
+        "stable_id": "11bb6618-obj-0007",
+        "identity_status": "confirmed",
+        "_drop_recovery": true
+      },
+      "grasp_candidate": {
+        "candidate_id": "centre",
+        "pose_candidate": {
+          "class": "Torch",
+          "raw_class": "Torch",
+          "confidence": 0.9578956961631775,
+          "bbox": [
+            538,
+            226,
+            601,
+            240
+          ],
+          "recognition_rotation_deg": 0.0,
+          "pixel": [
+            569.75,
+            233.5
+          ],
+          "depth": 2.111929416656494,
+          "depth_spread": 0.008606195449829102,
+          "world_position": [
+            0.1104029656013743,
+            -0.09880391670567756,
+            2.388070583343506
+          ],
+          "support_z": 2.3721234798431396,
+          "angle_deg": 88.18723203716246,
+          "body_axis_deg": 178.18723203716246,
+          "axis_ratio": 68.82777691741508,
+          "grasp_point_method": "depth_body_center_and_axis",
+          "area": 626,
+          "depth_reference": [
+            [
+              585,
+              228,
+              2.10802
+            ],
+            [
+              596,
+              228,
+              2.10667
+            ],
+            [
+              592,
+              229,
+              2.10604
+            ],
+            [
+              583,
+              230,
+              2.10929
+            ],
+            [
+              594,
+              230,
+              2.10535
+            ],
+            [
+              583,
+              231,
+              2.10876
+            ],
+            [
+              594,
+              231,
+              2.10503
+            ],
+            [
+              546,
+              232,
+              2.11323
+            ],
+            [
+              561,
+              232,
+              2.11272
+            ],
+            [
+              572,
+              232,
+              2.11162
+            ],
+            [
+              583,
+              232,
+              2.10845
+            ],
+            [
+              594,
+              232,
+              2.10482
+            ],
+            [
+              546,
+              233,
+              2.11291
+            ],
+            [
+              557,
+              233,
+              2.1128
+            ],
+            [
+              568,
+              233,
+              2.11179
+            ],
+            [
+              579,
+              233,
+              2.10889
+            ],
+            [
+              591,
+              233,
+              2.10537
+            ],
+            [
+              543,
+              234,
+              2.11318
+            ],
+            [
+              554,
+              234,
+              2.11323
+            ],
+            [
+              565,
+              234,
+              2.11234
+            ],
+            [
+              576,
+              234,
+              2.11214
+            ],
+            [
+              587,
+              234,
+              2.106
+            ],
+            [
+              598,
+              234,
+              2.10512
+            ],
+            [
+              550,
+              235,
+              2.11465
+            ],
+            [
+              561,
+              235,
+              2.11319
+            ],
+            [
+              572,
+              235,
+              2.11252
+            ],
+            [
+              585,
+              235,
+              2.10657
+            ],
+            [
+              596,
+              235,
+              2.1059
+            ],
+            [
+              548,
+              236,
+              2.11519
+            ],
+            [
+              589,
+              236,
+              2.10732
+            ],
+            [
+              586,
+              237,
+              2.10849
+            ],
+            [
+              598,
+              237,
+              2.10783
+            ]
+          ],
+          "surface_reference": [
+            [
+              585,
+              228,
+              2.10802
+            ],
+            [
+              580,
+              229,
+              2.110785
+            ],
+            [
+              581,
+              229,
+              2.110662
+            ],
+            [
+              582,
+              229,
+              2.110539
+            ],
+            [
+              583,
+              229,
+              2.110417
+            ],
+            [
+              584,
+              229,
+              2.10919
+            ],
+            [
+              585,
+              229,
+              2.106896
+            ],
+            [
+              586,
+              227,
+              2.109424
+            ],
+            [
+              591,
+              227,
+              2.10857
+            ],
+            [
+              597,
+              227,
+              2.107672
+            ],
+            [
+              589,
+              228,
+              2.107529
+            ],
+            [
+              595,
+              228,
+              2.106794
+            ],
+            [
+              587,
+              229,
+              2.106651
+            ],
+            [
+              593,
+              229,
+              2.105917
+            ],
+            [
+              599,
+              229,
+              2.105183
+            ],
+            [
+              539,
+              231,
+              2.114947
+            ],
+            [
+              542,
+              231,
+              2.114578
+            ],
+            [
+              545,
+              231,
+              2.114209
+            ],
+            [
+              539,
+              232,
+              2.113925
+            ],
+            [
+              543,
+              232,
+              2.113528
+            ],
+            [
+              546,
+              232,
+              2.113229
+            ],
+            [
+              549,
+              232,
+              2.114694
+            ],
+            [
+              553,
+              232,
+              2.113513
+            ],
+            [
+              554,
+              231,
+              2.114313
+            ],
+            [
+              558,
+              231,
+              2.113822
+            ],
+            [
+              562,
+              231,
+              2.11333
+            ],
+            [
+              567,
+              231,
+              2.112715
+            ],
+            [
+              555,
+              232,
+              2.113314
+            ],
+            [
+              560,
+              232,
+              2.112817
+            ],
+            [
+              564,
+              232,
+              2.112419
+            ],
+            [
+              569,
+              232,
+              2.111923
+            ],
+            [
+              578,
+              230,
+              2.111706
+            ],
+            [
+              583,
+              230,
+              2.109292
+            ],
+            [
+              573,
+              231,
+              2.111978
+            ],
+            [
+              578,
+              231,
+              2.109259
+            ],
+            [
+              584,
+              231,
+              2.107773
+            ],
+            [
+              573,
+              232,
+              2.111526
+            ],
+            [
+              579,
+              232,
+              2.108843
+            ],
+            [
+              585,
+              232,
+              2.105604
+            ],
+            [
+              586,
+              230,
+              2.106138
+            ],
+            [
+              591,
+              230,
+              2.105644
+            ],
+            [
+              597,
+              230,
+              2.105051
+            ],
+            [
+              589,
+              231,
+              2.105525
+            ],
+            [
+              595,
+              231,
+              2.104932
+            ],
+            [
+              587,
+              232,
+              2.105406
+            ],
+            [
+              593,
+              232,
+              2.104901
+            ],
+            [
+              599,
+              232,
+              2.104418
+            ],
+            [
+              539,
+              233,
+              2.113607
+            ],
+            [
+              547,
+              233,
+              2.112811
+            ],
+            [
+              540,
+              234,
+              2.113429
+            ],
+            [
+              549,
+              234,
+              2.114335
+            ],
+            [
+              542,
+              235,
+              2.113577
+            ],
+            [
+              551,
+              235,
+              2.114593
+            ],
+            [
+              544,
+              236,
+              2.114168
+            ],
+            [
+              553,
+              236,
+              2.114681
+            ],
+            [
+              554,
+              233,
+              2.113095
+            ],
+            [
+              563,
+              233,
+              2.112201
+            ],
+            [
+              556,
+              234,
+              2.113072
+            ],
+            [
+              565,
+              234,
+              2.112342
+            ],
+            [
+              558,
+              235,
+              2.113378
+            ],
+            [
+              567,
+              235,
+              2.112825
+            ],
+            [
+              560,
+              236,
+              2.11425
+            ],
+            [
+              569,
+              236,
+              2.113829
+            ],
+            [
+              570,
+              233,
+              2.111626
+            ],
+            [
+              578,
+              233,
+              2.110368
+            ],
+            [
+              570,
+              234,
+              2.111936
+            ],
+            [
+              579,
+              234,
+              2.109197
+            ],
+            [
+              571,
+              235,
+              2.11258
+            ],
+            [
+              580,
+              235,
+              2.109756
+            ],
+            [
+              572,
+              236,
+              2.113739
+            ],
+            [
+              585,
+              236,
+              2.107562
+            ],
+            [
+              586,
+              233,
+              2.105776
+            ],
+            [
+              593,
+              233,
+              2.105211
+            ],
+            [
+              587,
+              234,
+              2.106004
+            ],
+            [
+              595,
+              234,
+              2.105358
+            ],
+            [
+              589,
+              235,
+              2.106326
+            ],
+            [
+              597,
+              235,
+              2.105837
+            ],
+            [
+              591,
+              236,
+              2.107195
+            ],
+            [
+              599,
+              236,
+              2.106706
+            ],
+            [
+              539,
+              237,
+              2.115472
+            ],
+            [
+              540,
+              237,
+              2.115411
+            ],
+            [
+              541,
+              237,
+              2.115349
+            ],
+            [
+              542,
+              237,
+              2.115287
+            ],
+            [
+              543,
+              237,
+              2.115226
+            ],
+            [
+              544,
+              237,
+              2.115176
+            ],
+            [
+              545,
+              237,
+              2.115145
+            ],
+            [
+              547,
+              237,
+              2.115085
+            ],
+            [
+              580,
+              237,
+              2.112399
+            ],
+            [
+              581,
+              237,
+              2.112369
+            ],
+            [
+              582,
+              237,
+              2.112339
+            ],
+            [
+              583,
+              237,
+              2.112308
+            ],
+            [
+              584,
+              237,
+              2.110923
+            ],
+            [
+              585,
+              237,
+              2.108555
+            ],
+            [
+              586,
+              237,
+              2.108493
+            ],
+            [
+              589,
+              237,
+              2.10831
+            ],
+            [
+              593,
+              237,
+              2.108065
+            ],
+            [
+              597,
+              237,
+              2.107863
+            ],
+            [
+              587,
+              238,
+              2.110239
+            ],
+            [
+              591,
+              238,
+              2.110118
+            ],
+            [
+              595,
+              238,
+              2.109997
+            ],
+            [
+              599,
+              238,
+              2.109876
+            ]
+          ],
+          "surface_reference_meta": {
+            "grid": [
+              4,
+              4
+            ],
+            "max_per_cell": 8,
+            "intrinsics": [
+              1343.83203125,
+              0.0,
+              640.0,
+              0.0,
+              1343.83203125,
+              360.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "coordinate_system": "optical_pixels_and_depth_m",
+            "source": "current_rgbd_body_surface",
+            "image_size": [
+              1280,
+              720
+            ],
+            "edge_exclusion_pixels": 1.5
+          },
+          "normalized_xy": [
+            0.318655220309261,
+            0.377392828764869
+          ],
+          "height_m": 0.02266240119934082,
+          "grasp_ready": true,
+          "grasp_uncertainty": [],
+          "position": [
+            0.07928679161431014,
+            -0.0950359192144378,
+            2.470374007840362
+          ],
+          "id": "2",
+          "image_stamp": 304.250015868,
+          "source_frame_id": 2930,
+          "position_uncertainty": {
+            "pixel_radius": 5.0,
+            "depth_m": 0.008606195449829102
+          },
+          "identity_candidates": [],
+          "stable_id": "11bb6618-obj-0007",
+          "identity_status": "confirmed",
+          "_drop_recovery": true
+        },
+        "nominal_offset_m": 0.0,
+        "actual_offset_m": 0.0,
+        "source": "original_measured_centre",
+        "geometry_verified": true,
+        "reason": "centre_inside_measured_core_full_path_still_required",
+        "axis_source": "measured_body_axis"
+      },
+      "yaw_variant": 180,
+      "depth_layer": 0,
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751552.082977198
+    },
+    {
+      "time": 1789819404.0923257,
+      "monotonic": 16751552.522678606,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "grasp_preview",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "proof": {
+        "id": "5d9aa4c07199464397765453ee621520",
+        "valid": true,
+        "failure_kind": null,
+        "branch_results": [
+          {
+            "joint_goal": [
+              -0.04873828326807068,
+              0.7467994504377099,
+              -1.0224098512136017,
+              4.436324383639274,
+              1.5707220494458762,
+              -1.5526611041621503
+            ],
+            "valid": true
+          }
+        ],
+        "approach_ik_diagnostics": [
+          {
+            "seed": "current",
+            "seconds": 0.0002949964255094528,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 2.1276587030111118e-07,
+            "orientation_error": 0.0011283130304033798,
+            "joint_distance": 2.34901159478044
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012834183871746063,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 6.104768534911084e-07,
+            "orientation_error": 0.0010608348716824039,
+            "joint_distance": 2.3496060466323603
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011514872312545776,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 3.2899205771171163e-07,
+            "orientation_error": 0.0005110892257467249,
+            "joint_distance": 2.349912358728957
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011892803013324738,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 5.443503133338699e-07,
+            "orientation_error": 0.001078741712735608,
+            "joint_distance": 2.349073435334478
+          }
+        ],
+        "place": [
+          0.6,
+          0.35,
+          2.67
+        ],
+        "approach_joint_goal": [
+          -0.04873828326807068,
+          0.7467994504377099,
+          -1.0224098512136017,
+          4.436324383639274,
+          1.5707220494458762,
+          -1.5526611041621503
+        ],
+        "start_joints": [
+          6.361518171615899e-05,
+          2.0628037452697754,
+          -2.184603214263916,
+          4.579102516174316,
+          1.600135326385498,
+          0.00029169421759434044
+        ],
+        "checked_points": 1029,
+        "checked_stages": [
+          "approach_path",
+          "descend",
+          "lift",
+          "transfer",
+          "place_above",
+          "place_descend"
+        ],
+        "limitation": "Joint bounds, sampled link/table clearance and held attitude only; no full mesh, obstacle or self-collision certification.",
+        "seconds": 0.41543935239315033,
+        "ik_diagnostics": [
+          {
+            "seed": "current",
+            "seconds": 0.00013397261500358582,
+            "target_position": [
+              0.11078264641997189,
+              -0.1107979059136012,
+              2.478974966902625
+            ],
+            "reason": "accepted",
+            "position_error": 5.316878796814904e-07,
+            "orientation_error": 0.0012354924867067948,
+            "joint_distance": 0.06909688066641487
+          },
+          {
+            "seed": "home",
+            "seconds": 0.0001379549503326416,
+            "target_position": [
+              0.11078264641997189,
+              -0.1107979059136012,
+              2.478974966902625
+            ],
+            "reason": "accepted",
+            "position_error": 1.846365541314326e-07,
+            "orientation_error": 0.00042021976281377454,
+            "joint_distance": 0.0692370846379527
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 9.87667590379715e-05,
+            "target_position": [
+              0.11078264641997189,
+              -0.1107979059136012,
+              2.478974966902625
+            ],
+            "reason": "accepted",
+            "position_error": 4.0283165234436164e-07,
+            "orientation_error": 0.0010599338286816906,
+            "joint_distance": 0.0687266994797071
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00010816194117069244,
+            "target_position": [
+              0.11078264641997189,
+              -0.1107979059136012,
+              2.478974966902625
+            ],
+            "reason": "accepted",
+            "position_error": 3.813750471720553e-07,
+            "orientation_error": 0.00190697915819546,
+            "joint_distance": 0.06797696201075006
+          },
+          {
+            "seed": "current",
+            "seconds": 0.0001371670514345169,
+            "target_position": [
+              0.11078262668930378,
+              -0.11079790721926348,
+              2.510974975176969
+            ],
+            "reason": "accepted",
+            "position_error": 5.17862225810564e-07,
+            "orientation_error": 0.0016603393304618409,
+            "joint_distance": 0.07313931195313514
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00011620298027992249,
+            "target_position": [
+              0.11078262668930378,
+              -0.11079790721926348,
+              2.510974975176969
+            ],
+            "reason": "accepted",
+            "position_error": 3.587994306896769e-07,
+            "orientation_error": 0.0013172020826576634,
+            "joint_distance": 0.07159079887365438
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 9.305030107498169e-05,
+            "target_position": [
+              0.11078262668930378,
+              -0.11079790721926348,
+              2.510974975176969
+            ],
+            "reason": "accepted",
+            "position_error": 6.583218357074567e-07,
+            "orientation_error": 0.0009882198796172122,
+            "joint_distance": 0.07174202181058673
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00012250803411006927,
+            "target_position": [
+              0.11078262668930378,
+              -0.11079790721926348,
+              2.510974975176969
+            ],
+            "reason": "accepted",
+            "position_error": 4.014438833218208e-07,
+            "orientation_error": 0.0006679796444812059,
+            "joint_distance": 0.07230535739308856
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00013513118028640747,
+            "target_position": [
+              0.11078260695863568,
+              -0.11079790852492576,
+              2.5429749834513125
+            ],
+            "reason": "accepted",
+            "position_error": 7.684657440484282e-07,
+            "orientation_error": 0.0014685564358996386,
+            "joint_distance": 0.07519831260924699
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012786872684955597,
+            "target_position": [
+              0.11078260695863568,
+              -0.11079790852492576,
+              2.5429749834513125
+            ],
+            "reason": "accepted",
+            "position_error": 1.9263314569999867e-07,
+            "orientation_error": 0.0008635888679746522,
+            "joint_distance": 0.0744344641363169
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010768137872219086,
+            "target_position": [
+              0.11078260695863568,
+              -0.11079790852492576,
+              2.5429749834513125
+            ],
+            "reason": "accepted",
+            "position_error": 3.4786936171564407e-07,
+            "orientation_error": 0.0005899608569752851,
+            "joint_distance": 0.07547669495596236
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011962652206420898,
+            "target_position": [
+              0.11078260695863568,
+              -0.11079790852492576,
+              2.5429749834513125
+            ],
+            "reason": "accepted",
+            "position_error": 3.894803231452151e-07,
+            "orientation_error": 0.000762844462945457,
+            "joint_distance": 0.07542494553961611
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00013974495232105255,
+            "target_position": [
+              0.11078258722796756,
+              -0.11079790983058804,
+              2.5749749917256564
+            ],
+            "reason": "accepted",
+            "position_error": 5.952952064701566e-07,
+            "orientation_error": 0.001732396496269993,
+            "joint_distance": 0.07865517153653084
+          },
+          {
+            "seed": "home",
+            "seconds": 0.0001283213496208191,
+            "target_position": [
+              0.11078258722796756,
+              -0.11079790983058804,
+              2.5749749917256564
+            ],
+            "reason": "accepted",
+            "position_error": 1.5338250997421307e-07,
+            "orientation_error": 0.0006859359602597604,
+            "joint_distance": 0.07829489812788475
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010978803038597107,
+            "target_position": [
+              0.11078258722796756,
+              -0.11079790983058804,
+              2.5749749917256564
+            ],
+            "reason": "accepted",
+            "position_error": 3.5308771514502953e-07,
+            "orientation_error": 0.0014901391378119352,
+            "joint_distance": 0.07850870307802553
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00012111477553844452,
+            "target_position": [
+              0.11078258722796756,
+              -0.11079790983058804,
+              2.5749749917256564
+            ],
+            "reason": "accepted",
+            "position_error": 2.5941179045582856e-07,
+            "orientation_error": 0.0011029301328814884,
+            "joint_distance": 0.07906217514200407
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00014681927859783173,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 1.0114756999632731e-07,
+            "orientation_error": 0.0003764088596379551,
+            "joint_distance": 0.08425109753224759
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00011719390749931335,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 6.104768534911084e-07,
+            "orientation_error": 0.0010608348716824039,
+            "joint_distance": 0.08377705315779323
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011710450053215027,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 9.536434476292398e-08,
+            "orientation_error": 0.0013093457403789569,
+            "joint_distance": 0.08574995377760279
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011691637337207794,
+            "target_position": [
+              0.11078256749729945,
+              -0.11079791113625032,
+              2.606975
+            ],
+            "reason": "accepted",
+            "position_error": 5.193867451837666e-07,
+            "orientation_error": 0.0011157251045754817,
+            "joint_distance": 0.08340435817265186
+          },
+          {
+            "seed": "current",
+            "seconds": 0.000138772651553154,
+            "target_position": [
+              0.09595350045737232,
+              -0.045107782940755264,
+              2.6547764434320587
+            ],
+            "reason": "accepted",
+            "position_error": 4.399995925249781e-07,
+            "orientation_error": 0.0008962549838942068,
+            "joint_distance": 0.30808875874130576
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00011340901255607605,
+            "target_position": [
+              0.09595350045737232,
+              -0.045107782940755264,
+              2.6547764434320587
+            ],
+            "reason": "accepted",
+            "position_error": 3.55450981588627e-07,
+            "orientation_error": 0.0015487435433195554,
+            "joint_distance": 0.30938351001640085
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010894611477851868,
+            "target_position": [
+              0.09595350045737232,
+              -0.045107782940755264,
+              2.6547764434320587
+            ],
+            "reason": "accepted",
+            "position_error": 5.028142791046535e-07,
+            "orientation_error": 0.0003819622772824853,
+            "joint_distance": 0.3084396832675931
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011906027793884277,
+            "target_position": [
+              0.09595350045737232,
+              -0.045107782940755264,
+              2.6547764434320587
+            ],
+            "reason": "accepted",
+            "position_error": 3.236024755723619e-07,
+            "orientation_error": 0.0004538524574957067,
+            "joint_distance": 0.3083349602819445
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00014536269009113312,
+            "target_position": [
+              0.08112394497868616,
+              0.02058217202962237,
+              2.702577852466029
+            ],
+            "reason": "accepted",
+            "position_error": 1.9421248917085122e-07,
+            "orientation_error": 0.001471893837469331,
+            "joint_distance": 0.2562272298098262
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012161396443843842,
+            "target_position": [
+              0.08112394497868616,
+              0.02058217202962237,
+              2.702577852466029
+            ],
+            "reason": "accepted",
+            "position_error": 7.030310836924823e-07,
+            "orientation_error": 0.001019380863947406,
+            "joint_distance": 0.2568209635482207
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010218285024166107,
+            "target_position": [
+              0.08112394497868616,
+              0.02058217202962237,
+              2.702577852466029
+            ],
+            "reason": "accepted",
+            "position_error": 1.5559640468098209e-07,
+            "orientation_error": 0.000718799187925795,
+            "joint_distance": 0.2562675198092928
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00010748021304607391,
+            "target_position": [
+              0.08112394497868616,
+              0.02058217202962237,
+              2.702577852466029
+            ],
+            "reason": "accepted",
+            "position_error": 3.5146283169842266e-07,
+            "orientation_error": 0.0009218621873510533,
+            "joint_distance": 0.2564902141487472
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00015469081699848175,
+            "target_position": [
+              0.0662943895,
+              0.086272127,
+              2.7503792615
+            ],
+            "reason": "accepted",
+            "position_error": 2.75389433065267e-07,
+            "orientation_error": 0.0003760262766978903,
+            "joint_distance": 0.231238616932282
+          },
+          {
+            "seed": "home",
+            "seconds": 9.452737867832184e-05,
+            "target_position": [
+              0.0662943895,
+              0.086272127,
+              2.7503792615
+            ],
+            "reason": "accepted",
+            "position_error": 2.3682262217408127e-07,
+            "orientation_error": 0.001328520531877093,
+            "joint_distance": 0.23053197794623848
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011448375880718231,
+            "target_position": [
+              0.0662943895,
+              0.086272127,
+              2.7503792615
+            ],
+            "reason": "accepted",
+            "position_error": 1.5371309397443275e-07,
+            "orientation_error": 0.000381034991807662,
+            "joint_distance": 0.23096808807018088
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011373311281204224,
+            "target_position": [
+              0.0662943895,
+              0.086272127,
+              2.7503792615
+            ],
+            "reason": "accepted",
+            "position_error": 5.287470557507373e-07,
+            "orientation_error": 0.0012427721051254806,
+            "joint_distance": 0.23118680028082814
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00014543533325195312,
+            "target_position": [
+              0.1685786946841229,
+              0.09689329571819706,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 2.769703360922781e-07,
+            "orientation_error": 0.001753608746039189,
+            "joint_distance": 0.25366929386112513
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00010238215327262878,
+            "target_position": [
+              0.1685786946841229,
+              0.09689329571819706,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 4.700196044429709e-07,
+            "orientation_error": 0.0006169972630953422,
+            "joint_distance": 0.2532396389211715
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.0001109633594751358,
+            "target_position": [
+              0.1685786946841229,
+              0.09689329571819706,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 4.4840220556795637e-07,
+            "orientation_error": 0.0010513531589702839,
+            "joint_distance": 0.2534049502929643
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 9.823217988014221e-05,
+            "target_position": [
+              0.1685786946841229,
+              0.09689329571819706,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 2.0170890003425418e-07,
+            "orientation_error": 0.0016072852741245095,
+            "joint_distance": 0.2536883636083702
+          },
+          {
+            "seed": "current",
+            "seconds": 0.0001343153417110443,
+            "target_position": [
+              0.2708629557472983,
+              0.10751463657455765,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 5.137069201426829e-07,
+            "orientation_error": 0.0009254680399704599,
+            "joint_distance": 0.2631459418599513
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00011138059198856354,
+            "target_position": [
+              0.2708629557472983,
+              0.10751463657455765,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 6.74916660045056e-07,
+            "orientation_error": 0.0013122739399164661,
+            "joint_distance": 0.26310989234962145
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010996870696544647,
+            "target_position": [
+              0.2708629557472983,
+              0.10751463657455765,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 6.967513107328734e-07,
+            "orientation_error": 0.0006881018570556055,
+            "joint_distance": 0.2623279830658017
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011013634502887726,
+            "target_position": [
+              0.2708629557472983,
+              0.10751463657455765,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 5.767167647893098e-07,
+            "orientation_error": 0.001664096730452587,
+            "joint_distance": 0.26336933891975783
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00013893470168113708,
+            "target_position": [
+              0.37314721681047375,
+              0.11813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 3.2425897602925764e-07,
+            "orientation_error": 0.0007915961017064281,
+            "joint_distance": 0.28139796208807416
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00011048465967178345,
+            "target_position": [
+              0.37314721681047375,
+              0.11813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 4.983165114168429e-07,
+            "orientation_error": 0.0009351587368748787,
+            "joint_distance": 0.28272130793597583
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010100565850734711,
+            "target_position": [
+              0.37314721681047375,
+              0.11813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 2.647693479376571e-07,
+            "orientation_error": 0.0006128213531298285,
+            "joint_distance": 0.2822139187099706
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011477433145046234,
+            "target_position": [
+              0.37314721681047375,
+              0.11813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 5.523211019426428e-07,
+            "orientation_error": 0.00035043707861132724,
+            "joint_distance": 0.2819634539845158
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00017282739281654358,
+            "target_position": [
+              0.47543147787364914,
+              0.12875731828727882,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 5.228871346105401e-07,
+            "orientation_error": 0.0006992835243058944,
+            "joint_distance": 0.3265153981561671
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00013196654617786407,
+            "target_position": [
+              0.47543147787364914,
+              0.12875731828727882,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 2.658123955259776e-07,
+            "orientation_error": 0.0006174737771697741,
+            "joint_distance": 0.32612669569269986
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011272355914115906,
+            "target_position": [
+              0.47543147787364914,
+              0.12875731828727882,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 6.373920582283762e-07,
+            "orientation_error": 0.0016956698543728614,
+            "joint_distance": 0.32580035170477
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011438876390457153,
+            "target_position": [
+              0.47543147787364914,
+              0.12875731828727882,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 2.855447392568432e-07,
+            "orientation_error": 0.000560959734236417,
+            "joint_distance": 0.3261554770928959
+          },
+          {
+            "seed": "current",
+            "seconds": 0.0004308875650167465,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00013251788914203644,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.0003731008619070053,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.0003794301301240921,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_0.4_-0.8",
+            "seconds": 0.0001267511397600174,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_1.8_-2.4",
+            "seconds": 0.00039702653884887695,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_-0.4_0.8",
+            "seconds": 0.00011932849884033203,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_-1.3_1.5",
+            "seconds": 0.0003636367619037628,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "base_wrist_-0.5",
+            "seconds": 0.00035896338522434235,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "wrist_-0.5",
+            "seconds": 0.0003609992563724518,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "base_wrist_+0.5",
+            "seconds": 9.658373892307281e-05,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "wrist_+0.5",
+            "seconds": 0.0003529377281665802,
+            "target_position": [
+              0.5777157389368246,
+              0.1393786591436394,
+              2.6833965174922807
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00012195855379104614,
+            "target_position": [
+              0.1635786946841229,
+              0.1052266290515304,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 4.666970854743982e-07,
+            "orientation_error": 0.0012952237106894113,
+            "joint_distance": 0.24221933599072992
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00010779127478599548,
+            "target_position": [
+              0.1635786946841229,
+              0.1052266290515304,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 4.849954754736986e-07,
+            "orientation_error": 0.0016742473003920756,
+            "joint_distance": 0.2422982258906049
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010190717875957489,
+            "target_position": [
+              0.1635786946841229,
+              0.1052266290515304,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 3.019293018278323e-07,
+            "orientation_error": 0.0007711998641575767,
+            "joint_distance": 0.24185511450520342
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00010155327618122101,
+            "target_position": [
+              0.1635786946841229,
+              0.1052266290515304,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 6.6882122504571e-07,
+            "orientation_error": 0.0017949350079269873,
+            "joint_distance": 0.2406560128113756
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00014272518455982208,
+            "target_position": [
+              0.2608629557472983,
+              0.12418130324122431,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 2.845924931525534e-07,
+            "orientation_error": 0.0014043354786981458,
+            "joint_distance": 0.24838319170140485
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00010833144187927246,
+            "target_position": [
+              0.2608629557472983,
+              0.12418130324122431,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 6.025961331168023e-07,
+            "orientation_error": 0.00159686327711944,
+            "joint_distance": 0.24825305942112322
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011234171688556671,
+            "target_position": [
+              0.2608629557472983,
+              0.12418130324122431,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 3.315611355369649e-07,
+            "orientation_error": 0.001032446524271585,
+            "joint_distance": 0.2486169272655103
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.0001246761530637741,
+            "target_position": [
+              0.2608629557472983,
+              0.12418130324122431,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 6.070528846552262e-07,
+            "orientation_error": 0.00026527607299203765,
+            "joint_distance": 0.24841717871787541
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00015535764396190643,
+            "target_position": [
+              0.35814721681047373,
+              0.14313597743091824,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 5.146345340847619e-08,
+            "orientation_error": 0.00037413675562427903,
+            "joint_distance": 0.25852150570326343
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012703239917755127,
+            "target_position": [
+              0.35814721681047373,
+              0.14313597743091824,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 7.566736551140323e-07,
+            "orientation_error": 0.0008160501412134006,
+            "joint_distance": 0.2590606975535472
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011279992759227753,
+            "target_position": [
+              0.35814721681047373,
+              0.14313597743091824,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 1.300302305118303e-07,
+            "orientation_error": 0.0003950856053006501,
+            "joint_distance": 0.2583766703898618
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011483393609523773,
+            "target_position": [
+              0.35814721681047373,
+              0.14313597743091824,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 4.896176280352483e-07,
+            "orientation_error": 0.0007214026182552413,
+            "joint_distance": 0.25890802190950585
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00013462454080581665,
+            "target_position": [
+              0.4554314778736491,
+              0.16209065162061215,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 5.165545697746274e-07,
+            "orientation_error": 0.0014236704432874375,
+            "joint_distance": 0.28095522750546864
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00013314560055732727,
+            "target_position": [
+              0.4554314778736491,
+              0.16209065162061215,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 1.6046628009545028e-07,
+            "orientation_error": 0.0005613723799732384,
+            "joint_distance": 0.2830501965960799
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 9.763799607753754e-05,
+            "target_position": [
+              0.4554314778736491,
+              0.16209065162061215,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 4.426453749018762e-07,
+            "orientation_error": 0.0014050109269293542,
+            "joint_distance": 0.2828329216594263
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011538341641426086,
+            "target_position": [
+              0.4554314778736491,
+              0.16209065162061215,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 2.4653979176842826e-07,
+            "orientation_error": 0.00031720448925513886,
+            "joint_distance": 0.2821207788142067
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00015177391469478607,
+            "target_position": [
+              0.5527157389368247,
+              0.18104532581030608,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 5.850178877000437e-07,
+            "orientation_error": 0.0006348154291429517,
+            "joint_distance": 0.33834785966343134
+          },
+          {
+            "seed": "home",
+            "seconds": 0.0001302473247051239,
+            "target_position": [
+              0.5527157389368247,
+              0.18104532581030608,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 1.1747582365009418e-07,
+            "orientation_error": 0.0007689170897267923,
+            "joint_distance": 0.33892876193597343
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010455399751663208,
+            "target_position": [
+              0.5527157389368247,
+              0.18104532581030608,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 2.250166765396566e-07,
+            "orientation_error": 0.0011455299012264797,
+            "joint_distance": 0.33682452158606224
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00010693259537220001,
+            "target_position": [
+              0.5527157389368247,
+              0.18104532581030608,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 3.871262764144299e-07,
+            "orientation_error": 0.001338507812359901,
+            "joint_distance": 0.3370545110062165
+          },
+          {
+            "seed": "current",
+            "seconds": 0.0004269443452358246,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00013267993927001953,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.0003794189542531967,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00037925317883491516,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_0.4_-0.8",
+            "seconds": 0.00012420117855072021,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_1.8_-2.4",
+            "seconds": 0.00038780272006988525,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_-0.4_0.8",
+            "seconds": 0.00011639110743999481,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "alternate_-1.3_1.5",
+            "seconds": 0.00010493956506252289,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "base_wrist_-0.5",
+            "seconds": 0.00035784952342510223,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "wrist_-0.5",
+            "seconds": 0.0003565549850463867,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "base_wrist_+0.5",
+            "seconds": 9.924359619617462e-05,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "wrist_+0.5",
+            "seconds": 0.00034784339368343353,
+            "target_position": [
+              0.65,
+              0.2,
+              2.67
+            ],
+            "reason": "held_joint_unwind"
+          },
+          {
+            "seed": "current",
+            "seconds": 0.0001224428415298462,
+            "target_position": [
+              0.15524536135078953,
+              0.13022662905153037,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 6.75418095848196e-09,
+            "orientation_error": 0.00037165977365147815,
+            "joint_distance": 0.2506734905278736
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012004561722278595,
+            "target_position": [
+              0.15524536135078953,
+              0.13022662905153037,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 3.040091873986152e-08,
+            "orientation_error": 0.0005017380980289806,
+            "joint_distance": 0.25007294234508753
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011632591485977173,
+            "target_position": [
+              0.15524536135078953,
+              0.13022662905153037,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 4.642073173145044e-07,
+            "orientation_error": 0.00111549400158207,
+            "joint_distance": 0.24967298043446623
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00010455027222633362,
+            "target_position": [
+              0.15524536135078953,
+              0.13022662905153037,
+              2.7369825874614033
+            ],
+            "reason": "accepted",
+            "position_error": 2.405549099745239e-07,
+            "orientation_error": 0.0012290262842291184,
+            "joint_distance": 0.25025270101234254
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00013736076653003693,
+            "target_position": [
+              0.24419628908063162,
+              0.1741813032412243,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 1.9880250799168086e-07,
+            "orientation_error": 0.0008783602756774519,
+            "joint_distance": 0.25101216626509215
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012100487947463989,
+            "target_position": [
+              0.24419628908063162,
+              0.1741813032412243,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 2.4652084744616086e-07,
+            "orientation_error": 0.0005612346391968808,
+            "joint_distance": 0.2507705616920508
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011473707854747772,
+            "target_position": [
+              0.24419628908063162,
+              0.1741813032412243,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 6.191328517616917e-07,
+            "orientation_error": 0.0007949587130706823,
+            "joint_distance": 0.25059967458997096
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00010752677917480469,
+            "target_position": [
+              0.24419628908063162,
+              0.1741813032412243,
+              2.7235860699691226
+            ],
+            "reason": "accepted",
+            "position_error": 5.357752100771833e-07,
+            "orientation_error": 0.001479542669481456,
+            "joint_distance": 0.24997769634627134
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00014352798461914062,
+            "target_position": [
+              0.3331472168104737,
+              0.21813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 5.124084882309042e-07,
+            "orientation_error": 0.0007943329007417031,
+            "joint_distance": 0.25491698210062924
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00010769441723823547,
+            "target_position": [
+              0.3331472168104737,
+              0.21813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 1.552747626348438e-07,
+            "orientation_error": 0.0007807842226082292,
+            "joint_distance": 0.2554332147069703
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011238455772399902,
+            "target_position": [
+              0.3331472168104737,
+              0.21813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 4.463785951119522e-07,
+            "orientation_error": 0.0011663159589866089,
+            "joint_distance": 0.2552479995095286
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00010835565626621246,
+            "target_position": [
+              0.3331472168104737,
+              0.21813597743091823,
+              2.710189552476842
+            ],
+            "reason": "accepted",
+            "position_error": 5.384690786098224e-07,
+            "orientation_error": 0.0016561175257743823,
+            "joint_distance": 0.25394793857095177
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00013524293899536133,
+            "target_position": [
+              0.4220981445403158,
+              0.2620906516206121,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 2.414230833796156e-07,
+            "orientation_error": 0.0005509842475274625,
+            "joint_distance": 0.26094639727522956
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012526847422122955,
+            "target_position": [
+              0.4220981445403158,
+              0.2620906516206121,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 2.6351538284091615e-07,
+            "orientation_error": 0.0007846796605985163,
+            "joint_distance": 0.2616003232882883
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00011135265231132507,
+            "target_position": [
+              0.4220981445403158,
+              0.2620906516206121,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 8.051026322806275e-07,
+            "orientation_error": 0.0015189646469936115,
+            "joint_distance": 0.26135278432443054
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.0001069679856300354,
+            "target_position": [
+              0.4220981445403158,
+              0.2620906516206121,
+              2.6967930349845615
+            ],
+            "reason": "accepted",
+            "position_error": 3.5171526644735834e-07,
+            "orientation_error": 0.0014999136075010161,
+            "joint_distance": 0.2611371453613753
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00015273503959178925,
+            "target_position": [
+              0.511049072270158,
+              0.3060453258103061,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 2.9597976387644973e-07,
+            "orientation_error": 0.00039248309279516825,
+            "joint_distance": 0.2717368236757612
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00011963583528995514,
+            "target_position": [
+              0.511049072270158,
+              0.3060453258103061,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 6.265372391838331e-07,
+            "orientation_error": 0.0009919676993345981,
+            "joint_distance": 0.27072943833276114
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 9.945966303348541e-05,
+            "target_position": [
+              0.511049072270158,
+              0.3060453258103061,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 4.277153982237964e-07,
+            "orientation_error": 0.0017704851576137502,
+            "joint_distance": 0.2719519326145992
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00012148357927799225,
+            "target_position": [
+              0.511049072270158,
+              0.3060453258103061,
+              2.6833965174922807
+            ],
+            "reason": "accepted",
+            "position_error": 4.7060774198646014e-07,
+            "orientation_error": 0.0009012799035759519,
+            "joint_distance": 0.2721955268446369
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00014528073370456696,
+            "target_position": [
+              0.6,
+              0.35,
+              2.67
+            ],
+            "reason": "accepted",
+            "position_error": 1.4157235865251519e-07,
+            "orientation_error": 0.0010414268012244419,
+            "joint_distance": 0.3014768257223718
+          },
+          {
+            "seed": "home",
+            "seconds": 0.0001282915472984314,
+            "target_position": [
+              0.6,
+              0.35,
+              2.67
+            ],
+            "reason": "accepted",
+            "position_error": 5.86172152025246e-08,
+            "orientation_error": 0.0006196631407017733,
+            "joint_distance": 0.3005541421780041
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 9.76361334323883e-05,
+            "target_position": [
+              0.6,
+              0.35,
+              2.67
+            ],
+            "reason": "accepted",
+            "position_error": 3.0513741752421105e-07,
+            "orientation_error": 0.001145126493460241,
+            "joint_distance": 0.30108711463885973
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011070631444454193,
+            "target_position": [
+              0.6,
+              0.35,
+              2.67
+            ],
+            "reason": "accepted",
+            "position_error": 2.0017302356985233e-07,
+            "orientation_error": 0.0009116533008972996,
+            "joint_distance": 0.3006127168773863
+          },
+          {
+            "seed": "current",
+            "seconds": 0.00015188753604888916,
+            "target_position": [
+              0.6,
+              0.35,
+              2.4699999999999998
+            ],
+            "reason": "accepted",
+            "position_error": 7.902256046899347e-08,
+            "orientation_error": 0.0007715109518675394,
+            "joint_distance": 0.5215427181406089
+          },
+          {
+            "seed": "home",
+            "seconds": 0.00012959353625774384,
+            "target_position": [
+              0.6,
+              0.35,
+              2.4699999999999998
+            ],
+            "reason": "accepted",
+            "position_error": 4.893817720686506e-07,
+            "orientation_error": 0.001149354261641498,
+            "joint_distance": 0.5223011684997686
+          },
+          {
+            "seed": "legacy_0.8_-1.3",
+            "seconds": 0.00010539405047893524,
+            "target_position": [
+              0.6,
+              0.35,
+              2.4699999999999998
+            ],
+            "reason": "accepted",
+            "position_error": 4.738509872888815e-07,
+            "orientation_error": 0.0006883765324209566,
+            "joint_distance": 0.5223159982564487
+          },
+          {
+            "seed": "legacy_1.4_-2.0",
+            "seconds": 0.00011854059994220734,
+            "target_position": [
+              0.6,
+              0.35,
+              2.4699999999999998
+            ],
+            "reason": "accepted",
+            "position_error": 5.516794558751436e-07,
+            "orientation_error": 0.00030628708677159504,
+            "joint_distance": 0.5227083562114495
+          }
+        ]
+      },
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751552.524671637
+    },
+    {
+      "time": 1789819404.0959487,
+      "monotonic": 16751552.526301611,
+      "request_id": "episode_95d70001bf3c4236b3fdeed8e544ea25",
+      "round_id": "round_bd544f2d60004f328b25d73172d5a64e",
+      "task_id": "round_bd544f2d60004f328b25d73172d5a64e-task-01",
+      "status": "approach",
+      "code_sha256": "cbd72461c2de16f712e4932be20954f2d47b35e6dfa231e9fe13a792b30c62e2",
+      "target": [
+        0.11078256749729945,
+        -0.11079791113625032,
+        2.606975
+      ],
+      "quaternion": [
+        0.0,
+        0.7182038329496353,
+        -0.6958327775668897,
+        0.0
+      ],
+      "source_topic": "/tcei/task_status",
+      "received_monotonic": 16751552.526747009
+    }
+  ],
+  "log_tail": [],
+  "execute_flags": {
+    "/tcei_controller/execute": true,
+    "/tcei_nine/execute": true
+  }
+}

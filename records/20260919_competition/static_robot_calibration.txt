@@ -1,0 +1,4 @@
+{
+  "error": "No module named 'pxr'",
+  "traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 5, in <module>\nModuleNotFoundError: No module named 'pxr'\n"
+}

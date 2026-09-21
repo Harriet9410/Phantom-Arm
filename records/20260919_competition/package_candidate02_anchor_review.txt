@@ -1,0 +1,61 @@
+{
+  "stable_id": "68c6475a-obj-0008",
+  "scope": "during previous Grenade task, before remaining pick",
+  "frames": 345,
+  "held_anchor_frames": 36,
+  "unconfirmed_frames": 2,
+  "max_visible_center_offset_px": 12.391100958147995,
+  "examples": [
+    {
+      "pixel": [
+        623.0,
+        309.375
+      ],
+      "association_anchor_pixel": [
+        624.0307692307692,
+        309.4923076923077
+      ],
+      "identity_status": "confirmed",
+      "bbox": [
+        595,
+        299,
+        651,
+        321
+      ]
+    },
+    {
+      "pixel": [
+        614.506329113924,
+        309.5822784810127
+      ],
+      "association_anchor_pixel": [
+        624.0307692307692,
+        309.4923076923077
+      ],
+      "identity_status": "confirmed",
+      "bbox": [
+        595,
+        299,
+        648,
+        321
+      ]
+    },
+    {
+      "pixel": [
+        624.0307692307692,
+        309.4923076923077
+      ],
+      "association_anchor_pixel": [
+        624.0307692307692,
+        309.4923076923077
+      ],
+      "identity_status": "confirmed",
+      "bbox": [
+        595,
+        299,
+        651,
+        321
+      ]
+    }
+  ]
+}

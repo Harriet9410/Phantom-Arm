@@ -1,0 +1,24 @@
+{
+  "pid": 609652,
+  "started_at": 1789851623.7449841,
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/root/tcei_tilt23/tcei_260920v2/test_tools/run_registered_batch.py",
+    "--package",
+    "/root/tcei_tilt23/tcei_260920v2",
+    "--case-root",
+    "/root/tcei_tilt23/tcei_260920v2",
+    "--register",
+    "/root/tcei_tilt23/tcei_260920v2/B01_REGISTER.json",
+    "--case-ids",
+    "random_24",
+    "random_26",
+    "--batch",
+    "old_edge_tilt23_01",
+    "--instructions",
+    "/root/tcei_tilt23/tcei_260920v2/instructions/original_mechanical_regression.json",
+    "--task-source",
+    "custom_original_mechanical_regression"
+  ]
+}

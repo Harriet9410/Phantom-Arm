@@ -1,0 +1,18 @@
+{
+  "checked_at": 1789818428.3284724,
+  "job": {
+    "pid": 364281,
+    "started_at": 1789818245.43357,
+    "source_sha256": "db4ce72e27a5b167f6193de39517bd581073d7c79c533d6828def2454135a690",
+    "motion_commands_allowed": false
+  },
+  "process_state": "absent",
+  "summary": {
+    "status": "failed",
+    "motion_commands": [],
+    "scope": "one recorded target, no execution",
+    "error": "AssertionError: ",
+    "finished_at": 1789818246.604151
+  },
+  "log": "{\"status\": \"failed\", \"motion_commands\": [], \"scope\": \"one recorded target, no execution\", \"error\": \"AssertionError: \", \"finished_at\": 1789818246.604151}\n"
+}

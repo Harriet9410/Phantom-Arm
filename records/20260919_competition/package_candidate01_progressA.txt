@@ -1,0 +1,154 @@
+{
+  "package_candidate01_native_status.json": [
+    {
+      "command": [
+        "bash",
+        "robot.sh",
+        "start",
+        "package_smoke_stack01"
+      ],
+      "returncode": 0,
+      "finished_at": 1789845477.0280457
+    }
+  ],
+  "package_candidate01_prior_stop.json": {
+    "state": "stopped",
+    "proof": {
+      "id": "9c17d7f2bcf24e68b50c00f36b582b5d",
+      "state": "stopped",
+      "reason": "external cancellation: closed pending21 fixture; begin normal package entry validation",
+      "seconds": 0.3155036009848118,
+      "fault_reason": null,
+      "max_joint_speed": 1.4305114000023916e-05,
+      "reported_max_joint_speed": 9.739304914546665e-06,
+      "velocity_source": "consecutive_physics_step_position_difference",
+      "solver_type": "TGS",
+      "physics_dt": 0.016666666666666666,
+      "sample_dt": 0.01666666753590107,
+      "joint_distance": 2.384185791015625e-07,
+      "tcp_distance": 1.3272744770811145e-07,
+      "stable_window_tcp_drift": 1.3272744770811145e-07,
+      "simulation_time": 1201.5833960007876,
+      "time": 1789845448.59069,
+      "measurement_protocol": "tcei.stop_measurement.v2",
+      "configuration_error": null
+    },
+    "mapping": {
+      "protocol": "tcei.cancel.v1",
+      "cancel_id": "3475cf9e35fd4a6baadf546e5c0a251a",
+      "request_round_id": "package_dea119448bfc49778c63d008fa327bd7",
+      "request_id": "package_cancel",
+      "state": "accepted",
+      "stop_id": "9c17d7f2bcf24e68b50c00f36b582b5d",
+      "mapping_revision": 0,
+      "affected_round_id": "round_2d8b4db5a88a421f96fb6b50e304b2d0",
+      "affected_request_id": "episode_60a7d76100594fc58f41beb64db90a96",
+      "monotonic": 16777596.70685966,
+      "time": 1789845448.2765071
+    },
+    "seconds": 0.33128054812550545,
+    "request": {
+      "protocol": "tcei.cancel.v1",
+      "cancel_id": "3475cf9e35fd4a6baadf546e5c0a251a",
+      "round_id": "package_dea119448bfc49778c63d008fa327bd7",
+      "request_id": "package_cancel",
+      "reason": "closed pending21 fixture; begin normal package entry validation"
+    }
+  },
+  "counts": {
+    "judge_started": 1,
+    "ready": 3,
+    "observation_received": 1,
+    "observation_accepted": 1,
+    "round_started": 1,
+    "observation_started": 1,
+    "observation_preparation_started": 1,
+    "clear_basket_for_observation": 1,
+    "arrived": 38,
+    "observation_completed": 1,
+    "infer_started": 2,
+    "model_answer": 2,
+    "plan_published": 2,
+    "request_finished": 2,
+    "plan_accepted": 2,
+    "task_started": 2,
+    "grasp_evidence_preflight": 2,
+    "grasp_candidate_set": 2,
+    "attempt": 2,
+    "grasp_preview": 2,
+    "approach": 2,
+    "grasp_orientation_selected": 2,
+    "approach_clearance_verified": 2,
+    "occlusion_check": 2,
+    "controlled_self_occlusion": 2,
+    "descend": 2,
+    "grasp_preload_started": 2,
+    "grasp_preload": 2,
+    "grasp_contact_confirmed": 2,
+    "trial_lift_started": 2,
+    "trial_lift": 2,
+    "trial_lift_contact_evidence": 98,
+    "trial_lift_evidence": 61,
+    "grasp_verified": 2,
+    "lift_01_of_03": 2,
+    "lift_02_of_03": 2,
+    "lift_03_of_03": 2,
+    "transfer_clearance_01_of_03": 2,
+    "transfer_clearance_02_of_03": 2,
+    "transfer_clearance_03_of_03": 2,
+    "place_above_01_of_06": 1,
+    "place_above_02_of_06": 1,
+    "place_above_03_of_06": 1,
+    "place_above_04_of_06": 1,
+    "place_above_05_of_06": 1,
+    "place_above_06_of_06": 1,
+    "place_descend": 2,
+    "release_started": 2,
+    "released": 2,
+    "place_retreat": 2,
+    "return_home": 2,
+    "placement_verified": 2,
+    "grasp_attempt_outcome": 2,
+    "task_succeeded": 2,
+    "place_above_01_of_07": 1,
+    "place_above_02_of_07": 1,
+    "place_above_03_of_07": 1,
+    "place_above_04_of_07": 1,
+    "place_above_05_of_07": 1,
+    "place_above_06_of_07": 1,
+    "place_above_07_of_07": 1
+  },
+  "latest": [
+    {
+      "status": "return_home",
+      "reason": null,
+      "answer": null,
+      "time": 1789845575.8892353
+    },
+    {
+      "status": "arrived",
+      "reason": null,
+      "answer": null,
+      "time": 1789845581.1031244
+    },
+    {
+      "status": "placement_verified",
+      "reason": null,
+      "answer": null,
+      "time": 1789845581.1268818
+    },
+    {
+      "status": "grasp_attempt_outcome",
+      "reason": null,
+      "answer": null,
+      "time": 1789845581.1357753
+    },
+    {
+      "status": "task_succeeded",
+      "reason": null,
+      "answer": null,
+      "time": 1789845581.1377077
+    }
+  ],
+  "job_log": []
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "Native planning-only test; no task/gripper/pose execution",
+  "runtime": "dev_v7_t1_23",
+  "manifest_sha256": "d30e305c4265573b1703bfeaf8fada90f6f14abd94330367a42ccd526b666a4b",
+  "remote_run": "/root/gpufree-data/tcei_tilt23/tilt23_old24_preview01",
+  "status": "native_preview_only_completed",
+  "total_previews": 14,
+  "vertical_previews": 8,
+  "vertical_valid": 0,
+  "valid_candidates": [
+    {"tilt_deg":10,"yaw":0,"approach_z":2.612736,"seconds":0.38624686375260353,"nominal_rim_clearance_m":0.053403865988567834,"nominal_support_clearance_m":0.006517927967077952},
+    {"tilt_deg":-10,"yaw":180,"approach_z":2.612736,"seconds":0.39796219766139984,"nominal_rim_clearance_m":0.05284819182003364,"nominal_support_clearance_m":0.00596225379854376}
+  ],
+  "checked_stages": ["approach_path","descend","lift","transfer","place_above","place_descend"],
+  "motion_commands": [],
+  "execution_flags_false": true,
+  "maximum_sampled_joint_change": 5.6562754480182775e-11,
+  "finished_at": 1789851383.3425367,
+  "stack_stop_returncode": 0,
+  "scope_limit": "Existing joint bounds, sampled link/table clearance and held-attitude guards; not full-mesh collision certification or successful physical grasp"
+}

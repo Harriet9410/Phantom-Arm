@@ -1,0 +1,6 @@
+{
+  "bytes": 7139,
+  "sha256": "b07406e2e90485ed23a6f0dffa44fbfae848f6814bf4d6be5c99e76ccb1cdda3",
+  "head": "#!/usr/bin/python3\n\"\"\"Native08 communication check with motion disabled; leaves a measured stop latched.\"\"\"\nimport argparse\nimport hashlib\nimport json\nfrom pathlib import Path\nimport signal\nimport sys",
+  "tail": "n ('status','error','pose_gripper_command_count','native_rows')}),flush=True)\n    return 0 if result['status']=='passed_native_protocol_only' else 1\n\n\nif __name__=='__main__':raise SystemExit(main())\n"
+}

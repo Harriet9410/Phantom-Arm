@@ -1,0 +1,39 @@
+{
+  "checked_at": 1789782136.7497334,
+  "stop_pid": 152768,
+  "stop_state": "absent",
+  "stop_result": {
+    "failed_or_retained": [
+      "roscore retained: other ROS nodes remain"
+    ],
+    "unrecorded_processes_signalled": false
+  },
+  "children": {
+    "nine": {
+      "pid": 126825,
+      "alive": false
+    },
+    "sim": {
+      "pid": 126686,
+      "alive": false
+    },
+    "perception": {
+      "pid": 126760,
+      "alive": false
+    },
+    "controller": {
+      "pid": 126694,
+      "alive": false
+    },
+    "roscore": {
+      "pid": 126640,
+      "alive": true
+    }
+  },
+  "log_tail": [
+    "Already stopped or PID identity changed; no signal sent: /root/gpufree-data/tcei_competition_20260919/no_action03_01/pids/nine.json",
+    "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action03_01/pids/perception.json",
+    "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action03_01/pids/controller.json",
+    "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action03_01/pids/sim.json"
+  ]
+}

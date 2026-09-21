@@ -1,0 +1,17 @@
+{
+  "started_at": 1789819309.2279158,
+  "records": [
+    {
+      "name": "rgbd",
+      "returncode": 0,
+      "stdout": "{\"pid\": 371761, \"pgid\": 371761, \"start_ticks\": 1675145770, \"command\": [\"/usr/bin/python3\", \"/root/tcei_competition_20260919/record_trial_rgbd.py\", \"_output:=/root/gpufree-data/tcei_competition_20260919/single11_torch01/rgbd\", \"_duration:=600\"], \"cwd\": \"/root/tcei_competition_20260919\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/single11_torch01/logs/rgbd.log\", \"started_at\": 1789819309.272435}\n",
+      "stderr": ""
+    },
+    {
+      "name": "scalars",
+      "returncode": 0,
+      "stdout": "{\"pid\": 371764, \"pgid\": 371764, \"start_ticks\": 1675145774, \"command\": [\"/usr/bin/python3\", \"/root/tcei_competition_20260919/record_scalar_evidence11.py\", \"--output\", \"/root/gpufree-data/tcei_competition_20260919/single11_torch01/scalars\", \"--duration\", \"600\"], \"cwd\": \"/root/tcei_competition_20260919\", \"log\": \"/root/gpufree-data/tcei_competition_20260919/single11_torch01/logs/scalars.log\", \"started_at\": 1789819309.3200572}\n",
+      "stderr": ""
+    }
+  ]
+}

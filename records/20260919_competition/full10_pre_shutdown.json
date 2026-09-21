@@ -1,0 +1,50 @@
+{
+  "checked_at": 1789817782.4378657,
+  "robot": {
+    "source": "native_joint_state_while_stopped",
+    "all_joint_names": [
+      "Joint01",
+      "Joint02",
+      "Joint03",
+      "Joint04",
+      "Joint05",
+      "Joint06",
+      "finger1_joint",
+      "finger2_joint"
+    ],
+    "all_joint_positions": [
+      6.36164695606567e-05,
+      2.0628037452697754,
+      -2.184603452682495,
+      4.579102516174316,
+      1.6001352071762085,
+      0.0002916945959441364,
+      1.5147994858466518e-08,
+      1.120744400062712e-10
+    ],
+    "all_joint_velocities": [
+      8.908767767934478e-07,
+      -1.1658397625069483e-06,
+      -4.468824954528827e-06,
+      2.3134950311032298e-07,
+      -2.38984995348801e-07,
+      1.31967027527935e-07,
+      4.048042683280073e-07,
+      9.920775312366459e-09
+    ],
+    "stamp": 1789817782.409
+  },
+  "captured": false,
+  "stop": {
+    "id": "551e10c94ab94273b8503b19633fbec6",
+    "state": "stopped",
+    "reason": "task failure: all bounded nonrepeated grasp points, wrists, depths and heights rejected",
+    "seconds": 3542.039285549894,
+    "fault_reason": null,
+    "max_joint_speed": 5.63737194170244e-06,
+    "joint_distance": 1.1920928955078125e-07,
+    "tcp_distance": 2.412880886605526e-08,
+    "simulation_time": 5177.216936679557,
+    "time": 1789817782.3451355
+  }
+}

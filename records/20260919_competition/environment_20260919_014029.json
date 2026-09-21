@@ -1,0 +1,33 @@
+{
+  "clock": {
+    "rc": 0,
+    "output": "2026-09-19T01:40:29+08:00\n"
+  },
+  "gpu": {
+    "rc": 0,
+    "output": "NVIDIA GeForce RTX 4090, 1 MiB, 24564 MiB, 0 %\n"
+  },
+  "disk": {
+    "rc": 0,
+    "output": "文件系统                                                           容量  已用  可用 已用% 挂载点\noverlay                                                             30G   17G   13G   57% /\n/dev/mapper/lvmdata-pvc--d5eb8f3b--dd1b--4a52--976a--7e0ecad83009   49G  2.1M   49G    1% /root/gpufree-data\n"
+  },
+  "processes": {
+    "rc": 0,
+    "output": "    PID COMMAND             ELAPSED\n      1 tini                  09:52\n     50 supervisord           09:52\n     67 sshd                  09:52\n     68 jupyter-lab           09:52\n    125 bash                  02:52\n    201 python3               00:00\n    206 ps                    00:00\n"
+  },
+  "ports": {
+    "rc": 0,
+    "output": "State     Recv-Q    Send-Q       Local Address:Port        Peer Address:Port    Process                                                                         \nLISTEN    0         128                0.0.0.0:8888             0.0.0.0:*        users:((\"jupyter-lab\",pid=68,fd=6))                                            \nLISTEN    0         128                0.0.0.0:22               0.0.0.0:*        users:((\"sshd\",pid=67,fd=3))                                                   \nLISTEN    0         128                   [::]:22                  [::]:*        users:((\"sshd\",pid=67,fd=4))                                                   \n"
+  },
+  "display": {
+    "rc": 0,
+    "output": "总用量 8\ndrwxrwxrwt 2 root root 4096 9月  18 23:51 .\ndrwxrwxrwt 1 root root 4096 9月  19 01:40 ..\n"
+  },
+  "paths": {
+    "/root/tcei_stress_20260918/candidate_v6/tcei_stack": true,
+    "/root/EAICON": true,
+    "/root/isaacsim": true,
+    "/root/inference/FM9G4B-V": true,
+    "/root/tcei_deploy/scripts": true
+  }
+}

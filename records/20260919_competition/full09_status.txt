@@ -1,0 +1,77 @@
+{
+  "checked_at": 1789812047.7182925,
+  "full09_launcher_result.json": {
+    "returncode": 0,
+    "finished_at": 1789811994.5541816,
+    "run": "no_action09_01"
+  },
+  "full09_stop_prior.json": [
+    {
+      "name": "nine",
+      "record": "/root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/nine.json",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/nine.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "controller",
+      "record": "/root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/controller.json",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/controller.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "perception",
+      "record": "/root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/perception.json",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/perception.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "sim",
+      "record": "/root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/sim.json",
+      "code": 0,
+      "stdout": "Stopped owned process: /root/gpufree-data/tcei_competition_20260919/no_action08_01/pids/sim.json\n",
+      "stderr": ""
+    }
+  ],
+  "pids": {
+    "nine": 326063,
+    "sim": 325923,
+    "perception": 325998,
+    "controller": 325933
+  },
+  "ready": {
+    "ready_for_read_only": true,
+    "errors": [],
+    "time": 1789811993.8934534,
+    "mode": "read_only_no_action",
+    "candidate_count": 5,
+    "grasp_capability": true
+  },
+  "controller_ready": {
+    "time": 1789811976.3207636,
+    "monotonic": 16744124.751117092,
+    "request_id": null,
+    "round_id": null,
+    "task_id": null,
+    "status": "ready",
+    "code_sha256": "a180c13503ccde9209ad106eba2c79b97a311c1268c42552b236d47d1f8de9a5",
+    "execute": false,
+    "lift_evidence_capable": true,
+    "lift_evidence_capability_reason": null
+  },
+  "launcher_tail": [
+    "FULL09_WARMUP_COMPLETE"
+  ],
+  "protocol_E02_files": {
+    "events.jsonl": {
+      "bytes": 100400,
+      "sha256": "07262b3e3f0adff4992b5220e927f206ef6b54e51a87815fb0496935d8cd2719"
+    },
+    "summary.json": {
+      "bytes": 14046,
+      "sha256": "e492efbc51e5fb591ed8231334ec54ae3ad0164df733b1a01e48eb6a14b030d9"
+    }
+  }
+}

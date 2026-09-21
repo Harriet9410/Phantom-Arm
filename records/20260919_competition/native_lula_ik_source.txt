@@ -1,0 +1,162 @@
+{
+  "checked_at": 1789816983.5317714,
+  "methods": [
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/path_planners.py",
+      "line": 94,
+      "text": "def get_active_joints(self) -> List:\n        __doc__ = PathPlanner.get_active_joints.__doc__\n\n        return LulaInterfaceHelper.get_active_joints(self)"
+    },
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/trajectory_generator.py",
+      "line": 42,
+      "text": "def get_active_joints(self) -> List[str]:\n        __doc__ = Trajectory.get_active_joints.__doc__\n        return self.active_joints"
+    },
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/trajectory_generator.py",
+      "line": 160,
+      "text": "def get_active_joints(self) -> List[str]:\n        \"\"\"Return the list of joints by name that are considered to be controllable by the TrajectoryGenerator.\n        All inputs and outputs of the LulaTrajectoryGenerator correspond to the joints specified by get_active_joints().\n\n        Returns:\n            List[str]: List of joints that are used to generate the desired trajectory.\n        \"\"\"\n        return self._kinematics_solver.get_joint_names()"
+    },
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/kinematics.py",
+      "line": 39,
+      "text": "def __init__(\n        self, robot_description_path: str, urdf_path: str, robot_description: Optional[lula.RobotDescription] = None\n    ):\n        # Other Lula classes may initialize a KinematicsSolver using a pre-existing lula robot_description\n\n        if robot_description is None:\n            self._robot_description = lula.load_robot(robot_description_path, urdf_path)\n        else:\n            self._robot_description = robot_description\n        self._kinematics = self._robot_description.kinematics()\n        self._ik_config = lula.CyclicCoordDescentIkConfig()\n\n        LulaInterfaceHelper.__init__(self, self._robot_description)  # for tracking robot base\n\n        self._meters_per_unit = get_stage_units()\n\n        self._default_orientation_tolerance = self._lula_orientation_tol_to_rad_tol(\n            self._ik_config.orientation_tolerance\n        )\n        self._default_position_tolerance = self._ik_config.position_tolerance\n\n        self._default_bfgs_orientation_weight = self._ik_config.bfgs_orientation_weight\n        self._default_ccd_orientation_weight = self._ik_config.ccd_orientation_weight\n\n        self._default_cspace_seeds = []"
+    },
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/kinematics.py",
+      "line": 221,
+      "text": "def compute_inverse_kinematics(\n        self,\n        frame_name: str,\n        target_position: np.array,\n        target_orientation: np.array = None,\n        warm_start: np.array = None,\n        position_tolerance: float = None,\n        orientation_tolerance: float = None,\n    ) -> Tuple[np.array, bool]:\n        \"\"\"Compute joint positions such that the specified robot frame will reach the desired translations and rotations.\n        Lula Kinematics interpret the orientation tolerance as being the maximum rotation separating any standard axes.\n        e.g. For a tolerance of .1: The X axes, Y axes, and Z axes of the rotation matrices may independently be as far as .1 radians apart\n\n        Default values for position and orientation tolerances may be seen and changed with setter and getter functions.\n\n        Args:\n            frame_name (str): name of the target frame for inverse kinematics\n            target_position (np.array): target translation of the target frame (in stage units) relative to the USD stage origin\n            target_orientation (np.array): target orientation of the target frame relative to the USD stage global frame. Defaults to None.\n            warm_start (np.array): a starting position that will be used when solving the IK problem.  If default cspace seeds have been set,\n                the warm start will be given priority, but the default seeds will still be used. Defaults to None.\n            position_tolerance (float): l-2 norm of acceptable position error (in stage units) between the target and achieved translations. Defaults to None.\n            orientation tolerance (float): magnitude of rotation (in radians) separating the target orientation from the achieved orienatation.\n                orientation_tolerance is well defined for values between 0 and pi.  Defaults to None.\n\n        Returns:\n            Tuple[np.array,bool]:\n            joint_positions: in the order specified by get_joint_names() which result in the target frame acheiving the desired position\n\n            success: True if the solver converged to a solution within the given tolerances\n        \"\"\"\n\n        if position_tolerance is None:\n            self._ik_config.position_tolerance = self._default_position_tolerance\n        else:\n            self._ik_config.position_tolerance = position_tolerance * self._meters_per_unit\n\n        if orientation_tolerance is None:\n            self._ik_config.orientation_tolerance = self._rad_tol_to_lula_orientation_tol(\n                self._default_orientation_tolerance\n            )\n        else:\n            self._ik_config.orientation_tolerance = self._rad_tol_to_lula_orientation_tol(orientation_tolerance)\n\n        if target_orientation is None:\n            target_orientation = np.array([1, 0, 0, 0])\n            self._ik_config.orientation_tolerance = 2.0\n            self._ik_config.ccd_orientation_weight = 0.0\n            self._ik_config.bfgs_orientation_weight = 0.0\n        else:\n            self._ik_config.ccd_orientation_weight = self._default_ccd_orientation_weight\n            self._ik_config.bfgs_orientation_weight = self._default_bfgs_orientation_weight\n\n        rot = quats_to_rot_matrices(target_orientation).astype(np.float64)\n        pos = target_position.astype(np.float64) * self._meters_per_unit\n\n        pos, rot = LulaInterfaceHelper._get_pose_rel_robot_base(self, pos, rot)\n\n        target_pose = lula_utils.get_pose3(pos, rot)\n\n        if warm_start is not None:\n            seeds = [warm_start]\n            seeds.extend(self._default_cspace_seeds)\n            self._ik_config.cspace_seeds = seeds\n        else:\n            self._ik_config.cspace_seeds = self._default_cspace_seeds\n\n        results = lula.compute_ik_ccd(self._kinematics, target_pose, frame_name, self._ik_config)\n\n        return results.cspace_position, results.success"
+    },
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/motion_policies.py",
+      "line": 315,
+      "text": "def get_active_joints(self) -> List[str]:\n        \"\"\"Returns a list of joint names that RmpFlow is controlling.\n\n        Some articulated robot joints may be ignored by some policies. E.g., the gripper of the Franka arm is not used\n        to follow targets, and the RmpFlow config files excludes the joints in the gripper from the list of active\n        joints.\n\n        Returns:\n            active_joints (List[str]): Names of active joints.\n                The order of the joints in this list matches the order that the joints are expected\n                in functions like RmpFlow.compute_joint_targets(active_joint_positions, active_joint_velocities,...)\n        \"\"\"\n        return LulaInterfaceHelper.get_active_joints(self)"
+    },
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/motion_policies.py",
+      "line": 343,
+      "text": "def get_kinematics_solver(self) -> LulaKinematicsSolver:\n        \"\"\"Return a LulaKinematicsSolver that uses the same robot description as RmpFlow.  The robot base pose of the LulaKinematicsSolver\n        will be set to the same base pose as RmpFlow, but the two objects must then have their base poses updated separately.\n\n        Returns:\n            LulaKinematicsSolver: Kinematics solver using the same cspace as RmpFlow\n        \"\"\"\n        solver = LulaKinematicsSolver(None, None, robot_description=self._robot_description)\n        solver.set_robot_base_pose(self._robot_pos / self._meters_per_unit, rot_matrices_to_quats(self._robot_rot))\n\n        return solver"
+    },
+    {
+      "file": "/root/isaacsim/exts/isaacsim.robot_motion.motion_generation/isaacsim/robot_motion/motion_generation/lula/interface_helper.py",
+      "line": 62,
+      "text": "def get_active_joints(self):\n        return [\n            self._robot_description.c_space_coord_name(i) for i in range(self._robot_description.num_c_space_coords())\n        ]"
+    }
+  ],
+  "review_ready": {
+    "time": 1789816257.914669,
+    "config": "/root/tcei_competition_20260919/review_ui_02/config.json",
+    "control_publishers": 0
+  },
+  "review_pid": {
+    "pid": 351666,
+    "pgid": 351666,
+    "start_ticks": 1674840468,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "/root/tcei_competition_20260919/desktop_review_v2.py",
+      "--config",
+      "/root/tcei_competition_20260919/review_ui_02/config.json",
+      "--output",
+      "/root/tcei_competition_20260919/review_ui_02"
+    ],
+    "cwd": "/root/tcei_competition_20260919",
+    "log": "/root/tcei_competition_20260919/review_ui_02/display.log",
+    "started_at": 1789816256.260601
+  },
+  "review_log_tail": [],
+  "human_feedback": [
+    {
+      "time": 1789816721.8005612,
+      "verdict": "判断正确",
+      "note": "",
+      "context": {
+        "request_id": "episode_f73a717efbd04e3aa6f6c8a270e2cb93",
+        "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+        "model_input_image": "8a22bb27-d7ae-47a8-b57d-00016abaded3.png",
+        "frame_id": 15710,
+        "raw_answer": "{\"class\":\"Torch\",\"side\":\"left\",\"count\":1,\"ids\":[\"2\"]}",
+        "selected": {
+          "class": "Torch",
+          "side": "left",
+          "count": 1,
+          "ids": [
+            "2"
+          ]
+        },
+        "displayed_at": 1789816721.7878006
+      },
+      "source": "user_clicked_remote_review_window",
+      "control_commands_sent": false
+    },
+    {
+      "time": 1789816723.3006768,
+      "verdict": "判断正确",
+      "note": "",
+      "context": {
+        "request_id": "episode_f73a717efbd04e3aa6f6c8a270e2cb93",
+        "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+        "model_input_image": "8a22bb27-d7ae-47a8-b57d-00016abaded3.png",
+        "frame_id": 15710,
+        "raw_answer": "{\"class\":\"Torch\",\"side\":\"left\",\"count\":1,\"ids\":[\"2\"]}",
+        "selected": {
+          "class": "Torch",
+          "side": "left",
+          "count": 1,
+          "ids": [
+            "2"
+          ]
+        },
+        "displayed_at": 1789816723.0905538
+      },
+      "source": "user_clicked_remote_review_window",
+      "control_commands_sent": false
+    },
+    {
+      "time": 1789816725.0483623,
+      "verdict": "判断正确",
+      "note": "",
+      "context": {
+        "request_id": "episode_f73a717efbd04e3aa6f6c8a270e2cb93",
+        "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+        "model_input_image": "8a22bb27-d7ae-47a8-b57d-00016abaded3.png",
+        "frame_id": 15710,
+        "raw_answer": "{\"class\":\"Torch\",\"side\":\"left\",\"count\":1,\"ids\":[\"2\"]}",
+        "selected": {
+          "class": "Torch",
+          "side": "left",
+          "count": 1,
+          "ids": [
+            "2"
+          ]
+        },
+        "displayed_at": 1789816725.0339777
+      },
+      "source": "user_clicked_remote_review_window",
+      "control_commands_sent": false
+    },
+    {
+      "time": 1789816725.9194767,
+      "verdict": "判断正确",
+      "note": "",
+      "context": {
+        "request_id": "episode_f73a717efbd04e3aa6f6c8a270e2cb93",
+        "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+        "model_input_image": "8a22bb27-d7ae-47a8-b57d-00016abaded3.png",
+        "frame_id": 15710,
+        "raw_answer": "{\"class\":\"Torch\",\"side\":\"left\",\"count\":1,\"ids\":[\"2\"]}",
+        "selected": {
+          "class": "Torch",
+          "side": "left",
+          "count": 1,
+          "ids": [
+            "2"
+          ]
+        },
+        "displayed_at": 1789816725.6746855
+      },
+      "source": "user_clicked_remote_review_window",
+      "control_commands_sent": false
+    }
+  ]
+}

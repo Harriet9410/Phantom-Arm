@@ -1,0 +1,8 @@
+{
+  "started_at": 1789819751.0379114,
+  "returncode": 0,
+  "stdout": "{\"pid\": 374772, \"pgid\": 374772, \"start_ticks\": 1675189946, \"command\": [\"/usr/bin/python3\", \"-u\", \"/root/tcei_competition_20260919/desktop_review_v3.py\", \"--config\", \"/root/tcei_competition_20260919/review_ui_02/config.json\", \"--output\", \"/root/tcei_competition_20260919/review_ui_03\"], \"cwd\": \"/root/tcei_competition_20260919\", \"log\": \"/root/tcei_competition_20260919/review_ui_03/display.log\", \"started_at\": 1789819751.0322106}\n",
+  "stderr": "",
+  "geometry": "1400x1120+899+203",
+  "old_window_closed": true
+}

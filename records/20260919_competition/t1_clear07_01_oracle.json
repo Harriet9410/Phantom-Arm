@@ -1,0 +1,125 @@
+{
+  "version": "dev_v7_t1_07",
+  "registered_at": 1789790180.0987651,
+  "registered_before_inference": true,
+  "source_capture": "/root/tcei_competition_20260919/t1_capture07_clear01",
+  "source_image_binding": {
+    "protocol": "tcei.numbered_scene.bgr8.v1",
+    "encoding": "bgr8",
+    "width": 1280,
+    "height": 720,
+    "sensor_stamp_ns": 239933345847,
+    "camera_frame_id": "camera_top_link",
+    "canonical_pixel_sha256": "565bee32220f84c5999eb9ea3c8697ae686a52e9e18c78e7c270ce26c0950b10"
+  },
+  "annotation_method": "Root viewed the actual full07 bare-number PNG before calls; same physical target positions and categories as clear06. A fresh source scene was checked for identical IDs/stable identities and less than 3px drift.",
+  "context_change": "Complete view after fresh full07 startup and its own observation preparation; annotation is now literal candidate ID. Independent expected object selections unchanged.",
+  "competition_round": false,
+  "actions_enabled": false,
+  "cases": [
+    {
+      "case_id": "C1",
+      "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Smokegrenade",
+        "side": "left",
+        "count": 1,
+        "ids": [
+          "1"
+        ]
+      },
+      "stable_ids": [
+        "dc03cd11-obj-0006"
+      ]
+    },
+    {
+      "case_id": "C2",
+      "instruction": "抓取右下方的弹夹，放到右侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Magazine",
+        "side": "right",
+        "count": 1,
+        "ids": [
+          "4"
+        ]
+      },
+      "stable_ids": [
+        "dc03cd11-obj-0009"
+      ]
+    },
+    {
+      "case_id": "C3",
+      "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Torch",
+        "side": "left",
+        "count": 1,
+        "ids": [
+          "2"
+        ]
+      },
+      "stable_ids": [
+        "dc03cd11-obj-0007"
+      ]
+    },
+    {
+      "case_id": "C4",
+      "instruction": "抓取手雷，放到右侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Grenade",
+        "side": "right",
+        "count": 1,
+        "ids": [
+          "5"
+        ]
+      },
+      "stable_ids": [
+        "dc03cd11-obj-0010"
+      ]
+    },
+    {
+      "case_id": "C5",
+      "instruction": "把一个军用手电筒放到左侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Torch",
+        "side": "left",
+        "count": 1,
+        "ids": [
+          "2"
+        ]
+      },
+      "stable_ids": [
+        "dc03cd11-obj-0007"
+      ]
+    },
+    {
+      "case_id": "C6",
+      "instruction": "抓取最左方的烟雾弹，放到右侧传送带",
+      "expected": "select",
+      "model_selection": {
+        "class": "Smokegrenade",
+        "side": "right",
+        "count": 1,
+        "ids": [
+          "1"
+        ]
+      },
+      "stable_ids": [
+        "dc03cd11-obj-0006"
+      ]
+    },
+    {
+      "case_id": "C7",
+      "instruction": "抓取剩余的物品，放到左侧传送带",
+      "expected": "reject_missing_task_ledger",
+      "required_reason": "Predecessor completion and confirmed remaining set have not been supplied; dry-run requests do not advance a task ledger.",
+      "generic_schema_or_runtime_rejection_is_not_pass": true,
+      "accepted_refusal": "ObservationRequired for missing remaining/predecessor ledger, or model needs_confirmation explicitly identifying this missing context. Generic schema/unknown-ID refusal does not pass."
+    }
+  ]
+}

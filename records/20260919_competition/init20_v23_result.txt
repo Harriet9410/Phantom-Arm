@@ -1,0 +1,28 @@
+{
+  "exists": true,
+  "log_tail": "{\"scope\": \"initialization_only_no_task_execution\", \"started_at\": 1789852634.4058726, \"case\": \"/root/tcei_tilt23/tcei_260920v2/cases_b01/random_20.json\", \"case_sha256\": \"c5fb057e3f9d4aea4a3ea1c0b33259e4e91023c7cbcb570e57314d95e498508e\", \"start_code\": 0, \"status\": \"passed_initialization_only\", \"stop_code\": 0, \"finished_at\": 1789852697.55691}\n",
+  "scope": "initialization_only_no_task_execution",
+  "started_at": 1789852634.4058726,
+  "case": "/root/tcei_tilt23/tcei_260920v2/cases_b01/random_20.json",
+  "case_sha256": "c5fb057e3f9d4aea4a3ea1c0b33259e4e91023c7cbcb570e57314d95e498508e",
+  "start_code": 0,
+  "status": "passed_initialization_only",
+  "stop_code": 0,
+  "finished_at": 1789852697.55691,
+  "scene": {
+    "case_id": "random_20",
+    "seed": 2026091920,
+    "case_sha256": "c5fb057e3f9d4aea4a3ea1c0b33259e4e91023c7cbcb570e57314d95e498508e",
+    "valid": true,
+    "settle_frames": 1484,
+    "stable_frames": 30,
+    "ground_truth_not_published_to_controller": true
+  },
+  "objects": 5,
+  "readiness": {
+    "ready_for_read_only": true,
+    "mode": "read_only_no_action",
+    "candidate_count": 5,
+    "count_is_not_a_gate": true
+  }
+}

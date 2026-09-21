@@ -1,0 +1,460 @@
+{
+  "chat": [
+    "            batched = True",
+    "        else:",
+    "            batched = False",
+    "        msgs_list = msgs",
+    "        images_list = image",
+    "        ",
+    "        if batched is False:",
+    "            images_list, msgs_list = [images_list], [msgs_list]",
+    "        else:",
+    "            assert images_list is None, \"Please integrate image to msgs when using batch inference.\"",
+    "            images_list = [None] * len(msgs_list)",
+    "        assert len(images_list) == len(msgs_list), \"The batch dim of images_list and msgs_list should be the same.\"",
+    "",
+    "        if processor is None:",
+    "            if self.processor is None:",
+    "                self.processor = AutoProcessor.from_pretrained(self.config._name_or_path, trust_remote_code=True)",
+    "            processor = self.processor",
+    "        ",
+    "        assert self.config.query_num == processor.image_processor.image_feature_size, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"",
+    "        assert self.config.patch_size == processor.image_processor.patch_size, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"",
+    "        assert self.config.use_image_id == processor.image_processor.use_image_id, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"",
+    "        assert self.config.slice_config.max_slice_nums == processor.image_processor.max_slice_nums, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"",
+    "        assert self.config.slice_mode == processor.image_processor.slice_mode, \"These two values should be the same. Check `config.json` and `preprocessor_config.json`.\"",
+    "",
+    "        prompts_lists = []",
+    "        input_images_lists = []",
+    "        for image, msgs in zip(images_list, msgs_list):",
+    "            if isinstance(msgs, str):",
+    "                msgs = json.loads(msgs)",
+    "            copy_msgs = deepcopy(msgs)",
+    "",
+    "            assert len(msgs) > 0, \"msgs is empty\"",
+    "            assert sampling or not stream, \"if use stream mode, make sure sampling=True\"",
+    "",
+    "            if image is not None and isinstance(copy_msgs[0][\"content\"], str):",
+    "                copy_msgs[0][\"content\"] = [image, copy_msgs[0][\"content\"]]",
+    "",
+    "            images = []",
+    "            for i, msg in enumerate(copy_msgs):",
+    "                role = msg[\"role\"]",
+    "                content = msg[\"content\"]",
+    "                assert role in [\"user\", \"assistant\"]",
+    "                if i == 0:",
+    "                    assert role == \"user\", \"The role of first msg should be user\"",
+    "                if isinstance(content, str):",
+    "                    content = [content]",
+    "                cur_msgs = []",
+    "                for c in content:",
+    "                    if isinstance(c, Image.Image):",
+    "                        images.append(c)",
+    "                        cur_msgs.append(\"(<image>./</image>)\")",
+    "                    elif isinstance(c, str):",
+    "                        cur_msgs.append(c)",
+    "                msg[\"content\"] = \"\\n\".join(cur_msgs)",
+    "",
+    "            if system_prompt:",
+    "                sys_msg = {'role': 'system', 'content': system_prompt}",
+    "                copy_msgs = [sys_msg] + copy_msgs        ",
+    "",
+    "            prompts_lists.append(processor.tokenizer.apply_chat_template(copy_msgs, tokenize=False, add_generation_prompt=True))",
+    "            input_images_lists.append(images)",
+    "",
+    "        inputs = processor(",
+    "            prompts_lists, ",
+    "            input_images_lists, ",
+    "            max_slice_nums=max_slice_nums,",
+    "            use_image_id=use_image_id,",
+    "            return_tensors=\"pt\", ",
+    "            max_length=max_inp_length",
+    "        ).to(self.device)",
+    "",
+    "        if sampling:",
+    "            generation_config = {",
+    "                \"top_p\": 0.8,",
+    "                \"top_k\": 100,",
+    "                \"temperature\": 0.7,"
+  ],
+  "convert": [
+    "        return_tensors: Optional[Union[str, TensorType]] = TensorType.PYTORCH,",
+    "        **kwargs",
+    "    ) -> FM9GVBatchFeature:",
+    "",
+    "        if images is not None:",
+    "            image_inputs = self.image_processor(images, do_pad=do_pad, max_slice_nums=max_slice_nums, return_tensors=return_tensors)",
+    "        return self._convert_images_texts_to_inputs(image_inputs, text, max_slice_nums=max_slice_nums, use_image_id=use_image_id, max_length=max_length, **kwargs)",
+    "    ",
+    "    # Copied from transformers.models.clip.processing_clip.CLIPProcessor.batch_decode with CLIP->Llama",
+    "    def batch_decode(self, *args, **kwargs):",
+    "        \"\"\"",
+    "        This method forwards all its arguments to LlamaTokenizerFast's [`~PreTrainedTokenizer.batch_decode`]. Please",
+    "        refer to the docstring of this method for more information.",
+    "        \"\"\"",
+    "        output_ids = args[0]",
+    "        result_text = []",
+    "        for result in output_ids:",
+    "            result = result[result != 0]",
+    "            if result[0] == self.tokenizer.bos_id:",
+    "                result = result[1:]",
+    "            if result[-1] == self.tokenizer.eos_id:",
+    "                result = result[:-1]",
+    "            result_text.append(self.tokenizer.decode(result, *args[1:], **kwargs).strip())",
+    "        return result_text",
+    "        # return self.tokenizer.batch_decode(*args, **kwargs)",
+    "    ",
+    "    # Copied from transformers.models.clip.processing_clip.CLIPProcessor.decode with CLIP->Llama",
+    "    def decode(self, *args, **kwargs):",
+    "        \"\"\"",
+    "        This method forwards all its arguments to LlamaTokenizerFast's [`~PreTrainedTokenizer.decode`]. Please refer to",
+    "        the docstring of this method for more information.",
+    "        \"\"\"",
+    "        result = args[0]",
+    "        result = result[result != 0]",
+    "        if result[0] == self.tokenizer.bos_id:",
+    "            result = result[1:]",
+    "        if result[-1] == self.tokenizer.eos_id or (hasattr(self.tokenizer, \"eot_id\") and result[-1] == self.tokenizer.eot_id):",
+    "            result = result[:-1]",
+    "        return self.tokenizer.decode(result, *args[1:], **kwargs).strip()",
+    "",
+    "    def _convert(",
+    "        self, input_str, max_inp_length: Optional[int] = None",
+    "    ):",
+    "        input_ids = self.tokenizer.encode(input_str)",
+    "        if max_inp_length is not None:",
+    "            input_ids = input_ids[:max_inp_length]",
+    "        input_ids = torch.tensor(input_ids, dtype=torch.int32)",
+    "",
+    "        start_cond = (input_ids == self.tokenizer.im_start_id) | (input_ids == self.tokenizer.slice_start_id)",
+    "        end_cond = (input_ids == self.tokenizer.im_end_id) | (input_ids == self.tokenizer.slice_end_id)",
+    "",
+    "        image_start_tokens = torch.where(start_cond)[0]",
+    "        image_start_tokens += 1",
+    "        image_end_tokens = torch.where(end_cond)[0]",
+    "",
+    "        valid_image_nums = max(len(image_start_tokens), len(image_end_tokens))",
+    "",
+    "        image_bounds = torch.hstack(",
+    "            [",
+    "                image_start_tokens[:valid_image_nums].unsqueeze(-1),",
+    "                image_end_tokens[:valid_image_nums].unsqueeze(-1),",
+    "            ]",
+    "        )",
+    "        return input_ids, image_bounds",
+    "",
+    "    def _convert_images_texts_to_inputs(",
+    "            self, "
+  ],
+  "projection": {
+    "robot_commands_sent": false,
+    "calibration_verified": false,
+    "usable_for_control": false,
+    "model_issues": [],
+    "projection": {
+      "coverage_complete": false,
+      "root_link": "Link_00",
+      "urdf_sha256": "74281502b20d850d2754a7a7bd981e22f207424fa9e8a204eba8bf2ab689261f",
+      "image_stamp": 674.783368526,
+      "joint_stamp": 674.7667018584907,
+      "unsupported_geometry": [],
+      "projection": "per_geometry_conservative_envelope",
+      "required_joints": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "reason": "complete_declared_geometry_projected",
+      "mask_stamp": 674.783368526,
+      "calibration_id": "UNVERIFIED_DEBUG_ONLY",
+      "covered_pixels": 48514,
+      "pixel_margin": 2,
+      "projected_geometries": [
+        {
+          "link": "Link_00",
+          "geometry_index": 0,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/Link_0.STL",
+            "sha256": "f0c4da5c3793f3e6f83c9355bfb62d849c3a2bf61bf5c1eeb9492f56b49ab6ea",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 79
+        },
+        {
+          "link": "Link_01",
+          "geometry_index": 1,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/Link_1.STL",
+            "sha256": "d23ca1258a09c7f06608ceede91a58c74ae8af8e39d6c529cafeca3f6f6c4e6d",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 83
+        },
+        {
+          "link": "Link_03",
+          "geometry_index": 3,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/Link_3.STL",
+            "sha256": "31d17321fee1919c3d67b4f090ac1984851b70c4af34cf44ebaf1d69e7b33b61",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 101
+        },
+        {
+          "link": "Link_04",
+          "geometry_index": 4,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/Link_4.STL",
+            "sha256": "0ceb8d620c66d7a49f93a2a50f49c51e8043d7f11892809cdf64ac6dfabbc9bd",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 116
+        },
+        {
+          "link": "Link_05",
+          "geometry_index": 5,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/Link_5.STL",
+            "sha256": "5a22d3b9672a52e75d1464c9703380a5f1173e23b59ed73868be02ff55e8dbd6",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 71
+        },
+        {
+          "link": "Link_06",
+          "geometry_index": 6,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/Link_6.STL",
+            "sha256": "5ec07599dd3df93c4e5b4255e60a1fcef9b03959cefc9b97c73056ffc33f15ca",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 88
+        },
+        {
+          "link": "base_link",
+          "geometry_index": 7,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/base_link.STL",
+            "sha256": "c8f74bb7aad8e0eedb7312854a555927fd0cc4654c642e7331ef97850c9d7594",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 22
+        },
+        {
+          "link": "finger1_link",
+          "geometry_index": 8,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/finger1_link.STL",
+            "sha256": "ca87880fe69373657bd12322146f876bd8397e1e029b4fe54222acfa80c37025",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 8
+        },
+        {
+          "link": "finger2_link",
+          "geometry_index": 9,
+          "source": "collision",
+          "description": {
+            "type": "mesh",
+            "path": "/root/EAICON/Content/JAKA/robot/Meshes/finger2_link.STL",
+            "sha256": "fdd56c09ff0fed9fde7a2721216f157c59892613aa812041466d49f70c89a280",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "projection": "conservative_projected_convex_hull"
+          },
+          "hull_vertices": 14
+        },
+        {
+          "link": "gripper_center",
+          "geometry_index": 10,
+          "source": "visual",
+          "description": {
+            "type": "sphere",
+            "projection": "conservative_bounding_cube"
+          },
+          "hull_vertices": 6
+        }
+      ],
+      "outside_geometries": [
+        {
+          "link": "Link_02",
+          "reason": "outside_image"
+        }
+      ],
+      "loaded_geometry_count": 11,
+      "measured_joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "usable_for_control": false,
+      "debug_geometry_projected": true,
+      "calibration_verified": false,
+      "warning": "Unverified calibration overlay only; never use as trial-lift evidence."
+    },
+    "joint_diagnostics": {
+      "time": 1789783158.6186104,
+      "tracking": false,
+      "simulation_time": 674.7667018584907,
+      "all_joint_names": [
+        "Joint01",
+        "Joint02",
+        "Joint03",
+        "Joint04",
+        "Joint05",
+        "Joint06",
+        "finger1_joint",
+        "finger2_joint"
+      ],
+      "all_joint_positions": [
+        8.439227094925172e-11,
+        1.3000000715255737,
+        -1.4999998807907104,
+        4.499999523162842,
+        1.5999997854232788,
+        1.5864033420243118e-09,
+        2.295040069100196e-08,
+        5.857479501436558e-10
+      ],
+      "all_joint_velocities": [
+        -6.532759016408818e-06,
+        3.255020783399232e-05,
+        5.7512588682584465e-05,
+        -3.4803520065906923e-07,
+        7.308507974812528e-06,
+        8.056214824136987e-07,
+        1.199294501930126e-06,
+        2.3211853772409086e-08
+      ],
+      "joint_target": null,
+      "joint_actual": [
+        8.439227094925172e-11,
+        1.3000000715255737,
+        -1.4999998807907104,
+        4.499999523162842,
+        1.5999997854232788,
+        1.5864033420243118e-09
+      ],
+      "joint_error": null,
+      "tcp_actual": [
+        0.06628518521811978,
+        0.08628240733739723,
+        2.7573811337709673
+      ],
+      "tcp_rotation_matrix": [
+        [
+          -0.9995735020452107,
+          -3.733294243492899e-06,
+          0.029202979216802368
+        ],
+        [
+          -0.00036542957237653274,
+          0.9999232947707104,
+          -0.012380268014698903
+        ],
+        [
+          -0.02920069297640228,
+          -0.012385659487918206,
+          -0.9994968308948002
+        ]
+      ],
+      "tcp_quaternion_wire": [
+        0.014602755139873292,
+        -9.230232869865956e-05,
+        0.9998741955504601,
+        -0.006192260889626901
+      ],
+      "tcp_goal_fk": null,
+      "goal": null
+    },
+    "camera": {
+      "K": [
+        1343.83203125,
+        0.0,
+        640.0,
+        0.0,
+        1343.83203125,
+        360.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "width": 1280,
+      "height": 720,
+      "stamp": 674.783368526,
+      "frame_id": "camera_top_link"
+    },
+    "status": "debug_projection_created",
+    "reported_tcp_consistency_error_m": 3.184999567273718e-07,
+    "stationary_max_joint_speed": 5.7512588682584465e-05
+  }
+}
