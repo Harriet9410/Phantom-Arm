@@ -1,7 +1,0 @@
-{
-  "pid": 140301,
-  "started_at": 1789779711.842821,
-  "script": "/root/tcei_competition_20260919/probe_nine_vbatch1_beam1.py",
-  "log": "/root/tcei_competition_20260919/nine_vbatch1_beam1_probe.log",
-  "result": "/root/tcei_competition_20260919/nine_vbatch1_beam1_result.txt"
-}

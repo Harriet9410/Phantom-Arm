@@ -1,8 +1,0 @@
-{
-  "rgbd_reference": true,
-  "scalar_ready": true,
-  "logs": {
-    "scalars.log": "",
-    "rgbd.log": "[INFO] [1789790015.847292]: read-only paired RGB-D recorder ready: /root/gpufree-data/tcei_competition_20260919/single07_torch01/rgbd\n"
-  }
-}

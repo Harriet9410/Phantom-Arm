@@ -1,5 +1,0 @@
-{
-  "ports": "State     Recv-Q    Send-Q       Local Address:Port        Peer Address:Port    Process                                                                         \nLISTEN    0         128                0.0.0.0:8888             0.0.0.0:*        users:((\"jupyter-lab\",pid=68,fd=6))                                            \nLISTEN    0         128                0.0.0.0:22               0.0.0.0:*        users:((\"sshd\",pid=67,fd=3))                                                   \nLISTEN    0         128                   [::]:22                  [::]:*        users:((\"sshd\",pid=67,fd=4))                                                   \n",
-  "processes": "    PID COMMAND             ELAPSED\n      1 tini                  39:47\n     50 supervisord           39:47\n     67 sshd                  39:47\n     68 jupyter-lab           39:47\n    125 bash                  32:47\n    399 python3               00:00\n    401 ps                    00:00\n",
-  "display": "总用量 8\ndrwxrwxrwt 2 root root 4096 9月  18 23:51 .\ndrwxrwxrwt 1 root root 4096 9月  19 02:10 ..\n"
-}

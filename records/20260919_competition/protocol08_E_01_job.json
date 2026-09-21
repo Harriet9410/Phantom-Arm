@@ -1,1 +1,0 @@
-{"pid": 322905, "command": ["/usr/bin/python3", "-u", "/root/tcei_competition_20260919/probe_command_protocol08.py", "--code", "/root/tcei_competition_20260919/releases/dev_v7_t1_08/tcei_stack", "--outdir", "/root/tcei_competition_20260919/protocol08_E_01"], "started_at": 1789811506.1313963, "script_sha256": "65acfd67709ff97c3526978b136b98e700d560b22a1da1659faf96640a8b9898"}

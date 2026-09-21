@@ -1,9 +1,0 @@
-{
-  "pid": 126588,
-  "started_at": 1789777522.6128402,
-  "run": "no_action03_01",
-  "run_dir": "/root/gpufree-data/tcei_competition_20260919/no_action03_01",
-  "log": "/root/tcei_competition_20260919/no_action03_01_launcher.log",
-  "mode": "no_action_warmup",
-  "version": "dev_v7_t1_03"
-}

@@ -1,8 +1,0 @@
-{
-  "phase": "completed",
-  "wall_time": 1789779725.053673,
-  "allocated": 9731085824,
-  "reserved": 15443427328,
-  "peak_allocated": 13961560064,
-  "free_device": 4676059136
-}
