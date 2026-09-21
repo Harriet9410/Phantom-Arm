@@ -772,12 +772,25 @@ class Controller:
                 self.event('placement_verified',**metadata,candidate=candidate,transport=proof,
                     released_at=context['released_at'],released_monotonic=context['released_monotonic'],
                     delivered_at=min(timely),verified_at=time.time(),delivery_time_source='first_qualified_belt_observation_wall',
-                    background_verification=True,empty_release_proof=context['empty_release_proof'])
+                    background_verification=True,empty_release_proof=context['empty_release_proof'],
+                    belt_observer=self.belt_observer_state())
                 context['verified']=True;pending.pop(ident,None)
             elif time.time()>context['released_at']+35.:
                 self.event('placement_verification_expired',**metadata,
-                           reason='no timely bound belt proof; later task execution is unaffected')
+                           reason='no timely bound belt proof; later task execution is unaffected',
+                           belt_observer=self.belt_observer_state())
                 pending.pop(ident,None)
+
+    def belt_observer_state(self):
+        """Latest belt-observer diagnostics, recorded beside placement outcomes.
+
+        The observer runs inside the perception node and publishes its state with
+        the scene message. Without it an unverified placement cannot be told
+        apart from one the observer never looked for.
+        """
+        with self.lock:
+            state=(self.snapshot or {}).get('transport_status')
+        return copy.deepcopy(state)
 
     def fresh_scene(self):
         self.checkpoint()
@@ -1350,7 +1363,8 @@ class Controller:
         self.active_release_context['empty_release_proof']=empty_proof
         self.pending_deliveries[self.active_release_id]=copy.deepcopy(self.active_release_context)
         self.event('placement_pending_verification',release_id=self.active_release_id,proof=empty_proof,
-                   reason='release completed; no coherent belt proof yet',continue_next_task=True)
+                   reason='release completed; no coherent belt proof yet',continue_next_task=True,
+                   belt_observer=self.belt_observer_state())
         return False
 
     def verify_pending_delivery_after_stop(self,stop_proof,timeout=2.):

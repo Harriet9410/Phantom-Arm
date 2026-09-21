@@ -197,7 +197,7 @@ def _verify_transport_segment(history, category, side, released_at, drop_y=0., r
             if c['class']!=category or p is None:continue
             if not _current_release_observation(c,request_id,stable_id,release_id,released_at):continue
             if not all(math.isfinite(v) for v in p):continue
-            if not (.43<sign*p[0]<1.15 and 2.25<p[2]<2.55):continue
+            if not (.43<sign*p[0]<1.15 and 2.22<p[2]<2.55):continue
             if not drop_y-.15<p[1]<1.4:continue
             if not track:
                 if abs(p[0]-sign*drop_x)>.2 or p[1]>drop_y+.55:continue
@@ -278,7 +278,11 @@ def verify_settled_placement(history,category,side,released_at,drop_y,request_id
             p=c.get('world_position')
             if c['class']!=category or not _current_release_observation(c,request_id,stable_id,release_id,released_at):continue
             if p is None or not all(math.isfinite(v) for v in p):continue
-            if not (.52<sign*p[0]<1.05 and drop_y-.15<p[1]<drop_y+.8 and 2.25<p[2]<2.45):continue
+            # Height band must admit everything the tracker can publish. The
+            # producer (DepthConveyorTracker) keeps 2.22..2.49, so a narrower
+            # consumer band silently made some detected payloads unverifiable:
+            # a taller object pushed p[2] past 2.45 and no proof could ever form.
+            if not (.52<sign*p[0]<1.05 and drop_y-.15<p[1]<drop_y+.8 and 2.22<p[2]<2.49):continue
             choices.append(c)
         if len(choices)!=1:stable=[];continue
         c=choices[0]

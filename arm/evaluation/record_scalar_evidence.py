@@ -40,7 +40,7 @@ def receive(topic,message):
     if topic=='/tcei/candidates' and isinstance(value,dict):
         value={k:value.get(k) for k in ('frame_id','stamp','observed_at','published_at','round_id',
             'candidates','unknown_regions','coverage_complete','scene_complete','sensor_issues',
-            'source_released_pending_stable_ids','source_delivered_stable_ids')}
+            'source_released_pending_stable_ids','source_delivered_stable_ids','transport_status')}
         value['candidates']=[{k:c.get(k) for k in ('id','class','pixel','bbox','depth','depth_spread',
             'world_position','confidence','grasp_ready','stable_id','identity_status','identity_candidates',
             'identity_reason','association_anchor_held','association_anchor_pixel',

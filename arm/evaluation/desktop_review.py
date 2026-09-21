@@ -228,7 +228,12 @@ class Review:
         if self.preview_reasons:overview+='\n\n规划预检原因与次数\n'+json.dumps(dict(self.preview_reasons),ensure_ascii=False,indent=2)
         self.text(self.answer,overview);self.text(self.prompt,'九格实际输入文本（完整提示和候选，不补写推理）：\n\n'+source.get('prompt','等待实际输入'))
         self.text(self.timeline,'实际事件记录\n'+'\n'.join(self.events))
-        questions='请核对：\n1. 编号对象的类别是否正确？\n2. 所选对象是否满足原指令的方位与数量？\n3. 放置的左右传送带是否正确？\n4. 抓取点是否在可夹持部位，是否有遮挡？\n\n当前原文：'+instruction
+        transport=(self.scene or {}).get('transport_status') or {}
+        questions=('传送带观察器状态：'+str(transport.get('state','尚未上报'))
+                   +('（release '+str(transport.get('release_id'))+'）' if transport.get('release_id') else '')
+                   +'\n放置核验要它认出一个"新出现在带上"的物件；'
+                   +'它若长时间停在"等工具让开"或"等稳定运动"，就是没认出来。\n\n')
+        questions+='请核对：\n1. 编号对象的类别是否正确？\n2. 所选对象是否满足原指令的方位与数量？\n3. 放置的左右传送带是否正确？\n4. 抓取点是否在可夹持部位，是否有遮挡？\n\n当前原文：'+instruction
         if self.grasp:
             questions+='\n\n实际生成的抓取候选（这些是规划候选，不等于已经夹取）：\n'
             for number,item in enumerate(self.grasp['generated']['candidates']):
