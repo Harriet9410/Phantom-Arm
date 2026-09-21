@@ -1,5 +1,5 @@
 {
-  "version": "dev_v7_t1_23",
+  "version": "dev_v7_t1_24",
   "development_only": true,
   "live_grasp_validation_pending": true,
   "files": {
@@ -25,15 +25,15 @@
     "nine_node.py": "f9a6a376512ead71b825eea1e42ebe6d151c3cc16b6c700b320507229866664f",
     "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
     "perception.py": "673c90f7534e1266edcb8784704a5e909569303ba8afd4148f1e535a4832b959",
-    "perception_tracking.py": "5b5bd93d00e79aafa16be7e3783e300719f80872122c479e8047ae90d123f0e2",
+    "perception_tracking.py": "9119946deef3edf7ca4dbb1fae16dd199266b9500f3b4bd9e2ce67b70d9c4c63",
     "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
     "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",
     "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
     "ros_endpoints.py": "f0668d7724358ea6f073222827c29371e9a1c449d399aa8d08c04df7f8037dfa",
     "rotation_perception.py": "98e615a22c7b093ed7200cd2114e203b38655d05575177870773110019981d01",
     "run_episode.py": "a3858e49abdf7c73d741d090c199b7b8efb3fc371fee9ceea16689ce1c6cd736",
-    "semantic_repair.py": "dd24ebbd5d28d4d4fd49e054a803402169203b8e8ff7b6b5f020ef264f53f082",
-    "semantics.py": "2ae45b58714f1cde1cb45f4d759768ca37913759f4f64cd6f3f625c3168b97d2",
+    "semantic_repair.py": "ecbc82e0efcbbca157dccdb99121fb158d6da0e272a0ea8c5426d8f528429072",
+    "semantics.py": "1c18d7b62668455cedb6276825026938089413be0b9bc30945435b73907bea7c",
     "sim_with_feedback.py": "2e2d7b4488f974ab5afe275190a5332a08d356df70718fe7860ead24a91fc866",
     "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
     "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67"
