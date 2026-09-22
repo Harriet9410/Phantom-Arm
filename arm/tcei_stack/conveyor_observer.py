@@ -18,6 +18,9 @@ class DepthConveyorTracker:
         self.segment=0
         self.reference_background=None;self.latest_components=[];self.latest_stamp=None
         self.diagnostics={'state':'not_armed'}
+        self.reacquire_count=0
+        self.preexisting_ambiguous=None
+        self.preexisting_ambiguous_frames=0
         self.preexisting_state=None
         self.round_id=None
         self.background_coverage=None;self.reference_coverages=[]
@@ -31,6 +34,8 @@ class DepthConveyorTracker:
             self.references=[];self.background=None;self.reference_background=None
             self.context={};self.active=None;self.last=None;self.tentative=[];self.latest_depth=None
             self.latest_components=[];self.latest_stamp=None;self.diagnostics={'state':'round_reset'}
+            self.reacquire_count=0
+            self.preexisting_ambiguous=None;self.preexisting_ambiguous_frames=0
             self.preexisting_state=None
             self.background_coverage=None;self.reference_coverages=[]
             self.last_reference_stamp=None
@@ -67,7 +72,8 @@ class DepthConveyorTracker:
                              'tool_clear_at':None,
                              'preexisting':copy.deepcopy((self.preexisting_state or {}).get('preexisting',[])),
                              'provenance_uncertain':bool((self.preexisting_state or {}).get('provenance_uncertain',True))}
-                self.last=None;self.tentative=[];self.segment=0
+                self.last=None;self.tentative=[];self.segment=0;self.reacquire_count=0
+                self.preexisting_ambiguous=None;self.preexisting_ambiguous_frames=0
                 self.diagnostics={'state':'release_pending','release_id':event['release_id']}
         elif status=='released' and self.active and self.active['request_id']==rid:
             if event.get('stable_id')!=self.active['stable_id'] or event.get('release_id')!=self.active['release_id']:return
@@ -157,7 +163,19 @@ class DepthConveyorTracker:
                          'scope':'visible_plane_interiors_only_not_whole_belt_or_hidden_regions'}
 
     def _preexisting_exclusions(self,components,simulation_time,height):
+        """Exclude belt occupants recorded before this grasp; report ambiguity per frame.
+
+        "Ambiguous" means an occupant could not be matched uniquely, so a
+        pre-existing object might be mistaken for the payload just released. That
+        is a per-frame condition: this frame must not produce evidence. It used to
+        latch provenance_uncertain for the rest of the delivery, which voided the
+        whole remaining window over a transient -- the same "one strike" shape as
+        release_track_continuity_lost. Now only this frame is skipped and the next
+        one is judged on its own evidence; a genuinely persistent ambiguity still
+        fails, because every frame stays ambiguous.
+        """
         active=self.active or self.preexisting_state;excluded=[];kept=[]
+        self.preexisting_ambiguous=None
         if active is None:return excluded
         sign=1 if active['side']=='left' else -1
         for old in active['preexisting']:
@@ -169,9 +187,9 @@ class DepthConveyorTracker:
             excluded.extend(matches)
             if len(matches)==1:kept.append(copy.deepcopy(matches[0]))
             elif len(matches)>1:
-                active['provenance_uncertain']=True;kept.append(old)
+                self.preexisting_ambiguous='preexisting_match_not_unique';kept.append(old)
             elif old['bbox'][3]<height-45:
-                active['provenance_uncertain']=True;kept.append(old)
+                self.preexisting_ambiguous='preexisting_occupant_out_of_view';kept.append(old)
         active['preexisting']=kept
         return excluded
 
@@ -204,6 +222,15 @@ class DepthConveyorTracker:
         excluded=self._preexisting_exclusions(self.latest_components,simulation_time,depth.shape[0])
         active=self.active
         if not active or not active['released'] or not active['released_at']<=wall_time<active['started']+35:return []
+        if self.preexisting_ambiguous:
+            # This frame's occupants cannot be told apart from the payload, so it
+            # yields no evidence. The next frame is judged on its own; only a
+            # persistent ambiguity runs the window out.
+            self.preexisting_ambiguous_frames+=1
+            self.diagnostics={'state':'preexisting_object_provenance_ambiguous',
+                              'release_id':active['release_id'],'reason':self.preexisting_ambiguous,
+                              'skipped_frames':self.preexisting_ambiguous_frames,'recoverable':True}
+            return []
         # Before measured tool clearance, a low finger fragment is not a
         # payload merely because it is the only foreground component. Require
         # stable-height forward belt motion, or a new post-retreat exposure.
@@ -212,8 +239,23 @@ class DepthConveyorTracker:
             self.diagnostics={'state':active.get('provenance_failure','preexisting_object_provenance_ambiguous'),
                               'release_id':active['release_id']};return []
         if self.last is not None and simulation_time-self.last['stamp']>.6:
-            self.diagnostics={'state':'release_track_continuity_lost','release_id':active['release_id']}
-            active['provenance_uncertain']=True;active['provenance_failure']='release_track_continuity_lost';return []
+            # A gap longer than .6s (~3 frames) used to condemn this release for
+            # good: provenance_uncertain was latched, so every later frame hit the
+            # early return above and the remaining window was wasted. Downgrade the
+            # gap to a re-association instead. The evidence bar does not move -- the
+            # new association still has to earn the unique match plus stable forward
+            # belt motion below (or measured tool clearance) -- but three dropped
+            # frames no longer void an entire delivery.
+            gap=simulation_time-self.last['stamp']
+            self.tentative=[]
+            self.segment+=1
+            self.reacquire_count+=1
+            self.last=None
+            self.diagnostics={'state':'release_track_reacquire_after_gap',
+                              'release_id':active['release_id'],'gap_seconds':gap,
+                              'track_segment':self.segment,'reacquire_count':self.reacquire_count}
+            # No early return: this frame opens the new association below, under
+            # the unchanged gate.
         h,w=depth.shape
         xx=(np.arange(w,dtype=np.float32)[None,:]-K[2])/K[0]
         yy=(np.arange(h,dtype=np.float32)[:,None]-K[5])/K[4]

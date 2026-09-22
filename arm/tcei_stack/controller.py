@@ -1337,6 +1337,7 @@ class Controller:
                            delivered_at=delivered_at,verified_at=time.time(),
                            delivery_time_source=('first_qualified_belt_observation_wall' if qualified_times
                                                  else 'verification_wall_fallback'),
+                           belt_observer=self.belt_observer_state(),
                            candidate=selected)
                 self.active_release_context['verified']=True
                 return True
@@ -1394,6 +1395,7 @@ class Controller:
                     candidate=candidate,transport=proof,release_id=context['release_id'],
                     released_at=context['released_at'],released_monotonic=context['released_monotonic'],
                     delivered_at=min(timely),verified_at=time.time(),delivery_time_source='first_qualified_belt_observation_wall',
+                    belt_observer=self.belt_observer_state(),
                     delayed_verification_after_stop=True,stop_id=self.stop_id,read_only_finalization=True)
                 context['verified']=True;return True
             time.sleep(.05)

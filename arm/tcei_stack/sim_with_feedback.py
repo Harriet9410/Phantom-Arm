@@ -23,6 +23,33 @@ from grasp_contact_monitor import effort_payload
 sys.path.insert(0,'/root/EAICON/Source/JAKA')
 import jaka_sim as original
 import jaka_env as original_controller
+
+# [相机绑定] 官方 jaka_sim 把 ROS 相机挂在 camera_top 视口的 render product 上
+# （`create_viewport_window(..., width=320, height=240)` 那个），于是相机分辨率跟着
+# 仿真窗口走。窗口一变，内参 fx/cx/cy 就漂，下游"像素→机器人坐标"的换算全部失效
+# —— 实测把桌面从 1512x1008 改成 1920x1080 后相机仍是 1280x720、内参不变，靠的就是
+# 这段。它此前只以补丁形式存在于某台服务器上，换实例就丢；现在随包走。
+# 做法：在 jaka_sim 建相机之前替换模块级的 add_ros1_camera，忽略传入的视口路径，
+# 强制绑到 /World/Cameras/top 上一个固定的 1280x720 render product。官方文件不动。
+_ROSCAM_CAMERA='/World/Cameras/top'
+_ROSCAM_RESOLUTION=(1280,720)
+_roscam_product=None
+_add_ros1_camera_official=original.add_ros1_camera
+
+
+def _add_ros1_camera_pinned(render_product_path,graph_path,rgb_topic,info_topic,depth_topic):
+    """Ignore the viewport render product; pin the ROS camera to a fixed resolution."""
+    global _roscam_product
+    if _roscam_product is None:
+        import omni.replicator.core as replicator
+        _roscam_product=replicator.create.render_product(_ROSCAM_CAMERA,_ROSCAM_RESOLUTION)
+        print('[TCEI] camera pinned: %s %dx%d -> %s'
+              % (_ROSCAM_CAMERA,_ROSCAM_RESOLUTION[0],_ROSCAM_RESOLUTION[1],_roscam_product.path))
+    _add_ros1_camera_official(str(_roscam_product.path),graph_path,rgb_topic,info_topic,depth_topic)
+
+
+original.add_ros1_camera=_add_ros1_camera_pinned
+
 import rospy
 from std_msgs.msg import String
 
