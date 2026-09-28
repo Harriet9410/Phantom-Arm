@@ -1,0 +1,11 @@
+<launch>
+  <!-- <node pkg="large_scale_model_arm" type="isaac_yolov8.py" name="isaac_yolov8" output="screen" /> -->
+  <!-- <node pkg="large_scale_model_arm" type="isaac_scale.py" name="isaac_scale" output="screen" /> -->
+  <node pkg="large_scale_model_arm" type="isaac_yolov8" name="isaac_yolov8" output="screen" />
+  <node pkg="jaka_arm" type="isaac_grasp" name="isaac_grasp" output="screen">
+    <param name="grasp_z_offset" value="-0.02"/>
+    <param name="ori_tolerance" value="0.35"/>
+    <param name="pos_tolerance" value="0.05"/>
+  </node>
+
+</launch>
