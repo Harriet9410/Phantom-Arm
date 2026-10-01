@@ -52,7 +52,7 @@ def commands(config,run_dir,case_file=None):
                 '_prepare_observation:=false','_require_planner_feedback:=true','_log_dir:='+logs]
     if config['robot_calibration']:controller+=['_robot_projection_calibration:='+config['robot_calibration']]
     return [('sim',config['scene'],sim),('controller',str(code),controller),
-        ('perception',str(code),[config['yolo_py'],'-u',str(code/'perception.py'),'_show_gui:=false','_weights:='+config['weights']]),
+        ('perception',str(code),[config['yolo_py'],'-u',str(code/'perception.py'),'_show_gui:=false','_weights:='+config['weights'],'_yolo_enabled:=false','_detector:=nine']),
         ('nine',str(code),[config['nine_py'],'-u',str(code/'nine_node.py'),'_execute:=false','_model_path:='+config['model'],'_log_dir:='+logs])]
 
 

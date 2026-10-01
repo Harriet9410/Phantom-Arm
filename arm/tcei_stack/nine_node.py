@@ -221,6 +221,7 @@ class Nine:
                 frame=PILImage.fromarray(cv2.cvtColor(array,cv2.COLOR_BGR2RGB))
             prompt=str(data.get('prompt',''))
             grounding=data.get('grounding',True)
+            torch.cuda.empty_cache()
             with self.model_lock:
                 adapter_cm=(self._adapter_off() if (self._grounding_loaded and not grounding) else contextlib.nullcontext())
                 with adapter_cm:
@@ -249,7 +250,7 @@ class Nine:
             try:
                 # 抓取后场景变化，背景扫描（~15-20s）+ 轨迹连续两帧确认需要时间；
                 # 3 秒预算曾使 task-02 在身份确认前必然被拒（w 回合三轮同因）。
-                observation_seconds=float(rospy.get_param('~observation_wait_seconds',30.))
+                observation_seconds=float(rospy.get_param('~observation_wait_seconds',60.))
                 if not 0<observation_seconds<=60.:
                     raise ValueError('observation_wait_seconds must be within 0..60 seconds')
                 global_deadline=req.get('deadline_monotonic',started+observation_seconds+85.)
@@ -297,6 +298,7 @@ class Nine:
                                    previous_answer=previous,prompt=actual_prompt)
                     stage='model_inference';model_calls+=1
                     inference_configuration(self.model,self.inference_settings)
+                    torch.cuda.empty_cache()
                     with torch.inference_mode():
                         with self.model_lock, self._adapter_off():
                             answer=self.model.chat(image=None,msgs=[{'role':'user','content':[pil,actual_prompt]}],tokenizer=self.tokenizer,max_new_tokens=400,sampling=False,num_beams=self.inference_settings['num_beams'])
