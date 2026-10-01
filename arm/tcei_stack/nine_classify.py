@@ -83,12 +83,15 @@ class NineRotationDetector(RotationDetector):
                 round(x2 / 1000 * width), round(y2 / 1000 * height)]
 
     def _ask(self, rgb, prompt):
-        """Full frame + prompt -> raw model answer via the nine_node service."""
+        """Image + prompt -> raw model answer via the nine_node service.
+
+        grounding:false 始终走基座（选择权重）模型——分类/定位查询都不加载
+        框选适配器（实测基座的类别判断远准于适配器）。"""
         request_id = 'locate-' + uuid.uuid4().hex[:8]
         self._results.pop(request_id, None)
         pil = PILImage.fromarray(cv2.cvtColor(rgb, cv2.COLOR_BGR2RGB))
         self.request_pub.publish(String(json.dumps(
-            {'request_id': request_id, 'prompt': prompt,
+            {'request_id': request_id, 'prompt': prompt, 'grounding': False,
              'image_jpeg_b64': self._jpeg_b64(rgb)}, ensure_ascii=False)))
         deadline = time.monotonic() + self.timeout
         while time.monotonic() < deadline:
@@ -99,37 +102,87 @@ class NineRotationDetector(RotationDetector):
         rospy.logwarn_throttle(5, 'nine locate timeout: %.20s', prompt)
         return ''
 
-    def _locate_classes(self, rgb):
-        """Per-class localization queries -> {official_class: {'bbox_px'}}.
-
-        Runs on a background thread (see detect): the classify service answers
-        in ~2s per class and the 4-8 query cycle takes ~15s, which must never
-        block the streaming detect callback (that made every candidate stale).
-        The adapter's boxes drift between samples, so each class gets up to two
-        samples and keeps the first parseable box; association to depth
-        proposals happens per detect cycle against the current geometry."""
+    def _classify_view_crop(self, rgb, bbox, zh_prompt):
+        """One crop-classification query: proposal crop (margin, upscaled) ->
+        official class name parsed from the raw answer, or None."""
         h, w = rgb.shape[:2]
-        located = {}
-        for zh, cls in QUERY_CLASSES:
-            for _ in (1, 2):
-                answer = self._ask(rgb, '请框出图中的 %s。只输出一个 <box>。' % zh)
-                m = BOX_RE.search(answer or '')
-                if not m:
-                    continue
-                box1000 = [float(m.group(i)) for i in range(1, 5)]
-                if box1000[0] >= box1000[2] or box1000[1] >= box1000[3]:
-                    continue
-                located[cls] = {'bbox_px': self._to_pixels(box1000, w, h)}
-                break
-        return located
+        x1, y1, x2, y2 = bbox
+        mx, my = int((x2 - x1) * 0.6), int((y2 - y1) * 0.6)
+        cx1, cy1, cx2, cy2 = max(0, x1 - mx), max(0, y1 - my), min(w, x2 + mx), min(h, y2 + my)
+        crop = rgb[cy1:cy2, cx1:cx2]
+        ch, cw = crop.shape[:2]
+        if ch <= 0 or cw <= 0:
+            return None
+        scale = max(2, 160 // max(1, max(ch, cw)))
+        up = cv2.resize(crop, (cw * scale, ch * scale), interpolation=cv2.INTER_CUBIC)
+        answer = self._ask(up, zh_prompt)
+        low = (answer or '').lower()
+        for cls in self.capabilities['declared_classes']:
+            if cls.lower() in low:
+                return cls
+        return None
 
-    def _scan_worker(self, rgb):
+    def _classify_proposals(self, rgb, props):
+        """Three-view majority classification -> {proposal_index: class}.
+
+        Views: full-frame numbered query + per-proposal crop (EN prompt) +
+        per-proposal crop (CN prompt, wider margin).  View errors land on
+        different objects (measured 10/1: 3/5 each, union 5/5), so a majority
+        vote plus full-frame tie-break recovers most of them.  Runs on the
+        background scan thread; never blocks detect."""
+        ids = [str(i + 1) for i in range(len(props))]
+        votes = {i: [] for i in range(len(props))}
+        # 视角 A：全图 + 编号清单（与语义选择看到的编号一致）
+        names = '、'.join('%s（%s）' % (cls, zh) for zh, cls in QUERY_CLASSES)
+        prompt = (u'图中篮筐内有编号%s的物体。请分别判断每个编号物体的物资类别。'
+                  u'类别只能是：%s。只输出一个 JSON 对象，形如 {%s}，不要输出其他文字。'
+                  % ('、'.join(ids), names, ','.join('"%s":"类名"' % i for i in ids)))
+        import re as _re
+        raw = self._ask(rgb, prompt)
+        numbered = dict(_re.findall(r'"(\d+)"\s*:\s*"([A-Za-z]+)"', raw or ''))
+        declared = self.capabilities['declared_classes']
+        for i in range(len(props)):
+            cls = numbered.get(ids[i])
+            if cls in declared:
+                votes[i].append(cls)
+        # 视角 B/C：单块裁剪（英文提示 / 中文提示）
+        for i, p in enumerate(props):
+            bbox = [int(v) for v in p['bbox']]
+            a = self._classify_view_crop(rgb, bbox,
+                u'这个物资是什么类别？只回答类名：Grenade、Magazine、Smokegrenade、Torch。')
+            if a:
+                votes[i].append(a)
+            b = self._classify_view_crop(rgb, bbox,
+                u'这个物资是手雷、弹夹、烟雾弹、军用手电筒中的哪一种？只回答类名：Grenade、Magazine、Smokegrenade、Torch。')
+            if b:
+                votes[i].append(b)
+        assign = {}
+        for i in range(len(props)):
+            vs = votes[i]
+            if not vs:
+                continue
+            best, best_n = None, 0
+            for cls in set(vs):
+                n = vs.count(cls)
+                if n > best_n:
+                    best, best_n = cls, n
+            if best_n >= 2:
+                assign[i] = best
+            elif numbered.get(ids[i]) in declared:
+                # 无多数（三票各异）：取全图视角（有上下文，实测在无多数场景正确）
+                assign[i] = numbered[ids[i]]
+            else:
+                assign[i] = vs[0]
+        return assign
+
+    def _scan_worker(self, rgb, props):
         try:
-            located = self._locate_classes(rgb)
+            light = [{'bbox': [int(v) for v in p['bbox']], 'pixel': [float(v) for v in p['pixel']]} for p in props]
+            assign = self._classify_proposals(rgb, light)
         except Exception as error:
             rospy.logwarn('nine scan failed: %s', error)
-            located = {}
-        self._cache = {'at': time.monotonic(), 'located': located}
+            assign = {}
+        self._cache = {'at': time.monotonic(), 'assign': assign}
         self._scan_inflight = False
 
     def detect(self, rgb, depth, k):
@@ -142,17 +195,17 @@ class NineRotationDetector(RotationDetector):
             # 扫描完成后类别写入缓存并在 TTL 内持续套用。
             self.pending_scan = False
             self._scan_inflight = True
-            threading.Thread(target=self._scan_worker, args=(rgb.copy(),), daemon=True).start()
-        classified = {}
+            threading.Thread(target=self._scan_worker, args=(rgb.copy(), proposals), daemon=True).start()
+        assign = {}
         if self._cache is not None and time.monotonic() - self._cache['at'] < CACHE_TTL:
-            classified = self._cache['located']
-        # 框-提案匹配：对当前帧几何重新关联（缓存里只存像素框）
-        for cls, loc in classified.items():
-            index = associate(loc['bbox_px'], proposals)
-            if index is None:
+            assign = self._cache['assign']
+        # 逐物体分类：类别按扫描时的提案序号直接挂载（编号=发布 id，无匹配环节）
+        for index, cls in assign.items():
+            if index >= len(proposals):
                 continue
+            x1, y1, x2, y2 = proposals[index]['bbox']
             row = {'class': cls, 'raw_class': cls, 'confidence': 0.90,
-                   'bbox': [float(v) for v in loc['bbox_px']],
+                   'bbox': [float(x1), float(y1), float(x2), float(y2)],
                    'recognition_rotation_deg': 0.0}
             found[index][cls] = row
             base.append(row)

@@ -80,11 +80,13 @@ class Nine:
         # deployed selection behavior is untouched.
         adapter=rospy.get_param('~grounding_adapter','/root/sft_v2/outputs/qlora_crop/step_27000')
         import contextlib
+        self._grounding_loaded=False
         if adapter:
             from peft import PeftModel
             self.model=PeftModel.from_pretrained(self.model,adapter)
             self.model.eval()
             self._adapter_off=self.model.disable_adapter
+            self._grounding_loaded=True
         else:
             self._adapter_off=contextlib.nullcontext
         # Only the numbered full scene preserves left/up/extreme relations.
@@ -198,13 +200,16 @@ class Nine:
 
     def on_classify_request(self,msg):
         """Generic vision Q&A for nine_classify.py.  Request JSON:
-        {request_id, image_jpeg_b64, prompt}.  Response JSON:
+        {request_id, image_jpeg_b64, prompt, grounding?=true}.  grounding=false
+        runs the deployed base model (selection weights) with the grounding
+        adapter disabled — for classification-style queries.  Response JSON:
         {request_id, raw_answer} or {request_id, error}.  Model access is
         serialized with selection inference through model_lock; nothing here
         publishes plans and nothing moves."""
         rid=None;data=None
         try:
             import base64
+            import contextlib
             data=json.loads(msg.data);rid=data.get('request_id')
             if self._classify_busy:raise ValueError('classify busy')
             self._classify_busy=True
@@ -215,11 +220,14 @@ class Nine:
                 if array is None:raise ValueError('undecodable classify image')
                 frame=PILImage.fromarray(cv2.cvtColor(array,cv2.COLOR_BGR2RGB))
             prompt=str(data.get('prompt',''))
+            grounding=data.get('grounding',True)
             with self.model_lock:
-                answer=self.model.chat(image=None,msgs=[
-                    {'role':'user','content':([frame] if frame is not None else [])+[prompt]}],
-                    tokenizer=self.tokenizer,max_new_tokens=400,sampling=False,
-                    num_beams=self.inference_settings['num_beams'])
+                adapter_cm=(self._adapter_off() if (self._grounding_loaded and not grounding) else contextlib.nullcontext())
+                with adapter_cm:
+                    answer=self.model.chat(image=None,msgs=[
+                        {'role':'user','content':([frame] if frame is not None else [])+[prompt]}],
+                        tokenizer=self.tokenizer,max_new_tokens=400,sampling=False,
+                        num_beams=self.inference_settings['num_beams'])
             # 分类调用频繁且块状分配，会把 CUDA 缓存碎片化，挤占后续语义选择的
             # 大块分配（实测 1.54GiB OOM）。每次分类后把缓存归还 CUDA。
             torch.cuda.empty_cache()
