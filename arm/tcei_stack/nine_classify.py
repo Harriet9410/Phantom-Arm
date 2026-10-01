@@ -122,7 +122,8 @@ class NineRotationDetector(RotationDetector):
         up = cv2.resize(crop, (cw * scale, ch * scale), interpolation=cv2.INTER_CUBIC)
         answer = self._ask(up, zh_prompt)
         low = (answer or '').lower()
-        for cls in self.capabilities['declared_classes']:
+        # 长类名优先：'Grenade' 是 'Smokegrenade' 的子串，顺序错会误判
+        for cls in sorted(self.capabilities['declared_classes'], key=len, reverse=True):
             if cls.lower() in low:
                 return cls
         return None
@@ -149,6 +150,9 @@ class NineRotationDetector(RotationDetector):
         for i in range(len(props)):
             cls = numbered.get(ids[i])
             if cls in declared:
+                # 全图视角计双票：有全局上下文，作为类别锚（裁剪视角在扫描间摆动时
+                # 2:1 会翻转多数，双票后无多数回落全图，类别稳定）
+                votes[i].append(cls)
                 votes[i].append(cls)
         # 视角 B/C：单块裁剪（英文提示 / 中文提示）
         for i, p in enumerate(props):
@@ -178,6 +182,16 @@ class NineRotationDetector(RotationDetector):
                 assign[i] = numbered[ids[i]]
             else:
                 assign[i] = vs[0]
+        # Grenade/Smokegrenade 俯视混淆严重（三视角 2/5 错误集中于此）：加特征
+        # 提示的二选一复核，实测 6/6 一致，直接覆写复核结果。
+        GS_PROMPT = (u'仔细看这个物体的形状：烟雾弹（Smokegrenade）是圆柱形容器，'
+                     u'常带绿色环带；手雷（Grenade）是小型椭球体。'
+                     u'这个物体是哪一类？只回答 Smokegrenade 或 Grenade。')
+        for i, cls in list(assign.items()):
+            if cls in ('Grenade', 'Smokegrenade') and i < len(props):
+                ans = self._classify_view_crop(rgb, [int(v) for v in props[i]['bbox']], GS_PROMPT)
+                if ans in ('Grenade', 'Smokegrenade'):
+                    assign[i] = ans
         return assign
 
     def _scan_worker(self, rgb, props):

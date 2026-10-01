@@ -238,6 +238,13 @@ class CandidateTracker:
         if self.last_frame is not None and frame_id<=self.last_frame:
             raise ValueError('nonmonotonic candidate frame; explicit new round reset required')
         self.last_frame=frame_id
+        # 清理"年轻且长期未_seen"的轨迹：类别改判过渡产生的幻影轨迹会永久占据
+        # 附近位置使候选永远 ambiguous。真实丢失物体（seen_count 高）保留，
+        # 其缺失报告语义不变。
+        self.tracks={key:t for key,t in self.tracks.items()
+                     if t.get('delivered') or t.get('source_release_pending')
+                     or t.get('seen_count',0)>=5
+                     or frame_id-t.get('last_frame',frame_id)<=40}
         rows=[dict(c) for c in candidates]
         unknown=[dict(r) for r in (unknown_regions or [])]
         pending={key:t for key,t in self.tracks.items() if t.get('source_release_pending') and not t['delivered']}
