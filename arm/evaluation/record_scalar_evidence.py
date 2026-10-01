@@ -28,7 +28,7 @@ topics={**TOPICS,'/tcei/candidates':'std_msgs/String','/tcei/stop_measurement':'
         '/tcei/gripper_contact':'std_msgs/String',
         '/tcei/execute_preview':'std_msgs/String'}
 required={'/clock','/Jaka/get_jointstate','/Jaka/get_end_effector_pose',
-          '/Jaka/get_gripper_efforts','/Jaka/gripper_is_captured','/tcei/joint_diagnostics'}
+          '/Jaka/get_gripper_efforts','/Jaka/gripper_is_captured'}
 rospy.init_node('tcei_scalar_evidence',anonymous=True)
 
 def receive(topic,message):
