@@ -192,6 +192,15 @@ class NineRotationDetector(RotationDetector):
                 ans = self._classify_view_crop(rgb, [int(v) for v in props[i]['bbox']], GS_PROMPT)
                 if ans in ('Grenade', 'Smokegrenade'):
                     assign[i] = ans
+        # 手雷/手电筒混淆（实机 id5 被锁 Torch）：同一手法二次复核。
+        GT_PROMPT = (u'仔细看这个物体的形状：手雷（Grenade）是小型椭球体，表面常有'
+                     u'网格状防滑纹；军用手电筒（Torch）是细长圆柱形，一端有尾盖或按钮。'
+                     u'这个物体是哪一类？只回答 Grenade 或 Torch。')
+        for i, cls in list(assign.items()):
+            if cls in ('Grenade', 'Torch') and i < len(props):
+                ans = self._classify_view_crop(rgb, [int(v) for v in props[i]['bbox']], GT_PROMPT)
+                if ans in ('Grenade', 'Torch'):
+                    assign[i] = ans
         return assign
 
     def _scan_worker(self, rgb, props):
