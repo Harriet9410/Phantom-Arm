@@ -1,0 +1,21 @@
+{
+  "scope": "initialization_only_no_task_execution",
+  "runtime": "dev_v7_t1_23",
+  "status": "passed_initialization_only",
+  "case_id": "random_20",
+  "seed": 2026091920,
+  "case_sha256": "c5fb057e3f9d4aea4a3ea1c0b33259e4e91023c7cbcb570e57314d95e498508e",
+  "remote_summary": "/root/gpufree-data/tcei_tilt23/init20_check01/summary.json",
+  "started_at": 1789852634.4058726,
+  "finished_at": 1789852697.55691,
+  "start_code": 0,
+  "stop_code": 0,
+  "scene_valid": true,
+  "physical_objects": 5,
+  "settle_frames": 1484,
+  "stable_frames": 30,
+  "read_only_ready": true,
+  "initial_candidate_count": 5,
+  "actual_grasps": 0,
+  "not_a_completed_sorting_round": true
+}

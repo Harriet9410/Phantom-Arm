@@ -217,3 +217,66 @@ test_grasp_offsets / grasp_retry / trrt_config → ALL PASS
 ## 下一阶段（未开始）
 
 待选：上传回飞书 / 合并到 Harriet9410（等权限）/ 云端实测。
+
+---
+
+## 阶段 6：交接基线还原（同事控制器 → arm/）
+
+**状态：** 已完成（本地，未 commit、未 push）
+**目标：** 补上仓库 `arm/` 只有 `__pycache__`、没有源码的洞，建立可追溯的交接基线。
+**范围：** 只做文件还原，不改任何逻辑；不涉及训练代码、不涉及九格接入、不涉及左右判定。
+
+### 改动清单
+
+| 顺序 | 内容 |
+| --- | --- |
+| 1 | 从 `9.29存档.zip` 解压 `还原点_20260929/控制器/tcei_final_v2_23/tcei_260920v2/`（dev_v7_t1_23 冻结版） |
+| 2 | 整包还原进 `arm/`：59 个 .py / 178 个文件 / 2.2 MB，剔除 `__pycache__` 与 `.ipynb_checkpoints` |
+| 3 | md5 抽验忠实性：semantics.py / controller.py / robot.sh / mission_ledger.py 与存档快照全部一致 |
+| 4 | 新增 `arm/还原说明.md`（来源、版本、校验、纪律、未还原项） |
+
+### 边界确认
+
+- 左右方位：**未改动**（推导结论：当前相机画面约定与机械臂第一人称一致，见 `local/0929/02-执行计划书.md` 调研 1）
+- 九格大模型：**未接入控制层**（nine_node 保持 `_execute:=false`，端到端九格从未跑通，属加分项范围，本轮不做）
+- 训练代码/资产：**未触碰**（461MB 训练 tgz 未解压，sft_v2 / 模型补丁只读）
+
+### 待办
+
+- [ ] 用户确认后本地 commit + 打 tag 作交接基线
+- [ ] 用户浏览器跑一次 `查改动.sh`，核实 10:59 快照后实例是否又有改动
+- [ ] Step 2：launch_stack.py 增加 `--foreground` 分终端模式（纯脚本改动，见执行计划书）
+
+---
+
+## 阶段 7：九格分类接入控制层 + 双形态开关（阶段 2 落地）
+
+**状态：** 已部署实例并实测（代码在实例 git 7 次提交中；本地 arm/ 同步）
+**目标：** 九格（step_27000）接入控制层做分类，YOLO 降为随时可切回的兜底；双形态开关（兜底/纯九格合规）。
+
+### 改动清单（部署于实例 tcei_final_v2_23/tcei_260920v2/tcei_stack/）
+
+| 文件 | 类型 | 内容 |
+| --- | --- | --- |
+| nine_classify.py | 新增 | NineRotationDetector（同 detect() 契约）：深度分割出块 → 分类经 ROS 服务问 nine_node（复用已加载模型） |
+| perception.py | 修改 | `~detector`（yolo|nine，每帧读取支持热切换）+ `~yolo_enabled` 总闸（false 时不加载 best.pt，加分合规形态） |
+| nine_node.py | 修改 | model_lock 串行化 + `/tcei/classify_request|result` 通用视觉问答服务 + expandable_segments 分配器 |
+| BUILD_MANIFEST.json | 重算 | perception/nine_node 新哈希（launch_stack 校验通过） |
+
+### 调试历程（3 个修复）
+
+1. 热切换不生效 → detector 改为每帧读参数；
+2. 分类回答带 ```json 围栏解析失败 → _parse_answer 剥壳；
+3. 语义选择 CUDA OOM（1.54/2.24GiB）→ expandable_segments + empty_cache + TTL 降频。
+
+### 实测成绩
+
+- **语义测试（dry-run）**：五条指令两轮零语义错误（方位词/side 全对）；
+- **YOLO 兜底形态回合（semdemo0930a，用户录屏）**：**succeeded 5/5 全核验**（历史最好，含"剩余的物品"首次核验通过），全程 242 秒；
+- **九格分类模式**：分类服务打通（57+ 次回答），但持续分类+语义选择存在**显存压力**（扫描回答曾 200 token 截断已修；碎片化 OOM 已修）——待按需化重构（见 02 文档第七节 B 方案）。
+
+### 遗留
+
+- [ ] 九格分类按需化重构（B 方案）→ 纯九格 demo
+- [ ] 入口 B 指令控制台
+- [ ] 九格分类质量结论反馈训练侧

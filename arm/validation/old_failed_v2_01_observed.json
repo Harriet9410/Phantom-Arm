@@ -1,0 +1,30 @@
+{
+  "batch": "old_failed_v2_01",
+  "runtime": "dev_v7_t1_22",
+  "runtime_manifest_sha256": "6d9181b1347e2f6f6344604209f1d930dec22857d8cd60358d5bbec43da5e2fe",
+  "remote_campaign": "/root/gpufree-data/tcei_260920v2/old_failed_v2_01/campaign.json",
+  "status": "completed",
+  "planned_scenes": 8,
+  "automatic_complete_rounds": 5,
+  "independent_physical_complete_rounds": 6,
+  "automatic_verified_placements": 28,
+  "independent_placements": 31,
+  "all_recorders_complete": true,
+  "all_stack_shutdowns_returned_zero": true,
+  "fault_injection": false,
+  "results": [
+    {"case":2,"seed":2026091902,"status":"succeeded","seconds":253.12218956649303,"automatic":5,"independent":5,"candidate_attempts":5,"physical_descents":5,"empty_grasps":0,"recoveries":0,"preview_rejections":0,"model_answers":5},
+    {"case":4,"seed":2026091904,"status":"succeeded","seconds":253.39589179307222,"automatic":5,"independent":5,"candidate_attempts":5,"physical_descents":5,"empty_grasps":0,"recoveries":0,"preview_rejections":1,"model_answers":5},
+    {"case":6,"seed":2026091906,"status":"succeeded","seconds":257.90400233119726,"automatic":5,"independent":5,"candidate_attempts":5,"physical_descents":5,"empty_grasps":0,"recoveries":0,"preview_rejections":0,"model_answers":5},
+    {"case":8,"seed":2026091908,"status":"succeeded","seconds":267.96556229889393,"automatic":5,"independent":5,"candidate_attempts":6,"physical_descents":6,"empty_grasps":1,"recoveries":1,"preview_rejections":3,"model_answers":5},
+    {"case":9,"seed":2026091909,"status":"completed_with_unverified_placements","seconds":289.195100069046,"automatic":3,"independent":5,"candidate_attempts":6,"physical_descents":6,"empty_grasps":1,"recoveries":1,"preview_rejections":0,"model_answers":5},
+    {"case":24,"seed":2026091924,"status":"stopped","seconds":13.876739252358675,"automatic":0,"independent":0,"candidate_attempts":4,"physical_descents":0,"empty_grasps":0,"recoveries":0,"preview_rejections":16,"model_answers":1,"reason":"all vertical Magazine approach inverse-kinematics branches failed; no physical grasp descent"},
+    {"case":26,"seed":2026091926,"status":"stopped","seconds":67.44439367204905,"automatic":0,"independent":1,"candidate_attempts":9,"physical_descents":1,"empty_grasps":0,"recoveries":0,"preview_rejections":32,"model_answers":2,"reason":"first object released pending verification, second object's bounded grasp previews all rejected"},
+    {"case":28,"seed":2026091928,"status":"succeeded","seconds":286.3983197025955,"automatic":5,"independent":5,"candidate_attempts":6,"physical_descents":6,"empty_grasps":1,"recoveries":1,"preview_rejections":0,"model_answers":5}
+  ],
+  "holding_feedback_losses": 0,
+  "drop_detected_events": 0,
+  "natural_empty_grasp_recoveries": 3,
+  "failed_scenes_to_retest": [24,26],
+  "new_random30_executed": 0
+}

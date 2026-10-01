@@ -1,0 +1,6 @@
+{
+  "stack_dir": "/root/gpufree-data/tcei_260920v2/yolo02",
+  "episode_dir": "/root/gpufree-data/tcei_260920v2/yolo02r/episode",
+  "label": "部署核对：相机、YOLO、九格、执行状态",
+  "runs_root": "/root/gpufree-data/tcei_260920v2"
+}

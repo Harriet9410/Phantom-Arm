@@ -1,0 +1,57 @@
+{
+  "run": "/root/gpufree-data/tcei_competition_20260919/pending21_A01",
+  "runtime": "dev_v7_t1_21",
+  "scope": "declared first-release belt-evidence gap; not a normal success-rate round",
+  "status": "completed_with_unverified_placements",
+  "elapsed_seconds": 248.8595215845853,
+  "task_results": [
+    "task_pending_verification",
+    "task_succeeded",
+    "task_succeeded",
+    "task_pending_verification",
+    "task_pending_verification"
+  ],
+  "grasp_attempts": 5,
+  "verified_grasps": 5,
+  "releases": 5,
+  "verified_placements": 2,
+  "unverified_placements": 3,
+  "holding_losses": 0,
+  "semantic_rejections": 0,
+  "model_answers": 5,
+  "model_repairs": 0,
+  "first_pending_stable_id": "038c78e4-obj-0006",
+  "remaining_selected_stable_id": "038c78e4-obj-0008",
+  "remaining_raw_answer": {
+    "class": "Remaining",
+    "side": "left",
+    "count": 1,
+    "ids": [
+      "1"
+    ]
+  },
+  "execution_disabled": true,
+  "rgbd_pairs": 2177,
+  "scalar_rows": 120176,
+  "evidence_complete": true,
+  "recorder_exit_codes": [
+    0,
+    0
+  ],
+  "finished_at": 1789844496.1780114,
+  "manual_review_so_far": {
+    "task4": {
+      "image": "rgbd/pair_1628.jpg",
+      "sha256": "618d844c5c90ab3ecf69a972882924d489435565bff5776b0ab5203c1d794cf6",
+      "observed": "Grenade visible on right belt after release"
+    },
+    "task5": {
+      "image": "rgbd/pair_2041.jpg",
+      "sha256": "4afac60691e89b2e53bcad0741e337194ed711246e5538cb18fd371261060dd2",
+      "observed": "Smokegrenade visible on left belt after release; basket empty"
+    }
+  },
+  "continuation_branch": "passed all five instructions; first pending object never reselected as remaining",
+  "limits": "Only task1 evidence gap was injected. Tasks4 and5 naturally lacked automatic coherent belt proof; raw pending statuses preserved.",
+  "source_report": "/root/tcei_competition_20260919/pending21_resultB.txt"
+}
