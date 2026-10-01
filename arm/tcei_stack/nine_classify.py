@@ -62,6 +62,9 @@ class NineRotationDetector(RotationDetector):
         self._results = {}
         self._cache = None
         self._scan_inflight = False
+        self._last_assign = {}
+        self._stable_assign = {}
+        self._stable_n = 0
         self.pending_scan = True   # 首帧扫描一次，让候选尽快带上类别
         rospy.Subscriber('/tcei/prepare_classification', String, self._on_prepare, queue_size=1)
 
@@ -184,7 +187,20 @@ class NineRotationDetector(RotationDetector):
         except Exception as error:
             rospy.logwarn('nine scan failed: %s', error)
             assign = {}
-        self._cache = {'at': time.monotonic(), 'assign': assign}
+        # 类别滞回：连续两轮扫描一致才改判——单轮翻转会打断身份跟踪
+        # （tracking 要求本帧类别==上一帧类别才确认），导致永远 ambiguous。
+        # 提案数量变化（抓取后）才整体重置。
+        if not self._stable_assign or len(props) != self._stable_n:
+            self._stable_assign = dict(assign)
+        else:
+            merged = dict(self._stable_assign)
+            for i, cls in assign.items():
+                if self._last_assign.get(i) == cls:
+                    merged[i] = cls
+            self._stable_assign = merged
+        self._stable_n = len(props)
+        self._last_assign = dict(assign)
+        self._cache = {'at': time.monotonic(), 'assign': dict(self._stable_assign)}
         self._scan_inflight = False
 
     def detect(self, rgb, depth, k):

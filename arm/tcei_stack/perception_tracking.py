@@ -273,7 +273,9 @@ class CandidateTracker:
             matches=possible[index]
             if len(matches)==1 and len(reverse[matches[0]])==1:
                 key=matches[0];prior=active[key]['candidate']
-                if prior['class']==c['class'] and c.get('grasp_ready',True):accepted[index]=key
+                # 类别未测量（unknown）的轨迹可被首个真实类别认领：按需分类模式下
+                # 轨迹先于首次扫描建立，若要求类别一致则永远无法确认身份。
+                if (prior.get('class') in (None,'','unknown') or prior['class']==c['class']) and c.get('grasp_ready',True):accepted[index]=key
         seen=set(accepted.values())
         for index,c in enumerate(rows):
             c['source_frame_id']=frame_id
