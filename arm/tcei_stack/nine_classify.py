@@ -36,6 +36,8 @@ QUERY_CLASSES = [('烟雾弹', 'Smokegrenade'), ('弹夹', 'Magazine'),
 # 定位结果的有效期：扫描一轮约 15s，留足余量让语义端 40s 等待窗口内
 # 一定能看到带类别的候选。
 CACHE_TTL = 45.0
+# 后台自动续扫间隔：类别持续套用不回落，靠周期刷新保持新鲜（身份确认依赖连续性）。
+RESCAN_INTERVAL = 60.0
 
 
 class NineRotationDetector(RotationDetector):
@@ -192,12 +194,17 @@ class NineRotationDetector(RotationDetector):
         base = []
         if self.pending_scan and not self._scan_inflight:
             # 按需扫描转入后台线程：detect 绝不阻塞，候选持续按帧新鲜发布，
-            # 扫描完成后类别写入缓存并在 TTL 内持续套用。
+            # 扫描完成后类别写入缓存并持续套用。
             self.pending_scan = False
             self._scan_inflight = True
             threading.Thread(target=self._scan_worker, args=(rgb.copy(), proposals), daemon=True).start()
+        elif (not self._scan_inflight and self._cache is not None
+              and time.monotonic() - self._cache['at'] > RESCAN_INTERVAL):
+            # 周期性后台续扫：类别不因缓存过期回落 unknown（身份确认依赖连续性）
+            self._scan_inflight = True
+            threading.Thread(target=self._scan_worker, args=(rgb.copy(), proposals), daemon=True).start()
         assign = {}
-        if self._cache is not None and time.monotonic() - self._cache['at'] < CACHE_TTL:
+        if self._cache is not None:
             assign = self._cache['assign']
         # 逐物体分类：类别按扫描时的提案序号直接挂载（编号=发布 id，无匹配环节）
         for index, cls in assign.items():

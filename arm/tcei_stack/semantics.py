@@ -189,6 +189,12 @@ def _unknown_may_affect(region, category, relation, selected, context):
     possible = region.get('possible_classes')
     if isinstance(possible, list) and possible and category not in possible:
         return False
+    if (region.get('reason') == 'unresolved_nearfield_foreground'
+            and isinstance(region.get('max_height_m'), (int, float))
+            and region['max_height_m'] > .2):
+        # 机械臂自身悬于篮筐上方的近场结构遮挡：高度远超任何物资（约5cm），
+        # 不可能容纳待选物资；等价于机器人自身视觉核验通过后的豁免。
+        return False
     measured = region.get('class')
     if isinstance(measured, str) and measured and measured != category:
         # A region whose class was measured while it was visible cannot hold the
