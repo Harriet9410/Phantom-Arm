@@ -184,12 +184,22 @@ class NineRotationDetector(RotationDetector):
                 assign[i] = vs[0]
         # Grenade/Smokegrenade 俯视混淆严重（三视角 2/5 错误集中于此）：加特征
         # 提示的二选一复核，实测 6/6 一致，直接覆写复核结果。
+        def _recheck_agree(bbox, prompt):
+            """复核采两票：两票一致才改判。单票在模糊裁剪上是掷硬币，
+            会引发类别振荡（实测 id2 Torch↔Grenade 反复横跳）。"""
+            answers = []
+            for _ in range(2):
+                a = self._classify_view_crop(rgb, bbox, prompt)
+                if a is not None:
+                    answers.append(a)
+            return answers[0] if len(answers) == 2 and answers[0] == answers[1] else None
+
         GS_PROMPT = (u'仔细看这个物体的形状：烟雾弹（Smokegrenade）是圆柱形容器，'
                      u'常带绿色环带；手雷（Grenade）是小型椭球体。'
                      u'这个物体是哪一类？只回答 Smokegrenade 或 Grenade。')
         for i, cls in list(assign.items()):
             if cls in ('Grenade', 'Smokegrenade') and i < len(props):
-                ans = self._classify_view_crop(rgb, [int(v) for v in props[i]['bbox']], GS_PROMPT)
+                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GS_PROMPT)
                 if ans in ('Grenade', 'Smokegrenade'):
                     assign[i] = ans
         # 手雷/手电筒混淆（实机 id5 被锁 Torch）：同一手法二次复核。
@@ -198,7 +208,7 @@ class NineRotationDetector(RotationDetector):
                      u'这个物体是哪一类？只回答 Grenade 或 Torch。')
         for i, cls in list(assign.items()):
             if cls in ('Grenade', 'Torch') and i < len(props):
-                ans = self._classify_view_crop(rgb, [int(v) for v in props[i]['bbox']], GT_PROMPT)
+                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GT_PROMPT)
                 if ans in ('Grenade', 'Torch'):
                     assign[i] = ans
         return assign
