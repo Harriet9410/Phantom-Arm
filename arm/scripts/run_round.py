@@ -54,10 +54,12 @@ def main():
             'scalars':['/usr/bin/python3','-u',str(ROOT/'evaluation/record_scalar_evidence.py'),'--output',str(run/'scalars'),'--duration',length]}
         for name,command in commands.items():
             start_owned(run/'pids'/(name+'.json'),ROOT,run/'logs'/(name+'.log'),command);recorders.append(name)
-        until=time.monotonic()+30.
+        until=time.monotonic()+120.
         while not ((run/'rgbd/reference.jpg').exists() and (run/'scalars/ready.json').exists()):
             if interrupted:raise InterruptedError('operator interrupted preparation')
             if time.monotonic()>until or not all(current(read_record(run/'pids'/(n+'.json'))) for n in recorders):
+                # 120 秒：回合结束后仿真正在重载场景（1~2 分钟），相机话题恢复
+                # 需要时间；30 秒曾导致连续回合"证据记录器未就绪"空跑。
                 raise RuntimeError('证据记录器未就绪')
             time.sleep(.1)
         config=configure(stack,run,'实际执行：'+args.name)
