@@ -265,11 +265,13 @@ class Perception:
                 cv2.putText(annotated,'TRACK '+tracked_object['class'],(a,max(20,b-6)),cv2.FONT_HERSHEY_SIMPLEX,.55,(0,100,180),2)
             rows=max(1,(len(candidates)+2)//3)
             sheet=np.full((rows*280,3*280,3),245,np.uint8)
+            class_colors={'Smokegrenade':(0,160,255),'Grenade':(0,0,230),'Torch':(230,140,0),'Magazine':(200,0,200)}
             for i,c in enumerate(candidates):
                 x1,y1,x2,y2=c['bbox']
-                cv2.rectangle(annotated,(x1,y1),(x2,y2),(0,200,0),2)
-                label=c['id']
-                cv2.putText(annotated,label,(x1,max(20,y1-6)),cv2.FONT_HERSHEY_SIMPLEX,.6,(0,0,0),2)
+                color=class_colors.get(c.get('class'),(0,200,0))
+                cv2.rectangle(annotated,(x1,y1),(x2,y2),color,2)
+                label=str(c['id'])+' '+str(c.get('class') or '')
+                cv2.putText(annotated,label,(x1,max(20,y1-6)),cv2.FONT_HERSHEY_SIMPLEX,.55,(0,0,0),2)
                 margin=12
                 crop=rgb[max(0,y1-margin):min(h,y2+margin),max(0,x1-margin):min(w,x2+margin)]
                 ch,cw=crop.shape[:2]; scale=min(230/cw,220/ch)
