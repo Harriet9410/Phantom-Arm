@@ -65,26 +65,30 @@ def main():
     for idx, case in enumerate(picked, 1):
         cid = case['case_id']
         case_file = str(ROOT / case['case_file'])
-        row = {'case_id': cid, 'index': idx}
+        # 每案例独立栈名：robot.sh start 拒绝复用已存在的运行目录
+        # （首次刷题实测 5 案例全部 FileExistsError，教训入库）
+        stack_name = '%s_%s' % (args.stack, cid)
+        row = {'case_id': cid, 'index': idx, 'stack': stack_name}
         print('\n=== [%d/%d] %s ===' % (idx, args.count, cid))
         # 1) 停旧栈 + 清残留
         sh('cd %s && timeout 60 bash robot.sh stop 2>&1 | tail -1' % ROOT)
         sh('pkill -f "sim_with_feedback[.]py"; pkill -f "controller[.]py"; '
            'pkill -f "perception[.]py"; pkill -f "nine_node[.]py"; sleep 2')
         # 2) 起新栈（案例布局）
-        if not args.skip_start or True:
-            print('  起栈（案例 %s，约 4 分钟）…' % cid)
-            out = sh('cd %s && timeout 300 bash robot.sh start %s --case %s '
-                     '--case-register %s 2>&1 | tail -3' % (ROOT, args.stack, case_file, REGISTER),
-                     timeout=320)
-            print('  start:', out[-200:])
-            if 'Error' in out or 'error' in out:
-                row.update(status='start_failed', detail=out[-300:])
-                results['cases'].append(row)
-                continue
+        print('  起栈 %s（案例 %s，约 4 分钟）…' % (stack_name, cid))
+        out = sh('cd %s && timeout 300 bash robot.sh start %s --case %s '
+                 '--case-register %s 2>&1 | tail -3' % (ROOT, stack_name, case_file, REGISTER),
+                 timeout=320)
+        print('  start:', out[-200:])
+        # 真失败信号=Traceback/FileExistsError/"Error:"；就绪 JSON 里的
+        # "errors": [] 是成功标志，不能用 'error' in out 误判（教训入库）
+        if 'Traceback' in out or 'FileExistsError' in out or 'Error:' in out:
+            row.update(status='start_failed', detail=out[-300:])
+            results['cases'].append(row)
+            continue
         # 3) 等就绪
         print('  等待感知就绪…')
-        ready = wait_ready(RUNS / args.stack)
+        ready = wait_ready(RUNS / stack_name)
         row['ready'] = ready
         if not ready:
             row['status'] = 'not_ready'
