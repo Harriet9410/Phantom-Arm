@@ -84,7 +84,7 @@
   "harness/process_guard.py": "394579fb4d39d3ee448b9c8a6e977a34f7f380ec9504909fa567407a1f808c70",
   "instructions/official_example.json": "788c7342c4a298482b9f018c7e160d85851566fb815fbaa3607c2e1c0df1add7",
   "instructions/original_mechanical_regression.json": "4d439aa9ac15f0f5dcb9041ba282841305f1fbc357babb45888ab4e872f90808",
-  "robot.sh": "37560e28af2b2697e2c1897c7bbfffee0f9dfb6c2da71d968994c4e5fb3f8732",
+  "robot.sh": "d5ae7bb9673640bc3d55dcf4a5cdae5f005263b9d14ac5cf6c0b25e862de8dee",
   "scripts/cancel.py": "29d2793c8c2cf0760450ae7d4d835952dadf5ed415a2bf78dd9d4705d371e694",
   "scripts/common.py": "8e39c2dbeb7416d7cc6488331bba64aa6098f3cc658c4722c713dd77a7876941",
   "scripts/desktop.py": "16e15bb1cf65dbba69cdbe36505d3f8f1aa60086831c33621700a770446f722f",
@@ -151,6 +151,7 @@
   "部署说明.md": "7f09b34695224e39cc42915dbf44cf77eb9ae363488dd45a33680ecdfe09a27a",
   "验证记录.md": "52cedb5f1a475248f20d4dd3c2ee7e5a698529f35969d7b4cba1353bc784f8f3",
   "evaluation/instruction_console.py": "783ff069e04b4ee3259825187d22f4d151334196e8be61efa9ea6fb8254bc456",
-  "scripts/drill.py": "0fb2761cb6c7d6390bd8b4ffeb6037427ec2ae9b6098fb145ec8b0c11c6a468c"
+  "scripts/drill.py": "0fb2761cb6c7d6390bd8b4ffeb6037427ec2ae9b6098fb145ec8b0c11c6a468c",
+  "scripts/drill5.py": "50e23a53c5f6546f8e676270f27406f9caab0aae2055bb28457289ba4393fb3a"
  }
 }

@@ -19,5 +19,6 @@ case "$_tcei_command" in
   panel) exec /usr/bin/python3 "$_tcei_root/scripts/panel.py" "$@" ;;
   console) exec /usr/bin/python3 "$_tcei_root/evaluation/instruction_console.py" "$@" ;;
   drill) exec /usr/bin/python3 "$_tcei_root/scripts/drill.py" "$@" ;;
+  drill5) exec /usr/bin/python3 "$_tcei_root/scripts/drill5.py" "$@" ;;
   *) printf '%s\n' "未知命令：$_tcei_command" >&2; exit 2 ;;
 esac
