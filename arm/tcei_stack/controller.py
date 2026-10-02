@@ -1263,6 +1263,24 @@ class Controller:
                 last=error;time.sleep(.5)
         raise last
 
+    def belt_placement_count(self,side):
+        """Per-side delivered count for the placement offset (10/3).
+
+        Persisted in the stack dir: the controller restarts between
+        instructions in the shared/competition form, so an in-memory
+        counter would reset and re-stack objects on the same spot."""
+        path=os.path.join(os.path.dirname(self.log_dir),'belt_placements.json')
+        try:data=json.load(open(path))
+        except Exception:data={}
+        return int(data.get(side,0))
+
+    def bump_belt_placements(self,side):
+        path=os.path.join(os.path.dirname(self.log_dir),'belt_placements.json')
+        try:data=json.load(open(path))
+        except Exception:data={}
+        data[side]=int(data.get(side,0))+1
+        json.dump(data,open(path,'w'))
+
     def execute_object_once(self,selected,side):
         self.active_release_context=None
         self.check_live_projection()
@@ -1293,13 +1311,18 @@ class Controller:
         self.move_held_linear(above,q,'lift',max_step=.04)
         self.move_held_linear(self.transfer_p,q,'transfer_clearance')
         drop_y=float(rospy.get_param('~place_y',.15))
+        # 定向退休配套（10/3）：同侧已有交付时沿带偏移放置位——同位堆叠会物理
+        # 互穿、感知 bbox 合并，后放物体皮带核验无凭据（unverified）。计数持久
+        # 在栈目录（shared/比赛形态下 controller 每条指令重启，进程内计数不跨回合）。
+        y_shift=.12*self.belt_placement_count(side)
+        drop_y+=y_shift
         reached=False
         # Keep the same grasp attitude until release. The stock attachment code
         # mixes quaternion conventions, so wrist rotations can disturb contact.
         # Prefer upstream belt center for edge clearance and visible transit.
-        place_options=[(.68,drop_y,q),(.65,.2,q),(.6,.35,q),(.6,.5,q)]
+        place_options=[(.68,drop_y,q),(.65,.2+y_shift,q),(.6,.35+y_shift,q),(.6,.5+y_shift,q)]
         if preferred_place:
-            first=(abs(preferred_place[0]),preferred_place[1],q)
+            first=(abs(preferred_place[0]),preferred_place[1]+y_shift,q)
             place_options=[first]+[item for item in place_options if abs(item[0]-first[0])>1e-5 or abs(item[1]-first[1])>1e-5]
         for candidate_x,candidate_y,candidate_q in place_options:
             place=[candidate_x if side=='left' else -candidate_x,candidate_y,2.67]
@@ -1323,6 +1346,7 @@ class Controller:
             'deadline_wall':self.deadline+offset,'home_arrived_at':None,'verified':False}
         self.event('released',release_started_at=release_command_at,released_at=released_at,
                    released_monotonic=released_monotonic,release_id=self.active_release_id)
+        self.bump_belt_placements(side)
         # Withdraw inward as well as upward so the camera sees the released item.
         retreat=[place[0]-(.22 if side=='left' else -.22),place[1],place[2]]
         self.move(retreat,place_q,'place_retreat')
