@@ -95,6 +95,15 @@ class CandidateTracker:
                         event.get('request_id')!=track.get('pending_request_id')):return None
                 track.update(delivered=True,source_release_pending=False,delivered_at=event.get('time'),
                     delivery_request_id=event.get('request_id'),delivery_release_id=event.get('release_id'))
+        elif name=='task_succeeded':
+            # P0 软复位：任务完成即退休全部活跃轨迹，交付后场景由新扫描重建身份
+            # （旧轨迹的 class_conflict 曾使下一任务身份确认永远超时）。
+            # 已交付轨迹保留——账本仍从 source_lifecycle 读取交付记录。
+            for key in [k for k,t in self.tracks.items() if not t['delivered']]:
+                del self.tracks[key]
+            self.latest_candidates=[];self.latest_unknown=[]
+            self.reacquire_receipts={};self.last_frame=None
+            return {'status':'tracking_soft_reset','round_id':self.round_id}
         elif name in ('grasp_verified','release_started','released','placement_pending_verification',
                       'holding_feedback_lost','drop_detected'):
             self.record_release_lifecycle(event)

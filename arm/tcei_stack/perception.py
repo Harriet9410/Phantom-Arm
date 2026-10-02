@@ -119,6 +119,9 @@ class Perception:
         if ack is not None:
             ack['published_at']=time.time()
             self.identity_pub.publish(String(json.dumps(ack)))
+        if event.get('status')=='task_succeeded' and getattr(self,'nine_detector',None) is not None:
+            # P0：任务完成立即触发重扫，重建的轨迹马上能拿到类别
+            self.nine_detector.pending_scan=True
 
     def on_frame(self, rgb_msg, depth_msg):
         # Subscriber callbacks never perform inference. New camera pairs replace

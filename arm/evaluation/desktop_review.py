@@ -202,7 +202,7 @@ class Review:
         self.photo('grasp',picture);self.captions['grasp'].set('紫色 C0…为实际候选点；源画面仿真时刻 %.6f 秒'%stamp)
 
     def render(self):
-        for key,title in [('raw','相机原图'),('yolo','YOLO 实际标注')]:
+        for key,title in [('raw','相机原图'),('yolo','九格视觉标注')]:
             row=self.frames.get(key)
             if not row:continue
             msg,received=row;stamp=msg.header.stamp.to_nsec();age=time.monotonic()-received

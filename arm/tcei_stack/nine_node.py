@@ -250,9 +250,9 @@ class Nine:
             try:
                 # 抓取后场景变化，背景扫描（~15-20s）+ 轨迹连续两帧确认需要时间；
                 # 3 秒预算曾使 task-02 在身份确认前必然被拒（w 回合三轮同因）。
-                observation_seconds=float(rospy.get_param('~observation_wait_seconds',60.))
-                if not 0<observation_seconds<=60.:
-                    raise ValueError('observation_wait_seconds must be within 0..60 seconds')
+                observation_seconds=float(rospy.get_param('~observation_wait_seconds',90.))
+                if not 0<observation_seconds<=120.:
+                    raise ValueError('observation_wait_seconds must be within 0..120 seconds')
                 global_deadline=req.get('deadline_monotonic',started+observation_seconds+85.)
                 # 按需分类：触发 perception 扫描并等待带类别的新候选。
                 self.prepare_pub.publish(String(json.dumps({'request_id': 'prep-'+rid[-8:]}, ensure_ascii=False)))
