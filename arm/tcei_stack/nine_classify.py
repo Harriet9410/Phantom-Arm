@@ -211,6 +211,18 @@ class NineRotationDetector(RotationDetector):
                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], GT_PROMPT)
                 if ans in ('Grenade', 'Torch'):
                     assign[i] = ans
+        # P0-2 五选一终审：配对复核只看得到 G↔S、G↔T，跨类错误（实测 z 轮交付后
+        # 首扫 弹夹→Grenade×2、手电筒→Smokegrenade）整批漏过。每个已标注提案加
+        # 两票一致的"四选一"裁剪复核，答案与现标签不一致即覆写。扫描耗时约翻倍，
+        # 换取首扫即正确——连续任务等不起 1~2 分钟的自纠。
+        FIVE_PROMPT = (u'这是军用物资，四选一：Smokegrenade（烟雾弹，圆柱形容器常带绿色环带）、'
+                       u'Grenade（手雷，小型椭球体带网格纹）、Torch（军用手电筒，细长圆柱一端有尾盖）、'
+                       u'Magazine（弹夹，长条形可见排列的弹壳）。这个物体是哪一类？只回答类名。')
+        for i, cls in list(assign.items()):
+            if i < len(props):
+                ans = _recheck_agree([int(v) for v in props[i]['bbox']], FIVE_PROMPT)
+                if ans in declared and ans != cls:
+                    assign[i] = ans
         return assign
 
     def _scan_worker(self, rgb, props):
