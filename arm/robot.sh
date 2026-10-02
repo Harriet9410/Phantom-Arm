@@ -17,5 +17,7 @@ case "$_tcei_command" in
   cancel) exec /usr/bin/python3 "$_tcei_root/scripts/cancel.py" "$@" ;;
   stop) exec /usr/bin/python3 "$_tcei_root/scripts/stop.py" "$@" ;;
   panel) exec /usr/bin/python3 "$_tcei_root/scripts/panel.py" "$@" ;;
+  console) exec /usr/bin/python3 "$_tcei_root/evaluation/instruction_console.py" "$@" ;;
+  drill) exec /usr/bin/python3 "$_tcei_root/scripts/drill.py" "$@" ;;
   *) printf '%s\n' "未知命令：$_tcei_command" >&2; exit 2 ;;
 esac
