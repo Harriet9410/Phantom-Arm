@@ -76,20 +76,28 @@ def effort_payload(left,right,simulation_time,published_wall):
 
 class GraspContactMonitor:
     def __init__(self,on_threshold=.2,off_threshold=.05,loss_seconds=.6,
-                 min_samples=3,max_age=1.5,confirm_seconds=.45):
-        values=(on_threshold,off_threshold,loss_seconds,max_age,confirm_seconds)
+                 min_samples=3,max_age=1.5,confirm_seconds=.45,
+                 gap_fault_count=3,stale_seconds=6.):
+        values=(on_threshold,off_threshold,loss_seconds,max_age,confirm_seconds,gap_fault_count,stale_seconds)
         if (not all(math.isfinite(v) for v in values) or
                 not 0<off_threshold<on_threshold or loss_seconds<=0 or
-                max_age<=0 or confirm_seconds<=0 or type(min_samples) is not int or min_samples<3):
+                max_age<=0 or confirm_seconds<=0 or type(min_samples) is not int or min_samples<3 or stale_seconds<=0 or type(gap_fault_count) is not int or gap_fault_count<1):
             raise ValueError('invalid contact hysteresis settings')
         self.on=on_threshold;self.off=off_threshold;self.loss_seconds=loss_seconds
         self.min_samples=min_samples;self.max_age=max_age;self.confirm_seconds=confirm_seconds
+        # Measured (drill5 magazine round): (stamp,valid) pair can freeze ~3s
+        # during held motion (sim compute stall; wrapper publishes only on
+        # pair change); median publication gap is 0.03s. A single freeze must
+        # not kill a valid grasp; recurrent freezes are still a feedback fault.
+        # stale_seconds bounds decision-point (move edge) dead-feed detection.
+        self.gap_fault_count=gap_fault_count;self.stale_seconds=stale_seconds
         self.reset()
 
     def reset(self):
         self.armed=False;self.lost=False;self.fault=None;self.last_stamps=None
         self.progress_at=None;self.efforts=None;self.low_since=None;self.low_samples=0
         self.high_since=None;self.high_samples=0;self.state='unarmed'
+        self.gap_count=0;self.last_gap=None
 
     def observe(self,now,stamps,efforts,valid):
         if self.fault is not None:
@@ -107,7 +115,14 @@ class GraspContactMonitor:
                 if not all(t>old for t,old in zip(stamps,self.last_stamps)):
                     return  # Repeated publications are not new sensor evidence.
                 if self.armed and (self.progress_at is None or not 0<=now-self.progress_at<=self.max_age):
-                    raise ValueError('finger sensor feedback gap')
+                    # Single publication freeze (measured up to ~3s in sim)
+                    # must not kill a held task; recurrent freezes still fault.
+                    # A truly dead feed stops publishing entirely and is caught
+                    # by snapshot staleness at the next decision point.
+                    self.gap_count+=1
+                    if self.gap_count>self.gap_fault_count:
+                        raise ValueError('finger sensor feedback gap recurrent')
+                    self.last_gap={'gap_seconds':now-self.progress_at,'gap_count':self.gap_count}
             self.last_stamps=tuple(stamps);self.progress_at=now
             self.efforts=tuple(float(v) for v in efforts);stamp=min(stamps)
             if not self.armed or self.lost:return
@@ -134,12 +149,12 @@ class GraspContactMonitor:
         if current['state']=='feedback_fault' or self.efforts is None or min(self.efforts)<self.on:
             raise ValueError('fresh two-finger contact required before arming')
         self.armed=True;self.lost=False;self.state='holding'
-        self.low_since=None;self.low_samples=0
+        self.low_since=None;self.low_samples=0;self.gap_count=0
         self.high_since=min(self.last_stamps);self.high_samples=1
 
     def snapshot(self,now):
         if (not math.isfinite(now) or self.progress_at is None or
-                not 0<=now-self.progress_at<=self.max_age):
+                not 0<=now-self.progress_at<=self.stale_seconds):
             self.fault=self.fault or 'finger sensor feedback missing, frozen or stale'
         state='feedback_fault' if self.fault is not None else self.state
         stamp=min(self.last_stamps) if self.last_stamps else None

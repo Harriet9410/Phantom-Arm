@@ -1081,7 +1081,7 @@ class Controller:
     def select_grasp_pose(self,selected,side):
         if self.robot_projector is None:raise RuntimeError('effective-grasp verification is not configured')
         camera_to_world=np.asarray(self.projection_calibration['camera_optical_from_world'])[:3,:3].T.tolist()
-        first_scene=self.fresh_scene();first=self.rebind_target(selected,self.object_candidates(first_scene,selected))
+        first=self.rebind_with_wait(selected)
         generated=generate_grasp_candidates(first,camera_to_world)
         self.event('grasp_candidate_set',candidate=first,generated=generated)
         names=[item['candidate_id'] for item in generated['candidates']]
@@ -1094,8 +1094,8 @@ class Controller:
             for layer in (0,1):
                 for name in names:
                     for variant in (0,180):
-                        self.checkpoint();scene=self.fresh_scene()
-                        candidate=self.rebind_target(selected,self.object_candidates(scene,selected))
+                        self.checkpoint()
+                        candidate=self.rebind_with_wait(selected,timeout=6.)
                         current=generate_grasp_candidates(candidate,camera_to_world)
                         choices=[item for item in current['candidates'] if item['candidate_id']==name]
                         if not choices:continue
@@ -1242,6 +1242,26 @@ class Controller:
         # Still reject stale geometric binding; far-drop identity is explicitly
         # restored and re-anchored by recover_dropped_object before this call.
         return rebind_candidate(selected,matches,max_pixels=45. if selected.get('_drop_recovery') else 14.)
+
+    def rebind_with_wait(self,selected,timeout=25.):
+        """Reobserve-bounded rebind: post-delivery identity lag must not kill a task.
+
+        rebind_target error text already prescribes reobserve -- this honors it:
+        poll fresh scenes inside a bounded window; raise only when it expires.
+        checkpoint enforces stop/deadline guards. Permanent defects (no
+        persistent identity) fail immediately at entry.
+        """
+        if not isinstance(selected.get('stable_id'),str) or not selected.get('stable_id'):
+            raise ValueError('target has no persistent identity')
+        began=time.monotonic();last=None
+        while time.monotonic()-began<timeout:
+            self.checkpoint()
+            scene=self.fresh_scene()
+            try:
+                return self.rebind_target(selected,self.object_candidates(scene,selected))
+            except ValueError as error:
+                last=error;time.sleep(.5)
+        raise last
 
     def execute_object_once(self,selected,side):
         self.active_release_context=None

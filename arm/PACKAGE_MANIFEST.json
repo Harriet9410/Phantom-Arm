@@ -100,11 +100,11 @@
   "scripts/verify_image.py": "9f619df15361cb6dbcd1d5cf9bea201a003c221bfa3ba384da7fe3421ec917ab",
   "scripts/verify_package.py": "706f82cb926b657488ee0de52fb262d1aeb1e84cd1fc2e9b4d72d3cda103d159",
   "tcei_stack/arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
-  "tcei_stack/BUILD_MANIFEST.json": "d30e305c4265573b1703bfeaf8fada90f6f14abd94330367a42ccd526b666a4b",
+  "tcei_stack/BUILD_MANIFEST.json": "cd9d02ecd4c31fce1c753f024cfa2c6d09a2bc4c6a5fd07173a581d7ae3ffe13",
   "tcei_stack/cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
   "tcei_stack/contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
   "tcei_stack/controlled_stop.py": "ab698d331b9d088555bed2cf938354de3199aee71af7a7379073c8ebbcb5a587",
-  "tcei_stack/controller.py": "ac2f1aa04bf2dea9ce97bb45f0d5842c7742c36728db373d5b4dd06b3b1d8036",
+  "tcei_stack/controller.py": "5609b81541f6fed383773e6510ab74d8100a07b3cf5f918f2b0ca4b2b0f1153c",
   "tcei_stack/conveyor_observer.py": "0be07e6bcb6ea43762f1532587ec930e881f26faa8138bf915875ec8aa1e8e66",
   "tcei_stack/core.py": "4d3293c4bd491e659ac799ef9706342f85b8d321264b5ae6eaf273035492b45c",
   "tcei_stack/drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
@@ -112,7 +112,7 @@
   "tcei_stack/frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
   "tcei_stack/frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
   "tcei_stack/grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
-  "tcei_stack/grasp_contact_monitor.py": "eddd2829d6802737ebe7bfeef28b0acbddb4e984b87631ec3de5fe59f60fb939",
+  "tcei_stack/grasp_contact_monitor.py": "e3f9449d7870a30a18968fbdab52a24e8c59cdacb3e989703dd5cb81532db759",
   "tcei_stack/grasp_geometry.py": "785ec81b543fd44b92a23710daf9f3c3db3f28c3ae2a895ede619f0be3c41f1f",
   "tcei_stack/gripper_closure.py": "08936975ab45e7d502f013ea3fa4dff12a273352dc27dcdc70eb70baea155d16",
   "tcei_stack/joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
@@ -152,6 +152,6 @@
   "验证记录.md": "52cedb5f1a475248f20d4dd3c2ee7e5a698529f35969d7b4cba1353bc784f8f3",
   "evaluation/instruction_console.py": "783ff069e04b4ee3259825187d22f4d151334196e8be61efa9ea6fb8254bc456",
   "scripts/drill.py": "0fb2761cb6c7d6390bd8b4ffeb6037427ec2ae9b6098fb145ec8b0c11c6a468c",
-  "scripts/drill5.py": "9625567b464e8cec495daffa7cd0623c50e732fa240a3d17554976bd5643d9d1"
+  "scripts/drill5.py": "2c52da3056b9e0e561dc2da936dd1d4e03523284b18d5746977a58239479f24f"
  }
 }
