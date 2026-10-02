@@ -75,7 +75,16 @@ class CandidateTracker:
     def reset(self,round_id,observed_after=None,image_stamp_after=None):
         if round_id is None:raise ValueError('explicit new round identity required')
         if str(round_id)==self.round_id:return False
-        self.round_id=str(round_id);self.tracks={};self.last_frame=None
+        self.round_id=str(round_id)
+        # 定向退休（10/3）：跨回合保留已确立轨迹——未交付且 confirmed（seen_count>=2，
+        # 身份经交付前三视角+五选一+稳定门确认，场景内物体身份静态）与全部已交付
+        # （账本+皮带占位语义）。只清年轻/未确认轨迹。整体重建曾把交付后首扫误标
+        # （Magazine→Grenade，五选一无 M↔G 复核对）锁死为 confirmed——认领要求类别
+        # 一致，正确检测永远无法纠正。配合 update() 的"确立轨迹类别 outrank 单次
+        # 扫描标签"，短暂误标自愈。
+        self.tracks={key:t for key,t in self.tracks.items()
+                     if t.get('delivered') or t.get('seen_count',0)>=2}
+        self.last_frame=None
         self.latest_candidates=[];self.latest_unknown=[];self.reacquire_receipts={}
         self.release_contexts={}
         self.recent_frames.clear()
@@ -96,13 +105,13 @@ class CandidateTracker:
                 track.update(delivered=True,source_release_pending=False,delivered_at=event.get('time'),
                     delivery_request_id=event.get('request_id'),delivery_release_id=event.get('release_id'))
         elif name=='task_succeeded':
-            # P0 软复位：任务完成即退休全部活跃轨迹，交付后场景由新扫描重建身份
-            # （旧轨迹的 class_conflict 曾使下一任务身份确认永远超时）。
-            # 已交付轨迹保留——账本仍从 source_lifecycle 读取交付记录。
-            for key in [k for k,t in self.tracks.items() if not t['delivered']]:
-                del self.tracks[key]
+            # P0 软复位（定向退休，10/3）：不再退休未交付轨迹。整体退休+重建曾把
+            # 交付后首扫误标锁死为 confirmed（认领类别一致要求使正确检测无法纠正，
+            # 幻影类别永占位——"稳定地错"根因）。未交付轨迹保留已确认身份，短暂
+            # 误标由 update() 的确立轨迹类别 outrank 机制自愈；已交付轨迹保留供
+            # 账本。只清扫描缓存，强制下一观测用交付后的新扫描。
             self.latest_candidates=[];self.latest_unknown=[]
-            self.reacquire_receipts={};self.last_frame=None
+            self.reacquire_receipts={}
             return {'status':'tracking_soft_reset','round_id':self.round_id}
         elif name in ('grasp_verified','release_started','released','placement_pending_verification',
                       'holding_feedback_lost','drop_detected'):
@@ -288,10 +297,19 @@ class CandidateTracker:
         for index,c in enumerate(rows):
             matches=possible[index]
             if len(matches)==1 and len(reverse[matches[0]])==1:
-                key=matches[0];prior=active[key]['candidate']
+                key=matches[0];track=active[key];prior=track['candidate']
                 # 类别未测量（unknown）的轨迹可被首个真实类别认领：按需分类模式下
                 # 轨迹先于首次扫描建立，若要求类别一致则永远无法确认身份。
-                if (prior.get('class') in (None,'','unknown') or prior['class']==c['class']) and c.get('grasp_ready',True):accepted[index]=key
+                if (prior.get('class') in (None,'','unknown') or prior['class']==c['class']) and c.get('grasp_ready',True):
+                    accepted[index]=key
+                elif track.get('seen_count',0)>=2 and c.get('grasp_ready',True):
+                    # 定向退休（10/3）：确立轨迹的类别 outrank 单次扫描的 VLM 标签。
+                    # 场景内物体身份静态；交付后单帧误标（Magazine→Grenade，五选一
+                    # 无 M↔G 复核对）曾因"认领必须类别一致"永久锁死——错误轨迹
+                    # 永占位、正确检测永 ambiguous。原始标签保留 observed_class 审计。
+                    c['observed_class']=c['class'];c['class']=prior['class']
+                    c['class_source']='established_track'
+                    accepted[index]=key
         seen=set(accepted.values())
         for index,c in enumerate(rows):
             c['source_frame_id']=frame_id
