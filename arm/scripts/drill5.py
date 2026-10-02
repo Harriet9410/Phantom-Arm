@@ -129,6 +129,53 @@ else:
     print('NOT_READY')
 '''
 
+# shared 模式（同场景连测）就绪：交付后场景变化 → 必须等 tracker 类别签名稳定
+# 才发射，否则空间校验撞"boundary uncertainty"墙（视频轮 task-02 三连拒实证）。
+SHARED_READY_TEMPLATE = r'''import json, time
+import rospy
+from std_msgs.msg import String, Bool
+rospy.init_node('drill5ready_sh', anonymous=True)
+BUDGET = __BUDGET__
+TARGET = __TARGET__
+STABLE_N = 6
+t0 = time.time()
+last_sig = None
+stable = 0
+while time.time() - t0 < BUDGET and not rospy.is_shutdown():
+    try:
+        g = rospy.wait_for_message('/Jaka/gripper_is_captured', Bool, timeout=3)
+        if g.data:
+            print('OCCUPIED'); break
+        sc = json.loads(rospy.wait_for_message('/tcei/candidates', String, timeout=3).data)
+        cs = sc.get('candidates', [])
+        fresh = time.time() - sc.get('observed_at', 0) < 2
+        unknown = [c for c in cs if str(c.get('class', '')).upper() == 'UNKNOWN']
+        low = [c for c in cs if c.get('confidence', 0) < 0.5]
+        has_target = (not TARGET) or any(c.get('class') == TARGET for c in cs)
+        sig = tuple(sorted(str(c.get('class', '?')) for c in cs))
+        if fresh and cs and not unknown and not low and has_target:
+            if sig == last_sig:
+                stable += 1
+            else:
+                stable = 0
+                last_sig = sig
+            print('WAIT stable=%d/%d n=%d sig=%s' % (stable, STABLE_N, len(cs), list(sig)))
+            if stable >= STABLE_N:
+                print('READY n=%d sig=%s' % (len(cs), list(sig)))
+                break
+        else:
+            stable = 0
+            print('WAIT fresh=%s n=%d unk=%d low=%d tgt=%s' % (fresh, len(cs), len(unknown), len(low), has_target))
+        time.sleep(5)
+    except Exception as e:
+        print('WAIT exc ' + type(e).__name__); time.sleep(3)
+else:
+    print('NOT_READY')
+'''
+
+# 每条指令的目标类别（shared 模式就绪门校验目标仍在场景中）
+TARGET_CLASS = {1: 'Smokegrenade', 2: 'Magazine', 3: 'Torch', 4: 'Grenade', 5: None}
+
 
 def sh(cmd, timeout=180):
     try:
@@ -148,6 +195,20 @@ def wait_ready(budget, expect=1):
     Path('/tmp/drill5_ready.py').write_text(
         READY_TEMPLATE.replace('__BUDGET__', str(int(budget))).replace('__EXPECT__', str(int(expect))))
     out = sh("bash -c 'source %s/scripts/env.sh && /usr/bin/python3 /tmp/drill5_ready.py'" % ROOT,
+             timeout=budget + 30)
+    if 'OCCUPIED' in out:
+        return 'OCCUPIED', out
+    if 'READY' in out:
+        return 'READY', out
+    return 'NOT_READY', out
+
+
+def wait_ready_shared(budget, target=None):
+    """shared 模式就绪：目标类别在场 + 类别签名连续 6 次（30s）不变才放行。"""
+    tgt = repr(target) if target else 'None'
+    Path('/tmp/drill5_ready_sh.py').write_text(
+        SHARED_READY_TEMPLATE.replace('__BUDGET__', str(int(budget))).replace('__TARGET__', tgt))
+    out = sh("bash -c 'source %s/scripts/env.sh && /usr/bin/python3 /tmp/drill5_ready_sh.py'" % ROOT,
              timeout=budget + 30)
     if 'OCCUPIED' in out:
         return 'OCCUPIED', out
@@ -196,7 +257,7 @@ def shared_cycle(idx, instr, budget, ready_budget):
     if 'controller FAIL' in out:
         row['status'] = 'reset_failed'
         return row
-    state, probe = wait_ready(ready_budget, expect=1)
+    state, probe = wait_ready_shared(ready_budget, TARGET_CLASS[idx])
     row['ready'] = state; row['ready_tail'] = probe[-300:]
     print('  就绪：', state)
     if state != 'READY':
