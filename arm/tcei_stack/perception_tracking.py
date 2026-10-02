@@ -268,22 +268,34 @@ class CandidateTracker:
         pending={key:t for key,t in self.tracks.items() if t.get('source_release_pending') and not t['delivered']}
         active={key:t for key,t in self.tracks.items() if not t['delivered'] and key not in pending}
         retired={key:t for key,t in self.tracks.items() if t['delivered'] or key in pending}
-        conflicts={}
+        # 定向退休（10/3）：已交付轨迹认领检测改 1:1 最近邻仲裁。多件交付物
+        # 堆叠/同位放置时，每个已交付轨迹至多认领一个最近检测；多余检测按
+        # 正常新物体处理——否则后放物体的皮带核验被前一件身份吞掉（无 coherent
+        # belt proof → placement unverified，2026-10-03 #4 手雷实测）。
+        pairs=[]
         for index,c in enumerate(rows):
             if not valid_geometry(c):continue
             for key,t in retired.items():
                 prior=t['candidate']
-                if math.dist(c['pixel'],prior['pixel'])>self.max_pixels:continue
-                delta=c['depth']-prior['depth']
-                threshold=max(.012,3.*float(prior.get('depth_spread',0.)))
-                if delta>threshold:
-                    if t['delivered']:
-                        c['revealed_after_delivery']={'retired_stable_id':key,'depth_increase_m':delta,
-                            'evidence':'distinct_lower_measured_surface_after_verified_delivery'}
-                    else:c['revealed_after_release']={'pending_stable_id':key,'depth_increase_m':delta,
-                            'evidence':'distinct_lower_measured_surface_after_completed_release'}
-                else:
-                    conflicts.setdefault(index,[]).append(key)
+                d=math.dist(c['pixel'],prior['pixel'])
+                if d<=self.max_pixels:pairs.append((d,index,key))
+        pairs.sort()
+        used_index=set();used_track=set()
+        conflicts={}
+        for d,index,key in pairs:
+            if index in used_index or key in used_track:continue
+            used_index.add(index);used_track.add(key)
+            c=rows[index];t=retired[key];prior=t['candidate']
+            delta=c['depth']-prior['depth']
+            threshold=max(.012,3.*float(prior.get('depth_spread',0.)))
+            if delta>threshold:
+                if t['delivered']:
+                    c['revealed_after_delivery']={'retired_stable_id':key,'depth_increase_m':delta,
+                        'evidence':'distinct_lower_measured_surface_after_verified_delivery'}
+                else:c['revealed_after_release']={'pending_stable_id':key,'depth_increase_m':delta,
+                        'evidence':'distinct_lower_measured_surface_after_completed_release'}
+            else:
+                conflicts.setdefault(index,[]).append(key)
         possible={};reverse={key:[] for key in active}
         for index,c in enumerate(rows):
             matches=[]
