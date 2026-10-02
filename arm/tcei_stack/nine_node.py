@@ -186,8 +186,18 @@ class Nine:
                     readiness={'ready':False,'reason':'perception has not applied completed pending releases'}
                 else:readiness=observation_readiness(snap,req['instruction'])
                 if readiness['ready']:
-                    return snap,image_seq,image,time.monotonic()-started
-                last_reason=readiness['reason']
+                    # P0-3 稳定门：类别签名需在稳定窗口内保持不变（跨一个扫描
+                    # 周期）。交付后首扫的整批误标会被下一轮扫描自纠——等它，
+                    # 而不是拿着错标签去选块。
+                    sig=tuple(sorted((c.get('id'),c.get('class')) for c in snap.get('candidates',[])))
+                    now=time.monotonic()
+                    if getattr(self,'_scene_signature',None)!=sig:
+                        self._scene_signature=sig;self._scene_signature_since=now
+                    if now-self._scene_signature_since>=float(rospy.get_param('~observation_stability_seconds',50.)):
+                        return snap,image_seq,image,time.monotonic()-started
+                    last_reason='awaiting classification stability'
+                else:
+                    last_reason=readiness['reason']
             if not waiting_reported:
                 self.event('observation_waiting',request_id=req['request_id'],reason=last_reason,
                            observation_deadline_monotonic=until,global_deadline_monotonic=global_deadline)
@@ -250,9 +260,9 @@ class Nine:
             try:
                 # 抓取后场景变化，背景扫描（~15-20s）+ 轨迹连续两帧确认需要时间；
                 # 3 秒预算曾使 task-02 在身份确认前必然被拒（w 回合三轮同因）。
-                observation_seconds=float(rospy.get_param('~observation_wait_seconds',90.))
-                if not 0<observation_seconds<=120.:
-                    raise ValueError('observation_wait_seconds must be within 0..120 seconds')
+                observation_seconds=float(rospy.get_param('~observation_wait_seconds',130.))
+                if not 0<observation_seconds<=150.:
+                    raise ValueError('observation_wait_seconds must be within 0..150 seconds')
                 global_deadline=req.get('deadline_monotonic',started+observation_seconds+85.)
                 # 按需分类：触发 perception 扫描并等待带类别的新候选。
                 self.prepare_pub.publish(String(json.dumps({'request_id': 'prep-'+rid[-8:]}, ensure_ascii=False)))
