@@ -223,6 +223,19 @@ class NineRotationDetector(RotationDetector):
                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], FIVE_PROMPT)
                 if ans in declared and ans != cls:
                     assign[i] = ans
+        # 弹夹/手雷混淆（10/3 彩排实测：首扫 Magazine→Grenade，四选一复核两票
+        # 仍一致地错——FIVE 提示里弹夹描述弱于手雷，恰为反复出现的混淆对）。
+        # 同 GS/GT 手法加 M↔G 特征强对比复核对，两票一致才改判；置于 FIVE 之后
+        # 对 M/G 裁剪有最终裁决权。
+        MG_PROMPT = (u'仔细看这个物体的形状：弹夹（Magazine）是扁平的长条形弹匣，'
+                     u'一侧平直，常能看到排列的弹壳或供弹口；手雷（Grenade）是'
+                     u'小型椭球体，整体圆润，带网格状防滑纹。这个物体是哪一类？'
+                     u'只回答 Magazine 或 Grenade。')
+        for i, cls in list(assign.items()):
+            if cls in ('Grenade', 'Magazine') and i < len(props):
+                ans = _recheck_agree([int(v) for v in props[i]['bbox']], MG_PROMPT)
+                if ans in ('Grenade', 'Magazine'):
+                    assign[i] = ans
         return assign
 
     def _scan_worker(self, rgb, props):

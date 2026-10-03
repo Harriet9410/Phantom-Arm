@@ -100,7 +100,7 @@
   "scripts/verify_image.py": "9f619df15361cb6dbcd1d5cf9bea201a003c221bfa3ba384da7fe3421ec917ab",
   "scripts/verify_package.py": "706f82cb926b657488ee0de52fb262d1aeb1e84cd1fc2e9b4d72d3cda103d159",
   "tcei_stack/arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
-  "tcei_stack/BUILD_MANIFEST.json": "0060518aafffeab23181523c048450cb86d2090fa31af25fd63e89a7abefb98f",
+  "tcei_stack/BUILD_MANIFEST.json": "13019789cc7021d908aafbadb4deca0b010a114be408ce33e6d2c453b371b6a4",
   "tcei_stack/cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
   "tcei_stack/contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
   "tcei_stack/controlled_stop.py": "ab698d331b9d088555bed2cf938354de3199aee71af7a7379073c8ebbcb5a587",
@@ -152,6 +152,7 @@
   "验证记录.md": "52cedb5f1a475248f20d4dd3c2ee7e5a698529f35969d7b4cba1353bc784f8f3",
   "evaluation/instruction_console.py": "783ff069e04b4ee3259825187d22f4d151334196e8be61efa9ea6fb8254bc456",
   "scripts/drill.py": "0fb2761cb6c7d6390bd8b4ffeb6037427ec2ae9b6098fb145ec8b0c11c6a468c",
-  "scripts/drill5.py": "08875122b7c0487fe5c750a2586d0dcde96111ea12752d61170eaea8e44d8c7f"
+  "scripts/drill5.py": "08875122b7c0487fe5c750a2586d0dcde96111ea12752d61170eaea8e44d8c7f",
+  "tcei_stack/nine_classify.py": "96bd5ee884e141d4d7eca3095ec3b1f8edb4173ed97b14820d6714fc0653c6df"
  }
 }

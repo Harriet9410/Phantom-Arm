@@ -36,6 +36,7 @@
   "semantics.py": "1c18d7b62668455cedb6276825026938089413be0b9bc30945435b73907bea7c",
   "sim_with_feedback.py": "be1e15c0f7f3207a5ab7ec0b5b86df142793ecf83177945f1d91637cb300e69f",
   "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
-  "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67"
+  "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67",
+  "nine_classify.py": "96bd5ee884e141d4d7eca3095ec3b1f8edb4173ed97b14820d6714fc0653c6df"
  }
 }
