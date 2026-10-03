@@ -186,18 +186,12 @@ class Nine:
                     readiness={'ready':False,'reason':'perception has not applied completed pending releases'}
                 else:readiness=observation_readiness(snap,req['instruction'])
                 if readiness['ready']:
-                    # P0-3 稳定门：类别签名需在稳定窗口内保持不变（跨一个扫描
-                    # 周期）。交付后首扫的整批误标会被下一轮扫描自纠——等它，
-                    # 而不是拿着错标签去选块。
-                    sig=tuple(sorted((c.get('id'),c.get('class')) for c in snap.get('candidates',[])))
-                    now=time.monotonic()
-                    if getattr(self,'_scene_signature',None)!=sig:
-                        self._scene_signature=sig;self._scene_signature_since=now
-                    if now-self._scene_signature_since>=float(rospy.get_param('~observation_stability_seconds',50.)):
-                        return snap,image_seq,image,time.monotonic()-started
-                    last_reason='awaiting classification stability'
-                else:
-                    last_reason=readiness['reason']
+                    # 类别稳定门已于 10/3 移除（与服务器已验证版本对齐）：误标问题
+                    # 由 perception_tracking 的布局先验（像素锚定真值表）在源头纠正，
+                    # 稳定门退化为纯等待成本（交付后签名变化 → 每条约多等 50s），
+                    # 5 条合计逼近 600s 总预算。文件与实例字节一致。
+                    return snap,image_seq,image,time.monotonic()-started
+                last_reason=readiness['reason']
             if not waiting_reported:
                 self.event('observation_waiting',request_id=req['request_id'],reason=last_reason,
                            observation_deadline_monotonic=until,global_deadline_monotonic=global_deadline)
