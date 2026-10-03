@@ -271,14 +271,36 @@ class CandidateTracker:
                      or frame_id-t.get('last_frame',frame_id)<=40}
         rows=[dict(c) for c in candidates]
         unknown=[dict(r) for r in (unknown_regions or [])]
-        # 布局先验自门控：首个 fresh 扫描上判定一次，之后不再改变
+        # 布局先验自门控：需要一次足够完整的扫描（≥4 行）才判定；开机早期
+        # 物体渐进出现的部分扫描（<4 行）保持未决、下轮再判，否则会被误关。
         if self.prior_active is None:
-            if self.layout_prior and rows:
+            if not self.layout_prior:
+                self.prior_active=False
+            elif len(rows)>=4:
                 hits=sum(1 for c in rows if valid_geometry(c) and any(
                     math.dist(c['pixel'],p['pixel'])<=self.prior_tolerance for p in self.layout_prior))
                 self.prior_active=hits>=4
-            else:
-                self.prior_active=False
+                if self.prior_active:
+                    # 激活时追溯纠正已建轨迹（部分扫描先建的轨迹可能带着错标签）
+                    for t in self.tracks.values():
+                        c0=t['candidate']
+                        near=[p for p in self.layout_prior if math.dist(c0['pixel'],p['pixel'])<=self.prior_tolerance]
+                        if near:
+                            nearest=min(near,key=lambda p:math.dist(c0['pixel'],p['pixel']))
+                            if nearest['class']!=c0['class']:
+                                c0['observed_class']=c0['class'];c0['class']=nearest['class']
+                                c0['class_source']='layout_prior'
+        # 先验激活期间：每帧行类别按先验覆写（审计留 observed_class）——使关联的
+        # 类别一致性检查建立在真值标签上，单帧 VLM 误标不再污染关联与确认。
+        if self.prior_active:
+            for c in rows:
+                if valid_geometry(c):
+                    near=[p for p in self.layout_prior if math.dist(c['pixel'],p['pixel'])<=self.prior_tolerance]
+                    if near:
+                        nearest=min(near,key=lambda p:math.dist(c['pixel'],p['pixel']))
+                        if nearest['class']!=c['class']:
+                            c['observed_class']=c['class'];c['class']=nearest['class']
+                            c['class_source']='layout_prior'
         pending={key:t for key,t in self.tracks.items() if t.get('source_release_pending') and not t['delivered']}
         active={key:t for key,t in self.tracks.items() if not t['delivered'] and key not in pending}
         retired={key:t for key,t in self.tracks.items() if t['delivered'] or key in pending}
