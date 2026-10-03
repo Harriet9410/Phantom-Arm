@@ -154,6 +154,13 @@
   "scripts/drill.py": "a689e9f7d0c0774da92229a61a2650060a54a37d3c21bb691358ca3305de46b9",
   "scripts/drill5.py": "08875122b7c0487fe5c750a2586d0dcde96111ea12752d61170eaea8e44d8c7f",
   "tcei_stack/nine_classify.py": "6be911d00849fa80016d5d8c85774b527a7a60cedbf90e96d1acb3ea72d60615",
-  "tcei_stack/scene_layout_prior.json": "83b7f9ebe3c8b181039e4f79d91b0a458d37f033797d5d1082b2d3c1a9f2364f"
+  "tcei_stack/scene_layout_prior.json": "83b7f9ebe3c8b181039e4f79d91b0a458d37f033797d5d1082b2d3c1a9f2364f",
+  "docs/模型与环境恢复/apply_patch.sh": "2f9ced94fe2a5030171d370f9422f4c1ffb91936fa28cf4d43560c1d7067261b",
+  "docs/模型与环境恢复/config.json": "af47d27d6fad1615db8dcf805d1b5e0bc3e7f2380e760df13fa28e9bd5abc7bb",
+  "docs/模型与环境恢复/modeling_fm9gv.py.bak_prepatch": "50f1d9a74737b7bd768cc3b90d01d20cfe3a7dc5fa8cc67dbbeed7e8e035c061",
+  "docs/模型与环境恢复/README-恢复要点.md": "97324c3311b57d82f41545141b1b9b93b7aeb15f6fe5b7c50e8fa28750d50cc6",
+  "docs/模型与环境恢复/requirements-inference.txt": "6bcc0624dc523842520f65c0a7863443c13bef25cd5c3ecfd6561cac5ead4679",
+  "docs/模型与环境恢复/requirements-yolov8.txt": "3f3a2a4b24bf672e7fcee523ea6377cb12fac43af3e5a56ddff1ccd929781ec3",
+  "docs/模型与环境恢复/模型补丁-modeling_fm9gv.diff": "b6961e9775d06bbb77658bf6faf6a84965c3af86c1a03093636b4b4c3914f187"
  }
 }
