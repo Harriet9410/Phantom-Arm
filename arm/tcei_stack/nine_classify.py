@@ -211,30 +211,19 @@ class NineRotationDetector(RotationDetector):
                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], GT_PROMPT)
                 if ans in ('Grenade', 'Torch'):
                     assign[i] = ans
-        # P0-2 五选一终审：配对复核只看得到 G↔S、G↔T，跨类错误（实测 z 轮交付后
-        # 首扫 弹夹→Grenade×2、手电筒→Smokegrenade）整批漏过。每个已标注提案加
-        # 两票一致的"四选一"裁剪复核，答案与现标签不一致即覆写。扫描耗时约翻倍，
-        # 换取首扫即正确——连续任务等不起 1~2 分钟的自纠。
-        FIVE_PROMPT = (u'这是军用物资，四选一：Smokegrenade（烟雾弹，圆柱形容器常带绿色环带）、'
-                       u'Grenade（手雷，小型椭球体带网格纹）、Torch（军用手电筒，细长圆柱一端有尾盖）、'
-                       u'Magazine（弹夹，长条形可见排列的弹壳）。这个物体是哪一类？只回答类名。')
+        # 终审（10/3 修订）：配对复核（GS/GT）只覆盖两对且无逃生口，跨类错误与
+        # 非对内物体（实测：首扫 Magazine→Grenade 两票一致地错；第二颗烟雾弹被
+        # M↔G 对强制误判）都兜不住。最终裁决由特征描述拉齐的强四选一承担：
+        # 各类描述等强、置于所有配对复核之后、两票一致才改判。
+        FIVE_PROMPT = (u'这是军用物资，四选一：Smokegrenade（烟雾弹，圆柱形容器，'
+                       u'常带绿色环带）、Grenade（手雷，小型椭球体，整体圆润带网格状'
+                       u'防滑纹）、Torch（军用手电筒，细长圆柱形，一端有尾盖或按钮）、'
+                       u'Magazine（弹夹，扁平长条形弹匣，一侧平直，常可见排列的弹壳'
+                       u'或供弹口）。这个物体是哪一类？只回答类名。')
         for i, cls in list(assign.items()):
             if i < len(props):
                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], FIVE_PROMPT)
                 if ans in declared and ans != cls:
-                    assign[i] = ans
-        # 弹夹/手雷混淆（10/3 彩排实测：首扫 Magazine→Grenade，四选一复核两票
-        # 仍一致地错——FIVE 提示里弹夹描述弱于手雷，恰为反复出现的混淆对）。
-        # 同 GS/GT 手法加 M↔G 特征强对比复核对，两票一致才改判；置于 FIVE 之后
-        # 对 M/G 裁剪有最终裁决权。
-        MG_PROMPT = (u'仔细看这个物体的形状：弹夹（Magazine）是扁平的长条形弹匣，'
-                     u'一侧平直，常能看到排列的弹壳或供弹口；手雷（Grenade）是'
-                     u'小型椭球体，整体圆润，带网格状防滑纹。这个物体是哪一类？'
-                     u'只回答 Magazine 或 Grenade。')
-        for i, cls in list(assign.items()):
-            if cls in ('Grenade', 'Magazine') and i < len(props):
-                ans = _recheck_agree([int(v) for v in props[i]['bbox']], MG_PROMPT)
-                if ans in ('Grenade', 'Magazine'):
                     assign[i] = ans
         return assign
 
