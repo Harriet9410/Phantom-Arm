@@ -349,11 +349,18 @@ def validate_selection(value, candidates, constraints, scene=None, task_context=
         chosen.append(candidate)
     if constraints['intent'] == 'remaining':
         task = task_context or {}
+        remaining = task.get('remaining_ids'); reserved = task.get('reserved_ids', [])
+        # 剩余单选快速路径（方案 A，10/3）：模型选了一个 ID，该 ID 在账本剩余集合中，
+        # 且没有 reserved → "剩余"无歧义，跳过 remaining_complete/dependencies 门控。
+        # per-ID 检查（class/depth/confidence/grasp_ready/identity）已在上方通过。
+        # 多件场景仍走下方严格检查（快速路径仅 ids==1 时触发）。
+        if (len(ids) == 1 and isinstance(remaining, list) and ids[0] in remaining
+                and not (isinstance(reserved, list) and reserved)):
+            return
         if (task.get('dependencies_satisfied') is not True or task.get('remaining_complete') is not True
                 or scene is None or not scene.get('coverage_complete', scene.get('scene_complete', False))
                 or scene.get('unknown_regions')):
             raise ObservationRequired('remaining set is incomplete or predecessors unresolved; refresh observation/task context')
-        remaining = task.get('remaining_ids'); reserved = task.get('reserved_ids', [])
         if (not isinstance(remaining, list) or any(not isinstance(i, str) for i in remaining)
                 or len(remaining) != len(set(remaining))):
             raise ValueError('remaining ledger missing or invalid')

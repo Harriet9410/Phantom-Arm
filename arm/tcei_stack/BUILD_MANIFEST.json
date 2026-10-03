@@ -33,7 +33,7 @@
   "rotation_perception.py": "98e615a22c7b093ed7200cd2114e203b38655d05575177870773110019981d01",
   "run_episode.py": "a3858e49abdf7c73d741d090c199b7b8efb3fc371fee9ceea16689ce1c6cd736",
   "semantic_repair.py": "ecbc82e0efcbbca157dccdb99121fb158d6da0e272a0ea8c5426d8f528429072",
-  "semantics.py": "1c18d7b62668455cedb6276825026938089413be0b9bc30945435b73907bea7c",
+  "semantics.py": "95ed7b972a1fb978abedc10c404f9c1b36fe1de4947f74803e25e8b7da6ab06a",
   "sim_with_feedback.py": "be1e15c0f7f3207a5ab7ec0b5b86df142793ecf83177945f1d91637cb300e69f",
   "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
   "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67",
