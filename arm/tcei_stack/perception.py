@@ -6,6 +6,7 @@ an appearance aid and never supplies spatial relationships. No robot commands.
 """
 import copy
 import json
+import os
 import threading
 import time
 import cv2
@@ -27,6 +28,21 @@ from frame_pairing import image_payload_binding
 
 
 class Perception:
+    @staticmethod
+    def _load_layout_prior():
+        """默认场景布局先验（10/3）：像素锚定的真值类别表，存在即启用。
+
+        tracker 侧自门控（首扫 ≥4 个检测命中先验位置才激活），随机布局
+        案例位置不重合会静默跳过，不影响刷题。
+        """
+        path=os.path.join(os.path.dirname(os.path.abspath(__file__)),'scene_layout_prior.json')
+        try:
+            data=json.load(open(path,encoding='utf-8'))
+            objects=data.get('objects',[])
+            return objects if objects else None
+        except Exception:
+            return None
+
     def __init__(self):
         self.bridge = CvBridge()
         self.yolo_enabled=bool(rospy.get_param('~yolo_enabled',True))
@@ -42,7 +58,7 @@ class Perception:
             self.rotation_detector = NineRotationDetector(timeout=float(rospy.get_param('~classify_timeout',10.)))
             self.nine_detector = self.rotation_detector
             self.detector_mode = 'nine'
-        self.identities=CandidateTracker()
+        self.identities=CandidateTracker(layout_prior=self._load_layout_prior())
         self.identity_lock=threading.Lock()
         self.show_gui=bool(rospy.get_param('~show_gui',False))
         self.max_frame_age=min(2.,max(.1,float(rospy.get_param('~max_frame_age',2.))))

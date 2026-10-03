@@ -63,8 +63,14 @@ def reliable_anchor_update(previous,current,unknown_regions):
 
 
 class CandidateTracker:
-    def __init__(self,max_pixels=18.,max_depth=.045):
+    def __init__(self,max_pixels=18.,max_depth=.045,layout_prior=None):
         self.max_pixels=max_pixels;self.max_depth=max_depth
+        # 场景布局先验（10/3）：默认场景物体位置固定+相机固定→像素锚定的真值
+        # 类别表。VLM 逐裁剪分类跨启动方差大（实测同物体跨 boot 被标成
+        # Grenade/Torch/Smoke 三种），首扫错即全链错。自门控：首扫 ≥N 个检测
+        # 命中先验位置才激活（随机布局案例位置不重合→静默不激活）。
+        self.layout_prior=layout_prior;self.prior_active=None
+        self.prior_tolerance=30.
         self.tracks={};self.counter=0;self.last_frame=None;self.round_id=None
         self.session_id=uuid.uuid4().hex[:8]
         self.latest_candidates=[];self.latest_unknown=[];self.latest_observed_at=None;self.reacquire_receipts={}
@@ -265,6 +271,14 @@ class CandidateTracker:
                      or frame_id-t.get('last_frame',frame_id)<=40}
         rows=[dict(c) for c in candidates]
         unknown=[dict(r) for r in (unknown_regions or [])]
+        # 布局先验自门控：首个 fresh 扫描上判定一次，之后不再改变
+        if self.prior_active is None:
+            if self.layout_prior and rows:
+                hits=sum(1 for c in rows if valid_geometry(c) and any(
+                    math.dist(c['pixel'],p['pixel'])<=self.prior_tolerance for p in self.layout_prior))
+                self.prior_active=hits>=4
+            else:
+                self.prior_active=False
         pending={key:t for key,t in self.tracks.items() if t.get('source_release_pending') and not t['delivered']}
         active={key:t for key,t in self.tracks.items() if not t['delivered'] and key not in pending}
         retired={key:t for key,t in self.tracks.items() if t['delivered'] or key in pending}
@@ -371,6 +385,14 @@ class CandidateTracker:
             self.counter+=1
             key='%s-obj-%04d'%(self.session_id,self.counter)
             c['stable_id']=key;c['identity_status']='new'
+            # 布局先验激活时：新轨迹类别以先验表为准（单帧 VLM 标签仅存审计字段）
+            if self.prior_active:
+                near=[p for p in self.layout_prior if math.dist(c['pixel'],p['pixel'])<=self.prior_tolerance]
+                if near:
+                    nearest=min(near,key=lambda p:math.dist(c['pixel'],p['pixel']))
+                    if nearest['class']!=c['class']:
+                        c['observed_class']=c['class'];c['class']=nearest['class']
+                        c['class_source']='layout_prior'
             self.tracks[key]={'candidate':dict(c),'seen_count':1,'last_seen':observed_at,
                               'last_frame':frame_id,'delivered':False,
                               'association_anchor':dict(c) if reliable_anchor_update(None,c,unknown_regions or []) else None}

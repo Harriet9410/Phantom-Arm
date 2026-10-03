@@ -24,8 +24,8 @@
   "mission_ledger.py": "0cfe8320990aa6ebd67fcb01f6a45096aa1a4c0a18623f28b78fce90c86e0c06",
   "nine_node.py": "f9a6a376512ead71b825eea1e42ebe6d151c3cc16b6c700b320507229866664f",
   "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
-  "perception.py": "673c90f7534e1266edcb8784704a5e909569303ba8afd4148f1e535a4832b959",
-  "perception_tracking.py": "51e0c3d630f27dae54832097b1c1aad6d7357ab51b2eb11051dc7653629a35c3",
+  "perception.py": "20002c5b5863cbf2b7f1a4f7cdf8c5c0d4060eabd3a4edfe4685c9ea8168393c",
+  "perception_tracking.py": "5f78a24f5878aa039993a9aa7634547c1458f554f67c7c37484963826c9ac04f",
   "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
   "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",
   "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
@@ -37,6 +37,7 @@
   "sim_with_feedback.py": "be1e15c0f7f3207a5ab7ec0b5b86df142793ecf83177945f1d91637cb300e69f",
   "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
   "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67",
-  "nine_classify.py": "6be911d00849fa80016d5d8c85774b527a7a60cedbf90e96d1acb3ea72d60615"
+  "nine_classify.py": "6be911d00849fa80016d5d8c85774b527a7a60cedbf90e96d1acb3ea72d60615",
+  "scene_layout_prior.json": "83b7f9ebe3c8b181039e4f79d91b0a458d37f033797d5d1082b2d3c1a9f2364f"
  }
 }

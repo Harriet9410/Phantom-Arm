@@ -1,0 +1,12 @@
+{
+ "scene": "default",
+ "tolerance_px": 30,
+ "gate_min_matches": 4,
+ "objects": [
+  {"pixel": [496, 202], "class": "Smokegrenade"},
+  {"pixel": [569, 232], "class": "Torch"},
+  {"pixel": [624, 308], "class": "Smokegrenade"},
+  {"pixel": [724, 354], "class": "Magazine"},
+  {"pixel": [780, 201], "class": "Grenade"}
+ ]
+}
