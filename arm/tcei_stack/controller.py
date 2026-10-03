@@ -1354,7 +1354,9 @@ class Controller:
         home_arrived_at=time.time()
         self.active_release_context['home_arrived_at']=home_arrived_at
         began=time.monotonic()
-        while time.monotonic()-began<6:
+        # 核验窗口 6→20s（10/3）：扫描周期 5-15s（VLM 分类耗时），6s 窗口常在
+        # 下一帧扫描到来前关闭——#1-#3 过核验属扫描恰好落窗，#4/#5 实测漏窗。
+        while time.monotonic()-began<20:
             self.checkpoint()
             with self.lock:history=list(self.scene_history);scene=self.snapshot
             # Source counts are diagnostic only. Missing camera frames after

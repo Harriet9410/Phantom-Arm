@@ -7,7 +7,7 @@
   "cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
   "contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
   "controlled_stop.py": "ab698d331b9d088555bed2cf938354de3199aee71af7a7379073c8ebbcb5a587",
-  "controller.py": "d8fb1916d89097f8d3119bdf10cba7a9c1c0b8d36f36565514d6d364c440128f",
+  "controller.py": "4e85238224e39fa570cf0c6968fa1f52675cbe161bfc6b08f81121d20bb9ec57",
   "conveyor_observer.py": "57595a831b17a3fdff3245e3d3e8c199d4ad4c77c0dc74a44fe4fadb91254c5b",
   "core.py": "fde8542f3f5c5f6ec5f517871dbb82eb08dc4b0367e3219d48161203431f04f4",
   "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
