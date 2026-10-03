@@ -11,6 +11,9 @@ def main():
     group.add_argument('--official-example',action='store_true')
     group.add_argument('--instructions',type=str,help='UTF-8 JSON array of original instruction strings')
     p.add_argument('--task-source');p.add_argument('--budget',type=float,default=600.)
+    # 可视化开关（10/3）：默认全关（竞赛干净桌面）；训练按需加
+    p.add_argument('--viewer',action='store_true',help='弹出 bbox 实时小窗')
+    p.add_argument('--panel',action='store_true',help='弹出核对面板')
     args=p.parse_args()
     if not 0<args.budget<=600:p.error('预算必须大于0且不超过600秒')
     import rospy
@@ -62,8 +65,13 @@ def main():
                 # 需要时间；30 秒曾导致连续回合"证据记录器未就绪"空跑。
                 raise RuntimeError('证据记录器未就绪')
             time.sleep(.1)
-        config=configure(stack,run,'实际执行：'+args.name)
-        ensure_panel(config)
+        # 可视化（10/3）：面板从无条件自动弹改为 --panel 门控；--viewer 弹 bbox 小窗
+        # （只读旁观件，进程挂回合会话下，回合结束后随窗口关闭自然回收）
+        if args.panel:
+            ensure_panel(configure(stack,run,'实际执行：'+args.name))
+        if args.viewer:
+            subprocess.Popen(['/usr/bin/python3','-u',str(ROOT/'evaluation/bbox_window.py')],
+                stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,start_new_session=True)
         command=['/usr/bin/python3','-u',str(ROOT/'tcei_stack/run_episode.py'),
             '--output',str(run/'episode'),'--budget',str(args.budget),
             '--task-source',args.task_source or ('official_example' if args.official_example else 'custom')]
