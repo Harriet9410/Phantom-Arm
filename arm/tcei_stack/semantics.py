@@ -459,6 +459,13 @@ def parse_model_plan(text, candidates, instruction, scene=None, task_context=Non
                 raise ValueError('model ' + field + ' contradicts explicit instruction')
     for field in ('class', 'side'):
         if value[field] != constraints[field]:
+            # 剩余指令的 class 令牌放宽（10/3 实锤）：模型对"抓取剩余的物品"的自然
+            # 回答是报出它看到的物体真实类别（实测 `{"class":"Smokegrenade",...}`
+            # 被此处 `!= 'Remaining'` 拒绝整轮）——这是合理且更优的行为，令牌本身
+            # 不是关于目标的声明。选择正确性由下方 validate_selection 的账本校验
+            # （remaining_ids 集合比对）裁决；此处仅要求是合法类别令牌。
+            if field == 'class' and constraints['intent'] == 'remaining' and value['class'] in CLASSES:
+                continue
             raise ValueError('model ' + field + ' contradicts explicit instruction')
     count = value['count']; ids = value['ids']
     minimum = 0 if constraints['intent'] == 'remaining' else 1
