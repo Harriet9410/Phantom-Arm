@@ -144,7 +144,11 @@ class MissionLedger:
             if stable in by_stable:raise ValueError('one stable identity assigned to two visible candidates')
             by_stable[stable]=candidate
             if candidate.get('class') not in ('Magazine','Torch','Grenade','Smokegrenade','CompressedFood'):
-                issues.append('candidate_class_unrecognized')
+                # An unrecognized class must never enter the known table: the scan
+                # settles a few frames after the round starts, so caching the
+                # transient 'unknown' would make the later, correct class look like
+                # a change and abort the round ('bound identity class changed').
+                issues.append('candidate_class_unrecognized');continue
             prior=self.known.get(stable)
             if prior and prior['class']!=candidate.get('class'):
                 issues.append('stable_identity_class_changed');continue

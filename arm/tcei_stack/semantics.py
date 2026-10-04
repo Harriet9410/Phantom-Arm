@@ -185,7 +185,18 @@ def _region_membership(pixel, relation, context, uncertainty):
                for axis, direction in enumerate(axes))
 
 
-def _unknown_may_affect(region, category, relation, selected, context):
+def _inside(inner, outer, ratio=.75):
+    """True when box `inner` overlaps `outer` by at least `ratio` of inner's area."""
+    try:
+        ix = max(0., min(float(inner[2]), float(outer[2])) - max(float(inner[0]), float(outer[0])))
+        iy = max(0., min(float(inner[3]), float(outer[3])) - max(float(inner[1]), float(outer[1])))
+        ia = max(0., (float(inner[2]) - float(inner[0]))) * max(0., (float(inner[3]) - float(inner[1])))
+        return ia > 0 and (ix * iy) >= ratio * ia
+    except (TypeError, ValueError, IndexError):
+        return False
+
+
+def _unknown_may_affect(region, category, relation, selected, context, peers=()):
     possible = region.get('possible_classes')
     if isinstance(possible, list) and possible and category not in possible:
         return False
@@ -200,6 +211,29 @@ def _unknown_may_affect(region, category, relation, selected, context):
         # A region whose class was measured while it was visible cannot hold the
         # requested category, so it cannot change which objects qualify.
         return False
+    bbox = region.get('bbox')
+    if isinstance(bbox, (list, tuple)) and len(bbox) == 4:
+        # (a) Containment: depth segmentation splits one object into a main proposal
+        #     plus fragments.  A region that overlaps a confirmed candidate's box
+        #     (see the measured 25x15 fragment inside the selected torch's 63x15 box)
+        #     is part of that object, never a separate one.
+        for cand in list(peers) + ([selected] if selected else []):
+            cand_box = cand.get('bbox') if isinstance(cand, dict) else None
+            if isinstance(cand_box, (list, tuple)) and len(cand_box) == 4 and _inside(bbox, cand_box):
+                return False
+        # (b) Scale: every object rests on the same flat basket floor, so image scale
+        #     is nearly uniform.  A region a small fraction of the selected object's
+        #     area cannot be a peer instance of the requested class.
+        selected_box = (selected or {}).get('bbox')
+        if isinstance(selected_box, (list, tuple)) and len(selected_box) == 4:
+            try:
+                w = abs(float(bbox[2]) - float(bbox[0])); h = abs(float(bbox[3]) - float(bbox[1]))
+                sw = abs(float(selected_box[2]) - float(selected_box[0]))
+                sh = abs(float(selected_box[3]) - float(selected_box[1]))
+            except (TypeError, ValueError):
+                w = h = sw = sh = 0.
+            if w * h > 0 and sw * sh > 0 and w * h < .40 * sw * sh:
+                return False
     if (region.get('reason') == 'unobserved_unverified_object'
             or region.get('bbox_is_current') is False
             or region.get('position_evidence') in ('historical', 'last_seen')):
@@ -422,7 +456,8 @@ def validate_selection(value, candidates, constraints, scene=None, task_context=
         complete = scene.get('coverage_complete', scene.get('scene_complete', False))
         if not complete and not unknown:
             raise ObservationRequired('unaccounted occlusion prevents a unique/complete selection')
-        if any(_unknown_may_affect(region, category, relation, chosen[0] if chosen else {}, context)
+        if any(_unknown_may_affect(region, category, relation, chosen[0] if chosen else {}, context,
+                                   peers=candidates if isinstance(candidates, (list, tuple)) else ())
                for region in unknown):
             raise ObservationRequired('unknown foreground may change the requested selection')
 

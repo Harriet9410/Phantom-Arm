@@ -38,6 +38,59 @@ QUERY_CLASSES = [('烟雾弹', 'Smokegrenade'), ('弹夹', 'Magazine'),
 CACHE_TTL = 45.0
 # 后台自动续扫间隔：类别持续套用不回落，靠周期刷新保持新鲜（身份确认依赖连续性）。
 RESCAN_INTERVAL = 60.0
+# 类别↔物体绑定（10/4 根因修复）：扫描结果按【物体几何】记忆与匹配，绝不按候选下标。
+# 依据：下标 = 每帧按 bbox.x 重排的序号，抓走一件就整体偏移、剩余物体左右顺序还会
+# 翻转（实测同一批物体 t=1737 编号 {1:烟雾弹,2:手雷} → t=1860 {1:手雷,2:烟雾弹}）；
+# 且扫描异步（60s 周期/按需 20-40s 落地）。按下标挂类别会把旧编号的类名贴到新编号的
+# 物体上——实测"弹夹已被抓走 5 分钟后，新候选仍带 Magazine 标签"，模型据此拒绝执行。
+ASSOC_MAX_CENTRE_PX = 20.0   # 静止画面中同一物体的中心位移远小于此值；物体间距≥40px
+CACHE_MAX_AGE = 150.0        # 单条记忆的最长保鲜期：超过即不再用于贴类别
+RETAIN_SECONDS = 90.0        # 本轮未观测到的记忆保留时长（空/残缺扫描不得清空记忆）
+LABEL_RESCAN_AFTER = 10.0    # 真实物体覆盖不足且缓存超龄这么久：立刻补扫（不等 60s 周期）
+REAL_BOX_MIN_AREA_PX = 500.  # 真实物体的最小成像面积（碎片/遮挡残片低于此值）
+FULL_TTL = 300.0             # 一次"完整鉴定"（裁剪+配对复核+四选一）的有效期。静止物体的
+                             # 类别不会变，期内只要全图视角与记忆一致就跳过重活；期满自动
+                             # 重跑一次完整鉴定，保证错误类别最多存活这么长时间
+
+
+def _centre(box):
+    return ((float(box[0]) + float(box[2])) / 2., (float(box[1]) + float(box[3])) / 2.)
+
+
+def _is_real_box(box):
+    try:
+        return abs(float(box[2]) - float(box[0])) * abs(float(box[3]) - float(box[1])) >= REAL_BOX_MIN_AREA_PX
+    except (TypeError, ValueError, IndexError):
+        return False
+
+
+def _associate(proposals, objects, max_centre=ASSOC_MAX_CENTRE_PX, now=None, max_age=CACHE_MAX_AGE):
+    """One-to-one nearest-match from current proposals to remembered objects.
+
+    Returns {proposal_index: class}.  A remembered object that no longer matches
+    anything simply drops out, and a proposal with no remembered partner stays
+    unknown -- so a class can never migrate onto a different object.  Stale
+    entries (older than max_age) are never used."""
+    if now is None:
+        now = time.monotonic()
+    pairs = []
+    for pi, proposal in enumerate(proposals):
+        pc = _centre(proposal['bbox'])
+        for oi, obj in enumerate(objects):
+            if now - obj.get('seen_at', 0.) > max_age:
+                continue
+            oc = _centre(obj['bbox'])
+            distance = ((pc[0] - oc[0]) ** 2 + (pc[1] - oc[1]) ** 2) ** .5
+            if distance <= max_centre:
+                pairs.append((distance, pi, oi))
+    pairs.sort(key=lambda row: row[0])
+    used_proposal, used_object, matched = set(), set(), {}
+    for _, pi, oi in pairs:
+        if pi in used_proposal or oi in used_object:
+            continue
+        used_proposal.add(pi); used_object.add(oi)
+        matched[pi] = objects[oi]['class']
+    return matched
 
 
 class NineRotationDetector(RotationDetector):
@@ -56,15 +109,20 @@ class NineRotationDetector(RotationDetector):
                 'missing_official_classes': [], 'source': 'nine_grid_localization',
                 'accuracy_verified': False}
         self.timeout = float(timeout)
+        # Unanimity fast path (default on, `~classify_fastpath:=false` restores the
+        # strict mode): the final four-way adjudication costs two model calls per
+        # object (~40% of a scan).  When the full-frame double vote and both crop
+        # views already agree, that re-check only confirms what every view said.
+        self.fastpath = bool(rospy.get_param('~classify_fastpath', True))
         self.request_pub = rospy.Publisher('/tcei/classify_request', String, queue_size=1)
         self.result_sub = rospy.Subscriber('/tcei/classify_result', String,
                                            self._on_result, queue_size=4)
         self._results = {}
         self._cache = None
         self._scan_inflight = False
-        self._last_assign = {}
-        self._stable_assign = {}
-        self._stable_n = 0
+        # 物体级类别记忆（几何键）；旧实现是下标键的 _stable_assign，见文件头说明
+        self._objects = []
+        self._empty_streak = 0
         self.pending_scan = True   # 首帧扫描一次，让候选尽快带上类别
         rospy.Subscriber('/tcei/prepare_classification', String, self._on_prepare, queue_size=1)
 
@@ -102,10 +160,20 @@ class NineRotationDetector(RotationDetector):
         while time.monotonic() < deadline:
             data = self._results.pop(request_id, None)
             if data is not None:
-                return '' if data.get('error') else str(data.get('raw_answer') or '')
+                answer = '' if data.get('error') else str(data.get('raw_answer') or '')
+                break
             time.sleep(0.05)
-        rospy.logwarn_throttle(5, 'nine locate timeout: %.20s', prompt)
-        return ''
+        else:
+            rospy.logwarn_throttle(5, 'nine locate timeout: %.20s', prompt)
+            answer = ''
+        # 连续空答 = 分类服务尚未就绪（九格模型 8.5G 加载期、或服务重启）。
+        # 立刻中止本轮扫描，而不是让 5 个物体 × 3 视角逐个耗满超时：一次残缺
+        # 扫描可能拖几分钟，还会堵住补扫（_scan_inflight）。中止后 10s 内自适应
+        # 补扫重试，模型就绪即成功。
+        self._empty_streak = self._empty_streak + 1 if not answer.strip() else 0
+        if self._empty_streak >= 3:
+            raise RuntimeError('nine classify unavailable (3 consecutive empty answers)')
+        return answer
 
     def _classify_view_crop(self, rgb, bbox, zh_prompt):
         """One crop-classification query: proposal crop (margin, upscaled) ->
@@ -128,14 +196,27 @@ class NineRotationDetector(RotationDetector):
                 return cls
         return None
 
-    def _classify_proposals(self, rgb, props):
-        """Three-view majority classification -> {proposal_index: class}.
+    def _classify_proposals(self, rgb, props, settled=None):
+        """Three-view majority classification -> ({proposal_index: class}, cheap).
 
         Views: full-frame numbered query + per-proposal crop (EN prompt) +
         per-proposal crop (CN prompt, wider margin).  View errors land on
         different objects (measured 10/1: 3/5 each, union 5/5), so a majority
         vote plus full-frame tie-break recovers most of them.  Runs on the
-        background scan thread; never blocks detect."""
+        background scan thread; never blocks detect.
+
+        ``settled`` maps a proposal index to a class already established for that
+        object by a *full* battery within FULL_TTL.  A stationary object's class
+        does not need re-deriving on every 60 s scan, and the per-object battery
+        costs ~3-6 model calls that queue ahead of planning requests on a
+        single-threaded model (measured: 180 classification answers inside one
+        240 s round).  When the cheap full-frame view agrees with the settled
+        class, the battery is skipped; when it disagrees, the full battery runs
+        and the usual two-round hysteresis decides, so a wrong class is still
+        correctable.  Returns the indices that took the cheap path so the caller
+        can keep their verification timestamp current."""
+        settled = settled or {}
+        cheap = set()
         ids = [str(i + 1) for i in range(len(props))]
         votes = {i: [] for i in range(len(props))}
         # 视角 A：全图 + 编号清单（与语义选择看到的编号一致）
@@ -156,6 +237,13 @@ class NineRotationDetector(RotationDetector):
                 votes[i].append(cls)
         # 视角 B/C：单块裁剪（英文提示 / 中文提示）
         for i, p in enumerate(props):
+            hint = settled.get(i)
+            if hint and numbered.get(ids[i]) == hint:
+                # 已完整鉴定过，且全图锚点与记忆一致：四票同值直接采用，
+                # 省下 2 次裁剪 + 后续配对复核/四选一（每物体 3~6 次调用）
+                votes[i] = [hint, hint, hint, hint]
+                cheap.add(i)
+                continue
             bbox = [int(v) for v in p['bbox']]
             a = self._classify_view_crop(rgb, bbox,
                 u'这个物资是什么类别？只回答类名：Grenade、Magazine、Smokegrenade、Torch。')
@@ -170,16 +258,17 @@ class NineRotationDetector(RotationDetector):
             vs = votes[i]
             if not vs:
                 continue
+            anchor = numbered.get(ids[i])
             best, best_n = None, 0
-            for cls in set(vs):
-                n = vs.count(cls)
-                if n > best_n:
-                    best, best_n = cls, n
+            for cls in sorted(set(vs)):          # 排序：set 迭代序随进程哈希变化，
+                n = vs.count(cls)                # 平票时会让结果在不同进程间漂移
+                if n > best_n or (n == best_n and cls == anchor):
+                    best, best_n = cls, n        # 平票取全图锚点（有全局上下文且被双票加权）
             if best_n >= 2:
                 assign[i] = best
-            elif numbered.get(ids[i]) in declared:
+            elif anchor in declared:
                 # 无多数（三票各异）：取全图视角（有上下文，实测在无多数场景正确）
-                assign[i] = numbered[ids[i]]
+                assign[i] = anchor
             else:
                 assign[i] = vs[0]
         # Grenade/Smokegrenade 俯视混淆严重（三视角 2/5 错误集中于此）：加特征
@@ -198,6 +287,8 @@ class NineRotationDetector(RotationDetector):
                      u'常带绿色环带；手雷（Grenade）是小型椭球体。'
                      u'这个物体是哪一类？只回答 Smokegrenade 或 Grenade。')
         for i, cls in list(assign.items()):
+            if i in cheap:
+                continue                     # 已完整鉴定过：无需再复核
             if cls in ('Grenade', 'Smokegrenade') and i < len(props):
                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], GS_PROMPT)
                 if ans in ('Grenade', 'Smokegrenade'):
@@ -207,6 +298,8 @@ class NineRotationDetector(RotationDetector):
                      u'网格状防滑纹；军用手电筒（Torch）是细长圆柱形，一端有尾盖或按钮。'
                      u'这个物体是哪一类？只回答 Grenade 或 Torch。')
         for i, cls in list(assign.items()):
+            if i in cheap:
+                continue                     # 已完整鉴定过：无需再复核
             if cls in ('Grenade', 'Torch') and i < len(props):
                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], GT_PROMPT)
                 if ans in ('Grenade', 'Torch'):
@@ -221,33 +314,95 @@ class NineRotationDetector(RotationDetector):
                        u'Magazine（弹夹，扁平长条形弹匣，一侧平直，常可见排列的弹壳'
                        u'或供弹口）。这个物体是哪一类？只回答类名。')
         for i, cls in list(assign.items()):
+            if i in cheap:
+                continue                     # 已完整鉴定过：无需再复核
             if i < len(props):
+                votes_i = votes.get(i, [])
+                if self.fastpath and len(votes_i) >= 4 and len(set(votes_i)) == 1:
+                    continue          # all views agreed; skip the two re-check calls
                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], FIVE_PROMPT)
                 if ans in declared and ans != cls:
                     assign[i] = ans
-        return assign
+        return assign, cheap
 
     def _scan_worker(self, rgb, props):
+        light = [{'bbox': [int(v) for v in p['bbox']], 'pixel': [float(v) for v in p['pixel']]} for p in props]
+        # 把"已完整鉴定且在有效期内"的记忆类别作为提示交给分类器，让全图视角一致的
+        # 物体走廉价路径（见 _classify_proposals 文档）。几何匹配与发布路径同一把尺子。
+        began = time.monotonic()
+        settled, hint_used = {}, set()
+        for pi, prop in enumerate(light):
+            centre = _centre(prop['bbox'])
+            best_index, best_distance = None, None
+            for mi, mem in enumerate(self._objects):
+                if mi in hint_used or not mem.get('full') or not mem.get('class'):
+                    continue
+                if began - mem.get('verified_at', 0.) > FULL_TTL:
+                    continue
+                mem_centre = _centre(mem['bbox'])
+                distance = ((centre[0] - mem_centre[0]) ** 2 + (centre[1] - mem_centre[1]) ** 2) ** .5
+                if distance <= ASSOC_MAX_CENTRE_PX and (best_distance is None or distance < best_distance):
+                    best_index, best_distance = mi, distance
+            if best_index is not None:
+                hint_used.add(best_index)
+                settled[pi] = self._objects[best_index]['class']
         try:
-            light = [{'bbox': [int(v) for v in p['bbox']], 'pixel': [float(v) for v in p['pixel']]} for p in props]
-            assign = self._classify_proposals(rgb, light)
+            assign, cheap = self._classify_proposals(rgb, light, settled=settled)
         except Exception as error:
             rospy.logwarn('nine scan failed: %s', error)
-            assign = {}
-        # 类别滞回：连续两轮扫描一致才改判——单轮翻转会打断身份跟踪
-        # （tracking 要求本帧类别==上一帧类别才确认），导致永远 ambiguous。
-        # 提案数量变化（抓取后）才整体重置。
-        if not self._stable_assign or len(props) != self._stable_n:
-            self._stable_assign = dict(assign)
-        else:
-            merged = dict(self._stable_assign)
-            for i, cls in assign.items():
-                if self._last_assign.get(i) == cls:
-                    merged[i] = cls
-            self._stable_assign = merged
-        self._stable_n = len(props)
-        self._last_assign = dict(assign)
-        self._cache = {'at': time.monotonic(), 'assign': dict(self._stable_assign)}
+            assign, cheap = {}, set()
+        # 物体级类别记忆：把本轮观测按几何对到既有对象上，类名只跟着物体走。
+        # 滞回规则保持"连续两轮一致才改判"，但比对发生在【同一物体】之间，
+        # 而不是旧实现的"同一下标"之间——下标会随重排漂移，物体不会。
+        observed = [{'bbox': light[i]['bbox'], 'pixel': light[i]['pixel'], 'class': assign[i],
+                     'full': i not in cheap}
+                    for i in sorted(assign) if 0 <= i < len(light) and assign.get(i)]
+        now = time.monotonic()
+        used_memory = set()
+        merged = []
+        for obs in observed:
+            centre = _centre(obs['bbox'])
+            best_index, best_distance = None, None
+            for mi, mem in enumerate(self._objects):
+                if mi in used_memory:
+                    continue
+                mem_centre = _centre(mem['bbox'])
+                distance = ((centre[0] - mem_centre[0]) ** 2 + (centre[1] - mem_centre[1]) ** 2) ** .5
+                if distance <= ASSOC_MAX_CENTRE_PX and (best_distance is None or distance < best_distance):
+                    best_index, best_distance = mi, distance
+            if best_index is None:
+                # 新物体：本轮扫描结果（只有走了完整鉴定才算"已鉴定"）
+                merged.append(dict(obs, seen_at=now, full=bool(obs['full']),
+                                   verified_at=now if obs['full'] else 0.))
+                continue
+            used_memory.add(best_index)
+            previous = self._objects[best_index]
+            if previous['class'] == obs['class']:
+                # 一致 -> 采用；廉价路径不刷新鉴定时刻，完整鉴定才刷新
+                merged.append(dict(obs, seen_at=now,
+                                   full=previous.get('full') or obs['full'],
+                                   verified_at=now if obs['full'] else previous.get('verified_at', 0.)))
+            elif previous.get('pending') == obs['class']:
+                # 第二轮确认 -> 采用新类别；它需要自己的完整鉴定
+                merged.append(dict(obs, seen_at=now, full=bool(obs['full']),
+                                   verified_at=now if obs['full'] else 0.))
+            else:
+                kept = dict(previous)
+                kept['pending'] = obs['class']               # 单轮翻转：保留旧类名等确认
+                kept['bbox'] = obs['bbox']; kept['pixel'] = obs['pixel']; kept['seen_at'] = now
+                merged.append(kept)
+        # 关键：本轮没观测到的记忆【保留】一段时间。
+        # 扫描会被模型加载/超时打断而产出为空；若像初版那样"整体替换"，
+        # 一次空扫描就会清空全部类别 -> 所有候选变 unknown -> 计划必被拒。
+        for mi, mem in enumerate(self._objects):
+            if mi in used_memory:
+                continue
+            if now - mem.get('seen_at', 0.) <= RETAIN_SECONDS:
+                merged.append(mem)
+        self._objects = merged
+        self._cache = {'at': now, 'objects': [dict(o) for o in merged]}
+        rospy.loginfo('nine scan: classified %d/%d proposals, memory %d (settled %d, cheap %d)',
+                      len(observed), len(light), len(merged), len(settled), len(cheap))
         self._scan_inflight = False
 
     def detect(self, rgb, depth, k):
@@ -255,22 +410,27 @@ class NineRotationDetector(RotationDetector):
         proposals, support, metadata = source_components(depth, k, return_metadata=True)
         found = [{} for _ in proposals]
         base = []
-        if self.pending_scan and not self._scan_inflight:
-            # 按需扫描转入后台线程：detect 绝不阻塞，候选持续按帧新鲜发布，
-            # 扫描完成后类别写入缓存并持续套用。
+        # 真实物体的匹配覆盖数决定是否需要补扫：模型加载期间/超时导致的残缺扫描
+        # 会让部分候选长期没有类别，仅在 60s 周期里等会让计划一直拿不到标签。
+        real_indices = [i for i, proposal in enumerate(proposals) if _is_real_box(proposal['bbox'])]
+        matched = {}
+        if self._cache is not None:
+            matched = _associate(proposals, self._cache['objects'])
+        covered = sum(1 for i in matched if i in set(real_indices))
+        now = time.monotonic()
+        cache_age = None if self._cache is None else now - self._cache['at']
+        poor_coverage = bool(real_indices) and covered < len(real_indices)
+        if (not self._scan_inflight and
+                (self.pending_scan or
+                 (cache_age is None and bool(real_indices)) or
+                 (poor_coverage and cache_age is not None and cache_age > LABEL_RESCAN_AFTER) or
+                 (cache_age is not None and cache_age > RESCAN_INTERVAL))):
             self.pending_scan = False
             self._scan_inflight = True
             threading.Thread(target=self._scan_worker, args=(rgb.copy(), proposals), daemon=True).start()
-        elif (not self._scan_inflight and self._cache is not None
-              and time.monotonic() - self._cache['at'] > RESCAN_INTERVAL):
-            # 周期性后台续扫：类别不因缓存过期回落 unknown（身份确认依赖连续性）
-            self._scan_inflight = True
-            threading.Thread(target=self._scan_worker, args=(rgb.copy(), proposals), daemon=True).start()
-        assign = {}
-        if self._cache is not None:
-            assign = self._cache['assign']
-        # 逐物体分类：类别按扫描时的提案序号直接挂载（编号=发布 id，无匹配环节）
-        for index, cls in assign.items():
+        # 几何匹配挂载：只有与记忆中【同一位置】的物体配对成功，才继承它的类别；
+        # 配对失败（新物体/被遮挡/位置变化）一律发 unknown，等新一轮扫描。
+        for index, cls in matched.items():
             if index >= len(proposals):
                 continue
             x1, y1, x2, y2 = proposals[index]['bbox']

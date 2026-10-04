@@ -1309,7 +1309,15 @@ class Controller:
                                        'bilateral stable contact not established for this bounded grasp candidate')
         self.trial_lift_and_verify(selected,q,above)
         self.move_held_linear(above,q,'lift',max_step=.04)
-        self.move_held_linear(self.transfer_p,q,'transfer_clearance')
+        # Held-transport step (10/4): the gripper preload is deliberately bounded at
+        # 2 mm, so a flat/smooth object such as the magazine sits on a marginal
+        # friction limit.  A .12 m step (3x the lift step) shed the magazine during
+        # transfer_clearance_01_of_03 with 'sustained contact support lost'.  Keep
+        # held transport at the same gentle step the lift stage proved safe.
+        held_step=float(rospy.get_param('~held_transfer_step',.04))
+        if not math.isfinite(held_step) or not 0<held_step<=.12:
+            raise ValueError('held transfer step must be within (0,.12]')
+        self.move_held_linear(self.transfer_p,q,'transfer_clearance',max_step=held_step)
         drop_y=float(rospy.get_param('~place_y',.15))
         # 定向退休配套（10/3）：同侧已有交付时沿带偏移放置位——同位堆叠会物理
         # 互穿、感知 bbox 合并，后放物体皮带核验无凭据（unverified）。计数持久
@@ -1327,7 +1335,7 @@ class Controller:
         for candidate_x,candidate_y,candidate_q in place_options:
             place=[candidate_x if side=='left' else -candidate_x,candidate_y,2.67]
             try:
-                self.move_held_linear(place,candidate_q,'place_above')
+                self.move_held_linear(place,candidate_q,'place_above',max_step=held_step)
                 drop_y=candidate_y;place_q=candidate_q;reached=True;break
             except PlanningRejected as error:
                 self.event('alternate_place_candidate',rejected_y=candidate_y,quaternion=candidate_q,reason=str(error))

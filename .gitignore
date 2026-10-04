@@ -40,3 +40,6 @@ page-*.yml
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# 大文件存档（不入库）
+9.29存档.zip

@@ -260,13 +260,37 @@ class Nine:
                 global_deadline=req.get('deadline_monotonic',started+observation_seconds+85.)
                 # 按需分类：触发 perception 扫描并等待带类别的新候选。
                 self.prepare_pub.publish(String(json.dumps({'request_id': 'prep-'+rid[-8:]}, ensure_ascii=False)))
-                classify_until = started + 40.
+                # 标签完整门（v4 机制修复）：必须等到**所有**候选都有类别。
+                # 旧实现"任一候选有标签即放行"——帧内残留 unknown 时，计划校验
+                # 必然 vision/model category disagreement（B03 三轮全败根因）。
+                # 预算 90s（可由 ~label_wait_seconds 覆盖），过半仍未齐则再触发
+                # 一次扫描；超时放行（fail-soft，由既有守卫兜底），并受全局截止
+                # 时间约束。
+                label_budget=float(rospy.get_param('~label_wait_seconds',90.))
+                classify_until=min(started+label_budget,global_deadline)
+                retrig=True
+                def _needs_label(candidate):
+                    """Only real (non-fragment) proposals must be classified before planning.
+                    Perception also publishes unclassified fragments as candidates; they
+                    never acquire a class, so requiring labels for them would burn the whole
+                    budget (measured: 90 s on the first task).  Real objects subtend
+                    >=~25x30 px at basket depth; anything below 500 px^2 is residue."""
+                    box=candidate.get('bbox')
+                    if not isinstance(box,(list,tuple)) or len(box)!=4:return True
+                    try:
+                        w=abs(float(box[2])-float(box[0]));h=abs(float(box[3])-float(box[1]))
+                    except (TypeError,ValueError):return True
+                    return w*h>=500.
                 while time.monotonic() < classify_until and not rospy.is_shutdown():
                     with self.lock:
                         snap_now = copy.deepcopy(self.snapshot)
                     cand = (snap_now or {}).get('candidates', [])
-                    if cand and any(c.get('class') not in (None, '', 'unknown') for c in cand):
+                    pending=[c for c in cand if _needs_label(c) and c.get('class') in (None,'','unknown')]
+                    if cand and not pending:
                         break
+                    if retrig and time.monotonic() > started + label_budget * 0.5:
+                        self.prepare_pub.publish(String(json.dumps({'request_id': 'prep2-'+rid[-8:]}, ensure_ascii=False)))
+                        retrig = False
                     time.sleep(0.2)
                 snap,image_seq,image,observation_elapsed=self.wait_for_observation(
                     req,started,global_deadline,observation_seconds)

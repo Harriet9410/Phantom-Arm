@@ -171,7 +171,7 @@ class Console:
         if not texts:
             self._log('错误：至少填写一条指令')
             return
-        stamp = time.strftime('%H%M%S')
+        stamp = time.strftime('%d%H%M')
         path = os.path.join(RUNS, 'manual_%s.json' % stamp)
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(texts, f, ensure_ascii=False, indent=1)

@@ -3,11 +3,15 @@ import argparse,subprocess,time
 from common import ROOT,run_path,atomic_json
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('name');p.add_argument('--case');p.add_argument('--case-register');args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('name');p.add_argument('--case');p.add_argument('--case-register')
+    p.add_argument('--detector',choices=('nine','yolo'),
+                   help="perception detector: 'nine' (default; competition form) or 'yolo'")
+    args=p.parse_args()
     stack=run_path(args.name)
     command=['/usr/bin/python3',str(ROOT/'harness/launch_stack.py'),args.name]
     if args.case:command+=['--case',args.case]
     if args.case_register:command+=['--case-register',args.case_register]
+    if args.detector:command+=['--detector',args.detector]
     result=subprocess.run(command)
     if stack.exists():atomic_json(ROOT/'state/active_stack.json',
         {'stack_dir':str(stack),'ready':result.returncode==0,'recorded_at':time.time()})
