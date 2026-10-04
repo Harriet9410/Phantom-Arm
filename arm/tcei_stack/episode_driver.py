@@ -292,9 +292,27 @@ class EpisodeDriver:
                     raise EpisodeFailure('task stopped after task_failed with unfinished release evidence: '+str(event.get('reason','')))
                 return {'task_index':index,'task_id':context['task_id'],'status':'task_failed',
                         'reason':event.get('reason',''),'stop_id':proof.get('id')}
-            if status in ('rejected','request_rejected','plan_rejected','execution_disabled'):
+            if status in ('rejected','request_rejected','plan_rejected'):
                 task.update(result=event,elapsed_seconds=self.clock.monotonic()-began)
-                raise EpisodeFailure('task stopped after '+status+': '+str(event.get('reason','')))
+                self.task_interval_ended=self.clock.monotonic()
+                self.minimum_scene_wall=self.clock.time()
+                # 计划被拒发生在"计划被接受"之前：没有绑定目标、没有抓取，物体仍在桌上。
+                # 按账本自身的规则（失败且未触碰其目标的任务算已了结），继续下一条，而不是
+                # 让整轮死在第一条失败指令上；一旦有抓取/放置证据就维持原有的硬停（那种
+                # 情形没有可用的"已停稳"测量，不能带着手里的东西往下走）。
+                resolved=self.ledger.release_rejected_task(index,event.get('reason',''),self.clock.monotonic())
+                self.record({'status':'task_rejected_continuing' if resolved else 'task_rejected_unresolved',
+                             'time':self.clock.time(),'task_index':index,'task_id':context['task_id'],
+                             'reason':event.get('reason'),'reject_status':status,'resolved':resolved})
+                if not resolved:
+                    raise EpisodeFailure('task stopped after '+status+' with existing grasp or placement evidence: '+str(event.get('reason','')))
+                return {'task_index':index,'task_id':context['task_id'],'status':'task_rejected',
+                        'reason':event.get('reason',''),'reject_status':status}
+            if status=='execution_disabled':
+                # 无动作/预热模式的模式标志，不是任务失败：维持硬停，避免把配置问题
+                # 伪装成"5 条都跑过、只是都被拒"。
+                task.update(result=event,elapsed_seconds=self.clock.monotonic()-began)
+                raise EpisodeFailure('task stopped after execution_disabled: '+str(event.get('reason','')))
         raise TimeoutError('fixed episode deadline exhausted while waiting for task result')
 
     def _cancel_and_wait(self,reason):

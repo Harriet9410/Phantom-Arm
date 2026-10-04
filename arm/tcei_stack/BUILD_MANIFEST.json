@@ -1,5 +1,5 @@
 {
- "version": "dev_v7_t1_39",
+ "version": "dev_v7_t1_41",
  "development_only": true,
  "live_grasp_validation_pending": true,
  "files": {
@@ -11,7 +11,7 @@
   "conveyor_observer.py": "57595a831b17a3fdff3245e3d3e8c199d4ad4c77c0dc74a44fe4fadb91254c5b",
   "core.py": "fde8542f3f5c5f6ec5f517871dbb82eb08dc4b0367e3219d48161203431f04f4",
   "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
-  "episode_driver.py": "087f0738b590e18921bb7bc705cfe8d77474faad80e16dce3028d441aa2e2902",
+  "episode_driver.py": "fa9771cc099259def70a110f0f99925309506880e5a7297406b9c32de7c25748",
   "frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
   "frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
   "grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
@@ -21,10 +21,10 @@
   "joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
   "kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
   "lift_evidence.py": "d5913cf5690dc7c3a9956fd5a162d42efe2e0df54a80b0f386d82e0fa67541f8",
-  "mission_ledger.py": "55f4740851ce7e8d41fd720ac8be22a62756b43d4fd180eb5236abb2a202974d",
+  "mission_ledger.py": "35867723c0bc4cf3e0dfdec266ea62ad371063f3acc60f729393b1a6073de707",
   "nine_node.py": "bbb36a2eb347dcb6bf78545151f6b02d0baed31b9f4262aa3bb938cbbfa421e8",
   "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
-  "perception.py": "20002c5b5863cbf2b7f1a4f7cdf8c5c0d4060eabd3a4edfe4685c9ea8168393c",
+  "perception.py": "bfa9be9441faba93205d1b78ea2e5b1cd00c17b10565d26c6dc9e835be5eb29f",
   "perception_tracking.py": "09ea422b3fd911ace61616548634ecff4653779055ad41f72334a616916c4c86",
   "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
   "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",

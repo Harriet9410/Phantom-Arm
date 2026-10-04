@@ -8,70 +8,70 @@
    "case_id": "scramble_01",
    "seed": 2026101101,
    "planner_seed": 2026102101,
-   "sha256": "e7b3ee52a04323736d72c646bd93579fa85f334e3eb704a2bf2190a373897ce0",
+   "sha256": "846dd3704f64213bc88ff10570933a4c002640371c2fe371e0cdb5da6242d163",
    "case_file": "cases_scramble10/scramble_01.json"
   },
   {
    "case_id": "scramble_02",
    "seed": 2026101102,
    "planner_seed": 2026102102,
-   "sha256": "f73f6215d225d84ad748c0113edddcf87cde74198f24b4a8a8bccd87e76aa055",
+   "sha256": "0fa00509ea638b2f9e647df551dab285a754e93a6086907b3c6beb9e89863ec4",
    "case_file": "cases_scramble10/scramble_02.json"
   },
   {
    "case_id": "scramble_03",
    "seed": 2026101103,
    "planner_seed": 2026102103,
-   "sha256": "7be9484b26ce9b64a7ef56c0a86954ad430637152fa0e5dc2d97f2c42a48558f",
+   "sha256": "e03059b3126c786c2fd2511ac841b82098c87296659f52ca3d14dfebc15ca7a2",
    "case_file": "cases_scramble10/scramble_03.json"
   },
   {
    "case_id": "scramble_04",
    "seed": 2026101104,
    "planner_seed": 2026102104,
-   "sha256": "6889c8863daadd793cc415b62383a434129f682d802afc224c3e853050d9dd9c",
+   "sha256": "0fdbafefcd01b458e2144f028de4fc30f2f0974facd3e65b9b282ef0224eea8b",
    "case_file": "cases_scramble10/scramble_04.json"
   },
   {
    "case_id": "scramble_05",
    "seed": 2026101105,
    "planner_seed": 2026102105,
-   "sha256": "d5bebd808f164b298128c062fda9ea59e66fff73ba0011acd11e754eb3eba020",
+   "sha256": "7db160922ffe2471d3c4b8428a52abcec06e5b48b2e70b18b83018587daee55a",
    "case_file": "cases_scramble10/scramble_05.json"
   },
   {
    "case_id": "scramble_06",
    "seed": 2026101106,
    "planner_seed": 2026102106,
-   "sha256": "b4ac8bd7b8cb08097ac9c2760aefa013ba2d8d0c00e958bb36549eda4a7406fa",
+   "sha256": "1985366c5c706e0bd2f2b63eac27a2bf915a61d006a93f92471297183652c096",
    "case_file": "cases_scramble10/scramble_06.json"
   },
   {
    "case_id": "scramble_07",
    "seed": 2026101107,
    "planner_seed": 2026102107,
-   "sha256": "370b6621552cbfbdd53393977f7a4587bbe0e27e2820916c249d8409f1001643",
+   "sha256": "82f713a029c0ac837d171f165d800e4f5083d85e12eff382d7372fa7304baf74",
    "case_file": "cases_scramble10/scramble_07.json"
   },
   {
    "case_id": "scramble_08",
    "seed": 2026101108,
    "planner_seed": 2026102108,
-   "sha256": "2e5c6adbb759056f5c3bba0900e652dcf99ace54d1e1e6d82c361a3524100dc4",
+   "sha256": "d5cfef978b82b48aa1907be62dcbaa0f5eba663cec886618de8e601b8c1d227b",
    "case_file": "cases_scramble10/scramble_08.json"
   },
   {
    "case_id": "scramble_09",
    "seed": 2026101109,
    "planner_seed": 2026102109,
-   "sha256": "a2e9538721e6a87705ea83c7a3b10bc4bee666002bd9201304db1a80c976683a",
+   "sha256": "4f484809b26afc625ed39d551101c0260280df9ef68e7928ffe53c027b634643",
    "case_file": "cases_scramble10/scramble_09.json"
   },
   {
    "case_id": "scramble_10",
    "seed": 2026101110,
    "planner_seed": 2026102110,
-   "sha256": "dfcb608990645931d7378d185ea5073b3aa62818bdb643ba7c6168d33453d738",
+   "sha256": "02ae2cdbed8c876ddef5874bfaebb69f8ea4954aec89c64f7f516b195b02ff7a",
    "case_file": "cases_scramble10/scramble_10.json"
   }
  ]

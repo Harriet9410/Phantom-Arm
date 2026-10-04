@@ -27,6 +27,26 @@ from perception_tracking import CandidateTracker
 from frame_pairing import image_payload_binding
 
 
+def candidate_summary(candidate):
+    """id:class:identity:bbox_area_px -- one token per candidate for the cycle log.
+
+    Exists so "why was <object> not selectable" is answered by one grep instead of
+    reconstructing the frame from several log files and event streams.  Observed
+    need: a torch region was flagged multiple_body_cores/unresolved_correspondence,
+    given identity_status=ambiguous and then dropped, leaving the planner with no
+    Torch candidate at all -- invisible in every existing log line.
+    Never raises: every field is looked up defensively."""
+    box = candidate.get('bbox')
+    area = '?'
+    if isinstance(box, (list, tuple)) and len(box) == 4:
+        try:
+            area = '%.0f' % (abs(float(box[2]) - float(box[0])) * abs(float(box[3]) - float(box[1])))
+        except (TypeError, ValueError):
+            area = '?'
+    return '%s:%s:%s:%s' % (candidate.get('id'), candidate.get('class') or 'none',
+                            candidate.get('identity_status') or '-', area)
+
+
 class Perception:
     @staticmethod
     def _load_layout_prior():
@@ -337,7 +357,12 @@ class Perception:
             # Qt must remain on the main thread or the second frame can deadlock.
             with self.gui_lock:
                 self.gui_frames = (annotated, sheet)
-            rospy.loginfo_throttle(10,'frame=%d candidates=%d sync=%.3fs',self.seq,len(candidates),data['sync_delta'])
+            # 每 10 秒一行：规划器实际被"端上桌"的候选是什么（id:类别:身份:面积）。
+            # 有它才能一眼看出"某物体根本没进候选/被判 ambiguous"，而不是事后从
+            # 好几个日志与事件流里重建那一帧。
+            rospy.loginfo_throttle(10,'frame=%d candidates=%d sync=%.3fs | %s',
+                                   self.seq,len(candidates),data['sync_delta'],
+                                   ' '.join(candidate_summary(c) for c in candidates))
         except Exception as e:
             rospy.logerr_throttle(3,'perception rejected frame: %s',e)
         finally:

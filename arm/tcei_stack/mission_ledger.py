@@ -120,6 +120,25 @@ class MissionLedger:
                                         'released_stable_ids':sorted(task['targets'])}
         return True
 
+    def release_rejected_task(self,index,reason,now=None):
+        """Mark a planner-rejected task resolved, so later tasks are not blocked.
+
+        A rejection (semantic validation exhausted, request refused, plan rejected)
+        arrives before any plan is accepted, so no target was ever bound: nothing is
+        held and nothing is owed.  release_failed_task() cannot serve this case -- it
+        requires bound targets, which only exist once a plan is accepted -- yet
+        _dependencies must still see the task as resolved or the next task cannot even
+        be requested.  Grasp/placement evidence still blocks: if anything was taken the
+        caller keeps its hard stop, because there is no measured stop to fall back on.
+        """
+        task=self._task(index)
+        if task['status'] in ('verified','executed_pending_verification'):return False
+        if task['grasps'] or task['placements'] or task['pending_placements']:return False
+        at=_number(now,'reject time') if now is not None else time.monotonic()
+        task['released_after_failure']={'reason':str(reason)[:500],'monotonic':at,
+                                        'released_stable_ids':sorted(task['targets'])}
+        return True
+
     def task_context(self,scene,index,now=None,wall_now=None):
         task=self._task(index);now=time.monotonic() if now is None else _number(now,'now')
         wall_now=(self.started_wall+now-self.started_monotonic if wall_now is None else _number(wall_now,'wall now'))

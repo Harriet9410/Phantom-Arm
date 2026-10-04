@@ -80,7 +80,10 @@ def main():
     p.add_argument('--case-root',required=True,type=Path)
     selection=p.add_mutually_exclusive_group(required=True)
     selection.add_argument('--case-ids',nargs='+');selection.add_argument('--all-registered',action='store_true')
-    p.add_argument('--batch',required=True);p.add_argument('--instructions',required=True,type=Path)
+    p.add_argument('--batch',required=True)
+    p.add_argument('--instructions',type=Path,help='flat instruction list shared by every case; '
+                   'omit to take each case file\'s own instructions (required when the cases have '
+                   'different instructions, e.g. the B03 scramble batch)')
     p.add_argument('--task-source',required=True);args=p.parse_args()
     package=args.package.resolve();register=json.loads(args.register.read_text(encoding='utf-8-sig'))
     manifest_path=package/'tcei_stack/BUILD_MANIFEST.json'
@@ -96,9 +99,10 @@ def main():
         row=found[0];path=args.case_root/row['case_file']
         if hashlib.sha256(path.read_bytes()).hexdigest()!=row['sha256']:raise ValueError('registered case digest differs')
         selected.append((row,path,json.loads(path.read_text(encoding='utf-8-sig'))))
-    instructions=json.loads(args.instructions.read_text(encoding='utf-8-sig'))
+    instructions=json.loads(args.instructions.read_text(encoding='utf-8-sig')) if args.instructions else None
     out.mkdir();state={'batch':args.batch,'planned_rounds':len(selected),'status':'running','started_at':time.time(),
         'register_sha256':hashlib.sha256(args.register.read_bytes()).hexdigest(),'instructions':instructions,
+        'instructions_mode':'flat' if instructions is not None else 'per_case',
         'task_source':args.task_source,'package':str(package),'runtime_manifest_sha256':manifest_sha,
         'runtime_version':json.loads(manifest_path.read_text())['version'],'results':[]};save(out/'campaign.json',state)
     for row,path,case in selected:
@@ -108,8 +112,18 @@ def main():
         result={'case_id':row['case_id'],'seed':row['seed'],'case_sha256':row['sha256'],
                 'stack':str(stack),'run':str(run),'started_at':time.time(),'commands':[]}
         state['active_case']=row['case_id'];save(out/'campaign.json',state)
+        # Per-case instructions: B03 cases each carry their own list, so a single flat
+        # file cannot describe the batch.  Materialise the case's own list next to the
+        # batch output (the episode is graded against exactly what it was run with).
+        case_instructions=instructions if instructions is not None else case.get('instructions')
+        if not isinstance(case_instructions,list) or not case_instructions:
+            result.update(status='case_has_no_instructions');state['results'].append(result)
+            save(out/'campaign.json',state);return 1
+        instructions_path=out/(row['case_id']+'_instructions.json')
+        if not instructions_path.exists():
+            instructions_path.write_text(json.dumps(case_instructions,ensure_ascii=False,indent=1)+'\n',encoding='utf-8')
         commands=[['bash','robot.sh','start',stack.name,'--case',str(path.resolve()),'--case-register',str(args.register.resolve())],
-                  ['bash','robot.sh','run',run.name,'--instructions',str(args.instructions.resolve()),'--task-source',args.task_source],
+                  ['bash','robot.sh','run',run.name,'--instructions',str(instructions_path.resolve()),'--task-source',args.task_source],
                   ['bash','robot.sh','stop','--stack',stack.name]]
         for command in commands:
             phase=command[2]
@@ -133,7 +147,7 @@ def main():
             result['commands'].append({'phase':phase,'returncode':code,'finished_at':time.time()})
             if phase=='run' and (run/'supervisor_finished.json').exists():
                 result['supervisor']=json.loads((run/'supervisor_finished.json').read_text())
-                if (run/'episode/summary.json').exists():result.update(audit(run,stack,case,instructions))
+                if (run/'episode/summary.json').exists():result.update(audit(run,stack,case,case_instructions))
             if code!=0 and phase!='run':
                 result.setdefault('status','initialization_failed' if phase=='start' else 'shutdown_failed');break
         result['finished_at']=time.time();state['results'].append(result)

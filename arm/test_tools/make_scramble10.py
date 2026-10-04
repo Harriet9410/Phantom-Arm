@@ -6,9 +6,9 @@ Usage:  python make_scramble10.py <template_case> <default_poses.json> <out_dir>
 """
 import copy
 import hashlib
+import itertools
 import json
 import math
-import random
 import sys
 
 SCENES = [
@@ -54,7 +54,7 @@ SCENES = [
                       '抓取右上方的军用手电筒，放到右侧传送带', '抓取弹夹，放到左侧传送带',
                       '抓取剩余的物品，放到右侧传送带'],
      'sides': ['right', 'left', 'right', 'left', 'right']},
-    {'id': 'scramble_08', 'cells': {'smoke_bomb': 'RB', 'smoke_bomb_01': 'C', 'hand_grenade': 'RT',
+    {'id': 'scramble_08', 'cells': {'smoke_bomb': 'RB', 'smoke_bomb_01': 'MR', 'hand_grenade': 'RT',
                                     'Flashlight': 'LB', 'Magazines': 'LT'},
      'instructions': ['抓取右上方的手雷，放到左侧传送带', '抓取左上方的弹夹，放到右侧传送带',
                       '抓取左下方的军用手电筒，放到右侧传送带', '抓取右下方的烟雾弹，放到左侧传送带',
@@ -73,9 +73,6 @@ SCENES = [
                       '抓取剩余的物品，放到右侧传送带'],
      'sides': ['left', 'right', 'right', 'left', 'right']},
 ]
-
-# Duplicate-object guard: RT2 is RT shifted inward so the flashlight does not share
-# a cell with the smoke grenade in S2/S7 (both referenced there).
 
 # v5 attitude rule: keep each object's template (lying, zero-tilt) attitude, and add
 # a pure yaw about the WORLD vertical axis so its long axis points along world X.
@@ -112,22 +109,116 @@ def qnorm(q):
     return tuple(v / n for v in q)
 
 
-def cell_xy(cell, inner, ins):
-    """Deep-quadrant spots (v2): 4 corners + 4 quadrant-inner slots.
-    Nothing sits on or near the quadrant midlines (image x=644/y=268), which
-    caused 'boundary uncertainty' rejections in v1.  Image-left = +x, top = -y."""
+# Image-space packing guard.  Two objects whose projected boxes nearly touch get
+# merged by depth segmentation into one 'multiple_body_cores' region, which the
+# tracker then marks ambiguous and drops -- the planner sees no candidate for that
+# object at all.  Observed 10/4: a torch 8-11 px from the grenade was dropped, so
+# "lower-right torch" became unsatisfiable and the round was rejected.  Projection
+# calibrated from one observed frame (b03_03_10041656: five ground-truth object
+# positions against their published candidate boxes):
+U0, UX = 643.5, -569.3        # u = U0 + UX*x   (max residual 15.5 px)
+V0, VY = 297.4, 629.6         # v = V0 + VY*y   (max residual  6.5 px)
+MID_U, MID_V, MID_MARGIN = 644.0, 268.0, 25.0   # quadrant midlines + required clearance
+MIN_PIXEL_GAP = 45.0          # official reference layouts measure 45.2 px; a pair below
+                              # this is not safely separated in the image
+QUADRANT_OF = {'LT': 'LT', 'ML': 'LT', 'RT': 'RT', 'MR': 'RT',
+               'LB': 'LB', 'RB': 'RB', 'C': 'RB'}
+
+
+def pixel_xy(x, y):
+    return U0 + UX * x, V0 + VY * y
+
+
+def x_for_u(u):
+    return (u - U0) / UX
+
+
+def y_for_v(v):
+    return (v - V0) / VY
+
+
+def quadrant_slots(quadrant, inner, inset):
+    """Three slots per quadrant: the basket-corner slot, one that slides along the
+    quadrant's own horizontal edge (toward the vertical midline) and one that slides
+    along its vertical edge.  Two same-quadrant objects placed corner+edge separate by
+    ~50-106 px, which is what the packing check needs.  Sliding *along an edge* rather
+    than toward the centre matters: the centre-ward slots of two neighbouring quadrants
+    sit only ~50 px apart (barely one box width), so a case that doubles two quadrants
+    (scramble_06 does) cannot use them.  The edge slots stay clear of both midlines."""
     xmin, xmax, ymin, ymax = inner
-    mx, my = (xmin + xmax) / 2, (ymin + ymax) / 2
-    xL, xR = xmax - ins, xmin + ins          # image-left / image-right
-    yT, yB = ymin + ins, ymax - ins          # image-top / image-bottom
-    cix, ciy = (xL + mx) / 2, (yT + my) / 2  # quadrant-inner (toward LT)
-    table = {
-        'LT': (xL, yT), 'RT': (xR, yT), 'LB': (xL, yB), 'RB': (xR, yB),
-        'ML': (cix, ciy), 'MR': (xR + (mx - xR) * 0.45, (yT + my) / 2),
-        'C': (xR + (mx - xR) * 0.45, yB + (my - yB) * 0.45),
-        'TC': (mx, yT), 'BC': (mx, yB),
-    }
-    return table[cell]
+    xL, xR = xmax - inset, xmin + inset            # image-left / image-right
+    yT, yB = ymin + inset, ymax - inset            # image-top / image-bottom
+    x_in_left = x_for_u(MID_U - MID_MARGIN)        # smallest x still left of midline
+    x_in_right = x_for_u(MID_U + MID_MARGIN)       # largest x still right of midline
+    y_in_top = y_for_v(MID_V - MID_MARGIN)         # largest y still above midline
+    y_in_bottom = y_for_v(MID_V + MID_MARGIN)      # smallest y still below midline
+    return {
+        'LT': [(xL, yT), (x_in_left, yT), (xL, y_in_top)],
+        'RT': [(xR, yT), (x_in_right, yT), (xR, y_in_top)],
+        'LB': [(xL, yB), (x_in_left, yB), (xL, y_in_bottom)],
+        'RB': [(xR, yB), (x_in_right, yB), (xR, y_in_bottom)],
+    }[quadrant]
+
+
+def predicted_box(point_xy, span_xy):
+    u, v = pixel_xy(*point_xy)
+    du, dv = abs(UX) * span_xy[0], abs(VY) * span_xy[1]
+    return [u - du / 2, v - dv / 2, u + du / 2, v + dv / 2]
+
+
+def box_gap(a, b):
+    """Axis-aligned clearance: separation along either axis counts."""
+    return max(max(a[0] - b[2], b[0] - a[2]), max(a[1] - b[3], b[1] - a[3]))
+
+
+def min_pixel_gap(assignment, spans):
+    ids = list(assignment)
+    boxes = {i: predicted_box(assignment[i], spans[i]) for i in ids}
+    worst = None
+    for n, i in enumerate(ids):
+        for j in ids[n + 1:]:
+            gap = box_gap(boxes[i], boxes[j])
+            if worst is None or gap < worst:
+                worst = gap
+    return worst
+
+
+INSTRUCTION_CLASSES = {'烟雾弹': ('smoke_bomb', 'smoke_bomb_01'), '弹夹': ('Magazines',),
+                       '军用手电筒': ('Flashlight',), '手雷': ('hand_grenade',)}
+REGION_WORDS = {'左上方': '左上', '右上方': '右上', '左下方': '左下', '右下方': '右下'}
+EXTREME_WORDS = ('最左方', '最右方')
+
+
+def quadrant_word(xy):
+    u, v = pixel_xy(*xy)
+    return ('左' if u < MID_U else '右') + ('上' if v < MID_V else '下')
+
+
+def assert_instructions_satisfiable(case_id, instructions, placed):
+    """Every instruction must be satisfiable by exactly one object.
+
+    The planner validates with implicit_unique: for a region word it filters the named
+    class by region and then demands exactly one survivor (semantics.py: "implicit
+    quantity requires one unambiguous matching object"); for a bare class word it demands
+    exactly one instance in the whole scene.  scramble_08 shipped with BOTH smoke bombs in
+    the lower-right quadrant, which made "抓取右下方的烟雾弹" unsatisfiable by construction
+    -- a guaranteed rejection that never surfaced because rounds stopped earlier.  Extremes
+    ('最左方') are satisfied by picking the class-relative extreme, so they only need the
+    named class to exist."""
+    where = {o['object_id']: quadrant_word(o['reference_xy']) for o in placed}
+    for instruction in instructions:
+        named = next((c for c in INSTRUCTION_CLASSES if c in instruction), None)
+        if named is None:
+            continue                                  # '抓取剩余的物品' names no class
+        ids = [i for i in INSTRUCTION_CLASSES[named] if i in where]
+        region = next((w for w in REGION_WORDS if w in instruction), None)
+        if region is not None:
+            inside = [i for i in ids if where[i] == REGION_WORDS[region]]
+            assert len(inside) == 1, (case_id, instruction, 'region+class must be unique', inside)
+        elif any(w in instruction for w in EXTREME_WORDS):
+            assert ids, (case_id, instruction, 'named class missing')
+        else:
+            assert len(ids) == 1, (case_id, instruction, 'bare class must be unique', ids)
 
 
 def main():
@@ -139,7 +230,6 @@ def main():
 
     cases, rows = [], []
     for n, spec in enumerate(SCENES, 1):
-        rng = random.Random(2026101100 + n)
         case = copy.deepcopy(template)
         case['case_id'] = spec['id']
         case['case_index'] = n
@@ -147,10 +237,24 @@ def main():
         case['planner_seed'] = 2026102100 + n
         case['instructions'] = spec['instructions']
         case['expected_sides'] = spec['sides']
+        inset = template.get('wall_margin_m', 0.035) + 0.055
+        # 姿态只在模板上加一次绕世界垂直轴的偏航；先算出投影跨度，再在"各自象限的
+        # 两个极端槽位"里挑一组让图像内最小框间距最大——这直接决定深度分割会不会把
+        # 两件物体并成一个 multiple_body_cores 区域（并了就会被判 ambiguous 并丢弃）。
+        spans, slot_options = {}, []
+        for obj in case['objects']:
+            span = [obj['bbox_max'][k] - obj['bbox_min'][k] for k in range(3)]
+            spans[obj['object_id']] = [span[1], span[0], span[2]] if span[1] > span[0] else span
+            slot_options.append(quadrant_slots(QUADRANT_OF[spec['cells'][obj['object_id']]], inner, inset))
+        best_score, chosen = None, None
+        for combo in itertools.product(*slot_options):
+            assignment = {obj['object_id']: combo[i] for i, obj in enumerate(case['objects'])}
+            score = min_pixel_gap(assignment, spans)
+            if best_score is None or score > best_score:
+                best_score, chosen = score, assignment
         placed = []
         for obj in case['objects']:
-            cell = spec['cells'][obj['object_id']]
-            tx, ty = cell_xy(cell, inner, template.get('wall_margin_m', 0.035) + 0.055)
+            tx, ty = chosen[obj['object_id']]
             # v5: keep template attitude; if the long axis lies along world Y, add a
             # pure vertical-axis yaw so it points along X (horizontal in the
             # observation camera).  Zero tilt preserved; yaw is in-distribution.
@@ -187,14 +291,26 @@ def main():
             assert ymin - 0.005 <= o['bbox_min'][1] and o['bbox_max'][1] <= ymax + 0.005, (spec['id'], o['object_id'], 'y')
             assert 2.34 < o['bbox_min'][2] < 2.43 and o['bbox_max'][2] < 2.55, (spec['id'], o['object_id'], 'z')
             # anti-midline: no object may sit near a quadrant boundary in image space
-            # (empirical projection fits: u = 643 - 653*x, v = 280 + 592*y)
-            u = 643 - 653 * o['reference_xy'][0]
-            v = 280 + 592 * o['reference_xy'][1]
-            assert abs(u - 644) >= 25 and abs(v - 268) >= 25, (spec['id'], o['object_id'], 'midline', round(u), round(v))
+            u, v = pixel_xy(*o['reference_xy'])
+            assert abs(u - MID_U) >= MID_MARGIN and abs(v - MID_V) >= MID_MARGIN, (
+                spec['id'], o['object_id'], 'midline', round(u), round(v))
         for i, a in enumerate(placed):
             for b in placed[i + 1:]:
                 gap = math.dist(a['reference_xy'], b['reference_xy']) - a['footprint_radius_m'] - b['footprint_radius_m']
                 assert gap >= 0.005, (spec['id'], a['object_id'], b['object_id'], round(gap, 4))
+        # 图像内最小框间距：这才是预测"深度分割会不会并核"的判据。官方参考布局量到
+        # 45.2 px，所以低于 MIN_PIXEL_GAP 的场景一律拒绝生成。
+        placed_boxes = {o['object_id']: predicted_box(o['reference_xy'],
+                        [o['bbox_max'][k] - o['bbox_min'][k] for k in (0, 1)]) for o in placed}
+        worst, worst_pair = None, None
+        for n, a in enumerate(placed):
+            for b in placed[n + 1:]:
+                g = box_gap(placed_boxes[a['object_id']], placed_boxes[b['object_id']])
+                if worst is None or g < worst:
+                    worst, worst_pair = g, (a['object_id'], b['object_id'])
+        assert worst >= MIN_PIXEL_GAP, (spec['id'], 'pixel gap', round(worst, 1), worst_pair)
+        # 最后一道：每条指令都必须"唯一可满足"（否则计划校验必然拒单）
+        assert_instructions_satisfiable(spec['id'], spec['instructions'], placed)
         body = json.dumps(case, ensure_ascii=False, indent=1) + '\n'
         out_path = '%s/%s.json' % (out_dir, spec['id'])
         open(out_path, 'w', encoding='utf-8').write(body)
