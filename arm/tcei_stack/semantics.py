@@ -407,7 +407,13 @@ def validate_selection(value, candidates, constraints, scene=None, task_context=
         if set(ids) != set(remaining) or set(ids) & set(reserved):
             raise ValueError('model remaining selection contradicts task ledger')
         return
-    matching = [c for c in candidates if c.get('class') == category]
+    # 身份修复①（R2-2）：同类别匹配只统计"可被选中"的候选。身份未确认
+    # （ambiguous/无 stable_id）的候选本来就无法通过 validate_selection 的
+    # 选中校验（ObservationRequired），让它们参与 matching 只会制造虚假的
+    # "同类不唯一/极值不唯一"拒单——实测：手电筒深度分核区域的幻影类别
+    # （Grenade/Torch 漂移、ambiguous 恒定）让真手雷的区间指令必然被拒。
+    matching = [c for c in candidates if c.get('class') == category
+                and c.get('identity_status', 'confirmed') == 'confirmed']
     relation = constraints['spatial']
     context = spatial_config(scene) if relation != 'none' else None
     if context is not None:
