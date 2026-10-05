@@ -69,7 +69,7 @@ def audit(run,stack,case,instructions):
         'physical_completed':len(used)==len(case['objects'])==5 and not identity_conflicts and summary.get('elapsed_seconds',math.inf)<=600
             and [x['instruction'] for x in summary['tasks']]==instructions,
         'code_changed_during_episode':summary.get('code_changed_during_episode',[]),
-        'task_results':[x['result'].get('status') for x in summary['tasks']],
+        'task_results':[(x.get('result') or {}).get('status') for x in summary['tasks']],
         'counts_scope':'machine verification and independent physical outcomes are distinct',
         'source_summary_sha256':hashlib.sha256((run/'episode/summary.json').read_bytes()).hexdigest()}
     save(run/'independent_audit.json',result);return result
