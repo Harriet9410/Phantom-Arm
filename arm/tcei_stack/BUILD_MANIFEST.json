@@ -1,5 +1,5 @@
 {
- "version": "dev_v7_t1_43",
+ "version": "dev_v7_t1_44",
  "development_only": true,
  "live_grasp_validation_pending": true,
  "files": {
@@ -30,7 +30,7 @@
   "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",
   "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
   "ros_endpoints.py": "f0668d7724358ea6f073222827c29371e9a1c449d399aa8d08c04df7f8037dfa",
-  "rotation_perception.py": "42d7f061432f1e7fd6cb75e2916c14fcaf9c31f6e81c274db1a39bc2bf646234",
+  "rotation_perception.py": "8fff46902109ed677453e43d550d2be8335d7b04cf05b9cd1a7474a1194eaec6",
   "run_episode.py": "a3858e49abdf7c73d741d090c199b7b8efb3fc371fee9ceea16689ce1c6cd736",
   "semantic_repair.py": "ecbc82e0efcbbca157dccdb99121fb158d6da0e272a0ea8c5426d8f528429072",
   "semantics.py": "c1aa8923d0a98b68381c6e5ccd24d91e7d15aae99f996088723d9d57b1a3dff8",

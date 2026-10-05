@@ -96,7 +96,7 @@ def source_components(depth, k, return_metadata=False):
         # 几何属性；真两物体（物理接触）的分核每帧都成立）。分核帧占比
         # <0.5 且已观察 ≥5 帧的 blob：判回单物体，不再扣 multiple_body_cores。
         history_key=(x//16,y//16,bw//16,bh//16)
-        seen_total,seen_split=self._core_split_history.get(history_key,(0,0))
+        seen_total,seen_split=_CORE_SPLIT_HISTORY.get(history_key,(0,0))
         seen_total+=1
         split=substantial_cores>1
         # 颈部判据（R2-2 身份修复②·实测：手电筒 blob 644px、两核连线 body
@@ -124,7 +124,7 @@ def source_components(depth, k, return_metadata=False):
                 if widths and min(widths)>=4:
                     split=False
         if split:seen_split+=1
-        self._core_split_history[history_key]=(seen_total,seen_split)
+        _CORE_SPLIT_HISTORY[history_key]=(seen_total,seen_split)
         if split and seen_total>=5 and seen_split/seen_total<0.5:
             split=False
         if split:reasons.append('multiple_body_cores')
@@ -192,13 +192,16 @@ def associate(box, proposals):
     return choices[0][1]
 
 
+# 分核时序史（R2-2 身份修复②）：同一 blob 的分核若不可复现，判为噪声。
+# 键 = 量化 bbox；值 = [总观察帧数, 分核帧数]。source_components 是模块级
+# 函数，历史必须挂在模块上（进程存续即跨帧保留）。
+_CORE_SPLIT_HISTORY={}
+
+
 class RotationDetector:
     def __init__(self,model):
         self.model=model
         self.preferred=[]
-        # 分核时序史（R2-2 身份修复②）：同一 blob 的分核若不可复现，判为噪声。
-        # 键 = 量化 bbox；值 = [总观察帧数, 分核帧数]。
-        self._core_split_history={}
         names=list(model.names.values()) if isinstance(model.names,dict) else list(model.names)
         supported=sorted({canonical_class(name) for name in names if canonical_class(name)})
         self.capabilities={'declared_classes':supported,'raw_names':[str(n) for n in names],
