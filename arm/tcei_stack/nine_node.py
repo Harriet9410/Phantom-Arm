@@ -237,7 +237,7 @@ class Nine:
             # 大块分配（实测 1.54GiB OOM）。每次分类后把缓存归还 CUDA。
             torch.cuda.empty_cache()
             self._classify_busy=False
-            self.classify_pub.publish(String(json.dumps({'request_id':rid,'raw_answer':str(answer)},ensure_ascii=False)))
+            self.classify_pub.publish(String(json.dumps({'request_id':rid,'raw_answer':str(answer),'tag':data.get('tag')},ensure_ascii=False)))
             self.event_local('classify_answered',request_id=rid,answer=str(answer))
         except Exception as error:
             self._classify_busy=False

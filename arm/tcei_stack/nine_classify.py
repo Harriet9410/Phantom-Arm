@@ -145,16 +145,18 @@ class NineRotationDetector(RotationDetector):
         return [round(x1 / 1000 * width), round(y1 / 1000 * height),
                 round(x2 / 1000 * width), round(y2 / 1000 * height)]
 
-    def _ask(self, rgb, prompt):
+    def _ask(self, rgb, prompt, tag='crop'):
         """Image + prompt -> raw model answer via the nine_node service.
 
         grounding:false 始终走基座（选择权重）模型——分类/定位查询都不加载
-        框选适配器（实测基座的类别判断远准于适配器）。"""
+        框选适配器（实测基座的类别判断远准于适配器）。tag 只用于日志阶段
+        标记（R2-0 要求）：nine_node 会把它原样带回 classify_answered，使
+        每一票可按阶段回放。"""
         request_id = 'locate-' + uuid.uuid4().hex[:8]
         self._results.pop(request_id, None)
         pil = PILImage.fromarray(cv2.cvtColor(rgb, cv2.COLOR_BGR2RGB))
         self.request_pub.publish(String(json.dumps(
-            {'request_id': request_id, 'prompt': prompt, 'grounding': False,
+            {'request_id': request_id, 'prompt': prompt, 'grounding': False, 'tag': tag,
              'image_jpeg_b64': self._jpeg_b64(rgb)}, ensure_ascii=False)))
         deadline = time.monotonic() + self.timeout
         while time.monotonic() < deadline:
@@ -175,7 +177,65 @@ class NineRotationDetector(RotationDetector):
             raise RuntimeError('nine classify unavailable (3 consecutive empty answers)')
         return answer
 
-    def _classify_view_crop(self, rgb, bbox, zh_prompt):
+    def _parse_class_answer(self, text):
+        """M1（R2-1）：裁剪答案的类别解析——中英别名 + 冲突/否定保守判不确定。
+
+        别名单一来源 = perception_tracking.CLASS_ALIASES（不在此重复定义）。
+        规则：
+        - 英文子串沿用长名优先：'Grenade' 在 'Smokegrenade' 内部不算第二类；
+        - 中文别名做子串匹配（别名表里的中文项）；
+        - 否定词（前后 6 字窗内）就近否决该类名：被否决的类弃权，剩余恰好
+          一类才返回（'不是手雷，是烟雾弹'→Smokegrenade；'这不是手雷'→None）
+          ——永不返回被否决的类；
+        - 其余情形命中 ≠1 类（含 0 类与真冲突）→ None（不确定票）。"""
+        if not text:
+            return None
+        raw = str(text)
+        low = raw.lower()
+        declared = self.capabilities.get('declared_classes') or ()
+        spans = []
+        for cls in sorted(declared, key=len, reverse=True):
+            for m in re.finditer(re.escape(cls.lower()), low):
+                spans.append([m.start(), m.end(), cls])
+        for canonical, aliases in CLASS_ALIASES.items():
+            if canonical not in declared:
+                continue
+            for alias in aliases:
+                if not any('\u4e00' <= ch <= '\u9fff' for ch in alias):
+                    continue                      # 英文别名已由 declared 分支覆盖
+                for m in re.finditer(re.escape(alias), raw):
+                    spans.append([m.start(), m.end(), canonical])
+        if not spans:
+            return None
+        negations = ('不是', '并不是', '并非', '不算', '没有', '非', 'not', 'non-')
+        hits = []
+        for neg in negations:
+            for m in re.finditer(re.escape(neg.lower()), low):
+                hits.append((m.start(), m.end()))
+        kept = []
+        for s in spans:
+            if any(o[0] <= s[0] and s[1] <= o[1] and (o[1] - o[0]) > (s[1] - s[0])
+                   for o in spans):
+                continue                          # 丢弃被更长匹配包含的子串
+            kept.append(s)
+        # 否定词就近否决：绑定与它间隔最近的类名跨度（并列才同标），
+        # 被否决的类弃权——'不是手雷，是烟雾弹' 只弃权手雷。
+        for ns, ne in hits:
+            best, best_gap = [], None
+            for s in kept:
+                gap = max(0, s[0] - ne) + max(0, ns - s[1])
+                if best_gap is None or gap < best_gap:
+                    best, best_gap = [id(s)], gap
+                elif gap == best_gap:
+                    best.append(id(s))
+            if best_gap is not None and best_gap <= 6:
+                kept = [s for s in kept if id(s) not in best]
+        classes = {s[2] for s in kept}
+        if len(classes) != 1:
+            return None
+        return kept[0][2]
+
+    def _classify_view_crop(self, rgb, bbox, zh_prompt, tag='crop'):
         """One crop-classification query: proposal crop (margin, upscaled) ->
         official class name parsed from the raw answer, or None."""
         h, w = rgb.shape[:2]
@@ -188,13 +248,8 @@ class NineRotationDetector(RotationDetector):
             return None
         scale = max(2, 160 // max(1, max(ch, cw)))
         up = cv2.resize(crop, (cw * scale, ch * scale), interpolation=cv2.INTER_CUBIC)
-        answer = self._ask(up, zh_prompt)
-        low = (answer or '').lower()
-        # 长类名优先：'Grenade' 是 'Smokegrenade' 的子串，顺序错会误判
-        for cls in sorted(self.capabilities['declared_classes'], key=len, reverse=True):
-            if cls.lower() in low:
-                return cls
-        return None
+        answer = self._ask(up, zh_prompt, tag=tag)
+        return self._parse_class_answer(answer)
 
     def _classify_proposals(self, rgb, props, settled=None):
         """Three-view majority classification -> ({proposal_index: class}, cheap).
@@ -225,7 +280,7 @@ class NineRotationDetector(RotationDetector):
                   u'类别只能是：%s。只输出一个 JSON 对象，形如 {%s}，不要输出其他文字。'
                   % ('、'.join(ids), names, ','.join('"%s":"类名"' % i for i in ids)))
         import re as _re
-        raw = self._ask(rgb, prompt)
+        raw = self._ask(rgb, prompt, tag='full')
         numbered = dict(_re.findall(r'"(\d+)"\s*:\s*"([A-Za-z]+)"', raw or ''))
         declared = self.capabilities['declared_classes']
         for i in range(len(props)):
@@ -273,12 +328,12 @@ class NineRotationDetector(RotationDetector):
                 assign[i] = vs[0]
         # Grenade/Smokegrenade 俯视混淆严重（三视角 2/5 错误集中于此）：加特征
         # 提示的二选一复核，实测 6/6 一致，直接覆写复核结果。
-        def _recheck_agree(bbox, prompt):
+        def _recheck_agree(bbox, prompt, tag='recheck'):
             """复核采两票：两票一致才改判。单票在模糊裁剪上是掷硬币，
             会引发类别振荡（实测 id2 Torch↔Grenade 反复横跳）。"""
             answers = []
             for _ in range(2):
-                a = self._classify_view_crop(rgb, bbox, prompt)
+                a = self._classify_view_crop(rgb, bbox, prompt, tag=tag)
                 if a is not None:
                     answers.append(a)
             return answers[0] if len(answers) == 2 and answers[0] == answers[1] else None
@@ -290,7 +345,7 @@ class NineRotationDetector(RotationDetector):
             if i in cheap:
                 continue                     # 已完整鉴定过：无需再复核
             if cls in ('Grenade', 'Smokegrenade') and i < len(props):
-                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GS_PROMPT)
+                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GS_PROMPT, tag='recheck_gs')
                 if ans in ('Grenade', 'Smokegrenade'):
                     assign[i] = ans
         # 手雷/手电筒混淆（实机 id5 被锁 Torch）：同一手法二次复核。
@@ -301,7 +356,7 @@ class NineRotationDetector(RotationDetector):
             if i in cheap:
                 continue                     # 已完整鉴定过：无需再复核
             if cls in ('Grenade', 'Torch') and i < len(props):
-                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GT_PROMPT)
+                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GT_PROMPT, tag='recheck_gt')
                 if ans in ('Grenade', 'Torch'):
                     assign[i] = ans
         # 终审（10/3 修订）：配对复核（GS/GT）只覆盖两对且无逃生口，跨类错误与
@@ -320,7 +375,7 @@ class NineRotationDetector(RotationDetector):
                 votes_i = votes.get(i, [])
                 if self.fastpath and len(votes_i) >= 4 and len(set(votes_i)) == 1:
                     continue          # all views agreed; skip the two re-check calls
-                ans = _recheck_agree([int(v) for v in props[i]['bbox']], FIVE_PROMPT)
+                ans = _recheck_agree([int(v) for v in props[i]['bbox']], FIVE_PROMPT, tag='final')
                 if ans in declared and ans != cls:
                     assign[i] = ans
         return assign, cheap
