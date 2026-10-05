@@ -105,7 +105,24 @@ def main():
         'instructions_mode':'flat' if instructions is not None else 'per_case',
         'task_source':args.task_source,'package':str(package),'runtime_manifest_sha256':manifest_sha,
         'runtime_version':json.loads(manifest_path.read_text())['version'],'results':[]};save(out/'campaign.json',state)
+    # Operator aborts (SIGTERM/SIGINT) must not leave status='running' behind: the
+    # round-2 review flagged that a killed runner misstates the evidence forever.
+    abort={'requested':False,'signum':None}
+    def _request_abort(signum,frame):
+        abort['requested']=True;abort['signum']=signum
+    previous_handlers={sig:signal.signal(sig,_request_abort) for sig in (signal.SIGTERM,signal.SIGINT)}
+    def finish_abort():
+        state['status']='aborted_by_signal';state['aborted_signum']=abort['signum']
+        state['aborted_at']=time.time();state['active_case']=None
+        if abort['signum']==signal.SIGINT:signal.signal(signal.SIGINT,previous_handlers[signal.SIGINT])
+        save(out/'campaign.json',state)
     for row,path,case in selected:
+        if abort['requested']:
+            # 逐案收尾：中止时尚未跑的案子记 not_initiated，不留悬案
+            done_ids={r.get('case_id') for r in state['results']}
+            pending=[x['case_id'] for x in register['cases'] if x['case_id'] not in done_ids]
+            state['not_initiated_cases']=pending
+            finish_abort();return 1
         if hashlib.sha256(manifest_path.read_bytes()).hexdigest()!=manifest_sha:
             state['status']='runtime_changed_between_rounds';save(out/'campaign.json',state);return 1
         name=args.batch+'_'+row['case_id'];stack=data/(name+'_stack');run=data/(name+'_round')
@@ -144,6 +161,17 @@ def main():
                 try:child.wait(timeout=25)
                 except subprocess.TimeoutExpired:result['supervisor_still_running']=True
                 code=-1
+            if abort['requested']:
+                # 中止落在阶段中间：把当前栈按原路收干净，再记录中止（不留 running）
+                result['commands'].append({'phase':phase,'returncode':code,'finished_at':time.time(),'interrupted_by_signal':True})
+                result['finished_at']=time.time();result.setdefault('status','aborted_mid_case')
+                state['results'].append(result)
+                if stack.exists() and phase!='stop':
+                    subprocess.run(['bash','robot.sh','stop','--stack',stack.name],cwd=package,
+                                   stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT,timeout=120)
+                done_ids={r.get('case_id') for r in state['results']}
+                state['not_initiated_cases']=[x['case_id'] for x in register['cases'] if x['case_id'] not in done_ids]
+                finish_abort();return 1
             result['commands'].append({'phase':phase,'returncode':code,'finished_at':time.time()})
             if phase=='run' and (run/'supervisor_finished.json').exists():
                 result['supervisor']=json.loads((run/'supervisor_finished.json').read_text())
