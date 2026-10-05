@@ -99,6 +99,30 @@ def source_components(depth, k, return_metadata=False):
         seen_total,seen_split=self._core_split_history.get(history_key,(0,0))
         seen_total+=1
         split=substantial_cores>1
+        # 颈部判据（R2-2 身份修复②·实测：手电筒 blob 644px、两核连线 body
+        # 宽度剖面最窄 7px = 柄宽——"头+柄"渐变是单物体；两件接触物体的
+        # 接触颈 ≤2-3px）。两核连线上 body 最窄宽度 ≥4px → 颈部不断 → 单物体。
+        if split:
+            n2,l2,s2,_=cv2.connectedComponentsWithStats(core.astype(np.uint8),8)
+            big=sorted((j for j in range(1,n2) if s2[j,4]>=9),key=lambda j:-s2[j,4])[:2]
+            if len(big)==2:
+                cents=[]
+                for j in big:
+                    ys,xs=np.nonzero(l2==j)
+                    cents.append((float(xs.mean()),float(ys.mean())))
+                (cx1,cy1),(cx2,cy2)=cents
+                horizontal=bw>=bh
+                steps=abs(int(round(cx2-cx1))) if horizontal else abs(int(round(cy2-cy1)))
+                widths=[]
+                for s in range(max(1,steps+1)):
+                    if horizontal:
+                        px=int(round(cx1+(cx2-cx1)*s/max(1,steps)))
+                        widths.append(int(body[:,px].sum()))
+                    else:
+                        py=int(round(cy1+(cy2-cy1)*s/max(1,steps)))
+                        widths.append(int(body[py,:].sum()))
+                if widths and min(widths)>=4:
+                    split=False
         if split:seen_split+=1
         self._core_split_history[history_key]=(seen_total,seen_split)
         if split and seen_total>=5 and seen_split/seen_total<0.5:
