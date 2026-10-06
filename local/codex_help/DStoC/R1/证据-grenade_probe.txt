@@ -1,0 +1,21 @@
+/opt/conda/envs/inference/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:513: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+self.grid_size:  8
+self.num_queries:  64
+self.embed_dim:  2560
+self.num_heads:  16
+self.adaptive:  True
+self.max_size:  (70, 70)
+self.kv_dim:  1152
+1_当前裁剪+GS提示（现状，第1次）                            -> Smokegrenade   | 这个物体是烟雾弹（Smokegrenade）。  根据提供的图片，我们可以看到一个圆柱形容器，顶部有一个绿色环带，这是烟雾弹的典型特征。而手雷通常呈小型椭球体形状，与图中所示物体的形状不符。因此，可以确定该物体为烟雾弹。
+1b_当前裁剪+GS提示（现状，第2次·验证确定性）                     -> Smokegrenade   | 这个物体是烟雾弹（Smokegrenade）。  根据提供的图片，我们可以看到一个圆柱形容器，顶部有一个绿色环带，这是烟雾弹的典型特征。而手雷通常呈小型椭球体形状，与图中所示物体的形状不符。因此，可以确定该物体为烟雾弹。
+2_当前裁剪+中文裁剪提示（现状问法2）                           -> None           | 这个物资是手榴弹。
+3_当前裁剪+四选一提示（现状问法3）                            -> Grenade        | Grenade（手雷）
+4_放大的裁剪+GS提示（换证据）                              -> Smokegrenade   | 这个物体是 Smokegrenade。  根据提供的图片，我们可以看到一个圆柱形的容器带有绿色环带，这与烟雾弹的典型外观相符。手雷通常呈小型椭球体形状，而图中所示的物体明显是一个圆柱形容器，因此可以确定这是一个烟雾弹（S
+5_放大的裁剪+四选一提示（换证据）                             -> None           | 手雷
+6_两件同图+中性两问（换问法）                               -> Smokegrenade   | 左边=Grenade，右边=Smokegrenade
+7_两件同图+排除问法（换问法·半引导，仅参考）                       -> None           | 左边/手榴弹
+
+模型加载 11.8s | 期望类别（仅记录，未进提示）: Grenade
+written: /root/gpufree-data/tcei_260920v2/b03_base_10042140/_postrun/grenade_probe.json

@@ -1,0 +1,42 @@
+/opt/conda/envs/inference/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:513: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+GT-labelled crops: 25
+per-class: {'smoke_bomb': 5, 'Flashlight': 5, 'smoke_bomb_01': 5, 'hand_grenade': 5, 'Magazines': 5}
+self.grid_size:  8
+self.num_queries:  64
+self.embed_dim:  2560
+self.num_heads:  16
+self.adaptive:  True
+self.max_size:  (70, 70)
+self.kv_dim:  1152
+model loaded 12.2s
+ 0 scramble_01  GT=smoke_bomb    old=Grenade       new=Grenade       | Grenade
+ 1 scramble_01  GT=Flashlight    old=Torch         new=Torch         | 这个物资是Torch。
+ 2 scramble_01  GT=smoke_bomb_01 old=None          new=Grenade       | 这个物资是手榴弹。
+ 3 scramble_01  GT=hand_grenade  old=None          new=Grenade       | 这个物资是手榴弹。
+ 4 scramble_01  GT=Magazines     old=Torch         new=Torch         | 这个物资是Torch。
+ 5 scramble_02  GT=smoke_bomb    old=Grenade       new=Grenade       | Grenade
+ 6 scramble_02  GT=Magazines     old=Torch         new=Torch         | 这个物资是Torch。
+ 7 scramble_02  GT=smoke_bomb_01 old=None          new=Grenade       | 这个物资是手榴弹。
+ 8 scramble_02  GT=hand_grenade  old=None          new=Grenade       | 这个物资是手榴弹。
+ 9 scramble_02  GT=Flashlight    old=Torch         new=Torch         | 这个物资是Torch。
+10 scramble_03  GT=Magazines     old=Magazine      new=Magazine      | 这个物资是Magazine。
+11 scramble_03  GT=smoke_bomb_01 old=Smokegrenade  new=Smokegrenade  | Smokegrenade
+12 scramble_03  GT=hand_grenade  old=None          new=Grenade       | 这个物资是手榴弹。
+13 scramble_03  GT=smoke_bomb    old=Grenade       new=Grenade       | Grenade
+14 scramble_03  GT=Flashlight    old=Torch         new=Torch         | 这个物资是Torch。
+15 scramble_04  GT=hand_grenade  old=Grenade       new=Grenade       | Grenade
+16 scramble_04  GT=smoke_bomb    old=Grenade       new=Grenade       | Grenade
+17 scramble_04  GT=smoke_bomb_01 old=None          new=Grenade       | 这个物资是手榴弹。
+18 scramble_04  GT=Magazines     old=Torch         new=Torch         | 这个物资是Torch。
+19 scramble_04  GT=Flashlight    old=Torch         new=Torch         | 这个物资是Torch。
+20 scramble_05  GT=Flashlight    old=Torch         new=Torch         | Torch
+21 scramble_05  GT=smoke_bomb_01 old=None          new=Grenade       | 这个物资是手榴弹。
+22 scramble_05  GT=hand_grenade  old=None          new=Grenade       | 这个物资是手榴弹。
+23 scramble_05  GT=smoke_bomb    old=Grenade       new=Grenade       | Grenade
+24 scramble_05  GT=Magazines     old=Torch         new=Torch         | 这个物资是Torch。
+{"smoke_bomb": {"wrong": 5}, "Flashlight": {"wrong": 5}, "smoke_bomb_01": {"abstain": 4, "wrong": 1}, "hand_grenade": {"abstain": 4, "wrong": 1}, "Magazines": {"wrong": 5}}
+{"smoke_bomb": {"wrong": 5}, "Flashlight": {"wrong": 5}, "smoke_bomb_01": {"wrong": 5}, "hand_grenade": {"wrong": 5}, "Magazines": {"wrong": 5}}
+flips: 8
+written: /root/gpufree-data/tcei_260920v2/m1_postrun/m1_replay.json

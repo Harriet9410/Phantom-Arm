@@ -1,0 +1,988 @@
+{
+  "batch": "b02_r5c_10061002",
+  "planned_rounds": 1,
+  "status": "completed",
+  "started_at": 1791252135.9274766,
+  "register_sha256": "9284c16999d387bb3e4dbaf5c36308db8e8f04d2812f0abf70c54396ae2ff04d",
+  "instructions": null,
+  "instructions_mode": "per_case",
+  "task_source": "official_example",
+  "package": "/root/tcei_final_v2_23/tcei_260920v2",
+  "runtime_manifest_sha256": "b22ee4f2bb3bfc95255a5b3993cd1eb32c4cd05b65079473c1c3087c7735f16f",
+  "runtime_version": "dev_v7_t1_44",
+  "results": [
+    {
+      "case_id": "official_random_30",
+      "seed": 2026092030,
+      "case_sha256": "2fcaf64c4f1aedf4addd9fb622f4d5c34541acb74a431c902faa8265833021d0",
+      "stack": "/root/gpufree-data/tcei_260920v2/b02_r5c_10061002_official_random_30_stack",
+      "run": "/root/gpufree-data/tcei_260920v2/b02_r5c_10061002_official_random_30_round",
+      "started_at": 1791252135.9277213,
+      "commands": [
+        {
+          "phase": "start",
+          "returncode": 0,
+          "finished_at": 1791252174.2837281
+        },
+        {
+          "phase": "run",
+          "returncode": 1,
+          "finished_at": 1791252694.7305894
+        },
+        {
+          "phase": "stop",
+          "returncode": 0,
+          "finished_at": 1791252702.3219104
+        }
+      ],
+      "supervisor": {
+        "started_at": 1791252174.9610953,
+        "runtime": "dev_v7_t1_44",
+        "instructions": [
+          "抓取左上方的烟雾弹，放到左侧传送带",
+          "抓取右下方的弹夹，放到右侧传送带",
+          "抓取最左方的军用手电筒，放到左侧传送带",
+          "抓取手雷，放到右侧传送带",
+          "抓取剩余的物品，放到左侧传送带"
+        ],
+        "scope": "normal production control; no injected grasp, release, observation, or physical faults",
+        "command": [
+          "/usr/bin/python3",
+          "-u",
+          "/root/tcei_final_v2_23/tcei_260920v2/tcei_stack/run_episode.py",
+          "--output",
+          "/root/gpufree-data/tcei_260920v2/b02_r5c_10061002_official_random_30_round/episode",
+          "--budget",
+          "600.0",
+          "--task-source",
+          "official_example",
+          "--instruction",
+          "抓取左上方的烟雾弹，放到左侧传送带",
+          "--instruction",
+          "抓取右下方的弹夹，放到右侧传送带",
+          "--instruction",
+          "抓取最左方的军用手电筒，放到左侧传送带",
+          "--instruction",
+          "抓取手雷，放到右侧传送带",
+          "--instruction",
+          "抓取剩余的物品，放到左侧传送带"
+        ],
+        "returncode": 1,
+        "episode_status": "stopped",
+        "verified_objects": 1,
+        "elapsed_seconds": 513.6949621066451,
+        "execution_disabled": true,
+        "recorders": {
+          "rgbd": {
+            "returncode": 0,
+            "stdout": "Stopped owned process: /root/gpufree-data/tcei_260920v2/b02_r5c_10061002_official_random_30_round/pids/rgbd.json\n",
+            "stderr": "",
+            "closed": {
+              "closed_at": 1791252692.5168822,
+              "receiving_ended_at": 1791252692.5087185,
+              "maximum_duration_seconds": 750.0,
+              "stop_reason": "requested_stop",
+              "recorded_pairs": 4407,
+              "pending_pairs": 0,
+              "dropped_pairs": 0,
+              "write_errors": [],
+              "complete": true,
+              "capture_window_seconds": 0.0,
+              "depth_encoding": "float32_xor_deflate_level1_v1"
+            }
+          },
+          "scalars": {
+            "returncode": 0,
+            "stdout": "Stopped owned process: /root/gpufree-data/tcei_260920v2/b02_r5c_10061002_official_random_30_round/pids/scalars.json\n",
+            "stderr": "",
+            "closed": {
+              "closed_at": 1791252693.8633242,
+              "recorded_rows": 151639,
+              "topics_seen": [
+                "/Jaka/get_end_effector_pose",
+                "/Jaka/get_gripper_efforts",
+                "/Jaka/get_jointstate",
+                "/Jaka/gripper_is_captured",
+                "/Jaka/set_end_effector_pose",
+                "/Jaka/set_gripper_value",
+                "/clock",
+                "/tcei/cancel_ack",
+                "/tcei/cancel_request",
+                "/tcei/candidates",
+                "/tcei/execute_preview",
+                "/tcei/grasp_preview_request",
+                "/tcei/grasp_preview_response",
+                "/tcei/gripper_contact",
+                "/tcei/joint_diagnostics",
+                "/tcei/nine_status",
+                "/tcei/plan",
+                "/tcei/planner_status",
+                "/tcei/prepare_observation",
+                "/tcei/request",
+                "/tcei/stop_ack",
+                "/tcei/stop_measurement",
+                "/tcei/stop_request",
+                "/tcei/task_status"
+              ],
+              "maximum_duration_seconds": 750.0
+            }
+          }
+        },
+        "evidence_complete": true,
+        "finished_at": 1791252694.0684462
+      },
+      "status": "stopped",
+      "verified_objects": 1,
+      "elapsed_seconds": 513.6949621066451,
+      "reason": "complete task or mandatory Nine evidence is missing",
+      "safe_stop": {
+        "state": "stopped",
+        "proof": {
+          "id": "1260f219e7d04ef6bd627b109161a90d",
+          "state": "stopped",
+          "reason": "external cancellation: complete task or mandatory Nine evidence is missing",
+          "seconds": 0.4689801260828972,
+          "fault_reason": null,
+          "max_joint_speed": 1.4305114000023916e-05,
+          "reported_max_joint_speed": 1.1580498721741606e-05,
+          "velocity_source": "consecutive_physics_step_position_difference",
+          "solver_type": "TGS",
+          "physics_dt": 0.016666666666666666,
+          "sample_dt": 0.01666666753590107,
+          "joint_distance": 2.384185791015625e-07,
+          "tcp_distance": 1.0249971169997868e-07,
+          "stable_window_tcp_drift": 1.0249971169997868e-07,
+          "simulation_time": 378.00001971423626,
+          "time": 1791252686.5881708,
+          "measurement_protocol": "tcei.stop_measurement.v2",
+          "configuration_error": null
+        },
+        "seconds": 0.4763793349266052,
+        "cancel_epoch": 1,
+        "cancel_mapping": {
+          "protocol": "tcei.cancel.v1",
+          "cancel_id": "279eaba814554930ab494f35ee9c3ef1",
+          "request_round_id": "round_3680735ffa874bfbb2b2ffffc5a43911",
+          "request_id": "episode_1af71dc47ca34b96967b29fc717421b2",
+          "state": "accepted",
+          "stop_id": "1260f219e7d04ef6bd627b109161a90d",
+          "mapping_revision": 0,
+          "affected_round_id": "round_3680735ffa874bfbb2b2ffffc5a43911",
+          "affected_request_id": "episode_1af71dc47ca34b96967b29fc717421b2",
+          "monotonic": 19491157.041317973,
+          "time": 1791252686.123095
+        },
+        "received_monotonic": 19491157.508151516
+      },
+      "event_counts": {
+        "judge_started": 1,
+        "ready": 6,
+        "observation_received": 4,
+        "observation_accepted": 4,
+        "round_started": 1,
+        "observation_started": 4,
+        "observation_preparation_started": 4,
+        "clear_basket_for_observation": 4,
+        "arrived": 179,
+        "observation_completed": 4,
+        "infer_started": 5,
+        "model_answer": 11,
+        "validation_failed": 9,
+        "repair_started": 6,
+        "rejected": 3,
+        "task_rejected_continuing": 3,
+        "request_finished": 5,
+        "plan_published": 2,
+        "plan_accepted": 2,
+        "task_started": 2,
+        "grasp_evidence_preflight": 5,
+        "grasp_candidate_set": 5,
+        "attempt": 5,
+        "grasp_preview": 5,
+        "approach": 5,
+        "grasp_orientation_selected": 5,
+        "approach_clearance_verified": 5,
+        "occlusion_check": 5,
+        "controlled_self_occlusion": 5,
+        "descend": 5,
+        "grasp_preload_started": 5,
+        "grasp_preload": 5,
+        "grasp_contact_confirmed": 5,
+        "trial_lift_started": 5,
+        "trial_lift": 5,
+        "trial_lift_evidence": 143,
+        "trial_lift_contact_evidence": 206,
+        "grasp_verified": 5,
+        "lift_01_of_03": 4,
+        "lift_02_of_03": 4,
+        "lift_03_of_03": 4,
+        "transfer_clearance_01_of_07": 1,
+        "transfer_clearance_02_of_07": 1,
+        "transfer_clearance_03_of_07": 1,
+        "transfer_clearance_04_of_07": 1,
+        "transfer_clearance_05_of_07": 1,
+        "transfer_clearance_06_of_07": 1,
+        "transfer_clearance_07_of_07": 1,
+        "place_above_01_of_16": 1,
+        "place_above_02_of_16": 1,
+        "place_above_03_of_16": 1,
+        "place_above_04_of_16": 1,
+        "place_above_05_of_16": 1,
+        "place_above_06_of_16": 1,
+        "place_above_07_of_16": 1,
+        "place_above_08_of_16": 1,
+        "place_above_09_of_16": 1,
+        "place_above_10_of_16": 1,
+        "place_above_11_of_16": 1,
+        "place_above_12_of_16": 1,
+        "place_above_13_of_16": 1,
+        "place_above_14_of_16": 1,
+        "place_above_15_of_16": 1,
+        "place_above_16_of_16": 1,
+        "place_descend": 5,
+        "release_started": 5,
+        "released": 5,
+        "place_retreat": 5,
+        "return_home": 5,
+        "placement_verified": 1,
+        "grasp_attempt_outcome": 5,
+        "task_succeeded": 1,
+        "transfer_clearance_01_of_06": 2,
+        "transfer_clearance_02_of_06": 2,
+        "transfer_clearance_03_of_06": 2,
+        "transfer_clearance_04_of_06": 2,
+        "transfer_clearance_05_of_06": 2,
+        "transfer_clearance_06_of_06": 2,
+        "place_above_01_of_17": 1,
+        "place_above_02_of_17": 1,
+        "place_above_03_of_17": 1,
+        "place_above_04_of_17": 1,
+        "place_above_05_of_17": 1,
+        "place_above_06_of_17": 1,
+        "place_above_07_of_17": 1,
+        "place_above_08_of_17": 1,
+        "place_above_09_of_17": 1,
+        "place_above_10_of_17": 1,
+        "place_above_11_of_17": 1,
+        "place_above_12_of_17": 1,
+        "place_above_13_of_17": 1,
+        "place_above_14_of_17": 1,
+        "place_above_15_of_17": 1,
+        "place_above_16_of_17": 1,
+        "place_above_17_of_17": 1,
+        "placement_pending_verification": 4,
+        "placement_verification_expired": 3,
+        "lift_01_of_04": 1,
+        "lift_02_of_04": 1,
+        "lift_03_of_04": 1,
+        "lift_04_of_04": 1,
+        "transfer_clearance_01_of_09": 1,
+        "transfer_clearance_02_of_09": 1,
+        "transfer_clearance_03_of_09": 1,
+        "transfer_clearance_04_of_09": 1,
+        "transfer_clearance_05_of_09": 1,
+        "transfer_clearance_06_of_09": 1,
+        "transfer_clearance_07_of_09": 1,
+        "transfer_clearance_08_of_09": 1,
+        "transfer_clearance_09_of_09": 1,
+        "place_above_01_of_18": 1,
+        "place_above_02_of_18": 1,
+        "place_above_03_of_18": 1,
+        "place_above_04_of_18": 1,
+        "place_above_05_of_18": 1,
+        "place_above_06_of_18": 1,
+        "place_above_07_of_18": 1,
+        "place_above_08_of_18": 1,
+        "place_above_09_of_18": 1,
+        "place_above_10_of_18": 1,
+        "place_above_11_of_18": 1,
+        "place_above_12_of_18": 1,
+        "place_above_13_of_18": 1,
+        "place_above_14_of_18": 1,
+        "place_above_15_of_18": 1,
+        "place_above_16_of_18": 1,
+        "place_above_17_of_18": 1,
+        "place_above_18_of_18": 1,
+        "place_above_01_of_19": 1,
+        "place_above_02_of_19": 1,
+        "place_above_03_of_19": 1,
+        "place_above_04_of_19": 1,
+        "place_above_05_of_19": 1,
+        "place_above_06_of_19": 1,
+        "place_above_07_of_19": 1,
+        "place_above_08_of_19": 1,
+        "place_above_09_of_19": 1,
+        "place_above_10_of_19": 1,
+        "place_above_11_of_19": 1,
+        "place_above_12_of_19": 1,
+        "place_above_13_of_19": 1,
+        "place_above_14_of_19": 1,
+        "place_above_15_of_19": 1,
+        "place_above_16_of_19": 1,
+        "place_above_17_of_19": 1,
+        "place_above_18_of_19": 1,
+        "place_above_19_of_19": 1,
+        "transfer_clearance_01_of_10": 1,
+        "transfer_clearance_02_of_10": 1,
+        "transfer_clearance_03_of_10": 1,
+        "transfer_clearance_04_of_10": 1,
+        "transfer_clearance_05_of_10": 1,
+        "transfer_clearance_06_of_10": 1,
+        "transfer_clearance_07_of_10": 1,
+        "transfer_clearance_08_of_10": 1,
+        "transfer_clearance_09_of_10": 1,
+        "transfer_clearance_10_of_10": 1,
+        "place_above_01_of_21": 1,
+        "place_above_02_of_21": 1,
+        "place_above_03_of_21": 1,
+        "place_above_04_of_21": 1,
+        "place_above_05_of_21": 1,
+        "place_above_06_of_21": 1,
+        "place_above_07_of_21": 1,
+        "place_above_08_of_21": 1,
+        "place_above_09_of_21": 1,
+        "place_above_10_of_21": 1,
+        "place_above_11_of_21": 1,
+        "place_above_12_of_21": 1,
+        "place_above_13_of_21": 1,
+        "place_above_14_of_21": 1,
+        "place_above_15_of_21": 1,
+        "place_above_16_of_21": 1,
+        "place_above_17_of_21": 1,
+        "place_above_18_of_21": 1,
+        "place_above_19_of_21": 1,
+        "place_above_20_of_21": 1,
+        "place_above_21_of_21": 1,
+        "task_pending_verification": 1,
+        "cancel_requested": 1,
+        "controlled_stop_requested": 1,
+        "stop_ack": 33,
+        "cancel_ack": 1
+      },
+      "identity_conflicts": [],
+      "independent_placements": 1,
+      "release_checks": [
+        {
+          "release_id": "472597c2167f4146818ae27842d79122",
+          "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-03",
+          "side": "left",
+          "category": "Torch",
+          "identity_match": {
+            "object_id": "smoke_bomb",
+            "actual_class": "Smokegrenade",
+            "model_class": "Torch",
+            "match_distance_m": 0.0026000644097933976,
+            "request_id": "episode_8a6ba0c2b17148ca97f420e6345596db",
+            "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-03"
+          },
+          "confirmed": false,
+          "samples": [],
+          "instruction_side_and_class_match": true
+        },
+        {
+          "release_id": "5ea5597302a544ff8e8437d3b5912600",
+          "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05",
+          "side": "left",
+          "category": "Grenade",
+          "identity_match": {
+            "object_id": "hand_grenade",
+            "actual_class": "Grenade",
+            "model_class": "Grenade",
+            "match_distance_m": 0.01534507584727538,
+            "request_id": "episode_1af71dc47ca34b96967b29fc717421b2",
+            "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05"
+          },
+          "confirmed": false,
+          "samples": [
+            {
+              "time": 1791252381.6614492,
+              "delta": 1.1408109664916992,
+              "position": [
+                0.613459128588164,
+                0.6134115691817731,
+                2.372754992640245
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252381.8722866,
+              "delta": 1.3516483306884766,
+              "position": [
+                0.6133149471414512,
+                0.6398060692856474,
+                2.372750966175349
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252382.0907547,
+              "delta": 1.5701165199279785,
+              "position": [
+                0.6131507638200199,
+                0.6691336526075409,
+                2.3727469217240698
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252382.2990189,
+              "delta": 1.7783806324005127,
+              "position": [
+                0.6130006600569637,
+                0.6955309905650665,
+                2.372743115602513
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252382.5062275,
+              "delta": 1.9855892658233643,
+              "position": [
+                0.6128488394844577,
+                0.7219282114828984,
+                2.372739310987979
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252382.7200572,
+              "delta": 2.1994190216064453,
+              "position": [
+                0.6126949346251233,
+                0.7483270357038582,
+                2.3727355134353334
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252382.9396176,
+              "delta": 2.4189794063568115,
+              "position": [
+                0.6125223004004253,
+                0.7776590583375212,
+                2.372731233852096
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252383.1495078,
+              "delta": 2.6288695335388184,
+              "position": [
+                0.6123482401717638,
+                0.8069908613762786,
+                2.3727262254908243
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252383.3559978,
+              "delta": 2.835359573364258,
+              "position": [
+                0.6121744037295818,
+                0.8363211637468979,
+                2.372722180636938
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252383.5994322,
+              "delta": 3.078794002532959,
+              "position": [
+                0.6120175191367725,
+                0.8627171829971737,
+                2.3727183670670122
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252383.8039737,
+              "delta": 3.2833354473114014,
+              "position": [
+                0.6118452068087016,
+                0.8920441335090679,
+                2.372714320956525
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252384.0125892,
+              "delta": 3.4919509887695312,
+              "position": [
+                0.6116723286786773,
+                0.9213682794474504,
+                2.3727095491773293
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252384.225919,
+              "delta": 3.7052807807922363,
+              "position": [
+                0.6115194957941921,
+                0.9477573035805796,
+                2.3727055096196215
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252384.432244,
+              "delta": 3.9116058349609375,
+              "position": [
+                0.6113524358459138,
+                0.97707670268534,
+                2.3727016867343194
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252384.6374853,
+              "delta": 4.116847038269043,
+              "position": [
+                0.6111865613835833,
+                1.0063931620933628,
+                2.37269763098115
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252384.848688,
+              "delta": 4.328049659729004,
+              "position": [
+                0.6110248023401704,
+                1.0357073713809146,
+                2.3726928623413537
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252385.0553062,
+              "delta": 4.53466796875,
+              "position": [
+                0.6108655313657565,
+                1.0650134597481697,
+                2.372688574263404
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252385.2646751,
+              "delta": 4.744036912918091,
+              "position": [
+                0.6107098456965855,
+                1.0943116825903167,
+                2.372683559241141
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252385.4733562,
+              "delta": 4.952718019485474,
+              "position": [
+                0.6107115247566677,
+                1.1236753964510495,
+                2.37290896985996
+              ],
+              "physics_usd_delta_m": 0.0
+            }
+          ],
+          "instruction_side_and_class_match": true,
+          "expected_object_id": "smoke_bomb_01"
+        },
+        {
+          "release_id": "df54c584f3b845d2ac26fe3bb03fabd9",
+          "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05",
+          "side": "left",
+          "category": "Smokegrenade",
+          "identity_match": {
+            "object_id": "smoke_bomb_01",
+            "actual_class": "Smokegrenade",
+            "model_class": "Smokegrenade",
+            "match_distance_m": 0.0018455854171576388,
+            "request_id": "episode_1af71dc47ca34b96967b29fc717421b2",
+            "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05"
+          },
+          "confirmed": true,
+          "samples": [
+            {
+              "time": 1791252477.4848173,
+              "delta": 1.0560705661773682,
+              "position": [
+                0.6574312630473331,
+                0.5712598915435931,
+                2.375554952500355
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252477.6950018,
+              "delta": 1.2662551403045654,
+              "position": [
+                0.657492153203258,
+                0.5973825273486946,
+                2.37555093972957
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252477.903041,
+              "delta": 1.4742941856384277,
+              "position": [
+                0.6575605338157567,
+                0.6262863066240634,
+                2.3755469432690868
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252478.11278,
+              "delta": 1.6840333938598633,
+              "position": [
+                0.6576290673126505,
+                0.6552121309439807,
+                2.37554248048367
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252478.3245776,
+              "delta": 1.8958308696746826,
+              "position": [
+                0.6576987956756012,
+                0.684149973818303,
+                2.375538231112492
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252478.529845,
+              "delta": 2.1010982990264893,
+              "position": [
+                0.6577623318019412,
+                0.7102027791999255,
+                2.375534452724569
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252478.732564,
+              "delta": 2.3038172721862793,
+              "position": [
+                0.6578262060000587,
+                0.7362596011962269,
+                2.3755304555051735
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252478.9510443,
+              "delta": 2.5222976207733154,
+              "position": [
+                0.6578989350758456,
+                0.7652167342430714,
+                2.3755262136123423
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252479.1639414,
+              "delta": 2.735194683074951,
+              "position": [
+                0.657970558622849,
+                0.7941799038424744,
+                2.3755219798563227
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252479.3717854,
+              "delta": 2.9430387020111084,
+              "position": [
+                0.6580442993891406,
+                0.8231483758311048,
+                2.3755174877059493
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252479.584149,
+              "delta": 3.155402183532715,
+              "position": [
+                0.6580964854913143,
+                0.8434295094383176,
+                2.3755151296964123
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252479.7852259,
+              "delta": 3.3564791679382324,
+              "position": [
+                0.6581633013989984,
+                0.8695116084695295,
+                2.375511356402417
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252480.0027242,
+              "delta": 3.573977470397949,
+              "position": [
+                0.658238797798838,
+                0.8984957245591934,
+                2.3755068734566187
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252480.2182622,
+              "delta": 3.789515495300293,
+              "position": [
+                0.6583131081114643,
+                0.927485872131291,
+                2.3755028579865543
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252480.4322293,
+              "delta": 4.0034825801849365,
+              "position": [
+                0.6583877139800763,
+                0.9564819737060151,
+                2.3754983681453905
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252480.6440322,
+              "delta": 4.215285539627075,
+              "position": [
+                0.6584633314259962,
+                0.985485816074685,
+                2.3754943513677667
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252480.863966,
+              "delta": 4.4352192878723145,
+              "position": [
+                0.6585384851953335,
+                1.014495579878666,
+                2.375490327398017
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252481.0757327,
+              "delta": 4.64698600769043,
+              "position": [
+                0.6586141631888187,
+                1.043510470596209,
+                2.3754853590123295
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252481.2862186,
+              "delta": 4.857471942901611,
+              "position": [
+                0.6586888592624836,
+                1.0725326484262756,
+                2.375481331560731
+              ],
+              "physics_usd_delta_m": 0.0
+            }
+          ],
+          "instruction_side_and_class_match": true,
+          "expected_object_id": "smoke_bomb_01"
+        },
+        {
+          "release_id": "1bb4b802924544b98fcd67f7796768bb",
+          "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05",
+          "side": "left",
+          "category": "Grenade",
+          "identity_match": {
+            "object_id": "Magazines",
+            "actual_class": "Magazine",
+            "model_class": "Grenade",
+            "match_distance_m": 0.0016368694337707647,
+            "request_id": "episode_1af71dc47ca34b96967b29fc717421b2",
+            "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05"
+          },
+          "confirmed": false,
+          "samples": [],
+          "instruction_side_and_class_match": true
+        },
+        {
+          "release_id": "fe89fdc05a0045d69bcd2fbdd4e7a370",
+          "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05",
+          "side": "left",
+          "category": "Torch",
+          "identity_match": {
+            "object_id": "Flashlight",
+            "actual_class": "Torch",
+            "model_class": "Torch",
+            "match_distance_m": 0.0008634536591506793,
+            "request_id": "episode_1af71dc47ca34b96967b29fc717421b2",
+            "task_id": "round_3680735ffa874bfbb2b2ffffc5a43911-task-05"
+          },
+          "confirmed": false,
+          "samples": [
+            {
+              "time": 1791252656.1566274,
+              "delta": 1.1300978660583496,
+              "position": [
+                0.6535707007998683,
+                0.8251941487280738,
+                2.3681128283878246
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252656.3764424,
+              "delta": 1.3499128818511963,
+              "position": [
+                0.6529956390950364,
+                0.8557092752243767,
+                2.3680979058276836
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252656.5938337,
+              "delta": 1.5673041343688965,
+              "position": [
+                0.6524322389370564,
+                0.8863135668734209,
+                2.3680955876757235
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252656.813298,
+              "delta": 1.7867684364318848,
+              "position": [
+                0.6517885096935373,
+                0.9169597285430735,
+                2.3680910290998365
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252657.0309389,
+              "delta": 2.0044093132019043,
+              "position": [
+                0.6511520137387014,
+                0.9476471039658646,
+                2.3680877141526038
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252657.2338881,
+              "delta": 2.2073585987091064,
+              "position": [
+                0.6505805901178718,
+                0.975643671149191,
+                2.3680830113766302
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252657.4488597,
+              "delta": 2.422330141067505,
+              "position": [
+                0.6499966534866612,
+                1.0065413882219152,
+                2.3680776747836747
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252657.6644156,
+              "delta": 2.6378860473632812,
+              "position": [
+                0.6493773281387807,
+                1.0374962494733364,
+                2.368075344931246
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252657.8757415,
+              "delta": 2.8492119312286377,
+              "position": [
+                0.6489914757425389,
+                1.0572245397440552,
+                2.3680708662378964
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252658.0957549,
+              "delta": 3.069225311279297,
+              "position": [
+                0.6483896976289807,
+                1.0882630709993089,
+                2.3680676667165517
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252658.311188,
+              "delta": 3.284658432006836,
+              "position": [
+                0.648335460631496,
+                1.091100302923166,
+                2.3680661378069696
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252658.5233982,
+              "delta": 3.49686861038208,
+              "position": [
+                0.648042032810899,
+                1.113830487159897,
+                2.368061815233137
+              ],
+              "physics_usd_delta_m": 0.0
+            },
+            {
+              "time": 1791252658.7322443,
+              "delta": 3.705714702606201,
+              "position": [
+                0.6480128083106138,
+                1.1424491926942804,
+                2.3638881991351566
+              ],
+              "physics_usd_delta_m": 0.0
+            }
+          ],
+          "instruction_side_and_class_match": true,
+          "expected_object_id": "smoke_bomb_01"
+        }
+      ],
+      "physical_completed": false,
+      "code_changed_during_episode": [],
+      "task_results": [
+        "rejected",
+        "rejected",
+        "task_succeeded",
+        "rejected",
+        "task_pending_verification"
+      ],
+      "counts_scope": "machine verification and independent physical outcomes are distinct",
+      "source_summary_sha256": "71743fadafd53c0a4d31b9aa941659f193cadb77ecfdea959083c0a149482cde",
+      "finished_at": 1791252702.3219175
+    }
+  ],
+  "active_case": null,
+  "automatic_verified_rounds": 0,
+  "independent_physical_rounds": 0,
+  "elapsed_seconds": [
+    513.6949621066451
+  ],
+  "finished_at": 1791252702.3240469
+}

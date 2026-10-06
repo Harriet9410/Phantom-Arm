@@ -1,0 +1,16 @@
+批次: b03_base_10042140（5 案；scramble_06 的日志存在但未计入，该案被人工停在第 6 轮）
+方法: 统计 <case>_stack/logs/nine.log 的 classify_answered 条目中
+      「含中文类名 且 不含任何英文类名」的条数 —— 这类答案必然被 _classify_view_crop 的解析丢弃
+英文类名集合: Grenade / Magazine / Smokegrenade / Torch / CompressedFood
+中文类名集合: 手榴弹 / 手雷 / 手电筒 / 弹夹 / 烟雾弹 / 压缩
+
+classify_answered 总数: 628
+只有中文类名 ⇒ 被丢弃: 115  (18.3%)
+
+样例（均为正确答案，却会被丢弃）:
+  - scramble_01: 这个物资是手榴弹。
+  - scramble_01: 弹夹
+  - scramble_01: 军用手电筒
+  - scramble_01: 军用手电筒
+
+结论: M1（解析同时认中文类名）不是"治一例"，而是恢复约 18% 的分类票（含正确票）。

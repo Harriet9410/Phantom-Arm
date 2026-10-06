@@ -1,0 +1,1080 @@
+{
+ "batch": "b03_base_10042140",
+ "campaign_status": "running",
+ "planned": 10,
+ "recorded": 5,
+ "case_roll": [
+  {
+   "case": "scramble_01",
+   "roll": "completed_or_stopped"
+  },
+  {
+   "case": "scramble_02",
+   "roll": "completed_or_stopped"
+  },
+  {
+   "case": "scramble_03",
+   "roll": "completed_or_stopped"
+  },
+  {
+   "case": "scramble_04",
+   "roll": "completed_or_stopped"
+  },
+  {
+   "case": "scramble_05",
+   "roll": "completed_or_stopped"
+  },
+  {
+   "case": "scramble_06",
+   "roll": "aborted_mid_run"
+  },
+  {
+   "case": "scramble_07",
+   "roll": "not_initiated"
+  },
+  {
+   "case": "scramble_08",
+   "roll": "not_initiated"
+  },
+  {
+   "case": "scramble_09",
+   "roll": "not_initiated"
+  },
+  {
+   "case": "scramble_10",
+   "roll": "not_initiated"
+  }
+ ],
+ "cases": {
+  "scramble_01": {
+   "per_task": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右下方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到右侧传送带",
+     "status": "rejected",
+     "reason": ""
+    }
+   ],
+   "remaining_tail_event": "{\"time\": 1791121591.8071964, \"monotonic\": 19360062.725420237, \"request_id\": \"observation_62962d65c2b34a4bb0aa438af95de771\", \"round_id\": \"round_b5fbb9f4af4046cc9239f86d8d546705\", \"task_id\": \"round_b5fbb9f4af4046cc9239f86d8d546705-observation\", \"status\": \"controlled_stop_requested\", \"code_sha256\": \"954b3590a2238c2685225e01d0b068a6dc9296b41de1a9ea530e81666518bc43\", \"stop_id\": \"b67ad668311b48658727d2e",
+   "scans": 6,
+   "answers_total": 125,
+   "trajectory": {
+    "Flashlight": [],
+    "Magazines": [],
+    "hand_grenade": [],
+    "smoke_bomb": [],
+    "smoke_bomb_01": []
+   },
+   "establishing_scan": {},
+   "blocker_regions": [
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      767,
+      333,
+      773,
+      370
+     ],
+     "first": 127.70000666,
+     "last": 133.883340316,
+     "n": 86,
+     "class": null,
+     "wall_last": 1791121449.096566,
+     "nearest_gt": "Magazines",
+     "gt_dist": 4.0
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      462,
+      345,
+      490,
+      354
+     ],
+     "first": 71.200003713,
+     "last": 97.850005103,
+     "n": 57,
+     "class": null,
+     "wall_last": 1791121399.3241339,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 55.9
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      788,
+      311,
+      816,
+      320
+     ],
+     "first": 129.483340086,
+     "last": 131.733340204,
+     "n": 40,
+     "class": null,
+     "wall_last": 1791121445.3828123,
+     "nearest_gt": "Magazines",
+     "gt_dist": 51.8
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      363,
+      375,
+      438,
+      430
+     ],
+     "first": 108.000005633,
+     "last": 117.066672772,
+     "n": 30,
+     "class": null,
+     "wall_last": 1791121424.4095697,
+     "nearest_gt": null,
+     "gt_dist": 140.2
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      462,
+      343,
+      525,
+      356
+     ],
+     "first": 74.100003865,
+     "last": 102.13333866,
+     "n": 25,
+     "class": null,
+     "wall_last": 1791121404.6558146,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 38.4
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      500,
+      174,
+      522,
+      193
+     ],
+     "first": 75.266670592,
+     "last": 81.666670926,
+     "n": 23,
+     "class": null,
+     "wall_last": 1791121377.2144482,
+     "nearest_gt": "smoke_bomb",
+     "gt_dist": 17.8
+    }
+   ],
+   "lastseen_regions_count": 151,
+   "lastseen_top": [
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      500,
+      341,
+      525,
+      356
+     ],
+     "n": 2288,
+     "nearest_gt": "Flashlight"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      500,
+      174,
+      522,
+      193
+     ],
+     "n": 2268,
+     "nearest_gt": "smoke_bomb"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      683,
+      339,
+      697,
+      361
+     ],
+     "n": 2037,
+     "nearest_gt": "smoke_bomb_01"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      462,
+      345,
+      499,
+      354
+     ],
+     "n": 1219,
+     "nearest_gt": "Flashlight"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      462,
+      345,
+      468,
+      354
+     ],
+     "n": 1092,
+     "nearest_gt": null
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      462,
+      341,
+      525,
+      354
+     ],
+     "n": 759,
+     "nearest_gt": "Flashlight"
+    }
+   ]
+  },
+  "scramble_02": {
+   "per_task": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取左下方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右上方的军用手电筒，放到左侧传送带",
+     "status": "rejected",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到右侧传送带",
+     "status": "rejected",
+     "reason": ""
+    }
+   ],
+   "remaining_tail_event": "{\"time\": 1791121905.2372239, \"monotonic\": 19360376.155448, \"request_id\": \"observation_b8ae8677a5e241f58a9db00b093f67b9\", \"round_id\": \"round_9c0a7fc4b7844815ad21899ec560e598\", \"task_id\": \"round_9c0a7fc4b7844815ad21899ec560e598-observation\", \"status\": \"controlled_stop_requested\", \"code_sha256\": \"954b3590a2238c2685225e01d0b068a6dc9296b41de1a9ea530e81666518bc43\", \"stop_id\": \"27d6ff59fecd4995bd74d24ae8",
+   "scans": 5,
+   "answers_total": 96,
+   "trajectory": {
+    "Flashlight": [],
+    "Magazines": [],
+    "hand_grenade": [],
+    "smoke_bomb": [],
+    "smoke_bomb_01": []
+   },
+   "establishing_scan": {},
+   "blocker_regions": [
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      499,
+      332,
+      522,
+      374
+     ],
+     "first": 75.333337262,
+     "last": 138.750007236,
+     "n": 67,
+     "class": null,
+     "wall_last": 1791121813.141465,
+     "nearest_gt": "Magazines",
+     "gt_dist": 13.3
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      466,
+      332,
+      490,
+      374
+     ],
+     "first": 75.150003919,
+     "last": 102.050005322,
+     "n": 57,
+     "class": null,
+     "wall_last": 1791121763.4683685,
+     "nearest_gt": "Magazines",
+     "gt_dist": 19.2
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      482,
+      311,
+      506,
+      320
+     ],
+     "first": 135.666673742,
+     "last": 137.900007192,
+     "n": 38,
+     "class": null,
+     "wall_last": 1791121811.6866736,
+     "nearest_gt": "Magazines",
+     "gt_dist": 37.8
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      363,
+      375,
+      439,
+      430
+     ],
+     "first": 111.350005807,
+     "last": 120.433339614,
+     "n": 29,
+     "class": null,
+     "wall_last": 1791121788.2401912,
+     "nearest_gt": null,
+     "gt_dist": 108.1
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      500,
+      174,
+      522,
+      193
+     ],
+     "first": 79.166670796,
+     "last": 85.350004451,
+     "n": 22,
+     "class": null,
+     "wall_last": 1791121741.241402,
+     "nearest_gt": "smoke_bomb",
+     "gt_dist": 17.8
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      506,
+      331,
+      519,
+      374
+     ],
+     "first": 138.816673907,
+     "last": 140.033340637,
+     "n": 21,
+     "class": null,
+     "wall_last": 1791121815.26643,
+     "nearest_gt": "Magazines",
+     "gt_dist": 15.3
+    }
+   ],
+   "lastseen_regions_count": 122,
+   "lastseen_top": [
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      500,
+      174,
+      522,
+      193
+     ],
+     "n": 1696,
+     "nearest_gt": "smoke_bomb"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      682,
+      339,
+      697,
+      361
+     ],
+     "n": 1481,
+     "nearest_gt": "smoke_bomb_01"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      466,
+      365,
+      473,
+      374
+     ],
+     "n": 1403,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      465,
+      174,
+      522,
+      187
+     ],
+     "n": 622,
+     "nearest_gt": "smoke_bomb"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      504,
+      332,
+      522,
+      374
+     ],
+     "n": 621,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      466,
+      332,
+      512,
+      374
+     ],
+     "n": 345,
+     "nearest_gt": "Magazines"
+    }
+   ]
+  },
+  "scramble_03": {
+   "per_task": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右下方的军用手电筒，放到左侧传送带",
+     "status": "rejected",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右上方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到右侧传送带",
+     "status": "rejected",
+     "reason": ""
+    }
+   ],
+   "remaining_tail_event": "{\"time\": 1791122345.7389877, \"monotonic\": 19360816.657211285, \"request_id\": \"observation_4527fdf4a95941efa17c93b246de3c27\", \"round_id\": \"round_fa219206706d4b9d92a6c07c2abd8ae3\", \"task_id\": \"round_fa219206706d4b9d92a6c07c2abd8ae3-observation\", \"status\": \"controlled_stop_requested\", \"code_sha256\": \"954b3590a2238c2685225e01d0b068a6dc9296b41de1a9ea530e81666518bc43\", \"stop_id\": \"72900b974079465aab55365",
+   "scans": 7,
+   "answers_total": 110,
+   "trajectory": {
+    "Flashlight": [],
+    "Magazines": [],
+    "hand_grenade": [],
+    "smoke_bomb": [],
+    "smoke_bomb_01": []
+   },
+   "establishing_scan": {},
+   "blocker_regions": [
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      762,
+      344,
+      826,
+      358
+     ],
+     "first": null,
+     "last": 325.666683652,
+     "n": 3583,
+     "class": null,
+     "wall_last": 1791122352.6973581,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 7.3
+    },
+    {
+     "reason": "multiple_body_cores",
+     "bbox": [
+      762,
+      344,
+      826,
+      358
+     ],
+     "first": null,
+     "last": 325.666683652,
+     "n": 3571,
+     "class": "unknown",
+     "wall_last": 1791122352.6973581,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 7.3
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      466,
+      337,
+      488,
+      360
+     ],
+     "first": 82.100004282,
+     "last": 176.300009195,
+     "n": 62,
+     "class": null,
+     "wall_last": 1791122173.8941603,
+     "nearest_gt": "smoke_bomb_01",
+     "gt_dist": 20.5
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      766,
+      174,
+      773,
+      187
+     ],
+     "first": 151.816674585,
+     "last": 158.550008269,
+     "n": 50,
+     "class": null,
+     "wall_last": 1791122149.9951158,
+     "nearest_gt": "smoke_bomb",
+     "gt_dist": 28.8
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      363,
+      375,
+      439,
+      430
+     ],
+     "first": 186.316676384,
+     "last": 195.416676858,
+     "n": 30,
+     "class": null,
+     "wall_last": 1791122198.8394048,
+     "nearest_gt": null,
+     "gt_dist": 108.7
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      844,
+      332,
+      937,
+      431
+     ],
+     "first": 118.616672853,
+     "last": 133.31667362,
+     "n": 17,
+     "class": null,
+     "wall_last": 1791122113.1565006,
+     "nearest_gt": null,
+     "gt_dist": 93.9
+    }
+   ],
+   "lastseen_regions_count": 133,
+   "lastseen_top": [
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      506,
+      157,
+      519,
+      199
+     ],
+     "n": 2887,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      762,
+      346,
+      811,
+      357
+     ],
+     "n": 2375,
+     "nearest_gt": "Flashlight"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      768,
+      174,
+      777,
+      194
+     ],
+     "n": 2015,
+     "nearest_gt": "smoke_bomb"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      762,
+      347,
+      769,
+      356
+     ],
+     "n": 1878,
+     "nearest_gt": "Flashlight"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      466,
+      342,
+      474,
+      358
+     ],
+     "n": 1762,
+     "nearest_gt": "smoke_bomb_01"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      466,
+      337,
+      496,
+      360
+     ],
+     "n": 1291,
+     "nearest_gt": "smoke_bomb_01"
+    }
+   ]
+  },
+  "scramble_04": {
+   "per_task": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的手雷，放到右侧传送带",
+     "status": "rejected",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右上方的弹夹，放到左侧传送带",
+     "status": "task_pending_verification",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右下方的军用手电筒，放到左侧传送带",
+     "status": "rejected",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取左下方的烟雾弹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "remaining_tail_event": "{\"time\": 1791122782.5018384, \"monotonic\": 19361253.42006205, \"request_id\": \"episode_1bcf87b717bf43ea94c8513e60ec3d0a\", \"round_id\": \"round_32c91eea70f74127857bfa469249bf87\", \"task_id\": \"round_32c91eea70f74127857bfa469249bf87-task-04\", \"status\": \"controlled_stop_requested\", \"code_sha256\": \"954b3590a2238c2685225e01d0b068a6dc9296b41de1a9ea530e81666518bc43\", \"stop_id\": \"be6ba3d716344f089c4906aeb8df1c8a",
+   "scans": 7,
+   "answers_total": 146,
+   "trajectory": {
+    "Flashlight": [],
+    "Magazines": [],
+    "hand_grenade": [],
+    "smoke_bomb": [],
+    "smoke_bomb_01": []
+   },
+   "establishing_scan": {},
+   "blocker_regions": [
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      762,
+      344,
+      826,
+      358
+     ],
+     "first": null,
+     "last": 310.93334955,
+     "n": 3476,
+     "class": null,
+     "wall_last": 1791122789.4262588,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 7.3
+    },
+    {
+     "reason": "multiple_body_cores",
+     "bbox": [
+      762,
+      344,
+      826,
+      358
+     ],
+     "first": null,
+     "last": 310.93334955,
+     "n": 3458,
+     "class": "unknown",
+     "wall_last": 1791122789.4262588,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 7.3
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      516,
+      347,
+      522,
+      360
+     ],
+     "first": 198.966677044,
+     "last": 257.850013448,
+     "n": 106,
+     "class": null,
+     "wall_last": 1791122719.3388703,
+     "nearest_gt": "smoke_bomb",
+     "gt_dist": 9.7
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      363,
+      374,
+      438,
+      430
+     ],
+     "first": 206.083344081,
+     "last": 215.150011221,
+     "n": 28,
+     "class": null,
+     "wall_last": 1791122661.8521516,
+     "nearest_gt": null,
+     "gt_dist": 136.7
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      767,
+      162,
+      784,
+      200
+     ],
+     "first": 171.633342285,
+     "last": 173.583342386,
+     "n": 26,
+     "class": null,
+     "wall_last": 1791122603.9581542,
+     "nearest_gt": "Magazines",
+     "gt_dist": 9.7
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      480,
+      314,
+      504,
+      322
+     ],
+     "first": 253.433346551,
+     "last": 254.483346606,
+     "n": 21,
+     "class": null,
+     "wall_last": 1791122712.404461,
+     "nearest_gt": "smoke_bomb",
+     "gt_dist": 51.7
+    }
+   ],
+   "lastseen_regions_count": 122,
+   "lastseen_top": [
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      770,
+      158,
+      783,
+      191
+     ],
+     "n": 1686,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      762,
+      347,
+      769,
+      356
+     ],
+     "n": 1143,
+     "nearest_gt": "Flashlight"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      641,
+      346,
+      650,
+      352
+     ],
+     "n": 1074,
+     "nearest_gt": "smoke_bomb_01"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      795,
+      162,
+      823,
+      204
+     ],
+     "n": 810,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      641,
+      339,
+      661,
+      361
+     ],
+     "n": 733,
+     "nearest_gt": "smoke_bomb_01"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      500,
+      344,
+      522,
+      367
+     ],
+     "n": 611,
+     "nearest_gt": "smoke_bomb"
+    }
+   ]
+  },
+  "scramble_05": {
+   "per_task": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的军用手电筒，放到左侧传送带",
+     "status": "rejected",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右下方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右上方的烟雾弹，放到右侧传送带",
+     "status": "rejected",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到左侧传送带",
+     "status": "rejected",
+     "reason": ""
+    }
+   ],
+   "remaining_tail_event": "{\"time\": 1791123277.0419948, \"monotonic\": 19361747.960218474, \"request_id\": \"observation_056fcfe7651a457eadc9367d2352f605\", \"round_id\": \"round_aed511ed834844ecb8caf16928388ce6\", \"task_id\": \"round_aed511ed834844ecb8caf16928388ce6-observation\", \"status\": \"controlled_stop_requested\", \"code_sha256\": \"954b3590a2238c2685225e01d0b068a6dc9296b41de1a9ea530e81666518bc43\", \"stop_id\": \"bca2a02c09ab45f3bda720e",
+   "scans": 7,
+   "answers_total": 132,
+   "trajectory": {
+    "Flashlight": [],
+    "Magazines": [],
+    "hand_grenade": [],
+    "smoke_bomb": [],
+    "smoke_bomb_01": []
+   },
+   "establishing_scan": {},
+   "blocker_regions": [
+    {
+     "reason": "multiple_body_cores",
+     "bbox": [
+      462,
+      174,
+      525,
+      188
+     ],
+     "first": 15.366667468,
+     "last": 384.350020045,
+     "n": 4223,
+     "class": "unknown",
+     "wall_last": 1791123283.9529104,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 38.4
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      462,
+      174,
+      525,
+      188
+     ],
+     "first": 15.366667468,
+     "last": 384.350020045,
+     "n": 4223,
+     "class": null,
+     "wall_last": 1791123283.9529104,
+     "nearest_gt": "Flashlight",
+     "gt_dist": 38.4
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      788,
+      311,
+      816,
+      320
+     ],
+     "first": 201.483343842,
+     "last": 204.316677323,
+     "n": 45,
+     "class": null,
+     "wall_last": 1791123065.8731444,
+     "nearest_gt": "Magazines",
+     "gt_dist": 51.8
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      767,
+      332,
+      776,
+      374
+     ],
+     "first": 199.716677083,
+     "last": 206.466677435,
+     "n": 37,
+     "class": null,
+     "wall_last": 1791123069.4102786,
+     "nearest_gt": "Magazines",
+     "gt_dist": 5.1
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      847,
+      346,
+      937,
+      431
+     ],
+     "first": 230.833345372,
+     "last": 231.750012087,
+     "n": 13,
+     "class": null,
+     "wall_last": 1791123102.42302,
+     "nearest_gt": null,
+     "gt_dist": 130.5
+    },
+    {
+     "reason": "unresolved_correspondence",
+     "bbox": [
+      884,
+      387,
+      929,
+      430
+     ],
+     "first": 232.0000121,
+     "last": 245.416679466,
+     "n": 11,
+     "class": null,
+     "wall_last": 1791123119.9934843,
+     "nearest_gt": null,
+     "gt_dist": 150.7
+    }
+   ],
+   "lastseen_regions_count": 55,
+   "lastseen_top": [
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      767,
+      332,
+      787,
+      374
+     ],
+     "n": 2664,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "unresolved_nearfield_foreground",
+     "bbox": [
+      741,
+      317,
+      842,
+      410
+     ],
+     "n": 143,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "tall_or_stacked_geometry",
+     "bbox": [
+      788,
+      311,
+      816,
+      320
+     ],
+     "n": 45,
+     "nearest_gt": "Magazines"
+    },
+    {
+     "reason": "unresolved_nearfield_foreground",
+     "bbox": [
+      630,
+      302,
+      716,
+      410
+     ],
+     "n": 38,
+     "nearest_gt": "hand_grenade"
+    },
+    {
+     "reason": "unresolved_nearfield_foreground",
+     "bbox": [
+      664,
+      304,
+      757,
+      410
+     ],
+     "n": 28,
+     "nearest_gt": "hand_grenade"
+    },
+    {
+     "reason": "unobserved_unverified_object",
+     "bbox": [
+      644,
+      344,
+      653,
+      360
+     ],
+     "n": 26,
+     "nearest_gt": "hand_grenade"
+    }
+   ]
+  }
+ }
+}

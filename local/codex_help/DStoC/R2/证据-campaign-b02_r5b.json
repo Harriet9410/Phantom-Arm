@@ -1,0 +1,36 @@
+{
+  "batch": "b02_r5b_10060948",
+  "planned_rounds": 2,
+  "status": "attention_required",
+  "started_at": 1791251302.4651787,
+  "register_sha256": "9284c16999d387bb3e4dbaf5c36308db8e8f04d2812f0abf70c54396ae2ff04d",
+  "instructions": null,
+  "instructions_mode": "per_case",
+  "task_source": "official_example",
+  "package": "/root/tcei_final_v2_23/tcei_260920v2",
+  "runtime_manifest_sha256": "b22ee4f2bb3bfc95255a5b3993cd1eb32c4cd05b65079473c1c3087c7735f16f",
+  "runtime_version": "dev_v7_t1_44",
+  "results": [
+    {
+      "case_id": "official_random_17",
+      "seed": 2026092017,
+      "case_sha256": "7c77c6cce8ac20bc1a65c4f26de330d3d2df4ac27a343ede8c6a2eaa5926ccdf",
+      "stack": "/root/gpufree-data/tcei_260920v2/b02_r5b_10060948_official_random_17_stack",
+      "run": "/root/gpufree-data/tcei_260920v2/b02_r5b_10060948_official_random_17_round",
+      "started_at": 1791251302.465427,
+      "commands": [
+        {
+          "phase": "start",
+          "returncode": 1,
+          "finished_at": 1791251383.6151922
+        }
+      ],
+      "status": "initialization_failed",
+      "finished_at": 1791251383.6152015
+    }
+  ],
+  "active_case": "official_random_17",
+  "automatic_verified_rounds": 0,
+  "independent_physical_rounds": 0,
+  "elapsed_seconds": []
+}

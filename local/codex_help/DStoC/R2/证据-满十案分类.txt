@@ -1,0 +1,30 @@
+# 逐案失败归类 — 批次 b03_full_10051355
+# 批次状态: completed（10/10 案完成）| autoVerified=0
+
+| 案例 | 验证 | episode | 用时 | 单一主因 | 终态原文 |
+| --- | ---: | --- | ---: | --- | --- |
+| scramble_01 | 3/5 | stopped | 361s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_02 | 2/5 | stopped | 424s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_03 | 2/5 | stopped | 335s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_04 | 3/5 | stopped | 401s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_05 | 3/5 | stopped | 329s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_06 | 4/5 | stopped | 386s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_07 | 3/5 | stopped | 403s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_08 | 3/5 | stopped | 366s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_09 | 3/5 | stopped | 320s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+| scramble_10 | 2/5 | stopped | 298s | **语义拒单** | remaining set incomplete: coverage_incomplete,unknown_regions |
+
+## 证据路径（识别类看候选行，其余看回合事件）
+- **scramble_01** `b03_full_10051355_scramble_01_stack/logs/perception.log`
+  - 候选行尾部：`[INFO] [1791180163.988577]: frame=3589 candidates=2 sync=0.017s / 1:Smokegrenade:confirmed:1254 2:Smokegrenade:confirmed:1232`
+- **scramble_02** `b03_full_10051355_scramble_02_stack/logs/perception.log`
+  - 候选行尾部：`[INFO] [1791180636.724436]: frame=4178 candidates=1 sync=0.017s / 1:Smokegrenade:confirmed:1232`
+- **scramble_03** `b03_full_10051355_scramble_03_stack/logs/perception.log`
+  - 候选行尾部：`[INFO] [1791181022.373172]: frame=3240 candidates=2 sync=0.000s / 1:Magazine:confirmed:2365 2:Smokegrenade:confirmed:1311`
+- **scramble_04** `b03_full_10051355_scramble_04_stack/logs/perception.log`
+  - 候选行尾部：`[INFO] [1791181478.998285]: frame=3983 candidates=1 sync=0.017s / 1:Smokegrenade:confirmed:1232`
+- **scramble_05** `b03_full_10051355_scramble_05_stack/logs/perception.log`
+  - 候选行尾部：`[INFO] [1791181864.385938]: frame=3207 candidates=2 sync=0.000s / 1:Smokegrenade:confirmed:1311 2:Torch:confirmed:1196`
+- **scramble_06** `b03_full_10051355_scramble_06_stack/logs/perception.log`
+
+STDERR: 

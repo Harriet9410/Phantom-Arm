@@ -1,0 +1,33 @@
+/opt/conda/envs/inference/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:513: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+self.grid_size:  8
+self.num_queries:  64
+self.embed_dim:  2560
+self.num_heads:  16
+self.adaptive:  True
+self.max_size:  (70, 70)
+self.kv_dim:  1152
+model loaded 11.7s
+=== scramble_01 frame=pair_0279 (首扫：手雷被标 Smokegrenade)
+  FULL raw: {"1":"Smokegrenade","2":"Magazine","3":"Grenade","4":"Torch","5":"Smokegrenade"}
+  #1 GT=smoke_bomb    final=Smokegrenade  correct=False fastpath=False rechecks=-
+  #2 GT=Flashlight    final=Torch         correct=False fastpath=False rechecks=FIVE->Torch
+  #3 GT=smoke_bomb_01 final=Torch         correct=False fastpath=False rechecks=GS->Smokegrenade;FIVE->Torch
+  #4 GT=hand_grenade  final=Grenade       correct=False fastpath=False rechecks=FIVE->Grenade
+  #5 GT=Magazines     final=Magazine      correct=False fastpath=False rechecks=FIVE->Magazine
+=== scramble_03 frame=pair_0272 (首扫：手雷被标 Smokegrenade + 手电筒框被标 Grenade)
+  FULL raw: {"1":"Smokegrenade","2":"Grenade","3":"Torch","4":"Magazine","5":"Torch"}
+  #1 GT=Magazines     final=Magazine      correct=False fastpath=False rechecks=FIVE->Magazine
+  #2 GT=smoke_bomb_01 final=Smokegrenade  correct=False fastpath=False rechecks=FIVE->Smokegrenade
+  #3 GT=hand_grenade  final=Torch         correct=False fastpath=False rechecks=-
+  #4 GT=smoke_bomb    final=Smokegrenade  correct=False fastpath=False rechecks=FIVE->Smokegrenade
+  #5 GT=Flashlight    final=Torch         correct=False fastpath=True rechecks=-
+=== scramble_04 frame=pair_0275 (首扫：手雷标对 Grenade + 手电筒框被标 Grenade)
+  FULL raw: {"1":"Smokegrenade","2":"Magazine","3":"Grenade","4":"Torch","5":"Torch"}
+  #1 GT=hand_grenade  final=Grenade       correct=False fastpath=False rechecks=FIVE->Grenade
+  #2 GT=smoke_bomb    final=Smokegrenade  correct=False fastpath=False rechecks=FIVE->Smokegrenade
+  #3 GT=smoke_bomb_01 final=Torch         correct=False fastpath=False rechecks=GS->Smokegrenade;FIVE->Torch
+  #4 GT=Magazines     final=Magazine      correct=False fastpath=False rechecks=FIVE->Magazine
+  #5 GT=Flashlight    final=Torch         correct=False fastpath=True rechecks=-
+written: /root/gpufree-data/tcei_260920v2/m2_postrun/m2_replay.json

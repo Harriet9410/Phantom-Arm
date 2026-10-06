@@ -1,0 +1,675 @@
+[
+ {
+  "case": "scramble_01",
+  "note": "首扫：手雷被标 Smokegrenade",
+  "frame": "pair_0279",
+  "candidates": [
+   {
+    "pid": 1,
+    "bbox": [
+     465,
+     174,
+     522,
+     196
+    ],
+    "gt": "smoke_bomb",
+    "dist": 35.2,
+    "final_assign": "Smokegrenade",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "手雷",
+      "parsed": "Grenade"
+     }
+    ],
+    "rechecks": []
+   },
+   {
+    "pid": 2,
+    "bbox": [
+     462,
+     341,
+     525,
+     356
+    ],
+    "gt": "Flashlight",
+    "dist": 38.5,
+    "final_assign": "Torch",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Magazine",
+      "parsed": "Magazine"
+     },
+     {
+      "vote": "full",
+      "raw": "Magazine",
+      "parsed": "Magazine"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是Torch。",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Torch",
+      "parsed": "Torch"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Torch",
+      "overwrote_to": "Torch"
+     }
+    ]
+   },
+   {
+    "pid": 3,
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "gt": "smoke_bomb_01",
+    "dist": 15.8,
+    "final_assign": "Torch",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "full",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是手榴弹。",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Torch",
+      "parsed": "Torch"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "GS",
+      "raw": "Smokegrenade",
+      "overwrote_to": "Smokegrenade"
+     },
+     {
+      "recheck": "FIVE",
+      "raw": "Torch",
+      "overwrote_to": "Torch"
+     }
+    ]
+   },
+   {
+    "pid": 4,
+    "bbox": [
+     773,
+     185,
+     823,
+     209
+    ],
+    "gt": "hand_grenade",
+    "dist": 27.8,
+    "final_assign": "Grenade",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是手榴弹。",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Grenade",
+      "overwrote_to": "Grenade"
+     }
+    ]
+   },
+   {
+    "pid": 5,
+    "bbox": [
+     767,
+     332,
+     823,
+     374
+    ],
+    "gt": "Magazines",
+    "dist": 28.6,
+    "final_assign": "Magazine",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是Torch。",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "弹夹",
+      "parsed": "Magazine"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Magazine",
+      "overwrote_to": "Magazine"
+     }
+    ]
+   }
+  ],
+  "assign_old_pipeline": {
+   "1": "Smokegrenade",
+   "2": "Torch",
+   "3": "Torch",
+   "4": "Grenade",
+   "5": "Magazine"
+  }
+ },
+ {
+  "case": "scramble_03",
+  "note": "首扫：手雷被标 Smokegrenade + 手电筒框被标 Grenade",
+  "frame": "pair_0272",
+  "candidates": [
+   {
+    "pid": 1,
+    "bbox": [
+     467,
+     161,
+     522,
+     204
+    ],
+    "gt": "Magazines",
+    "dist": 3.2,
+    "final_assign": "Magazine",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是Magazine。",
+      "parsed": "Magazine"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "弹夹",
+      "parsed": "Magazine"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Magazine",
+      "overwrote_to": "Magazine"
+     }
+    ]
+   },
+   {
+    "pid": 2,
+    "bbox": [
+     466,
+     337,
+     523,
+     360
+    ],
+    "gt": "smoke_bomb_01",
+    "dist": 4.3,
+    "final_assign": "Smokegrenade",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "full",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Smokegrenade",
+      "overwrote_to": "Smokegrenade"
+     }
+    ]
+   },
+   {
+    "pid": 3,
+    "bbox": [
+     644,
+     341,
+     696,
+     364
+    ],
+    "gt": "hand_grenade",
+    "dist": 9.9,
+    "final_assign": "Torch",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是手榴弹。",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     }
+    ],
+    "rechecks": []
+   },
+   {
+    "pid": 4,
+    "bbox": [
+     766,
+     174,
+     823,
+     197
+    ],
+    "gt": "smoke_bomb",
+    "dist": 3.3,
+    "final_assign": "Smokegrenade",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Magazine",
+      "parsed": "Magazine"
+     },
+     {
+      "vote": "full",
+      "raw": "Magazine",
+      "parsed": "Magazine"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Smokegrenade",
+      "overwrote_to": "Smokegrenade"
+     }
+    ]
+   },
+   {
+    "pid": 5,
+    "bbox": [
+     762,
+     344,
+     826,
+     358
+    ],
+    "gt": "Flashlight",
+    "dist": 7.3,
+    "final_assign": "Torch",
+    "correct": false,
+    "fastpath_skipped": true,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是Torch。",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Torch",
+      "parsed": "Torch"
+     }
+    ],
+    "rechecks": []
+   }
+  ],
+  "assign_old_pipeline": {
+   "1": "Magazine",
+   "2": "Smokegrenade",
+   "3": "Torch",
+   "4": "Smokegrenade",
+   "5": "Torch"
+  }
+ },
+ {
+  "case": "scramble_04",
+  "note": "首扫：手雷标对 Grenade + 手电筒框被标 Grenade",
+  "frame": "pair_0275",
+  "candidates": [
+   {
+    "pid": 1,
+    "bbox": [
+     470,
+     178,
+     522,
+     201
+    ],
+    "gt": "hand_grenade",
+    "dist": 9.6,
+    "final_assign": "Grenade",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "full",
+      "raw": "Smokegrenade",
+      "parsed": "Smokegrenade"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Grenade",
+      "overwrote_to": "Grenade"
+     }
+    ]
+   },
+   {
+    "pid": 2,
+    "bbox": [
+     465,
+     344,
+     522,
+     367
+    ],
+    "gt": "smoke_bomb",
+    "dist": 35.2,
+    "final_assign": "Smokegrenade",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Magazine",
+      "parsed": "Magazine"
+     },
+     {
+      "vote": "full",
+      "raw": "Magazine",
+      "parsed": "Magazine"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Smokegrenade",
+      "overwrote_to": "Smokegrenade"
+     }
+    ]
+   },
+   {
+    "pid": 3,
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "gt": "smoke_bomb_01",
+    "dist": 15.8,
+    "final_assign": "Torch",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "full",
+      "raw": "Grenade",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是手榴弹。",
+      "parsed": "Grenade"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Torch",
+      "parsed": "Torch"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "GS",
+      "raw": "Smokegrenade",
+      "overwrote_to": "Smokegrenade"
+     },
+     {
+      "recheck": "FIVE",
+      "raw": "Torch",
+      "overwrote_to": "Torch"
+     }
+    ]
+   },
+   {
+    "pid": 4,
+    "bbox": [
+     767,
+     162,
+     823,
+     204
+    ],
+    "gt": "Magazines",
+    "dist": 28.7,
+    "final_assign": "Magazine",
+    "correct": false,
+    "fastpath_skipped": false,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是Torch。",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "弹夹",
+      "parsed": "Magazine"
+     }
+    ],
+    "rechecks": [
+     {
+      "recheck": "FIVE",
+      "raw": "Magazine",
+      "overwrote_to": "Magazine"
+     }
+    ]
+   },
+   {
+    "pid": 5,
+    "bbox": [
+     762,
+     344,
+     826,
+     358
+    ],
+    "gt": "Flashlight",
+    "dist": 7.3,
+    "final_assign": "Torch",
+    "correct": false,
+    "fastpath_skipped": true,
+    "votes": [
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "full",
+      "raw": "Torch",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_en",
+      "raw": "这个物资是Torch。",
+      "parsed": "Torch"
+     },
+     {
+      "vote": "crop_cn",
+      "raw": "Torch",
+      "parsed": "Torch"
+     }
+    ],
+    "rechecks": []
+   }
+  ],
+  "assign_old_pipeline": {
+   "1": "Grenade",
+   "2": "Smokegrenade",
+   "3": "Torch",
+   "4": "Magazine",
+   "5": "Torch"
+  }
+ }
+]
