@@ -435,16 +435,16 @@ class CandidateTracker:
         for rt in retired.values():
             fp=rt.get('first_pixel') or rt['candidate'].get('pixel')
             if fp:retired_anchors.append(list(fp))
-        # Fix D2（R3-1 回归发现的第二类幻影）：在位确认目标邻位（≤30px，超出
-        # 18px 关联半径）的重复轨迹。互斥 ID 证据：布局生成器保证真实物体间距
-        # ≥40px，故距确认候选 ≤30px 的轨迹不可能是独立的真实物体。实测
-        # （b03_r3fixd s01/s02）：obj-0008/0009 幻影位于存活 obj-0003 槽位右侧
-        # 22px 的固定竖条伪影上，seen_count≥5 永报 unobserved。
+        # Fix D2/D3（R3-1）：在位确认目标邻位（≤30px，超出 18px 关联半径）的
+        # 重复轨迹。互斥 ID 证据：真实物体间距 ≥40px（布局生成器/官方摆放保证），
+        # 故距确认候选 ≤30px 的轨迹不可能是独立的真实物体。D3（10/6）：不再
+        # 要求布局先验激活——先验表是默认场景槽位，B03 打乱布局会正确地静默
+        # 不激活（t1_47 b03_r3v2 实测 s01/s02/s06 幸存幻影距确认候选 21px 却
+        # 未被抑制），确认候选像素本身就是锚点。
         live_anchors=[]
-        if self.prior_active:
-            for c in rows:
-                if valid_geometry(c) and c.get('identity_status')=='confirmed':
-                    live_anchors.append(list(c['pixel']))
+        for c in rows:
+            if valid_geometry(c) and c.get('identity_status')=='confirmed':
+                live_anchors.append(list(c['pixel']))
         for key,t in active.items():
             if key in seen:continue
             prior=t['candidate']

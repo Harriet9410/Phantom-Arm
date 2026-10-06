@@ -133,5 +133,20 @@ rs=regions(unk)
 ids6={r.get('stable_id') for r in rs}
 check('s6 远离确认候选的幻影照常报警',p6 in ids6,(sorted(ids6),p6))
 
+# --- 场景7：Fix D3 无先验时邻位幻影仍被抑制（B03 打乱布局的真实条件）---
+t7=CandidateTracker()  # 无 layout_prior → prior_active 恒为 False
+for i in range(3):
+    rows,unk=t7.update([cand([671.,349.],cls='Smokegrenade')],frame_id=i+1,observed_at=1.+i*.1)
+p7=None
+for i in range(6):
+    rows,unk=t7.update([cand([671.,349.],cls='Smokegrenade'),
+                        cand([650.,349.],depth=1.25,cls='Smokegrenade')],frame_id=10+i,observed_at=6.+i*.1)
+    for r in rows:
+        if abs(r['pixel'][0]-650)<3: p7=r['stable_id']
+rows,unk=t7.update([cand([671.,349.],cls='Smokegrenade')],frame_id=30,observed_at=15.)
+rs=regions(unk)
+ids7={r.get('stable_id') for r in rs}
+check('s7 无先验时 21px 邻位幻影被抑制',p7 not in ids7,(sorted(ids7),p7))
+
 print('RESULT:','ALL PASS' if not fails else 'FAILED: %s'%fails)
 sys.exit(1 if fails else 0)
