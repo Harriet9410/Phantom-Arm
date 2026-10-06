@@ -417,8 +417,34 @@ class CandidateTracker:
                         c['class_source']='layout_prior'
             self.tracks[key]={'candidate':dict(c),'seen_count':1,'last_seen':observed_at,
                               'last_frame':frame_id,'delivered':False,
+                              # 建轨像素（R3-1）：候选会被后续匹配覆写，交付后审计
+                              # 需要该身份最初被观测到的位置（即其摆放槽位）。
+                              'first_pixel':list(c['pixel']),
                               'association_anchor':dict(c) if reliable_anchor_update(None,c,unknown_regions or []) else None}
             seen.add(key)
+        # R3-1 定向合并（2026-10-06）：抓取作业期间，机械臂在退休身份（已交付/
+        # 持物待核验）的摆放槽位附近产生短暂深度团块，会建立独立重复轨迹；物体
+        # 被取走后该轨迹永报 unobserved_unverified_object，错误阻断第五项覆盖门。
+        # 证据（满十案取证）：幻影 stable_id 全部不在账本剩余集、从未绑定任务，
+        # 其像素与对应已核验身份的建轨位重合（如 s02 obj-0009=[641,350]↔
+        # smoke_bomb_01 槽位 [653,352]）。布局生成器保证真实物体槽位间距 ≥40px
+        # （>prior_tolerance=30px），故位置重合+互斥 ID 即可判定重复轨迹：不再发
+        # 失踪区域。轨迹本体保留供审计；真实掉件自有活跃轨迹在原槽位持续报警，
+        # 不受此规则影响。
+        retired_anchors=[]
+        for rt in retired.values():
+            fp=rt.get('first_pixel') or rt['candidate'].get('pixel')
+            if fp:retired_anchors.append(list(fp))
+        # Fix D2（R3-1 回归发现的第二类幻影）：在位确认目标邻位（≤30px，超出
+        # 18px 关联半径）的重复轨迹。互斥 ID 证据：布局生成器保证真实物体间距
+        # ≥40px，故距确认候选 ≤30px 的轨迹不可能是独立的真实物体。实测
+        # （b03_r3fixd s01/s02）：obj-0008/0009 幻影位于存活 obj-0003 槽位右侧
+        # 22px 的固定竖条伪影上，seen_count≥5 永报 unobserved。
+        live_anchors=[]
+        if self.prior_active:
+            for c in rows:
+                if valid_geometry(c) and c.get('identity_status')=='confirmed':
+                    live_anchors.append(list(c['pixel']))
         for key,t in active.items():
             if key in seen:continue
             prior=t['candidate']
@@ -428,6 +454,10 @@ class CandidateTracker:
             # coverage_complete and the "remaining" set: on 2026-09-21 a 5-object
             # scene produced 11 identities and phantom obj-0011 blocked task 5.
             if prior.get('bbox') and t['seen_count']>=2:
+                pixel=prior.get('pixel')
+                if any(pixel and math.dist(pixel,fp)<=self.prior_tolerance
+                       for fp in retired_anchors+live_anchors):
+                    continue
                 region={'bbox':prior['bbox'],'pixel':prior.get('pixel'),
                     'normalized_xy':prior.get('normalized_xy'),'reason':'unobserved_unverified_object',
                     'stable_id':key,'last_observed_at':t['last_seen'],'seen_count':t['seen_count']}

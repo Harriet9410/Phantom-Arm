@@ -1,5 +1,5 @@
 {
- "version": "dev_v7_t1_44",
+ "version": "dev_v7_t1_47",
  "development_only": true,
  "live_grasp_validation_pending": true,
  "files": {
@@ -7,7 +7,7 @@
   "cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
   "contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
   "controlled_stop.py": "ab698d331b9d088555bed2cf938354de3199aee71af7a7379073c8ebbcb5a587",
-  "controller.py": "954b3590a2238c2685225e01d0b068a6dc9296b41de1a9ea530e81666518bc43",
+  "controller.py": "bbd09a74e821aa025bbcc93f4e428cf60f690f3de1d6474a1600987c22ab41a0",
   "conveyor_observer.py": "57595a831b17a3fdff3245e3d3e8c199d4ad4c77c0dc74a44fe4fadb91254c5b",
   "core.py": "fde8542f3f5c5f6ec5f517871dbb82eb08dc4b0367e3219d48161203431f04f4",
   "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
@@ -25,7 +25,7 @@
   "nine_node.py": "e80bcee6ca3ec54be7e12553aadf7e34353c23cf7b5ec8291728ed4796842c74",
   "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
   "perception.py": "bfa9be9441faba93205d1b78ea2e5b1cd00c17b10565d26c6dc9e835be5eb29f",
-  "perception_tracking.py": "09ea422b3fd911ace61616548634ecff4653779055ad41f72334a616916c4c86",
+  "perception_tracking.py": "92702392d047eb11dc2509dbec8d7b997fd0276ba2b53b8a2fa43915c689923e",
   "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
   "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",
   "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
