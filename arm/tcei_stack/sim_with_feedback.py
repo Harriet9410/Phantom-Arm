@@ -335,7 +335,9 @@ class StableController(original_controller.JakaRmpFlowController):
                         branch.update(valid=False,reason='approach path failed guards',
                                       rejection=getattr(self,'last_path_rejection',None));continue
                     state=goal.copy();points=len(approach);failed=False
-                    for phase,target,held,step in [('descend',grasp,False,None),('lift',above,True,.04),('transfer',transfer,True,.12)]:
+                    # R4-3 口径对齐（10/7）：held 分段与执行一致
+                    # （controller ~held_transfer_step=.04，原预演 0.12 偏松）。
+                    for phase,target,held,step in [('descend',grasp,False,None),('lift',above,True,.04),('transfer',transfer,True,.04)]:
                         stage=phase+'_path'
                         path=self.preview_move(state,target,q,held,step,deadline=deadline)
                         if path is None:
@@ -344,10 +346,13 @@ class StableController(original_controller.JakaRmpFlowController):
                         points+=len(path);state=path[-1]
                     if failed:continue
                     sign=1 if request['side']=='left' else -1
-                    for x,y in [(.68,place_y),(.65,.2),(.6,.35),(.6,.5)]:
+                    # R4-3 口径对齐（10/7）：预演与执行共用同一份有序投放候选
+                    # （controller.py Fix E：y≤0.21 可证明带），预演接受的路线
+                    # 才是实际将走的路线；旧 (.6,.35)/(.6,.5) 远端候选已废弃。
+                    for x,y in [(.68,place_y),(.65,.2),(.6,.15)]:
                         place=np.array([sign*x,y,2.67])
                         stage='place_across_path'
-                        across=self.preview_move(state,place,q,True,.12,deadline=deadline)
+                        across=self.preview_move(state,place,q,True,.04,deadline=deadline)
                         if across is None:continue
                         stage='place_descend_path'
                         down=self.preview_move(across[-1],place-np.array([0,0,.2]),q,True,None,deadline=deadline)

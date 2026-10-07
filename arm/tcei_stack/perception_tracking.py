@@ -265,9 +265,14 @@ class CandidateTracker:
         # 清理"年轻且长期未_seen"的轨迹：类别改判过渡产生的幻影轨迹会永久占据
         # 附近位置使候选永远 ambiguous。真实丢失物体（seen_count 高）保留，
         # 其缺失报告语义不变。
+        # F1a 配套②（R4-2，10/7）：confirmed（seen_count≥2）轨迹不清理。实测
+        # （b03_r4ab2 s02）：t4 抓取期间手臂长时间遮挡使第二烟雾弹的 confirmed
+        # 轨迹被 40 帧规则清除，重新观测时 VLM 错标 Torch 重锚 → 与账本旧类别
+        # 冲突（stable_identity_class_changed）→ 第五项无法发起。confirmed 身份
+        # 不是幻影，跨遮挡保留；其类别漂移由 F1a 改判机制纠正。
         self.tracks={key:t for key,t in self.tracks.items()
                      if t.get('delivered') or t.get('source_release_pending')
-                     or t.get('seen_count',0)>=5
+                     or t.get('seen_count',0)>=2
                      or frame_id-t.get('last_frame',frame_id)<=40}
         rows=[dict(c) for c in candidates]
         unknown=[dict(r) for r in (unknown_regions or [])]
