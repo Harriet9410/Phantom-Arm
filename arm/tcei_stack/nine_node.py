@@ -61,6 +61,16 @@ def inference_configuration(model,settings):
 
 
 class Nine:
+    @staticmethod
+    def _needs_label(candidate):
+        """Ignore small depth fragments while waiting for real object labels."""
+        box=candidate.get('bbox')
+        if not isinstance(box,(list,tuple)) or len(box)!=4:return True
+        try:
+            w=abs(float(box[2])-float(box[0]));h=abs(float(box[3])-float(box[1]))
+        except (TypeError,ValueError):return True
+        return w*h>=500.
+
     def __init__(self):
         self.lock=threading.Lock(); self.images={}; self.scenes={}; self.snapshot=None
         self.queue=queue.Queue(maxsize=1); self.seen=set(); self.busy=False
@@ -185,6 +195,12 @@ class Nine:
                 elif not expected_pending<=applied:
                     readiness={'ready':False,'reason':'perception has not applied completed pending releases'}
                 else:readiness=observation_readiness(snap,req['instruction'])
+                # The label wait examines the latest candidate message, while
+                # the matched image can still belong to an older unknown frame.
+                # Never run selection against that older, unclassified snapshot.
+                if readiness['ready'] and any(self._needs_label(c) and
+                        c.get('class') in (None,'','unknown') for c in snap.get('candidates',[])):
+                    readiness={'ready':False,'reason':'matched scene still has unclassified real objects'}
                 if readiness['ready']:
                     # 类别稳定门已于 10/3 移除（与服务器已验证版本对齐）：误标问题
                     # 由 perception_tracking 的布局先验（像素锚定真值表）在源头纠正，
@@ -238,7 +254,7 @@ class Nine:
             torch.cuda.empty_cache()
             self._classify_busy=False
             self.classify_pub.publish(String(json.dumps({'request_id':rid,'raw_answer':str(answer),'tag':data.get('tag')},ensure_ascii=False)))
-            self.event_local('classify_answered',request_id=rid,answer=str(answer))
+            self.event_local('classify_answered',request_id=rid,tag=data.get('tag'),answer=str(answer))
         except Exception as error:
             self._classify_busy=False
             try:self.classify_pub.publish(String(json.dumps({'request_id':rid,'error':str(error)},ensure_ascii=False)))
@@ -269,23 +285,11 @@ class Nine:
                 label_budget=float(rospy.get_param('~label_wait_seconds',90.))
                 classify_until=min(started+label_budget,global_deadline)
                 retrig=True
-                def _needs_label(candidate):
-                    """Only real (non-fragment) proposals must be classified before planning.
-                    Perception also publishes unclassified fragments as candidates; they
-                    never acquire a class, so requiring labels for them would burn the whole
-                    budget (measured: 90 s on the first task).  Real objects subtend
-                    >=~25x30 px at basket depth; anything below 500 px^2 is residue."""
-                    box=candidate.get('bbox')
-                    if not isinstance(box,(list,tuple)) or len(box)!=4:return True
-                    try:
-                        w=abs(float(box[2])-float(box[0]));h=abs(float(box[3])-float(box[1]))
-                    except (TypeError,ValueError):return True
-                    return w*h>=500.
                 while time.monotonic() < classify_until and not rospy.is_shutdown():
                     with self.lock:
                         snap_now = copy.deepcopy(self.snapshot)
                     cand = (snap_now or {}).get('candidates', [])
-                    pending=[c for c in cand if _needs_label(c) and c.get('class') in (None,'','unknown')]
+                    pending=[c for c in cand if self._needs_label(c) and c.get('class') in (None,'','unknown')]
                     if cand and not pending:
                         break
                     if retrig and time.monotonic() > started + label_budget * 0.5:

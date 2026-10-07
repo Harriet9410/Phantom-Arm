@@ -415,6 +415,7 @@ class NineRotationDetector(RotationDetector):
         now = time.monotonic()
         used_memory = set()
         merged = []
+        scan_audit = []
         for obs in observed:
             centre = _centre(obs['bbox'])
             best_index, best_distance = None, None
@@ -429,6 +430,9 @@ class NineRotationDetector(RotationDetector):
                 # 新物体：本轮扫描结果（只有走了完整鉴定才算"已鉴定"）
                 merged.append(dict(obs, seen_at=now, full=bool(obs['full']),
                                    verified_at=now if obs['full'] else 0.))
+                scan_audit.append({'pixel':obs['pixel'],'scan_class':obs['class'],
+                                   'old_class':None,'stored_class':obs['class'],
+                                   'full':bool(obs['full']),'decision':'new'})
                 continue
             used_memory.add(best_index)
             previous = self._objects[best_index]
@@ -437,15 +441,22 @@ class NineRotationDetector(RotationDetector):
                 merged.append(dict(obs, seen_at=now,
                                    full=previous.get('full') or obs['full'],
                                    verified_at=now if obs['full'] else previous.get('verified_at', 0.)))
+                decision='same'
             elif previous.get('pending') == obs['class']:
                 # 第二轮确认 -> 采用新类别；它需要自己的完整鉴定
                 merged.append(dict(obs, seen_at=now, full=bool(obs['full']),
                                    verified_at=now if obs['full'] else 0.))
+                decision='confirmed_reclass'
             else:
                 kept = dict(previous)
                 kept['pending'] = obs['class']               # 单轮翻转：保留旧类名等确认
                 kept['bbox'] = obs['bbox']; kept['pixel'] = obs['pixel']; kept['seen_at'] = now
                 merged.append(kept)
+                decision='pending_conflict'
+            scan_audit.append({'pixel':obs['pixel'],'scan_class':obs['class'],
+                               'old_class':previous['class'],'old_pending':previous.get('pending'),
+                               'stored_class':merged[-1]['class'],'full':bool(obs['full']),
+                               'decision':decision})
         # 关键：本轮没观测到的记忆【保留】一段时间。
         # 扫描会被模型加载/超时打断而产出为空；若像初版那样"整体替换"，
         # 一次空扫描就会清空全部类别 -> 所有候选变 unknown -> 计划必被拒。
@@ -456,6 +467,7 @@ class NineRotationDetector(RotationDetector):
                 merged.append(mem)
         self._objects = merged
         self._cache = {'at': now, 'objects': [dict(o) for o in merged]}
+        rospy.loginfo('nine scan class audit: %s', json.dumps(scan_audit,ensure_ascii=False))
         rospy.loginfo('nine scan: classified %d/%d proposals, memory %d (settled %d, cheap %d)',
                       len(observed), len(light), len(merged), len(settled), len(cheap))
         self._scan_inflight = False
