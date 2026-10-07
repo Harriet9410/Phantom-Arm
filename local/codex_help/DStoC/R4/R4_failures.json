@@ -1,0 +1,113 @@
+{
+ "failures": [
+  {
+   "id": "F1",
+   "batch": "b03_r3v3_10062357",
+   "case": "scramble_01",
+   "task": 3,
+   "type": "task_pending_verification",
+   "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+   "model_answer": "Torch,left,ids=[1]（一次通过验证）",
+   "terminal": "placement_pending_verification: release completed; no coherent belt proof yet; observer=release_track_reacquire_after_gap",
+   "attribution": "待核验：物理落点未经独立审计确认，F2 专项逐帧核对（归因暂记证据不足）",
+   "fix_chain": "F2"
+  },
+  {
+   "id": "F2",
+   "batch": "b03_r3v3_10062357",
+   "case": "scramble_02",
+   "task": 2,
+   "type": "rejected_side",
+   "instruction": "抓取左下方的弹夹，放到右侧传送带",
+   "model_answer": "3x Magazine,side=left,ids=[1]",
+   "evidence": "弹夹像素 x<中线(左下)，物体位置侧=left；指令投放带=right",
+   "attribution": "模型把『物体位置侧』当『投放带侧』（系统性，3 次重问同错）；程序解析正确",
+   "fix_chain": "F1b"
+  },
+  {
+   "id": "F3",
+   "batch": "b03_r3v3_10062357",
+   "case": "scramble_02",
+   "task": 3,
+   "type": "rejected_side",
+   "instruction": "抓取右上方的军用手电筒，放到左侧传送带",
+   "model_answer": "3x Torch,side=right,ids=[4]",
+   "evidence": "手电筒在右上，位置侧=right；指令投放带=left",
+   "attribution": "同 F2：side 语义系统性错误",
+   "fix_chain": "F1b"
+  },
+  {
+   "id": "F4",
+   "batch": "b03_r3v3_10062357",
+   "case": "scramble_02",
+   "task": 5,
+   "type": "rejected_remaining",
+   "instruction": "抓取剩余的物品，放到左侧传送带",
+   "model_answer": "3x Remaining,left,ids=[1,2]/[1,3]/[1,2] count=2",
+   "evidence": "账本 remaining_ids=[1,2,3]（Magazine/Smokegrenade/Torch），remaining_complete=true；模型每次漏选 1 件",
+   "attribution": "模型剩余集漏选（2/3）；账本集合正确",
+   "fix_chain": "F1c"
+  },
+  {
+   "id": "F5",
+   "batch": "b02_r3b_10070029",
+   "case": "official_random_09",
+   "task": 1,
+   "type": "rejected_spatial",
+   "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+   "model_answer": "3x Smokegrenade,left,ids=[2]",
+   "evidence": "T1 时刻候选索引 Torch=[1,4,5],Smokegrenade=[2],Grenade=[3]；id=2 唯一烟雾弹 pixel=(588,354) 在左下（中线 y=268 之下）；GT 有 2 个烟雾弹，左上的那个被锚成 Torch（obj-0003/0004 之一）",
+   "attribution": "感知类别错：左上烟雾弹被锚成 Torch → 模型只能选唯一（位置不符的）烟雾弹 → spatial 拒；模型行为合理",
+   "fix_chain": "F1a"
+  },
+  {
+   "id": "F6",
+   "batch": "b02_r3b_10070029",
+   "case": "official_random_09",
+   "task": 2,
+   "type": "rejected_category",
+   "instruction": "抓取右下方的弹夹，放到右侧传送带",
+   "model_answer": "3x Magazine,right,ids=[5]",
+   "evidence": "id=5 在候选索引中类别=Torch；GT Magazine 被锚成 Torch",
+   "attribution": "感知类别错：弹夹被锚成 Torch，模型按图像选但类别表冲突",
+   "fix_chain": "F1a"
+  },
+  {
+   "id": "F7",
+   "batch": "b02_r3b_10070029",
+   "case": "official_random_21",
+   "task": 1,
+   "type": "rejected_spatial",
+   "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+   "model_answer": "Smokegrenade（三次同答）",
+   "evidence": "T1 索引 Torch=[2,3,5],Smokegrenade=[4],Grenade=[1]；唯一 Smoke 候选 id=4 不在左上（同 r09 模式，GT 双烟雾弹）",
+   "attribution": "感知类别错（同 F5）",
+   "fix_chain": "F1a"
+  },
+  {
+   "id": "F8",
+   "batch": "b02_r3b_10070029",
+   "case": "official_random_21",
+   "task": 2,
+   "type": "rejected_category",
+   "instruction": "抓取右下方的弹夹，放到右侧传送带",
+   "model_answer": "Magazine（三次同答）",
+   "evidence": "索引无 Magazine 类别（被锚成 Torch）",
+   "attribution": "感知类别错（同 F6）",
+   "fix_chain": "F1a"
+  },
+  {
+   "id": "F9",
+   "batch": "b02_r3b_10070029",
+   "case": "official_random_24",
+   "task": 1,
+   "type": "rejected_category",
+   "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+   "model_answer": "3x Smokegrenade,left,ids=[3]",
+   "evidence": "T1 时刻候选索引 {\"unknown\":[1,2,3,4,5]}——5 候选类别全部未确认；模型未回 needs_confirmation 而是硬选",
+   "attribution": "感知类别未就绪（首扫 unknown 即发起 selection）+ 模型未按协议退出；后续帧类别自愈（t4 时 obj-0003=Smokegrenade）",
+   "fix_chain": "F1a"
+  }
+ ],
+ "note": "t1_48 失败谱系逐条归因；证据源：r4_semantic_chains/r4_plans/r4_repair_prompts + 原始 events.jsonl"
+}

@@ -405,7 +405,11 @@ def validate_selection(value, candidates, constraints, scene=None, task_context=
         if set(remaining) != set(by_id):
             raise ValueError('remaining task ledger omits or invents visible source objects')
         if set(ids) != set(remaining) or set(ids) & set(reserved):
-            raise ValueError('model remaining selection contradicts task ledger')
+            # F1c（R4）：反馈带账本数量对比（不泄露具体 id——remaining_ids 本就
+            # 在提示的 model_task_context 中），指向"漏选/多选"而非笼统矛盾。
+            raise ValueError('model remaining selection contradicts task ledger '
+                             '(ledger has %d remaining objects; answer selected %d)'
+                             % (len(remaining), len(set(ids))))
         return
     # 身份修复①（R2-2）：同类别匹配只统计"可被选中"的候选。身份未确认
     # （ambiguous/无 stable_id）的候选本来就无法通过 validate_selection 的
@@ -507,6 +511,12 @@ def parse_model_plan(text, candidates, instruction, scene=None, task_context=Non
             # （remaining_ids 集合比对）裁决；此处仅要求是合法类别令牌。
             if field == 'class' and constraints['intent'] == 'remaining' and value['class'] in CLASSES:
                 continue
+            # F1b（R4）：side 拒单消息带期望侧（audit_instruction 的解析结果），
+            # 让重问反馈能点名"side 是投放带侧"的具体矛盾而非笼统原则。
+            if field == 'side':
+                raise ValueError('model side contradicts explicit instruction '
+                                 '(instruction places on the %s conveyor belt; answer said %s)'
+                                 % (constraints['side'], value['side']))
             raise ValueError('model ' + field + ' contradicts explicit instruction')
     count = value['count']; ids = value['ids']
     minimum = 0 if constraints['intent'] == 'remaining' else 1

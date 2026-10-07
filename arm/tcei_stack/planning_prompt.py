@@ -26,8 +26,18 @@ def feedback_principle_zh(feedback):
     if 'model class contradicts' in reason:
         return '回答的class与原任务请求类别不一致。请重新理解原文并核对全景和全部候选，不要套用示例类别。'
     if 'model side contradicts' in reason:
-        return ('回答的目的侧与原任务不一致。side只能由“放到”后的传送带方向决定，'
+        # F1b（R4）：拒单消息携带 audit_instruction 解析的期望侧时，点名具体
+        # 矛盾——模型三次系统性把"物体位置侧"当"投放带侧"（s02 T2/T3 实测），
+        # 笼统原则不足以纠偏；此处只重申本题已给定的约束，不提供答案选择。
+        import re
+        expected = re.search(r'expected side (\w+)|on the (left|right) conveyor belt', reason)
+        side = (expected.group(1) or expected.group(2)) if expected else None
+        base = ('回答的目的侧与原任务不一致。side只能由"放到"后的传送带方向决定，'
                 '只允许left或right；抓取方位和leftmost不是目的侧。')
+        if side:
+            return (base + '本题明确要求投放到%s侧传送带：side必须等于"%s"，'
+                    '与你上次回答中物体所在的方位无关。' % (side, side))
+        return base
     if any(token in reason for token in ('invalid count','quantity contradicts','count does not match','all quantity')):
         return ('重新核对原任务要求的数量与完整匹配集合。count必须是无引号整数且等于ids长度；'
                 '全部也要填写实际数量，不可写all；不得擅自扩大或减少选择。')

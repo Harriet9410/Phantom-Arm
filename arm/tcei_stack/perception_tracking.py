@@ -349,12 +349,41 @@ class CandidateTracker:
                 # 类别未测量（unknown）的轨迹可被首个真实类别认领：按需分类模式下
                 # 轨迹先于首次扫描建立，若要求类别一致则永远无法确认身份。
                 if (prior.get('class') in (None,'','unknown') or prior['class']==c['class']) and c.get('grasp_ready',True):
+                    # F1a 连续性：与锚定一致的帧清零替代类别计数（"连续 6 帧"
+                    # 才算持续证据，闪变打断重新累计）。
+                    votes=track.get('alt_class_votes')
+                    if votes and votes['count']:votes.update(cls=None,count=0)
                     accepted[index]=key
                 elif track.get('seen_count',0)>=2 and c.get('grasp_ready',True):
                     # 定向退休（10/3）：确立轨迹的类别 outrank 单次扫描的 VLM 标签。
                     # 场景内物体身份静态；交付后单帧误标（Magazine→Grenade，五选一
                     # 无 M↔G 复核对）曾因"认领必须类别一致"永久锁死——错误轨迹
                     # 永占位、正确检测永 ambiguous。原始标签保留 observed_class 审计。
+                    # F1a（R4-2，10/7）：锚定类别可被持续冲突证据改判一次。实测
+                    # （b02_r3b r09/r21）：首扫把弹夹/第二个烟雾弹锚成 Torch 后，
+                    # 本覆写使后续每帧的 Magazine 原始标签永久失声（plan objects
+                    # 中 obj-0004 raw_class=Magazine 而 class=Torch），造成 4 条
+                    # 类别/空间拒单。同一替代类别连续 ≥6 帧（远高于单帧闪变）即
+                    # 改判一次；每轨迹至多一次（alt_reclass_done）；旧类别存
+                    # observed_class 审计。VLM 自身持续错标（raw 也错）不在此列，
+                    # 属识别层遗留问题。
+                    alt=c.get('class')
+                    votes=track.setdefault('alt_class_votes',{'cls':None,'count':0})
+                    if alt and canonical_class(alt) and alt!=prior['class']:
+                        if votes['cls']==alt:votes['count']+=1
+                        else:votes.update(cls=alt,count=1)
+                        if votes['count']>=6 and not track.get('alt_reclass_done'):
+                            track['alt_reclass_done']=True
+                            track['alt_class_votes']={'cls':None,'count':0}
+                            # 审计存 track 级（candidate 每帧被 dict(c) 替换，
+                            # 写在 candidate 上的字段会随替换丢失）。
+                            track['reclass_audit']={'from':prior['class'],'to':alt,
+                                                    'frame':frame_id}
+                            prior['observed_class']=prior['class']
+                            prior['class']=alt
+                            prior['class_source']='recheck_majority'
+                    else:
+                        votes.update(cls=None,count=0)
                     c['observed_class']=c['class'];c['class']=prior['class']
                     c['class_source']='established_track'
                     accepted[index]=key
