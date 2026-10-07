@@ -170,7 +170,16 @@ class MissionLedger:
                 issues.append('candidate_class_unrecognized');continue
             prior=self.known.get(stable)
             if prior and prior['class']!=candidate.get('class'):
-                issues.append('stable_identity_class_changed');continue
+                # F1a 配套（R4-2）：tracker 的受限改判（同一替代类别连续 6 帧、
+                # 每轨迹一次上限，class_source=recheck_majority）是感知层对锚定
+                # 错误的正式纠正——账本跟随更新而非拒收（否则改判物体被
+                # stable_identity_class_changed 踢出账本，实测 b03_r4ab s02 t5
+                # 第五项无法发起）。其余来源的类别变化仍然拒收。
+                if candidate.get('class_source')=='recheck_majority':
+                    prior['reclassed_from']=prior['class']
+                    prior['class']=candidate.get('class')
+                else:
+                    issues.append('stable_identity_class_changed');continue
             self.known[stable]={'class':candidate.get('class'),'last_frame':frame,
                                 'last_observed_at':scene.get('observed_at')}
         self._visible_by_id=visible;self._visible_frame=frame

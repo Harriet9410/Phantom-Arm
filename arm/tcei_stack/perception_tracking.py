@@ -374,6 +374,10 @@ class CandidateTracker:
                         else:votes.update(cls=alt,count=1)
                         if votes['count']>=6 and not track.get('alt_reclass_done'):
                             track['alt_reclass_done']=True
+                            # F1a 配套：改判后候选 class_source 标 recheck_majority，
+                            # 账本据此跟随更新类别（否则 stable_identity_class_changed
+                            # 把改判物体踢出账本，实测 b03_r4ab s02 t5）。
+                            track['reclass_active']=True
                             track['alt_class_votes']={'cls':None,'count':0}
                             # 审计存 track 级（candidate 每帧被 dict(c) 替换，
                             # 写在 candidate 上的字段会随替换丢失）。
@@ -385,7 +389,7 @@ class CandidateTracker:
                     else:
                         votes.update(cls=None,count=0)
                     c['observed_class']=c['class'];c['class']=prior['class']
-                    c['class_source']='established_track'
+                    c['class_source']='recheck_majority' if track.get('reclass_active') else 'established_track'
                     accepted[index]=key
         seen=set(accepted.values())
         for index,c in enumerate(rows):

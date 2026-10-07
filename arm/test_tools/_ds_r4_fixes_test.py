@@ -108,5 +108,17 @@ try:
 except ValueError as e:
     check('D4 消息带数量对比','ledger has 3 remaining objects; answer selected 2' in str(e),str(e)[:140])
 
+
+# --- 场景 E：F1a 配套——改判后 class_source=recheck_majority 传递到候选 ---
+t5=CandidateTracker()
+se=None
+for i in range(3):
+    rows,_=t5.update([cand([400.,400.],cls='Torch')],frame_id=i+1,observed_at=1.+i*.1)
+    if rows:se=rows[0]['stable_id']
+for i in range(6):
+    rows,_=t5.update([cand([400.,400.],cls='Smokegrenade')],frame_id=10+i,observed_at=6.+i*.1)
+check('E 改判帧起 class_source=recheck_majority',rows[0].get('class_source')=='recheck_majority',
+      rows[0].get('class_source'))
+
 print('RESULT:','ALL PASS' if not fails else 'FAILED: %s'%fails)
 sys.exit(1 if fails else 0)
