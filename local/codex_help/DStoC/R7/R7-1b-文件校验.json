@@ -1,0 +1,52 @@
+{
+  "author": "Codex",
+  "version": "codex_v0_r7_candidate_20261008",
+  "base_commit": "fec0177",
+  "candidate_commit": "2584c912e8f09aa1c2788ec543868d19f1660883",
+  "codex_tests_executed": false,
+  "files": [
+    {
+      "path": "tcei_stack/episode_driver.py",
+      "before": "494e504f359bacfed6df66a4a474cc16ed22e63097b4e120c8a0e9e51c06ddbc",
+      "after": "b02364421563b8190b8cc5fde5e0e59c4075e92cd0bcfd28d156a2b919d39d76"
+    },
+    {
+      "path": "tcei_stack/mission_ledger.py",
+      "before": "baa5ca9586036bab28f8e80c6af701dd898ee75ba7684c843d59c1210272e4a9",
+      "after": "66a3ffa6f44c156cf8e65d697fc1b4006e0d47c816492d1ea5d762aadc001739"
+    },
+    {
+      "path": "tcei_stack/nine_classify.py",
+      "before": "deac54615b7cb2b1392239e18cb84b5b27e59350c78d6114d87627f730f32371",
+      "after": "68501d27d3163c0e0b20499dd03acffdff0f1478516faf96df9435fd50bc8d09"
+    },
+    {
+      "path": "tcei_stack/perception.py",
+      "before": "cf26c82a2332ea25637e8766c65b05c3f4c5691b89c3381a7a62a5f7d64e1e46",
+      "after": "95811c7cf83bb576f44d3d3c30f7f4a3b24886374e58622e1808d4ae20468348"
+    },
+    {
+      "path": "tcei_stack/perception_tracking.py",
+      "before": "e7db96d37b5a704801df76b92aa10979a1013af5445ff4d1276200fb9582ad76",
+      "after": "27f1ab963e662941214d8aa8617044313f3a0f51b1e3187cddb6d65b6591e75c"
+    },
+    {
+      "path": "tcei_stack/BUILD_MANIFEST.json",
+      "before": "21d6c57d8f50d5497e895b47455edc4a2fac6168c0b51dcaf08c1a7c189712d0",
+      "after": "71e318a601e886e211d60ba5fa3b79a80b0cf46527875ae060997d80da8d8ed3"
+    },
+    {
+      "path": "PACKAGE_MANIFEST.json",
+      "before": "21af3f72f560bb505e14ad7c650beaf33f4de239737a4191d83806c50ea56735",
+      "after": "128bed0218640fdd9e7d6f10f61605fff32c1921f836f5034c36883a70688903"
+    }
+  ],
+  "patch": {
+    "name": "R7-1b-V0候选-2584c91.patch",
+    "sha256": "95ff88cb949d8cb46a9279fb5978e27361f10811ebea27fd61b0bf5eb9c2036e"
+  },
+  "ds_check": {
+    "name": "R7-1b-DS代码检查.py",
+    "sha256": "424b0b383baa75df955afba2d4d5f0d65b12078c21fdd3e29a3d358910d02d63"
+  }
+}

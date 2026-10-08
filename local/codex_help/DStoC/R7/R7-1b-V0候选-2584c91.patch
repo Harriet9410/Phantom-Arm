@@ -1,0 +1,483 @@
+diff --git a/arm/PACKAGE_MANIFEST.json b/arm/PACKAGE_MANIFEST.json
+index d395ec0..341b7a6 100644
+--- a/arm/PACKAGE_MANIFEST.json
++++ b/arm/PACKAGE_MANIFEST.json
+@@ -1,6 +1,6 @@
+ {
+  "package": "2026TCEI机器臂部署@260920v2",
+- "runtime": "codex_v0_r7_diag_20261008",
++ "runtime": "codex_v0_r7_candidate_20261008",
+  "base": "official competition image with bundled scene, Isaac, YOLO and Nine resources",
+  "files": {
+   "B01_REGISTER.json": "d6c296f9d4f55837d35551697683950c96ed6152096c11e54cbcece82d06b704",
+@@ -113,7 +113,7 @@
+   "scripts/stop.py": "52f5d1f325d9759492f58eb6e6a9dac0fa1a8bd61ff045cd1a489fcbc6e9ab20",
+   "scripts/verify_image.py": "9f619df15361cb6dbcd1d5cf9bea201a003c221bfa3ba384da7fe3421ec917ab",
+   "scripts/verify_package.py": "706f82cb926b657488ee0de52fb262d1aeb1e84cd1fc2e9b4d72d3cda103d159",
+-  "tcei_stack/BUILD_MANIFEST.json": "21d6c57d8f50d5497e895b47455edc4a2fac6168c0b51dcaf08c1a7c189712d0",
++  "tcei_stack/BUILD_MANIFEST.json": "71e318a601e886e211d60ba5fa3b79a80b0cf46527875ae060997d80da8d8ed3",
+   "tcei_stack/arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
+   "tcei_stack/cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
+   "tcei_stack/contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
+@@ -122,7 +122,7 @@
+   "tcei_stack/conveyor_observer.py": "57595a831b17a3fdff3245e3d3e8c199d4ad4c77c0dc74a44fe4fadb91254c5b",
+   "tcei_stack/core.py": "fde8542f3f5c5f6ec5f517871dbb82eb08dc4b0367e3219d48161203431f04f4",
+   "tcei_stack/drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+-  "tcei_stack/episode_driver.py": "494e504f359bacfed6df66a4a474cc16ed22e63097b4e120c8a0e9e51c06ddbc",
++  "tcei_stack/episode_driver.py": "b02364421563b8190b8cc5fde5e0e59c4075e92cd0bcfd28d156a2b919d39d76",
+   "tcei_stack/frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+   "tcei_stack/frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
+   "tcei_stack/grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
+@@ -132,12 +132,12 @@
+   "tcei_stack/joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
+   "tcei_stack/kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
+   "tcei_stack/lift_evidence.py": "d5913cf5690dc7c3a9956fd5a162d42efe2e0df54a80b0f386d82e0fa67541f8",
+-  "tcei_stack/mission_ledger.py": "baa5ca9586036bab28f8e80c6af701dd898ee75ba7684c843d59c1210272e4a9",
+-  "tcei_stack/nine_classify.py": "deac54615b7cb2b1392239e18cb84b5b27e59350c78d6114d87627f730f32371",
++  "tcei_stack/mission_ledger.py": "66a3ffa6f44c156cf8e65d697fc1b4006e0d47c816492d1ea5d762aadc001739",
++  "tcei_stack/nine_classify.py": "68501d27d3163c0e0b20499dd03acffdff0f1478516faf96df9435fd50bc8d09",
+   "tcei_stack/nine_node.py": "48c5c6c08b3f6684fd9ff36bb13a31c0a30229354fc7811ff2c376ee5b9f098b",
+   "tcei_stack/observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
+-  "tcei_stack/perception.py": "cf26c82a2332ea25637e8766c65b05c3f4c5691b89c3381a7a62a5f7d64e1e46",
+-  "tcei_stack/perception_tracking.py": "e7db96d37b5a704801df76b92aa10979a1013af5445ff4d1276200fb9582ad76",
++  "tcei_stack/perception.py": "95811c7cf83bb576f44d3d3c30f7f4a3b24886374e58622e1808d4ae20468348",
++  "tcei_stack/perception_tracking.py": "27f1ab963e662941214d8aa8617044313f3a0f51b1e3187cddb6d65b6591e75c",
+   "tcei_stack/planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
+   "tcei_stack/planning_prompt.py": "b6242ce59f0d55dc82b2aa3492163a4534c58e404e46c48d1293d39899584917",
+   "tcei_stack/robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
+diff --git a/arm/tcei_stack/BUILD_MANIFEST.json b/arm/tcei_stack/BUILD_MANIFEST.json
+index 23ed07d..9e1d294 100644
+--- a/arm/tcei_stack/BUILD_MANIFEST.json
++++ b/arm/tcei_stack/BUILD_MANIFEST.json
+@@ -1,5 +1,5 @@
+ {
+- "version": "codex_v0_r7_diag_20261008",
++ "version": "codex_v0_r7_candidate_20261008",
+  "development_only": true,
+  "live_grasp_validation_pending": true,
+  "files": {
+@@ -11,7 +11,7 @@
+   "conveyor_observer.py": "57595a831b17a3fdff3245e3d3e8c199d4ad4c77c0dc74a44fe4fadb91254c5b",
+   "core.py": "fde8542f3f5c5f6ec5f517871dbb82eb08dc4b0367e3219d48161203431f04f4",
+   "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+-  "episode_driver.py": "494e504f359bacfed6df66a4a474cc16ed22e63097b4e120c8a0e9e51c06ddbc",
++  "episode_driver.py": "b02364421563b8190b8cc5fde5e0e59c4075e92cd0bcfd28d156a2b919d39d76",
+   "frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+   "frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
+   "grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
+@@ -21,11 +21,11 @@
+   "joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
+   "kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
+   "lift_evidence.py": "d5913cf5690dc7c3a9956fd5a162d42efe2e0df54a80b0f386d82e0fa67541f8",
+-  "mission_ledger.py": "baa5ca9586036bab28f8e80c6af701dd898ee75ba7684c843d59c1210272e4a9",
++  "mission_ledger.py": "66a3ffa6f44c156cf8e65d697fc1b4006e0d47c816492d1ea5d762aadc001739",
+   "nine_node.py": "48c5c6c08b3f6684fd9ff36bb13a31c0a30229354fc7811ff2c376ee5b9f098b",
+   "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
+-  "perception.py": "cf26c82a2332ea25637e8766c65b05c3f4c5691b89c3381a7a62a5f7d64e1e46",
+-  "perception_tracking.py": "e7db96d37b5a704801df76b92aa10979a1013af5445ff4d1276200fb9582ad76",
++  "perception.py": "95811c7cf83bb576f44d3d3c30f7f4a3b24886374e58622e1808d4ae20468348",
++  "perception_tracking.py": "27f1ab963e662941214d8aa8617044313f3a0f51b1e3187cddb6d65b6591e75c",
+   "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
+   "planning_prompt.py": "b6242ce59f0d55dc82b2aa3492163a4534c58e404e46c48d1293d39899584917",
+   "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
+@@ -37,7 +37,7 @@
+   "sim_with_feedback.py": "8f2813c1843d14a6c7a572867c8f2de32391f7ff818fb253f80549f9b8025247",
+   "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
+   "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67",
+-  "nine_classify.py": "deac54615b7cb2b1392239e18cb84b5b27e59350c78d6114d87627f730f32371",
++  "nine_classify.py": "68501d27d3163c0e0b20499dd03acffdff0f1478516faf96df9435fd50bc8d09",
+   "scene_layout_prior.json": "83b7f9ebe3c8b181039e4f79d91b0a458d37f033797d5d1082b2d3c1a9f2364f"
+  }
+ }
+diff --git a/arm/tcei_stack/episode_driver.py b/arm/tcei_stack/episode_driver.py
+index 247bd10..4543e6d 100644
+--- a/arm/tcei_stack/episode_driver.py
++++ b/arm/tcei_stack/episode_driver.py
+@@ -242,6 +242,7 @@ class EpisodeDriver:
+                             'task_index':index,'context':copy.deepcopy(context),
+                             'candidates':[{key:c.get(key) for key in ('id','class','raw_class',
+                                 'observed_class','class_source','class_scan_id','last_scan_id',
++                                'class_scan_full','class_support_scan_ids','classification_status',
+                                 'reclass_audit','pixel','bbox','depth',
+                                 'stable_id','identity_status','identity_candidates','identity_reason',
+                                 'association_anchor_held','association_anchor_pixel')} for c in scene.get('candidates',[])],
+diff --git a/arm/tcei_stack/mission_ledger.py b/arm/tcei_stack/mission_ledger.py
+index 53be143..814dd30 100644
+--- a/arm/tcei_stack/mission_ledger.py
++++ b/arm/tcei_stack/mission_ledger.py
+@@ -42,6 +42,21 @@ def _side(value):
+     return {'左':'left','右':'right'}.get(found[0]) if len(set(found))==1 else None
+ 
+ 
++def _validated_reclassification(candidate,prior,frame):
++    """Accept the tracker's identity-bound correction, never a source label alone."""
++    audit=candidate.get('reclass_audit')
++    if not isinstance(audit,dict):return False
++    scans=audit.get('scan_ids')
++    changed_at=audit.get('frame')
++    return (audit.get('protocol')=='tracker.class_recheck.v1'
++            and audit.get('stable_id')==candidate.get('stable_id')
++            and audit.get('from')==prior.get('class') and audit.get('to')==candidate.get('class')
++            and isinstance(scans,list) and len(scans)==2
++            and all(isinstance(scan,str) and bool(scan) for scan in scans) and scans[0]!=scans[1]
++            and type(changed_at) is int and 0<changed_at<=frame
++            and type(prior.get('last_frame')) is int and changed_at>prior['last_frame'])
++
++
+ class MissionLedger:
+     def __init__(self,round_id,instructions,started_monotonic,started_wall,
+                  budget_seconds=600,task_source='custom',allow_reorder=False):
+@@ -170,12 +185,8 @@ class MissionLedger:
+                 issues.append('candidate_class_unrecognized');continue
+             prior=self.known.get(stable)
+             if prior and prior['class']!=candidate.get('class'):
+-                # F1a 配套（R4-2）：tracker 的受限改判（同一替代类别连续 6 帧、
+-                # 每轨迹一次上限，class_source=recheck_majority）是感知层对锚定
+-                # 错误的正式纠正——账本跟随更新而非拒收（否则改判物体被
+-                # stable_identity_class_changed 踢出账本，实测 b03_r4ab s02 t5
+-                # 第五项无法发起）。其余来源的类别变化仍然拒收。
+-                if candidate.get('class_source')=='recheck_majority':
++                # 改判证书绑定稳定身份、前后类别、帧和两次独立扫描。
++                if _validated_reclassification(candidate,prior,frame):
+                     prior['reclassed_from']=prior['class']
+                     prior['class']=candidate.get('class')
+                 else:
+diff --git a/arm/tcei_stack/nine_classify.py b/arm/tcei_stack/nine_classify.py
+index 4b928ce..0f659cd 100644
+--- a/arm/tcei_stack/nine_classify.py
++++ b/arm/tcei_stack/nine_classify.py
+@@ -51,7 +51,7 @@ LABEL_RESCAN_AFTER = 10.0    # 真实物体覆盖不足且缓存超龄这么久
+ REAL_BOX_MIN_AREA_PX = 500.  # 真实物体的最小成像面积（碎片/遮挡残片低于此值）
+ FULL_TTL = 300.0             # 一次"完整鉴定"（裁剪+配对复核+四选一）的有效期。静止物体的
+                              # 类别不会变，期内只要全图视角与记忆一致就跳过重活；期满自动
+-                             # 重跑一次完整鉴定，保证错误类别最多存活这么长时间
++                             # 重跑完整鉴定；冲突扫描不延长此鉴定有效期，也不保证识别正确。
+ 
+ 
+ def _centre(box):
+@@ -271,7 +271,7 @@ class NineRotationDetector(RotationDetector):
+         return self._parse_class_answer(answer)
+ 
+     def _classify_proposals(self, rgb, props, settled=None, scan_id=''):
+-        """Three-view majority classification -> ({proposal_index: class}, cheap).
++        """Three-view classification -> (assignments, cheap, unresolved).
+ 
+         Views: full-frame numbered query + per-proposal crop (EN prompt) +
+         per-proposal crop (CN prompt, wider margin).  View errors land on
+@@ -291,6 +291,8 @@ class NineRotationDetector(RotationDetector):
+         can keep their verification timestamp current."""
+         settled = settled or {}
+         cheap = set()
++        crop_votes = {}
++        unresolved = {}
+         ids = [str(i + 1) for i in range(len(props))]
+         votes = {i: [] for i in range(len(props))}
+         # 视角 A：按本次 proposals 顺序在全图画编号；原相机帧没有这些编号。
+@@ -329,6 +331,7 @@ class NineRotationDetector(RotationDetector):
+                 tag='%s:p%d:crop_zh' % (scan_id, i + 1))
+             if b:
+                 votes[i].append(b)
++            crop_votes[i] = [a, b]
+         assign = {}
+         for i in range(len(props)):
+             vs = votes[i]
+@@ -362,14 +365,6 @@ class NineRotationDetector(RotationDetector):
+         GS_PROMPT = (u'仔细看这个物体的形状：烟雾弹（Smokegrenade）是圆柱形容器，'
+                      u'常带绿色环带；手雷（Grenade）是小型椭球体。'
+                      u'这个物体是哪一类？只回答 Smokegrenade 或 Grenade。')
+-        for i, cls in list(assign.items()):
+-            if i in cheap:
+-                continue                     # 已完整鉴定过：无需再复核
+-            if cls in ('Grenade', 'Smokegrenade') and i < len(props):
+-                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GS_PROMPT,
+-                                     tag='%s:p%d:recheck_gs' % (scan_id, i + 1))
+-                if ans in ('Grenade', 'Smokegrenade'):
+-                    assign[i] = ans
+         # 手雷/手电筒混淆（实机 id5 被锁 Torch）：同一手法二次复核。
+         GT_PROMPT = (u'仔细看这个物体的形状：手雷（Grenade）是小型椭球体，表面常有'
+                      u'网格状防滑纹；军用手电筒（Torch）是细长圆柱形，一端有尾盖或按钮。'
+@@ -382,10 +377,17 @@ class NineRotationDetector(RotationDetector):
+                                      tag='%s:p%d:recheck_gt' % (scan_id, i + 1))
+                 if ans in ('Grenade', 'Torch'):
+                     assign[i] = ans
+-        # 终审（10/3 修订）：配对复核（GS/GT）只覆盖两对且无逃生口，跨类错误与
+-        # 非对内物体（实测：首扫 Magazine→Grenade 两票一致地错；第二颗烟雾弹被
+-        # M↔G 对强制误判）都兜不住。最终裁决由特征描述拉齐的强四选一承担：
+-        # 各类描述等强、置于所有配对复核之后、两票一致才改判。
++        # GT 可能把 Torch 改成 Grenade；随后必须允许烟雾弹复核。
++        for i, cls in list(assign.items()):
++            if i in cheap:
++                continue
++            if cls in ('Grenade', 'Smokegrenade') and i < len(props):
++                ans = _recheck_agree([int(v) for v in props[i]['bbox']], GS_PROMPT,
++                                     tag='%s:p%d:recheck_gs' % (scan_id, i + 1))
++                if ans in ('Grenade', 'Smokegrenade'):
++                    assign[i] = ans
++        # 四选一须与专项复核的当前结论一致，或由两个裁剪共同支持；
++        # 二选一无法选择弹夹时，后一条仍允许四选一纠正强制选项错误。
+         FIVE_PROMPT = (u'这是军用物资，四选一：Smokegrenade（烟雾弹，圆柱形容器，'
+                        u'常带绿色环带）、Grenade（手雷，小型椭球体，整体圆润带网格状'
+                        u'防滑纹）、Torch（军用手电筒，细长圆柱形，一端有尾盖或按钮）、'
+@@ -396,13 +398,20 @@ class NineRotationDetector(RotationDetector):
+                 continue                     # 已完整鉴定过：无需再复核
+             if i < len(props):
+                 votes_i = votes.get(i, [])
+-                if self.fastpath and len(votes_i) >= 4 and len(set(votes_i)) == 1:
++                if (self.fastpath and len(votes_i) >= 4 and len(set(votes_i)) == 1
++                        and cls == votes_i[0]):
+                     continue          # all views agreed; skip the two re-check calls
+                 ans = _recheck_agree([int(v) for v in props[i]['bbox']], FIVE_PROMPT,
+                                      tag='%s:p%d:final' % (scan_id, i + 1))
+-                if ans in declared and ans != cls:
++                if ans in declared and (ans == cls or crop_votes.get(i) == [ans, ans]):
+                     assign[i] = ans
+-        return assign, cheap
++                else:
++                    # 重复询问同一裁剪不构成独立证据，终审不能独自推翻上游。
++                    unresolved[i] = {'reason': 'final_conflict' if ans in declared else 'final_unconfirmed',
++                                     'pre_final': cls, 'final': ans,
++                                     'crop_votes': crop_votes.get(i, []), 'view_votes': votes_i}
++                    assign.pop(i, None)
++        return assign, cheap, unresolved
+ 
+     def _scan_worker(self, rgb, props):
+         scan_id = uuid.uuid4().hex[:10]
+@@ -410,6 +419,7 @@ class NineRotationDetector(RotationDetector):
+         # 把"已完整鉴定且在有效期内"的记忆类别作为提示交给分类器，让全图视角一致的
+         # 物体走廉价路径（见 _classify_proposals 文档）。几何匹配与发布路径同一把尺子。
+         began = time.monotonic()
++        rospy.loginfo('nine scan started: %s', scan_id)
+         settled, hint_used = {}, set()
+         for pi, prop in enumerate(light):
+             centre = _centre(prop['bbox'])
+@@ -427,16 +437,16 @@ class NineRotationDetector(RotationDetector):
+                 hint_used.add(best_index)
+                 settled[pi] = self._objects[best_index]['class']
+         try:
+-            assign, cheap = self._classify_proposals(rgb, light, settled=settled, scan_id=scan_id)
++            assign, cheap, unresolved = self._classify_proposals(rgb, light, settled=settled, scan_id=scan_id)
+         except Exception as error:
+             rospy.logwarn('nine scan failed: %s', error)
+-            assign, cheap = {}, set()
++            assign, cheap, unresolved = {}, set(), {}
+         # 物体级类别记忆：把本轮观测按几何对到既有对象上，类名只跟着物体走。
+         # 滞回规则保持"连续两轮一致才改判"，但比对发生在【同一物体】之间，
+         # 而不是旧实现的"同一下标"之间——下标会随重排漂移，物体不会。
+-        observed = [(i, {'bbox': light[i]['bbox'], 'pixel': light[i]['pixel'], 'class': assign[i],
+-                     'full': i not in cheap})
+-                    for i in sorted(assign) if 0 <= i < len(light) and assign.get(i)]
++        observed = [(i, {'bbox': light[i]['bbox'], 'pixel': light[i]['pixel'], 'class': assign.get(i),
++                     'full': i not in cheap, 'unresolved': unresolved.get(i)})
++                    for i in sorted(set(assign) | set(unresolved)) if 0 <= i < len(light)]
+         now = time.monotonic()
+         used_memory = set()
+         merged = []
+@@ -451,43 +461,76 @@ class NineRotationDetector(RotationDetector):
+                 distance = ((centre[0] - mem_centre[0]) ** 2 + (centre[1] - mem_centre[1]) ** 2) ** .5
+                 if distance <= ASSOC_MAX_CENTRE_PX and (best_distance is None or distance < best_distance):
+                     best_index, best_distance = mi, distance
++            if obs.get('unresolved'):
++                previous = self._objects[best_index] if best_index is not None else None
++                if previous is not None:
++                    used_memory.add(best_index)
++                    kept = dict(previous)
++                    kept.pop('pending', None)  # 未决扫描中断连续改判证据。
++                    kept.pop('pending_scan_id', None)
++                    kept.pop('pending_full', None)
++                    kept.update(bbox=obs['bbox'], pixel=obs['pixel'], seen_at=now,
++                                last_scan_id=scan_id, classification_status='retained_conflict')
++                    merged.append(kept)  # 仅刷新看见物体的时刻，不刷新鉴定时刻。
++                scan_audit.append({'scan_id':scan_id,'proposal_index':proposal_index + 1,
++                    'pixel':obs['pixel'],'scan_class':None,'old_class':previous['class'] if previous else None,
++                    'stored_class':previous['class'] if previous else None,'full':False,
++                    'decision':'unresolved_conflict','evidence':obs['unresolved'],
++                    'stored_support_scan_ids':previous.get('class_support_scan_ids', []) if previous else []})
++                continue
+             if best_index is None:
+                 # 新物体：本轮扫描结果（只有走了完整鉴定才算"已鉴定"）
+                 merged.append(dict(obs, seen_at=now, class_scan_id=scan_id,
+-                                   last_scan_id=scan_id, full=bool(obs['full']),
++                                   last_scan_id=scan_id, class_scan_full=bool(obs['full']),
++                                   class_support_scan_ids=[scan_id] if obs['full'] else [],
++                                   classification_status='accepted', full=bool(obs['full']),
+                                    verified_at=now if obs['full'] else 0.))
+                 scan_audit.append({'scan_id':scan_id,'proposal_index':proposal_index + 1,
+                                    'pixel':obs['pixel'],'scan_class':obs['class'],
+                                    'old_class':None,'stored_class':obs['class'],
+-                                   'full':bool(obs['full']),'decision':'new'})
++                                   'full':bool(obs['full']),'decision':'new',
++                                   'stored_support_scan_ids':merged[-1]['class_support_scan_ids']})
+                 continue
+             used_memory.add(best_index)
+             previous = self._objects[best_index]
+             if previous['class'] == obs['class']:
+                 # 一致 -> 采用；廉价路径不刷新鉴定时刻，完整鉴定才刷新
++                support = list(previous.get('class_support_scan_ids', []))
++                if obs['full'] and scan_id not in support:
++                    support.append(scan_id)
+                 merged.append(dict(obs, seen_at=now, class_scan_id=scan_id,
+-                                   last_scan_id=scan_id,
++                                   last_scan_id=scan_id, class_scan_full=bool(obs['full']),
++                                   class_support_scan_ids=support[-2:],
++                                   classification_status='accepted',
+                                    full=previous.get('full') or obs['full'],
+                                    verified_at=now if obs['full'] else previous.get('verified_at', 0.)))
+                 decision='same'
+             elif previous.get('pending') == obs['class']:
+                 # 第二轮确认 -> 采用新类别；它需要自己的完整鉴定
+                 merged.append(dict(obs, seen_at=now, class_scan_id=scan_id,
+-                                   last_scan_id=scan_id, full=bool(obs['full']),
++                                   last_scan_id=scan_id, class_scan_full=bool(obs['full']),
++                                   class_support_scan_ids=([previous['pending_scan_id'], scan_id]
++                                       if previous.get('pending_full') and obs['full']
++                                       and previous.get('pending_scan_id') else []),
++                                   classification_status='accepted', full=bool(obs['full']),
+                                    verified_at=now if obs['full'] else 0.))
+                 decision='confirmed_reclass'
+             else:
+                 kept = dict(previous)
+                 kept['pending'] = obs['class']               # 单轮翻转：保留旧类名等确认
++                kept['pending_scan_id'] = scan_id
++                kept['pending_full'] = bool(obs['full'])
+                 kept['bbox'] = obs['bbox']; kept['pixel'] = obs['pixel']; kept['seen_at'] = now
+                 kept['last_scan_id'] = scan_id
++                kept['classification_status'] = 'pending_conflict'
+                 merged.append(kept)
+                 decision='pending_conflict'
+             scan_audit.append({'scan_id':scan_id,'proposal_index':proposal_index + 1,
+                                'pixel':obs['pixel'],'scan_class':obs['class'],
+                                'old_class':previous['class'],'old_pending':previous.get('pending'),
+                                'stored_class':merged[-1]['class'],'full':bool(obs['full']),
+-                               'decision':decision})
++                               'decision':decision,
++                               'stored_support_scan_ids':merged[-1].get('class_support_scan_ids', [])})
+         # 关键：本轮没观测到的记忆【保留】一段时间。
+         # 扫描会被模型加载/超时打断而产出为空；若像初版那样"整体替换"，
+         # 一次空扫描就会清空全部类别 -> 所有候选变 unknown -> 计划必被拒。
+@@ -499,7 +542,7 @@ class NineRotationDetector(RotationDetector):
+         self._objects = merged
+         self._cache = {'at': now, 'objects': [dict(o) for o in merged]}
+         if (self._evidence_dir and self._conflict_captures < 24 and
+-                any(row['decision'] in ('pending_conflict', 'confirmed_reclass') for row in scan_audit)):
++                any(row['decision'] in ('pending_conflict', 'confirmed_reclass', 'unresolved_conflict') for row in scan_audit)):
+             try:
+                 os.makedirs(self._evidence_dir, exist_ok=True)
+                 saved = []
+@@ -554,6 +597,9 @@ class NineRotationDetector(RotationDetector):
+             row = {'class': cls, 'raw_class': cls, 'confidence': 0.90,
+                    'class_scan_id': memory.get('class_scan_id'),
+                    'last_scan_id': memory.get('last_scan_id'),
++                   'class_scan_full': memory.get('class_scan_full', False),
++                   'class_support_scan_ids': list(memory.get('class_support_scan_ids', [])),
++                   'classification_status': memory.get('classification_status'),
+                    'bbox': [float(x1), float(y1), float(x2), float(y2)],
+                    'recognition_rotation_deg': 0.0}
+             found[index][cls] = row
+diff --git a/arm/tcei_stack/perception.py b/arm/tcei_stack/perception.py
+index 654f789..9ef0a7a 100644
+--- a/arm/tcei_stack/perception.py
++++ b/arm/tcei_stack/perception.py
+@@ -288,7 +288,8 @@ class Perception:
+                         stable=candidate.get('stable_id')
+                         if not stable or candidate.get('identity_status')!='confirmed':
+                             continue
+-                        keys=('raw_class','class','class_source','class_scan_id','last_scan_id')
++                        keys=('raw_class','class','class_source','class_scan_id','last_scan_id',
++                              'class_scan_full','classification_status')
+                         signature=tuple(candidate.get(key) for key in keys)
+                         if self._class_audit_last.get(stable)==signature:
+                             continue
+@@ -301,6 +302,10 @@ class Perception:
+                             'class_source':candidate.get('class_source'),
+                             'class_scan_id':candidate.get('class_scan_id'),
+                             'last_scan_id':candidate.get('last_scan_id'),
++                            'class_scan_full':candidate.get('class_scan_full'),
++                            'class_support_scan_ids':candidate.get('class_support_scan_ids'),
++                            'classification_status':candidate.get('classification_status'),
++                            'layout_prior_active':self.identities.prior_active,
+                             'reclass_audit':candidate.get('reclass_audit')}))
+                 source_lifecycle=self.identities.source_lifecycle()
+             for region in unknown:
+diff --git a/arm/tcei_stack/perception_tracking.py b/arm/tcei_stack/perception_tracking.py
+index 9c438a6..da980be 100644
+--- a/arm/tcei_stack/perception_tracking.py
++++ b/arm/tcei_stack/perception_tracking.py
+@@ -354,47 +354,37 @@ class CandidateTracker:
+                 # 类别未测量（unknown）的轨迹可被首个真实类别认领：按需分类模式下
+                 # 轨迹先于首次扫描建立，若要求类别一致则永远无法确认身份。
+                 if (prior.get('class') in (None,'','unknown') or prior['class']==c['class']) and c.get('grasp_ready',True):
+-                    # F1a 连续性：与锚定一致的帧清零替代类别计数（"连续 6 帧"
+-                    # 才算持续证据，闪变打断重新累计）。
++                    # 与锚定一致的已知类别打断替代类别证据。
+                     votes=track.get('alt_class_votes')
+-                    if votes and votes['count']:votes.update(cls=None,count=0)
++                    if votes:votes.update(cls=None,scan_ids=[])
+                     accepted[index]=key
+                 elif track.get('seen_count',0)>=2 and c.get('grasp_ready',True):
+-                    # 定向退休（10/3）：确立轨迹的类别 outrank 单次扫描的 VLM 标签。
+-                    # 场景内物体身份静态；交付后单帧误标（Magazine→Grenade，五选一
+-                    # 无 M↔G 复核对）曾因"认领必须类别一致"永久锁死——错误轨迹
+-                    # 永占位、正确检测永 ambiguous。原始标签保留 observed_class 审计。
+-                    # F1a（R4-2，10/7）：锚定类别可被持续冲突证据改判一次。实测
+-                    # （b02_r3b r09/r21）：首扫把弹夹/第二个烟雾弹锚成 Torch 后，
+-                    # 本覆写使后续每帧的 Magazine 原始标签永久失声（plan objects
+-                    # 中 obj-0004 raw_class=Magazine 而 class=Torch），造成 4 条
+-                    # 类别/空间拒单。同一替代类别连续 ≥6 帧（远高于单帧闪变）即
+-                    # 改判一次；每轨迹至多一次（alt_reclass_done）；旧类别存
+-                    # observed_class 审计。VLM 自身持续错标（raw 也错）不在此列，
+-                    # 属识别层遗留问题。
++                    # 两次不同的完整、已接受扫描才改判；缓存重复帧不增加票数。
++                    # 保留唯一几何关联和遮挡门，后续纠错仍须重新取得两次证据。
+                     alt=c.get('class')
+-                    votes=track.setdefault('alt_class_votes',{'cls':None,'count':0})
++                    votes=track.setdefault('alt_class_votes',{'cls':None,'scan_ids':[]})
+                     if alt and canonical_class(alt) and alt!=prior['class']:
+-                        if votes['cls']==alt:votes['count']+=1
+-                        else:votes.update(cls=alt,count=1)
+-                        if votes['count']>=6 and not track.get('alt_reclass_done'):
+-                            track['alt_reclass_done']=True
+-                            # F1a 配套：改判后候选 class_source 标 recheck_majority，
+-                            # 账本据此跟随更新类别（否则 stable_identity_class_changed
+-                            # 把改判物体踢出账本，实测 b03_r4ab s02 t5）。
+-                            track['reclass_active']=True
+-                            track['alt_class_votes']={'cls':None,'count':0}
+-                            # 审计存 track 级（candidate 每帧被 dict(c) 替换，
+-                            # 写在 candidate 上的字段会随替换丢失）。
+-                            track['reclass_audit']={'from':prior['class'],'to':alt,
+-                                                    'frame':frame_id}
++                        scans=c.get('class_support_scan_ids')
++                        eligible=(isinstance(scans,list) and 1<=len(scans)<=2
++                                  and all(isinstance(scan,str) and bool(scan) for scan in scans)
++                                  and c.get('classification_status')=='accepted'
++                                  and reliable_anchor_update(track.get('association_anchor'),c,unknown_regions or []))
++                        if votes['cls']!=alt:votes.update(cls=alt,scan_ids=[])
++                        if eligible:
++                            for scan in scans:
++                                if scan not in votes['scan_ids']:votes['scan_ids'].append(scan)
++                        else:votes.update(cls=alt,scan_ids=[])
++                        if len(votes['scan_ids'])>=2:
++                            track['reclass_audit']={'protocol':'tracker.class_recheck.v1',
++                                'stable_id':key,'from':prior['class'],'to':alt,'frame':frame_id,
++                                'scan_ids':list(votes['scan_ids'][-2:])}
++                            votes.update(cls=None,scan_ids=[])
+                             prior['observed_class']=prior['class']
+                             prior['class']=alt
+-                            prior['class_source']='recheck_majority'
+                     else:
+-                        votes.update(cls=None,count=0)
++                        votes.update(cls=None,scan_ids=[])
+                     c['observed_class']=c['class'];c['class']=prior['class']
+-                    c['class_source']='recheck_majority' if track.get('reclass_active') else 'established_track'
++                    c['class_source']='established_track'
+                     accepted[index]=key
+         seen=set(accepted.values())
+         for index,c in enumerate(rows):
+@@ -420,6 +410,8 @@ class CandidateTracker:
+                 c['stable_id']=key;c['identity_status']='confirmed' if t['seen_count']>=2 else 'new'
+                 if t.get('reclass_audit'):
+                     c['reclass_audit']=dict(t['reclass_audit'])
++                    if c['class']==t['reclass_audit']['to']:
++                        c['class_source']='recheck_majority'
+                 anchor=t.get('association_anchor')
+                 update_anchor=reliable_anchor_update(anchor,c,unknown_regions or [])
+                 c['association_anchor_held']=anchor is not None and not update_anchor
