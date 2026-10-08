@@ -1,0 +1,232 @@
+diff --git a/arm/PACKAGE_MANIFEST.json b/arm/PACKAGE_MANIFEST.json
+index 41b87ea..d395ec0 100644
+--- a/arm/PACKAGE_MANIFEST.json
++++ b/arm/PACKAGE_MANIFEST.json
+@@ -1,6 +1,6 @@
+ {
+  "package": "2026TCEI机器臂部署@260920v2",
+- "runtime": "codex_v0_p0_20261008",
++ "runtime": "codex_v0_r7_diag_20261008",
+  "base": "official competition image with bundled scene, Isaac, YOLO and Nine resources",
+  "files": {
+   "B01_REGISTER.json": "d6c296f9d4f55837d35551697683950c96ed6152096c11e54cbcece82d06b704",
+@@ -113,7 +113,7 @@
+   "scripts/stop.py": "52f5d1f325d9759492f58eb6e6a9dac0fa1a8bd61ff045cd1a489fcbc6e9ab20",
+   "scripts/verify_image.py": "9f619df15361cb6dbcd1d5cf9bea201a003c221bfa3ba384da7fe3421ec917ab",
+   "scripts/verify_package.py": "706f82cb926b657488ee0de52fb262d1aeb1e84cd1fc2e9b4d72d3cda103d159",
+-  "tcei_stack/BUILD_MANIFEST.json": "6205a2dc924ba522a52fa608813edbe3830e53e31c103886d9ef4a7f5705ad00",
++  "tcei_stack/BUILD_MANIFEST.json": "21d6c57d8f50d5497e895b47455edc4a2fac6168c0b51dcaf08c1a7c189712d0",
+   "tcei_stack/arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
+   "tcei_stack/cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
+   "tcei_stack/contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
+@@ -122,7 +122,7 @@
+   "tcei_stack/conveyor_observer.py": "57595a831b17a3fdff3245e3d3e8c199d4ad4c77c0dc74a44fe4fadb91254c5b",
+   "tcei_stack/core.py": "fde8542f3f5c5f6ec5f517871dbb82eb08dc4b0367e3219d48161203431f04f4",
+   "tcei_stack/drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+-  "tcei_stack/episode_driver.py": "fa9771cc099259def70a110f0f99925309506880e5a7297406b9c32de7c25748",
++  "tcei_stack/episode_driver.py": "494e504f359bacfed6df66a4a474cc16ed22e63097b4e120c8a0e9e51c06ddbc",
+   "tcei_stack/frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+   "tcei_stack/frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
+   "tcei_stack/grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
+@@ -133,11 +133,11 @@
+   "tcei_stack/kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
+   "tcei_stack/lift_evidence.py": "d5913cf5690dc7c3a9956fd5a162d42efe2e0df54a80b0f386d82e0fa67541f8",
+   "tcei_stack/mission_ledger.py": "baa5ca9586036bab28f8e80c6af701dd898ee75ba7684c843d59c1210272e4a9",
+-  "tcei_stack/nine_classify.py": "3716218409c91a941af68f9adb21f6e5fad3dc4a72b6c37a0ed11f0003fab44a",
++  "tcei_stack/nine_classify.py": "deac54615b7cb2b1392239e18cb84b5b27e59350c78d6114d87627f730f32371",
+   "tcei_stack/nine_node.py": "48c5c6c08b3f6684fd9ff36bb13a31c0a30229354fc7811ff2c376ee5b9f098b",
+   "tcei_stack/observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
+-  "tcei_stack/perception.py": "bfa9be9441faba93205d1b78ea2e5b1cd00c17b10565d26c6dc9e835be5eb29f",
+-  "tcei_stack/perception_tracking.py": "cf4bb61bed06af56f8f45dfb52cb52f0acd968ffab9e6a2acef6dbc1b2d5124c",
++  "tcei_stack/perception.py": "cf26c82a2332ea25637e8766c65b05c3f4c5691b89c3381a7a62a5f7d64e1e46",
++  "tcei_stack/perception_tracking.py": "e7db96d37b5a704801df76b92aa10979a1013af5445ff4d1276200fb9582ad76",
+   "tcei_stack/planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
+   "tcei_stack/planning_prompt.py": "b6242ce59f0d55dc82b2aa3492163a4534c58e404e46c48d1293d39899584917",
+   "tcei_stack/robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
+@@ -158,4 +158,4 @@
+   "部署说明.md": "7f09b34695224e39cc42915dbf44cf77eb9ae363488dd45a33680ecdfe09a27a",
+   "验证记录.md": "52cedb5f1a475248f20d4dd3c2ee7e5a698529f35969d7b4cba1353bc784f8f3"
+  }
+-}
+\ No newline at end of file
++}
+diff --git a/arm/tcei_stack/BUILD_MANIFEST.json b/arm/tcei_stack/BUILD_MANIFEST.json
+index ef3e34b..23ed07d 100644
+--- a/arm/tcei_stack/BUILD_MANIFEST.json
++++ b/arm/tcei_stack/BUILD_MANIFEST.json
+@@ -1,5 +1,5 @@
+ {
+- "version": "codex_v0_p0_20261008",
++ "version": "codex_v0_r7_diag_20261008",
+  "development_only": true,
+  "live_grasp_validation_pending": true,
+  "files": {
+@@ -11,7 +11,7 @@
+   "conveyor_observer.py": "57595a831b17a3fdff3245e3d3e8c199d4ad4c77c0dc74a44fe4fadb91254c5b",
+   "core.py": "fde8542f3f5c5f6ec5f517871dbb82eb08dc4b0367e3219d48161203431f04f4",
+   "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+-  "episode_driver.py": "fa9771cc099259def70a110f0f99925309506880e5a7297406b9c32de7c25748",
++  "episode_driver.py": "494e504f359bacfed6df66a4a474cc16ed22e63097b4e120c8a0e9e51c06ddbc",
+   "frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+   "frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
+   "grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
+@@ -24,8 +24,8 @@
+   "mission_ledger.py": "baa5ca9586036bab28f8e80c6af701dd898ee75ba7684c843d59c1210272e4a9",
+   "nine_node.py": "48c5c6c08b3f6684fd9ff36bb13a31c0a30229354fc7811ff2c376ee5b9f098b",
+   "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
+-  "perception.py": "bfa9be9441faba93205d1b78ea2e5b1cd00c17b10565d26c6dc9e835be5eb29f",
+-  "perception_tracking.py": "cf4bb61bed06af56f8f45dfb52cb52f0acd968ffab9e6a2acef6dbc1b2d5124c",
++  "perception.py": "cf26c82a2332ea25637e8766c65b05c3f4c5691b89c3381a7a62a5f7d64e1e46",
++  "perception_tracking.py": "e7db96d37b5a704801df76b92aa10979a1013af5445ff4d1276200fb9582ad76",
+   "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
+   "planning_prompt.py": "b6242ce59f0d55dc82b2aa3492163a4534c58e404e46c48d1293d39899584917",
+   "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
+@@ -37,7 +37,7 @@
+   "sim_with_feedback.py": "8f2813c1843d14a6c7a572867c8f2de32391f7ff818fb253f80549f9b8025247",
+   "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
+   "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67",
+-  "nine_classify.py": "3716218409c91a941af68f9adb21f6e5fad3dc4a72b6c37a0ed11f0003fab44a",
++  "nine_classify.py": "deac54615b7cb2b1392239e18cb84b5b27e59350c78d6114d87627f730f32371",
+   "scene_layout_prior.json": "83b7f9ebe3c8b181039e4f79d91b0a458d37f033797d5d1082b2d3c1a9f2364f"
+  }
+-}
+\ No newline at end of file
++}
+diff --git a/arm/tcei_stack/episode_driver.py b/arm/tcei_stack/episode_driver.py
+index 14e64d2..247bd10 100644
+--- a/arm/tcei_stack/episode_driver.py
++++ b/arm/tcei_stack/episode_driver.py
+@@ -240,7 +240,9 @@ class EpisodeDriver:
+                     if self.clock.monotonic()-last_audit>=1.:
+                         self.record({'status':'remaining_context_incomplete','time':self.clock.time(),
+                             'task_index':index,'context':copy.deepcopy(context),
+-                            'candidates':[{key:c.get(key) for key in ('id','class','pixel','bbox','depth',
++                            'candidates':[{key:c.get(key) for key in ('id','class','raw_class',
++                                'observed_class','class_source','class_scan_id','last_scan_id',
++                                'reclass_audit','pixel','bbox','depth',
+                                 'stable_id','identity_status','identity_candidates','identity_reason',
+                                 'association_anchor_held','association_anchor_pixel')} for c in scene.get('candidates',[])],
+                             'unknown_regions':[{key:r.get(key) for key in ('reason','bbox','pixel','stable_id',
+diff --git a/arm/tcei_stack/nine_classify.py b/arm/tcei_stack/nine_classify.py
+index c86d186..4b928ce 100644
+--- a/arm/tcei_stack/nine_classify.py
++++ b/arm/tcei_stack/nine_classify.py
+@@ -83,7 +83,7 @@ def _is_real_box(box):
+ def _associate(proposals, objects, max_centre=ASSOC_MAX_CENTRE_PX, now=None, max_age=CACHE_MAX_AGE):
+     """One-to-one nearest-match from current proposals to remembered objects.
+ 
+-    Returns {proposal_index: class}.  A remembered object that no longer matches
++    Returns {proposal_index: remembered_object}.  A remembered object that no longer matches
+     anything simply drops out, and a proposal with no remembered partner stays
+     unknown -- so a class can never migrate onto a different object.  Stale
+     entries (older than max_age) are never used."""
+@@ -105,7 +105,7 @@ def _associate(proposals, objects, max_centre=ASSOC_MAX_CENTRE_PX, now=None, max
+         if pi in used_proposal or oi in used_object:
+             continue
+         used_proposal.add(pi); used_object.add(oi)
+-        matched[pi] = objects[oi]['class']
++        matched[pi] = objects[oi]
+     return matched
+ 
+ 
+@@ -453,7 +453,8 @@ class NineRotationDetector(RotationDetector):
+                     best_index, best_distance = mi, distance
+             if best_index is None:
+                 # 新物体：本轮扫描结果（只有走了完整鉴定才算"已鉴定"）
+-                merged.append(dict(obs, seen_at=now, full=bool(obs['full']),
++                merged.append(dict(obs, seen_at=now, class_scan_id=scan_id,
++                                   last_scan_id=scan_id, full=bool(obs['full']),
+                                    verified_at=now if obs['full'] else 0.))
+                 scan_audit.append({'scan_id':scan_id,'proposal_index':proposal_index + 1,
+                                    'pixel':obs['pixel'],'scan_class':obs['class'],
+@@ -464,19 +465,22 @@ class NineRotationDetector(RotationDetector):
+             previous = self._objects[best_index]
+             if previous['class'] == obs['class']:
+                 # 一致 -> 采用；廉价路径不刷新鉴定时刻，完整鉴定才刷新
+-                merged.append(dict(obs, seen_at=now,
++                merged.append(dict(obs, seen_at=now, class_scan_id=scan_id,
++                                   last_scan_id=scan_id,
+                                    full=previous.get('full') or obs['full'],
+                                    verified_at=now if obs['full'] else previous.get('verified_at', 0.)))
+                 decision='same'
+             elif previous.get('pending') == obs['class']:
+                 # 第二轮确认 -> 采用新类别；它需要自己的完整鉴定
+-                merged.append(dict(obs, seen_at=now, full=bool(obs['full']),
++                merged.append(dict(obs, seen_at=now, class_scan_id=scan_id,
++                                   last_scan_id=scan_id, full=bool(obs['full']),
+                                    verified_at=now if obs['full'] else 0.))
+                 decision='confirmed_reclass'
+             else:
+                 kept = dict(previous)
+                 kept['pending'] = obs['class']               # 单轮翻转：保留旧类名等确认
+                 kept['bbox'] = obs['bbox']; kept['pixel'] = obs['pixel']; kept['seen_at'] = now
++                kept['last_scan_id'] = scan_id
+                 merged.append(kept)
+                 decision='pending_conflict'
+             scan_audit.append({'scan_id':scan_id,'proposal_index':proposal_index + 1,
+@@ -542,11 +546,14 @@ class NineRotationDetector(RotationDetector):
+             threading.Thread(target=self._scan_worker, args=(rgb.copy(), proposals), daemon=True).start()
+         # 几何匹配挂载：只有与记忆中【同一位置】的物体配对成功，才继承它的类别；
+         # 配对失败（新物体/被遮挡/位置变化）一律发 unknown，等新一轮扫描。
+-        for index, cls in matched.items():
++        for index, memory in matched.items():
+             if index >= len(proposals):
+                 continue
++            cls = memory['class']
+             x1, y1, x2, y2 = proposals[index]['bbox']
+             row = {'class': cls, 'raw_class': cls, 'confidence': 0.90,
++                   'class_scan_id': memory.get('class_scan_id'),
++                   'last_scan_id': memory.get('last_scan_id'),
+                    'bbox': [float(x1), float(y1), float(x2), float(y2)],
+                    'recognition_rotation_deg': 0.0}
+             found[index][cls] = row
+diff --git a/arm/tcei_stack/perception.py b/arm/tcei_stack/perception.py
+index 8aa7e4e..654f789 100644
+--- a/arm/tcei_stack/perception.py
++++ b/arm/tcei_stack/perception.py
+@@ -80,6 +80,7 @@ class Perception:
+             self.detector_mode = 'nine'
+         self.identities=CandidateTracker(layout_prior=self._load_layout_prior())
+         self.identity_lock=threading.Lock()
++        self._class_audit_last={}
+         self.show_gui=bool(rospy.get_param('~show_gui',False))
+         self.max_frame_age=min(2.,max(.1,float(rospy.get_param('~max_frame_age',2.))))
+         self.frame_epoch=0;self.round_id=None;self.capture_barrier_wall=None;self.capture_barrier_stamp=None
+@@ -283,6 +284,24 @@ class Perception:
+                 else:
+                     candidates,unknown=self.identities.update(candidates,self.seq,received_at,unknown,
+                                                              image_stamp=rgb_msg.header.stamp.to_sec())
++                    for candidate in candidates:
++                        stable=candidate.get('stable_id')
++                        if not stable or candidate.get('identity_status')!='confirmed':
++                            continue
++                        keys=('raw_class','class','class_source','class_scan_id','last_scan_id')
++                        signature=tuple(candidate.get(key) for key in keys)
++                        if self._class_audit_last.get(stable)==signature:
++                            continue
++                        self._class_audit_last[stable]=signature
++                        rospy.loginfo('candidate class lineage: %s',json.dumps({
++                            'frame_id':self.seq,'stable_id':stable,
++                            'pixel':candidate.get('pixel'),'bbox':candidate.get('bbox'),
++                            'pretracker_class':candidate.get('raw_class'),
++                            'published_class':candidate.get('class'),
++                            'class_source':candidate.get('class_source'),
++                            'class_scan_id':candidate.get('class_scan_id'),
++                            'last_scan_id':candidate.get('last_scan_id'),
++                            'reclass_audit':candidate.get('reclass_audit')}))
+                 source_lifecycle=self.identities.source_lifecycle()
+             for region in unknown:
+                 if region.get('pixel') is None and region.get('bbox'):
+diff --git a/arm/tcei_stack/perception_tracking.py b/arm/tcei_stack/perception_tracking.py
+index eca5bbc..9c438a6 100644
+--- a/arm/tcei_stack/perception_tracking.py
++++ b/arm/tcei_stack/perception_tracking.py
+@@ -418,6 +418,8 @@ class CandidateTracker:
+                 # A prior unresolved observation must not bootstrap certainty.
+                 t['seen_count']+=1
+                 c['stable_id']=key;c['identity_status']='confirmed' if t['seen_count']>=2 else 'new'
++                if t.get('reclass_audit'):
++                    c['reclass_audit']=dict(t['reclass_audit'])
+                 anchor=t.get('association_anchor')
+                 update_anchor=reliable_anchor_update(anchor,c,unknown_regions or [])
+                 c['association_anchor_held']=anchor is not None and not update_anchor
