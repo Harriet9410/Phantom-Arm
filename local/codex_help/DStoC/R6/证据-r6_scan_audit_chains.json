@@ -1,0 +1,224 @@
+{
+ "_author": "DS",
+ "_desc": "R6 v0 候选定向测试决定性证据：九格审计链 + 层间对比",
+ "batch": "b03_r6tgt_10081642",
+ "runtime": "codex_v0_p0_20261008",
+ "audit_log_path": "<case>_stack/logs/perception.log :: 'nine scan class audit'",
+ "audit_entry_keys": [
+  "scan_id",
+  "proposal_index",
+  "pixel",
+  "scan_class",
+  "old_class",
+  "stored_class",
+  "full",
+  "decision"
+ ],
+ "chains": {
+  "scramble_02 @(672,350) [B03真值 Smokegrenade]": [
+   {
+    "scan_id": "522434276e",
+    "decision": "new",
+    "scan_class": "Smokegrenade",
+    "old_class": null,
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "84bb02ad46",
+    "decision": "same",
+    "scan_class": "Smokegrenade",
+    "old_class": "Smokegrenade",
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "3ab5bd0422",
+    "decision": "pending_conflict",
+    "scan_class": "Torch",
+    "old_class": "Smokegrenade",
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "2bd402ef17",
+    "decision": "confirmed_reclass",
+    "scan_class": "Torch",
+    "old_class": "Smokegrenade",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "5bd5f6795c",
+    "decision": "same",
+    "scan_class": "Torch",
+    "old_class": "Torch",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "f740768d97",
+    "decision": "same",
+    "scan_class": "Torch",
+    "old_class": "Torch",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "4f5619eadc",
+    "decision": "pending_conflict",
+    "scan_class": "Smokegrenade",
+    "old_class": "Torch",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "0af56cf4e1",
+    "decision": "same",
+    "scan_class": "Torch",
+    "old_class": "Torch",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "bb87672e7f",
+    "decision": "same",
+    "scan_class": "Torch",
+    "old_class": "Torch",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "e9e8f1c856",
+    "decision": "pending_conflict",
+    "scan_class": "Smokegrenade",
+    "old_class": "Torch",
+    "stored_class": "Torch",
+    "full": true
+   }
+  ],
+  "scramble_04 @(672,350)": [
+   {
+    "scan_id": "2a925a0a75",
+    "decision": "new",
+    "scan_class": "Smokegrenade",
+    "old_class": null,
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "1ad3f74ad0",
+    "decision": "pending_conflict",
+    "scan_class": "Torch",
+    "old_class": "Smokegrenade",
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "fc4291325a",
+    "decision": "same",
+    "scan_class": "Smokegrenade",
+    "old_class": "Smokegrenade",
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "841ffb70b4",
+    "decision": "pending_conflict",
+    "scan_class": "Torch",
+    "old_class": "Smokegrenade",
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "4be9fc1aae",
+    "decision": "confirmed_reclass",
+    "scan_class": "Torch",
+    "old_class": "Smokegrenade",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "86a6078fd6",
+    "decision": "pending_conflict",
+    "scan_class": "Grenade",
+    "old_class": "Torch",
+    "stored_class": "Torch",
+    "full": true
+   },
+   {
+    "scan_id": "9eb70567c0",
+    "decision": "confirmed_reclass",
+    "scan_class": "Smokegrenade",
+    "old_class": "Torch",
+    "stored_class": "Smokegrenade",
+    "full": true
+   },
+   {
+    "scan_id": "5109970950",
+    "decision": "same",
+    "scan_class": "Smokegrenade",
+    "old_class": "Smokegrenade",
+    "stored_class": "Smokegrenade",
+    "full": false
+   }
+  ]
+ },
+ "layer_comparison": {
+  "note": "决定性证据：s04 九格已纠正回 Smokegrenade，但发布层始终 Torch → 跟踪器锚定层钉死错误类别",
+  "scramble_02": {
+   "nine_classify_stored": [
+    "Smokegrenade",
+    "Torch"
+   ],
+   "published_candidate": [
+    "Torch"
+   ]
+  },
+  "scramble_04": {
+   "nine_classify_stored": [
+    "Smokegrenade",
+    "Torch",
+    "Smokegrenade"
+   ],
+   "published_candidate": [
+    "Torch"
+   ]
+  }
+ },
+ "t5_block": {
+  "scramble_02": "stable_identity_class_changed",
+  "scramble_04": "stable_identity_class_changed",
+  "remaining_ids": [
+   "obj-0003"
+  ],
+  "unknown_regions": []
+ },
+ "results": {
+  "scramble_02": {
+   "tasks": [
+    "succeeded",
+    "succeeded",
+    "succeeded",
+    "succeeded"
+   ],
+   "verified": 4,
+   "episode": "stopped"
+  },
+  "scramble_04": {
+   "tasks": [
+    "succeeded",
+    "succeeded",
+    "succeeded",
+    "succeeded"
+   ],
+   "verified": 4,
+   "episode": "stopped"
+  }
+ },
+ "conflicts_images": {
+  "scramble_02_pairs": 4,
+  "scramble_04_pairs": 6,
+  "format": "<scan_id>_raw.jpg + <scan_id>_numbered.jpg"
+ }
+}

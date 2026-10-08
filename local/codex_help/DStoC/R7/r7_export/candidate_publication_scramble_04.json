@@ -1,0 +1,232 @@
+[
+ {
+  "event_time": 1791449880.5257566,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4007,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449881.5582044,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4018,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449882.5907836,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4028,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449883.6278276,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4038,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449884.6637475,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4049,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449885.6974368,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4059,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449886.7320402,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4069,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449887.76309,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4079,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449888.7960198,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4090,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ },
+ {
+  "event_time": 1791449889.8293314,
+  "event_status": "remaining_context_incomplete",
+  "frame_id": 4100,
+  "stable_id": "13bd4c64-obj-0003",
+  "class": "Torch",
+  "raw_class": null,
+  "class_source": null,
+  "identity_status": "confirmed",
+  "bbox": [
+   641,
+   339,
+   697,
+   361
+  ],
+  "pixel": [
+   671.5,
+   349.5
+  ],
+  "observed_class": null,
+  "raw_class_present": false,
+  "class_source_present": false
+ }
+]

@@ -1,0 +1,65 @@
+{
+ "model": "/root/inference/FM9G4B-V",
+ "adapter_disabled": true,
+ "num_beams": 1,
+ "expect_reporting_only": "Grenade",
+ "load_seconds": 11.8,
+ "rows": [
+  {
+   "variant": "1_当前裁剪+GS提示（现状，第1次）",
+   "image": "cand2_current.png",
+   "prompt": "仔细看这个物体的形状：烟雾弹（Smokegrenade）是圆柱形容器，常带绿色环带；手雷（Grenade）是小型椭球体。这个物体是哪一类？只回答 Smokegrenade 或 Grenade。",
+   "raw": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形容器，顶部有一个绿色环带，这是烟雾弹的典型特征。而手雷通常呈小型椭球体形状，与图中所示物体的形状不符。因此，可以确定该物体为烟雾弹。",
+   "parsed": "Smokegrenade"
+  },
+  {
+   "variant": "1b_当前裁剪+GS提示（现状，第2次·验证确定性）",
+   "image": "cand2_current.png",
+   "prompt": "仔细看这个物体的形状：烟雾弹（Smokegrenade）是圆柱形容器，常带绿色环带；手雷（Grenade）是小型椭球体。这个物体是哪一类？只回答 Smokegrenade 或 Grenade。",
+   "raw": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形容器，顶部有一个绿色环带，这是烟雾弹的典型特征。而手雷通常呈小型椭球体形状，与图中所示物体的形状不符。因此，可以确定该物体为烟雾弹。",
+   "parsed": "Smokegrenade"
+  },
+  {
+   "variant": "2_当前裁剪+中文裁剪提示（现状问法2）",
+   "image": "cand2_current.png",
+   "prompt": "这个物资是什么类别？只回答类名：Grenade、Magazine、Smokegrenade、Torch。",
+   "raw": "这个物资是手榴弹。",
+   "parsed": null
+  },
+  {
+   "variant": "3_当前裁剪+四选一提示（现状问法3）",
+   "image": "cand2_current.png",
+   "prompt": "这是军用物资，四选一：Smokegrenade（烟雾弹，圆柱形容器，常带绿色环带）、Grenade（手雷，小型椭球体，整体圆润带网格状防滑纹）、Torch（军用手电筒，细长圆柱形，一端有尾盖或按钮）、Magazine（弹夹，扁平长条形弹匣，一侧平直，常可见排列的弹壳或供弹口）。这个物体是哪一类？只回答类名。",
+   "raw": "Grenade（手雷）",
+   "parsed": "Grenade"
+  },
+  {
+   "variant": "4_放大的裁剪+GS提示（换证据）",
+   "image": "cand2_wide.png",
+   "prompt": "仔细看这个物体的形状：烟雾弹（Smokegrenade）是圆柱形容器，常带绿色环带；手雷（Grenade）是小型椭球体。这个物体是哪一类？只回答 Smokegrenade 或 Grenade。",
+   "raw": "这个物体是 Smokegrenade。\n\n根据提供的图片，我们可以看到一个圆柱形的容器带有绿色环带，这与烟雾弹的典型外观相符。手雷通常呈小型椭球体形状，而图中所示的物体明显是一个圆柱形容器，因此可以确定这是一个烟雾弹（Smokegrenade）。",
+   "parsed": "Smokegrenade"
+  },
+  {
+   "variant": "5_放大的裁剪+四选一提示（换证据）",
+   "image": "cand2_wide.png",
+   "prompt": "这是军用物资，四选一：Smokegrenade（烟雾弹，圆柱形容器，常带绿色环带）、Grenade（手雷，小型椭球体，整体圆润带网格状防滑纹）、Torch（军用手电筒，细长圆柱形，一端有尾盖或按钮）、Magazine（弹夹，扁平长条形弹匣，一侧平直，常可见排列的弹壳或供弹口）。这个物体是哪一类？只回答类名。",
+   "raw": "手雷",
+   "parsed": null
+  },
+  {
+   "variant": "6_两件同图+中性两问（换问法）",
+   "image": "cand_pair.png",
+   "prompt": "图中左右各有一件物体。请分别判断它们的类别，类别只能是 Grenade、Magazine、Smokegrenade、Torch。只输出两行：左边=类名，右边=类名。",
+   "raw": "左边=Grenade，右边=Smokegrenade",
+   "parsed": "Smokegrenade"
+  },
+  {
+   "variant": "7_两件同图+排除问法（换问法·半引导，仅参考）",
+   "image": "cand_pair.png",
+   "prompt": "图中左右各有一件物体，它们不是同一类。其中一件不是烟雾弹（Smokegrenade）。请指出哪一件不是烟雾弹，并给出它的类别。只输出：左边/右边 + 类名。",
+   "raw": "左边/手榴弹",
+   "parsed": null
+  }
+ ]
+}

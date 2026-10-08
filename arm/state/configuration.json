@@ -1,0 +1,8 @@
+{
+  "package": "/root/tcei_final_v2_23/tcei_260920v2",
+  "runtime": "dev_v7_t1_30",
+  "display": ":20.0",
+  "runs": "/root/gpufree-data/tcei_260920v2",
+  "instance_id": "gpufree-container-01b232885b01",
+  "free_bytes": 13447643136
+}

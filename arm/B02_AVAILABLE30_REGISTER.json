@@ -1,0 +1,231 @@
+{
+  "batch": "B02_available_asset_official30_v2",
+  "status": "registered_not_executed",
+  "count": 30,
+  "instructions": [
+    "抓取左上方的烟雾弹，放到左侧传送带",
+    "抓取右下方的弹夹，放到右侧传送带",
+    "抓取最左方的军用手电筒，放到左侧传送带",
+    "抓取手雷，放到右侧传送带",
+    "抓取剩余的物品，放到左侧传送带"
+  ],
+  "task_source": "official_example",
+  "cases": [
+    {
+      "case_id": "official_random_01",
+      "seed": 2026092001,
+      "planner_seed": 2026102001,
+      "sha256": "734a328f896d2c97d17b2a3a169fab1f97c3d5e891b6a8ad17410e8271df6fd5",
+      "case_file": "cases_official30_v2/official_random_01.json"
+    },
+    {
+      "case_id": "official_random_02",
+      "seed": 2026092002,
+      "planner_seed": 2026102002,
+      "sha256": "51899a1be40fb95b17876cc80b17050138bcde94ef56af488117d2adf282b024",
+      "case_file": "cases_official30_v2/official_random_02.json"
+    },
+    {
+      "case_id": "official_random_03",
+      "seed": 2026092003,
+      "planner_seed": 2026102003,
+      "sha256": "47f656590c658ef28f20eaf93427c77fed8aeba9ee97d12025a8b5ea89d3e357",
+      "case_file": "cases_official30_v2/official_random_03.json"
+    },
+    {
+      "case_id": "official_random_04",
+      "seed": 2026092004,
+      "planner_seed": 2026102004,
+      "sha256": "141eec67e3ae03774cff10b7d4479a1115de07b9dec496d2598f1397c0760dc8",
+      "case_file": "cases_official30_v2/official_random_04.json"
+    },
+    {
+      "case_id": "official_random_05",
+      "seed": 2026092005,
+      "planner_seed": 2026102005,
+      "sha256": "d05e2210e70543045e8f2964dce4e7d521331f16c89234d174332cfcf8c34581",
+      "case_file": "cases_official30_v2/official_random_05.json"
+    },
+    {
+      "case_id": "official_random_06",
+      "seed": 2026092006,
+      "planner_seed": 2026102006,
+      "sha256": "9d811d5673a20caad405e29264b36f1d1fd59019d3e3bdd76a7cc8af9701636d",
+      "case_file": "cases_official30_v2/official_random_06.json"
+    },
+    {
+      "case_id": "official_random_07",
+      "seed": 2026092007,
+      "planner_seed": 2026102007,
+      "sha256": "bd991af223c42ffe0000a32136d72afd10298dc6733031c9af98b1d0d4b38336",
+      "case_file": "cases_official30_v2/official_random_07.json"
+    },
+    {
+      "case_id": "official_random_08",
+      "seed": 2026092008,
+      "planner_seed": 2026102008,
+      "sha256": "552457eed593915b126d75516b6931ee4389fdb5fe0121dd723595a162886248",
+      "case_file": "cases_official30_v2/official_random_08.json"
+    },
+    {
+      "case_id": "official_random_09",
+      "seed": 2026092009,
+      "planner_seed": 2026102009,
+      "sha256": "c77397083a8d3bbc15b8149c62e3326abd020ba92a442f5e6cbc657e012a18b0",
+      "case_file": "cases_official30_v2/official_random_09.json"
+    },
+    {
+      "case_id": "official_random_10",
+      "seed": 2026092010,
+      "planner_seed": 2026102010,
+      "sha256": "90a4083037438b6643422548cd1c6e6f53d6b802b19f9b2ab4cf7fc4156fc329",
+      "case_file": "cases_official30_v2/official_random_10.json"
+    },
+    {
+      "case_id": "official_random_11",
+      "seed": 2026092011,
+      "planner_seed": 2026102011,
+      "sha256": "38dbbeb37a804368fed47d79c66f3b61ad7bad56bf00a7950fdf3c07b4577c12",
+      "case_file": "cases_official30_v2/official_random_11.json"
+    },
+    {
+      "case_id": "official_random_12",
+      "seed": 2026092012,
+      "planner_seed": 2026102012,
+      "sha256": "326dc93d4120b76d5be35c2e82af45701acaccef5802e25a02b383bf42f0b012",
+      "case_file": "cases_official30_v2/official_random_12.json"
+    },
+    {
+      "case_id": "official_random_13",
+      "seed": 2026092013,
+      "planner_seed": 2026102013,
+      "sha256": "2189196cc4ff271f00a34de1fdd7bbb208e898881f38594839b9d45584032128",
+      "case_file": "cases_official30_v2/official_random_13.json"
+    },
+    {
+      "case_id": "official_random_14",
+      "seed": 2026092014,
+      "planner_seed": 2026102014,
+      "sha256": "787964358a5c7fe6cc3239d533623141ecbaa98ebe2e30582f06669990500b2b",
+      "case_file": "cases_official30_v2/official_random_14.json"
+    },
+    {
+      "case_id": "official_random_15",
+      "seed": 2026092015,
+      "planner_seed": 2026102015,
+      "sha256": "069cb7299073c19c8a79d39fdfb48a6f6ab01ef4c1eed2a2dc48c96345376e62",
+      "case_file": "cases_official30_v2/official_random_15.json"
+    },
+    {
+      "case_id": "official_random_16",
+      "seed": 2026092016,
+      "planner_seed": 2026102016,
+      "sha256": "0c6488e84a6c78dc452fc2d7927d794004cf013160ae09853698df013f130799",
+      "case_file": "cases_official30_v2/official_random_16.json"
+    },
+    {
+      "case_id": "official_random_17",
+      "seed": 2026092017,
+      "planner_seed": 2026102017,
+      "sha256": "7c77c6cce8ac20bc1a65c4f26de330d3d2df4ac27a343ede8c6a2eaa5926ccdf",
+      "case_file": "cases_official30_v2/official_random_17.json"
+    },
+    {
+      "case_id": "official_random_18",
+      "seed": 2026092018,
+      "planner_seed": 2026102018,
+      "sha256": "fb7ad4e7eb1210f3b70ec5f44094a0123c65f7bccfd637eafe5dd68ab5ebb548",
+      "case_file": "cases_official30_v2/official_random_18.json"
+    },
+    {
+      "case_id": "official_random_19",
+      "seed": 2026092019,
+      "planner_seed": 2026102019,
+      "sha256": "f883b3e11b772e16184d9b58c4bbcc0128b24afc30f90ca6d33445eba78a8ff1",
+      "case_file": "cases_official30_v2/official_random_19.json"
+    },
+    {
+      "case_id": "official_random_20",
+      "seed": 2026092020,
+      "planner_seed": 2026102020,
+      "sha256": "11eb03081450160f9cb2514001c295484b0358fa26ef2db40973bdb27e8db1ba",
+      "case_file": "cases_official30_v2/official_random_20.json"
+    },
+    {
+      "case_id": "official_random_21",
+      "seed": 2026092021,
+      "planner_seed": 2026102021,
+      "sha256": "e360256388b3d017baae42aba71c2216671640892465c5dbcede17cfa89ab85c",
+      "case_file": "cases_official30_v2/official_random_21.json"
+    },
+    {
+      "case_id": "official_random_22",
+      "seed": 2026092022,
+      "planner_seed": 2026102022,
+      "sha256": "58cfd1ffe7e47740e3b4c09eaf878c60ca2d69d8aa172dfa2aef4f538cec7bcb",
+      "case_file": "cases_official30_v2/official_random_22.json"
+    },
+    {
+      "case_id": "official_random_23",
+      "seed": 2026092023,
+      "planner_seed": 2026102023,
+      "sha256": "a88ac1c24fa8dba6c7ae0a3fd12896ff80d448c03fd6dcf3428fb88f4b7d2f88",
+      "case_file": "cases_official30_v2/official_random_23.json"
+    },
+    {
+      "case_id": "official_random_24",
+      "seed": 2026092024,
+      "planner_seed": 2026102024,
+      "sha256": "da794a233ff40eb7800da8cec888de4a4d3e33ffb33773a570707692d36963e2",
+      "case_file": "cases_official30_v2/official_random_24.json"
+    },
+    {
+      "case_id": "official_random_25",
+      "seed": 2026092025,
+      "planner_seed": 2026102025,
+      "sha256": "7bdb8e9be4f2e80d6bce2ff5d96057c0ecc96bf0c33ba5f00a90d3d018603f50",
+      "case_file": "cases_official30_v2/official_random_25.json"
+    },
+    {
+      "case_id": "official_random_26",
+      "seed": 2026092026,
+      "planner_seed": 2026102026,
+      "sha256": "9d40c877287d90cb1680662f9237bbe83093d88452ffb64b72d8b73dfd752026",
+      "case_file": "cases_official30_v2/official_random_26.json"
+    },
+    {
+      "case_id": "official_random_27",
+      "seed": 2026092027,
+      "planner_seed": 2026102027,
+      "sha256": "8e237c6535b4157ababdccd47973d5348e1b73a0dee8ccf4a774ade702dbaae3",
+      "case_file": "cases_official30_v2/official_random_27.json"
+    },
+    {
+      "case_id": "official_random_28",
+      "seed": 2026092028,
+      "planner_seed": 2026102028,
+      "sha256": "6010dfe34493186a88a5de706787ec6a7038d5c815d6c8aa5c70bc534f4381dc",
+      "case_file": "cases_official30_v2/official_random_28.json"
+    },
+    {
+      "case_id": "official_random_29",
+      "seed": 2026092029,
+      "planner_seed": 2026102029,
+      "sha256": "08f849cfa010592ccea80b87b13977f8cdb05af726a0f821b527ad1264e48279",
+      "case_file": "cases_official30_v2/official_random_29.json"
+    },
+    {
+      "case_id": "official_random_30",
+      "seed": 2026092030,
+      "planner_seed": 2026102030,
+      "sha256": "2fcaf64c4f1aedf4addd9fb622f4d5c34541acb74a431c902faa8265833021d0",
+      "case_file": "cases_official30_v2/official_random_30.json"
+    }
+  ],
+  "runtime_manifest_sha256": null,
+  "scope": "new random30 requested by user; available official assets and published example only",
+  "not_full_B02_acceptance_reason": "CompressedFood and other official material combinations unavailable",
+  "sampling_rule": "preregistered image quadrants with margins, no execution-result based resampling",
+  "preregistered_runtime_note": "Scene-only registration before native tests; no task results used to select layouts",
+  "runtime_binding": "batch supervisor captures and enforces one frozen runtime before the first execution"
+}

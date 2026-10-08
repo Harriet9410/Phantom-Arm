@@ -1,0 +1,8 @@
+[INFO] [1791449404.745878]: nine scan class audit: [{"scan_id": "bb87672e7f", "proposal_index": 1, "pixel": [671.5, 349.5], "scan_class": "Torch", "old_class": "Torch", "old_pending": null, "stored_class": "Torch", "full": true, "decision": "same"}, {"scan_id": "bb87672e7f", "proposal_index": 2, "pixel": [901.2853778564987, 382.3039911247454], "scan_class": "Torch", "old_class": null, "stored_class": "Torch", "full": true, "decision": "new"}]
+[INFO] [1791449404.747578]: nine scan: classified 2/2 proposals, memory 4 (settled 1, cheap 0)
+[INFO] [1791449405.326772]: frame=4110 candidates=1 sync=0.000s | 1:Torch:confirmed:1232
+[INFO] [1791449415.430860]: frame=4201 candidates=1 sync=0.000s | 1:Torch:confirmed:1232
+[INFO] [1791449424.573129]: nine scan conflict images: {"scan_id": "e9e8f1c856", "directory": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_stack/events/classification_conflicts", "images": ["e9e8f1c856_raw.jpg", "e9e8f1c856_numbered.jpg"], "proposals": [{"bbox": [641, 339, 697, 361], "pixel": [671.5, 349.5]}]}
+[INFO] [1791449424.576594]: nine scan class audit: [{"scan_id": "e9e8f1c856", "proposal_index": 1, "pixel": [671.5, 349.5], "scan_class": "Smokegrenade", "old_class": "Torch", "old_pending": null, "stored_class": "Torch", "full": true, "decision": "pending_conflict", "evidence_images": ["e9e8f1c856_raw.jpg", "e9e8f1c856_numbered.jpg"]}]
+[INFO] [1791449424.577307]: nine scan: classified 1/1 proposals, memory 3 (settled 1, cheap 0)
+[INFO] [1791449425.433512]: frame=4292 candidates=1 sync=0.000s | 1:Torch:confirmed:1232

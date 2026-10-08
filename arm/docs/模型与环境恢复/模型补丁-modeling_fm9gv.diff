@@ -1,0 +1,19 @@
+# FM9G4B-V 模型补丁 —— input_ids 重复传参修复
+# 症状: TypeError: FM9GForCausalLM(...) got multiple values for keyword argument 'input_ids'
+# 作用: 模型 forward 内调用 self.llm(...) 前，清理会重复传入的 4 个 kwargs
+# 应用: 见同目录 apply_patch.sh（会自动备份 .bak_prepatch 并清 transformers 模块缓存）
+# 校验: 应用后 modeling_fm9gv.py 应为 15877 B / sha256 b6f28878b425ea6b...
+# 来源: 2026-09-25 在实例 /root/inference/FM9G4B-V/ 上直接修改（原版备份同目录）
+
+--- a/modeling_fm9gv.py.bak_prepatch
++++ b/modeling_fm9gv.py
+@@ -174,6 +174,9 @@
+         if position_ids.dtype != torch.int64:
+             position_ids = position_ids.long()
+ 
++        kwargs.pop("_input_ids_guard", None)
++        for _k in ("input_ids", "position_ids", "inputs_embeds"):
++            kwargs.pop(_k, None)
+         return self.llm(
+             input_ids=None,
+             position_ids=position_ids,

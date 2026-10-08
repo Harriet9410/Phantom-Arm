@@ -1,0 +1,45 @@
+# 本机不推送
+local/
+.playwright-cli/
+.vscode/
+.idea/
+
+# 编译产物
+**/build/
+**/devel/
+**/logs/
+.catkin_tools/
+*.o
+*.so
+*.a
+*.user
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 权重与大输出
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.safetensors
+outputs/
+runs/
+wandb/
+tensorboard/
+
+# 日志与临时
+*.log
+nohup.out
+console-*.log
+page-*.yml
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 大文件存档（不入库）
+9.29存档.zip

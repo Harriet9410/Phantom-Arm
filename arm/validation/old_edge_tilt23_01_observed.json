@@ -1,0 +1,17 @@
+{
+  "batch": "old_edge_tilt23_01",
+  "runtime": "dev_v7_t1_23",
+  "manifest_sha256": "d30e305c4265573b1703bfeaf8fada90f6f14abd94330367a42ccd526b666a4b",
+  "remote_campaign": "/root/gpufree-data/tcei_tilt23/old_edge_tilt23_01/campaign.json",
+  "status": "completed",
+  "preserves_prior_failed_attempts": true,
+  "results": [
+    {"case":24,"seed":2026091924,"status":"succeeded","elapsed_seconds":272.7810011394322,"automatic_placements":5,"independent_placements":5,"physical_complete":true,"physical_descents":5,"verified_grasps":5,"candidate_attempts":9,"tilt_fallback_events":1,"tilted_task":"Magazine to left","empty_grasps":0,"holding_losses":0,"stop_code":0},
+    {"case":26,"seed":2026091926,"status":"completed_with_unverified_placements","elapsed_seconds":284.09230241179466,"automatic_placements":4,"independent_placements":5,"physical_complete":true,"physical_descents":5,"verified_grasps":5,"candidate_attempts":13,"tilt_fallback_events":1,"tilted_task":"Torch to right","empty_grasps":0,"holding_losses":0,"stop_code":0}
+  ],
+  "all_eight_historical_scenes_final_physical_complete": true,
+  "all_eight_scope": "six completed with22 plus two retested with23; not a single-version eight-round pass",
+  "initial22_batch_full_physical_success": "6/8",
+  "remaining_automatic_verification_gaps": "two in old09 on22, one in old26 on23",
+  "new_random30_executed": 0
+}

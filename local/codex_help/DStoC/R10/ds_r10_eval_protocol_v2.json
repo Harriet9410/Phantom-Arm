@@ -1,0 +1,126 @@
+{
+  "_doc": "R10 训练前冻结：完整双视图分类评估协议（Codex 撰写）。旧 R9 协议原文件保留。",
+  "protocol_id": "r10_v0_class4_v2",
+  "author": "Codex",
+  "created": "2026-10-09",
+  "frozen": true,
+  "v0_scope": {
+    "classes": [
+      "Grenade",
+      "Magazine",
+      "Smokegrenade",
+      "Torch"
+    ],
+    "excluded_by_user_requirement": [
+      "CompressedFood"
+    ],
+    "note": "用户明确规定 V0 不考虑 CompressedFood。历史五类结果（5/8/27）仅作对照，不构成 V0 基线。",
+    "objects_in_scene": 5,
+    "note_two_smoke_bombs": "场景五件实物中两件都是烟雾弹（object_id: smoke_bomb / smoke_bomb_01）；二者同属 Smokegrenade 类别，不是两个类别。"
+  },
+  "prompt": {
+    "text": "这是军用物资分类任务。可选类别只有：Grenade（手雷）、Magazine（弹夹）、Smokegrenade（烟雾弹）、Torch（军用手电筒）。只输出一个 JSON 对象，形如 {\"class\":\"类名\"}，类名必须是上面之一；实在无法确定时输出 {\"class\":\"unknown\"}。不要输出任何其他文字、解释或标点。",
+    "unknown_token_required": true,
+    "note": "提示必须逐字使用以上文本；任何改动都构成新协议（新 protocol_id + 重新冻结）。"
+  },
+  "parsing": {
+    "rule": "仅允许完整 JSON 对象或完整三反引号围栏；严格拒绝重复 class 键、额外键、缺键和非字符串值。",
+    "protocol_failure_conditions": [
+      "非 JSON（含截断、多余文字）",
+      "键集合不等于 ['class']（缺键或额外字段）",
+      "class 值不是字符串",
+      "class 值不在允许类别且不等于 'unknown'（越界类名）",
+      "重复 JSON 键（包括重复 class）"
+    ],
+    "unknown_conditions": [
+      "class 值（大小写不敏感）等于 'unknown'"
+    ],
+    "note": "越界类名计入 protocol_failure，不计入 wrong_known；两者必须分开统计。"
+  },
+  "two_view_fusion": {
+    "view_margins": [
+      0.25,
+      0.85
+    ],
+    "crop_basis": "原图（非编号图）按候选 bbox 外扩 margin 比例裁剪",
+    "fusion_rule": "每次观测必须有 0.25 与 0.85 两视图；任一视图协议失败或缺失，则观测为 protocol_failure；两视图均为同一已知类别才输出该类别；其他情况为 unknown_or_undecided。",
+    "undecided_accounting": "显式 unknown、已知类别冲突均计 unknown_or_undecided，并保留 reason；不得与 protocol_failure 混算。",
+    "marker": "视觉输入参与计算由 R10 冒烟在关闭 dropout、固定文字和答案、不同源图的对照中验证；分类结果相同不等于图像未参与。",
+    "required_view_margins": [
+      0.25,
+      0.85
+    ],
+    "missing_view": "protocol_failure"
+  },
+  "counting": {
+    "fields": [
+      "correct_known",
+      "wrong_known",
+      "unknown_or_undecided",
+      "protocol_failure"
+    ],
+    "mutually_exclusive": true,
+    "per_object_aggregation_required": true,
+    "note": "除逐次观测外，必须同时给出按 object_id 汇总的结果（同一物体多次扫描）。",
+    "unit": "(case,scan,object_id) 观测；先双视图融合再计数"
+  },
+  "split": {
+    "train_scenes": [
+      "scramble_01",
+      "scramble_02"
+    ],
+    "holdout_scenes": [
+      "scramble_03",
+      "scramble_04"
+    ],
+    "scene_level_leak_free": true,
+    "object_identity_leak_present": true,
+    "object_identity_note": "Flashlight / hand_grenade / Magazines / smoke_bomb / smoke_bomb_01 五个 object_id 同时出现在训练与留出场景。因此留出集只验证『同一资产换摆位』，不验证陌生实物。",
+    "no_holdout_tuning": true
+  },
+  "generation": {
+    "max_new_tokens": 32,
+    "sampling": false,
+    "num_beams": 1,
+    "note": "与在线分类分支一致；不得为改善留出成绩修改。"
+  },
+  "adapter_switching": {
+    "old_adapter": "/root/sft_v2/outputs/qlora_crop/step_27000",
+    "old_adapter_role": "定位用；分类分支当前以 grounding=False 关闭它",
+    "new_adapter_dir": "/root/sft_v2/outputs/r10_cls_lora_v2",
+    "new_adapter_base": "FM9G4B-V 基座（不是续训旧 adapter）",
+    "enable_requirement": "仅改路径不生效：分类分支必须加载新 adapter 且不再以 grounding=False 关闭它。",
+    "must_not_overwrite_old": true
+  },
+  "checkpoint_naming": {
+    "pattern": "step_<总优化步数>",
+    "example": "step_712",
+    "sidecar": "train_config.json（含 target_paths / trainable_audit / prompt / classes / 协议 SHA）"
+  },
+  "acceptance_for_r10": {
+    "holdout_gate": "四类、五件物体在在线调用预算内正确识别；错误已知类别 = 0；协议失败 = 0。",
+    "online_gate": "接入后整轮五条任务按真实物理结果完成（『物体都上带』不算通过）。",
+    "note": "离线达标只说明可以进入在线验收，不等于 V0 成功。",
+    "offline_gate": {
+      "expected_observations": 56,
+      "expected_case_object_pairs": 10,
+      "min_correct_known": 51,
+      "max_wrong_known": 0,
+      "max_protocol_failure": 0,
+      "min_correct_known_per_case_object": 1,
+      "note": "51/56 即至少 90% 观测能在两视图一致时正确判类；两场景各五件实物至少有一次正确已知。此门只允许上线候选验证，不保证整轮。",
+      "chronology_limit": "现存 scan ID 不是时间顺序；离线数据不判最早两次扫描。在线运行按事件时间与指令预算验收。"
+    }
+  },
+  "immutability": {
+    "rule": "本文件的 SHA256 即协议版本；脚本与评估必须引用本文件并记录其哈希。",
+    "change_policy": "任何字段变动都产出新 protocol_id 与新的冻结文件，旧文件保留。"
+  },
+  "dataset": {
+    "path": "/root/gpufree-data/r10_dataset/manifest.json",
+    "manifest_sha256": "b0529982ddf3448c0934fbd2186dc3342706a3301c7f7fee9872156f9182fc9c",
+    "observations": 145,
+    "crops": 290,
+    "change_from_r9": "移除训练数据生成器的 24px 最小裁剪过滤，使 31 次 Torch 观测也有 0.25 与 0.85 两视图；原 R9 数据集不变"
+  }
+}

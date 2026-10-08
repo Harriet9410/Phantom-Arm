@@ -1,0 +1,1937 @@
+{
+ "declared_classes": [
+  "CompressedFood",
+  "Grenade",
+  "Magazine",
+  "Smokegrenade",
+  "Torch"
+ ],
+ "adapter": "wrapped_and_disabled",
+ "model": "/root/inference/FM9G4B-V",
+ "max_new_tokens": 32,
+ "view_margins": [
+  0.25,
+  0.85
+ ],
+ "sample": {
+  "scramble_01": [
+   "9b0d586878",
+   "644ceabb3c"
+  ],
+  "scramble_02": [
+   "3b2a35810c",
+   "fd1fb8f0f8"
+  ],
+  "scramble_03": [
+   "1a81b4d6b1",
+   "ec1f1dea7a"
+  ],
+  "scramble_04": [
+   "0a97d261cc",
+   "a270e75518"
+  ]
+ },
+ "assoc_tol_px": 30.0,
+ "observations_planned": 40,
+ "observations_used": 40,
+ "arms": {
+  "two_view": {
+   "correct_known": 5,
+   "wrong_known": 8,
+   "unknown": 27,
+   "protocol_failures": 0,
+   "confusion": {
+    "Grenade -> Grenade": 2,
+    "Grenade -> unknown": 6,
+    "Magazine -> unknown": 8,
+    "Smokegrenade -> Grenade": 8,
+    "Smokegrenade -> unknown": 8,
+    "Torch -> Torch": 3,
+    "Torch -> unknown": 5
+   }
+  },
+  "marked_full": {
+   "correct_known": 1,
+   "wrong_known": 18,
+   "unknown": 21,
+   "protocol_failures": 0,
+   "confusion": {
+    "Grenade -> CompressedFood": 3,
+    "Grenade -> Grenade": 1,
+    "Grenade -> unknown": 4,
+    "Magazine -> CompressedFood": 2,
+    "Magazine -> Grenade": 2,
+    "Magazine -> unknown": 4,
+    "Smokegrenade -> CompressedFood": 7,
+    "Smokegrenade -> unknown": 9,
+    "Torch -> CompressedFood": 1,
+    "Torch -> Grenade": 3,
+    "Torch -> unknown": 4
+   }
+  }
+ },
+ "per_case_coverage": {
+  "scramble_01": {
+   "observations": 10,
+   "two_view_known": 4,
+   "marked_full_known": 6
+  },
+  "scramble_02": {
+   "observations": 10,
+   "two_view_known": 3,
+   "marked_full_known": 4
+  },
+  "scramble_03": {
+   "observations": 10,
+   "two_view_known": 2,
+   "marked_full_known": 2
+  },
+  "scramble_04": {
+   "observations": 10,
+   "two_view_known": 4,
+   "marked_full_known": 7
+  }
+ },
+ "rows": [
+  {
+   "case": "scramble_01",
+   "scan": "9b0d586878",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/9b0d586878_raw.jpg",
+   "bbox": [
+    465,
+    174,
+    522,
+    196
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 21.8,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 1414,
+       "sha16": "5bdd286466d33230",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 565,
+       "sha16": "c117df34b921c34e",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 730,
+     "sha16": "2eb1d388ac1e0f7d",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "9b0d586878",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/9b0d586878_raw.jpg",
+   "bbox": [
+    462,
+    341,
+    525,
+    356
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 19.7,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 508,
+       "sha16": "62d3be3e8a7818a5",
+       "parse": "ok",
+       "class": "Torch"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 501,
+       "sha16": "e93d039250ff31d4",
+       "parse": "ok",
+       "class": "Torch"
+      }
+     ],
+     "decided": "Torch"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 793,
+     "sha16": "1b267d0ab728536a",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "9b0d586878",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/9b0d586878_raw.jpg",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 4.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 459,
+       "sha16": "e175b490e351a9bb",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 455,
+       "sha16": "c1ffeab687b2b075",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 788,
+     "sha16": "8f476802acdb6ce8",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "9b0d586878",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/9b0d586878_raw.jpg",
+   "bbox": [
+    773,
+    185,
+    823,
+    209
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 14.2,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 458,
+       "sha16": "4f7735fbaff6945b",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 571,
+       "sha16": "dc60c723b6356e45",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 838,
+     "sha16": "9d72ecf17c44e0b0",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "9b0d586878",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/9b0d586878_raw.jpg",
+   "bbox": [
+    767,
+    332,
+    823,
+    374
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 12.0,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 504,
+       "sha16": "fc4bb7703d63f824",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 497,
+       "sha16": "ecd186e3f36c1000",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 724,
+     "sha16": "e0deac8dd3ac7c9a",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "644ceabb3c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/644ceabb3c_raw.jpg",
+   "bbox": [
+    465,
+    174,
+    522,
+    196
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 21.8,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 636,
+       "sha16": "634ff5a63d049eb5",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 589,
+       "sha16": "2c8c2406fe361320",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 751,
+     "sha16": "b8a3c67531fbe6c1",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "644ceabb3c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/644ceabb3c_raw.jpg",
+   "bbox": [
+    462,
+    341,
+    525,
+    356
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 19.7,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 558,
+       "sha16": "2328bebbc6e7f237",
+       "parse": "ok",
+       "class": "Torch"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 545,
+       "sha16": "7c307689392cb30e",
+       "parse": "ok",
+       "class": "Torch"
+      }
+     ],
+     "decided": "Torch"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"Grenade\"}",
+     "ms": 862,
+     "sha16": "6ca0eeb0a156b616",
+     "parse": "ok",
+     "class": "Grenade",
+     "decided": "Grenade"
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "644ceabb3c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/644ceabb3c_raw.jpg",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 4.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 483,
+       "sha16": "afa5641a2857b0b4",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 491,
+       "sha16": "4c49b3eea158b7c7",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 842,
+     "sha16": "662c633bce21f09c",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "644ceabb3c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/644ceabb3c_raw.jpg",
+   "bbox": [
+    773,
+    185,
+    823,
+    209
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 14.2,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 488,
+       "sha16": "f0c990b39b830eca",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 607,
+       "sha16": "89887b63d26697ae",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"Grenade\"}",
+     "ms": 841,
+     "sha16": "1ffd2b946dce0bd2",
+     "parse": "ok",
+     "class": "Grenade",
+     "decided": "Grenade"
+    }
+   }
+  },
+  {
+   "case": "scramble_01",
+   "scan": "644ceabb3c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_01_stack/events/classification_conflicts/644ceabb3c_raw.jpg",
+   "bbox": [
+    767,
+    332,
+    823,
+    374
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 12.0,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 500,
+       "sha16": "645696e9c7d777df",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 496,
+       "sha16": "408a0319fee939da",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 734,
+     "sha16": "3d98f3a5c3565720",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "3b2a35810c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/3b2a35810c_raw.jpg",
+   "bbox": [
+    465,
+    174,
+    522,
+    196
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 21.8,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 645,
+       "sha16": "8cc9411baaaf66bf",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 606,
+       "sha16": "ead1877ef44f430a",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 749,
+     "sha16": "4bdf4efac9a56e86",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "3b2a35810c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/3b2a35810c_raw.jpg",
+   "bbox": [
+    466,
+    332,
+    522,
+    374
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 19.8,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"CompressedFood\"}",
+       "ms": 595,
+       "sha16": "bd8a9af2b769fd8b",
+       "parse": "ok",
+       "class": "CompressedFood"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 497,
+       "sha16": "098223167a54de3d",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 710,
+     "sha16": "a484da428d9e41a1",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "3b2a35810c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/3b2a35810c_raw.jpg",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 4.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 490,
+       "sha16": "83c6d118376fc66f",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 505,
+       "sha16": "1221e535c720f9cf",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 828,
+     "sha16": "1afb20903d0b0942",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "3b2a35810c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/3b2a35810c_raw.jpg",
+   "bbox": [
+    772,
+    355,
+    823,
+    380
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 15.6,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 486,
+       "sha16": "aac8f88652a6b205",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 490,
+       "sha16": "d4929fb089f4e8da",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 839,
+     "sha16": "e610335e13a0d788",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "3b2a35810c",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/3b2a35810c_raw.jpg",
+   "bbox": [
+    762,
+    179,
+    825,
+    194
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 11.7,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 581,
+       "sha16": "84f9ee71b4755e9a",
+       "parse": "ok",
+       "class": "Torch"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 486,
+       "sha16": "be421bf661495258",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 713,
+     "sha16": "a21fd27a892f6533",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "fd1fb8f0f8",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/fd1fb8f0f8_raw.jpg",
+   "bbox": [
+    465,
+    174,
+    522,
+    196
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 21.8,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 624,
+       "sha16": "bf6485072e578174",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 799,
+       "sha16": "a893ff8c2d4d1ab3",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 718,
+     "sha16": "2b57be14a32f6e46",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "fd1fb8f0f8",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/fd1fb8f0f8_raw.jpg",
+   "bbox": [
+    466,
+    332,
+    522,
+    374
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 19.8,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"CompressedFood\"}",
+       "ms": 617,
+       "sha16": "dcf9b1039e6a5fd9",
+       "parse": "ok",
+       "class": "CompressedFood"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 479,
+       "sha16": "1ac5527924bbebae",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 834,
+     "sha16": "c99313318d9d5ee0",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "fd1fb8f0f8",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/fd1fb8f0f8_raw.jpg",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 4.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 509,
+       "sha16": "b4d77245be751294",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 491,
+       "sha16": "f9309b769e6ef18b",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 799,
+     "sha16": "84648e22b6a5d72f",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "fd1fb8f0f8",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/fd1fb8f0f8_raw.jpg",
+   "bbox": [
+    772,
+    355,
+    823,
+    380
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 15.6,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 454,
+       "sha16": "e17b81839961af59",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 449,
+       "sha16": "a07ca59148e3d07e",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 677,
+     "sha16": "bfad0efe31447a16",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_02",
+   "scan": "fd1fb8f0f8",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_02_stack/events/classification_conflicts/fd1fb8f0f8_raw.jpg",
+   "bbox": [
+    762,
+    179,
+    825,
+    194
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 11.7,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 504,
+       "sha16": "ccb5091815d486b8",
+       "parse": "ok",
+       "class": "Torch"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 564,
+       "sha16": "57efe38ef1314efb",
+       "parse": "ok",
+       "class": "Torch"
+      }
+     ],
+     "decided": "Torch"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 676,
+     "sha16": "f43b9018928a7ed3",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "1a81b4d6b1",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/1a81b4d6b1_raw.jpg",
+   "bbox": [
+    467,
+    161,
+    522,
+    204
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 20.0,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"CompressedFood\"}",
+       "ms": 555,
+       "sha16": "f03c95bc70cac05e",
+       "parse": "ok",
+       "class": "CompressedFood"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 462,
+       "sha16": "40869ee0fdc5962c",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 676,
+     "sha16": "1b1e4bb53d32e223",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "1a81b4d6b1",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/1a81b4d6b1_raw.jpg",
+   "bbox": [
+    466,
+    337,
+    523,
+    360
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 18.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 446,
+       "sha16": "88c6d00dccc41ec5",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 448,
+       "sha16": "7f315463144be1e5",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 683,
+     "sha16": "754b1b36b3af9a75",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "1a81b4d6b1",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/1a81b4d6b1_raw.jpg",
+   "bbox": [
+    644,
+    341,
+    696,
+    364
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 9.0,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 459,
+       "sha16": "c0d9c306d2a860d5",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 449,
+       "sha16": "a9d590097092d528",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 693,
+     "sha16": "acfe13b253b80df5",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "1a81b4d6b1",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/1a81b4d6b1_raw.jpg",
+   "bbox": [
+    766,
+    174,
+    823,
+    197
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 10.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 556,
+       "sha16": "dde55e550034d29d",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 606,
+       "sha16": "007f3d9ca1f6cdc4",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 700,
+     "sha16": "4ab77440b00992d9",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "1a81b4d6b1",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/1a81b4d6b1_raw.jpg",
+   "bbox": [
+    762,
+    344,
+    826,
+    358
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 12.5,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 465,
+       "sha16": "9c905c5e51e49ffe",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 507,
+       "sha16": "b4b1d9accd8fd4fe",
+       "parse": "ok",
+       "class": "Torch"
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 700,
+     "sha16": "028c14d27797a2e9",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "ec1f1dea7a",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/ec1f1dea7a_raw.jpg",
+   "bbox": [
+    467,
+    161,
+    522,
+    204
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 20.0,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 455,
+       "sha16": "070cec9ae4d5cdb3",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 450,
+       "sha16": "09e59754ef396bc8",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 785,
+     "sha16": "527d9cc7dbc07957",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "ec1f1dea7a",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/ec1f1dea7a_raw.jpg",
+   "bbox": [
+    466,
+    337,
+    523,
+    360
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 18.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 457,
+       "sha16": "f7bd4f069b2ab064",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 552,
+       "sha16": "2220f1369d4f11ce",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 774,
+     "sha16": "6ddbb54ea20034cc",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "ec1f1dea7a",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/ec1f1dea7a_raw.jpg",
+   "bbox": [
+    644,
+    341,
+    696,
+    364
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 9.0,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 448,
+       "sha16": "56d1b49c1de31148",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 444,
+       "sha16": "cff0d5bd5eec197b",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 687,
+     "sha16": "8766e4706d74d584",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "ec1f1dea7a",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/ec1f1dea7a_raw.jpg",
+   "bbox": [
+    766,
+    174,
+    823,
+    197
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 10.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 549,
+       "sha16": "0ada11f51d46cafc",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 552,
+       "sha16": "6b534ba418720670",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 676,
+     "sha16": "cc2589509890e16e",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_03",
+   "scan": "ec1f1dea7a",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand2_192941_scramble_03_stack/events/classification_conflicts/ec1f1dea7a_raw.jpg",
+   "bbox": [
+    762,
+    344,
+    826,
+    358
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 12.5,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 452,
+       "sha16": "b8dec3d2a3cc1ae4",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 452,
+       "sha16": "dd6d5d51acded501",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 688,
+     "sha16": "4f64b86412f0f95e",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "0a97d261cc",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/0a97d261cc_raw.jpg",
+   "bbox": [
+    470,
+    178,
+    522,
+    201
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 28.1,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 555,
+       "sha16": "1a221f4598efae83",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 554,
+       "sha16": "fae854c25ac8d182",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 690,
+     "sha16": "82037b0afdb719c6",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "0a97d261cc",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/0a97d261cc_raw.jpg",
+   "bbox": [
+    465,
+    344,
+    522,
+    367
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 21.5,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 565,
+       "sha16": "c684b7a909654259",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 561,
+       "sha16": "7a42ee02c97001bf",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 683,
+     "sha16": "6c4d7e929698d805",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "0a97d261cc",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/0a97d261cc_raw.jpg",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 4.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 460,
+       "sha16": "226380e95aa3bcba",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 457,
+       "sha16": "1356752dd0cb3195",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 774,
+     "sha16": "234abb10b9a35d0e",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "0a97d261cc",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/0a97d261cc_raw.jpg",
+   "bbox": [
+    767,
+    162,
+    823,
+    204
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 12.2,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"CompressedFood\"}",
+       "ms": 555,
+       "sha16": "7f0242ef8b3717a3",
+       "parse": "ok",
+       "class": "CompressedFood"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 450,
+       "sha16": "3309868a7ab2b582",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"Grenade\"}",
+     "ms": 788,
+     "sha16": "3cdfcbc0c53768b4",
+     "parse": "ok",
+     "class": "Grenade",
+     "decided": "Grenade"
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "0a97d261cc",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/0a97d261cc_raw.jpg",
+   "bbox": [
+    762,
+    344,
+    826,
+    358
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 12.5,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 464,
+       "sha16": "a11faa2004497677",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 458,
+       "sha16": "4d9252e275b260db",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"Grenade\"}",
+     "ms": 788,
+     "sha16": "162512a151f361d8",
+     "parse": "ok",
+     "class": "Grenade",
+     "decided": "Grenade"
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "a270e75518",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/a270e75518_raw.jpg",
+   "bbox": [
+    470,
+    178,
+    522,
+    201
+   ],
+   "truth": "Grenade",
+   "object_id": "hand_grenade",
+   "assoc_px": 28.1,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 571,
+       "sha16": "74b76c3ed319c16e",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 575,
+       "sha16": "3c8560c513d1e596",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 791,
+     "sha16": "7cd4d765ff6f0d1e",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "a270e75518",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/a270e75518_raw.jpg",
+   "bbox": [
+    465,
+    344,
+    522,
+    367
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb",
+   "assoc_px": 21.5,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 561,
+       "sha16": "b3911dcabf613d42",
+       "parse": "ok",
+       "class": "Grenade"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Grenade\"}",
+       "ms": 560,
+       "sha16": "55ec1d4c1cbb8627",
+       "parse": "ok",
+       "class": "Grenade"
+      }
+     ],
+     "decided": "Grenade"
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"unknown\"}",
+     "ms": 679,
+     "sha16": "cd8a6adcda821b73",
+     "parse": "model_reported_unknown",
+     "class": null,
+     "decided": null
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "a270e75518",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/a270e75518_raw.jpg",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "truth": "Smokegrenade",
+   "object_id": "smoke_bomb_01",
+   "assoc_px": 4.4,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 453,
+       "sha16": "73a8bd7a6b939d71",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 446,
+       "sha16": "b28800c51d14ec3b",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"CompressedFood\"}",
+     "ms": 791,
+     "sha16": "9cfc353d7b1f4a55",
+     "parse": "ok",
+     "class": "CompressedFood",
+     "decided": "CompressedFood"
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "a270e75518",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/a270e75518_raw.jpg",
+   "bbox": [
+    767,
+    162,
+    823,
+    204
+   ],
+   "truth": "Magazine",
+   "object_id": "Magazines",
+   "assoc_px": 12.2,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"CompressedFood\"}",
+       "ms": 597,
+       "sha16": "e27e02aa35a04702",
+       "parse": "ok",
+       "class": "CompressedFood"
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 502,
+       "sha16": "be3603eef6d5fa66",
+       "parse": "model_reported_unknown",
+       "class": null
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"Grenade\"}",
+     "ms": 802,
+     "sha16": "c208e94914611a50",
+     "parse": "ok",
+     "class": "Grenade",
+     "decided": "Grenade"
+    }
+   }
+  },
+  {
+   "case": "scramble_04",
+   "scan": "a270e75518",
+   "image": "/root/gpufree-data/tcei_260920v2/b03_r7cand_190538_scramble_04_stack/events/classification_conflicts/a270e75518_raw.jpg",
+   "bbox": [
+    762,
+    344,
+    826,
+    358
+   ],
+   "truth": "Torch",
+   "object_id": "Flashlight",
+   "assoc_px": 12.5,
+   "assoc_note": null,
+   "arms": {
+    "two_view": {
+     "views": [
+      {
+       "margin": 0.25,
+       "raw": "{\"class\":\"unknown\"}",
+       "ms": 459,
+       "sha16": "0d77af7e073a2ea7",
+       "parse": "model_reported_unknown",
+       "class": null
+      },
+      {
+       "margin": 0.85,
+       "raw": "{\"class\":\"Torch\"}",
+       "ms": 510,
+       "sha16": "7116511ebdc3ad53",
+       "parse": "ok",
+       "class": "Torch"
+      }
+     ],
+     "decided": null
+    },
+    "marked_full": {
+     "raw": "{\"class\":\"Grenade\"}",
+     "ms": 787,
+     "sha16": "f6d2235ef78a2bf4",
+     "parse": "ok",
+     "class": "Grenade",
+     "decided": "Grenade"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,3110 @@
+{
+  "created_utc": "2026-09-19T20:44:26.568403+00:00",
+  "layer": "T0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "groups": {
+    "planner_stop": {
+      "modules": [
+        "test_controlled_stop",
+        "test_planning_candidates",
+        "test_sim_control_adapter",
+        "test_kinematic_guard",
+        "test_joint_path",
+        "test_cartesian_path",
+        "test_trajectory_timing"
+      ],
+      "run": 62,
+      "passed": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_duplicate_stop_does_not_reset_timeout_or_target",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_fixed_hold_target_does_not_chase_moving_actual_position",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_invalid_feedback_or_clock_fault_cannot_be_reset",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_measured_motion_revokes_stopped_state",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_reported_mode_still_rejects_high_velocity_at_constant_position",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_request_is_not_a_measured_stop",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_reset_requires_exact_id_and_prior_measurement",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_same_physics_frame_and_wall_wait_do_not_confirm",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_slow_cumulative_drift_cannot_pass_pairwise_check",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_stops_only_after_fresh_stable_physics_frames",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tcp_motion_cannot_be_hidden_by_constant_joints",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_configuration_cannot_change_after_sampling",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_frozen_frames_never_confirm",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_invalid_raw_velocity_is_not_hidden",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_oscillation_cannot_be_averaged_away",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_real_motion_is_rejected_even_if_reported_velocity_is_zero",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_requires_sufficient_physics_rate",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_skipped_physics_step_faults",
+          "status": "passed"
+        },
+        {
+          "id": "test_controlled_stop.ControlledStopTests.test_tgs_substep_velocity_bias_preserved_but_full_step_motion_measured",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_candidates.PlanningCandidatesTests.test_changed_start_target_orientation_or_id_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_candidates.PlanningCandidatesTests.test_finite_diverse_seeds_preserve_existing_group",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_candidates.PlanningCandidatesTests.test_held_unwind_and_false_ik_success_are_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_candidates.PlanningCandidatesTests.test_orientation_not_relaxed",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_candidates.PlanningCandidatesTests.test_outside_joint_limits_never_clipped_into_success",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_candidates.PlanningCandidatesTests.test_preview_exact_target_and_start_pass_without_mutation",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_candidates.PlanningCandidatesTests.test_table_rejection_retains_link_and_threshold",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_actual_sdk_tgs_metadata_selects_full_frame_velocity_without_modifying_state",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_cached_approach_does_not_allocate_half_time_to_stationary_prefix",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_diagnostic_publisher_failure_never_prevents_holding_drive",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_drive_failure_is_fault_not_stopped",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_effort_adapter_preserves_validity_and_deduplicates_acquisition_time",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_execute_preview_binds_target_atomically",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_late_or_new_motion_rejected_while_stop_latched",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_native_gripper_audit_does_not_change_official_operation_or_read_object_pose",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_native_gripper_audit_failure_does_not_change_drive_result",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_next_tick_keeps_fixed_target_and_preserves_grip",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_reset_only_after_new_frames_and_clears_residual_goal",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_robot_feedback_pairs_all_finger_joints_to_simulation_clock",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_control_adapter.SimAdapterTests.test_stopping_replaces_accepted_trajectory_with_drive_hold",
+          "status": "passed"
+        },
+        {
+          "id": "test_kinematic_guard.JointLimits.test_bad_orientation_matrix_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_kinematic_guard.JointLimits.test_half_turn_is_detected_even_with_identical_translation",
+          "status": "passed"
+        },
+        {
+          "id": "test_kinematic_guard.JointLimits.test_identical_orientation_has_zero_error",
+          "status": "passed"
+        },
+        {
+          "id": "test_kinematic_guard.JointLimits.test_nonfinite_or_mismatched_input_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_kinematic_guard.JointLimits.test_preserve_existing_turn_when_it_is_closer",
+          "status": "passed"
+        },
+        {
+          "id": "test_kinematic_guard.JointLimits.test_unreachable_joint_interval_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_kinematic_guard.JointLimits.test_wrap_preserves_rotation_and_uses_nearest_valid_angle",
+          "status": "passed"
+        },
+        {
+          "id": "test_joint_path.JointPathTests.test_checks_interior_not_only_endpoints",
+          "status": "passed"
+        },
+        {
+          "id": "test_joint_path.JointPathTests.test_invalid_inputs_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_joint_path.JointPathTests.test_keeps_endpoints_and_sample_spacing",
+          "status": "passed"
+        },
+        {
+          "id": "test_joint_path.JointPathTests.test_start_or_goal_failure_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_cartesian_path.CartesianPathTests.test_branch_flip_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_cartesian_path.CartesianPathTests.test_checks_between_ik_waypoints",
+          "status": "passed"
+        },
+        {
+          "id": "test_cartesian_path.CartesianPathTests.test_missing_or_nonfinite_ik_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_cartesian_path.CartesianPathTests.test_tracks_spatial_line_and_keeps_adjacent_branch",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_duplicate_preview_connection_cannot_stretch_a_straight_route",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_invalid_trajectory_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_joint_path_geometry_is_preserved",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_large_motion_respects_limits",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_short_step_is_faster_without_relaxing_physical_limits",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_small_measured_prefix_and_real_corner_are_retained",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_stationary_connection_has_a_finite_duration",
+          "status": "passed"
+        },
+        {
+          "id": "test_trajectory_timing.Timing.test_stationary_path_is_stationary",
+          "status": "passed"
+        }
+      ]
+    },
+    "mission_ledger": {
+      "modules": [
+        "test_mission_ledger"
+      ],
+      "run": 50,
+      "passed": 50,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_after_deadline_new_grasp_or_delivery_is_not_credited",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_explicit_early_delivery_cannot_override_late_raw_belt_sample",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_malformed_qualified_samples_cannot_be_skipped_for_explicit_time",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_one_deadline_covers_model_inference_retries_and_parking",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_preparation_delivery_verification_and_return_are_distinct",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_qualified_transport_sample_can_establish_timely_delivery_upper_bound",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_release_alone_does_not_backdate_late_delivery_verification",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_release_before_deadline_but_belt_arrival_after_is_not_timely_delivery",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_repeated_start_cannot_extend_competition",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_timely_release_with_late_verification_needs_prior_record",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionClockTests.test_wall_and_monotonic_delivery_claims_must_agree",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_actual_lift_required_contact_bool_is_not_grasp_proof",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_boolean_or_unlifted_drop_claim_does_not_manufacture_physical_failure",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_boolean_semantic_claim_cannot_replace_nine_call_chain",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_camera_confirmed_drop_is_counted_once_after_effective_lift",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_drop_requires_fresh_effective_grasp_before_delivery",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_duplicate_requests_events_and_retries_do_not_increase_score",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_holding_feedback_loss_after_lift_still_needs_independent_drop_proof",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_holding_signal_loss_before_effective_grasp_is_not_physical_drop",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_model_call_after_robot_action_does_not_retroactively_qualify",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_model_evidence_wrong_instruction_or_request_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_new_release_evidence_must_match_object_request_and_release_id",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_readonly_finalization_preserves_operational_failure_and_requires_stop",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_rejected_event_replay_remains_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_task_success_without_physical_evidence_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionEvidenceTests.test_wrong_instance_or_side_does_not_earn_grasp_or_placement",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_delivered_identity_visible_in_source_is_not_silently_excluded",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_explicit_frame_and_stable_lists_must_match_objects",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_forged_complete_scene_with_unknown_class_is_incomplete",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_frame_ids_are_never_promoted_to_persistent_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_missing_does_not_mean_delivered",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_new_frame_id_reuse_does_not_override_persistent_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_newly_uncovered_object_enters_remaining_set",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_partial_observation_does_not_remove_category_candidates",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_remaining_before_unbound_future_explicit_task_is_blocked",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_remaining_retry_cannot_discard_old_missing_target",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_remaining_retry_keeps_delivered_history_and_includes_newly_visible",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_reordering_requires_explicit_mode_and_remaining_still_waits",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_reservation_with_satisfied_dependencies_is_explicit_anomaly",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_reserved_right_target_never_becomes_left_remaining",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_retry_cannot_change_conveyor_or_registered_instruction",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_retry_rebinds_same_identity_not_same_frame_number",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionIdentityTests.test_stale_unknown_ambiguous_or_sensor_issue_blocks_remaining",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionScoreTests.test_custom_or_mismatched_instructions_never_claim_official_points",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionScoreTests.test_effective_grasp_then_drop_is_pending_not_full_points",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionScoreTests.test_empty_complete_remaining_does_not_invent_object_or_score",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.MissionScoreTests.test_official_five_tasks_and_multiobject_remaining_total_only_eighty",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.PendingPlacementTests.test_pending_without_empty_release_proof_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.PendingPlacementTests.test_remaining_binding_excludes_released_pending_object_without_marking_delivered",
+          "status": "passed"
+        },
+        {
+          "id": "test_mission_ledger.PendingPlacementTests.test_visible_pending_object_does_not_silently_join_remaining",
+          "status": "passed"
+        }
+      ]
+    },
+    "controller_contract": {
+      "modules": [
+        "test_controller_contract",
+        "test_controller_execution"
+      ],
+      "run": 50,
+      "passed": 50,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_deadline_blocks_motion_without_resetting_clock",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_explicit_reset_waits_for_matching_fresh_ack",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_longer_motion_requires_more_budget_than_short_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_one_millisecond_remaining_never_publishes_a_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_preview_preserves_legacy_wire_quaternion_exactly",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_regular_motion_preserves_same_wire_and_uses_no_preview",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_repeated_stop_requests_keep_the_same_id",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_requested_or_wrong_id_never_counts_as_stopped",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_stop_latch_blocks_new_motion_before_any_publish",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_stop_wait_still_operates_after_deadline_or_cancellation",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_contract.ControllerContractTests.test_subscriber_wait_cannot_consume_the_reserved_stop_budget",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ApproachObservationTests.test_delayed_paired_depth_waits_without_motion_or_weaker_occlusion_rules",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ApproachObservationTests.test_missing_depth_or_moved_context_remains_rejected_after_bounded_wait",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ApproachObservationTests.test_observation_helpers_use_supplied_scene_even_if_callback_advances",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ApproachObservationTests.test_valid_slow_scene_keeps_its_matching_depth_within_two_second_policy",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ContactTests.test_bilateral_contact_is_not_reported_as_effective_grasp",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ContactTests.test_nan_and_stale_signed_efforts_still_reject_before_closing",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ContactTests.test_negative_force_magnitude_is_not_positive_contact",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ContactTests.test_one_old_effort_message_cannot_fill_stability_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ContactTests.test_real_signed_zero_noise_allows_closing_but_not_contact_confirmation",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ContactTests.test_single_finger_contact_never_confirms",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.FeedbackTests.test_atomic_feedback_uses_simulation_stamp_and_actual_fields",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.FeedbackTests.test_bad_or_old_actual_feedback_cannot_form_projection_pair",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.FeedbackTests.test_missing_calibration_keeps_controller_alive_but_capability_false",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.FeedbackTests.test_on_plan_rejects_grasp_before_motion_when_calibration_missing",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.FeedbackTests.test_running_motion_reaches_stop_reserve_before_deadline",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.HistoryIntegrationTests.test_planning_records_whole_candidate_not_each_height",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.HistoryIntegrationTests.test_recovery_uses_new_grasp_configuration_not_same_failed_one",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.HistoryIntegrationTests.test_tilt_requires_full_preview_and_follows_all_vertical_candidates",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.NativeContactMotionTests.test_invalid_native_sensor_prevents_motion_and_is_not_reported_as_drop",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_background_delivery_can_finish_while_gripper_handles_a_later_target",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_background_uses_real_settled_verifier_with_release_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_background_verifier_exception_does_not_cancel_subsequent_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_deferred_release_emits_bound_wire_event_only_after_empty_return",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_late_actual_delivery_is_not_backdated_to_release",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_missing_camera_after_release_defers_verification_instead_of_aborting",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_timely_delivery_is_verified_after_stop_without_any_new_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.ReadonlyDeliveryTests.test_unconfirmed_or_old_stop_does_not_start_finalization",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.RecoveryAcknowledgementTests.test_controller_waits_for_tracker_ack_and_new_confirmed_frame",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.RecoveryAcknowledgementTests.test_rejected_ack_does_not_allow_controller_to_assign_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_clear_visual_source_unchanged_contradiction_still_rejects_tactile_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_effective_lift_verified_during_measured_movement",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_force_with_no_actual_lift_or_empty_aperture_does_not_confirm_grasp",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_missing_real_mask_cannot_supply_visual_grasp_confirmation",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_occluded_or_absent_lift_images_do_not_block_stable_contact_and_actual_lift",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_occlusion_with_retained_contact_does_not_open_or_regrasp",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_partial_surface_fuses_only_aligned_native_contact_and_nonempty_fingers",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_real_move_loop_observes_lift_before_arrival",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_source_still_on_floor_causes_bounded_recovery_exception",
+          "status": "passed"
+        },
+        {
+          "id": "test_controller_execution.TrialLiftTests.test_static_end_frames_cannot_make_success_without_motion_baseline",
+          "status": "passed"
+        }
+      ]
+    },
+    "episode_contract": {
+      "modules": [
+        "test_episode_contract"
+      ],
+      "run": 28,
+      "passed": 28,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_episode_contract.EpisodeCliTests.test_legacy_append_preserves_literal_instructions_and_source",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeCliTests.test_official_switch_and_manual_instructions_cannot_be_mixed",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeCliTests.test_official_switch_uses_all_five_exact_originals",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_actual_nine_request_schema_accepts_driver_metadata",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_cancel_request_only_is_not_reported_as_stopped",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_complete_empty_remaining_still_requires_real_model_chain_and_no_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_execution_disabled_never_publishes_any_action_or_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_failed_later_task_preserves_earlier_verified_delivery",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_grasp_boolean_or_task_success_cannot_replace_effective_lift_proof",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_incomplete_remaining_is_not_locally_guessed_or_sent_to_model",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_model_delay_consumes_existing_deadline_not_a_new_task_budget",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_native_contact_loss_wire_event_allows_recovery_without_cancelling",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_not_five_detected_and_partial_unknown_do_not_block_explicit_category",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_observation_occurs_after_t0_and_uses_the_same_deadline",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_official_originals_and_remaining_multiobject_score_at_most_eighty",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_stop_fault_preserved_as_fault_not_physical_stop",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_waiting_for_readiness_never_defers_the_fixed_start",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeContractTests.test_wrong_or_missing_mission_metadata_cancels_instead_of_extending_budget",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeOrderingAndClosureTests.test_deadline_stop_then_readonly_late_timely_delivery_proof",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeOrderingAndClosureTests.test_empty_task_success_arriving_before_plan_does_not_misfail",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeOrderingAndClosureTests.test_old_stopped_cache_without_current_request_is_unconfirmed",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeOrderingAndClosureTests.test_physical_evidence_waits_for_delayed_plan_across_topics",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeOrderingAndClosureTests.test_reset_historical_stop_cannot_acknowledge_new_cancellation",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.EpisodeOrderingAndClosureTests.test_truly_missing_nine_or_plan_evidence_times_out_without_fallback",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.PendingPlacementFlowTests.test_empty_remaining_after_pending_release_calls_model_without_regrasp",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.PendingPlacementFlowTests.test_late_bound_delivery_is_credited_while_a_later_task_runs",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.PendingPlacementFlowTests.test_unverified_release_continues_later_tasks_without_awarding_delivery",
+          "status": "passed"
+        },
+        {
+          "id": "test_episode_contract.PendingPlacementFlowTests.test_wrong_release_cannot_authorize_continuation",
+          "status": "passed"
+        }
+      ]
+    },
+    "perception_lift": {
+      "modules": [
+        "test_rotation_perception",
+        "test_observation_view",
+        "test_perception_regions",
+        "test_perception_tracking",
+        "test_perception_integration",
+        "test_lift_evidence",
+        "test_robot_projection"
+      ],
+      "run": 101,
+      "passed": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_rotation_perception.DepthPose.test_all_classes_rotate_measured_jaw_offset",
+          "status": "passed"
+        },
+        {
+          "id": "test_rotation_perception.DepthPose.test_components_are_not_forced_to_expected_count",
+          "status": "passed"
+        },
+        {
+          "id": "test_rotation_perception.DepthPose.test_invalid_depth_cannot_produce_geometry",
+          "status": "passed"
+        },
+        {
+          "id": "test_rotation_perception.DepthPose.test_position_depth_and_axis_are_rotation_covariant",
+          "status": "passed"
+        },
+        {
+          "id": "test_rotation_perception.DepthPose.test_torch_head_does_not_pull_grasp_to_one_end",
+          "status": "passed"
+        },
+        {
+          "id": "test_observation_view.ObservationView.test_arm_inside_projected_basket_blocks_readiness",
+          "status": "passed"
+        },
+        {
+          "id": "test_observation_view.ObservationView.test_arm_outside_basket_is_not_a_blocker",
+          "status": "passed"
+        },
+        {
+          "id": "test_observation_view.ObservationView.test_low_objects_do_not_count_as_robot_occlusion",
+          "status": "passed"
+        },
+        {
+          "id": "test_observation_view.ObservationView.test_missing_basket_depth_is_not_clear",
+          "status": "passed"
+        },
+        {
+          "id": "test_observation_view.ObservationView.test_park_target_is_outside_basket_with_margin",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_calibrated_roi_independent_of_detected_items",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_close_foreground_not_classified_as_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_conflicting_class_is_unknown",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_connected_external_high_foreground_blocks_observation",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_explicit_robot_mask_excludes_short_robot_without_height_guess",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_food_alias_mapping_is_not_claim_of_weight_accuracy",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_invalid_depth_hole_has_region_and_reason",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_large_touching_cluster_is_unknown_not_discarded",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_low_confidence_distinct_from_unsupported_model_class",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_missing_food_weight_capability_is_explicit",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_partial_recognition_keeps_unknown_without_invented_count",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_surface_reference_retains_peripheral_measured_geometry",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_tall_120mm_item_is_retained_not_called_robot",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_two_detector_instances_in_one_component_remain_unresolved",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_regions.RegionTests.test_two_touching_bodies_are_not_one_confirmed_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_all_five_categories_and_aliases_not_missing_class_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_class_flip_is_conflict_not_new_confirmed_target",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_close_same_class_candidates_do_not_arbitrarily_rebind",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_completed_pending_release_removes_only_source_ghost_without_delivery_credit",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_delivered_same_surface_cannot_receive_a_new_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_delivery_allows_newly_exposed_same_class_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_distant_same_class_cannot_reuse_pending_release_as_remaining",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_dropped_or_new_same_class_is_ambiguous_not_target_swap",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_full_visible_moving_body_can_update_reference_normally",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_invalid_or_unready_geometry_cannot_bootstrap_confirmation",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_known_other_same_class_keeps_its_identity_after_pending_release",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_late_verification_requires_the_same_pending_release_and_request",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_lower_measured_surface_is_explicit_reveal_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_new_round_resets_but_recovery_same_round_does_not",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_no_detection_is_not_delivery_or_empty_basket",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_occluded_same_place_reappearance_keeps_id",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_old_frame_cannot_change_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_partial_body_centroid_cannot_drag_identity_reference_away",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_pending_release_can_reveal_distinct_lower_surface",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_real_large_displacement_is_not_accepted_from_single_remaining_class",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_round_barrier_rejects_old_capture_even_when_received_late",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_same_class_numbering_swap_preserves_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_smaller_fragment_without_unknown_mask_still_preserves_anchor",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_unbound_wrong_or_occupied_pending_release_keeps_missing_object_guard",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_unverified_task_completion_does_not_retire_track",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.IdentityTests.test_visible_pending_identity_is_a_conflict_and_cannot_become_new",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.ReacquisitionTests.test_acknowledged_camera_reacquisition_preserves_original_identity_and_counts",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.ReacquisitionTests.test_claimed_stability_requires_actual_tracker_history",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.ReacquisitionTests.test_event_only_id_or_stale_frame_cannot_force_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.ReacquisitionTests.test_pixel_class_and_other_same_class_exclusion_are_checked",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.ReacquisitionTests.test_retired_identity_is_never_revived",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.ReacquisitionTests.test_same_request_id_cannot_be_reused_with_changed_proof",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_tracking.ReacquisitionTests.test_unrecognized_region_prevents_unique_reacquisition",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_2point5_second_processing_never_claims_fresh_complete_scene",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_full_scene_and_crop_labels_are_exact_candidate_ids_and_binding_matches_pixels",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_identity_request_publishes_explicit_rejection_receipt",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_inflight_old_epoch_result_never_enters_new_round",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_late_old_capture_is_dropped_after_round_boundary",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_same_frame_full_scene_and_geometry_protocol",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_stale_processing_does_not_publish_complete_scene",
+          "status": "passed"
+        },
+        {
+          "id": "test_perception_integration.ProtocolTests.test_unknown_round_clock_waits_for_fresh_synchronization",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_depth_holes_and_duplicate_points_do_not_manufacture_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_distributed_surface_matches_actual_camera_translation",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_intrinsics_change_is_not_a_rigid_surface_lift",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_mask_can_hide_tool_but_not_invent_target_points",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_missing_measured_orientation_and_invalid_stamp_fail_closed",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_projected_robot_surface_is_excluded",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_small_patch_cannot_replace_spatially_distributed_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_source_unchanged_rejects_commanded_lift_without_actual_object_follow",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_source_vacancy_is_not_positive_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_stale_robot_mask_not_accepted",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_surface_closer_than_expected_is_occlusion_not_follow",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_without_mask_tool_matching_surface_cannot_confirm",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftFrameTests.test_wrong_world_axis_or_rotation_cannot_confirm",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftWindowTests.test_long_gap_and_reverse_motion_reset",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftWindowTests.test_nonmatching_frame_breaks_consecutive_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftWindowTests.test_repeated_stamp_cannot_count_as_new_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftWindowTests.test_static_after_lift_does_not_establish_following_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_lift_evidence.LiftWindowTests.test_three_fresh_frames_and_motion_baseline_confirm",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_actual_joint_limit_nan_missing_and_stale_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_ascii_stl_with_scale_and_package_resolution",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_binary_stl_header_named_solid_still_parses",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_both_actual_prismatic_positions_required_even_with_mimic",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_box_mask_covers_known_projected_corner_with_margin",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_camera_plane_crossing_and_outside_empty_masks_fail_closed",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_cylinder_envelope_contains_circle_samples",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_debug_overlay_never_becomes_control_mask_or_mutates_configuration",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_disconnected_and_duplicate_links_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_fixed_and_revolute_origin_rotation_order",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_geometryless_link_requires_explicit_declaration",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_invalid_stl_and_unverified_units_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_missing_mesh_never_becomes_empty_valid_mask",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_sphere_is_explicit_conservative_envelope",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_unknown_distortion_is_not_assumed_zero",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_unresolved_package_and_unsupported_geometry_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_robot_projection.RobotProjectionTests.test_unverified_mismatched_and_nonrigid_calibration_rejected",
+          "status": "passed"
+        }
+      ]
+    },
+    "grasp_candidates": {
+      "modules": [
+        "test_grasp_candidates"
+      ],
+      "run": 39,
+      "passed": 39,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_attempt_limit_counts_failed_plans_and_actual_grasps",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_different_grasp_point_wrist_and_depth_layer_are_allowed",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_different_stable_identity_has_independent_history",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_global_and_recovery_budgets_do_not_reset_with_new_scene",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_holding_feedback_loss_is_failed_attempt_but_not_proven_drop",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_missing_or_mismatched_identity_and_invalid_layers_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_no_effective_lift_is_remembered_after_reidentification",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_object_rotation_materially_changes_grasp_but_not_attempt_budget",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_planning_empty_no_lift_drop_are_distinct_preserved_outcomes",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_real_drop_relocation_allows_new_pose_without_resetting_attempt_count",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_record_cannot_be_overwritten_or_time_reversed",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_small_observation_noise_does_not_reset_failed_grasp",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_system_abort_does_not_mislabel_physical_drop",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_undirected_angle_alias_does_not_create_fake_new_wrist_candidate",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.FailureHistory.test_unfinished_attempt_must_be_finalized_before_recovery",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_bounded_count_and_offset_configuration",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_camera_rotation_is_used_for_measured_relative_displacement",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_centre_first_then_four_measured_offsets",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_core_depth_disagreement_returns_only_original",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_core_hull_boundary_margin_rejects_edge_offsets",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_depth_discontinuity_near_all_offsets_rejects_alternatives",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_diagonal_body_axis_generates_diagonal_measured_points",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_grasp_angle_fallback_uses_documented_cross_body_convention",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_invalid_rotation_reflection_and_intrinsics_fail_closed",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_measured_round_body_uses_two_camera_axes_and_keeps_wrist",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_near_one_ratio_cannot_override_elongated_core_geometry",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_no_core_geometry_returns_only_original_centre_with_reason",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_nonfinite_duplicate_and_degenerate_core_do_not_invent_points",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_one_dimensional_surface_support_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_only_core_interior_not_thin_appendage_surface",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_original_and_pose_are_independent_not_new_tracked_objects",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_round_body_missing_orientation_or_surface_metadata_falls_back",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_round_body_small_core_does_not_invent_five_millimetre_offsets",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_round_body_still_rejects_thin_or_discontinuous_measured_surface",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_round_branch_depends_on_measured_shape_not_object_category",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_round_candidate_count_and_offset_remain_bounded",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_small_missing_offset_uses_nearby_measured_sample_not_interpolation",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_tall_merged_or_ambiguous_round_axis_not_falsely_ready",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_candidates.MeasuredGraspCandidates.test_thin_appendage_inside_convex_envelope_still_rejected",
+          "status": "passed"
+        }
+      ]
+    },
+    "semantic_available_snapshot": {
+      "modules": [
+        "test_nine_contract",
+        "test_semantics",
+        "test_semantic_repair",
+        "test_core"
+      ],
+      "run": 111,
+      "passed": 111,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_nine_contract.NineContract.test_duplicate_request_is_rejected_without_duplicate_model_call",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_empty_remaining_still_requires_model_call",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_execution_parameter_delay_cannot_publish_after_deadline",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_full_scene_model_response_and_competition_envelope",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_global_deadline_is_not_refreshed_after_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_initial_new_identity_waits_for_confirmed_frame_before_one_model_call",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_late_old_candidate_frame_rejected_after_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_late_verified_delivery_satisfies_pending_source_barrier",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_model_does_not_use_an_older_frame_than_driver_requested",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_never_confirmed_identity_expires_observation_budget_without_model",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_no_accepted_request_after_global_deadline",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_observation_wait_is_clipped_by_absolute_competition_deadline",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_old_eleven_key_model_answer_is_not_silently_reduced_to_four",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_pending_release_state_timeout_never_calls_model_on_old_ghost",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_scene_changed_during_execution_parameter_read_is_revalidated",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_target_motion_after_inference_requests_new_observation_not_model_repair",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_transport_sequence_offset_is_audit_only",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_wait_does_not_restart_absolute_budget_before_slow_model",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_waits_for_pending_release_state_on_matching_camera_frame",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_contract.NineContract.test_wrong_same_stamp_image_is_rejected_before_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L01_official_five_original_instructions",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L02_instance_swap_changes_correct_id",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L03_unique_class_does_not_override_wrong_region",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L04_extreme_is_within_class",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L05_image_vertical_direction_is_not_world_height",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L06_source_direction_and_destination_are_independent",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L07_all_declared_synonyms",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L07_missing_loaded_class_is_not_assumed_supported",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L08_exact_two_and_all",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L08_explicit_one_does_not_mean_all",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L08_implicit_quantity_requires_disambiguation",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L09_not_enough_or_zero_candidates",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L10_declared_scale_crop_rotation_invert_to_reference",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L10_undeclared_mirror_and_invalid_transform_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L11_array_order_and_ids_do_not_define_position",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L12_extreme_within_uncertainty_is_ambiguous",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L12_region_boundary_uncertainty_not_discarded",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_current_unrelated_unknown_region_does_not_create_false_missing_peer",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_explicit_one_clear_target_can_proceed_with_partial_visibility",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_historical_right_bbox_cannot_locate_a_missing_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_real_tracker_missing_peer_blocks_current_extreme",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_unaccounted_occlusion_not_treated_as_empty",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_unknown_crossing_region_boundary_blocks",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_unknown_left_of_extreme_blocks",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L13_unknown_right_of_unique_extreme_does_not_block",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L14_conflicting_spatial_or_quantity_conditions_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L14_unsupported_qualifiers_are_not_silently_dropped",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L15_invalid_selected_measurement_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L15_wrong_class_and_outside_source_are_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L16_unavailable_model_is_not_replaced_by_selector",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L17_confirmation_is_not_a_ready_plan",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L17_missing_constraint_and_duplicate_ids_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L17_model_must_rewrite_wrong_selection_itself",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L17_physical_observation_failure_is_not_retried_on_same_snapshot",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L17_two_wrong_answers_remain_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L18_identity_scene_membership_and_unknown_change_invalidates",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L18_selected_small_noise_is_allowed_without_switching_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L18_source_scene_provenance_is_required",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_L18_unselected_peer_motion_invalidates_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_invisible_remaining_and_reserved_identity_prevent_completeness",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_legacy_protocol_only_for_explicit_simple_instruction",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_new_identity_is_observation_wait_not_an_executable_formal_plan",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_prompt_contains_original_geometry_and_does_not_copy_envelope",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_remaining_cannot_include_reserved_right_target",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_remaining_empty_requires_positive_complete_ledger",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_remaining_ledger_cannot_omit_newly_visible_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_remaining_stable_ids_are_mapped_to_current_frame",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_task_context_rebuilds_all_temporary_id_maps_from_one_current_frame",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantics.SpatialSemantics.test_temporary_ids_cannot_be_reused_in_new_frame",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantic_repair.SemanticRepair.test_inference_fault_is_not_retried_as_a_semantic_error",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantic_repair.SemanticRepair.test_model_rewrites_wrong_side_instead_of_executor_overriding_it",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantic_repair.SemanticRepair.test_multi_category_request_is_not_silently_partially_executed",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantic_repair.SemanticRepair.test_requested_all_must_include_all_matching_candidates",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantic_repair.SemanticRepair.test_requested_one_cannot_silently_become_two",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantic_repair.SemanticRepair.test_two_invalid_responses_remain_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_semantic_repair.SemanticRepair.test_unsupported_ordinal_cannot_be_silently_ignored",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.GraspGeometry.test_far_ambiguous_or_belt_object_not_reacquired",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.GraspGeometry.test_missing_or_invalid_support_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.GraspGeometry.test_rotated_jaw_midpoint_matches_observed_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.GraspGeometry.test_round_body_grasp_reaches_below_equator",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.GraspGeometry.test_thin_object_reachable_without_floor_contact",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.GraspGeometry.test_unique_object_reacquired_after_contact_shift",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_ambiguous_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_bad_count",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_displaced_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_duplicate",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_grasp_axis_periodicity",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_invalid_depth",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_invalid_workspace",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_missing",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_prose",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_quaternion_negative_angle_and_sign",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_rebind_renumbered",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_valid",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_wrong_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_wrong_semantics",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.Guards.test_wrong_side",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_before_release_does_not_count",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_below_belt_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_depth_identity_is_bound_to_the_same_request",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_detection_and_depth_do_not_create_duplicate_ambiguity",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_fall_is_excluded_from_settled_transport",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_real_new_track_can_replace_a_stationary_foreground_fragment",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_short_fragments_from_different_segments_cannot_be_stitched",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_static_detection_does_not_prove_transport",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_transport_is_valid_even_after_disappearance",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_two_frames_do_not_count",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_vertical_retreat_is_not_conveyor_transport",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_wrong_belt_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_wrong_category_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_core.MovingConveyor.test_wrong_direction_rejected",
+          "status": "passed"
+        }
+      ]
+    },
+    "remaining_baseline_regressions": {
+      "modules": [
+        "test_arrival_window",
+        "test_command_protocol",
+        "test_compact_selection",
+        "test_contact_loss",
+        "test_contact_surface",
+        "test_conveyor_observer",
+        "test_delivery_association",
+        "test_drop_recovery",
+        "test_frame_matching",
+        "test_frame_pairing",
+        "test_grasp_contact_monitor",
+        "test_grasp_geometry",
+        "test_grasp_symmetry",
+        "test_grasp_tilt",
+        "test_gripper_closure",
+        "test_nine_completion",
+        "test_nine_inference_config",
+        "test_occlusion",
+        "test_planner_failure_contract",
+        "test_planning_prompt",
+        "test_ros_image_binding",
+        "test_settled_placement",
+        "test_sim_import_boundary"
+      ],
+      "run": 234,
+      "passed": 234,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "id": "test_arrival_window.ArrivalTests.test_fresh_stationary_feedback_can_finish",
+          "status": "passed"
+        },
+        {
+          "id": "test_arrival_window.ArrivalTests.test_gap_restarts_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_arrival_window.ArrivalTests.test_leaving_tolerance_restarts_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_arrival_window.ArrivalTests.test_moving_through_target_does_not_finish",
+          "status": "passed"
+        },
+        {
+          "id": "test_arrival_window.ArrivalTests.test_planner_must_have_finished",
+          "status": "passed"
+        },
+        {
+          "id": "test_arrival_window.ArrivalTests.test_stale_feedback_never_counts_as_stability",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_an_extra_feedback_publisher_cannot_spoof_controller",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_bad_bus_reply_fails_closed",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_cancel_still_sent_when_only_response_channel_is_missing",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_connected_recorder_does_not_make_controller_ready",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_deadline_expiring_during_inspection_sends_no_command",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_disconnected_or_non_tcp_receiver_is_not_ready",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_master_registration_without_live_matching_connection_is_insufficient",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_native_noetic_incoming_uris_resolve_to_expected_nodes",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_observers_can_coexist_with_the_actual_receiver",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_ros_transport_binds_real_uri_rows_using_bounded_master_lookup",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_rpc_timeout_does_not_modify_global_ros_socket_timeout",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ActualPeerTests.test_stop_and_capture_must_share_one_native_peer",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_cancel_before_reset_prevents_reset_publication",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_cancel_drains_queued_commands_and_late_arrival_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_cancel_racing_reset_rearms_new_stop_and_updates_mapping",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_cancellation_between_dequeue_and_worker_claim_never_executes",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_identical_cancel_is_idempotent_but_reusing_id_for_other_request_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_legacy_cancel_also_invalidates_queued_work",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_received_and_accepted_precede_worker_start",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_rejection_echoes_incoming_context_not_previous_round",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_two_sequential_observations_both_reach_worker_without_clearing_cancel_latch",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.ControllerAdmissionTests.test_unstarted_request_can_bind_cancellation_of_previous_round",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.DriverAcknowledgementTests.test_acceptance_does_not_extend_fixed_observation_deadline",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.DriverAcknowledgementTests.test_cancel_mapping_binds_stop_even_when_affected_controller_round_is_old",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.DriverAcknowledgementTests.test_missing_acceptance_fails_in_three_seconds_without_resending_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.DriverAcknowledgementTests.test_stop_feedback_may_arrive_before_cancel_mapping",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.DriverAcknowledgementTests.test_wrong_round_acknowledgement_does_not_start_model",
+          "status": "passed"
+        },
+        {
+          "id": "test_command_protocol.DriverAcknowledgementTests.test_wrong_stale_or_missing_cancel_mapping_cannot_certify_native_stop",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactNodeTests.test_model_must_correct_its_own_wrong_side_not_trusted_binding_overwrite",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactNodeTests.test_raw_confirmation_is_logged_once_without_internal_plan_or_validation_error",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_all_and_implicit_quantity_are_not_reduced_to_any_single_instance",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_bad_geometry_identity_and_undeclared_reference_are_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_bad_ids_duplicates_and_extra_fields_are_not_postprocessed",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_confirmation_requires_exact_two_keys_and_nonempty_reason",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_duplicate_json_keys_and_non_object_payloads_are_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_empty_remaining_cannot_short_circuit_missing_scene_or_dependencies",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_extreme_is_class_relative_and_requires_unique_position",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_fewshot_ids_are_disjoint_from_actual_ids_and_cannot_be_accepted",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_formal_four_keys_use_new_protocol_and_full_geometry_not_legacy_flag",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_old_eleven_key_validator_remains_available",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_recognized_confirmation_never_adds_a_second_model_call",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_region_position_and_id_swaps_are_checked",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_remaining_multiple_classes_are_model_selected_and_ledger_verified",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_unique_class_cannot_override_wrong_region",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_unknown_and_historical_missing_peer_keep_the_original_guards",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_unsupported_instruction_does_not_become_category_only",
+          "status": "passed"
+        },
+        {
+          "id": "test_compact_selection.CompactSelectionTests.test_wrong_raw_class_side_and_count_are_never_replaced_by_audit",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_loss.ContactLossTests.test_evidence_survives_short_move_boundaries",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_loss.ContactLossTests.test_feedback_gap_resets_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_loss.ContactLossTests.test_real_contact_resets_loss",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_loss.ContactLossTests.test_reusing_one_old_false_message_is_not_a_drop",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_loss.ContactLossTests.test_stale_or_nonfinite_feedback_does_not_confirm_loss",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_different_unrelated_patches_are_not_accumulated",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_every_partial_stage_and_window_is_ros_json_serializable",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_five_same_patch_observations_plus_stable_contact_verify_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_force_alone_cannot_verify_static_object_or_missing_mask",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_invalid_stale_empty_or_weak_contact_cannot_verify",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_narrow_patch_alone_remains_occluded_and_not_positive",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_single_contact_failure_breaks_partial_verification",
+          "status": "passed"
+        },
+        {
+          "id": "test_contact_surface.ContactSurfaceTests.test_stationary_repeats_cannot_supply_motion_baseline",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_ambiguous_two_blobs",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_duplicate_capture_cannot_fill_empty_background_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_empty_belt",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_expired_release",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_identity_requires_confirmed_grasp",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_known_released_object_is_tracked_without_invented_classifier_confidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_lost_release_track_is_not_silently_reassociated",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_low_gripper_fragments_cannot_bind_before_measured_retreat",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_old_contact_only_event_cannot_arm_delivery_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_previous_delivered_object_is_background_for_next_attempt",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_previous_moving_object_cannot_be_relabeled_as_current_release",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_retreat_ack_does_not_authorize_a_stale_pre_retreat_image",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_rising_inward_finger_fragment_does_not_gain_payload_identity",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_robot_is_not_payload",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_stable_forward_payload_can_be_seen_before_retreat_finishes",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_wrong_object_or_release_confirmation_is_not_accepted",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_wrong_or_old_retreat_does_not_allow_association",
+          "status": "passed"
+        },
+        {
+          "id": "test_conveyor_observer.DepthTracking.test_wrong_side",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.DeliveryAssociationTests.test_current_release_proof_carries_identity_into_each_sample",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.DeliveryAssociationTests.test_other_object_or_previous_release_cannot_be_stitched_in",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.DeliveryAssociationTests.test_raw_yolo_previous_same_class_never_proves_current_object",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.DeliveryAssociationTests.test_settled_belt_proof_also_requires_current_release",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.DeliveryAssociationTests.test_unbound_verifier_call_cannot_claim_transport",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.RuntimeDepthAssociationTests.test_runtime_new_component_with_old_payload_ahead_is_associated",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.RuntimeDepthAssociationTests.test_runtime_old_moving_payload_only_cannot_create_current_delivery",
+          "status": "passed"
+        },
+        {
+          "id": "test_delivery_association.RuntimeDepthAssociationTests.test_static_old_payload_during_all_background_frames_is_not_absorbed",
+          "status": "passed"
+        },
+        {
+          "id": "test_drop_recovery.DropRecoveryTests.test_ambiguous_reappearance_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_drop_recovery.DropRecoveryTests.test_duplicate_camera_observations_do_not_create_ambiguity",
+          "status": "passed"
+        },
+        {
+          "id": "test_drop_recovery.DropRecoveryTests.test_low_confidence_is_not_recovered",
+          "status": "passed"
+        },
+        {
+          "id": "test_drop_recovery.DropRecoveryTests.test_other_same_class_object_is_not_substituted",
+          "status": "passed"
+        },
+        {
+          "id": "test_drop_recovery.DropRecoveryTests.test_table_object_is_eligible_but_conveyor_and_floor_are_not",
+          "status": "passed"
+        },
+        {
+          "id": "test_drop_recovery.DropRecoveryTests.test_unique_object_is_reacquired_at_new_location_and_id",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_matching.MatchingDepth.test_exposure_alignment_instead_of_latest_depth",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_matching.MatchingDepth.test_invalid_or_nearby_low_surface_does_not_prove_arm_occlusion",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_matching.MatchingDepth.test_object_removed_or_moved_is_not_explained",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_matching.MatchingDepth.test_partial_arm_occlusion_preserves_visible_body_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_matching.MatchingDepth.test_stale_or_wrong_exposure_is_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_canonical_hash_ignores_row_stride_padding_but_not_pixel_changes",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_publisher_sequence_offset_does_not_change_pair",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_same_frame_number_does_not_match_different_sensor_time",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_same_stamp_wrong_dimensions_cannot_pair",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_same_stamp_wrong_numbered_pixels_cannot_pair",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_sensor_clock_reset_uses_newer_observation",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_stale_pair_is_not_accepted",
+          "status": "passed"
+        },
+        {
+          "id": "test_frame_pairing.FramePairs.test_uses_latest_complete_pair_when_metadata_arrives_first",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactLiftTests.test_contact_interruption_resets_confirmation_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactLiftTests.test_empty_invalid_weak_lost_and_stale_contact_reject",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactLiftTests.test_force_and_measured_vertical_lift_confirm_without_camera_claim",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactLiftTests.test_static_lateral_rotation_and_reversal_do_not_confirm",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_contact_confirmation_requires_time_and_distinct_sensor_samples",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_invalid_reading_mapped_to_zero_is_feedback_fault",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_large_negative_effort_is_not_new_positive_contact",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_lost_contact_requires_explicit_rearming",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_one_finger_low_is_uncertainty_not_confirmed_drop",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_persistent_small_nonzero_values_confirm_loss",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_republished_sensor_stamp_does_not_count_and_eventually_is_stale",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_short_dips_do_not_accumulate_across_restored_contact",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_startup_invalid_sample_can_recover_before_arming",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_contact_monitor.ContactMonitorTests.test_threshold_band_retains_previous_support_without_confirming_it",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_geometry.BodyCenter.test_missing_depth_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_geometry.BodyCenter.test_thin_handle_does_not_pull_grasp_off_body",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_geometry.BodyCenter.test_two_equal_bodies_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_approach_height_clears_rim_with_measured_finger_length",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_clearance_is_quaternion_sign_invariant",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_equivalent_wrist_pose_keeps_the_same_two_finger_contacts",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_invalid_measured_pose_does_not_authorize_approach",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_non_equivalent_rotation_is_not_an_automatic_fallback",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_padded_fingers_clear_rim_at_last_resort_height",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_quaternion_matrix_is_proper_and_sign_invariant",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_symmetry.GraspSymmetry.test_tilt_can_invalidate_nominal_clearance",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_tilt.BoundedTiltGeometry.test_padded_finger_bounds_clear_support_and_approach_rim",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_tilt.BoundedTiltGeometry.test_retry_memory_distinguishes_tilt_but_retains_shared_attempt_budget",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_tilt.BoundedTiltGeometry.test_tilt_preserves_jaw_closing_axis_and_measured_reference",
+          "status": "passed"
+        },
+        {
+          "id": "test_grasp_tilt.BoundedTiltGeometry.test_tilts_are_bounded_and_invalid_values_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_actual_finger_regression_aborts_without_more_command",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_blocked_fingers_bound_loading_then_empty_grasp",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_callbacks_hide_no_false_pulses_from_real_close_loop",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_feedback_freeze_issues_no_additional_step",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_feedback_freeze_mid_preload_stops_issuing_load_commands",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_high_initial_contact_adds_no_preload_but_requires_new_confirmation",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_large_loaded_finger_retreat_is_rejected_without_large_unloading",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_loaded_position_cap_trim_keeps_fresh_contact_and_does_not_call_empty",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_loading_can_establish_candidate_after_more_than_one_step",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_native17_effort_response_stops_preload_before_full_distance",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_preload_does_not_add_load_before_all_feedback_progresses",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_real_close_accepts_advancing_wall_joint_headers",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_real_close_rejects_repeated_wall_joint_header_despite_dual_positive",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_repeated_joint_stamp_blocks_additional_steps_then_fails",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_short_contact_interruption_does_not_restart_another_two_mm_preload",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_short_nan_and_clock_rollback_abort_before_next_step",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.ClosureExecutionTests.test_small_steps_then_stable_contact_then_bounded_preload_and_fresh_confirmation",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.StepTests.test_internal_reopening_cannot_leave_large_target_unchecked",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.StepTests.test_limit_and_invalid_values",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.StepTests.test_step_and_total_loading_are_separately_bounded",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_capture_false_between_positive_polls_restarts_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_clock_rollback_is_latched_after_recovery",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_clock_ticks_alone_cannot_finish_contact_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_each_frozen_feedback_channel_fails_closed",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_effort_low_between_positive_polls_restarts_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_nan_then_good_in_same_poll_remains_failure",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_negative_magnitude_is_never_contact",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_no_weakening_of_contact_threshold_or_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_persistent_dual_positive_requires_full_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_repeated_messages_with_same_sim_clock_are_not_new_frames",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_repeated_wall_joint_header_cannot_extend_sim_contact_window",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_single_frame_spike_does_not_confirm",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_wall_joint_header_and_sim_clock_use_distinct_domains",
+          "status": "passed"
+        },
+        {
+          "id": "test_gripper_closure.WindowTests.test_wall_joint_header_rollback_remains_failure",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.ActualNineLifecycleTests.test_finished_receipt_is_after_busy_clear_and_queue_completion",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.ActualNineLifecycleTests.test_oom_cleanup_receipt_then_new_request_has_no_busy_race",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.ActualNineLifecycleTests.test_valueerror_inside_model_is_runtime_failure_not_semantic_failure",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_executable_plan_always_stops_read_only_helper",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_finished_for_other_request_is_not_an_idle_receipt_for_this_request",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_finished_not_idle_or_wrong_terminal_stops_batch",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_recognized_model_confirmation_is_not_runtime_failure_or_automatic_pass",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_request_rejected_is_not_retried_or_followed_by_another_request",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_runtime_error_cannot_be_graded_as_expected_semantic_rejection",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_semantic_rejection_remains_ungraded_after_finished",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_completion.HelperCompletionTests.test_terminal_does_not_allow_next_request_until_associated_idle",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_inference_config.InferenceConfigurationTests.test_chat_receives_frozen_beams_with_full_image_and_existing_budget",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_inference_config.InferenceConfigurationTests.test_configurable_bounds_do_not_imply_every_combination_fits_gpu",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_inference_config.InferenceConfigurationTests.test_defaults_are_one_and_original_slice_limit_is_only_observed",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_inference_config.InferenceConfigurationTests.test_invalid_scalar_types_and_out_of_range_values_are_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_inference_config.InferenceConfigurationTests.test_native_probe_raw_schema_stays_rejected_not_coerced",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_inference_config.InferenceConfigurationTests.test_ready_logs_actual_config_after_setting_official_model_config",
+          "status": "passed"
+        },
+        {
+          "id": "test_nine_inference_config.InferenceConfigurationTests.test_unannounced_model_vision_config_drift_is_rejected_before_call",
+          "status": "passed"
+        },
+        {
+          "id": "test_occlusion.MeasuredOcclusion.test_bad_depth_is_not_occlusion_evidence",
+          "status": "passed"
+        },
+        {
+          "id": "test_occlusion.MeasuredOcclusion.test_near_high_foreground",
+          "status": "passed"
+        },
+        {
+          "id": "test_occlusion.MeasuredOcclusion.test_one_close_pixel_or_background_is_not_occlusion",
+          "status": "passed"
+        },
+        {
+          "id": "test_occlusion.MeasuredOcclusion.test_visible_reference_is_not_occluded",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.ControllerFailureTests.test_internal_error_does_not_wait_or_publish_any_motion",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.ControllerFailureTests.test_unreachable_and_budgeted_timeout_remain_eligible_for_bounded_alternatives",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_computation_timeout_is_distinct_from_implementation_error",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_false_success_without_joint_solution_is_internal_error",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_invalid_placement_is_rejected_before_any_ik_search",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_legitimate_empty_search_remains_path_rejection",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_malformed_request_does_not_enter_ik",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_missing_native_joint_state_is_internal_error_not_bad_input",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_native_type_error_stops_search_once_and_preserves_traceback",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_preview_does_not_load_task_core_or_conflicting_semantics",
+          "status": "passed"
+        },
+        {
+          "id": "test_planner_failure_contract.SimulatorFailureTests.test_stop_interrupt_is_not_recorded_as_unreachable",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.ActualRepairPromptTests.test_model_repair_receives_front_feedback_and_full_unchanged_input",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.NeutralIndexTests.test_actual_repair_logs_english_cause_and_never_strips_model_id",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.NeutralIndexTests.test_all_actual_classes_ids_and_unready_candidates_are_retained",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.NeutralIndexTests.test_chinese_feedback_contains_principles_not_answer_ids_or_instruction_lookup",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.NeutralIndexTests.test_index_is_independent_of_requested_class_side_or_remaining_intent",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.NeutralIndexTests.test_prefix_wrong_category_and_wrong_side_still_fail_after_index_added",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.PromptContractTests.test_current_geometry_unknown_and_remaining_data_are_not_truncated",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.PromptContractTests.test_instruction_is_preserved_without_precomputed_target_fields",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.PromptContractTests.test_pending_remaining_prompt_has_one_id_namespace_and_preserves_audit",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.PromptContractTests.test_persistent_model_answer_remains_invalid_after_prompt_fix",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.PromptContractTests.test_repair_feedback_is_before_task_and_scene_not_a_tail_append",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.PromptContractTests.test_type_and_enumeration_failures_are_still_rejected_by_unchanged_parser",
+          "status": "passed"
+        },
+        {
+          "id": "test_planning_prompt.PromptContractTests.test_type_rules_replace_the_incorrect_string_placeholder_example",
+          "status": "passed"
+        },
+        {
+          "id": "test_ros_image_binding.SerializedBindingTests.test_camera_frame_id_is_not_replaced_with_application_frame_number",
+          "status": "passed"
+        },
+        {
+          "id": "test_ros_image_binding.SerializedBindingTests.test_delayed_subscription_seq_rewrite_still_reaches_real_dry_run_branch",
+          "status": "passed"
+        },
+        {
+          "id": "test_ros_image_binding.SerializedBindingTests.test_independent_sheet_and_full_image_sequences_do_not_mutate_camera_header",
+          "status": "passed"
+        },
+        {
+          "id": "test_ros_image_binding.SerializedBindingTests.test_same_stamp_different_serialized_pixels_never_reach_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_ros_image_binding.SerializedBindingTests.test_same_stamp_wrong_serialized_dimensions_never_reach_inference",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_ambiguous_foreground_rejected",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_before_return_home",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_moving_or_high_robot_is_not_stable_delivery",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_source_bin_excludes_already_delivered_belt_objects",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_source_bin_includes_front_edge_but_excludes_robot",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_stable_correct_belt_after_home",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_wrong_request",
+          "status": "passed"
+        },
+        {
+          "id": "test_settled_placement.SettledPlacement.test_wrong_side",
+          "status": "passed"
+        },
+        {
+          "id": "test_sim_import_boundary.SimulatorImportBoundaryTests.test_full_module_does_not_import_task_semantics",
+          "status": "passed"
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
+    "cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
+    "contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
+    "controlled_stop.py": "ab698d331b9d088555bed2cf938354de3199aee71af7a7379073c8ebbcb5a587",
+    "controller.py": "8d6ad3d148a0e561df676f6587e96c7a313ec9ca641b682e3b2cbaa9874edb47",
+    "conveyor_observer.py": "0be07e6bcb6ea43762f1532587ec930e881f26faa8138bf915875ec8aa1e8e66",
+    "core.py": "3a1d51c5eea8d60e42ffa993180ef3f8545bb8e697e7f8013b011dc0fbf331a7",
+    "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+    "episode_driver.py": "18841b14677680f1b24aa5028be853c8c58c87b76e1797c19e0d4547c2d6c36d",
+    "evidence_recorder.py": "5c9da7ea923c5b9e2e84a99a8acb53364ebad32b243ce8e2605def1114947fad",
+    "export_experiment_register.py": "2e7994079f588c673ae2d62271e8ad010ec58af29a2d91d71b3ac493a0da9ac8",
+    "frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+    "frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
+    "grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
+    "grasp_contact_monitor.py": "eddd2829d6802737ebe7bfeef28b0acbddb4e984b87631ec3de5fe59f60fb939",
+    "grasp_geometry.py": "785ec81b543fd44b92a23710daf9f3c3db3f28c3ae2a895ede619f0be3c41f1f",
+    "gripper_closure.py": "08936975ab45e7d502f013ea3fa4dff12a273352dc27dcdc70eb70baea155d16",
+    "hold_verification.py": "2da265d7049f0d9232253766d6afc03edc65fee245dbbdaaf1dbc000f7efe66b",
+    "joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
+    "kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
+    "lift_evidence.py": "d5913cf5690dc7c3a9956fd5a162d42efe2e0df54a80b0f386d82e0fa67541f8",
+    "mission_ledger.py": "82a59a8d228a8b13a8b4cc5b44a02e53ea96f561efcc6ca65fdc52693d20feaf",
+    "nine_node.py": "f9a6a376512ead71b825eea1e42ebe6d151c3cc16b6c700b320507229866664f",
+    "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
+    "perception.py": "673c90f7534e1266edcb8784704a5e909569303ba8afd4148f1e535a4832b959",
+    "perception_tracking.py": "5b5bd93d00e79aafa16be7e3783e300719f80872122c479e8047ae90d123f0e2",
+    "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
+    "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",
+    "recognition_suite.py": "d2e3acaba0cd2d8e7d13971df4247c4f29a1a1d02fb7fd584746555a6059db1c",
+    "record_transport_rgbd.py": "023d654f4a5ddeb4067e54ff6274887ebcbf77c587fb0e1c7b0c2938011a802f",
+    "restore_view.py": "0baf34a5cae01329d7c735d567fbe0ea116f124f81c8f5f057700b4caff49aa6",
+    "resume_delivery.py": "b45e17c17da5d89515e09d96dfeaf2b22af7d0a9997e13735b3f4ce653754dd0",
+    "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
+    "ros_endpoints.py": "f0668d7724358ea6f073222827c29371e9a1c449d399aa8d08c04df7f8037dfa",
+    "rotation_perception.py": "98e615a22c7b093ed7200cd2114e203b38655d05575177870773110019981d01",
+    "run_episode.py": "60364c6376509faffe3790e22a8d3b8c6964583111268b552265cffedf55a9f0",
+    "semantics.py": "2ae45b58714f1cde1cb45f4d759768ca37913759f4f64cd6f3f625c3168b97d2",
+    "semantic_repair.py": "dd24ebbd5d28d4d4fd49e054a803402169203b8e8ff7b6b5f020ef264f53f082",
+    "sim_with_feedback.py": "2e2d7b4488f974ab5afe275190a5332a08d356df70718fe7860ead24a91fc866",
+    "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
+    "test_arrival_window.py": "6efc910c76d73554d65ba7ef90f44d2597b4d098c52597350e874e6d175b0145",
+    "test_cartesian_path.py": "c37f1e3a5ce4ec7bd462b77d651759d7730966b7fde6908fc9f747a4d37d34e8",
+    "test_command_protocol.py": "ebfc9045817bcf506cdf70a32485d7a04238781b7d6120411973134142a718be",
+    "test_compact_selection.py": "77f8c83c40d8c80044d5aa100acdde9a96fdb3b52255048b463945a399aeea66",
+    "test_contact_loss.py": "8d71c6e0622ccca46cf9cc79b71a6c5253f0d959c3f5565e7fc4d922ca64cc02",
+    "test_contact_surface.py": "b4498281eee5c38762b622a7536879464df0aa1847740d1f069995cc4531f3c2",
+    "test_controlled_stop.py": "adb3273bf298e357d8cbcf24a0bed6ecbb03f8427bd8af441889b95fbe8724a5",
+    "test_controller_contract.py": "291c62fce60c558c4a9b1624d1ceab4aea3d9b138d8190e62813f1520c9c5525",
+    "test_controller_execution.py": "dbc2fd77d703130ae2eaea050f00abb18629f8df6d240023680a754592c0c5ff",
+    "test_conveyor_observer.py": "462b12c035f112c4228495a9cc324a07c5025cf620ea7579648133af9db3618b",
+    "test_core.py": "b8aea2a8bcc81bfb1414bc5ad0980ec5046a008c5e26170ff7fc6dd82142cc03",
+    "test_delivery_association.py": "cdd37cd3f60853c37cc2f17b1c63268b2e0a7d0e48dfa9f6e95dde2d7361b16f",
+    "test_drop_recovery.py": "44b39e78dad00a50bdb3e083bf716611ef8e89f4225d611c15b5ef6fa907fff0",
+    "test_episode_contract.py": "59f4d997d871b7c65110aeeaac42c24a0b72b9807ee78fd8650d7afa4d428759",
+    "test_frame_matching.py": "fff67971bf03c0a950eb882ec07d6884d2b8b04e14bb7f859b9892490452add6",
+    "test_frame_pairing.py": "9d78566b3be6102f7af1b886d2cd7dfcc5cf0c8087b2f729d2e12b0b8721e131",
+    "test_grasp_candidates.py": "bd2901d16b5bcfd94578262907fae6e39f88b1e1d7f1b9bed1a2f4c18cab13bd",
+    "test_grasp_contact_monitor.py": "b51e96a6f39b61ee8544dd7a581cb2f5d02a14e696273d6a6966883848353615",
+    "test_grasp_geometry.py": "eb9d293bf79ee2087d7a87e620c0434022aeea1f5b14d891b9f393b340b45d73",
+    "test_grasp_symmetry.py": "766c70ecd29fa101ea3320ad606a433487b5bbda8020fce2910c02b990a7d154",
+    "test_grasp_tilt.py": "8579c0b2c3e8596b2afa5bede93345529653228380f04675cd8197a7335191a2",
+    "test_gripper_closure.py": "fcaa28057c13ea4a064a1670f92d0f1fedc1df984b1e50b0cb47087185718e10",
+    "test_joint_path.py": "d58ace26f32f912bbf027c5a9ce5963b9c7148c2e9466a8697117e5603bc93d8",
+    "test_kinematic_guard.py": "d752f9bac2244b01564c28678928e0579893f36e6c10823911cb130bcdf83756",
+    "test_lift_evidence.py": "c58d65e0fbfd70d37a706debf935d438fd2ace432c8227f0317640b1e3b63529",
+    "test_mission_ledger.py": "42aaf61ba6d9fce32a74ed00220b2c5e5c47d8f316de769dd7e552a6e971f1dc",
+    "test_nine_completion.py": "c3f58b2535b0797ee9b16b65f067da0c571c3088a99a3ff1d4cbfe60f979f0dc",
+    "test_nine_contract.py": "8977b1bf6720d263eaa1b5abd3c180a3617f98c468fa9b909b976e307fe561d8",
+    "test_nine_inference_config.py": "24e6c1c6e6a7a3c8f634091e4d043ed0a1f614a39109cb216de2e7e77ef23c82",
+    "test_observation_view.py": "3ff1e601976ca548350a185f9a59d8a024229fe4203d58811f35dac029128481",
+    "test_occlusion.py": "8e0f597d8879d851158dafe8e4eaaa7a9cdde38cfeb933bb68d02410107384c6",
+    "test_perception_integration.py": "523f8c8f2233a52c5545741d0334b0b55dcca19e5e7722a4ded3f21aae3ad051",
+    "test_perception_regions.py": "a1a56684d3a5f6a8a954ed1cb2bbfb68aa4a9a70419acd6b6066c2518278994e",
+    "test_perception_tracking.py": "1f9a7ddfc93e21003a22b79669dfd40225f652107478d5b7f0fe245b7a1e24e4",
+    "test_planner_failure_contract.py": "290afbb391d09e5315417c3fb6deee2552a102395ae37053a6125d8fd03a355c",
+    "test_planning_candidates.py": "dd65ab3da40e8bec8192d6952067910183cdb41fb3c80ad465a5b3e4c6efe307",
+    "test_planning_prompt.py": "4ebde21d47d670e1746fc995e38ddf9347ed29508840d3f223945c86f30e9df5",
+    "test_robot_projection.py": "9ac25eb180649233fef5258648ceda064e0abc21a6ff34d00f588ee22236f6ee",
+    "test_ros_image_binding.py": "a2754b8ddec07be99fccf62831257770e65442b0dcfc1625d40862b7500912bb",
+    "test_rotation_perception.py": "71cdf56e34b82a5a51ba0105e47b3801cdd45c6bef439ecd4f6b4f9f53a5c273",
+    "test_semantics.py": "bffe9ce2da3184d3d2dafdcccfd0b0de5dfc00f5abb4ff241d1101e38c997f14",
+    "test_semantic_repair.py": "882276d25ec2a227e4f86046101e2c024bc8f5c084dd4a0a708b255ff28b345b",
+    "test_settled_placement.py": "98a4196085f441194cdc8b71a26bd0975abd842a3b688389a5454400abeedf7a",
+    "test_sim_control_adapter.py": "9aec313a1cc4c7ce312cfc1d61f00cc9c2309213c11d3d5852865afd32daebfd",
+    "test_sim_import_boundary.py": "3fa65b2963df41374059e838dd96295fe357ce82aeef52a1a781c7328d230bec",
+    "test_trajectory_timing.py": "32f3337d5ac1a32022b4f174d540a190df85cbb83e9f9899489e023d594cdcf4",
+    "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67"
+  },
+  "source_sha256_before": {
+    "arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
+    "cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
+    "contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
+    "controlled_stop.py": "ab698d331b9d088555bed2cf938354de3199aee71af7a7379073c8ebbcb5a587",
+    "controller.py": "8d6ad3d148a0e561df676f6587e96c7a313ec9ca641b682e3b2cbaa9874edb47",
+    "conveyor_observer.py": "0be07e6bcb6ea43762f1532587ec930e881f26faa8138bf915875ec8aa1e8e66",
+    "core.py": "3a1d51c5eea8d60e42ffa993180ef3f8545bb8e697e7f8013b011dc0fbf331a7",
+    "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+    "episode_driver.py": "18841b14677680f1b24aa5028be853c8c58c87b76e1797c19e0d4547c2d6c36d",
+    "evidence_recorder.py": "5c9da7ea923c5b9e2e84a99a8acb53364ebad32b243ce8e2605def1114947fad",
+    "export_experiment_register.py": "2e7994079f588c673ae2d62271e8ad010ec58af29a2d91d71b3ac493a0da9ac8",
+    "frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+    "frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
+    "grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
+    "grasp_contact_monitor.py": "eddd2829d6802737ebe7bfeef28b0acbddb4e984b87631ec3de5fe59f60fb939",
+    "grasp_geometry.py": "785ec81b543fd44b92a23710daf9f3c3db3f28c3ae2a895ede619f0be3c41f1f",
+    "gripper_closure.py": "08936975ab45e7d502f013ea3fa4dff12a273352dc27dcdc70eb70baea155d16",
+    "hold_verification.py": "2da265d7049f0d9232253766d6afc03edc65fee245dbbdaaf1dbc000f7efe66b",
+    "joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
+    "kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
+    "lift_evidence.py": "d5913cf5690dc7c3a9956fd5a162d42efe2e0df54a80b0f386d82e0fa67541f8",
+    "mission_ledger.py": "82a59a8d228a8b13a8b4cc5b44a02e53ea96f561efcc6ca65fdc52693d20feaf",
+    "nine_node.py": "f9a6a376512ead71b825eea1e42ebe6d151c3cc16b6c700b320507229866664f",
+    "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
+    "perception.py": "673c90f7534e1266edcb8784704a5e909569303ba8afd4148f1e535a4832b959",
+    "perception_tracking.py": "5b5bd93d00e79aafa16be7e3783e300719f80872122c479e8047ae90d123f0e2",
+    "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
+    "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",
+    "recognition_suite.py": "d2e3acaba0cd2d8e7d13971df4247c4f29a1a1d02fb7fd584746555a6059db1c",
+    "record_transport_rgbd.py": "023d654f4a5ddeb4067e54ff6274887ebcbf77c587fb0e1c7b0c2938011a802f",
+    "restore_view.py": "0baf34a5cae01329d7c735d567fbe0ea116f124f81c8f5f057700b4caff49aa6",
+    "resume_delivery.py": "b45e17c17da5d89515e09d96dfeaf2b22af7d0a9997e13735b3f4ce653754dd0",
+    "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
+    "ros_endpoints.py": "f0668d7724358ea6f073222827c29371e9a1c449d399aa8d08c04df7f8037dfa",
+    "rotation_perception.py": "98e615a22c7b093ed7200cd2114e203b38655d05575177870773110019981d01",
+    "run_episode.py": "60364c6376509faffe3790e22a8d3b8c6964583111268b552265cffedf55a9f0",
+    "semantics.py": "2ae45b58714f1cde1cb45f4d759768ca37913759f4f64cd6f3f625c3168b97d2",
+    "semantic_repair.py": "dd24ebbd5d28d4d4fd49e054a803402169203b8e8ff7b6b5f020ef264f53f082",
+    "sim_with_feedback.py": "2e2d7b4488f974ab5afe275190a5332a08d356df70718fe7860ead24a91fc866",
+    "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
+    "test_arrival_window.py": "6efc910c76d73554d65ba7ef90f44d2597b4d098c52597350e874e6d175b0145",
+    "test_cartesian_path.py": "c37f1e3a5ce4ec7bd462b77d651759d7730966b7fde6908fc9f747a4d37d34e8",
+    "test_command_protocol.py": "ebfc9045817bcf506cdf70a32485d7a04238781b7d6120411973134142a718be",
+    "test_compact_selection.py": "77f8c83c40d8c80044d5aa100acdde9a96fdb3b52255048b463945a399aeea66",
+    "test_contact_loss.py": "8d71c6e0622ccca46cf9cc79b71a6c5253f0d959c3f5565e7fc4d922ca64cc02",
+    "test_contact_surface.py": "b4498281eee5c38762b622a7536879464df0aa1847740d1f069995cc4531f3c2",
+    "test_controlled_stop.py": "adb3273bf298e357d8cbcf24a0bed6ecbb03f8427bd8af441889b95fbe8724a5",
+    "test_controller_contract.py": "291c62fce60c558c4a9b1624d1ceab4aea3d9b138d8190e62813f1520c9c5525",
+    "test_controller_execution.py": "dbc2fd77d703130ae2eaea050f00abb18629f8df6d240023680a754592c0c5ff",
+    "test_conveyor_observer.py": "462b12c035f112c4228495a9cc324a07c5025cf620ea7579648133af9db3618b",
+    "test_core.py": "b8aea2a8bcc81bfb1414bc5ad0980ec5046a008c5e26170ff7fc6dd82142cc03",
+    "test_delivery_association.py": "cdd37cd3f60853c37cc2f17b1c63268b2e0a7d0e48dfa9f6e95dde2d7361b16f",
+    "test_drop_recovery.py": "44b39e78dad00a50bdb3e083bf716611ef8e89f4225d611c15b5ef6fa907fff0",
+    "test_episode_contract.py": "59f4d997d871b7c65110aeeaac42c24a0b72b9807ee78fd8650d7afa4d428759",
+    "test_frame_matching.py": "fff67971bf03c0a950eb882ec07d6884d2b8b04e14bb7f859b9892490452add6",
+    "test_frame_pairing.py": "9d78566b3be6102f7af1b886d2cd7dfcc5cf0c8087b2f729d2e12b0b8721e131",
+    "test_grasp_candidates.py": "bd2901d16b5bcfd94578262907fae6e39f88b1e1d7f1b9bed1a2f4c18cab13bd",
+    "test_grasp_contact_monitor.py": "b51e96a6f39b61ee8544dd7a581cb2f5d02a14e696273d6a6966883848353615",
+    "test_grasp_geometry.py": "eb9d293bf79ee2087d7a87e620c0434022aeea1f5b14d891b9f393b340b45d73",
+    "test_grasp_symmetry.py": "766c70ecd29fa101ea3320ad606a433487b5bbda8020fce2910c02b990a7d154",
+    "test_grasp_tilt.py": "8579c0b2c3e8596b2afa5bede93345529653228380f04675cd8197a7335191a2",
+    "test_gripper_closure.py": "fcaa28057c13ea4a064a1670f92d0f1fedc1df984b1e50b0cb47087185718e10",
+    "test_joint_path.py": "d58ace26f32f912bbf027c5a9ce5963b9c7148c2e9466a8697117e5603bc93d8",
+    "test_kinematic_guard.py": "d752f9bac2244b01564c28678928e0579893f36e6c10823911cb130bcdf83756",
+    "test_lift_evidence.py": "c58d65e0fbfd70d37a706debf935d438fd2ace432c8227f0317640b1e3b63529",
+    "test_mission_ledger.py": "42aaf61ba6d9fce32a74ed00220b2c5e5c47d8f316de769dd7e552a6e971f1dc",
+    "test_nine_completion.py": "c3f58b2535b0797ee9b16b65f067da0c571c3088a99a3ff1d4cbfe60f979f0dc",
+    "test_nine_contract.py": "8977b1bf6720d263eaa1b5abd3c180a3617f98c468fa9b909b976e307fe561d8",
+    "test_nine_inference_config.py": "24e6c1c6e6a7a3c8f634091e4d043ed0a1f614a39109cb216de2e7e77ef23c82",
+    "test_observation_view.py": "3ff1e601976ca548350a185f9a59d8a024229fe4203d58811f35dac029128481",
+    "test_occlusion.py": "8e0f597d8879d851158dafe8e4eaaa7a9cdde38cfeb933bb68d02410107384c6",
+    "test_perception_integration.py": "523f8c8f2233a52c5545741d0334b0b55dcca19e5e7722a4ded3f21aae3ad051",
+    "test_perception_regions.py": "a1a56684d3a5f6a8a954ed1cb2bbfb68aa4a9a70419acd6b6066c2518278994e",
+    "test_perception_tracking.py": "1f9a7ddfc93e21003a22b79669dfd40225f652107478d5b7f0fe245b7a1e24e4",
+    "test_planner_failure_contract.py": "290afbb391d09e5315417c3fb6deee2552a102395ae37053a6125d8fd03a355c",
+    "test_planning_candidates.py": "dd65ab3da40e8bec8192d6952067910183cdb41fb3c80ad465a5b3e4c6efe307",
+    "test_planning_prompt.py": "4ebde21d47d670e1746fc995e38ddf9347ed29508840d3f223945c86f30e9df5",
+    "test_robot_projection.py": "9ac25eb180649233fef5258648ceda064e0abc21a6ff34d00f588ee22236f6ee",
+    "test_ros_image_binding.py": "a2754b8ddec07be99fccf62831257770e65442b0dcfc1625d40862b7500912bb",
+    "test_rotation_perception.py": "71cdf56e34b82a5a51ba0105e47b3801cdd45c6bef439ecd4f6b4f9f53a5c273",
+    "test_semantics.py": "bffe9ce2da3184d3d2dafdcccfd0b0de5dfc00f5abb4ff241d1101e38c997f14",
+    "test_semantic_repair.py": "882276d25ec2a227e4f86046101e2c024bc8f5c084dd4a0a708b255ff28b345b",
+    "test_settled_placement.py": "98a4196085f441194cdc8b71a26bd0975abd842a3b688389a5454400abeedf7a",
+    "test_sim_control_adapter.py": "9aec313a1cc4c7ce312cfc1d61f00cc9c2309213c11d3d5852865afd32daebfd",
+    "test_sim_import_boundary.py": "3fa65b2963df41374059e838dd96295fe357ce82aeef52a1a781c7328d230bec",
+    "test_trajectory_timing.py": "32f3337d5ac1a32022b4f174d540a190df85cbb83e9f9899489e023d594cdcf4",
+    "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67"
+  },
+  "source_utf8_lf_sha256": {
+    "arrival_window.py": "fe59150c0e91550c7c0b4532a3f5ff831ae1b3e9497844b33cf87cfa8e74c4c2",
+    "cartesian_path.py": "14629859ae1758557fd12c35da3f5294cb5218cd5a0c6b4c10c948f76a2b2285",
+    "contact_loss.py": "936f2cb71a13b7ec50d4fcfb3a1fb57b1539530e9a29d15f1926df1b999b6b76",
+    "controlled_stop.py": "ab698d331b9d088555bed2cf938354de3199aee71af7a7379073c8ebbcb5a587",
+    "controller.py": "ac2f1aa04bf2dea9ce97bb45f0d5842c7742c36728db373d5b4dd06b3b1d8036",
+    "conveyor_observer.py": "0be07e6bcb6ea43762f1532587ec930e881f26faa8138bf915875ec8aa1e8e66",
+    "core.py": "4d3293c4bd491e659ac799ef9706342f85b8d321264b5ae6eaf273035492b45c",
+    "drop_recovery.py": "d0076db9e212ee6cd135609010a3db71b745b2788d7bd3f4914c992e9b9bd014",
+    "episode_driver.py": "18841b14677680f1b24aa5028be853c8c58c87b76e1797c19e0d4547c2d6c36d",
+    "evidence_recorder.py": "5c9da7ea923c5b9e2e84a99a8acb53364ebad32b243ce8e2605def1114947fad",
+    "export_experiment_register.py": "2e7994079f588c673ae2d62271e8ad010ec58af29a2d91d71b3ac493a0da9ac8",
+    "frame_matching.py": "e8a4979c798b95223f09203644f378cfdb5eacdcba45caad41ec03995b4f95fc",
+    "frame_pairing.py": "76c9746ecd9832e0155f6c7e0bc07ca74b022bf8fad1ff36cabca1da2aca34d1",
+    "grasp_candidates.py": "62623b1d7b206e249552c252f7db52aac18ee85e7bed159cfff71a613a66209d",
+    "grasp_contact_monitor.py": "eddd2829d6802737ebe7bfeef28b0acbddb4e984b87631ec3de5fe59f60fb939",
+    "grasp_geometry.py": "785ec81b543fd44b92a23710daf9f3c3db3f28c3ae2a895ede619f0be3c41f1f",
+    "gripper_closure.py": "08936975ab45e7d502f013ea3fa4dff12a273352dc27dcdc70eb70baea155d16",
+    "hold_verification.py": "2da265d7049f0d9232253766d6afc03edc65fee245dbbdaaf1dbc000f7efe66b",
+    "joint_path.py": "0d501fd550bc163d15ffec6e77bc841f25e1ff4ebb893f6c46b2fba206d2102d",
+    "kinematic_guard.py": "0dee7d2cfaffa1b2585310645e19a8e85a5a1fb1dc55babe796f708c18c480e7",
+    "lift_evidence.py": "d5913cf5690dc7c3a9956fd5a162d42efe2e0df54a80b0f386d82e0fa67541f8",
+    "mission_ledger.py": "82a59a8d228a8b13a8b4cc5b44a02e53ea96f561efcc6ca65fdc52693d20feaf",
+    "nine_node.py": "f9a6a376512ead71b825eea1e42ebe6d151c3cc16b6c700b320507229866664f",
+    "observation_view.py": "7c9ec261f448ea9c59f1bf0603fe6e0c93970cad1364132a6b44ad8554de053a",
+    "perception.py": "673c90f7534e1266edcb8784704a5e909569303ba8afd4148f1e535a4832b959",
+    "perception_tracking.py": "5b5bd93d00e79aafa16be7e3783e300719f80872122c479e8047ae90d123f0e2",
+    "planning_candidates.py": "8df31f420045ac90829587474caeb8dd45513c58323293b63bd8f41103ba357f",
+    "planning_prompt.py": "70b60d0a869676fa177bed85ecef989b51a6a55ed3a92cd6420b5a8f452b5730",
+    "recognition_suite.py": "d2e3acaba0cd2d8e7d13971df4247c4f29a1a1d02fb7fd584746555a6059db1c",
+    "record_transport_rgbd.py": "023d654f4a5ddeb4067e54ff6274887ebcbf77c587fb0e1c7b0c2938011a802f",
+    "restore_view.py": "0baf34a5cae01329d7c735d567fbe0ea116f124f81c8f5f057700b4caff49aa6",
+    "resume_delivery.py": "b45e17c17da5d89515e09d96dfeaf2b22af7d0a9997e13735b3f4ce653754dd0",
+    "robot_projection.py": "83538b02c9783dd16ff13c3efab0452bc6cab22c7dd158085394071f7cb33bcc",
+    "ros_endpoints.py": "f0668d7724358ea6f073222827c29371e9a1c449d399aa8d08c04df7f8037dfa",
+    "rotation_perception.py": "98e615a22c7b093ed7200cd2114e203b38655d05575177870773110019981d01",
+    "run_episode.py": "a3858e49abdf7c73d741d090c199b7b8efb3fc371fee9ceea16689ce1c6cd736",
+    "semantics.py": "2ae45b58714f1cde1cb45f4d759768ca37913759f4f64cd6f3f625c3168b97d2",
+    "semantic_repair.py": "dd24ebbd5d28d4d4fd49e054a803402169203b8e8ff7b6b5f020ef264f53f082",
+    "sim_with_feedback.py": "2e2d7b4488f974ab5afe275190a5332a08d356df70718fe7860ead24a91fc866",
+    "tcei_workspace.py": "06fd97c5dc76d3e6ac21cbce9fb57c84b441f704e070641dbe0d2d71b6740444",
+    "test_arrival_window.py": "6efc910c76d73554d65ba7ef90f44d2597b4d098c52597350e874e6d175b0145",
+    "test_cartesian_path.py": "c37f1e3a5ce4ec7bd462b77d651759d7730966b7fde6908fc9f747a4d37d34e8",
+    "test_command_protocol.py": "ebfc9045817bcf506cdf70a32485d7a04238781b7d6120411973134142a718be",
+    "test_compact_selection.py": "77f8c83c40d8c80044d5aa100acdde9a96fdb3b52255048b463945a399aeea66",
+    "test_contact_loss.py": "8d71c6e0622ccca46cf9cc79b71a6c5253f0d959c3f5565e7fc4d922ca64cc02",
+    "test_contact_surface.py": "b4498281eee5c38762b622a7536879464df0aa1847740d1f069995cc4531f3c2",
+    "test_controlled_stop.py": "adb3273bf298e357d8cbcf24a0bed6ecbb03f8427bd8af441889b95fbe8724a5",
+    "test_controller_contract.py": "291c62fce60c558c4a9b1624d1ceab4aea3d9b138d8190e62813f1520c9c5525",
+    "test_controller_execution.py": "dbc2fd77d703130ae2eaea050f00abb18629f8df6d240023680a754592c0c5ff",
+    "test_conveyor_observer.py": "462b12c035f112c4228495a9cc324a07c5025cf620ea7579648133af9db3618b",
+    "test_core.py": "b8aea2a8bcc81bfb1414bc5ad0980ec5046a008c5e26170ff7fc6dd82142cc03",
+    "test_delivery_association.py": "cdd37cd3f60853c37cc2f17b1c63268b2e0a7d0e48dfa9f6e95dde2d7361b16f",
+    "test_drop_recovery.py": "44b39e78dad00a50bdb3e083bf716611ef8e89f4225d611c15b5ef6fa907fff0",
+    "test_episode_contract.py": "59f4d997d871b7c65110aeeaac42c24a0b72b9807ee78fd8650d7afa4d428759",
+    "test_frame_matching.py": "fff67971bf03c0a950eb882ec07d6884d2b8b04e14bb7f859b9892490452add6",
+    "test_frame_pairing.py": "9d78566b3be6102f7af1b886d2cd7dfcc5cf0c8087b2f729d2e12b0b8721e131",
+    "test_grasp_candidates.py": "bd2901d16b5bcfd94578262907fae6e39f88b1e1d7f1b9bed1a2f4c18cab13bd",
+    "test_grasp_contact_monitor.py": "b51e96a6f39b61ee8544dd7a581cb2f5d02a14e696273d6a6966883848353615",
+    "test_grasp_geometry.py": "eb9d293bf79ee2087d7a87e620c0434022aeea1f5b14d891b9f393b340b45d73",
+    "test_grasp_symmetry.py": "766c70ecd29fa101ea3320ad606a433487b5bbda8020fce2910c02b990a7d154",
+    "test_grasp_tilt.py": "8579c0b2c3e8596b2afa5bede93345529653228380f04675cd8197a7335191a2",
+    "test_gripper_closure.py": "fcaa28057c13ea4a064a1670f92d0f1fedc1df984b1e50b0cb47087185718e10",
+    "test_joint_path.py": "d58ace26f32f912bbf027c5a9ce5963b9c7148c2e9466a8697117e5603bc93d8",
+    "test_kinematic_guard.py": "d752f9bac2244b01564c28678928e0579893f36e6c10823911cb130bcdf83756",
+    "test_lift_evidence.py": "c58d65e0fbfd70d37a706debf935d438fd2ace432c8227f0317640b1e3b63529",
+    "test_mission_ledger.py": "42aaf61ba6d9fce32a74ed00220b2c5e5c47d8f316de769dd7e552a6e971f1dc",
+    "test_nine_completion.py": "c3f58b2535b0797ee9b16b65f067da0c571c3088a99a3ff1d4cbfe60f979f0dc",
+    "test_nine_contract.py": "8977b1bf6720d263eaa1b5abd3c180a3617f98c468fa9b909b976e307fe561d8",
+    "test_nine_inference_config.py": "24e6c1c6e6a7a3c8f634091e4d043ed0a1f614a39109cb216de2e7e77ef23c82",
+    "test_observation_view.py": "3ff1e601976ca548350a185f9a59d8a024229fe4203d58811f35dac029128481",
+    "test_occlusion.py": "8e0f597d8879d851158dafe8e4eaaa7a9cdde38cfeb933bb68d02410107384c6",
+    "test_perception_integration.py": "523f8c8f2233a52c5545741d0334b0b55dcca19e5e7722a4ded3f21aae3ad051",
+    "test_perception_regions.py": "a1a56684d3a5f6a8a954ed1cb2bbfb68aa4a9a70419acd6b6066c2518278994e",
+    "test_perception_tracking.py": "1f9a7ddfc93e21003a22b79669dfd40225f652107478d5b7f0fe245b7a1e24e4",
+    "test_planner_failure_contract.py": "290afbb391d09e5315417c3fb6deee2552a102395ae37053a6125d8fd03a355c",
+    "test_planning_candidates.py": "dd65ab3da40e8bec8192d6952067910183cdb41fb3c80ad465a5b3e4c6efe307",
+    "test_planning_prompt.py": "4ebde21d47d670e1746fc995e38ddf9347ed29508840d3f223945c86f30e9df5",
+    "test_robot_projection.py": "9ac25eb180649233fef5258648ceda064e0abc21a6ff34d00f588ee22236f6ee",
+    "test_ros_image_binding.py": "a2754b8ddec07be99fccf62831257770e65442b0dcfc1625d40862b7500912bb",
+    "test_rotation_perception.py": "71cdf56e34b82a5a51ba0105e47b3801cdd45c6bef439ecd4f6b4f9f53a5c273",
+    "test_semantics.py": "bffe9ce2da3184d3d2dafdcccfd0b0de5dfc00f5abb4ff241d1101e38c997f14",
+    "test_semantic_repair.py": "882276d25ec2a227e4f86046101e2c024bc8f5c084dd4a0a708b255ff28b345b",
+    "test_settled_placement.py": "98a4196085f441194cdc8b71a26bd0975abd842a3b688389a5454400abeedf7a",
+    "test_sim_control_adapter.py": "9aec313a1cc4c7ce312cfc1d61f00cc9c2309213c11d3d5852865afd32daebfd",
+    "test_sim_import_boundary.py": "3fa65b2963df41374059e838dd96295fe357ce82aeef52a1a781c7328d230bec",
+    "test_trajectory_timing.py": "32f3337d5ac1a32022b4f174d540a190df85cbb83e9f9899489e023d594cdcf4",
+    "trajectory_timing.py": "24385bf5b99840fbf7eb28adcea647f40eff89f82cf62ef37a568a8f62eafb67"
+  },
+  "source_changed_during_run": [],
+  "scope": "pure logic and fake transport/drive tests; no live inference or physics"
+}

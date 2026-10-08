@@ -1,0 +1,1993 @@
+{
+ "batch": "b03_full_10051355",
+ "campaign_status": "completed",
+ "runtime": "dev_v7_t1_44",
+ "autoVerified": 0,
+ "cases": {
+  "scramble_01": {
+   "case": "scramble_01",
+   "episode_status": "stopped",
+   "verified": 3,
+   "elapsed": 361,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+     "status": "rejected",
+     "reason": "vision/model category disagreement"
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右下方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "e37d2127-obj-0005": [
+     {
+      "time": 1791179984.317226,
+      "release_id": "908f80eccc8b448bb86d9b7f4316854b",
+      "request_id": "335ed5806b71",
+      "side": "right"
+     }
+    ],
+    "e37d2127-obj-0002": [
+     {
+      "time": 1791180054.9298728,
+      "release_id": "66a7729f9b604f349d01ad29afca14b5",
+      "request_id": "93011358a3b8",
+      "side": "left"
+     }
+    ],
+    "e37d2127-obj-0004": [
+     {
+      "time": 1791180145.3941877,
+      "release_id": "79346811b9144bc988903771090b7cd3",
+      "request_id": "5f4b3cf4f80a",
+      "side": "right"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "e37d2127-obj-0005": 1,
+    "e37d2127-obj-0002": 1,
+    "e37d2127-obj-0004": 1
+   },
+   "released_events": {
+    "e37d2127-obj-0005": [
+     {
+      "time": 1791179975.8490434,
+      "release_id": "908f80eccc8b448bb86d9b7f4316854b",
+      "side": "right"
+     }
+    ],
+    "e37d2127-obj-0002": [
+     {
+      "time": 1791180047.8375924,
+      "release_id": "66a7729f9b604f349d01ad29afca14b5",
+      "side": "left"
+     }
+    ],
+    "e37d2127-obj-0004": [
+     {
+      "time": 1791180137.2434864,
+      "release_id": "79346811b9144bc988903771090b7cd3",
+      "side": "right"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791180154.992731,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "e37d2127-obj-0001",
+     "e37d2127-obj-0003"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "e37d2127-obj-0006",
+      "class": null,
+      "bbox": [
+       770,
+       331,
+       783,
+       373
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "e37d2127-obj-0008",
+      "class": null,
+      "bbox": [
+       689,
+       339,
+       696,
+       347
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0001",
+      "identity": "confirmed"
+     },
+     {
+      "id": "2",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791179911.084624,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791179984.3256447,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791179986.9695134,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180054.9339416,
+     "task": "task-03",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791180059.414698,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180145.3988876,
+     "task": "task-04",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_02": {
+   "case": "scramble_02",
+   "episode_status": "stopped",
+   "verified": 2,
+   "elapsed": 424,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取左下方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右上方的军用手电筒，放到左侧传送带",
+     "status": "task_pending_verification",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到右侧传送带",
+     "status": "task_pending_verification",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "25c494e3-obj-0001": [
+     {
+      "time": 1791180360.8540676,
+      "release_id": "9fcc3d39e80c4403897b02ba5d9cb279",
+      "request_id": "5c3f3648d5a7",
+      "side": "left"
+     }
+    ],
+    "25c494e3-obj-0002": [
+     {
+      "time": 1791180432.6615787,
+      "release_id": "8324ebc12bc04467a3e6018f63a1c726",
+      "request_id": "b7c5600e8a07",
+      "side": "right"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "25c494e3-obj-0001": 1,
+    "25c494e3-obj-0002": 1,
+    "25c494e3-obj-0005": 1,
+    "25c494e3-obj-0004": 1
+   },
+   "released_events": {
+    "25c494e3-obj-0001": [
+     {
+      "time": 1791180354.1397123,
+      "release_id": "9fcc3d39e80c4403897b02ba5d9cb279",
+      "side": "left"
+     }
+    ],
+    "25c494e3-obj-0002": [
+     {
+      "time": 1791180424.6165977,
+      "release_id": "8324ebc12bc04467a3e6018f63a1c726",
+      "side": "right"
+     }
+    ],
+    "25c494e3-obj-0005": [
+     {
+      "time": 1791180499.5469518,
+      "release_id": "f1c88afb99a64d8989986949b3524765",
+      "side": "left"
+     }
+    ],
+    "25c494e3-obj-0004": [
+     {
+      "time": 1791180593.458151,
+      "release_id": "d26db8bc058c428dbe60347b67c4d1f1",
+      "side": "right"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791180630.5259821,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "25c494e3-obj-0003"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "25c494e3-obj-0007",
+      "class": null,
+      "bbox": [
+       506,
+       172,
+       520,
+       195
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "25c494e3-obj-0008",
+      "class": null,
+      "bbox": [
+       688,
+       339,
+       697,
+       361
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "25c494e3-obj-0009",
+      "class": null,
+      "bbox": [
+       641,
+       339,
+       658,
+       361
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "25c494e3-obj-0011",
+      "class": null,
+      "bbox": [
+       765,
+       176,
+       779,
+       185
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791180288.4197972,
+     "task": "task-01",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180360.862482,
+     "task": "task-01",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791180369.042804,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180432.6910243,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791180435.5696695,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180525.5811796,
+     "task": "task-03",
+     "status": "task_pending_verification",
+     "reason": ""
+    },
+    {
+     "time": 1791180529.3147926,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180621.0276186,
+     "task": "task-04",
+     "status": "task_pending_verification",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_03": {
+   "case": "scramble_03",
+   "episode_status": "stopped",
+   "verified": 2,
+   "elapsed": 335,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的弹夹，放到右侧传送带",
+     "status": "rejected",
+     "reason": "vision/model category disagreement"
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右下方的军用手电筒，放到左侧传送带",
+     "status": "task_pending_verification",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右上方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "38f41349-obj-0004": [
+     {
+      "time": 1791180937.1793282,
+      "release_id": "1c4025ed271447e0a0614681aa72ffe5",
+      "request_id": "04331e641a4f",
+      "side": "left"
+     }
+    ],
+    "38f41349-obj-0003": [
+     {
+      "time": 1791181008.3158152,
+      "release_id": "0cc196882e924cd5898423ef3f567db1",
+      "request_id": "569091ae70df",
+      "side": "right"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "38f41349-obj-0005": 1,
+    "38f41349-obj-0004": 1,
+    "38f41349-obj-0003": 1
+   },
+   "released_events": {
+    "38f41349-obj-0005": [
+     {
+      "time": 1791180832.2608476,
+      "release_id": "3003640cd2c049789325c9d906b23525",
+      "side": "left"
+     }
+    ],
+    "38f41349-obj-0004": [
+     {
+      "time": 1791180930.6872568,
+      "release_id": "1c4025ed271447e0a0614681aa72ffe5",
+      "side": "left"
+     }
+    ],
+    "38f41349-obj-0003": [
+     {
+      "time": 1791181000.165384,
+      "release_id": "0cc196882e924cd5898423ef3f567db1",
+      "side": "right"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791181017.8706183,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "38f41349-obj-0001",
+     "38f41349-obj-0002"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "38f41349-obj-0007",
+      "class": null,
+      "bbox": [
+       766,
+       347,
+       784,
+       356
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "38f41349-obj-0010",
+      "class": null,
+      "bbox": [
+       768,
+       174,
+       777,
+       192
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Magazine",
+      "stable_id": "obj-0001",
+      "identity": "confirmed"
+     },
+     {
+      "id": "2",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0002",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791180769.778352,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180858.8023958,
+     "task": "task-02",
+     "status": "task_pending_verification",
+     "reason": ""
+    },
+    {
+     "time": 1791180863.6120627,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791180937.1882718,
+     "task": "task-03",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791180944.984207,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181008.3207383,
+     "task": "task-04",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_04": {
+   "case": "scramble_04",
+   "episode_status": "stopped",
+   "verified": 3,
+   "elapsed": 401,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的手雷，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右上方的弹夹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右下方的军用手电筒，放到左侧传送带",
+     "status": "task_pending_verification",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取左下方的烟雾弹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "43689557-obj-0001": [
+     {
+      "time": 1791181222.555944,
+      "release_id": "95242e36eae54814a722b87e4cc1aa04",
+      "request_id": "a26d8d0699d6",
+      "side": "right"
+     }
+    ],
+    "43689557-obj-0004": [
+     {
+      "time": 1791181294.1630375,
+      "release_id": "98d167ac0cee4e8e9ff690a700d29731",
+      "request_id": "e71166bdff5b",
+      "side": "left"
+     }
+    ],
+    "43689557-obj-0002": [
+     {
+      "time": 1791181460.0615997,
+      "release_id": "5ad3ebcfafad41a7a1fd9abf5dd7a170",
+      "request_id": "0d5c669ec446",
+      "side": "right"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "43689557-obj-0001": 1,
+    "43689557-obj-0004": 1,
+    "43689557-obj-0005": 1,
+    "43689557-obj-0002": 1
+   },
+   "released_events": {
+    "43689557-obj-0001": [
+     {
+      "time": 1791181214.3582566,
+      "release_id": "95242e36eae54814a722b87e4cc1aa04",
+      "side": "right"
+     }
+    ],
+    "43689557-obj-0004": [
+     {
+      "time": 1791181287.8427322,
+      "release_id": "98d167ac0cee4e8e9ff690a700d29731",
+      "side": "left"
+     }
+    ],
+    "43689557-obj-0005": [
+     {
+      "time": 1791181360.669,
+      "release_id": "fdc39c7511d84efe98ee81761a0fd43c",
+      "side": "left"
+     }
+    ],
+    "43689557-obj-0002": [
+     {
+      "time": 1791181451.855238,
+      "release_id": "5ad3ebcfafad41a7a1fd9abf5dd7a170",
+      "side": "right"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791181469.5362508,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "43689557-obj-0003"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "43689557-obj-0007",
+      "class": null,
+      "bbox": [
+       465,
+       345,
+       488,
+       362
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "43689557-obj-0008",
+      "class": null,
+      "bbox": [
+       690,
+       339,
+       697,
+       361
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791181141.8803232,
+     "task": "task-01",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181222.5616899,
+     "task": "task-01",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791181225.0506186,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181294.1698942,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791181297.9534886,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181387.2365246,
+     "task": "task-03",
+     "status": "task_pending_verification",
+     "reason": ""
+    },
+    {
+     "time": 1791181392.2092707,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181460.0757024,
+     "task": "task-04",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_05": {
+   "case": "scramble_05",
+   "episode_status": "stopped",
+   "verified": 3,
+   "elapsed": 329,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的军用手电筒，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右下方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右上方的烟雾弹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取手雷，放到左侧传送带",
+     "status": "rejected",
+     "reason": "vision/model category disagreement"
+    }
+   ],
+   "placement_verified_events": {
+    "071a1065-obj-0001": [
+     {
+      "time": 1791181675.2467003,
+      "release_id": "d68b4eb8326c401b8a7e7bbe65cf9d93",
+      "request_id": "74cbd4fbe2ca",
+      "side": "left"
+     }
+    ],
+    "071a1065-obj-0005": [
+     {
+      "time": 1791181750.67511,
+      "release_id": "dac4c84e265d437a8056d49cac321d2e",
+      "request_id": "710cfbf41ecf",
+      "side": "right"
+     }
+    ],
+    "071a1065-obj-0004": [
+     {
+      "time": 1791181833.2041943,
+      "release_id": "8199875e471d439386f325bda034a7ed",
+      "request_id": "af6218ed7ebf",
+      "side": "right"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "071a1065-obj-0001": 1,
+    "071a1065-obj-0005": 1,
+    "071a1065-obj-0004": 1
+   },
+   "released_events": {
+    "071a1065-obj-0001": [
+     {
+      "time": 1791181668.5438364,
+      "release_id": "d68b4eb8326c401b8a7e7bbe65cf9d93",
+      "side": "left"
+     }
+    ],
+    "071a1065-obj-0005": [
+     {
+      "time": 1791181742.597304,
+      "release_id": "dac4c84e265d437a8056d49cac321d2e",
+      "side": "right"
+     }
+    ],
+    "071a1065-obj-0004": [
+     {
+      "time": 1791181825.0479786,
+      "release_id": "8199875e471d439386f325bda034a7ed",
+      "side": "right"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791181852.9893205,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "071a1065-obj-0002",
+     "071a1065-obj-0003"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "071a1065-obj-0007",
+      "class": null,
+      "bbox": [
+       466,
+       342,
+       472,
+       357
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "071a1065-obj-0009",
+      "class": null,
+      "bbox": [
+       507,
+       170,
+       523,
+       185
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "071a1065-obj-0011",
+      "class": null,
+      "bbox": [
+       770,
+       331,
+       783,
+       373
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "071a1065-obj-0013",
+      "class": null,
+      "bbox": [
+       768,
+       174,
+       777,
+       193
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0002",
+      "identity": "confirmed"
+     },
+     {
+      "id": "2",
+      "class": "Torch",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791181597.201728,
+     "task": "task-01",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181675.256579,
+     "task": "task-01",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791181679.5400827,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181750.6847339,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791181754.480247,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791181833.2156408,
+     "task": "task-03",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_06": {
+   "case": "scramble_06",
+   "episode_status": "stopped",
+   "verified": 4,
+   "elapsed": 386,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取最左方的军用手电筒，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右上方的烟雾弹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取手雷，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "833b02c2-obj-0001": [
+     {
+      "time": 1791182068.0920253,
+      "release_id": "d8ca4567fc8a4ceabdae92af7190bda0",
+      "request_id": "5a25ee19c85d",
+      "side": "left"
+     }
+    ],
+    "833b02c2-obj-0004": [
+     {
+      "time": 1791182148.320298,
+      "release_id": "63d07bb8bfad49d7ae5fd4045bab7473",
+      "request_id": "5c8a4ffcdac2",
+      "side": "right"
+     }
+    ],
+    "833b02c2-obj-0002": [
+     {
+      "time": 1791182213.4809399,
+      "release_id": "0d620e4cb20649dd8e5143bcd7fbe5c7",
+      "request_id": "d87058ef85ea",
+      "side": "left"
+     }
+    ],
+    "833b02c2-obj-0005": [
+     {
+      "time": 1791182284.5793486,
+      "release_id": "375976b3b2a94ea6be631e6a23d72f23",
+      "request_id": "97ece77a5b2c",
+      "side": "right"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "833b02c2-obj-0001": 1,
+    "833b02c2-obj-0004": 1,
+    "833b02c2-obj-0002": 1,
+    "833b02c2-obj-0005": 1
+   },
+   "released_events": {
+    "833b02c2-obj-0001": [
+     {
+      "time": 1791182061.3721752,
+      "release_id": "d8ca4567fc8a4ceabdae92af7190bda0",
+      "side": "left"
+     }
+    ],
+    "833b02c2-obj-0004": [
+     {
+      "time": 1791182140.3152575,
+      "release_id": "63d07bb8bfad49d7ae5fd4045bab7473",
+      "side": "right"
+     }
+    ],
+    "833b02c2-obj-0002": [
+     {
+      "time": 1791182207.0653133,
+      "release_id": "0d620e4cb20649dd8e5143bcd7fbe5c7",
+      "side": "left"
+     }
+    ],
+    "833b02c2-obj-0005": [
+     {
+      "time": 1791182277.019223,
+      "release_id": "375976b3b2a94ea6be631e6a23d72f23",
+      "side": "right"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791182294.166004,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "833b02c2-obj-0003"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "833b02c2-obj-0006",
+      "class": null,
+      "bbox": [
+       507,
+       170,
+       523,
+       185
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "833b02c2-obj-0007",
+      "class": null,
+      "bbox": [
+       687,
+       339,
+       697,
+       361
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791181993.1787837,
+     "task": "task-01",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182068.0992038,
+     "task": "task-01",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791182073.9942436,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182148.330321,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791182150.9592514,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182213.4904156,
+     "task": "task-03",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791182217.0196595,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182284.5909688,
+     "task": "task-04",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_07": {
+   "case": "scramble_07",
+   "episode_status": "stopped",
+   "verified": 3,
+   "elapsed": 403,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取左上方的烟雾弹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取右下方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右上方的军用手电筒，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取弹夹，放到左侧传送带",
+     "status": "task_pending_verification",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "963a75f1-obj-0001": [
+     {
+      "time": 1791182503.717163,
+      "release_id": "ce39608069734eae91f29d00c8b3fb1d",
+      "request_id": "6b8c567ec976",
+      "side": "right"
+     }
+    ],
+    "963a75f1-obj-0003": [
+     {
+      "time": 1791182568.4328697,
+      "release_id": "71989cba7dca421588cdab2d89bf8cdc",
+      "request_id": "75497c65e293",
+      "side": "left"
+     }
+    ],
+    "963a75f1-obj-0005": [
+     {
+      "time": 1791182654.3268478,
+      "release_id": "4aa4736ea24a4415abf9affe6b09247e",
+      "request_id": "c0f848e10fcf",
+      "side": "right"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "963a75f1-obj-0001": 1,
+    "963a75f1-obj-0003": 1,
+    "963a75f1-obj-0005": 1,
+    "963a75f1-obj-0002": 1
+   },
+   "released_events": {
+    "963a75f1-obj-0001": [
+     {
+      "time": 1791182495.24917,
+      "release_id": "ce39608069734eae91f29d00c8b3fb1d",
+      "side": "right"
+     }
+    ],
+    "963a75f1-obj-0003": [
+     {
+      "time": 1791182561.163551,
+      "release_id": "71989cba7dca421588cdab2d89bf8cdc",
+      "side": "left"
+     }
+    ],
+    "963a75f1-obj-0005": [
+     {
+      "time": 1791182645.2916808,
+      "release_id": "4aa4736ea24a4415abf9affe6b09247e",
+      "side": "right"
+     }
+    ],
+    "963a75f1-obj-0002": [
+     {
+      "time": 1791182713.2979248,
+      "release_id": "5a7e2e168947469386a8500d4cf45d34",
+      "side": "left"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791182749.575817,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "963a75f1-obj-0004"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "963a75f1-obj-0007",
+      "class": null,
+      "bbox": [
+       467,
+       332,
+       478,
+       340
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "963a75f1-obj-0008",
+      "class": null,
+      "bbox": [
+       506,
+       172,
+       520,
+       195
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "963a75f1-obj-0009",
+      "class": null,
+      "bbox": [
+       681,
+       339,
+       697,
+       354
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Grenade",
+      "stable_id": "obj-0004",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791182423.3582587,
+     "task": "task-01",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182503.7283626,
+     "task": "task-01",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791182508.1569407,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182568.4381704,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791182571.5633235,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182654.3385568,
+     "task": "task-03",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791182659.0833223,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791182740.0743155,
+     "task": "task-04",
+     "status": "task_pending_verification",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_08": {
+   "case": "scramble_08",
+   "episode_status": "stopped",
+   "verified": 3,
+   "elapsed": 366,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取右上方的手雷，放到左侧传送带",
+     "status": "rejected",
+     "reason": "vision/model category disagreement"
+    },
+    {
+     "index": 2,
+     "instruction": "抓取左上方的弹夹，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取左下方的军用手电筒，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取右下方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "73cc6511-obj-0001": [
+     {
+      "time": 1791183029.4514322,
+      "release_id": "d7a6b391c2da459da69e276d4785699b",
+      "request_id": "410ceb67afd1",
+      "side": "right"
+     }
+    ],
+    "73cc6511-obj-0002": [
+     {
+      "time": 1791183108.6235466,
+      "release_id": "f79b97d056704d1e927581b4ec1b1d6b",
+      "request_id": "9fac06174603",
+      "side": "right"
+     }
+    ],
+    "73cc6511-obj-0005": [
+     {
+      "time": 1791183179.7304492,
+      "release_id": "2db8cf3406434734a8476ea569136150",
+      "request_id": "43c5fbc8b36c",
+      "side": "left"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "73cc6511-obj-0001": 1,
+    "73cc6511-obj-0002": 1,
+    "73cc6511-obj-0005": 1
+   },
+   "released_events": {
+    "73cc6511-obj-0001": [
+     {
+      "time": 1791183021.3051295,
+      "release_id": "d7a6b391c2da459da69e276d4785699b",
+      "side": "right"
+     }
+    ],
+    "73cc6511-obj-0002": [
+     {
+      "time": 1791183101.166306,
+      "release_id": "f79b97d056704d1e927581b4ec1b1d6b",
+      "side": "right"
+     }
+    ],
+    "73cc6511-obj-0005": [
+     {
+      "time": 1791183173.345504,
+      "release_id": "2db8cf3406434734a8476ea569136150",
+      "side": "left"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791183189.3043528,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "73cc6511-obj-0003",
+     "73cc6511-obj-0004"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "73cc6511-obj-0006",
+      "class": null,
+      "bbox": [
+       507,
+       341,
+       523,
+       356
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "73cc6511-obj-0007",
+      "class": null,
+      "bbox": [
+       462,
+       345,
+       484,
+       354
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "73cc6511-obj-0008",
+      "class": null,
+      "bbox": [
+       506,
+       157,
+       519,
+       199
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "73cc6511-obj-0010",
+      "class": null,
+      "bbox": [
+       769,
+       346,
+       781,
+       369
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Torch",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     },
+     {
+      "id": "2",
+      "class": "Grenade",
+      "stable_id": "obj-0004",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791182951.8103578,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183029.4572585,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791183037.6314952,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183108.6318698,
+     "task": "task-03",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791183112.8954027,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183179.7417397,
+     "task": "task-04",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_09": {
+   "case": "scramble_09",
+   "episode_status": "stopped",
+   "verified": 3,
+   "elapsed": 320,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取最右方的军用手电筒，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 2,
+     "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 3,
+     "instruction": "抓取左下方的烟雾弹，放到右侧传送带",
+     "status": "rejected",
+     "reason": "model side contradicts explicit instruction"
+    },
+    {
+     "index": 4,
+     "instruction": "抓取弹夹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "30ae35b6-obj-0004": [
+     {
+      "time": 1791183389.715206,
+      "release_id": "d2da08fa4e764ce09ba3ad86cbb3ce8f",
+      "request_id": "ed83228b3db3",
+      "side": "right"
+     }
+    ],
+    "30ae35b6-obj-0001": [
+     {
+      "time": 1791183460.925086,
+      "release_id": "9f8240e4f5d148cdba7569bc4f3c0113",
+      "request_id": "ca0e59af3301",
+      "side": "left"
+     }
+    ],
+    "30ae35b6-obj-0005": [
+     {
+      "time": 1791183551.4330416,
+      "release_id": "208532b771f3449087e254e13d3ebeae",
+      "request_id": "1a479a907578",
+      "side": "left"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "30ae35b6-obj-0004": 1,
+    "30ae35b6-obj-0001": 1,
+    "30ae35b6-obj-0005": 1
+   },
+   "released_events": {
+    "30ae35b6-obj-0004": [
+     {
+      "time": 1791183382.0037584,
+      "release_id": "d2da08fa4e764ce09ba3ad86cbb3ce8f",
+      "side": "right"
+     }
+    ],
+    "30ae35b6-obj-0001": [
+     {
+      "time": 1791183453.6686099,
+      "release_id": "9f8240e4f5d148cdba7569bc4f3c0113",
+      "side": "left"
+     }
+    ],
+    "30ae35b6-obj-0005": [
+     {
+      "time": 1791183545.0409946,
+      "release_id": "208532b771f3449087e254e13d3ebeae",
+      "side": "left"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791183561.0863602,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "30ae35b6-obj-0002",
+     "30ae35b6-obj-0003"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "30ae35b6-obj-0007",
+      "class": null,
+      "bbox": [
+       817,
+       180,
+       825,
+       194
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0002",
+      "identity": "confirmed"
+     },
+     {
+      "id": "2",
+      "class": "Torch",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791183308.4823887,
+     "task": "task-01",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183389.725013,
+     "task": "task-01",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791183394.084491,
+     "task": "task-02",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183460.9374063,
+     "task": "task-02",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791183489.1621428,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183551.449963,
+     "task": "task-04",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  },
+  "scramble_10": {
+   "case": "scramble_10",
+   "episode_status": "stopped",
+   "verified": 2,
+   "elapsed": 298,
+   "tasks": [
+    {
+     "index": 1,
+     "instruction": "抓取右上方的弹夹，放到左侧传送带",
+     "status": "rejected",
+     "reason": "vision/model category disagreement"
+    },
+    {
+     "index": 2,
+     "instruction": "抓取左下方的手雷，放到右侧传送带",
+     "status": "rejected",
+     "reason": "model side contradicts explicit instruction"
+    },
+    {
+     "index": 3,
+     "instruction": "抓取右下方的军用手电筒，放到右侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "index": 4,
+     "instruction": "抓取左上方的烟雾弹，放到左侧传送带",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ],
+   "placement_verified_events": {
+    "88bff57f-obj-0005": [
+     {
+      "time": 1791183818.2232275,
+      "release_id": "53dcce12bc484cb5851b54db25d547ec",
+      "request_id": "6c17077a1220",
+      "side": "right"
+     }
+    ],
+    "88bff57f-obj-0002": [
+     {
+      "time": 1791183900.7850797,
+      "release_id": "6f0b24d8fcd745a09c71cfdfbdd5cddf",
+      "request_id": "149ea29f46ec",
+      "side": "left"
+     }
+    ]
+   },
+   "grasp_verified_stables": {
+    "88bff57f-obj-0005": 1,
+    "88bff57f-obj-0002": 1
+   },
+   "released_events": {
+    "88bff57f-obj-0005": [
+     {
+      "time": 1791183810.5463657,
+      "release_id": "53dcce12bc484cb5851b54db25d547ec",
+      "side": "right"
+     }
+    ],
+    "88bff57f-obj-0002": [
+     {
+      "time": 1791183894.005058,
+      "release_id": "6f0b24d8fcd745a09c71cfdfbdd5cddf",
+      "side": "left"
+     }
+    ]
+   },
+   "remaining": {
+    "time": 1791183910.6679623,
+    "reasons": [
+     "coverage_incomplete",
+     "unknown_regions"
+    ],
+    "remaining_stable_ids": [
+     "88bff57f-obj-0001",
+     "88bff57f-obj-0003",
+     "88bff57f-obj-0004"
+    ],
+    "unobserved": [
+     {
+      "stable_id": "88bff57f-obj-0007",
+      "class": null,
+      "bbox": [
+       766,
+       347,
+       784,
+       356
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     },
+     {
+      "stable_id": "88bff57f-obj-0009",
+      "class": null,
+      "bbox": [
+       691,
+       339,
+       697,
+       361
+      ],
+      "seen_count": null,
+      "last_observed_at": null,
+      "classification": "1_真实未交付且不可见（待定：遮挡 or 伪影）",
+      "in_ledger_remaining": false,
+      "placement_events": [
+       {}
+      ]
+     }
+    ],
+    "other_regions": [],
+    "visible_candidates": [
+     {
+      "id": "1",
+      "class": "Grenade",
+      "stable_id": "obj-0001",
+      "identity": "confirmed"
+     },
+     {
+      "id": "2",
+      "class": "Smokegrenade",
+      "stable_id": "obj-0003",
+      "identity": "confirmed"
+     },
+     {
+      "id": "3",
+      "class": "Magazine",
+      "stable_id": "obj-0004",
+      "identity": "confirmed"
+     }
+    ]
+   },
+   "task_status_events_tail": [
+    {
+     "time": 1791183742.4393609,
+     "task": "task-03",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183818.227703,
+     "task": "task-03",
+     "status": "task_succeeded",
+     "reason": ""
+    },
+    {
+     "time": 1791183828.3311036,
+     "task": "task-04",
+     "status": "task_started",
+     "reason": ""
+    },
+    {
+     "time": 1791183900.8012738,
+     "task": "task-04",
+     "status": "task_succeeded",
+     "reason": ""
+    }
+   ]
+  }
+ }
+}

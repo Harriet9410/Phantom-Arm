@@ -1,0 +1,126 @@
+{
+  "description": "Official-image baseline observed on the working instance; verify rather than reinstall",
+  "files": {
+    "/root/EAICON/Source/JAKA/jaka_checkerboard_cspace_sim .py": {
+      "bytes": 11337,
+      "sha256": "a34566960624527c8d3b1e6b12e5f4cfd87c297d82daf787cd75734df6e211b7"
+    },
+    "/root/EAICON/Source/JAKA/jaka_env.py": {
+      "bytes": 19720,
+      "sha256": "95aed5f5b9bb919ef480fd504c411f57b76f9510582ea40f1f49611203bc5e9a"
+    },
+    "/root/EAICON/Source/JAKA/jaka_sim.py": {
+      "bytes": 12899,
+      "sha256": "3920585e40abe39ce57d08a90ef921a3f651fd93a19b62796c840075ce1a6c94"
+    },
+    "/root/EAICON/Source/JAKA/jaka_checkerboard_sim.py": {
+      "bytes": 11506,
+      "sha256": "d13141a81c2c85b7cc71c1fed4b77ef1cf5378c60eb7d81ae457676015d3aa36"
+    },
+    "/root/EAICON/Source/Go2/go2_checkerboard_sim.py": {
+      "bytes": 21653,
+      "sha256": "d34d6e80566cccc4198454881cd08824d9dfd09237cbec672a262e3b3575dda1"
+    },
+    "/root/EAICON/Source/Go2/go2_sim.py": {
+      "bytes": 28894,
+      "sha256": "5b65ade44b50325117b3b6cc773836a072d120f814c6cf8cbccfd1d655094ba3"
+    },
+    "/root/EAICON/Source/Go2/go2_env.py": {
+      "bytes": 24225,
+      "sha256": "ff3d153d5ee99953a26ff821c8a1bdcef082ba242a6ecb2e281f34a25f710d09"
+    },
+    "/root/EAICON/Content/JAKA/robot/JAKA_C5_With_DH_PGI_rmpflow.yaml": {
+      "bytes": 3634,
+      "sha256": "be2684da6da564b4bb86e8bdc725d6a9eb5176354df0ea3a888843b3caf6d6e8"
+    },
+    "/root/EAICON/Content/JAKA/robot/JAKA_C5_With_DH_PGI.yaml": {
+      "bytes": 3991,
+      "sha256": "90e34e1e8effba5003368166b5da60824e0dd3a4e98d6704d867eea7a6cbab2f"
+    },
+    "/root/EAICON/Content/JAKA/robot/JAKA_C5_With_DH_PGI.urdf": {
+      "bytes": 10038,
+      "sha256": "74281502b20d850d2754a7a7bd981e22f207424fa9e8a204eba8bf2ab689261f"
+    },
+    "/root/EAICON/Content/JAKA/scene.usd": {
+      "bytes": 897975,
+      "sha256": "9c1d3a6c87eb378ce122cc93db4cfa83f0e0b7b2274a8900073d58ba96af48ff"
+    },
+    "/root/jaka/best.pt": {
+      "bytes": 6226329,
+      "sha256": "31782cfa6acd81e7dfc809530b739d524a434b85dfe0152fdeffcb37e7d536aa"
+    },
+    "/root/ultralytics/ultralytics/__init__.py": {
+      "bytes": 1301,
+      "sha256": "6a43dfb0ed653cb216e2d1abed660f64390ad9ce4c5c1f451206ba9dc046ccae"
+    },
+    "/root/isaacsim/VERSION": {
+      "bytes": 37,
+      "sha256": "ae03a4157cfcbea2052862857e805daf1d4ab73c3ef5fa8bda59c90b84522f9d"
+    },
+    "/root/inference/FM9G4B-V/config.json": {
+      "bytes": 2414,
+      "sha256": "af47d27d6fad1615db8dcf805d1b5e0bc3e7f2380e760df13fa28e9bd5abc7bb"
+    },
+    "/root/inference/FM9G4B-V/image_processing_fm9gv.py": {
+      "bytes": 16576,
+      "sha256": "d493e3e8445865139192a3d3551a015eba1c32e29f680f9b45a02146a2f1d852"
+    },
+    "/root/inference/FM9G4B-V/modeling_fm9g.py": {
+      "bytes": 72258,
+      "sha256": "2f3f6bf7b255b489c56bd7a7c5ce70cbe602eae1b21d31e4417fbf40b849a770"
+    },
+    "/root/inference/FM9G4B-V/tokenization_fm9gv_fast.py": {
+      "bytes": 1644,
+      "sha256": "3228365f9a75c54b902bfddf60f1796d7e419661ec9e244b785beb4abe1a025c"
+    },
+    "/root/inference/FM9G4B-V/modeling_navit_siglip.py": {
+      "bytes": 41835,
+      "sha256": "c71ca316fe7405325b7097364f98f71c317fff8c9f5c8820f30d3362b1ed5bfa"
+    },
+    "/root/inference/FM9G4B-V/tokenization_fm9g.py": {
+      "bytes": 17903,
+      "sha256": "78a5fe12f3470062c114b3dcf274ce1dfef465951453c2eb16ed797d12ebff94"
+    },
+    "/root/inference/FM9G4B-V/tokenizer_config.json": {
+      "bytes": 8535,
+      "sha256": "f92162f67fad194cd6279c211e26e1ba1d61585e03147172dd8edf5df4d10d44"
+    },
+    "/root/inference/FM9G4B-V/processing_fm9gv.py": {
+      "bytes": 9865,
+      "sha256": "9fa950c43ef1c1d3f0817778c8b87c2bfce4170622a6832a8b54abd562ea465b"
+    },
+    "/root/inference/FM9G4B-V/modeling_fm9gv.py": {
+      "bytes": 15733,
+      "sha256": "50f1d9a74737b7bd768cc3b90d01d20cfe3a7dc5fa8cc67dbbeed7e8e035c061"
+    },
+    "/root/inference/FM9G4B-V/tokenizer.json": {
+      "bytes": 3682054,
+      "sha256": "4ec2d50cc716dd5546087d8fec44fa48d6ee78887c080e8a8fd96e058f087cad"
+    },
+    "/root/inference/FM9G4B-V/configuration_fm9g.py": {
+      "bytes": 12411,
+      "sha256": "766293428b12a7ddd93b96ee79ed0876d042e773549abad963b3fc1b8c5577f0"
+    },
+    "/root/inference/FM9G4B-V/added_tokens.json": {
+      "bytes": 216,
+      "sha256": "4760fcbf90bc193f33827ffe02f2e7ba1af1ec43644cc02ac22fdd611f6cca15"
+    },
+    "/root/inference/FM9G4B-V/preprocessor_config.json": {
+      "bytes": 696,
+      "sha256": "7325477c6e9741d6306f54eae71cef8884c0e389d39aff72af8a84795ce2010b"
+    },
+    "/root/inference/FM9G4B-V/special_tokens_map.json": {
+      "bytes": 4724,
+      "sha256": "af21a2e263e40d4f5224a81c07e9728743bf944c174df9867978fda1ab785555"
+    },
+    "/root/inference/FM9G4B-V/resampler.py": {
+      "bytes": 16657,
+      "sha256": "8f347badc48756ea9f32ce3f97da5fab7660b96e489be946226f8950d91201d9"
+    }
+  },
+  "large_model": {
+    "path": "root/inference/FM9G4B-V/pytorch_model.bin",
+    "bytes": 9030068428,
+    "sha256": "8e8f58b9e1c1bc8fed578e7772204565cc4caa48e363983bb7e86db72430faa8"
+  }
+}

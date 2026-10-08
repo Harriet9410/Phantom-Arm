@@ -1,0 +1,642 @@
+[
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449410.5937066,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4157,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 168.40096451435238,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449411.6283236,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4166,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 167.3661560025066,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449412.6608665,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4176,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 166.33359564933926,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449413.6936605,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4185,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 165.30080232862383,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449414.730672,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4194,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 164.26380959618837,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449415.764034,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4203,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 163.23041785135865,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449416.800837,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4213,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 162.1939717726782,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449417.8404107,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4222,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 161.15404127910733,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449418.8734438,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4232,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 160.12103298399597,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ },
+ {
+  "status": "remaining_context_incomplete",
+  "time": 1791449419.9073641,
+  "task_index": 4,
+  "context": {
+   "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+   "task_index": 4,
+   "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+   "dependencies_satisfied": true,
+   "allow_reorder": false,
+   "remaining_ids": [
+    "1"
+   ],
+   "remaining_stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "reserved_ids": [],
+   "reserved_stable_ids": [],
+   "stable_ids": [
+    "9797b1e2-obj-0003"
+   ],
+   "released_pending_stable_ids": [],
+   "candidate_stable_ids": {
+    "1": "9797b1e2-obj-0003"
+   },
+   "remaining_complete": false,
+   "remaining_incomplete_reasons": [
+    "stable_identity_class_changed"
+   ],
+   "missing_stable_ids": [],
+   "scene_frame_id": 4241,
+   "scene_fresh": true,
+   "deadline_monotonic": 4943904.832303837,
+   "remaining_seconds": 159.087118527852,
+   "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+  },
+  "candidates": [
+   {
+    "id": "1",
+    "class": "Torch",
+    "pixel": [
+     671.5,
+     349.5
+    ],
+    "bbox": [
+     641,
+     339,
+     697,
+     361
+    ],
+    "depth": 2.0938668251037598,
+    "stable_id": "9797b1e2-obj-0003",
+    "identity_status": "confirmed",
+    "identity_candidates": [],
+    "identity_reason": null,
+    "association_anchor_held": false,
+    "association_anchor_pixel": [
+     671.5,
+     349.5
+    ]
+   }
+  ],
+  "unknown_regions": []
+ }
+]

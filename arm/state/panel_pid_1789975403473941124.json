@@ -1,0 +1,17 @@
+{
+  "pid": 39569,
+  "pgid": 39569,
+  "start_ticks": 1840779028,
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/root/tcei_final_v2_23/tcei_260920v2/evaluation/desktop_review.py",
+    "--config",
+    "/root/tcei_final_v2_23/tcei_260920v2/state/panel_config.json",
+    "--output",
+    "/root/gpufree-data/tcei_random30_v23/review_1789970582240824323"
+  ],
+  "cwd": "/root/tcei_final_v2_23/tcei_260920v2",
+  "log": "/root/gpufree-data/tcei_random30_v23/review_1789970582240824323/panel.log",
+  "started_at": 1789970582.283192
+}

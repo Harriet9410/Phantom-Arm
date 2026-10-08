@@ -1,0 +1,527 @@
+{
+ "batch": "b03_r6tgt_10081642",
+ "cases": {
+  "scramble_02": {
+   "perception_log": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_stack/logs/perception.log",
+   "episode_events": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_round/episode/events.jsonl",
+   "log_ts_range": [
+    1791448962.033357,
+    1791449425.433512
+   ],
+   "n_perception_lines": 73,
+   "n_window_lines": 8,
+   "n_events_window": 18,
+   "task_markers_tail": [
+    {
+     "t": 1791449064.5441859,
+     "status": "task_started",
+     "task_id": "-task-01"
+    },
+    {
+     "t": 1791449145.9373505,
+     "status": "placement_verified",
+     "task_id": "-task-01"
+    },
+    {
+     "t": 1791449145.9468133,
+     "status": "task_succeeded",
+     "task_id": "-task-01"
+    },
+    {
+     "t": 1791449151.8658087,
+     "status": "task_started",
+     "task_id": "-task-02"
+    },
+    {
+     "t": 1791449225.2173872,
+     "status": "placement_verified",
+     "task_id": "-task-02"
+    },
+    {
+     "t": 1791449225.2226949,
+     "status": "task_succeeded",
+     "task_id": "-task-02"
+    },
+    {
+     "t": 1791449242.0946558,
+     "status": "task_started",
+     "task_id": "-task-03"
+    },
+    {
+     "t": 1791449323.9214654,
+     "status": "placement_verified",
+     "task_id": "-task-03"
+    },
+    {
+     "t": 1791449323.930522,
+     "status": "task_succeeded",
+     "task_id": "-task-03"
+    },
+    {
+     "t": 1791449330.6624627,
+     "status": "task_started",
+     "task_id": "-task-04"
+    },
+    {
+     "t": 1791449410.3778512,
+     "status": "placement_verified",
+     "task_id": "-task-04"
+    },
+    {
+     "t": 1791449410.3818812,
+     "status": "task_succeeded",
+     "task_id": "-task-04"
+    }
+   ],
+   "remaining_context_times": [
+    1791449410.5937066,
+    1791449411.6283236,
+    1791449412.6608665,
+    1791449413.6936605,
+    1791449414.730672,
+    1791449415.764034,
+    1791449416.800837,
+    1791449417.8404107,
+    1791449418.8734438,
+    1791449419.9073641
+   ],
+   "first_remaining_time": 1791449410.5937066,
+   "last_remaining_time": 1791449419.9073641,
+   "nine_scan_lines": [
+    {
+     "t": 1791449059.334473,
+     "kind": "audit",
+     "sid": "522434276e",
+     "raw": "[INFO] [1791449059.334473]: nine scan class audit: [{\"scan_id\": \"522434276e\", \"proposal_index\": 1, \"pixel\": [491.15384615384613, 184.46153846153845], \"scan_clas"
+    },
+    {
+     "t": 1791449059.336395,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449059.336395]: nine scan: classified 5/5 proposals, memory 5 (settled 0, cheap 0)"
+    },
+    {
+     "t": 1791449080.828939,
+     "kind": "audit",
+     "sid": "84bb02ad46",
+     "raw": "[INFO] [1791449080.828939]: nine scan class audit: [{\"scan_id\": \"84bb02ad46\", \"proposal_index\": 1, \"pixel\": [491.15384615384613, 184.46153846153845], \"scan_clas"
+    },
+    {
+     "t": 1791449080.831649,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449080.831649]: nine scan: classified 5/5 proposals, memory 5 (settled 5, cheap 4)"
+    },
+    {
+     "t": 1791449154.217152,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449154.217152]: nine scan conflict images: {\"scan_id\": \"3ab5bd0422\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_s"
+    },
+    {
+     "t": 1791449154.221652,
+     "kind": "audit",
+     "sid": "3ab5bd0422",
+     "raw": "[INFO] [1791449154.221652]: nine scan class audit: [{\"scan_id\": \"3ab5bd0422\", \"proposal_index\": 1, \"pixel\": [469.5, 353.5], \"scan_class\": \"Torch\", \"old_class\": "
+    },
+    {
+     "t": 1791449154.222465,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449154.222465]: nine scan: classified 4/4 proposals, memory 6 (settled 3, cheap 1)"
+    },
+    {
+     "t": 1791449187.993082,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449187.993082]: nine scan conflict images: {\"scan_id\": \"2bd402ef17\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_s"
+    },
+    {
+     "t": 1791449188.002034,
+     "kind": "audit",
+     "sid": "2bd402ef17",
+     "raw": "[INFO] [1791449188.002034]: nine scan class audit: [{\"scan_id\": \"2bd402ef17\", \"proposal_index\": 1, \"pixel\": [493.1457266172611, 352.4459448752742], \"scan_class\""
+    },
+    {
+     "t": 1791449188.002902,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449188.002902]: nine scan: classified 4/4 proposals, memory 5 (settled 4, cheap 1)"
+    },
+    {
+     "t": 1791449248.03177,
+     "kind": "audit",
+     "sid": "5bd5f6795c",
+     "raw": "[INFO] [1791449248.031770]: nine scan class audit: [{\"scan_id\": \"5bd5f6795c\", \"proposal_index\": 1, \"pixel\": [671.5, 349.5], \"scan_class\": \"Torch\", \"old_class\": "
+    },
+    {
+     "t": 1791449248.033427,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449248.033427]: nine scan: classified 4/4 proposals, memory 5 (settled 3, cheap 0)"
+    },
+    {
+     "t": 1791449291.447932,
+     "kind": "audit",
+     "sid": "f740768d97",
+     "raw": "[INFO] [1791449291.447932]: nine scan class audit: [{\"scan_id\": \"f740768d97\", \"proposal_index\": 1, \"pixel\": [671.5, 349.5], \"scan_class\": \"Torch\", \"old_class\": "
+    },
+    {
+     "t": 1791449291.449583,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449291.449583]: nine scan: classified 3/3 proposals, memory 5 (settled 2, cheap 0)"
+    },
+    {
+     "t": 1791449332.132247,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449332.132247]: nine scan conflict images: {\"scan_id\": \"4f5619eadc\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_s"
+    },
+    {
+     "t": 1791449332.134292,
+     "kind": "audit",
+     "sid": "4f5619eadc",
+     "raw": "[INFO] [1791449332.134292]: nine scan class audit: [{\"scan_id\": \"4f5619eadc\", \"proposal_index\": 1, \"pixel\": [414.1046511627907, 413.74418604651163], \"scan_class"
+    },
+    {
+     "t": 1791449332.135109,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449332.135109]: nine scan: classified 3/3 proposals, memory 6 (settled 2, cheap 1)"
+    },
+    {
+     "t": 1791449354.173107,
+     "kind": "audit",
+     "sid": "0af56cf4e1",
+     "raw": "[INFO] [1791449354.173107]: nine scan class audit: [{\"scan_id\": \"0af56cf4e1\", \"proposal_index\": 1, \"pixel\": [671.5, 349.5], \"scan_class\": \"Torch\", \"old_class\": "
+    },
+    {
+     "t": 1791449354.175553,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449354.175553]: nine scan: classified 2/2 proposals, memory 4 (settled 2, cheap 0)"
+    },
+    {
+     "t": 1791449404.745878,
+     "kind": "audit",
+     "sid": "bb87672e7f",
+     "raw": "[INFO] [1791449404.745878]: nine scan class audit: [{\"scan_id\": \"bb87672e7f\", \"proposal_index\": 1, \"pixel\": [671.5, 349.5], \"scan_class\": \"Torch\", \"old_class\": "
+    },
+    {
+     "t": 1791449404.747578,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449404.747578]: nine scan: classified 2/2 proposals, memory 4 (settled 1, cheap 0)"
+    },
+    {
+     "t": 1791449424.573129,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449424.573129]: nine scan conflict images: {\"scan_id\": \"e9e8f1c856\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_s"
+    },
+    {
+     "t": 1791449424.576594,
+     "kind": "audit",
+     "sid": "e9e8f1c856",
+     "raw": "[INFO] [1791449424.576594]: nine scan class audit: [{\"scan_id\": \"e9e8f1c856\", \"proposal_index\": 1, \"pixel\": [671.5, 349.5], \"scan_class\": \"Smokegrenade\", \"old_c"
+    },
+    {
+     "t": 1791449424.577307,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449424.577307]: nine scan: classified 1/1 proposals, memory 3 (settled 1, cheap 0)"
+    }
+   ],
+   "nine_scan_start_times_present": false,
+   "gap_note": "perception.log 只记录 nine scan 完成行（含 audit），未见扫描开始时间戳；故只能比较“扫描完成 vs 决策窗口”，无法比较扫描开始。"
+  },
+  "scramble_04": {
+   "perception_log": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_stack/logs/perception.log",
+   "episode_events": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_round/episode/events.jsonl",
+   "log_ts_range": [
+    1791449460.700957,
+    1791449893.836156
+   ],
+   "n_perception_lines": 70,
+   "n_window_lines": 6,
+   "n_events_window": 4,
+   "task_markers_tail": [
+    {
+     "t": 1791449547.1862686,
+     "status": "task_started",
+     "task_id": "-task-01"
+    },
+    {
+     "t": 1791449633.6758726,
+     "status": "placement_verified",
+     "task_id": "-task-01"
+    },
+    {
+     "t": 1791449633.6910949,
+     "status": "task_succeeded",
+     "task_id": "-task-01"
+    },
+    {
+     "t": 1791449636.5411243,
+     "status": "task_started",
+     "task_id": "-task-02"
+    },
+    {
+     "t": 1791449712.2987933,
+     "status": "placement_verified",
+     "task_id": "-task-02"
+    },
+    {
+     "t": 1791449712.3055086,
+     "status": "task_succeeded",
+     "task_id": "-task-02"
+    },
+    {
+     "t": 1791449718.1875975,
+     "status": "task_started",
+     "task_id": "-task-03"
+    },
+    {
+     "t": 1791449794.2475538,
+     "status": "placement_verified",
+     "task_id": "-task-03"
+    },
+    {
+     "t": 1791449794.2587738,
+     "status": "task_succeeded",
+     "task_id": "-task-03"
+    },
+    {
+     "t": 1791449807.7315705,
+     "status": "task_started",
+     "task_id": "-task-04"
+    },
+    {
+     "t": 1791449880.3065279,
+     "status": "placement_verified",
+     "task_id": "-task-04"
+    },
+    {
+     "t": 1791449880.3169355,
+     "status": "task_succeeded",
+     "task_id": "-task-04"
+    }
+   ],
+   "remaining_context_times": [
+    1791449880.5257566,
+    1791449881.5582044,
+    1791449882.5907836,
+    1791449883.6278276,
+    1791449884.6637475,
+    1791449885.6974368,
+    1791449886.7320402,
+    1791449887.76309,
+    1791449888.7960198,
+    1791449889.8293314
+   ],
+   "first_remaining_time": 1791449880.5257566,
+   "last_remaining_time": 1791449889.8293314,
+   "nine_scan_lines": [
+    {
+     "t": 1791449542.306847,
+     "kind": "audit",
+     "sid": "2a925a0a75",
+     "raw": "[INFO] [1791449542.306847]: nine scan class audit: [{\"scan_id\": \"2a925a0a75\", \"proposal_index\": 1, \"pixel\": [485.2582990943224, 189.03214461153317], \"scan_class"
+    },
+    {
+     "t": 1791449542.308354,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449542.308354]: nine scan: classified 5/5 proposals, memory 5 (settled 0, cheap 0)"
+    },
+    {
+     "t": 1791449608.482267,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449608.482267]: nine scan conflict images: {\"scan_id\": \"1ad3f74ad0\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_s"
+    },
+    {
+     "t": 1791449608.484747,
+     "kind": "audit",
+     "sid": "1ad3f74ad0",
+     "raw": "[INFO] [1791449608.484747]: nine scan class audit: [{\"scan_id\": \"1ad3f74ad0\", \"proposal_index\": 1, \"pixel\": [485.2582990943224, 189.03214461153317], \"scan_class"
+    },
+    {
+     "t": 1791449608.485627,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449608.485627]: nine scan: classified 5/5 proposals, memory 5 (settled 5, cheap 1)"
+    },
+    {
+     "t": 1791449682.886743,
+     "kind": "audit",
+     "sid": "fc4291325a",
+     "raw": "[INFO] [1791449682.886743]: nine scan class audit: [{\"scan_id\": \"fc4291325a\", \"proposal_index\": 1, \"pixel\": [491.5, 355.5], \"scan_class\": \"Smokegrenade\", \"old_c"
+    },
+    {
+     "t": 1791449682.889961,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449682.889961]: nine scan: classified 5/5 proposals, memory 6 (settled 4, cheap 1)"
+    },
+    {
+     "t": 1791449738.555388,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449738.555388]: nine scan conflict images: {\"scan_id\": \"841ffb70b4\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_s"
+    },
+    {
+     "t": 1791449738.557257,
+     "kind": "audit",
+     "sid": "841ffb70b4",
+     "raw": "[INFO] [1791449738.557257]: nine scan class audit: [{\"scan_id\": \"841ffb70b4\", \"proposal_index\": 1, \"pixel\": [518.5, 353.0], \"scan_class\": \"Torch\", \"old_class\": "
+    },
+    {
+     "t": 1791449738.55795,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449738.557950]: nine scan: classified 3/3 proposals, memory 6 (settled 2, cheap 0)"
+    },
+    {
+     "t": 1791449763.216153,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449763.216153]: nine scan conflict images: {\"scan_id\": \"4be9fc1aae\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_s"
+    },
+    {
+     "t": 1791449763.217212,
+     "kind": "audit",
+     "sid": "4be9fc1aae",
+     "raw": "[INFO] [1791449763.217212]: nine scan class audit: [{\"scan_id\": \"4be9fc1aae\", \"proposal_index\": 1, \"pixel\": [491.5, 355.5], \"scan_class\": \"Smokegrenade\", \"old_c"
+    },
+    {
+     "t": 1791449763.217897,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449763.217897]: nine scan: classified 3/3 proposals, memory 6 (settled 3, cheap 1)"
+    },
+    {
+     "t": 1791449845.980667,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449845.980667]: nine scan conflict images: {\"scan_id\": \"86a6078fd6\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_s"
+    },
+    {
+     "t": 1791449845.982308,
+     "kind": "audit",
+     "sid": "86a6078fd6",
+     "raw": "[INFO] [1791449845.982308]: nine scan class audit: [{\"scan_id\": \"86a6078fd6\", \"proposal_index\": 1, \"pixel\": [401.86711021499593, 406.04707946573734], \"scan_clas"
+    },
+    {
+     "t": 1791449845.983101,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449845.983101]: nine scan: classified 3/3 proposals, memory 4 (settled 2, cheap 0)"
+    },
+    {
+     "t": 1791449859.698475,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449859.698475]: nine scan conflict images: {\"scan_id\": \"3d720e3a00\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_s"
+    },
+    {
+     "t": 1791449859.700126,
+     "kind": "audit",
+     "sid": "3d720e3a00",
+     "raw": "[INFO] [1791449859.700126]: nine scan class audit: [{\"scan_id\": \"3d720e3a00\", \"proposal_index\": 1, \"pixel\": [664.2124649974118, 349.4832379476783], \"scan_class\""
+    },
+    {
+     "t": 1791449859.701179,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449859.701179]: nine scan: classified 1/1 proposals, memory 3 (settled 1, cheap 0)"
+    },
+    {
+     "t": 1791449891.196568,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449891.196568]: nine scan conflict images: {\"scan_id\": \"9eb70567c0\", \"directory\": \"/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_s"
+    },
+    {
+     "t": 1791449891.198658,
+     "kind": "audit",
+     "sid": "9eb70567c0",
+     "raw": "[INFO] [1791449891.198658]: nine scan class audit: [{\"scan_id\": \"9eb70567c0\", \"proposal_index\": 1, \"pixel\": [671.5, 349.5], \"scan_class\": \"Smokegrenade\", \"old_c"
+    },
+    {
+     "t": 1791449891.199662,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449891.199662]: nine scan: classified 2/2 proposals, memory 4 (settled 1, cheap 0)"
+    },
+    {
+     "t": 1791449892.766957,
+     "kind": "audit",
+     "sid": "5109970950",
+     "raw": "[INFO] [1791449892.766957]: nine scan class audit: [{\"scan_id\": \"5109970950\", \"proposal_index\": 1, \"pixel\": [671.5, 349.5], \"scan_class\": \"Smokegrenade\", \"old_c"
+    },
+    {
+     "t": 1791449892.770702,
+     "kind": "other",
+     "sid": null,
+     "raw": "[INFO] [1791449892.770702]: nine scan: classified 1/1 proposals, memory 4 (settled 1, cheap 1)"
+    }
+   ],
+   "nine_scan_start_times_present": false,
+   "gap_note": "perception.log 只记录 nine scan 完成行（含 audit），未见扫描开始时间戳；故只能比较“扫描完成 vs 决策窗口”，无法比较扫描开始。"
+  }
+ },
+ "layout_prior": {
+  "file": {
+   "path": "/root/tcei_final_v2_23/tcei_260920v2/tcei_stack/scene_layout_prior.json",
+   "exists": true,
+   "sha256": "83b7f9ebe3c8b181039e4f79d91b0a458d37f033797d5d1082b2d3c1a9f2364f",
+   "scene": "default",
+   "tolerance_px": 30,
+   "gate_min_matches": 4,
+   "objects": [
+    {
+     "pixel": [
+      496,
+      202
+     ],
+     "class": "Smokegrenade"
+    },
+    {
+     "pixel": [
+      569,
+      232
+     ],
+     "class": "Torch"
+    },
+    {
+     "pixel": [
+      624,
+      308
+     ],
+     "class": "Smokegrenade"
+    },
+    {
+     "pixel": [
+      724,
+      354
+     ],
+     "class": "Magazine"
+    },
+    {
+     "pixel": [
+      780,
+      201
+     ],
+     "class": "Grenade"
+    }
+   ]
+  },
+  "runtime_manifest": {}
+ },
+ "first_frame_line": {
+  "scramble_02": "[1791448962.521908]: frame=1 candidates=5 sync=0.000s | 1:unknown:new:1254 2:unknown:new:2352 3:unknown:new:1232 4:unknown:new:1275 5:unknown:new:945",
+  "scramble_04": "[1791449461.123918]: frame=1 candidates=5 sync=0.000s | 1:unknown:new:1196 2:unknown:new:1311 3:unknown:new:1232 4:unknown:new:2352 5:unknown:new:896"
+ }
+}

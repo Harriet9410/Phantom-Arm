@@ -1,0 +1,78 @@
+{
+ "batch": "B03_scramble10_default_pose_v1",
+ "status": "registered_not_executed",
+ "count": 10,
+ "note": "default-scene neat attitudes (scene.usd authored) + scrambled positions + per-scene instructions; see cases_scramble10/default_poses.json",
+ "cases": [
+  {
+   "case_id": "scramble_01",
+   "seed": 2026101101,
+   "planner_seed": 2026102101,
+   "sha256": "846dd3704f64213bc88ff10570933a4c002640371c2fe371e0cdb5da6242d163",
+   "case_file": "cases_scramble10/scramble_01.json"
+  },
+  {
+   "case_id": "scramble_02",
+   "seed": 2026101102,
+   "planner_seed": 2026102102,
+   "sha256": "0fa00509ea638b2f9e647df551dab285a754e93a6086907b3c6beb9e89863ec4",
+   "case_file": "cases_scramble10/scramble_02.json"
+  },
+  {
+   "case_id": "scramble_03",
+   "seed": 2026101103,
+   "planner_seed": 2026102103,
+   "sha256": "e03059b3126c786c2fd2511ac841b82098c87296659f52ca3d14dfebc15ca7a2",
+   "case_file": "cases_scramble10/scramble_03.json"
+  },
+  {
+   "case_id": "scramble_04",
+   "seed": 2026101104,
+   "planner_seed": 2026102104,
+   "sha256": "0fdbafefcd01b458e2144f028de4fc30f2f0974facd3e65b9b282ef0224eea8b",
+   "case_file": "cases_scramble10/scramble_04.json"
+  },
+  {
+   "case_id": "scramble_05",
+   "seed": 2026101105,
+   "planner_seed": 2026102105,
+   "sha256": "7db160922ffe2471d3c4b8428a52abcec06e5b48b2e70b18b83018587daee55a",
+   "case_file": "cases_scramble10/scramble_05.json"
+  },
+  {
+   "case_id": "scramble_06",
+   "seed": 2026101106,
+   "planner_seed": 2026102106,
+   "sha256": "1985366c5c706e0bd2f2b63eac27a2bf915a61d006a93f92471297183652c096",
+   "case_file": "cases_scramble10/scramble_06.json"
+  },
+  {
+   "case_id": "scramble_07",
+   "seed": 2026101107,
+   "planner_seed": 2026102107,
+   "sha256": "82f713a029c0ac837d171f165d800e4f5083d85e12eff382d7372fa7304baf74",
+   "case_file": "cases_scramble10/scramble_07.json"
+  },
+  {
+   "case_id": "scramble_08",
+   "seed": 2026101108,
+   "planner_seed": 2026102108,
+   "sha256": "d5cfef978b82b48aa1907be62dcbaa0f5eba663cec886618de8e601b8c1d227b",
+   "case_file": "cases_scramble10/scramble_08.json"
+  },
+  {
+   "case_id": "scramble_09",
+   "seed": 2026101109,
+   "planner_seed": 2026102109,
+   "sha256": "4f484809b26afc625ed39d551101c0260280df9ef68e7928ffe53c027b634643",
+   "case_file": "cases_scramble10/scramble_09.json"
+  },
+  {
+   "case_id": "scramble_10",
+   "seed": 2026101110,
+   "planner_seed": 2026102110,
+   "sha256": "02ae2cdbed8c876ddef5874bfaebb69f8ea4954aec89c64f7f516b195b02ff7a",
+   "case_file": "cases_scramble10/scramble_10.json"
+  }
+ ]
+}

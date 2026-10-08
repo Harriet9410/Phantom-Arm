@@ -1,0 +1,48 @@
+{
+ "file": {
+  "path": "/root/tcei_final_v2_23/tcei_260920v2/tcei_stack/scene_layout_prior.json",
+  "exists": true,
+  "sha256": "83b7f9ebe3c8b181039e4f79d91b0a458d37f033797d5d1082b2d3c1a9f2364f",
+  "scene": "default",
+  "tolerance_px": 30,
+  "gate_min_matches": 4,
+  "objects": [
+   {
+    "pixel": [
+     496,
+     202
+    ],
+    "class": "Smokegrenade"
+   },
+   {
+    "pixel": [
+     569,
+     232
+    ],
+    "class": "Torch"
+   },
+   {
+    "pixel": [
+     624,
+     308
+    ],
+    "class": "Smokegrenade"
+   },
+   {
+    "pixel": [
+     724,
+     354
+    ],
+    "class": "Magazine"
+   },
+   {
+    "pixel": [
+     780,
+     201
+    ],
+    "class": "Grenade"
+   }
+  ]
+ },
+ "runtime_manifest": {}
+}

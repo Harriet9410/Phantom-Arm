@@ -1,0 +1,501 @@
+{
+ "rows": [
+  {
+   "case": "scramble_01",
+   "frame": "pair_0279",
+   "bbox": [
+    465,
+    174,
+    522,
+    196
+   ],
+   "gt": "smoke_bomb",
+   "raw": "Grenade",
+   "old": "Grenade",
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_01",
+   "frame": "pair_0279",
+   "bbox": [
+    462,
+    341,
+    525,
+    356
+   ],
+   "gt": "Flashlight",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_01",
+   "frame": "pair_0279",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "gt": "smoke_bomb_01",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_01",
+   "frame": "pair_0279",
+   "bbox": [
+    773,
+    185,
+    823,
+    209
+   ],
+   "gt": "hand_grenade",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_01",
+   "frame": "pair_0279",
+   "bbox": [
+    767,
+    332,
+    823,
+    374
+   ],
+   "gt": "Magazines",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_02",
+   "frame": "pair_0274",
+   "bbox": [
+    465,
+    174,
+    522,
+    196
+   ],
+   "gt": "smoke_bomb",
+   "raw": "Grenade",
+   "old": "Grenade",
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_02",
+   "frame": "pair_0274",
+   "bbox": [
+    466,
+    332,
+    522,
+    374
+   ],
+   "gt": "Magazines",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_02",
+   "frame": "pair_0274",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "gt": "smoke_bomb_01",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_02",
+   "frame": "pair_0274",
+   "bbox": [
+    772,
+    355,
+    823,
+    380
+   ],
+   "gt": "hand_grenade",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_02",
+   "frame": "pair_0274",
+   "bbox": [
+    762,
+    179,
+    825,
+    194
+   ],
+   "gt": "Flashlight",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_03",
+   "frame": "pair_0272",
+   "bbox": [
+    467,
+    161,
+    522,
+    204
+   ],
+   "gt": "Magazines",
+   "raw": "这个物资是Magazine。",
+   "old": "Magazine",
+   "new": "Magazine",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_03",
+   "frame": "pair_0272",
+   "bbox": [
+    466,
+    337,
+    523,
+    360
+   ],
+   "gt": "smoke_bomb_01",
+   "raw": "Smokegrenade",
+   "old": "Smokegrenade",
+   "new": "Smokegrenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_03",
+   "frame": "pair_0272",
+   "bbox": [
+    644,
+    341,
+    696,
+    364
+   ],
+   "gt": "hand_grenade",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_03",
+   "frame": "pair_0272",
+   "bbox": [
+    766,
+    174,
+    823,
+    197
+   ],
+   "gt": "smoke_bomb",
+   "raw": "Grenade",
+   "old": "Grenade",
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_03",
+   "frame": "pair_0272",
+   "bbox": [
+    762,
+    344,
+    826,
+    358
+   ],
+   "gt": "Flashlight",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_04",
+   "frame": "pair_0275",
+   "bbox": [
+    470,
+    178,
+    522,
+    201
+   ],
+   "gt": "hand_grenade",
+   "raw": "Grenade",
+   "old": "Grenade",
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_04",
+   "frame": "pair_0275",
+   "bbox": [
+    465,
+    344,
+    522,
+    367
+   ],
+   "gt": "smoke_bomb",
+   "raw": "Grenade",
+   "old": "Grenade",
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_04",
+   "frame": "pair_0275",
+   "bbox": [
+    641,
+    339,
+    697,
+    361
+   ],
+   "gt": "smoke_bomb_01",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_04",
+   "frame": "pair_0275",
+   "bbox": [
+    767,
+    162,
+    823,
+    204
+   ],
+   "gt": "Magazines",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_04",
+   "frame": "pair_0275",
+   "bbox": [
+    762,
+    344,
+    826,
+    358
+   ],
+   "gt": "Flashlight",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_05",
+   "frame": "pair_0275",
+   "bbox": [
+    462,
+    174,
+    525,
+    188
+   ],
+   "gt": "Flashlight",
+   "raw": "Torch",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_05",
+   "frame": "pair_0275",
+   "bbox": [
+    466,
+    337,
+    523,
+    360
+   ],
+   "gt": "smoke_bomb_01",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_05",
+   "frame": "pair_0275",
+   "bbox": [
+    644,
+    341,
+    696,
+    364
+   ],
+   "gt": "hand_grenade",
+   "raw": "这个物资是手榴弹。",
+   "old": null,
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_05",
+   "frame": "pair_0275",
+   "bbox": [
+    766,
+    174,
+    823,
+    197
+   ],
+   "gt": "smoke_bomb",
+   "raw": "Grenade",
+   "old": "Grenade",
+   "new": "Grenade",
+   "old_ok": false,
+   "new_ok": false
+  },
+  {
+   "case": "scramble_05",
+   "frame": "pair_0275",
+   "bbox": [
+    767,
+    332,
+    823,
+    374
+   ],
+   "gt": "Magazines",
+   "raw": "这个物资是Torch。",
+   "old": "Torch",
+   "new": "Torch",
+   "old_ok": false,
+   "new_ok": false
+  }
+ ],
+ "summary": {
+  "n": 25,
+  "old": {
+   "smoke_bomb": {
+    "wrong": 5
+   },
+   "Flashlight": {
+    "wrong": 5
+   },
+   "smoke_bomb_01": {
+    "abstain": 4,
+    "wrong": 1
+   },
+   "hand_grenade": {
+    "abstain": 4,
+    "wrong": 1
+   },
+   "Magazines": {
+    "wrong": 5
+   }
+  },
+  "new": {
+   "smoke_bomb": {
+    "wrong": 5
+   },
+   "Flashlight": {
+    "wrong": 5
+   },
+   "smoke_bomb_01": {
+    "wrong": 5
+   },
+   "hand_grenade": {
+    "wrong": 5
+   },
+   "Magazines": {
+    "wrong": 5
+   }
+  },
+  "flips": [
+   {
+    "case": "scramble_01",
+    "gt": "smoke_bomb_01",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   },
+   {
+    "case": "scramble_01",
+    "gt": "hand_grenade",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   },
+   {
+    "case": "scramble_02",
+    "gt": "smoke_bomb_01",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   },
+   {
+    "case": "scramble_02",
+    "gt": "hand_grenade",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   },
+   {
+    "case": "scramble_03",
+    "gt": "hand_grenade",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   },
+   {
+    "case": "scramble_04",
+    "gt": "smoke_bomb_01",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   },
+   {
+    "case": "scramble_05",
+    "gt": "smoke_bomb_01",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   },
+   {
+    "case": "scramble_05",
+    "gt": "hand_grenade",
+    "old": null,
+    "new": "Grenade",
+    "raw": "这个物资是手榴弹。"
+   }
+  ]
+ }
+}

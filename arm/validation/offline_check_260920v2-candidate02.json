@@ -1,0 +1,83 @@
+{
+  "archive": "260920v2-candidate02.zip",
+  "archive_sha256": "f3fbb1dd9d29556587aa36cbb08131ecb4e273eedf90a438e6090df4decc3f4b",
+  "runtime": "dev_v7_t1_22",
+  "ok": true,
+  "checks": [
+    {
+      "command": [
+        "scripts/verify_package.py"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"package\": \"2026TCEI机器臂部署@260920v2\",\n  \"files\": 136,\n  \"ok\": true,\n  \"mismatches\": []\n}\n"
+    },
+    {
+      "command": [
+        "scripts/setup.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "usage: setup.py [-h] [--display DISPLAY] [--data-root DATA_ROOT]\n\noptions:\n  -h, --help            show this help message and exit\n  --display DISPLAY\n  --data-root DATA_ROOT\n"
+    },
+    {
+      "command": [
+        "scripts/start.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "usage: start.py [-h] [--case CASE] [--case-register CASE_REGISTER] name\n\npositional arguments:\n  name\n\noptions:\n  -h, --help            show this help message and exit\n  --case CASE\n  --case-register CASE_REGISTER\n"
+    },
+    {
+      "command": [
+        "scripts/run_round.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "usage: run_round.py [-h] [--stack STACK]\n                    (--official-example | --instructions INSTRUCTIONS)\n                    [--task-source TASK_SOURCE] [--budget BUDGET]\n                    name\n\nOne recorded, bounded episode. Default entry always uses production control.\n\npositional arguments:\n  name\n\noptions:\n  -h, --help            show this help message and exit\n  --stack STACK\n  --official-example\n  --instructions INSTRUCTIONS\n                        UTF-8 JSON array of original ins"
+    },
+    {
+      "command": [
+        "scripts/status.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "usage: status.py [-h] [--stack STACK]\n\noptions:\n  -h, --help     show this help message and exit\n  --stack STACK\n"
+    },
+    {
+      "command": [
+        "scripts/cancel.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "usage: cancel.py [-h] [--stack STACK] [--reason REASON]\n\noptions:\n  -h, --help       show this help message and exit\n  --stack STACK\n  --reason REASON\n"
+    },
+    {
+      "command": [
+        "scripts/stop.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "usage: stop.py [-h] [--stack STACK]\n\noptions:\n  -h, --help     show this help message and exit\n  --stack STACK\n"
+    },
+    {
+      "command": [
+        "scripts/panel.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "usage: panel.py [-h] [--stack STACK] [--episode EPISODE]\n\noptions:\n  -h, --help         show this help message and exit\n  --stack STACK\n  --episode EPISODE\n"
+    }
+  ],
+  "original_cases_unchanged": 30,
+  "runtime_files_unchanged": 34,
+  "extracted_path_contains_spaces": true,
+  "scope": "offline package/CLI/import checks only; no ROS/Isaac inference or movement"
+}

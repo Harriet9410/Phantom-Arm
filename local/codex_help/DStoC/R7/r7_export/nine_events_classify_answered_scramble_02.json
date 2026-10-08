@@ -1,0 +1,1245 @@
+{
+ "n": 161,
+ "tag_counts": {
+  "522434276e:p1:crop_en": 1,
+  "522434276e:p1:crop_zh": 1,
+  "522434276e:p2:crop_en": 1,
+  "522434276e:p2:crop_zh": 1,
+  "522434276e:p3:crop_en": 1,
+  "522434276e:p3:crop_zh": 1,
+  "522434276e:p4:crop_en": 1,
+  "522434276e:p4:crop_zh": 1,
+  "522434276e:p5:crop_en": 1,
+  "522434276e:p5:crop_zh": 1,
+  "522434276e:p1:recheck_gs": 2,
+  "522434276e:p3:recheck_gs": 2,
+  "522434276e:p4:recheck_gs": 2,
+  "522434276e:p3:recheck_gt": 2,
+  "522434276e:p4:recheck_gt": 2,
+  "522434276e:p5:recheck_gt": 2,
+  "522434276e:p1:final": 2,
+  "522434276e:p2:final": 2,
+  "522434276e:p3:final": 2,
+  "522434276e:p4:final": 2,
+  "522434276e:p5:final": 2,
+  "84bb02ad46:full": 1,
+  "84bb02ad46:p3:crop_en": 1,
+  "84bb02ad46:p3:crop_zh": 1,
+  "84bb02ad46:p3:recheck_gt": 2,
+  "84bb02ad46:p3:final": 2,
+  "3ab5bd0422:full": 1,
+  "3ab5bd0422:p1:crop_en": 1,
+  "3ab5bd0422:p1:crop_zh": 1,
+  "3ab5bd0422:p2:crop_en": 1,
+  "3ab5bd0422:p2:crop_zh": 1,
+  "3ab5bd0422:p4:crop_en": 1,
+  "3ab5bd0422:p4:crop_zh": 1,
+  "3ab5bd0422:p1:recheck_gs": 2,
+  "3ab5bd0422:p2:recheck_gt": 2,
+  "3ab5bd0422:p1:final": 2,
+  "3ab5bd0422:p2:final": 2,
+  "3ab5bd0422:p4:final": 2,
+  "2bd402ef17:full": 1,
+  "2bd402ef17:p1:crop_en": 1,
+  "2bd402ef17:p1:crop_zh": 1,
+  "2bd402ef17:p2:crop_en": 1,
+  "2bd402ef17:p2:crop_zh": 1,
+  "2bd402ef17:p4:crop_en": 1,
+  "2bd402ef17:p4:crop_zh": 1,
+  "2bd402ef17:p1:recheck_gs": 2,
+  "2bd402ef17:p2:recheck_gt": 2,
+  "2bd402ef17:p1:final": 2,
+  "2bd402ef17:p2:final": 2,
+  "2bd402ef17:p4:final": 2,
+  "5bd5f6795c:full": 1,
+  "5bd5f6795c:p1:crop_en": 1,
+  "5bd5f6795c:p1:crop_zh": 1,
+  "5bd5f6795c:p2:crop_en": 1,
+  "5bd5f6795c:p2:crop_zh": 1,
+  "5bd5f6795c:p3:crop_en": 1,
+  "5bd5f6795c:p3:crop_zh": 1,
+  "5bd5f6795c:p4:crop_en": 1,
+  "5bd5f6795c:p4:crop_zh": 1,
+  "5bd5f6795c:p1:recheck_gs": 2,
+  "5bd5f6795c:p4:recheck_gs": 2,
+  "5bd5f6795c:p2:recheck_gt": 2,
+  "5bd5f6795c:p4:recheck_gt": 2,
+  "5bd5f6795c:p1:final": 2,
+  "5bd5f6795c:p2:final": 2,
+  "5bd5f6795c:p3:final": 2,
+  "f740768d97:full": 1,
+  "f740768d97:p1:crop_en": 1,
+  "f740768d97:p1:crop_zh": 1,
+  "f740768d97:p2:crop_en": 1,
+  "f740768d97:p2:crop_zh": 1,
+  "f740768d97:p3:crop_en": 1,
+  "f740768d97:p3:crop_zh": 1,
+  "f740768d97:p1:recheck_gs": 2,
+  "f740768d97:p3:recheck_gs": 2,
+  "f740768d97:p2:recheck_gt": 2,
+  "f740768d97:p3:recheck_gt": 2,
+  "f740768d97:p1:final": 2,
+  "f740768d97:p2:final": 2,
+  "f740768d97:p3:final": 2,
+  "4f5619eadc:full": 1,
+  "4f5619eadc:p1:crop_en": 1,
+  "4f5619eadc:p1:crop_zh": 1,
+  "4f5619eadc:p2:crop_en": 1,
+  "4f5619eadc:p2:crop_zh": 1,
+  "4f5619eadc:p2:recheck_gs": 2,
+  "4f5619eadc:p1:recheck_gt": 2,
+  "4f5619eadc:p2:final": 2,
+  "0af56cf4e1:full": 1,
+  "0af56cf4e1:p1:crop_en": 1,
+  "0af56cf4e1:p1:crop_zh": 1,
+  "0af56cf4e1:p2:crop_en": 1,
+  "0af56cf4e1:p2:crop_zh": 1,
+  "0af56cf4e1:p1:recheck_gs": 2,
+  "0af56cf4e1:p2:recheck_gt": 2,
+  "0af56cf4e1:p1:final": 2,
+  "0af56cf4e1:p2:final": 2,
+  "bb87672e7f:full": 1,
+  "bb87672e7f:p1:crop_en": 1,
+  "bb87672e7f:p1:crop_zh": 1,
+  "bb87672e7f:p2:crop_en": 1,
+  "bb87672e7f:p2:crop_zh": 1,
+  "bb87672e7f:p1:recheck_gs": 2,
+  "bb87672e7f:p2:recheck_gt": 2,
+  "bb87672e7f:p1:final": 2,
+  "bb87672e7f:p2:final": 2,
+  "e9e8f1c856:full": 1,
+  "e9e8f1c856:p1:crop_en": 1,
+  "e9e8f1c856:p1:crop_zh": 1,
+  "e9e8f1c856:p1:recheck_gs": 2,
+  "e9e8f1c856:p1:final": 2
+ },
+ "events": [
+  {
+   "time": 1791448988.945333,
+   "status": "classify_answered",
+   "request_id": "locate-6e1c59a3",
+   "tag": "522434276e:p1:crop_en",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791448989.45341,
+   "status": "classify_answered",
+   "request_id": "locate-6932dd2c",
+   "tag": "522434276e:p1:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791448990.07155,
+   "status": "classify_answered",
+   "request_id": "locate-d47b597f",
+   "tag": "522434276e:p2:crop_en",
+   "answer": "这个物资是Magazine。"
+  },
+  {
+   "time": 1791448990.5061018,
+   "status": "classify_answered",
+   "request_id": "locate-590b2d55",
+   "tag": "522434276e:p2:crop_zh",
+   "answer": "弹夹"
+  },
+  {
+   "time": 1791448990.9850767,
+   "status": "classify_answered",
+   "request_id": "locate-2bc2a9e8",
+   "tag": "522434276e:p3:crop_en",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791448991.4552765,
+   "status": "classify_answered",
+   "request_id": "locate-a0a8fe35",
+   "tag": "522434276e:p3:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791448991.9974513,
+   "status": "classify_answered",
+   "request_id": "locate-85480565",
+   "tag": "522434276e:p4:crop_en",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791448992.4680114,
+   "status": "classify_answered",
+   "request_id": "locate-6dbd72fb",
+   "tag": "522434276e:p4:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791448993.103938,
+   "status": "classify_answered",
+   "request_id": "locate-bd2b3cca",
+   "tag": "522434276e:p5:crop_en",
+   "answer": "这个物资是Torch。"
+  },
+  {
+   "time": 1791448993.5214021,
+   "status": "classify_answered",
+   "request_id": "locate-09ac4a5f",
+   "tag": "522434276e:p5:crop_zh",
+   "answer": "Torch"
+  },
+  {
+   "time": 1791449000.2579875,
+   "status": "classify_answered",
+   "request_id": "locate-75dc1c59",
+   "tag": "522434276e:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型圆柱形设计。\n2. 外部有绿色环带，这是烟雾弹常见的颜色方案之一。\n3. 顶部有一个金属盖子或喷嘴，用于释放烟雾。\n4. 侧面印有文字和符号，通常包括使用说明、警告信息以及制造商标志等。"
+  },
+  {
+   "time": 1791449006.7607608,
+   "status": "classify_answered",
+   "request_id": "locate-7621a11d",
+   "tag": "522434276e:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型圆柱形设计。\n2. 外部有绿色环带，这是烟雾弹常见的颜色方案之一。\n3. 顶部有一个金属盖子或喷嘴，用于释放烟雾。\n4. 侧面印有文字和符号，通常包括使用说明、警告信息以及制造商标志等。"
+  },
+  {
+   "time": 1791449012.0364485,
+   "status": "classify_answered",
+   "request_id": "locate-3003aa31",
+   "tag": "522434276e:p3:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有一个金属盖子，这与烟雾弹的典型设计相符。此外，绿色环带的存在也符合烟雾弹的特征。手雷通常呈小型椭球体形状，而图中物体的形状更接近于圆柱形，因此可以确定这是一个烟雾弹。"
+  },
+  {
+   "time": 1791449017.3464117,
+   "status": "classify_answered",
+   "request_id": "locate-b7faf5f6",
+   "tag": "522434276e:p3:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有一个金属盖子，这与烟雾弹的典型设计相符。此外，绿色环带的存在也符合烟雾弹的特征。手雷通常呈小型椭球体形状，而图中物体的形状更接近于圆柱形，因此可以确定这是一个烟雾弹。"
+  },
+  {
+   "time": 1791449024.037738,
+   "status": "classify_answered",
+   "request_id": "locate-a9438bff",
+   "tag": "522434276e:p4:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有一个绿色环带和一根细长的把手。这些特征与烟雾弹的典型设计相符：它通常是一个圆柱形容器，带有用于携带或投掷的手柄，并且经常有颜色编码来表示其用途。相比之下，手雷通常是小型椭球体形状，没有这样的把手和绿色环带。因此，可以确定该物体是一枚烟雾弹。"
+  },
+  {
+   "time": 1791449030.6337967,
+   "status": "classify_answered",
+   "request_id": "locate-51cd2e9f",
+   "tag": "522434276e:p4:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有一个绿色环带和一根细长的把手。这些特征与烟雾弹的典型设计相符：它通常是一个圆柱形容器，带有用于携带或投掷的手柄，并且经常有颜色编码来表示其用途。相比之下，手雷通常是小型椭球体形状，没有这样的把手和绿色环带。因此，可以确定该物体是一枚烟雾弹。"
+  },
+  {
+   "time": 1791449035.5502582,
+   "status": "classify_answered",
+   "request_id": "locate-348a31a5",
+   "tag": "522434276e:p3:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据提供的图片，我们可以看到一个细长的圆柱形物体，一端有尾盖或按钮，这与军用手电筒的描述相符。然而，考虑到其形状和设计特点，更符合手雷的特征。因此，可以确定该物体的类别为手雷（Grenade）。"
+  },
+  {
+   "time": 1791449040.4844205,
+   "status": "classify_answered",
+   "request_id": "locate-50d079e2",
+   "tag": "522434276e:p3:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据提供的图片，我们可以看到一个细长的圆柱形物体，一端有尾盖或按钮，这与军用手电筒的描述相符。然而，考虑到其形状和设计特点，更符合手雷的特征。因此，可以确定该物体的类别为手雷（Grenade）。"
+  },
+  {
+   "time": 1791449041.4225576,
+   "status": "classify_answered",
+   "request_id": "locate-874dfffb",
+   "tag": "522434276e:p4:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449042.304714,
+   "status": "classify_answered",
+   "request_id": "locate-e406c6e3",
+   "tag": "522434276e:p4:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449047.1347728,
+   "status": "classify_answered",
+   "request_id": "locate-13db48c8",
+   "tag": "522434276e:p5:recheck_gt",
+   "answer": "这个物体是军用手电筒（Torch）。\n\n根据提供的图片，我们可以看到一个细长的圆柱形物体，一端有一个尾盖或按钮，这与军用手电筒的典型形状相符。而手雷通常具有更圆润、网格状防滑纹的表面特征，因此可以排除它是手雷的可能性。"
+  },
+  {
+   "time": 1791449051.7603254,
+   "status": "classify_answered",
+   "request_id": "locate-a6d96995",
+   "tag": "522434276e:p5:recheck_gt",
+   "answer": "这个物体是军用手电筒（Torch）。\n\n根据提供的图片，我们可以看到一个细长的圆柱形物体，一端有一个尾盖或按钮，这与军用手电筒的典型形状相符。而手雷通常具有更圆润、网格状防滑纹的表面特征，因此可以排除它是手雷的可能性。"
+  },
+  {
+   "time": 1791449052.715916,
+   "status": "classify_answered",
+   "request_id": "locate-913e2e46",
+   "tag": "522434276e:p1:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449053.5232131,
+   "status": "classify_answered",
+   "request_id": "locate-ef0e67fa",
+   "tag": "522434276e:p1:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449054.3854213,
+   "status": "classify_answered",
+   "request_id": "locate-58ba5b37",
+   "tag": "522434276e:p2:final",
+   "answer": "这个物体是Magazine（弹夹）。"
+  },
+  {
+   "time": 1791449055.2260127,
+   "status": "classify_answered",
+   "request_id": "locate-e1791560",
+   "tag": "522434276e:p2:final",
+   "answer": "这个物体是Magazine（弹夹）。"
+  },
+  {
+   "time": 1791449055.9883301,
+   "status": "classify_answered",
+   "request_id": "locate-df678536",
+   "tag": "522434276e:p3:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449056.8316023,
+   "status": "classify_answered",
+   "request_id": "locate-dbefbfc4",
+   "tag": "522434276e:p3:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449057.4721267,
+   "status": "classify_answered",
+   "request_id": "locate-d2733cd7",
+   "tag": "522434276e:p4:final",
+   "answer": "Grenade（手雷）"
+  },
+  {
+   "time": 1791449058.1384215,
+   "status": "classify_answered",
+   "request_id": "locate-c26bb6ec",
+   "tag": "522434276e:p4:final",
+   "answer": "Grenade（手雷）"
+  },
+  {
+   "time": 1791449058.8209457,
+   "status": "classify_answered",
+   "request_id": "locate-a419f06b",
+   "tag": "522434276e:p5:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449059.285158,
+   "status": "classify_answered",
+   "request_id": "locate-c0f659b0",
+   "tag": "522434276e:p5:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449062.2811878,
+   "status": "classify_answered",
+   "request_id": "locate-02d38ea5",
+   "tag": "84bb02ad46:full",
+   "answer": "```json\n{\"1\":\"Smokegrenade\",\"2\":\"Magazine\",\"3\":\"Torch\",\"4\":\"Grenade\",\"5\":\"Torch\"}\n```"
+  },
+  {
+   "time": 1791449065.0966945,
+   "status": "classify_answered",
+   "request_id": "locate-87b93d5b",
+   "tag": "84bb02ad46:p3:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449065.5193317,
+   "status": "classify_answered",
+   "request_id": "locate-941dd90e",
+   "tag": "84bb02ad46:p3:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449072.1611135,
+   "status": "classify_answered",
+   "request_id": "locate-f34015c6",
+   "tag": "84bb02ad46:p3:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的特征，可以确定这是一个手雷：\n1. 形状：它是一个细长的圆柱形，符合手雷的典型外形。\n2. 外观：表面有网格状防滑纹，这是为了在投掷时提供更好的抓握力而设计的常见特征。\n3. 尺寸和比例：与军用手电筒相比，它的尺寸较小且更长，这进一步支持了它是手雷而不是手电筒的想法。"
+  },
+  {
+   "time": 1791449079.1123843,
+   "status": "classify_answered",
+   "request_id": "locate-4fa944fe",
+   "tag": "84bb02ad46:p3:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的特征，可以确定这是一个手雷：\n1. 形状：它是一个细长的圆柱形，符合手雷的典型外形。\n2. 外观：表面有网格状防滑纹，这是为了在投掷时提供更好的抓握力而设计的常见特征。\n3. 尺寸和比例：与军用手电筒相比，它的尺寸较小且更长，这进一步支持了它是手雷而不是手电筒的想法。"
+  },
+  {
+   "time": 1791449079.9846358,
+   "status": "classify_answered",
+   "request_id": "locate-aa3c1551",
+   "tag": "84bb02ad46:p3:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449080.7978125,
+   "status": "classify_answered",
+   "request_id": "locate-edf2b019",
+   "tag": "84bb02ad46:p3:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449115.5257766,
+   "status": "classify_answered",
+   "request_id": "locate-8f7a076a",
+   "tag": "3ab5bd0422:full",
+   "answer": "```json\n{\"1\":\"Smokegrenade\",\"2\":\"Torch\",\"3\":\"Grenade\",\"4\":\"Magazine\"}\n```"
+  },
+  {
+   "time": 1791449115.9302764,
+   "status": "classify_answered",
+   "request_id": "locate-78d81e46",
+   "tag": "3ab5bd0422:p1:crop_en",
+   "answer": "Torch"
+  },
+  {
+   "time": 1791449116.3421319,
+   "status": "classify_answered",
+   "request_id": "locate-e1923ec1",
+   "tag": "3ab5bd0422:p1:crop_zh",
+   "answer": "Torch"
+  },
+  {
+   "time": 1791449117.0166914,
+   "status": "classify_answered",
+   "request_id": "locate-5be04eb9",
+   "tag": "3ab5bd0422:p2:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449117.47042,
+   "status": "classify_answered",
+   "request_id": "locate-95487b24",
+   "tag": "3ab5bd0422:p2:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449118.0769331,
+   "status": "classify_answered",
+   "request_id": "locate-b835a680",
+   "tag": "3ab5bd0422:p4:crop_en",
+   "answer": "这个物资是Torch。"
+  },
+  {
+   "time": 1791449118.464837,
+   "status": "classify_answered",
+   "request_id": "locate-c9e3edc1",
+   "tag": "3ab5bd0422:p4:crop_zh",
+   "answer": "Torch"
+  },
+  {
+   "time": 1791449125.336878,
+   "status": "classify_answered",
+   "request_id": "locate-f5188c96",
+   "tag": "3ab5bd0422:p1:recheck_gs",
+   "answer": "这个物体是 Smokegrenade。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有多个孔洞，这是烟雾弹的典型特征。烟雾弹通常用于制造可见障碍物或遮蔽区域，而其设计包括一个绿色环带和圆柱形形状以容纳发射装置。相比之下，手雷通常是小型椭球体，具有不同的结构特点，如尖端、引信等。因此，可以确定该物体为 Smokegrenade。"
+  },
+  {
+   "time": 1791449132.0308824,
+   "status": "classify_answered",
+   "request_id": "locate-2d2904e5",
+   "tag": "3ab5bd0422:p1:recheck_gs",
+   "answer": "这个物体是 Smokegrenade。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有多个孔洞，这是烟雾弹的典型特征。烟雾弹通常用于制造可见障碍物或遮蔽区域，而其设计包括一个绿色环带和圆柱形形状以容纳发射装置。相比之下，手雷通常是小型椭球体，具有不同的结构特点，如尖端、引信等。因此，可以确定该物体为 Smokegrenade。"
+  },
+  {
+   "time": 1791449139.000595,
+   "status": "classify_answered",
+   "request_id": "locate-279f1aeb",
+   "tag": "3ab5bd0422:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的特征，可以确定这是一个手雷：\n1. 形状：它呈圆柱形，这是手雷的典型外形。\n2. 外观：表面有网格状防滑纹，这有助于在投掷时保持稳定。\n3. 尺寸和比例：与军用手电筒相比，它的尺寸较小且更细长，符合手雷的特征。\n4. 其他细节：虽然无法完全看清所有细节，但整体外观与常见的手雷一致。"
+  },
+  {
+   "time": 1791449146.2417386,
+   "status": "classify_answered",
+   "request_id": "locate-665c4138",
+   "tag": "3ab5bd0422:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的特征，可以确定这是一个手雷：\n1. 形状：它呈圆柱形，这是手雷的典型外形。\n2. 外观：表面有网格状防滑纹，这有助于在投掷时保持稳定。\n3. 尺寸和比例：与军用手电筒相比，它的尺寸较小且更细长，符合手雷的特征。\n4. 其他细节：虽然无法完全看清所有细节，但整体外观与常见的手雷一致。"
+  },
+  {
+   "time": 1791449147.1224144,
+   "status": "classify_answered",
+   "request_id": "locate-eda91add",
+   "tag": "3ab5bd0422:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449149.8481472,
+   "status": "classify_answered",
+   "request_id": "locate-9946a7a4",
+   "tag": "3ab5bd0422:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449152.4631433,
+   "status": "classify_answered",
+   "request_id": "locate-edb961e7",
+   "tag": "3ab5bd0422:p2:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449153.133249,
+   "status": "classify_answered",
+   "request_id": "locate-7f55cc89",
+   "tag": "3ab5bd0422:p2:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449153.6713371,
+   "status": "classify_answered",
+   "request_id": "locate-1e98da75",
+   "tag": "3ab5bd0422:p4:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449154.151192,
+   "status": "classify_answered",
+   "request_id": "locate-5a175b00",
+   "tag": "3ab5bd0422:p4:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449157.0172071,
+   "status": "classify_answered",
+   "request_id": "locate-b665a44c",
+   "tag": "2bd402ef17:full",
+   "answer": "```json\n{\"1\":\"Smokegrenade\",\"2\":\"Torch\",\"3\":\"Grenade\",\"4\":\"Magazine\"}\n```"
+  },
+  {
+   "time": 1791449157.6261804,
+   "status": "classify_answered",
+   "request_id": "locate-a1ac7556",
+   "tag": "2bd402ef17:p1:crop_en",
+   "answer": "这个物资是Torch。"
+  },
+  {
+   "time": 1791449157.9868329,
+   "status": "classify_answered",
+   "request_id": "locate-70b45a54",
+   "tag": "2bd402ef17:p1:crop_zh",
+   "answer": "弹夹"
+  },
+  {
+   "time": 1791449158.779947,
+   "status": "classify_answered",
+   "request_id": "locate-e4c6a809",
+   "tag": "2bd402ef17:p2:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449159.2502162,
+   "status": "classify_answered",
+   "request_id": "locate-da1e13b7",
+   "tag": "2bd402ef17:p2:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449159.8745127,
+   "status": "classify_answered",
+   "request_id": "locate-7f0dfb35",
+   "tag": "2bd402ef17:p4:crop_en",
+   "answer": "这个物资是Torch。"
+  },
+  {
+   "time": 1791449160.2555776,
+   "status": "classify_answered",
+   "request_id": "locate-1c3289a9",
+   "tag": "2bd402ef17:p4:crop_zh",
+   "answer": "Torch"
+  },
+  {
+   "time": 1791449164.974689,
+   "status": "classify_answered",
+   "request_id": "locate-0d33e67e",
+   "tag": "2bd402ef17:p1:recheck_gs",
+   "answer": "这个物体是 Smokegrenade。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有一个绿色环带，这是烟雾弹的典型特征。手雷通常呈小型椭球体形状，而图中所示的物体明显是一个圆柱形容器，因此可以确定这是一个烟雾弹（Smokegrenade）。"
+  },
+  {
+   "time": 1791449169.7006938,
+   "status": "classify_answered",
+   "request_id": "locate-1b05e3d6",
+   "tag": "2bd402ef17:p1:recheck_gs",
+   "answer": "这个物体是 Smokegrenade。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，顶部有一个绿色环带，这是烟雾弹的典型特征。手雷通常呈小型椭球体形状，而图中所示的物体明显是一个圆柱形容器，因此可以确定这是一个烟雾弹（Smokegrenade）。"
+  },
+  {
+   "time": 1791449176.40202,
+   "status": "classify_answered",
+   "request_id": "locate-b2c7208b",
+   "tag": "2bd402ef17:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的特征，可以确定这是一个手雷：\n1. 形状：它是一个细长的圆柱形，符合手雷的典型外形。\n2. 外观：表面有网格状防滑纹，这是为了在投掷时提供更好的抓握力而设计的常见特征。\n3. 尺寸和比例：与军用手电筒相比，它的尺寸较小且更长，这进一步支持了它是手雷而不是手电筒的想法。"
+  },
+  {
+   "time": 1791449183.606502,
+   "status": "classify_answered",
+   "request_id": "locate-cd95d4cc",
+   "tag": "2bd402ef17:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的特征，可以确定这是一个手雷：\n1. 形状：它是一个细长的圆柱形，符合手雷的典型外形。\n2. 外观：表面有网格状防滑纹，这是为了在投掷时提供更好的抓握力而设计的常见特征。\n3. 尺寸和比例：与军用手电筒相比，它的尺寸较小且更长，这进一步支持了它是手雷而不是手电筒的想法。"
+  },
+  {
+   "time": 1791449184.4279099,
+   "status": "classify_answered",
+   "request_id": "locate-dbf1e62b",
+   "tag": "2bd402ef17:p1:final",
+   "answer": "这个物体是Magazine（弹夹）。"
+  },
+  {
+   "time": 1791449185.259495,
+   "status": "classify_answered",
+   "request_id": "locate-5fb3fcaf",
+   "tag": "2bd402ef17:p1:final",
+   "answer": "这个物体是Magazine（弹夹）。"
+  },
+  {
+   "time": 1791449186.0054188,
+   "status": "classify_answered",
+   "request_id": "locate-c228faf8",
+   "tag": "2bd402ef17:p2:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449186.711666,
+   "status": "classify_answered",
+   "request_id": "locate-55767516",
+   "tag": "2bd402ef17:p2:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449187.453745,
+   "status": "classify_answered",
+   "request_id": "locate-6f774411",
+   "tag": "2bd402ef17:p4:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449187.9417074,
+   "status": "classify_answered",
+   "request_id": "locate-46358c7b",
+   "tag": "2bd402ef17:p4:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449201.804027,
+   "status": "classify_answered",
+   "request_id": "locate-0257174b",
+   "tag": "5bd5f6795c:full",
+   "answer": "```json\n{\"1\":\"Smokegrenade\",\"2\":\"Torch\",\"3\":\"Magazine\",\"4\":\"Grenade\"}\n```"
+  },
+  {
+   "time": 1791449202.494533,
+   "status": "classify_answered",
+   "request_id": "locate-73271a1d",
+   "tag": "5bd5f6795c:p1:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449202.9067857,
+   "status": "classify_answered",
+   "request_id": "locate-66af445f",
+   "tag": "5bd5f6795c:p1:crop_zh",
+   "answer": "手雷"
+  },
+  {
+   "time": 1791449203.6175728,
+   "status": "classify_answered",
+   "request_id": "locate-0e4e4617",
+   "tag": "5bd5f6795c:p2:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449204.06678,
+   "status": "classify_answered",
+   "request_id": "locate-f293c424",
+   "tag": "5bd5f6795c:p2:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449204.6635132,
+   "status": "classify_answered",
+   "request_id": "locate-371fd473",
+   "tag": "5bd5f6795c:p3:crop_en",
+   "answer": "这个物资是Torch。"
+  },
+  {
+   "time": 1791449205.0497751,
+   "status": "classify_answered",
+   "request_id": "locate-430144e0",
+   "tag": "5bd5f6795c:p3:crop_zh",
+   "answer": "Torch"
+  },
+  {
+   "time": 1791449205.5738888,
+   "status": "classify_answered",
+   "request_id": "locate-26d3bf92",
+   "tag": "5bd5f6795c:p4:crop_en",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449206.0426893,
+   "status": "classify_answered",
+   "request_id": "locate-1954ca73",
+   "tag": "5bd5f6795c:p4:crop_zh",
+   "answer": "手雷"
+  },
+  {
+   "time": 1791449210.6134245,
+   "status": "classify_answered",
+   "request_id": "locate-bb70fe19",
+   "tag": "5bd5f6795c:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型设计。\n2. 绿色环带通常用于识别或区分不同类型的烟雾弹。\n3. 顶部有金属盖子，这是烟雾弹常见的特征之一。"
+  },
+  {
+   "time": 1791449215.415505,
+   "status": "classify_answered",
+   "request_id": "locate-ad9fb267",
+   "tag": "5bd5f6795c:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型设计。\n2. 绿色环带通常用于识别或区分不同类型的烟雾弹。\n3. 顶部有金属盖子，这是烟雾弹常见的特征之一。"
+  },
+  {
+   "time": 1791449220.557783,
+   "status": "classify_answered",
+   "request_id": "locate-9f8b6ccd",
+   "tag": "5bd5f6795c:p4:recheck_gs",
+   "answer": "这个物体是手雷（Grenade）。\n\n解释：图像中显示的物体具有典型的手雷形状，即小型椭球体。它有一个圆形的顶部和底部，中间部分略微变细，这是手雷的特征之一。此外，物体的颜色和纹理也与常见的手雷一致。因此，可以确定该物体属于“手雷”类别。"
+  },
+  {
+   "time": 1791449225.6637626,
+   "status": "classify_answered",
+   "request_id": "locate-716915db",
+   "tag": "5bd5f6795c:p4:recheck_gs",
+   "answer": "这个物体是手雷（Grenade）。\n\n解释：图像中显示的物体具有典型的手雷形状，即小型椭球体。它有一个圆形的顶部和底部，中间部分略微变细，这是手雷的特征之一。此外，物体的颜色和纹理也与常见的手雷一致。因此，可以确定该物体属于“手雷”类别。"
+  },
+  {
+   "time": 1791449231.7507734,
+   "status": "classify_answered",
+   "request_id": "locate-12245b70",
+   "tag": "5bd5f6795c:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的形状和特征，可以确定这是一个手榴弹。手榴弹通常呈椭圆形或卵形，表面有网格状防滑纹以增加握持力。而军用手电筒则通常是细长圆柱形，一端带有尾盖或按钮用于开关灯源。因此，该物体的形状与手榴弹的特征相符，而不是军用手电筒的形状。"
+  },
+  {
+   "time": 1791449239.9783452,
+   "status": "classify_answered",
+   "request_id": "locate-1e0d21d2",
+   "tag": "5bd5f6795c:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据图片中的形状和特征，可以确定这是一个手榴弹。手榴弹通常呈椭圆形或卵形，表面有网格状防滑纹以增加握持力。而军用手电筒则通常是细长圆柱形，一端带有尾盖或按钮用于开关灯源。因此，该物体的形状与手榴弹的特征相符，而不是军用手电筒的形状。"
+  },
+  {
+   "time": 1791449242.970721,
+   "status": "classify_answered",
+   "request_id": "locate-90cc82e8",
+   "tag": "5bd5f6795c:p4:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449243.8795617,
+   "status": "classify_answered",
+   "request_id": "locate-010141b4",
+   "tag": "5bd5f6795c:p4:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449244.768416,
+   "status": "classify_answered",
+   "request_id": "locate-a57d1d25",
+   "tag": "5bd5f6795c:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449245.5849183,
+   "status": "classify_answered",
+   "request_id": "locate-6083cacd",
+   "tag": "5bd5f6795c:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449246.2700312,
+   "status": "classify_answered",
+   "request_id": "locate-d228a2c3",
+   "tag": "5bd5f6795c:p2:final",
+   "answer": "Grenade（手雷）"
+  },
+  {
+   "time": 1791449246.9351878,
+   "status": "classify_answered",
+   "request_id": "locate-b7c97a8f",
+   "tag": "5bd5f6795c:p2:final",
+   "answer": "Grenade（手雷）"
+  },
+  {
+   "time": 1791449247.421546,
+   "status": "classify_answered",
+   "request_id": "locate-f4ae5a28",
+   "tag": "5bd5f6795c:p3:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449248.0095134,
+   "status": "classify_answered",
+   "request_id": "locate-147578fd",
+   "tag": "5bd5f6795c:p3:final",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449250.1788094,
+   "status": "classify_answered",
+   "request_id": "locate-d17c1fbe",
+   "tag": "f740768d97:full",
+   "answer": "```json\n{\"1\":\"Smokegrenade\",\"2\":\"Torch\",\"3\":\"Grenade\"}\n```"
+  },
+  {
+   "time": 1791449250.6003582,
+   "status": "classify_answered",
+   "request_id": "locate-f044dfc1",
+   "tag": "f740768d97:p1:crop_en",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449251.0256052,
+   "status": "classify_answered",
+   "request_id": "locate-a395ed32",
+   "tag": "f740768d97:p1:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449251.7103214,
+   "status": "classify_answered",
+   "request_id": "locate-0e752ee3",
+   "tag": "f740768d97:p2:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449252.1789093,
+   "status": "classify_answered",
+   "request_id": "locate-b63c9ce2",
+   "tag": "f740768d97:p2:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449252.8916004,
+   "status": "classify_answered",
+   "request_id": "locate-bbc52b9f",
+   "tag": "f740768d97:p3:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449253.4083722,
+   "status": "classify_answered",
+   "request_id": "locate-b7d6f4a8",
+   "tag": "f740768d97:p3:crop_zh",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449259.070063,
+   "status": "classify_answered",
+   "request_id": "locate-e731e543",
+   "tag": "f740768d97:p1:recheck_gs",
+   "answer": "这个物体是 Smokegrenade。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，上面有绿色环带和一些文字或符号。这种形状、颜色以及设计特征与烟雾弹（Smokegrenade）一致。手雷通常呈小型椭球体状，而图中物体的形状更符合烟雾弹的特征。因此，可以确定该物体为 Smokegrenade。"
+  },
+  {
+   "time": 1791449264.7357018,
+   "status": "classify_answered",
+   "request_id": "locate-b3282782",
+   "tag": "f740768d97:p1:recheck_gs",
+   "answer": "这个物体是 Smokegrenade。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，上面有绿色环带和一些文字或符号。这种形状、颜色以及设计特征与烟雾弹（Smokegrenade）一致。手雷通常呈小型椭球体状，而图中物体的形状更符合烟雾弹的特征。因此，可以确定该物体为 Smokegrenade。"
+  },
+  {
+   "time": 1791449270.0472488,
+   "status": "classify_answered",
+   "request_id": "locate-f85791a7",
+   "tag": "f740768d97:p3:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，这与烟雾弹的典型形状相符。此外，它还带有一个绿色环带，这是烟雾弹常见的特征之一。手雷通常呈小型椭球体状，而图中物体的形状并不符合这一描述。因此，可以确定该物体为烟雾弹。"
+  },
+  {
+   "time": 1791449275.2044172,
+   "status": "classify_answered",
+   "request_id": "locate-aa637835",
+   "tag": "f740768d97:p3:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据提供的图片，我们可以看到一个圆柱形的容器，这与烟雾弹的典型形状相符。此外，它还带有一个绿色环带，这是烟雾弹常见的特征之一。手雷通常呈小型椭球体状，而图中物体的形状并不符合这一描述。因此，可以确定该物体为烟雾弹。"
+  },
+  {
+   "time": 1791449276.1200802,
+   "status": "classify_answered",
+   "request_id": "locate-da8f64bc",
+   "tag": "f740768d97:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449276.9883811,
+   "status": "classify_answered",
+   "request_id": "locate-a9b01c14",
+   "tag": "f740768d97:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449282.1895826,
+   "status": "classify_answered",
+   "request_id": "locate-e4699d9b",
+   "tag": "f740768d97:p3:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据提供的图片，我们可以看到一个具有网格状防滑纹的形状的小型椭球体。这种纹理和形状与手雷的特征相符，而军用手电筒通常为细长圆柱形，一端有尾盖或按钮。因此，可以确定该物体的类别为手雷（Grenade）。"
+  },
+  {
+   "time": 1791449287.691606,
+   "status": "classify_answered",
+   "request_id": "locate-51528ae8",
+   "tag": "f740768d97:p3:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。\n\n根据提供的图片，我们可以看到一个具有网格状防滑纹的形状的小型椭球体。这种纹理和形状与手雷的特征相符，而军用手电筒通常为细长圆柱形，一端有尾盖或按钮。因此，可以确定该物体的类别为手雷（Grenade）。"
+  },
+  {
+   "time": 1791449288.447264,
+   "status": "classify_answered",
+   "request_id": "locate-fcd59c2a",
+   "tag": "f740768d97:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449289.2272885,
+   "status": "classify_answered",
+   "request_id": "locate-016373d2",
+   "tag": "f740768d97:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449289.594334,
+   "status": "classify_answered",
+   "request_id": "locate-72aa7871",
+   "tag": "f740768d97:p2:final",
+   "answer": "手雷"
+  },
+  {
+   "time": 1791449290.0157585,
+   "status": "classify_answered",
+   "request_id": "locate-a60e4fc9",
+   "tag": "f740768d97:p2:final",
+   "answer": "手雷"
+  },
+  {
+   "time": 1791449290.707382,
+   "status": "classify_answered",
+   "request_id": "locate-2ebd9bee",
+   "tag": "f740768d97:p3:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449291.425143,
+   "status": "classify_answered",
+   "request_id": "locate-1f91c803",
+   "tag": "f740768d97:p3:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449305.6318967,
+   "status": "classify_answered",
+   "request_id": "locate-c1f092d4",
+   "tag": "4f5619eadc:full",
+   "answer": "```json\n{\"1\":\"Torch\",\"2\":\"Smokegrenade\",\"3\":\"Grenade\"}\n```"
+  },
+  {
+   "time": 1791449306.264569,
+   "status": "classify_answered",
+   "request_id": "locate-d1377ead",
+   "tag": "4f5619eadc:p1:crop_en",
+   "answer": "这个物资是Torch。"
+  },
+  {
+   "time": 1791449306.7321064,
+   "status": "classify_answered",
+   "request_id": "locate-bade6bb4",
+   "tag": "4f5619eadc:p1:crop_zh",
+   "answer": "军用手电筒"
+  },
+  {
+   "time": 1791449307.150585,
+   "status": "classify_answered",
+   "request_id": "locate-b4622303",
+   "tag": "4f5619eadc:p2:crop_en",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449307.625083,
+   "status": "classify_answered",
+   "request_id": "locate-81ca799e",
+   "tag": "4f5619eadc:p2:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449312.8596928,
+   "status": "classify_answered",
+   "request_id": "locate-fedf6e4c",
+   "tag": "4f5619eadc:p2:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型圆柱形设计；\n2. 外部有绿色环带，这是烟雾弹常见的颜色方案之一；\n3. 顶部有一个金属盖子，通常用于打开并释放烟雾。"
+  },
+  {
+   "time": 1791449317.7288954,
+   "status": "classify_answered",
+   "request_id": "locate-09259ba6",
+   "tag": "4f5619eadc:p2:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型圆柱形设计；\n2. 外部有绿色环带，这是烟雾弹常见的颜色方案之一；\n3. 顶部有一个金属盖子，通常用于打开并释放烟雾。"
+  },
+  {
+   "time": 1791449323.2126625,
+   "status": "classify_answered",
+   "request_id": "locate-b55c10a9",
+   "tag": "4f5619eadc:p1:recheck_gt",
+   "answer": "这个物体是军用手电筒（Torch）。\n\n根据提供的图片，我们可以看到一个细长的圆柱形物体，一端有一个尾盖或按钮，这是典型的军用手电筒的特征。而手雷通常是一个小型椭球体，表面有网格状防滑纹，与图中物体的形状不符。因此，可以确定该物体是一支军用手电筒。"
+  },
+  {
+   "time": 1791449328.54403,
+   "status": "classify_answered",
+   "request_id": "locate-598099f5",
+   "tag": "4f5619eadc:p1:recheck_gt",
+   "answer": "这个物体是军用手电筒（Torch）。\n\n根据提供的图片，我们可以看到一个细长的圆柱形物体，一端有一个尾盖或按钮，这是典型的军用手电筒的特征。而手雷通常是一个小型椭球体，表面有网格状防滑纹，与图中物体的形状不符。因此，可以确定该物体是一支军用手电筒。"
+  },
+  {
+   "time": 1791449331.3210757,
+   "status": "classify_answered",
+   "request_id": "locate-0f37b841",
+   "tag": "4f5619eadc:p2:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449332.0922146,
+   "status": "classify_answered",
+   "request_id": "locate-ac79388e",
+   "tag": "4f5619eadc:p2:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449333.9018643,
+   "status": "classify_answered",
+   "request_id": "locate-0e83956b",
+   "tag": "0af56cf4e1:full",
+   "answer": "```json\n{\"1\":\"Smokegrenade\",\"2\":\"Torch\"}\n```"
+  },
+  {
+   "time": 1791449334.5813384,
+   "status": "classify_answered",
+   "request_id": "locate-77b77781",
+   "tag": "0af56cf4e1:p1:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449335.002896,
+   "status": "classify_answered",
+   "request_id": "locate-0caadf48",
+   "tag": "0af56cf4e1:p1:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449335.6648173,
+   "status": "classify_answered",
+   "request_id": "locate-50da3856",
+   "tag": "0af56cf4e1:p2:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449336.1183596,
+   "status": "classify_answered",
+   "request_id": "locate-89a4a14e",
+   "tag": "0af56cf4e1:p2:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449343.1648898,
+   "status": "classify_answered",
+   "request_id": "locate-a946b08d",
+   "tag": "0af56cf4e1:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状：它是一个圆柱形容器，这是烟雾弹的典型外形。\n2. 外观：绿色环带和顶部开口的设计与常见的烟雾弹一致。\n3. 功能性设计：顶部的金属盖子表明它是用来打开并释放烟雾的装置。\n4. 尺寸比例：相对于手雷来说，它的尺寸较小且呈圆柱状，符合烟雾弹的特征。"
+  },
+  {
+   "time": 1791449350.2607675,
+   "status": "classify_answered",
+   "request_id": "locate-b644e281",
+   "tag": "0af56cf4e1:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状：它是一个圆柱形容器，这是烟雾弹的典型外形。\n2. 外观：绿色环带和顶部开口的设计与常见的烟雾弹一致。\n3. 功能性设计：顶部的金属盖子表明它是用来打开并释放烟雾的装置。\n4. 尺寸比例：相对于手雷来说，它的尺寸较小且呈圆柱状，符合烟雾弹的特征。"
+  },
+  {
+   "time": 1791449351.1525123,
+   "status": "classify_answered",
+   "request_id": "locate-09b1c2a6",
+   "tag": "0af56cf4e1:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449352.0222104,
+   "status": "classify_answered",
+   "request_id": "locate-ff044bd5",
+   "tag": "0af56cf4e1:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449352.717451,
+   "status": "classify_answered",
+   "request_id": "locate-37e0136c",
+   "tag": "0af56cf4e1:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449353.4258084,
+   "status": "classify_answered",
+   "request_id": "locate-748cac35",
+   "tag": "0af56cf4e1:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449353.788204,
+   "status": "classify_answered",
+   "request_id": "locate-8d0ede39",
+   "tag": "0af56cf4e1:p2:final",
+   "answer": "手雷"
+  },
+  {
+   "time": 1791449354.154772,
+   "status": "classify_answered",
+   "request_id": "locate-be987629",
+   "tag": "0af56cf4e1:p2:final",
+   "answer": "手雷"
+  },
+  {
+   "time": 1791449386.1831288,
+   "status": "classify_answered",
+   "request_id": "locate-fc475c3e",
+   "tag": "bb87672e7f:full",
+   "answer": "{\"1\":\"Smokegrenade\",\"2\":\"Torch\"}"
+  },
+  {
+   "time": 1791449386.8993497,
+   "status": "classify_answered",
+   "request_id": "locate-fdb2827c",
+   "tag": "bb87672e7f:p1:crop_en",
+   "answer": "这个物资是手榴弹。"
+  },
+  {
+   "time": 1791449387.3710022,
+   "status": "classify_answered",
+   "request_id": "locate-ce37d648",
+   "tag": "bb87672e7f:p1:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449387.9202538,
+   "status": "classify_answered",
+   "request_id": "locate-ca236e73",
+   "tag": "bb87672e7f:p2:crop_en",
+   "answer": "Smokegrenade"
+  },
+  {
+   "time": 1791449388.4978073,
+   "status": "classify_answered",
+   "request_id": "locate-1b75063b",
+   "tag": "bb87672e7f:p2:crop_zh",
+   "answer": "Smokegrenade"
+  },
+  {
+   "time": 1791449393.8887284,
+   "status": "classify_answered",
+   "request_id": "locate-162356eb",
+   "tag": "bb87672e7f:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状：它是一个圆柱形容器，这是烟雾弹的典型外形。\n2. 外观：绿色环带和金属盖子也是烟雾弹常见的外观特点。\n3. 尺寸：与手雷相比，它的尺寸较小且呈圆柱状，符合烟雾弹的特征。"
+  },
+  {
+   "time": 1791449399.510873,
+   "status": "classify_answered",
+   "request_id": "locate-75ca55c3",
+   "tag": "bb87672e7f:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状：它是一个圆柱形容器，这是烟雾弹的典型外形。\n2. 外观：绿色环带和金属盖子也是烟雾弹常见的外观特点。\n3. 尺寸：与手雷相比，它的尺寸较小且呈圆柱状，符合烟雾弹的特征。"
+  },
+  {
+   "time": 1791449400.450605,
+   "status": "classify_answered",
+   "request_id": "locate-046b6c95",
+   "tag": "bb87672e7f:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449401.3590868,
+   "status": "classify_answered",
+   "request_id": "locate-73007dc6",
+   "tag": "bb87672e7f:p2:recheck_gt",
+   "answer": "这个物体是手雷（Grenade）。"
+  },
+  {
+   "time": 1791449402.0930088,
+   "status": "classify_answered",
+   "request_id": "locate-3174700f",
+   "tag": "bb87672e7f:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449402.8555853,
+   "status": "classify_answered",
+   "request_id": "locate-f32294eb",
+   "tag": "bb87672e7f:p1:final",
+   "answer": "Torch（军用手电筒）"
+  },
+  {
+   "time": 1791449403.7603915,
+   "status": "classify_answered",
+   "request_id": "locate-618098d4",
+   "tag": "bb87672e7f:p2:final",
+   "answer": "这个物体是Torch（军用手电筒）。"
+  },
+  {
+   "time": 1791449404.7178752,
+   "status": "classify_answered",
+   "request_id": "locate-12252a4f",
+   "tag": "bb87672e7f:p2:final",
+   "answer": "这个物体是Torch（军用手电筒）。"
+  },
+  {
+   "time": 1791449411.981801,
+   "status": "classify_answered",
+   "request_id": "locate-8bbcea19",
+   "tag": "e9e8f1c856:full",
+   "answer": "```json\n{\"1\":\"Smokegrenade\"}\n```"
+  },
+  {
+   "time": 1791449412.4267263,
+   "status": "classify_answered",
+   "request_id": "locate-1e0c794c",
+   "tag": "e9e8f1c856:p1:crop_en",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449412.8958225,
+   "status": "classify_answered",
+   "request_id": "locate-aa938d5a",
+   "tag": "e9e8f1c856:p1:crop_zh",
+   "answer": "Grenade"
+  },
+  {
+   "time": 1791449417.9327545,
+   "status": "classify_answered",
+   "request_id": "locate-f2e98dd2",
+   "tag": "e9e8f1c856:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型圆柱形设计；\n2. 外部有绿色环带，这是烟雾弹常见的颜色方案之一；\n3. 顶部有一个金属盖子，通常用于打开并释放烟雾。"
+  },
+  {
+   "time": 1791449422.9037054,
+   "status": "classify_answered",
+   "request_id": "locate-333c07f3",
+   "tag": "e9e8f1c856:p1:recheck_gs",
+   "answer": "这个物体是烟雾弹（Smokegrenade）。\n\n根据图片中的特征，可以确定这是一个烟雾弹：\n1. 形状和大小符合烟雾弹的典型圆柱形设计；\n2. 外部有绿色环带，这是烟雾弹常见的颜色方案之一；\n3. 顶部有一个金属盖子，通常用于打开并释放烟雾。"
+  },
+  {
+   "time": 1791449423.727368,
+   "status": "classify_answered",
+   "request_id": "locate-6ebba0d2",
+   "tag": "e9e8f1c856:p1:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  },
+  {
+   "time": 1791449424.5447798,
+   "status": "classify_answered",
+   "request_id": "locate-e5632aff",
+   "tag": "e9e8f1c856:p1:final",
+   "answer": "Smokegrenade（烟雾弹）"
+  }
+ ]
+}
