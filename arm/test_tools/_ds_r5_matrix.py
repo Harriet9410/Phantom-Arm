@@ -102,10 +102,13 @@ def main():
             if st in ('stable_identity_class_changed', 'identity_class_changed',
                       'candidate_class_conflict') or 'class_changed' in st:
                 drift.setdefault(str(e.get('time')), []).append(slim(e, 600))
-        # 九格扫描审计（t1_52 新增，走 rospy.loginfo -> logs/*.log）
+        # 九格扫描审计（t1_52 新增，走 rospy.loginfo -> logs/perception.log）。
+        # 实测（R5 b03_r5gate）：审计写在 <case>_stack/logs/perception.log，
+        # 不在 <case>_round/logs/ 下——两处都扫以兼容。
         audits = []
-        logs_dir = rd + '/logs'
-        if os.path.isdir(logs_dir):
+        for logs_dir in (rd + '/logs', rd.replace('_round', '_stack') + '/logs'):
+            if not os.path.isdir(logs_dir):
+                continue
             for lf in sorted(glob.glob(logs_dir + '/*.log')):
                 for line in open(lf, errors='ignore'):
                     if 'nine scan class audit' in line:
