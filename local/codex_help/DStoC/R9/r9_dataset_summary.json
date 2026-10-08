@@ -1,0 +1,58 @@
+{
+ "observations": 145,
+ "crops": 259,
+ "scenes": [
+  "scramble_01",
+  "scramble_02",
+  "scramble_03",
+  "scramble_04"
+ ],
+ "train_scenes": [
+  "scramble_01",
+  "scramble_02"
+ ],
+ "holdout_scenes": [
+  "scramble_03",
+  "scramble_04"
+ ],
+ "per_split": {
+  "train": 89,
+  "holdout": 56
+ },
+ "per_class": {
+  "Smokegrenade": 61,
+  "Torch": 31,
+  "Grenade": 28,
+  "Magazine": 25
+ },
+ "per_scene": {
+  "scramble_01": 65,
+  "scramble_02": 24,
+  "scramble_03": 35,
+  "scramble_04": 21
+ },
+ "per_split_class": {
+  "holdout/Grenade": 9,
+  "holdout/Magazine": 10,
+  "holdout/Smokegrenade": 24,
+  "holdout/Torch": 13,
+  "train/Grenade": 19,
+  "train/Magazine": 15,
+  "train/Smokegrenade": 37,
+  "train/Torch": 18
+ },
+ "split_leakage": [],
+ "skipped": {
+  "crop_too_small": 31
+ },
+ "margins": [
+  0.25,
+  0.85
+ ],
+ "assoc_tol_px": 30.0,
+ "provenance": {
+  "source": "R7 saved nine-grid conflict frames (_raw.jpg)",
+  "truth": "case layout + make_scramble10.pixel_xy + scan proposals, unique match",
+  "note": "labels are used for training/evaluation only; never by the runtime"
+ }
+}
