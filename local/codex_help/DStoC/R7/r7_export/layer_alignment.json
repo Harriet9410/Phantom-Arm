@@ -1,0 +1,1303 @@
+{
+ "batch": "b03_r6tgt_10081642",
+ "cases": {
+  "scramble_02": {
+   "paths": {
+    "perception_log": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_stack/logs/perception.log",
+    "nine_events": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_stack/events/nine_events.jsonl",
+    "episode_events": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_02_round/episode/events.jsonl"
+   },
+   "n_audit_lines": 10,
+   "n_conflict_image_lines": 4,
+   "n_classify_answered": 161,
+   "classify_tag_counts": {
+    "522434276e:p1:crop_en": 1,
+    "522434276e:p1:crop_zh": 1,
+    "522434276e:p2:crop_en": 1,
+    "522434276e:p2:crop_zh": 1,
+    "522434276e:p3:crop_en": 1,
+    "522434276e:p3:crop_zh": 1,
+    "522434276e:p4:crop_en": 1,
+    "522434276e:p4:crop_zh": 1,
+    "522434276e:p5:crop_en": 1,
+    "522434276e:p5:crop_zh": 1,
+    "522434276e:p1:recheck_gs": 2,
+    "522434276e:p3:recheck_gs": 2,
+    "522434276e:p4:recheck_gs": 2,
+    "522434276e:p3:recheck_gt": 2,
+    "522434276e:p4:recheck_gt": 2,
+    "522434276e:p5:recheck_gt": 2,
+    "522434276e:p1:final": 2,
+    "522434276e:p2:final": 2,
+    "522434276e:p3:final": 2,
+    "522434276e:p4:final": 2,
+    "522434276e:p5:final": 2,
+    "84bb02ad46:full": 1,
+    "84bb02ad46:p3:crop_en": 1,
+    "84bb02ad46:p3:crop_zh": 1,
+    "84bb02ad46:p3:recheck_gt": 2,
+    "84bb02ad46:p3:final": 2,
+    "3ab5bd0422:full": 1,
+    "3ab5bd0422:p1:crop_en": 1,
+    "3ab5bd0422:p1:crop_zh": 1,
+    "3ab5bd0422:p2:crop_en": 1,
+    "3ab5bd0422:p2:crop_zh": 1,
+    "3ab5bd0422:p4:crop_en": 1,
+    "3ab5bd0422:p4:crop_zh": 1,
+    "3ab5bd0422:p1:recheck_gs": 2,
+    "3ab5bd0422:p2:recheck_gt": 2,
+    "3ab5bd0422:p1:final": 2,
+    "3ab5bd0422:p2:final": 2,
+    "3ab5bd0422:p4:final": 2,
+    "2bd402ef17:full": 1,
+    "2bd402ef17:p1:crop_en": 1,
+    "2bd402ef17:p1:crop_zh": 1,
+    "2bd402ef17:p2:crop_en": 1,
+    "2bd402ef17:p2:crop_zh": 1,
+    "2bd402ef17:p4:crop_en": 1,
+    "2bd402ef17:p4:crop_zh": 1,
+    "2bd402ef17:p1:recheck_gs": 2,
+    "2bd402ef17:p2:recheck_gt": 2,
+    "2bd402ef17:p1:final": 2,
+    "2bd402ef17:p2:final": 2,
+    "2bd402ef17:p4:final": 2,
+    "5bd5f6795c:full": 1,
+    "5bd5f6795c:p1:crop_en": 1,
+    "5bd5f6795c:p1:crop_zh": 1,
+    "5bd5f6795c:p2:crop_en": 1,
+    "5bd5f6795c:p2:crop_zh": 1,
+    "5bd5f6795c:p3:crop_en": 1,
+    "5bd5f6795c:p3:crop_zh": 1,
+    "5bd5f6795c:p4:crop_en": 1,
+    "5bd5f6795c:p4:crop_zh": 1,
+    "5bd5f6795c:p1:recheck_gs": 2,
+    "5bd5f6795c:p4:recheck_gs": 2,
+    "5bd5f6795c:p2:recheck_gt": 2,
+    "5bd5f6795c:p4:recheck_gt": 2,
+    "5bd5f6795c:p1:final": 2,
+    "5bd5f6795c:p2:final": 2,
+    "5bd5f6795c:p3:final": 2,
+    "f740768d97:full": 1,
+    "f740768d97:p1:crop_en": 1,
+    "f740768d97:p1:crop_zh": 1,
+    "f740768d97:p2:crop_en": 1,
+    "f740768d97:p2:crop_zh": 1,
+    "f740768d97:p3:crop_en": 1,
+    "f740768d97:p3:crop_zh": 1,
+    "f740768d97:p1:recheck_gs": 2,
+    "f740768d97:p3:recheck_gs": 2,
+    "f740768d97:p2:recheck_gt": 2,
+    "f740768d97:p3:recheck_gt": 2,
+    "f740768d97:p1:final": 2,
+    "f740768d97:p2:final": 2,
+    "f740768d97:p3:final": 2,
+    "4f5619eadc:full": 1,
+    "4f5619eadc:p1:crop_en": 1,
+    "4f5619eadc:p1:crop_zh": 1,
+    "4f5619eadc:p2:crop_en": 1,
+    "4f5619eadc:p2:crop_zh": 1,
+    "4f5619eadc:p2:recheck_gs": 2,
+    "4f5619eadc:p1:recheck_gt": 2,
+    "4f5619eadc:p2:final": 2,
+    "0af56cf4e1:full": 1,
+    "0af56cf4e1:p1:crop_en": 1,
+    "0af56cf4e1:p1:crop_zh": 1,
+    "0af56cf4e1:p2:crop_en": 1,
+    "0af56cf4e1:p2:crop_zh": 1,
+    "0af56cf4e1:p1:recheck_gs": 2,
+    "0af56cf4e1:p2:recheck_gt": 2,
+    "0af56cf4e1:p1:final": 2,
+    "0af56cf4e1:p2:final": 2,
+    "bb87672e7f:full": 1,
+    "bb87672e7f:p1:crop_en": 1,
+    "bb87672e7f:p1:crop_zh": 1,
+    "bb87672e7f:p2:crop_en": 1,
+    "bb87672e7f:p2:crop_zh": 1,
+    "bb87672e7f:p1:recheck_gs": 2,
+    "bb87672e7f:p2:recheck_gt": 2,
+    "bb87672e7f:p1:final": 2,
+    "bb87672e7f:p2:final": 2,
+    "e9e8f1c856:full": 1,
+    "e9e8f1c856:p1:crop_en": 1,
+    "e9e8f1c856:p1:crop_zh": 1,
+    "e9e8f1c856:p1:recheck_gs": 2,
+    "e9e8f1c856:p1:final": 2
+   },
+   "n_candidate_publication_rows": 10,
+   "candidate_pub_fields_present": {
+    "raw_class_present_rows": 0,
+    "class_source_present_rows": 0
+   },
+   "n_remaining_events": 10,
+   "nine_store_entries": [
+    {
+     "scan_id": "522434276e",
+     "proposal_index": 1,
+     "pixel": [
+      491.15384615384613,
+      184.46153846153845
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "522434276e",
+     "proposal_index": 2,
+     "pixel": [
+      493.1457266172611,
+      352.4459448752742
+     ],
+     "bbox": null,
+     "scan_class": "Magazine",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Magazine",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "522434276e",
+     "proposal_index": 3,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "522434276e",
+     "proposal_index": 4,
+     "pixel": [
+      788.7287563310723,
+      367.29541510318586
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "522434276e",
+     "proposal_index": 5,
+     "pixel": [
+      793.75,
+      185.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "84bb02ad46",
+     "proposal_index": 1,
+     "pixel": [
+      491.15384615384613,
+      184.46153846153845
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "84bb02ad46",
+     "proposal_index": 2,
+     "pixel": [
+      493.1457266172611,
+      352.4459448752742
+     ],
+     "bbox": null,
+     "scan_class": "Magazine",
+     "old_class": "Magazine",
+     "old_pending": null,
+     "stored_class": "Magazine",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "84bb02ad46",
+     "proposal_index": 3,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "84bb02ad46",
+     "proposal_index": 4,
+     "pixel": [
+      788.7287563310723,
+      367.29541510318586
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "84bb02ad46",
+     "proposal_index": 5,
+     "pixel": [
+      793.75,
+      185.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "3ab5bd0422",
+     "proposal_index": 1,
+     "pixel": [
+      469.5,
+      353.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "3ab5bd0422",
+     "proposal_index": 2,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "pending_conflict"
+    },
+    {
+     "scan_id": "3ab5bd0422",
+     "proposal_index": 3,
+     "pixel": [
+      788.7287563310723,
+      367.29541510318586
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "3ab5bd0422",
+     "proposal_index": 4,
+     "pixel": [
+      793.75,
+      185.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "2bd402ef17",
+     "proposal_index": 1,
+     "pixel": [
+      493.1457266172611,
+      352.4459448752742
+     ],
+     "bbox": null,
+     "scan_class": "Magazine",
+     "old_class": "Magazine",
+     "old_pending": null,
+     "stored_class": "Magazine",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "2bd402ef17",
+     "proposal_index": 2,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Smokegrenade",
+     "old_pending": "Torch",
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "confirmed_reclass"
+    },
+    {
+     "scan_id": "2bd402ef17",
+     "proposal_index": 3,
+     "pixel": [
+      788.7287563310723,
+      367.29541510318586
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "2bd402ef17",
+     "proposal_index": 4,
+     "pixel": [
+      793.75,
+      185.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "5bd5f6795c",
+     "proposal_index": 1,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "5bd5f6795c",
+     "proposal_index": 2,
+     "pixel": [
+      788.7287563310723,
+      367.29541510318586
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "5bd5f6795c",
+     "proposal_index": 3,
+     "pixel": [
+      793.75,
+      185.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "5bd5f6795c",
+     "proposal_index": 4,
+     "pixel": [
+      896.8383962703733,
+      379.37123453607984
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "f740768d97",
+     "proposal_index": 1,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "f740768d97",
+     "proposal_index": 2,
+     "pixel": [
+      781.8202888270495,
+      368.1421879981345
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "f740768d97",
+     "proposal_index": 3,
+     "pixel": [
+      819.4664475938841,
+      187.20324347796915
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "4f5619eadc",
+     "proposal_index": 1,
+     "pixel": [
+      414.1046511627907,
+      413.74418604651163
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "4f5619eadc",
+     "proposal_index": 2,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "pending_conflict"
+    },
+    {
+     "scan_id": "4f5619eadc",
+     "proposal_index": 3,
+     "pixel": [
+      788.7287563310723,
+      367.29541510318586
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "0af56cf4e1",
+     "proposal_index": 1,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": "Smokegrenade",
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "0af56cf4e1",
+     "proposal_index": 2,
+     "pixel": [
+      788.7287563310723,
+      367.29541510318586
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "bb87672e7f",
+     "proposal_index": 1,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "bb87672e7f",
+     "proposal_index": 2,
+     "pixel": [
+      901.2853778564987,
+      382.3039911247454
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "e9e8f1c856",
+     "proposal_index": 1,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "pending_conflict"
+    }
+   ],
+   "remaining_last": {
+    "status": "remaining_context_incomplete",
+    "time": 1791449419.9073641,
+    "task_index": 4,
+    "context": {
+     "task_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938-task-05",
+     "task_index": 4,
+     "round_id": "round_c7fe7c76a2cd44e29bbceec52b0b4938",
+     "dependencies_satisfied": true,
+     "allow_reorder": false,
+     "remaining_ids": [
+      "1"
+     ],
+     "remaining_stable_ids": [
+      "9797b1e2-obj-0003"
+     ],
+     "reserved_ids": [],
+     "reserved_stable_ids": [],
+     "stable_ids": [
+      "9797b1e2-obj-0003"
+     ],
+     "released_pending_stable_ids": [],
+     "candidate_stable_ids": {
+      "1": "9797b1e2-obj-0003"
+     },
+     "remaining_complete": false,
+     "remaining_incomplete_reasons": [
+      "stable_identity_class_changed"
+     ],
+     "missing_stable_ids": [],
+     "scene_frame_id": 4241,
+     "scene_fresh": true,
+     "deadline_monotonic": 4943904.832303837,
+     "remaining_seconds": 159.087118527852,
+     "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+    },
+    "candidates": [
+     {
+      "id": "1",
+      "class": "Torch",
+      "pixel": [
+       671.5,
+       349.5
+      ],
+      "bbox": [
+       641,
+       339,
+       697,
+       361
+      ],
+      "depth": 2.0938668251037598,
+      "stable_id": "9797b1e2-obj-0003",
+      "identity_status": "confirmed",
+      "identity_candidates": [],
+      "identity_reason": null,
+      "association_anchor_held": false,
+      "association_anchor_pixel": [
+       671.5,
+       349.5
+      ]
+     }
+    ],
+    "unknown_regions": []
+   }
+  },
+  "scramble_04": {
+   "paths": {
+    "perception_log": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_stack/logs/perception.log",
+    "nine_events": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_stack/events/nine_events.jsonl",
+    "episode_events": "/root/gpufree-data/tcei_260920v2/b03_r6tgt_10081642_scramble_04_round/episode/events.jsonl"
+   },
+   "n_audit_lines": 9,
+   "n_conflict_image_lines": 6,
+   "n_classify_answered": 152,
+   "classify_tag_counts": {
+    "2a925a0a75:p1:crop_en": 1,
+    "2a925a0a75:p1:crop_zh": 1,
+    "2a925a0a75:p2:crop_en": 1,
+    "2a925a0a75:p2:crop_zh": 1,
+    "2a925a0a75:p3:crop_en": 1,
+    "2a925a0a75:p3:crop_zh": 1,
+    "2a925a0a75:p4:crop_en": 1,
+    "2a925a0a75:p4:crop_zh": 1,
+    "2a925a0a75:p5:crop_en": 1,
+    "2a925a0a75:p5:crop_zh": 1,
+    "2a925a0a75:p1:recheck_gs": 2,
+    "2a925a0a75:p2:recheck_gs": 2,
+    "2a925a0a75:p3:recheck_gs": 2,
+    "2a925a0a75:p1:recheck_gt": 2,
+    "2a925a0a75:p3:recheck_gt": 2,
+    "2a925a0a75:p5:recheck_gt": 2,
+    "2a925a0a75:p1:final": 2,
+    "2a925a0a75:p2:final": 2,
+    "2a925a0a75:p3:final": 2,
+    "2a925a0a75:p4:final": 2,
+    "2a925a0a75:p5:final": 2,
+    "1ad3f74ad0:full": 1,
+    "1ad3f74ad0:p1:crop_en": 1,
+    "1ad3f74ad0:p1:crop_zh": 1,
+    "1ad3f74ad0:p2:crop_en": 1,
+    "1ad3f74ad0:p2:crop_zh": 1,
+    "1ad3f74ad0:p3:crop_en": 1,
+    "1ad3f74ad0:p3:crop_zh": 1,
+    "1ad3f74ad0:p4:crop_en": 1,
+    "1ad3f74ad0:p4:crop_zh": 1,
+    "1ad3f74ad0:p1:recheck_gs": 2,
+    "1ad3f74ad0:p4:recheck_gs": 2,
+    "1ad3f74ad0:p3:recheck_gt": 2,
+    "1ad3f74ad0:p4:recheck_gt": 2,
+    "1ad3f74ad0:p1:final": 2,
+    "1ad3f74ad0:p2:final": 2,
+    "1ad3f74ad0:p3:final": 2,
+    "1ad3f74ad0:p4:final": 2,
+    "fc4291325a:full": 1,
+    "fc4291325a:p2:crop_en": 1,
+    "fc4291325a:p2:crop_zh": 1,
+    "fc4291325a:p3:crop_en": 1,
+    "fc4291325a:p3:crop_zh": 1,
+    "fc4291325a:p4:crop_en": 1,
+    "fc4291325a:p4:crop_zh": 1,
+    "fc4291325a:p5:crop_en": 1,
+    "fc4291325a:p5:crop_zh": 1,
+    "fc4291325a:p3:recheck_gs": 2,
+    "fc4291325a:p2:recheck_gt": 2,
+    "fc4291325a:p3:recheck_gt": 2,
+    "fc4291325a:p5:recheck_gt": 2,
+    "fc4291325a:p2:final": 2,
+    "fc4291325a:p3:final": 2,
+    "fc4291325a:p4:final": 2,
+    "841ffb70b4:full": 1,
+    "841ffb70b4:p1:crop_en": 1,
+    "841ffb70b4:p1:crop_zh": 1,
+    "841ffb70b4:p2:crop_en": 1,
+    "841ffb70b4:p2:crop_zh": 1,
+    "841ffb70b4:p3:crop_en": 1,
+    "841ffb70b4:p3:crop_zh": 1,
+    "841ffb70b4:p1:recheck_gs": 2,
+    "841ffb70b4:p3:recheck_gs": 2,
+    "841ffb70b4:p2:recheck_gt": 2,
+    "841ffb70b4:p3:recheck_gt": 2,
+    "841ffb70b4:p1:final": 2,
+    "841ffb70b4:p2:final": 2,
+    "841ffb70b4:p3:final": 2,
+    "4be9fc1aae:full": 1,
+    "4be9fc1aae:p2:crop_en": 1,
+    "4be9fc1aae:p2:crop_zh": 1,
+    "4be9fc1aae:p3:crop_en": 1,
+    "4be9fc1aae:p3:crop_zh": 1,
+    "4be9fc1aae:p3:recheck_gs": 2,
+    "4be9fc1aae:p2:recheck_gt": 2,
+    "4be9fc1aae:p2:final": 2,
+    "4be9fc1aae:p3:final": 2,
+    "86a6078fd6:full": 1,
+    "86a6078fd6:p1:crop_en": 1,
+    "86a6078fd6:p1:crop_zh": 1,
+    "86a6078fd6:p2:crop_en": 1,
+    "86a6078fd6:p2:crop_zh": 1,
+    "86a6078fd6:p3:crop_en": 1,
+    "86a6078fd6:p3:crop_zh": 1,
+    "86a6078fd6:p1:recheck_gs": 2,
+    "86a6078fd6:p3:recheck_gs": 2,
+    "86a6078fd6:p2:recheck_gt": 2,
+    "86a6078fd6:p3:recheck_gt": 2,
+    "86a6078fd6:p1:final": 2,
+    "86a6078fd6:p2:final": 2,
+    "3d720e3a00:full": 1,
+    "3d720e3a00:p1:crop_en": 1,
+    "3d720e3a00:p1:crop_zh": 1,
+    "3d720e3a00:p1:recheck_gs": 2,
+    "3d720e3a00:p1:final": 2,
+    "9eb70567c0:full": 1,
+    "9eb70567c0:p1:crop_en": 1,
+    "9eb70567c0:p1:crop_zh": 1,
+    "9eb70567c0:p2:crop_en": 1,
+    "9eb70567c0:p2:crop_zh": 1,
+    "9eb70567c0:p1:recheck_gs": 2,
+    "9eb70567c0:p2:recheck_gt": 2,
+    "9eb70567c0:p1:final": 2,
+    "5109970950:full": 1
+   },
+   "n_candidate_publication_rows": 10,
+   "candidate_pub_fields_present": {
+    "raw_class_present_rows": 0,
+    "class_source_present_rows": 0
+   },
+   "n_remaining_events": 10,
+   "nine_store_entries": [
+    {
+     "scan_id": "2a925a0a75",
+     "proposal_index": 1,
+     "pixel": [
+      485.2582990943224,
+      189.03214461153317
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "2a925a0a75",
+     "proposal_index": 2,
+     "pixel": [
+      491.5,
+      355.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "2a925a0a75",
+     "proposal_index": 3,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "2a925a0a75",
+     "proposal_index": 4,
+     "pixel": [
+      794.1456967230291,
+      182.44592834718864
+     ],
+     "bbox": null,
+     "scan_class": "Magazine",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Magazine",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "2a925a0a75",
+     "proposal_index": 5,
+     "pixel": [
+      794.3809523809524,
+      350.9047619047619
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "1ad3f74ad0",
+     "proposal_index": 1,
+     "pixel": [
+      485.2582990943224,
+      189.03214461153317
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Grenade",
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "1ad3f74ad0",
+     "proposal_index": 2,
+     "pixel": [
+      491.5,
+      355.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "1ad3f74ad0",
+     "proposal_index": 3,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "pending_conflict"
+    },
+    {
+     "scan_id": "1ad3f74ad0",
+     "proposal_index": 4,
+     "pixel": [
+      794.1456967230291,
+      182.44592834718864
+     ],
+     "bbox": null,
+     "scan_class": "Magazine",
+     "old_class": "Magazine",
+     "old_pending": null,
+     "stored_class": "Magazine",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "1ad3f74ad0",
+     "proposal_index": 5,
+     "pixel": [
+      794.3809523809524,
+      350.9047619047619
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "fc4291325a",
+     "proposal_index": 1,
+     "pixel": [
+      491.5,
+      355.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "fc4291325a",
+     "proposal_index": 2,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": "Torch",
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "fc4291325a",
+     "proposal_index": 3,
+     "pixel": [
+      794.1456967230291,
+      182.44592834718864
+     ],
+     "bbox": null,
+     "scan_class": "Magazine",
+     "old_class": "Magazine",
+     "old_pending": null,
+     "stored_class": "Magazine",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "fc4291325a",
+     "proposal_index": 4,
+     "pixel": [
+      794.3809523809524,
+      350.9047619047619
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "fc4291325a",
+     "proposal_index": 5,
+     "pixel": [
+      915.1050465623395,
+      419.96247338328305
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "841ffb70b4",
+     "proposal_index": 1,
+     "pixel": [
+      518.5,
+      353.0
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "841ffb70b4",
+     "proposal_index": 2,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "pending_conflict"
+    },
+    {
+     "scan_id": "841ffb70b4",
+     "proposal_index": 3,
+     "pixel": [
+      794.3809523809524,
+      350.9047619047619
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "4be9fc1aae",
+     "proposal_index": 1,
+     "pixel": [
+      491.5,
+      355.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": false,
+     "decision": "same"
+    },
+    {
+     "scan_id": "4be9fc1aae",
+     "proposal_index": 2,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Smokegrenade",
+     "old_pending": "Torch",
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "confirmed_reclass"
+    },
+    {
+     "scan_id": "4be9fc1aae",
+     "proposal_index": 3,
+     "pixel": [
+      774.3846153846154,
+      351.0
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "86a6078fd6",
+     "proposal_index": 1,
+     "pixel": [
+      401.86711021499593,
+      406.04707946573734
+     ],
+     "bbox": null,
+     "scan_class": "Torch",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "86a6078fd6",
+     "proposal_index": 2,
+     "pixel": [
+      491.5,
+      355.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "same"
+    },
+    {
+     "scan_id": "86a6078fd6",
+     "proposal_index": 3,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": "Torch",
+     "old_pending": null,
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "pending_conflict"
+    },
+    {
+     "scan_id": "3d720e3a00",
+     "proposal_index": 1,
+     "pixel": [
+      664.2124649974118,
+      349.4832379476783
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Torch",
+     "old_pending": "Grenade",
+     "stored_class": "Torch",
+     "full": true,
+     "decision": "pending_conflict"
+    },
+    {
+     "scan_id": "9eb70567c0",
+     "proposal_index": 1,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Torch",
+     "old_pending": "Smokegrenade",
+     "stored_class": "Smokegrenade",
+     "full": true,
+     "decision": "confirmed_reclass"
+    },
+    {
+     "scan_id": "9eb70567c0",
+     "proposal_index": 2,
+     "pixel": [
+      915.072349889469,
+      419.32347662926156
+     ],
+     "bbox": null,
+     "scan_class": "Grenade",
+     "old_class": null,
+     "old_pending": null,
+     "stored_class": "Grenade",
+     "full": true,
+     "decision": "new"
+    },
+    {
+     "scan_id": "5109970950",
+     "proposal_index": 1,
+     "pixel": [
+      671.5,
+      349.5
+     ],
+     "bbox": null,
+     "scan_class": "Smokegrenade",
+     "old_class": "Smokegrenade",
+     "old_pending": null,
+     "stored_class": "Smokegrenade",
+     "full": false,
+     "decision": "same"
+    }
+   ],
+   "remaining_last": {
+    "status": "remaining_context_incomplete",
+    "time": 1791449889.8293314,
+    "task_index": 4,
+    "context": {
+     "task_id": "round_1b092944fecf4372a828ea575e0e4032-task-05",
+     "task_index": 4,
+     "round_id": "round_1b092944fecf4372a828ea575e0e4032",
+     "dependencies_satisfied": true,
+     "allow_reorder": false,
+     "remaining_ids": [
+      "1"
+     ],
+     "remaining_stable_ids": [
+      "13bd4c64-obj-0003"
+     ],
+     "reserved_ids": [],
+     "reserved_stable_ids": [],
+     "stable_ids": [
+      "13bd4c64-obj-0003"
+     ],
+     "released_pending_stable_ids": [],
+     "candidate_stable_ids": {
+      "1": "13bd4c64-obj-0003"
+     },
+     "remaining_complete": false,
+     "remaining_incomplete_reasons": [
+      "stable_identity_class_changed"
+     ],
+     "missing_stable_ids": [],
+     "scene_frame_id": 4100,
+     "scene_fresh": true,
+     "deadline_monotonic": 4944405.296052571,
+     "remaining_seconds": 189.62886286340654,
+     "coverage_scope": "visible_foreground_only; hidden fully occluded objects cannot be excluded"
+    },
+    "candidates": [
+     {
+      "id": "1",
+      "class": "Torch",
+      "pixel": [
+       671.5,
+       349.5
+      ],
+      "bbox": [
+       641,
+       339,
+       697,
+       361
+      ],
+      "depth": 2.0938668251037598,
+      "stable_id": "13bd4c64-obj-0003",
+      "identity_status": "confirmed",
+      "identity_candidates": [],
+      "identity_reason": null,
+      "association_anchor_held": false,
+      "association_anchor_pixel": [
+       671.5,
+       349.5
+      ]
+     }
+    ],
+    "unknown_regions": []
+   }
+  }
+ }
+}
